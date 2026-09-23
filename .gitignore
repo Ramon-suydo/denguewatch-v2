@@ -17,3 +17,8 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# Local Supabase state and generated audit artifacts
+supabase/.temp/
+supabase/.branches/
+.artifacts/

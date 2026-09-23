@@ -1,0 +1,2 @@
+# Preserve published source bytes, including original CRLF, and audit checksums.
+data/raw/** -text whitespace=cr-at-eol

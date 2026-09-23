@@ -1,7 +1,8 @@
 # Deployment setup
 
-This repository currently has workflow files only. Push it now; a successful
-Vite deployment requires the later app scaffold, package.json and build script.
+The Vite scaffold is now buildable and intentionally renders no UI. Follow
+[database setup](docs/DATABASE_SETUP.md) to load and verify published data before
+building screens. Set the Vercel Node runtime to 22.x.
 
 ## GitHub
 
@@ -23,9 +24,9 @@ For subsequent commits on main: git push origin main.
 2. Click Import beside the repository.
 3. Set Framework Preset to Vite and Root Directory to ./.
 4. For the planned npm app, use Build Command npm run build and Output Directory
-   dist. Keep the default install command; commit the lockfile with the scaffold.
-5. Add environment variables below in the import form, then Deploy once the
-   scaffold exists. The documentation-only repository cannot yet build an app.
+   dist. Keep the default install command; the lockfile is committed.
+5. Add environment variables below in the import form, then Deploy. This milestone
+   builds a blank application shell; there are no application screens yet.
 
 The Vercel Git integration handles deployment; no GitHub Actions file is needed.
 
@@ -57,7 +58,7 @@ preview does not create a separate database.
    dashboard versions show Production Branch under Git).
 3. Keep automatic Git deployments enabled and Preview tracking non-production
    branches. Avoid ignored-build rules that skip desired deployments.
-4. Once the scaffold exists, push a tested main commit. Under Deployments,
+4. Push a tested main commit. Under Deployments,
    confirm Ready, Production, main, and the matching commit hash. Open the URL.
 5. Push a real committed feature change with git push -u origin feat/case-form.
    Confirm Ready, Preview, the feature branch, and its matching commit hash.
@@ -75,3 +76,6 @@ main triggers a live production deployment.
 - [Vercel environments](https://vercel.com/docs/deployments/environments)
 - [Vercel environment variables](https://vercel.com/docs/environment-variables)
 - [Vite environment variables](https://vite.dev/guide/env-and-mode)
+
+Database migrations and ingestion run manually using docs/DATABASE_SETUP.md;
+Vercel builds never receive DIRECT_DATABASE_URL or execute ingestion.
