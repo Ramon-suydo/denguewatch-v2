@@ -17,6 +17,7 @@ Desktop.ini
 *.swp
 *.swo
 *~
+certs/
 
 # Local Supabase state and generated audit artifacts
 supabase/.temp/
