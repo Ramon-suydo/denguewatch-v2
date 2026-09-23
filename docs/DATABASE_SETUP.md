@@ -26,7 +26,9 @@ Copy the example only if .env.local does not already exist. Edit it locally:
   connection or session pooler on port 5432, with a percent-encoded password.
   The session pooler can be used when the direct endpoint is unreachable over IPv4.
 - DB_SSL_CA_FILE: optional trusted CA certificate PEM path if needed. The importer
-  verifies TLS for remote hosts and never disables certificate verification.
+  verifies TLS for remote hosts and never disables certificate verification. Point
+  this setting at the actual certificate file (for example,
+  C:/certificates/prod-ca-2021.crt), not its parent folder.
 
 The database URL stays on your machine. Never put it in Vercel's VITE_ variables,
 source files, screenshots, or chat. Ingestion uses pg over a privileged database

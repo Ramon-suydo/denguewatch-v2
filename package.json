@@ -11,7 +11,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/*.test.ts",
+    "test": "tsx --test tests/data-and-security.test.ts tests/database-tls.test.ts",
     "data:audit": "tsx scripts/ingest-historical.ts --dry-run",
     "ingest": "tsx scripts/ingest-historical.ts",
     "db:verify": "tsx scripts/ingest-historical.ts --verify-only"

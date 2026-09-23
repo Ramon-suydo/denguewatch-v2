@@ -1,7 +1,8 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { config } from 'dotenv';
 import pg from 'pg';
+import { readDatabaseCa } from './lib/database-tls.ts';
 import { loadDataset } from './lib/historical.ts';
 import { importDataset } from './lib/import-database.ts';
 
@@ -33,7 +34,7 @@ async function main() {
   for (const name of ['ssl','sslcert','sslkey','sslrootcert','uselibpqcompat']) {
     if (target.searchParams.has(name)) throw new Error('Configure TLS using DB_SSL_CA_FILE, not URL SSL options.');
   }
-  const ca = process.env.DB_SSL_CA_FILE ? await readFile(process.env.DB_SSL_CA_FILE, 'utf8') : undefined;
+  const ca = await readDatabaseCa(process.env.DB_SSL_CA_FILE);
   const client = new pg.Client({ connectionString: target.toString(), connectionTimeoutMillis: 15000,
     ssl: local ? false : { rejectUnauthorized: true, ...(ca ? { ca } : {}) } });
   try {
