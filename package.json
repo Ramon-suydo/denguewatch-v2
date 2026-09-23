@@ -14,15 +14,22 @@
     "test": "tsx --test tests/data-and-security.test.ts tests/database-tls.test.ts",
     "data:audit": "tsx scripts/ingest-historical.ts --dry-run",
     "ingest": "tsx scripts/ingest-historical.ts",
-    "db:verify": "tsx scripts/ingest-historical.ts --verify-only"
+    "db:verify": "tsx scripts/ingest-historical.ts --verify-only",
+    "test:ui": "playwright test",
+    "test:contrast": "node scripts/check-contrast.mjs"
   },
   "dependencies": {
+    "@fontsource/source-sans-3": "^5.3.0",
+    "@fontsource/source-serif-4": "^5.3.0",
     "@supabase/supabase-js": "^2.109.0",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "recharts": "^3.10.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@electric-sql/pglite": "^0.5.8",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.6.2",
     "@types/pg": "^8.23.1",

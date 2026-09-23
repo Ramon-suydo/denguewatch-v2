@@ -1,7 +1,10 @@
 # DengueWatch
 
 Vite + React + TypeScript + Tailwind scaffold with Supabase data migrations.
-The app intentionally renders no UI until published-data ingestion is verified.
+The app opens a responsive design-system preview with illustrative data for identity approval.
+Run npm run dev to review it locally; no live health data is fetched.
+
+- [Design system, contrast and preview checks](docs/design-system.md)
 
 - [Dataset findings](docs/DATA_QUALITY.md)
 - [Migrate, ingest, and verify](docs/DATABASE_SETUP.md)

@@ -1,0 +1,50 @@
+// Signal is burnt amber for actions. Moderate risk uses pale yellow and ochre.
+// Never use risk tokens for buttons or decoration.
+export const colors = {
+  teal: {
+    50: "#edf6f4",
+    100: "#d4e9e4",
+    200: "#add2ca",
+    300: "#7cb5aa",
+    400: "#4a968b",
+    500: "#287d74",
+    600: "#19665f",
+    700: "#15534f",
+    800: "#124541",
+    900: "#103938",
+    950: "#092b2b",
+  },
+  signal: {
+    50: "#fff5ec",
+    100: "#ffe5cb",
+    300: "#f9b76d",
+    400: "#f2a348",
+    500: "#e68a2e",
+    600: "#b65a15",
+    700: "#91430e",
+    800: "#76370f",
+    900: "#603012",
+  },
+  warm: {
+    50: "#faf9f6",
+    100: "#f2f0eb",
+    200: "#e4e1d9",
+    300: "#cbc7bc",
+    400: "#969185",
+    500: "#716d63",
+    600: "#5e5a52",
+    700: "#48463f",
+    800: "#33352f",
+    900: "#242b27",
+  },
+  risk: {
+    low: { ink: "#205b37", surface: "#e7f2e8", border: "#759c7a" },
+    moderate: { ink: "#725000", surface: "#fff2c2", border: "#ac8624" },
+    high: { ink: "#972f32", surface: "#fbe9e7", border: "#c98483" },
+    insufficient: { ink: "#48463f", surface: "#f2f0eb", border: "#969185" },
+  },
+  source: {
+    community: { ink: "#65428a", surface: "#f2ebfa", border: "#9476b1" },
+    official: { ink: "#255482", surface: "#eaf1fa", border: "#708fae" },
+  },
+};
