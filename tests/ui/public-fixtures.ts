@@ -1,5 +1,6 @@
 import type { Page } from "@playwright/test";
 import { loadDataset } from "../../scripts/lib/historical";
+import { riskInputs } from "../../src/lib/composite";
 import { computeForecast } from "../../src/lib/forecast";
 import type { City, Observation } from "../../src/lib/types";
 let cached: ReturnType<typeof build> | undefined;
@@ -42,6 +43,17 @@ export async function mockPublicApi(
         body: JSON.stringify(value),
       });
     if (resource === "lgus") return respond(fixture.cities);
+    if (resource === "barangay_risk")
+      return respond(
+        fixture.cities.map((city) => ({
+          lgu_id: city.id,
+          inputs: riskInputs(
+            fixture.rows.filter((r) => r.lgu_id === city.id),
+            "2026-09-24",
+            false,
+          ),
+        })),
+      );
     if (resource === "city_forecasts") return respond(fixture.forecasts);
     if (resource === "community_policy")
       return respond({

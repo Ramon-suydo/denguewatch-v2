@@ -99,7 +99,8 @@ npm run reports:enable
 ```
 
 app:setup applies ONLY 20260924000300_forecast_cache.sql and
-20260924000400_community_lifecycle.sql, records their migration versions, enables
+20260924000400_community_lifecycle.sql and
+20260924000500_composite_risk.sql, records their migration versions, enables
 pg_cron, schedules the hourly retention job, and saves real-data forecasts. All
 steps use one transaction and a project-level advisory lock; failure rolls back.
 It does not reset, replace, or reingest the historical dataset.

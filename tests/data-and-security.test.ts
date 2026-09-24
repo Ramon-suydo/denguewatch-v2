@@ -176,6 +176,10 @@ test('real-source forecasts persist for all cities and public users cannot chang
   assert.deepEqual((await db.query('select lgu_id,input_digest,predicted_cases from public.city_forecasts order by lgu_id')).rows,before.rows);
   await asRole('anon','',async()=>{
     assert.equal((await db.query('select * from public.city_forecasts')).rows.length,17);
+    assert.equal((await db.query('select * from public.barangay_risk')).rows.length,17);
+    await assert.rejects(db.query("update public.barangay_risk set inputs='{}'"),/permission denied/);
+    await assert.rejects(db.query("insert into public.barangay_risk(lgu_id,inputs) values('00000000-0000-4000-8000-000000000099','{}')"),/permission denied/);
+    assert.equal((await db.query("select * from public.historical_forecast_backtest where method_version like 'paired-%'")).rows.length,650);
     await assert.rejects(db.query('delete from public.city_forecasts'),/permission denied/);
     await assert.rejects(db.query('update public.community_policy set submissions_enabled=true'),/permission denied/);
     await assert.rejects(db.query('select private.purge_expired_community_reports()'),/permission denied/);

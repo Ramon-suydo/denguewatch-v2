@@ -7,6 +7,7 @@ import {
 } from "react";
 import {
   fetchCities,
+  fetchRisks,
   fetchCommunity,
   fetchForecasts,
   fetchPolicy,
@@ -66,7 +67,8 @@ function useAppResources() {
   const forecasts = useResource("forecasts", fetchForecasts);
   const community = useResource("community", fetchCommunity);
   const policy = useResource("policy", fetchPolicy);
-  return { cities, forecasts, community, policy };
+  const risks = useResource("risks", fetchRisks);
+  return { cities, forecasts, community, policy, risks };
 }
 const Context = createContext<ReturnType<typeof useAppResources> | null>(null);
 export function AppDataProvider({ children }: { children: ReactNode }) {

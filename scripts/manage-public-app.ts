@@ -53,6 +53,7 @@ async function main() {
       for (const file of [
         "20260924000300_forecast_cache.sql",
         "20260924000400_community_lifecycle.sql",
+        "20260924000500_composite_risk.sql",
       ]) {
         const version = file.split("_")[0];
         if (

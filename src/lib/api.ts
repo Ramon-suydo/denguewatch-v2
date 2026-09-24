@@ -14,6 +14,17 @@ function check(error: { message: string } | null) {
       "The data service could not complete this request. Please try again.",
     );
 }
+export async function fetchRisks(
+  signal: AbortSignal,
+): Promise<import("../components/CityGrid").RiskRecord[]> {
+  const { data, error } = await getSupabase()
+    .from("barangay_risk")
+    .select("lgu_id,inputs")
+    .abortSignal(signal)
+    .retry(false);
+  check(error);
+  return data ?? [];
+}
 export async function fetchCities(signal: AbortSignal): Promise<City[]> {
   const { data, error } = await getSupabase()
     .from("lgus")

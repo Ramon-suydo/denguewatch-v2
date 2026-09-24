@@ -322,3 +322,25 @@
     min-width: 550px;
   }
 }
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.city-grid-card {
+  min-width: 0;
+}
+.city-grid-card h2 {
+  font-size: 1.65rem;
+  margin-bottom: 1rem;
+}
+.city-case-count {
+  font-size: 2rem;
+  color: var(--color-teal-900);
+}
+.city-community {
+  border-top: 1px solid #d5d3cd;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}

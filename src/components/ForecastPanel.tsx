@@ -1,3 +1,5 @@
+import { useAppData } from "../lib/resources";
+import { UnverifiedBadge } from "./UnverifiedBadge";
 import { Card } from "./ui";
 import { RiskBadge } from "./RiskBadge";
 import { formatDate } from "../lib/dates";
@@ -8,6 +10,8 @@ export function ForecastPanel({
 }: {
   forecast: Forecast | undefined;
 }) {
+  const { risks } = useAppData();
+  const inputs = risks.data?.find((r) => r.lgu_id === forecast?.lgu_id)?.inputs;
   if (!forecast)
     return (
       <Card>
@@ -54,6 +58,68 @@ export function ForecastPanel({
       </p>
       <p className="muted">{forecast.reason}</p>
       <details className="method-details">
+        <summary>Inspect factor contributions</summary>
+        {risks.loading ? (
+          <p>Loading saved factors…</p>
+        ) : risks.error ? (
+          <p>
+            Factor breakdown unavailable.{" "}
+            <button className="text-link" onClick={risks.retry}>
+              Retry factors
+            </button>
+          </p>
+        ) : !inputs ? (
+          <p>No saved factor breakdown yet.</p>
+        ) : (
+          <>
+            <p>
+              Saved factors evaluated on {formatDate(inputs.evaluated_on)}.
+              Scope: city, not barangay.
+            </p>
+            <p>
+              Trend: {(inputs.trend.weight * 100).toFixed(0)}% weight;{" "}
+              {inputs.trend.contribution?.toFixed(2) ?? "unavailable"} cases
+              contributed.
+            </p>
+            <p>
+              Seasonality: {(inputs.seasonality.weight * 100).toFixed(0)}%
+              weight; ratio{" "}
+              {inputs.seasonality.ratio?.toFixed(2) ?? "unavailable"} for the
+              forecast month;{" "}
+              {inputs.seasonality.contribution?.toFixed(2) ?? "unavailable"}{" "}
+              cases contributed. {inputs.seasonality.status}.
+            </p>
+            <p>
+              Calendar-month context (
+              {inputs.current_calendar_seasonality.month}): historical ratio{" "}
+              {inputs.current_calendar_seasonality.ratio?.toFixed(2) ??
+                "unavailable"}
+              .{" "}
+              {inputs.current_calendar_seasonality.high_season === null
+                ? "Insufficient seasonal history."
+                : inputs.current_calendar_seasonality.high_season
+                  ? "Historically above the yearly average."
+                  : "Historically at or below the yearly average."}{" "}
+              This does not establish current risk.
+            </p>
+            <UnverifiedBadge />
+            <p>
+              Community: 0% weight. {inputs.community.signal.status} Direction:{" "}
+              {inputs.community.signal.direction ?? "unavailable"}. No aligned
+              historical validation; cannot elevate risk.
+            </p>
+            <p>Weather: 0% weight. {inputs.weather.status}.</p>
+            <p>
+              Candidate formula: 75% × trend + 25% × trend × seasonal ratio.
+              Retain only with at least 5% lower mean absolute error in both
+              development and holdout, plus improvement in a majority of cities.
+              See the repository backtest report for paired predictions and
+              limitations.
+            </p>
+          </>
+        )}
+      </details>
+      <details className="method-details">
         <summary>How this estimate is calculated</summary>
         <p>
           The oldest, middle, and newest eligible months receive weights 1, 2,
@@ -85,9 +151,9 @@ export function ForecastPanel({
           never combined with monthly data.
         </p>
         <p>
-          This simple baseline has not been validated for clinical or outbreak
-          decisions and has no claimed accuracy or confidence interval.
-          Community reports never affect it.
+          This model has not been validated for clinical or outbreak decisions
+          and has no claimed accuracy or confidence interval. Community reports
+          never affect it.
         </p>
         <p className="muted">
           Method: {forecast.method_version}. Computed{" "}

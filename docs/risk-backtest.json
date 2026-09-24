@@ -1,0 +1,3216 @@
+{
+  "method": "paired rolling-origin; development before 2020, holdout 2020; 75% WMA + 25% seasonally scaled WMA; retain only >=5% MAE improvement on both splits and majority of cities improve",
+  "selected": false,
+  "development": {
+    "baseline": {
+      "n": 187,
+      "mae": 139.91443850267373,
+      "wape": 0.6729596954654181,
+      "tierAccuracy": 0.48663101604278075
+    },
+    "composite": {
+      "n": 187,
+      "mae": 134.0796991364263,
+      "wape": 0.6448957982075598,
+      "tierAccuracy": 0.5614973262032086
+    }
+  },
+  "holdout": {
+    "baseline": {
+      "n": 138,
+      "mae": 49.35748792270529,
+      "wape": 1.164728682170542,
+      "tierAccuracy": 0.6884057971014492
+    },
+    "composite": {
+      "n": 138,
+      "mae": 39.350741006276074,
+      "wape": 0.9285913575352425,
+      "tierAccuracy": 0.7753623188405797
+    }
+  },
+  "perCity": [
+    {
+      "city": "CALOOCAN CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 55.33333333333333,
+        "wape": 0.8645833333333333,
+        "tierAccuracy": 0.875
+      },
+      "composite": {
+        "n": 8,
+        "mae": 43.38283591673737,
+        "wape": 0.6778568111990214,
+        "tierAccuracy": 1
+      }
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 30.166666666666668,
+        "wape": 0.9354005167958657,
+        "tierAccuracy": 0.625
+      },
+      "composite": {
+        "n": 8,
+        "mae": 23.369843239881995,
+        "wape": 0.7246463020118448,
+        "tierAccuracy": 0.875
+      }
+    },
+    {
+      "city": "MAKATI CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 26.5625,
+        "wape": 0.8673469387755102,
+        "tierAccuracy": 0.5
+      },
+      "composite": {
+        "n": 8,
+        "mae": 20.659008991094822,
+        "wape": 0.6745798854235044,
+        "tierAccuracy": 0.75
+      }
+    },
+    {
+      "city": "MALABON CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 60.41666666666667,
+        "wape": 1.6111111111111112,
+        "tierAccuracy": 0.625
+      },
+      "composite": {
+        "n": 8,
+        "mae": 45.841103516242306,
+        "wape": 1.2224294270997949,
+        "tierAccuracy": 0.625
+      }
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 24.708333333333336,
+        "wape": 1.1907630522088355,
+        "tierAccuracy": 0.75
+      },
+      "composite": {
+        "n": 8,
+        "mae": 23.47428167861225,
+        "wape": 1.1312906833066145,
+        "tierAccuracy": 0.75
+      }
+    },
+    {
+      "city": "MANILA CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 89.79166666666669,
+        "wape": 1.32046568627451,
+        "tierAccuracy": 0.625
+      },
+      "composite": {
+        "n": 8,
+        "mae": 76.55680892222097,
+        "wape": 1.1258354253267788,
+        "tierAccuracy": 0.75
+      }
+    },
+    {
+      "city": "MARIKINA CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 26.1875,
+        "wape": 0.9479638009049773,
+        "tierAccuracy": 0.625
+      },
+      "composite": {
+        "n": 8,
+        "mae": 21.951607700579675,
+        "wape": 0.7946283330526579,
+        "tierAccuracy": 0.75
+      }
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "baseline": {
+        "n": 9,
+        "mae": 31.5,
+        "wape": 1.7181818181818183,
+        "tierAccuracy": 0.6666666666666666
+      },
+      "composite": {
+        "n": 9,
+        "mae": 24.477377965720986,
+        "wape": 1.3351297072211448,
+        "tierAccuracy": 0.6666666666666666
+      }
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 20.3125,
+        "wape": 0.9285714285714286,
+        "tierAccuracy": 0.625
+      },
+      "composite": {
+        "n": 8,
+        "mae": 15.220669952372196,
+        "wape": 0.6958020549655861,
+        "tierAccuracy": 0.75
+      }
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 54.958333333333336,
+        "wape": 1.2419962335216572,
+        "tierAccuracy": 0.625
+      },
+      "composite": {
+        "n": 8,
+        "mae": 44.03861128423689,
+        "wape": 0.9952228538810597,
+        "tierAccuracy": 0.75
+      }
+    },
+    {
+      "city": "PASAY CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 27.770833333333336,
+        "wape": 2.1996699669966997,
+        "tierAccuracy": 0.625
+      },
+      "composite": {
+        "n": 8,
+        "mae": 23.976066869573103,
+        "wape": 1.8990944055107408,
+        "tierAccuracy": 0.625
+      }
+    },
+    {
+      "city": "PASIG CITY",
+      "baseline": {
+        "n": 9,
+        "mae": 90.94444444444444,
+        "wape": 1.637,
+        "tierAccuracy": 0.6666666666666666
+      },
+      "composite": {
+        "n": 9,
+        "mae": 75.49494745884503,
+        "wape": 1.3589090542592106,
+        "tierAccuracy": 0.7777777777777778
+      }
+    },
+    {
+      "city": "PATEROS",
+      "baseline": {
+        "n": 8,
+        "mae": 13.604166666666668,
+        "wape": 0.8994490358126722,
+        "tierAccuracy": 0.75
+      },
+      "composite": {
+        "n": 8,
+        "mae": 12.582429048082346,
+        "wape": 0.8318961354104031,
+        "tierAccuracy": 0.75
+      }
+    },
+    {
+      "city": "QUEZON CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 171.85416666666666,
+        "wape": 0.9940949626416004,
+        "tierAccuracy": 0.75
+      },
+      "composite": {
+        "n": 8,
+        "mae": 131.61044269960925,
+        "wape": 0.7613040792457513,
+        "tierAccuracy": 0.75
+      }
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 10.08333333333333,
+        "wape": 2.0683760683760677,
+        "tierAccuracy": 0.75
+      },
+      "composite": {
+        "n": 8,
+        "mae": 8.231773464498408,
+        "wape": 1.6885689157945454,
+        "tierAccuracy": 0.75
+      }
+    },
+    {
+      "city": "TAGUIG CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 71.72916666666667,
+        "wape": 1.218329794762916,
+        "tierAccuracy": 0.75
+      },
+      "composite": {
+        "n": 8,
+        "mae": 53.181475557822466,
+        "wape": 0.9032947016190652,
+        "tierAccuracy": 0.875
+      }
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "baseline": {
+        "n": 8,
+        "mae": 30.187500000000004,
+        "wape": 0.8242320819112628,
+        "tierAccuracy": 0.875
+      },
+      "composite": {
+        "n": 8,
+        "mae": 22.254457414061584,
+        "wape": 0.6076302365614085,
+        "tierAccuracy": 1
+      }
+    }
+  ],
+  "predictions": [
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2018-12-01",
+      "actual": 229,
+      "baseline": 332.8333333333333,
+      "composite": 300.4054411228582,
+      "p50": 172,
+      "p80": 339
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-03-01",
+      "actual": 138,
+      "baseline": 241,
+      "composite": 212.0157985903715,
+      "p50": 174,
+      "p80": 336.6
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-04-01",
+      "actual": 55,
+      "baseline": 186.16666666666666,
+      "composite": 155.61259541984734,
+      "p50": 173,
+      "p80": 335.40000000000003
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-05-01",
+      "actual": 43,
+      "baseline": 113,
+      "composite": 92.44971011027764,
+      "p50": 172,
+      "p80": 334.20000000000005
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-06-01",
+      "actual": 72,
+      "baseline": 62.833333333333336,
+      "composite": 54.190928143712576,
+      "p50": 164,
+      "p80": 333
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-07-01",
+      "actual": 165,
+      "baseline": 59.5,
+      "composite": 65.76435681470137,
+      "p50": 156,
+      "p80": 321.80000000000007
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-08-01",
+      "actual": 522,
+      "baseline": 113.66666666666667,
+      "composite": 136.88013531634766,
+      "p50": 160.5,
+      "p80": 310.6000000000001
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-09-01",
+      "actual": 992,
+      "baseline": 328,
+      "composite": 423.6402704007726,
+      "p50": 165,
+      "p80": 335.40000000000003
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-10-01",
+      "actual": 489,
+      "baseline": 697.5,
+      "composite": 798.112040729137,
+      "p50": 168.5,
+      "p80": 354.60000000000025
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-11-01",
+      "actual": 257,
+      "baseline": 662.1666666666666,
+      "composite": 668.7272010808376,
+      "p50": 172,
+      "p80": 417
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2019-12-01",
+      "actual": 225,
+      "baseline": 456.8333333333333,
+      "composite": 421.005410920349,
+      "p50": 173,
+      "p80": 401.4000000000003
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2020-01-01",
+      "actual": 186,
+      "baseline": 279.6666666666667,
+      "composite": 262.2095344146567,
+      "p50": 174,
+      "p80": 385.8000000000001
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2020-02-01",
+      "actual": 182,
+      "baseline": 210.83333333333334,
+      "composite": 197.3539268005715,
+      "p50": 174.5,
+      "p80": 370.1999999999999
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2020-03-01",
+      "actual": 78,
+      "baseline": 190.5,
+      "composite": 166.8936601664285,
+      "p50": 175,
+      "p80": 354.60000000000025
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2020-04-01",
+      "actual": 7,
+      "baseline": 130.66666666666666,
+      "composite": 107.75091488608193,
+      "p50": 174.5,
+      "p80": 339
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2020-05-01",
+      "actual": 10,
+      "baseline": 59.833333333333336,
+      "composite": 48.417563103506694,
+      "p50": 174,
+      "p80": 337.8
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2020-06-01",
+      "actual": 6,
+      "baseline": 20.333333333333332,
+      "composite": 17.245767969135066,
+      "p50": 173,
+      "p80": 336.6
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2020-07-01",
+      "actual": 24,
+      "baseline": 7.5,
+      "composite": 7.839369997947876,
+      "p50": 172,
+      "p80": 335.40000000000003
+    },
+    {
+      "city": "CALOOCAN CITY",
+      "target": "2020-08-01",
+      "actual": 19,
+      "baseline": 15.666666666666666,
+      "composite": 18.969310008533462,
+      "p50": 168.5,
+      "p80": 334.20000000000005
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2018-12-01",
+      "actual": 102,
+      "baseline": 158.33333333333334,
+      "composite": 162.43827160493828,
+      "p50": 45,
+      "p80": 98
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-03-01",
+      "actual": 53,
+      "baseline": 106.66666666666667,
+      "composite": 94.02633959987936,
+      "p50": 46,
+      "p80": 100.4
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-04-01",
+      "actual": 15,
+      "baseline": 75.83333333333333,
+      "composite": 61.79047464239272,
+      "p50": 47.5,
+      "p80": 99.60000000000001
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-05-01",
+      "actual": 9,
+      "baseline": 41.333333333333336,
+      "composite": 32.738085702843414,
+      "p50": 46,
+      "p80": 98.80000000000001
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-06-01",
+      "actual": 19,
+      "baseline": 18.333333333333332,
+      "composite": 14.874248496993989,
+      "p50": 45.5,
+      "p80": 98
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-07-01",
+      "actual": 78,
+      "baseline": 15,
+      "composite": 13.881684358101342,
+      "p50": 45,
+      "p80": 97.8
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-08-01",
+      "actual": 260,
+      "baseline": 46.833333333333336,
+      "composite": 48.904432201707365,
+      "p50": 45.5,
+      "p80": 97.6
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-09-01",
+      "actual": 507,
+      "baseline": 159.16666666666666,
+      "composite": 181.22896436315642,
+      "p50": 46,
+      "p80": 99.60000000000001
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-10-01",
+      "actual": 263,
+      "baseline": 353.1666666666667,
+      "composite": 410.52688470066516,
+      "p50": 47.5,
+      "p80": 104.80000000000004
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-11-01",
+      "actual": 177,
+      "baseline": 343.8333333333333,
+      "composite": 397.5683154447163,
+      "p50": 49,
+      "p80": 116
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2019-12-01",
+      "actual": 107,
+      "baseline": 260.6666666666667,
+      "composite": 256.804599047396,
+      "p50": 51,
+      "p80": 116.80000000000001
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2020-01-01",
+      "actual": 119,
+      "baseline": 156.33333333333334,
+      "composite": 146.31437834899432,
+      "p50": 53,
+      "p80": 116.6
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2020-02-01",
+      "actual": 94,
+      "baseline": 124.66666666666667,
+      "composite": 116.73389623290288,
+      "p50": 58.5,
+      "p80": 117.8
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2020-03-01",
+      "actual": 37,
+      "baseline": 104.5,
+      "composite": 89.96138783269961,
+      "p50": 64,
+      "p80": 117.4
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2020-04-01",
+      "actual": 2,
+      "baseline": 69.66666666666667,
+      "composite": 55.5420648931637,
+      "p50": 58.5,
+      "p80": 117
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2020-05-01",
+      "actual": 0,
+      "baseline": 29,
+      "composite": 22.626306753147652,
+      "p50": 53,
+      "p80": 116.80000000000001
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2020-06-01",
+      "actual": 1,
+      "baseline": 6.833333333333333,
+      "composite": 5.454163671952656,
+      "p50": 51,
+      "p80": 116.6
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2020-07-01",
+      "actual": 1,
+      "baseline": 0.8333333333333334,
+      "composite": 0.7538442365212056,
+      "p50": 49,
+      "p80": 116.4
+    },
+    {
+      "city": "LAS PINAS CITY",
+      "target": "2020-08-01",
+      "actual": 4,
+      "baseline": 0.8333333333333334,
+      "composite": 0.9196075772836445,
+      "p50": 47.5,
+      "p80": 116.2
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2018-12-01",
+      "actual": 67,
+      "baseline": 95.83333333333333,
+      "composite": 87.50069894878104,
+      "p50": 45,
+      "p80": 81
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-03-01",
+      "actual": 80,
+      "baseline": 81.83333333333333,
+      "composite": 72.32153679653679,
+      "p50": 48,
+      "p80": 86.4
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-04-01",
+      "actual": 37,
+      "baseline": 81.83333333333333,
+      "composite": 68.81042710888343,
+      "p50": 48,
+      "p80": 84.60000000000002
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-05-01",
+      "actual": 38,
+      "baseline": 60.5,
+      "composite": 51.54256928958267,
+      "p50": 48,
+      "p80": 82.80000000000003
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-06-01",
+      "actual": 48,
+      "baseline": 44.666666666666664,
+      "composite": 38.60422177547349,
+      "p50": 46.5,
+      "p80": 81
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-07-01",
+      "actual": 93,
+      "baseline": 42.833333333333336,
+      "composite": 41.5884402945818,
+      "p50": 48,
+      "p80": 80.8
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-08-01",
+      "actual": 156,
+      "baseline": 68.83333333333333,
+      "composite": 77.06947913414507,
+      "p50": 48,
+      "p80": 86.4
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-09-01",
+      "actual": 356,
+      "baseline": 117,
+      "composite": 154.71309170841425,
+      "p50": 48,
+      "p80": 90.80000000000001
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-10-01",
+      "actual": 249,
+      "baseline": 245.5,
+      "composite": 273.89963857129356,
+      "p50": 48,
+      "p80": 92.2
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-11-01",
+      "actual": 152,
+      "baseline": 269.1666666666667,
+      "composite": 267.9293546506413,
+      "p50": 48,
+      "p80": 93
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2019-12-01",
+      "actual": 98,
+      "baseline": 218.33333333333334,
+      "composite": 197.60663145027505,
+      "p50": 51,
+      "p80": 93.80000000000001
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2020-01-01",
+      "actual": 78,
+      "baseline": 141.16666666666666,
+      "composite": 134.79232045866024,
+      "p50": 54,
+      "p80": 96.4
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2020-02-01",
+      "actual": 86,
+      "baseline": 97,
+      "composite": 85.94206662659913,
+      "p50": 56,
+      "p80": 95.6
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2020-03-01",
+      "actual": 47,
+      "baseline": 85.33333333333333,
+      "composite": 75.96343145099507,
+      "p50": 58,
+      "p80": 94.80000000000001
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2020-04-01",
+      "actual": 20,
+      "baseline": 65.16666666666667,
+      "composite": 54.26544150185519,
+      "p50": 56,
+      "p80": 94
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2020-05-01",
+      "actual": 9,
+      "baseline": 40,
+      "composite": 33.62024884949719,
+      "p50": 54,
+      "p80": 93.80000000000001
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2020-06-01",
+      "actual": 0,
+      "baseline": 19,
+      "composite": 16.26954676160482,
+      "p50": 51,
+      "p80": 93.6
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2020-07-01",
+      "actual": 2,
+      "baseline": 6.333333333333333,
+      "composite": 6.066669539734528,
+      "p50": 48,
+      "p80": 93.4
+    },
+    {
+      "city": "MAKATI CITY",
+      "target": "2020-08-01",
+      "actual": 3,
+      "baseline": 2.5,
+      "composite": 2.7635200069893413,
+      "p50": 48,
+      "p80": 93.2
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2018-12-01",
+      "actual": 109,
+      "baseline": 226.83333333333334,
+      "composite": 222.6819538328779,
+      "p50": 47,
+      "p80": 151
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-03-01",
+      "actual": 53,
+      "baseline": 98.5,
+      "composite": 83.28328654679838,
+      "p50": 50,
+      "p80": 143.40000000000003
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-04-01",
+      "actual": 22,
+      "baseline": 69.33333333333333,
+      "composite": 55.71270718232044,
+      "p50": 51,
+      "p80": 139.60000000000005
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-05-01",
+      "actual": 16,
+      "baseline": 41,
+      "composite": 32.91018695559804,
+      "p50": 50,
+      "p80": 135.80000000000007
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-06-01",
+      "actual": 47,
+      "baseline": 24.166666666666668,
+      "composite": 19.378987382150704,
+      "p50": 48.5,
+      "p80": 132
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-07-01",
+      "actual": 99,
+      "baseline": 32.5,
+      "composite": 29.185742228801015,
+      "p50": 47,
+      "p80": 127.40000000000002
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-08-01",
+      "actual": 231,
+      "baseline": 67.83333333333333,
+      "composite": 70.95620763156056,
+      "p50": 48.5,
+      "p80": 122.80000000000004
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-09-01",
+      "actual": 715,
+      "baseline": 156.33333333333334,
+      "composite": 220.21293262338725,
+      "p50": 50,
+      "p80": 139.60000000000005
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-10-01",
+      "actual": 592,
+      "baseline": 451,
+      "composite": 586.180644278153,
+      "p50": 51,
+      "p80": 156.00000000000006
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-11-01",
+      "actual": 362,
+      "baseline": 572.8333333333334,
+      "composite": 619.035538733779,
+      "p50": 52,
+      "p80": 176
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2019-12-01",
+      "actual": 211,
+      "baseline": 497.5,
+      "composite": 465.5885654745899,
+      "p50": 52.5,
+      "p80": 185.60000000000005
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2020-01-01",
+      "actual": 108,
+      "baseline": 324.8333333333333,
+      "composite": 284.68365892291445,
+      "p50": 53,
+      "p80": 198.8
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2020-02-01",
+      "actual": 98,
+      "baseline": 184.66666666666666,
+      "composite": 156.68057154820474,
+      "p50": 57.5,
+      "p80": 195.2
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2020-03-01",
+      "actual": 61,
+      "baseline": 120.16666666666667,
+      "composite": 99.41149861051844,
+      "p50": 62,
+      "p80": 191.60000000000005
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2020-04-01",
+      "actual": 5,
+      "baseline": 81.16666666666667,
+      "composite": 64.09837410191453,
+      "p50": 61.5,
+      "p80": 188
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2020-05-01",
+      "actual": 10,
+      "baseline": 39.166666666666664,
+      "composite": 30.80522856607817,
+      "p50": 61,
+      "p80": 185.60000000000005
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2020-06-01",
+      "actual": 6,
+      "baseline": 16.833333333333332,
+      "composite": 13.47712536585874,
+      "p50": 57,
+      "p80": 183.20000000000002
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2020-07-01",
+      "actual": 8,
+      "baseline": 7.166666666666667,
+      "composite": 6.297823873426975,
+      "p50": 53,
+      "p80": 180.80000000000007
+    },
+    {
+      "city": "MALABON CITY",
+      "target": "2020-08-01",
+      "actual": 4,
+      "baseline": 7.666666666666667,
+      "composite": 7.870194887876332,
+      "p50": 52.5,
+      "p80": 178.40000000000003
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2018-12-01",
+      "actual": 32,
+      "baseline": 79.5,
+      "composite": 77.44027590847914,
+      "p50": 30,
+      "p80": 53
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-03-01",
+      "actual": 42,
+      "baseline": 86.5,
+      "composite": 81.36705584978334,
+      "p50": 32,
+      "p80": 56.00000000000001
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-04-01",
+      "actual": 29,
+      "baseline": 72,
+      "composite": 60.627037392138064,
+      "p50": 37,
+      "p80": 55.000000000000014
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-05-01",
+      "actual": 22,
+      "baseline": 51.333333333333336,
+      "composite": 41.434730824202,
+      "p50": 32,
+      "p80": 54.000000000000014
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-06-01",
+      "actual": 38,
+      "baseline": 27.666666666666668,
+      "composite": 23.423614400757934,
+      "p50": 31,
+      "p80": 53
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-07-01",
+      "actual": 47,
+      "baseline": 31.166666666666668,
+      "composite": 30.80120387742339,
+      "p50": 32,
+      "p80": 52.8
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-08-01",
+      "actual": 62,
+      "baseline": 39.833333333333336,
+      "composite": 44.26719968798752,
+      "p50": 35,
+      "p80": 52.6
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-09-01",
+      "actual": 155,
+      "baseline": 53,
+      "composite": 59.5660237388724,
+      "p50": 38,
+      "p80": 55.000000000000014
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-10-01",
+      "actual": 122,
+      "baseline": 106,
+      "composite": 128.63304721030042,
+      "p50": 40,
+      "p80": 58.80000000000001
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-11-01",
+      "actual": 77,
+      "baseline": 123,
+      "composite": 114.07862113962592,
+      "p50": 42,
+      "p80": 62
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2019-12-01",
+      "actual": 46,
+      "baseline": 105,
+      "composite": 97.64376149384637,
+      "p50": 42,
+      "p80": 62
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2020-01-01",
+      "actual": 115,
+      "baseline": 69,
+      "composite": 70.4648288973384,
+      "p50": 42,
+      "p80": 62
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2020-02-01",
+      "actual": 23,
+      "baseline": 85.66666666666667,
+      "composite": 89.54073091057575,
+      "p50": 42.5,
+      "p80": 62.8
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2020-03-01",
+      "actual": 16,
+      "baseline": 57.5,
+      "composite": 53.17894345238095,
+      "p50": 42,
+      "p80": 62.400000000000006
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2020-04-01",
+      "actual": 1,
+      "baseline": 34.833333333333336,
+      "composite": 29.472408270238788,
+      "p50": 42,
+      "p80": 62
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2020-05-01",
+      "actual": 3,
+      "baseline": 9.666666666666666,
+      "composite": 7.881173614599029,
+      "p50": 42,
+      "p80": 62
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2020-06-01",
+      "actual": 2,
+      "baseline": 4.5,
+      "composite": 3.8795775239375105,
+      "p50": 40,
+      "p80": 62
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2020-07-01",
+      "actual": 1,
+      "baseline": 2.1666666666666665,
+      "composite": 2.103224101479915,
+      "p50": 38,
+      "p80": 62
+    },
+    {
+      "city": "MANDALUYONG CITY",
+      "target": "2020-08-01",
+      "actual": 5,
+      "baseline": 1.6666666666666667,
+      "composite": 1.796975546975547,
+      "p50": 35,
+      "p80": 62
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2018-12-01",
+      "actual": 423,
+      "baseline": 561.1666666666666,
+      "composite": 541.8600487361639,
+      "p50": 189,
+      "p80": 329
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-03-01",
+      "actual": 147,
+      "baseline": 341.6666666666667,
+      "composite": 292.66950460242066,
+      "p50": 193,
+      "p80": 360.80000000000007
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-04-01",
+      "actual": 63,
+      "baseline": 222,
+      "composite": 191.37721082064593,
+      "p50": 191,
+      "p80": 350.2000000000001
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-05-01",
+      "actual": 49,
+      "baseline": 119.5,
+      "composite": 98.37242697444441,
+      "p50": 189,
+      "p80": 339.60000000000014
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-06-01",
+      "actual": 96,
+      "baseline": 70,
+      "composite": 57.77078340021006,
+      "p50": 179,
+      "p80": 329
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-07-01",
+      "actual": 153,
+      "baseline": 74.83333333333333,
+      "composite": 72.78682639561148,
+      "p50": 169,
+      "p80": 324.8
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-08-01",
+      "actual": 409,
+      "baseline": 116.66666666666667,
+      "composite": 124.88939849013718,
+      "p50": 163,
+      "p80": 320.6
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-09-01",
+      "actual": 997,
+      "baseline": 271.5,
+      "composite": 332.51031333172034,
+      "p50": 169,
+      "p80": 350.2000000000001
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-10-01",
+      "actual": 639,
+      "baseline": 660.3333333333334,
+      "composite": 835.559971190373,
+      "p50": 179,
+      "p80": 384
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-11-01",
+      "actual": 502,
+      "baseline": 720,
+      "composite": 781.9366099208256,
+      "p50": 189,
+      "p80": 392
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2019-12-01",
+      "actual": 367,
+      "baseline": 630.1666666666666,
+      "composite": 634.5667446649195,
+      "p50": 191,
+      "p80": 405.6000000000001
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2020-01-01",
+      "actual": 219,
+      "baseline": 457.3333333333333,
+      "composite": 447.56445370646026,
+      "p50": 193,
+      "p80": 402.20000000000005
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2020-02-01",
+      "actual": 178,
+      "baseline": 315.5,
+      "composite": 294.107905876494,
+      "p50": 206,
+      "p80": 398.79999999999995
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2020-03-01",
+      "actual": 113,
+      "baseline": 223.16666666666666,
+      "composite": 191.3170789338494,
+      "p50": 193,
+      "p80": 395.40000000000003
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2020-04-01",
+      "actual": 12,
+      "baseline": 152.33333333333334,
+      "composite": 128.34177772566474,
+      "p50": 191,
+      "p80": 392
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2020-05-01",
+      "actual": 4,
+      "baseline": 73.33333333333333,
+      "composite": 59.56937595007199,
+      "p50": 189,
+      "p80": 390.00000000000006
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2020-06-01",
+      "actual": 7,
+      "baseline": 24.833333333333332,
+      "composite": 20.476740393962135,
+      "p50": 183.5,
+      "p80": 388
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2020-07-01",
+      "actual": 4,
+      "baseline": 6.833333333333333,
+      "composite": 6.436562708708587,
+      "p50": 178,
+      "p80": 386.00000000000006
+    },
+    {
+      "city": "MANILA CITY",
+      "target": "2020-08-01",
+      "actual": 7,
+      "baseline": 5,
+      "composite": 5.359423917443367,
+      "p50": 173.5,
+      "p80": 384
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2018-12-01",
+      "actual": 86,
+      "baseline": 129.5,
+      "composite": 124.2922616547669,
+      "p50": 47,
+      "p80": 99
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-03-01",
+      "actual": 45,
+      "baseline": 92.5,
+      "composite": 78.255,
+      "p50": 49,
+      "p80": 98.2
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-04-01",
+      "actual": 11,
+      "baseline": 67.16666666666667,
+      "composite": 56.621150708677476,
+      "p50": 48,
+      "p80": 97.80000000000001
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-05-01",
+      "actual": 12,
+      "baseline": 35.666666666666664,
+      "composite": 28.328041786153214,
+      "p50": 47,
+      "p80": 97.4
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-06-01",
+      "actual": 28,
+      "baseline": 17.166666666666668,
+      "composite": 13.9509934453093,
+      "p50": 46,
+      "p80": 97
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-07-01",
+      "actual": 19,
+      "baseline": 19.833333333333332,
+      "composite": 19.660750740022458,
+      "p50": 45,
+      "p80": 95.80000000000001
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-08-01",
+      "actual": 118,
+      "baseline": 20.833333333333332,
+      "composite": 24.271577612094855,
+      "p50": 45,
+      "p80": 94.60000000000001
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-09-01",
+      "actual": 297,
+      "baseline": 70,
+      "composite": 86.22326134132479,
+      "p50": 45,
+      "p80": 97.80000000000001
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-10-01",
+      "actual": 156,
+      "baseline": 191,
+      "composite": 221.33350246448245,
+      "p50": 46,
+      "p80": 99.60000000000001
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-11-01",
+      "actual": 141,
+      "baseline": 196.66666666666666,
+      "composite": 215.25926102275974,
+      "p50": 47,
+      "p80": 102
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2019-12-01",
+      "actual": 113,
+      "baseline": 172,
+      "composite": 167.13260808402887,
+      "p50": 48,
+      "p80": 104.4
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2020-01-01",
+      "actual": 90,
+      "baseline": 129.5,
+      "composite": 130.34795233688106,
+      "p50": 49,
+      "p80": 108
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2020-02-01",
+      "actual": 79,
+      "baseline": 106.16666666666667,
+      "composite": 102.50701160541587,
+      "p50": 54.5,
+      "p80": 107
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2020-03-01",
+      "actual": 34,
+      "baseline": 88.33333333333333,
+      "composite": 75.22884414081868,
+      "p50": 60,
+      "p80": 106.00000000000001
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2020-04-01",
+      "actual": 5,
+      "baseline": 58.333333333333336,
+      "composite": 47.94098216251927,
+      "p50": 54.5,
+      "p80": 105
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2020-05-01",
+      "actual": 3,
+      "baseline": 27,
+      "composite": 21.32421119522573,
+      "p50": 49,
+      "p80": 104.4
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2020-06-01",
+      "actual": 1,
+      "baseline": 8.833333333333334,
+      "composite": 7.204563700791761,
+      "p50": 48,
+      "p80": 103.80000000000001
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2020-07-01",
+      "actual": 5,
+      "baseline": 2.3333333333333335,
+      "composite": 2.170326920938508,
+      "p50": 47,
+      "p80": 103.20000000000002
+    },
+    {
+      "city": "MARIKINA CITY",
+      "target": "2020-08-01",
+      "actual": 4,
+      "baseline": 3.3333333333333335,
+      "composite": 3.7703766160764474,
+      "p50": 46,
+      "p80": 102.60000000000001
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2018-12-01",
+      "actual": 69,
+      "baseline": 98,
+      "composite": 91.43898305084745,
+      "p50": 27,
+      "p80": 50
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-03-01",
+      "actual": 43,
+      "baseline": 62.166666666666664,
+      "composite": 55.37770758122744,
+      "p50": 27,
+      "p80": 51.800000000000004
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-04-01",
+      "actual": 12,
+      "baseline": 49,
+      "composite": 40.52730192719486,
+      "p50": 27.5,
+      "p80": 51.2
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-05-01",
+      "actual": 8,
+      "baseline": 28.333333333333332,
+      "composite": 22.888115631691647,
+      "p50": 27,
+      "p80": 50.60000000000001
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-06-01",
+      "actual": 14,
+      "baseline": 15.166666666666666,
+      "composite": 12.284837529012677,
+      "p50": 27,
+      "p80": 50
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-07-01",
+      "actual": 86,
+      "baseline": 11.666666666666666,
+      "composite": 10.993989314336599,
+      "p50": 27,
+      "p80": 49.6
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-08-01",
+      "actual": 302,
+      "baseline": 49,
+      "composite": 46.40934636002075,
+      "p50": 27,
+      "p80": 51.800000000000004
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-09-01",
+      "actual": 399,
+      "baseline": 182,
+      "composite": 214.0031847133758,
+      "p50": 27,
+      "p80": 57.00000000000002
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-10-01",
+      "actual": 288,
+      "baseline": 314.5,
+      "composite": 359.4713442498096,
+      "p50": 27.5,
+      "p80": 63.60000000000001
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-11-01",
+      "actual": 185,
+      "baseline": 327.3333333333333,
+      "composite": 349.96327423440016,
+      "p50": 28,
+      "p80": 66
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2019-12-01",
+      "actual": 142,
+      "baseline": 255,
+      "composite": 232.52878920815968,
+      "p50": 29.5,
+      "p80": 68.4
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2020-01-01",
+      "actual": 81,
+      "baseline": 180.66666666666666,
+      "composite": 158.62748115911262,
+      "p50": 31,
+      "p80": 79.20000000000002
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2020-02-01",
+      "actual": 59,
+      "baseline": 118.66666666666667,
+      "composite": 103.44594735199252,
+      "p50": 32.5,
+      "p80": 83
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2020-03-01",
+      "actual": 22,
+      "baseline": 80.16666666666667,
+      "composite": 68.17928648212846,
+      "p50": 34,
+      "p80": 82.00000000000001
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2020-04-01",
+      "actual": 2,
+      "baseline": 44.166666666666664,
+      "composite": 35.09962380725685,
+      "p50": 32.5,
+      "p80": 81
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2020-05-01",
+      "actual": 0,
+      "baseline": 18.166666666666668,
+      "composite": 14.218706554893865,
+      "p50": 31,
+      "p80": 78.60000000000005
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2020-06-01",
+      "actual": 0,
+      "baseline": 4.333333333333333,
+      "composite": 3.42031275994011,
+      "p50": 29.5,
+      "p80": 76.20000000000002
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2020-07-01",
+      "actual": 0,
+      "baseline": 0.3333333333333333,
+      "composite": 0.30504357616446354,
+      "p50": 28,
+      "p80": 73.80000000000007
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2020-08-01",
+      "actual": 0,
+      "baseline": 0,
+      "composite": 0,
+      "p50": 27.5,
+      "p80": 71.40000000000003
+    },
+    {
+      "city": "MUNTINLUPA CITY",
+      "target": "2020-09-01",
+      "actual": 1,
+      "baseline": 0,
+      "composite": 0,
+      "p50": 27,
+      "p80": 69
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2018-12-01",
+      "actual": 50,
+      "baseline": 64.83333333333333,
+      "composite": 59.48081395348837,
+      "p50": 20,
+      "p80": 38
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-03-01",
+      "actual": 16,
+      "baseline": 42.5,
+      "composite": 39.07589175130047,
+      "p50": 23,
+      "p80": 41.60000000000001
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-04-01",
+      "actual": 6,
+      "baseline": 26.333333333333332,
+      "composite": 22.338877855014896,
+      "p50": 21.5,
+      "p80": 40.40000000000001
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-05-01",
+      "actual": 13,
+      "baseline": 13.333333333333334,
+      "composite": 11.11637179167705,
+      "p50": 20,
+      "p80": 39.20000000000002
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-06-01",
+      "actual": 14,
+      "baseline": 11.166666666666666,
+      "composite": 9.007703777335983,
+      "p50": 18.5,
+      "p80": 38
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-07-01",
+      "actual": 9,
+      "baseline": 12.333333333333334,
+      "composite": 11.553928836174943,
+      "p50": 17,
+      "p80": 37
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-08-01",
+      "actual": 41,
+      "baseline": 11.333333333333334,
+      "composite": 12.094116180503615,
+      "p50": 16.5,
+      "p80": 36.00000000000001
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-09-01",
+      "actual": 107,
+      "baseline": 25.833333333333332,
+      "composite": 32.30449354518372,
+      "p50": 17,
+      "p80": 39.2
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-10-01",
+      "actual": 117,
+      "baseline": 68.66666666666667,
+      "composite": 85.37901701323251,
+      "p50": 18.5,
+      "p80": 41.60000000000001
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-11-01",
+      "actual": 78,
+      "baseline": 101,
+      "composite": 115.62555953446733,
+      "p50": 20,
+      "p80": 44
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2019-12-01",
+      "actual": 104,
+      "baseline": 95.83333333333333,
+      "composite": 93.45004363001745,
+      "p50": 21.5,
+      "p80": 48.800000000000026
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2020-01-01",
+      "actual": 74,
+      "baseline": 97.5,
+      "composite": 89.54391891891892,
+      "p50": 23,
+      "p80": 50
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2020-02-01",
+      "actual": 58,
+      "baseline": 84.66666666666667,
+      "composite": 75.80502392344498,
+      "p50": 23.5,
+      "p80": 50
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2020-03-01",
+      "actual": 40,
+      "baseline": 71,
+      "composite": 62.384649277405714,
+      "p50": 24,
+      "p80": 51.60000000000002
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2020-04-01",
+      "actual": 3,
+      "baseline": 51.666666666666664,
+      "composite": 42.26535240753664,
+      "p50": 24,
+      "p80": 50
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2020-05-01",
+      "actual": 0,
+      "baseline": 24.5,
+      "composite": 20.132962898144907,
+      "p50": 24,
+      "p80": 50
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2020-06-01",
+      "actual": 0,
+      "baseline": 7.666666666666667,
+      "composite": 6.194900351699883,
+      "p50": 23.5,
+      "p80": 50
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2020-07-01",
+      "actual": 0,
+      "baseline": 0.5,
+      "composite": 0.438551841826527,
+      "p50": 23,
+      "p80": 50
+    },
+    {
+      "city": "NAVOTAS CITY",
+      "target": "2020-08-01",
+      "actual": 0,
+      "baseline": 0,
+      "composite": 0,
+      "p50": 21.5,
+      "p80": 50
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2018-12-01",
+      "actual": 359,
+      "baseline": 377.1666666666667,
+      "composite": 398.1717607589079,
+      "p50": 96,
+      "p80": 203
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-03-01",
+      "actual": 108,
+      "baseline": 303,
+      "composite": 257.6921163371762,
+      "p50": 105,
+      "p80": 264
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-04-01",
+      "actual": 36,
+      "baseline": 198.83333333333334,
+      "composite": 162.53884119236469,
+      "p50": 106.5,
+      "p80": 261.00000000000006
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-05-01",
+      "actual": 22,
+      "baseline": 96.5,
+      "composite": 74.8501145038168,
+      "p50": 105,
+      "p80": 258.00000000000006
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-06-01",
+      "actual": 41,
+      "baseline": 41,
+      "composite": 32.44418533693662,
+      "p50": 100.5,
+      "p80": 255
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-07-01",
+      "actual": 102,
+      "baseline": 33.833333333333336,
+      "composite": 31.57468676585748,
+      "p50": 96,
+      "p80": 244.60000000000002
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-08-01",
+      "actual": 415,
+      "baseline": 68.33333333333333,
+      "composite": 68.51428664835883,
+      "p50": 99,
+      "p80": 234.20000000000007
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-09-01",
+      "actual": 971,
+      "baseline": 248.33333333333334,
+      "composite": 306.18924819643087,
+      "p50": 102,
+      "p80": 261.00000000000006
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-10-01",
+      "actual": 661,
+      "baseline": 640.8333333333334,
+      "composite": 783.0817737032112,
+      "p50": 103.5,
+      "p80": 270.2
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-11-01",
+      "actual": 300,
+      "baseline": 723.3333333333334,
+      "composite": 828.1194930925705,
+      "p50": 105,
+      "p80": 271
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2019-12-01",
+      "actual": 179,
+      "baseline": 532.1666666666666,
+      "composite": 567.2934500707316,
+      "p50": 106.5,
+      "p80": 282.20000000000005
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2020-01-01",
+      "actual": 150,
+      "baseline": 299.6666666666667,
+      "composite": 278.5323959094229,
+      "p50": 108,
+      "p80": 279.40000000000003
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2020-02-01",
+      "actual": 115,
+      "baseline": 184.66666666666666,
+      "composite": 169.94193336735438,
+      "p50": 119,
+      "p80": 276.59999999999997
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2020-03-01",
+      "actual": 63,
+      "baseline": 137.33333333333334,
+      "composite": 116.48842641594827,
+      "p50": 115,
+      "p80": 273.80000000000007
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2020-04-01",
+      "actual": 4,
+      "baseline": 94.83333333333333,
+      "composite": 76.27024815128752,
+      "p50": 111.5,
+      "p80": 271
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2020-05-01",
+      "actual": 1,
+      "baseline": 42.166666666666664,
+      "composite": 32.61266540815952,
+      "p50": 108,
+      "p80": 270.8
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2020-06-01",
+      "actual": 5,
+      "baseline": 12.333333333333334,
+      "composite": 9.738972423717366,
+      "p50": 106.5,
+      "p80": 270.6
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2020-07-01",
+      "actual": 8,
+      "baseline": 3.5,
+      "composite": 3.1499845479161763,
+      "p50": 105,
+      "p80": 270.4
+    },
+    {
+      "city": "PARANAQUE CITY",
+      "target": "2020-08-01",
+      "actual": 8,
+      "baseline": 5.833333333333333,
+      "composite": 6.125766854078624,
+      "p50": 103.5,
+      "p80": 270.2
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2018-12-01",
+      "actual": 114,
+      "baseline": 131.16666666666666,
+      "composite": 122.5986662106703,
+      "p50": 24,
+      "p80": 50
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-03-01",
+      "actual": 50,
+      "baseline": 85.16666666666667,
+      "composite": 73,
+      "p50": 32,
+      "p80": 53.00000000000001
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-04-01",
+      "actual": 9,
+      "baseline": 66,
+      "composite": 53.10791705937795,
+      "p50": 33,
+      "p80": 52.000000000000014
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-05-01",
+      "actual": 16,
+      "baseline": 32.166666666666664,
+      "composite": 25.701995600251415,
+      "p50": 32,
+      "p80": 51.000000000000014
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-06-01",
+      "actual": 26,
+      "baseline": 19.333333333333332,
+      "composite": 15.44456623864704,
+      "p50": 28,
+      "p80": 50
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-07-01",
+      "actual": 51,
+      "baseline": 19.833333333333332,
+      "composite": 17.75850419384902,
+      "p50": 26,
+      "p80": 50
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-08-01",
+      "actual": 141,
+      "baseline": 36.833333333333336,
+      "composite": 35.7687125748503,
+      "p50": 29,
+      "p80": 50.6
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-09-01",
+      "actual": 324,
+      "baseline": 91.83333333333333,
+      "composite": 102.34242957746478,
+      "p50": 32,
+      "p80": 52.60000000000001
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-10-01",
+      "actual": 235,
+      "baseline": 217.5,
+      "composite": 289.02852220520674,
+      "p50": 33,
+      "p80": 56.60000000000002
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-11-01",
+      "actual": 148,
+      "baseline": 249,
+      "composite": 259.8967601547389,
+      "p50": 34,
+      "p80": 63
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2019-12-01",
+      "actual": 108,
+      "baseline": 206.33333333333334,
+      "composite": 204.88078892250405,
+      "p50": 34.5,
+      "p80": 65.4
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2020-01-01",
+      "actual": 40,
+      "baseline": 142.5,
+      "composite": 134.15599268069533,
+      "p50": 35,
+      "p80": 77.40000000000003
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2020-02-01",
+      "actual": 34,
+      "baseline": 80.66666666666667,
+      "composite": 75.15657260839642,
+      "p50": 35,
+      "p80": 73.59999999999997
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2020-03-01",
+      "actual": 21,
+      "baseline": 48.333333333333336,
+      "composite": 41.55365769496204,
+      "p50": 35,
+      "p80": 69.80000000000005
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2020-04-01",
+      "actual": 3,
+      "baseline": 28.5,
+      "composite": 22.49782278131048,
+      "p50": 34.5,
+      "p80": 66
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2020-05-01",
+      "actual": 0,
+      "baseline": 14.166666666666666,
+      "composite": 11.242989198171998,
+      "p50": 34,
+      "p80": 65.4
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2020-06-01",
+      "actual": 0,
+      "baseline": 4.5,
+      "composite": 3.61875,
+      "p50": 34,
+      "p80": 64.80000000000001
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2020-07-01",
+      "actual": 2,
+      "baseline": 0.5,
+      "composite": 0.4424310008363535,
+      "p50": 34,
+      "p80": 64.20000000000002
+    },
+    {
+      "city": "PASAY CITY",
+      "target": "2020-08-01",
+      "actual": 1,
+      "baseline": 1,
+      "composite": 1.0251809938848668,
+      "p50": 33,
+      "p80": 63.60000000000001
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2018-12-01",
+      "actual": 229,
+      "baseline": 270.1666666666667,
+      "composite": 301.21392468340366,
+      "p50": 85,
+      "p80": 163
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-03-01",
+      "actual": 66,
+      "baseline": 164,
+      "composite": 137.6946305040079,
+      "p50": 107,
+      "p80": 177.40000000000003
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-04-01",
+      "actual": 15,
+      "baseline": 106.83333333333333,
+      "composite": 87.6306905230904,
+      "p50": 96,
+      "p80": 172.60000000000005
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-05-01",
+      "actual": 17,
+      "baseline": 47.333333333333336,
+      "composite": 37.33990337103327,
+      "p50": 85,
+      "p80": 167.80000000000007
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-06-01",
+      "actual": 26,
+      "baseline": 24.5,
+      "composite": 19.473099527628253,
+      "p50": 81.5,
+      "p80": 163
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-07-01",
+      "actual": 60,
+      "baseline": 21.166666666666668,
+      "composite": 19.751372419850682,
+      "p50": 78,
+      "p80": 162.2
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-08-01",
+      "actual": 270,
+      "baseline": 41.5,
+      "composite": 42.36696931228612,
+      "p50": 76.5,
+      "p80": 161.4
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-09-01",
+      "actual": 680,
+      "baseline": 159.33333333333334,
+      "composite": 198.0180625303742,
+      "p50": 78,
+      "p80": 172.60000000000005
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-10-01",
+      "actual": 583,
+      "baseline": 440,
+      "composite": 548.5097651421509,
+      "p50": 81.5,
+      "p80": 190.00000000000006
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-11-01",
+      "actual": 516,
+      "baseline": 563.1666666666666,
+      "composite": 607.707027424094,
+      "p50": 85,
+      "p80": 202
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2019-12-01",
+      "actual": 458,
+      "baseline": 565.6666666666666,
+      "composite": 601.7101470005721,
+      "p50": 96,
+      "p80": 204.4
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2020-01-01",
+      "actual": 248,
+      "baseline": 498.1666666666667,
+      "composite": 478.9350719118336,
+      "p50": 107,
+      "p80": 219.40000000000003
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2020-02-01",
+      "actual": 162,
+      "baseline": 362.6666666666667,
+      "composite": 327.079403533687,
+      "p50": 112.5,
+      "p80": 230.6
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2020-03-01",
+      "actual": 73,
+      "baseline": 240,
+      "composite": 198.1140347235484,
+      "p50": 118,
+      "p80": 229.8
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2020-04-01",
+      "actual": 3,
+      "baseline": 131.83333333333334,
+      "composite": 104.87104828220401,
+      "p50": 112.5,
+      "p80": 229
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2020-05-01",
+      "actual": 0,
+      "baseline": 52.833333333333336,
+      "composite": 41.126034250728964,
+      "p50": 107,
+      "p80": 224.2000000000001
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2020-06-01",
+      "actual": 1,
+      "baseline": 13.166666666666666,
+      "composite": 10.338549426129223,
+      "p50": 96,
+      "p80": 219.40000000000003
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2020-07-01",
+      "actual": 2,
+      "baseline": 1,
+      "composite": 0.8768779352513785,
+      "p50": 85,
+      "p80": 214.60000000000014
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2020-08-01",
+      "actual": 6,
+      "baseline": 1.3333333333333333,
+      "composite": 1.3426725769415169,
+      "p50": 81.5,
+      "p80": 209.80000000000007
+    },
+    {
+      "city": "PASIG CITY",
+      "target": "2020-09-01",
+      "actual": 5,
+      "baseline": 3.8333333333333335,
+      "composite": 5.209935513666998,
+      "p50": 78,
+      "p80": 205
+    },
+    {
+      "city": "PATEROS",
+      "target": "2018-12-01",
+      "actual": 20,
+      "baseline": 28.833333333333332,
+      "composite": 26.842460317460315,
+      "p50": 6.5,
+      "p80": 13.000000000000014
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-03-01",
+      "actual": 5,
+      "baseline": 19.5,
+      "composite": 27.872555326814204,
+      "p50": 7.5,
+      "p80": 16.000000000000004
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-04-01",
+      "actual": 3,
+      "baseline": 9.5,
+      "composite": 7.680194805194805,
+      "p50": 7,
+      "p80": 15.000000000000007
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-05-01",
+      "actual": 1,
+      "baseline": 5,
+      "composite": 3.8474025974025974,
+      "p50": 6.5,
+      "p80": 14.00000000000001
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-06-01",
+      "actual": 4,
+      "baseline": 2.3333333333333335,
+      "composite": 3.083333333333333,
+      "p50": 6,
+      "p80": 13.000000000000014
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-07-01",
+      "actual": 2,
+      "baseline": 2.8333333333333335,
+      "composite": 2.719808126410835,
+      "p50": 6,
+      "p80": 12
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-08-01",
+      "actual": 11,
+      "baseline": 2.5,
+      "composite": 2.3043073840870063,
+      "p50": 6,
+      "p80": 12
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-09-01",
+      "actual": 92,
+      "baseline": 6.833333333333333,
+      "composite": 5.825854700854701,
+      "p50": 6,
+      "p80": 12
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-10-01",
+      "actual": 100,
+      "baseline": 50,
+      "composite": 49.48288159771755,
+      "p50": 6,
+      "p80": 14.00000000000001
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-11-01",
+      "actual": 67,
+      "baseline": 82.5,
+      "composite": 91.61141193297917,
+      "p50": 6.5,
+      "p80": 17.200000000000003
+    },
+    {
+      "city": "PATEROS",
+      "target": "2019-12-01",
+      "actual": 15,
+      "baseline": 82.16666666666667,
+      "composite": 76.3189243408483,
+      "p50": 7,
+      "p80": 18
+    },
+    {
+      "city": "PATEROS",
+      "target": "2020-01-01",
+      "actual": 38,
+      "baseline": 46.5,
+      "composite": 40.29970453678994,
+      "p50": 7.5,
+      "p80": 17.800000000000004
+    },
+    {
+      "city": "PATEROS",
+      "target": "2020-02-01",
+      "actual": 57,
+      "baseline": 35.166666666666664,
+      "composite": 30.185470631156512,
+      "p50": 8,
+      "p80": 18.6
+    },
+    {
+      "city": "PATEROS",
+      "target": "2020-03-01",
+      "actual": 21,
+      "baseline": 43.666666666666664,
+      "composite": 48.563505948215536,
+      "p50": 8.5,
+      "p80": 19.4
+    },
+    {
+      "city": "PATEROS",
+      "target": "2020-04-01",
+      "actual": 3,
+      "baseline": 35.833333333333336,
+      "composite": 28.237964006480244,
+      "p50": 9,
+      "p80": 20.200000000000003
+    },
+    {
+      "city": "PATEROS",
+      "target": "2020-05-01",
+      "actual": 2,
+      "baseline": 18,
+      "composite": 13.72821722899204,
+      "p50": 8.5,
+      "p80": 20
+    },
+    {
+      "city": "PATEROS",
+      "target": "2020-06-01",
+      "actual": 0,
+      "baseline": 5.5,
+      "composite": 5.727167182662539,
+      "p50": 8,
+      "p80": 19.800000000000004
+    },
+    {
+      "city": "PATEROS",
+      "target": "2020-07-01",
+      "actual": 0,
+      "baseline": 1.1666666666666667,
+      "composite": 0.9993183122847302,
+      "p50": 7.5,
+      "p80": 19.6
+    },
+    {
+      "city": "PATEROS",
+      "target": "2020-08-01",
+      "actual": 0,
+      "baseline": 0.3333333333333333,
+      "composite": 0.289025800390258,
+      "p50": 7,
+      "p80": 19.400000000000006
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2018-12-01",
+      "actual": 662,
+      "baseline": 1012.8333333333334,
+      "composite": 896.3034515506603,
+      "p50": 474.5,
+      "p80": 1240.2000000000003
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-03-01",
+      "actual": 391,
+      "baseline": 685.8333333333334,
+      "composite": 578.6319425960429,
+      "p50": 521,
+      "p80": 1188.6000000000001
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-04-01",
+      "actual": 160,
+      "baseline": 526.5,
+      "composite": 438.1863730111962,
+      "p50": 510,
+      "p80": 1160.2000000000003
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-05-01",
+      "actual": 103,
+      "baseline": 320.6666666666667,
+      "composite": 260.4970866715222,
+      "p50": 474.5,
+      "p80": 1131.8000000000004
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-06-01",
+      "actual": 229,
+      "baseline": 170,
+      "composite": 145.90450103642286,
+      "p50": 439,
+      "p80": 1103.4000000000003
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-07-01",
+      "actual": 667,
+      "baseline": 175.5,
+      "composite": 196.39903717736908,
+      "p50": 419,
+      "p80": 1075
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-08-01",
+      "actual": 1967,
+      "baseline": 427,
+      "composite": 543.3534958739685,
+      "p50": 439,
+      "p80": 1021.0000000000002
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-09-01",
+      "actual": 3265,
+      "baseline": 1244,
+      "composite": 1594.4620135338791,
+      "p50": 474.5,
+      "p80": 1160.2000000000003
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-10-01",
+      "actual": 1513,
+      "baseline": 2399.3333333333335,
+      "composite": 2757.24466086476,
+      "p50": 510,
+      "p80": 1263.4000000000003
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-11-01",
+      "actual": 935,
+      "baseline": 2172.6666666666665,
+      "composite": 2195.7097413063075,
+      "p50": 521,
+      "p80": 1338.4
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2019-12-01",
+      "actual": 633,
+      "baseline": 1516,
+      "composite": 1369.053849847347,
+      "p50": 532,
+      "p80": 1333
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2020-01-01",
+      "actual": 516,
+      "baseline": 880.3333333333334,
+      "composite": 818.3212533371816,
+      "p50": 537.5,
+      "p80": 1309.8000000000004
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2020-02-01",
+      "actual": 478,
+      "baseline": 624.8333333333334,
+      "composite": 563.6501842418988,
+      "p50": 532,
+      "p80": 1286.6000000000001
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2020-03-01",
+      "actual": 269,
+      "baseline": 516.5,
+      "composite": 437.02958254099826,
+      "p50": 524,
+      "p80": 1263.3999999999999
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2020-04-01",
+      "actual": 16,
+      "baseline": 379.8333333333333,
+      "composite": 311.3744253932804,
+      "p50": 516,
+      "p80": 1240.2000000000003
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2020-05-01",
+      "actual": 10,
+      "baseline": 177.33333333333334,
+      "composite": 141.78556910569105,
+      "p50": 513,
+      "p80": 1217
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2020-06-01",
+      "actual": 15,
+      "baseline": 55.166666666666664,
+      "composite": 46.54428395106711,
+      "p50": 510,
+      "p80": 1188.6000000000006
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2020-07-01",
+      "actual": 28,
+      "baseline": 13.5,
+      "composite": 14.328890291863521,
+      "p50": 494,
+      "p80": 1160.2000000000003
+    },
+    {
+      "city": "QUEZON CITY",
+      "target": "2020-08-01",
+      "actual": 51,
+      "baseline": 20.666666666666668,
+      "composite": 26.49286668137968,
+      "p50": 478,
+      "p80": 1131.8000000000009
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2018-12-01",
+      "actual": 32,
+      "baseline": 60.333333333333336,
+      "composite": 53.46923828125,
+      "p50": 17,
+      "p80": 52
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-03-01",
+      "actual": 15,
+      "baseline": 32.666666666666664,
+      "composite": 28.024846190250827,
+      "p50": 17,
+      "p80": 50.800000000000004
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-04-01",
+      "actual": 5,
+      "baseline": 22.166666666666668,
+      "composite": 17.881791873375857,
+      "p50": 17,
+      "p80": 50.2
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-05-01",
+      "actual": 2,
+      "baseline": 12.166666666666666,
+      "composite": 9.504848628192999,
+      "p50": 17,
+      "p80": 49.60000000000001
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-06-01",
+      "actual": 4,
+      "baseline": 5.166666666666667,
+      "composite": 4.1833116268055885,
+      "p50": 16,
+      "p80": 49
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-07-01",
+      "actual": 18,
+      "baseline": 3.5,
+      "composite": 3.6216777408637872,
+      "p50": 15,
+      "p80": 48.8
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-08-01",
+      "actual": 62,
+      "baseline": 10.666666666666666,
+      "composite": 13.558541266794625,
+      "p50": 16,
+      "p80": 48.6
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-09-01",
+      "actual": 114,
+      "baseline": 37.666666666666664,
+      "composite": 52.62095614665708,
+      "p50": 17,
+      "p80": 50.2
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-10-01",
+      "actual": 78,
+      "baseline": 80.66666666666667,
+      "composite": 102.42654192654193,
+      "p50": 17,
+      "p80": 52.2
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-11-01",
+      "actual": 72,
+      "baseline": 87.33333333333333,
+      "composite": 92.35037576861762,
+      "p50": 17,
+      "p80": 53
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2019-12-01",
+      "actual": 31,
+      "baseline": 81,
+      "composite": 74.27086553323029,
+      "p50": 17.5,
+      "p80": 58.60000000000003
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2020-01-01",
+      "actual": 14,
+      "baseline": 52.5,
+      "composite": 47.873574248738755,
+      "p50": 18,
+      "p80": 57.20000000000001
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2020-02-01",
+      "actual": 9,
+      "baseline": 29.333333333333332,
+      "composite": 24.795499669093317,
+      "p50": 17.5,
+      "p80": 55.79999999999999
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2020-03-01",
+      "actual": 7,
+      "baseline": 14.333333333333334,
+      "composite": 12.260672146360864,
+      "p50": 17,
+      "p80": 54.40000000000002
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2020-04-01",
+      "actual": 0,
+      "baseline": 8.833333333333334,
+      "composite": 7.065609204575685,
+      "p50": 17,
+      "p80": 53
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2020-05-01",
+      "actual": 2,
+      "baseline": 3.8333333333333335,
+      "composite": 2.974759775790738,
+      "p50": 17,
+      "p80": 52.800000000000004
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2020-06-01",
+      "actual": 1,
+      "baseline": 2.1666666666666665,
+      "composite": 1.7335069444444444,
+      "p50": 16,
+      "p80": 52.6
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2020-07-01",
+      "actual": 3,
+      "baseline": 1.1666666666666667,
+      "composite": 1.1515501540109816,
+      "p50": 15,
+      "p80": 52.400000000000006
+    },
+    {
+      "city": "SAN JUAN CITY",
+      "target": "2020-08-01",
+      "actual": 3,
+      "baseline": 2.1666666666666665,
+      "composite": 2.69788411900557,
+      "p50": 14.5,
+      "p80": 52.2
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2018-12-01",
+      "actual": 161,
+      "baseline": 225.33333333333334,
+      "composite": 239.1857923497268,
+      "p50": 49,
+      "p80": 105
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-03-01",
+      "actual": 65,
+      "baseline": 138.33333333333334,
+      "composite": 114.37982456140351,
+      "p50": 50,
+      "p80": 106.2
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-04-01",
+      "actual": 25,
+      "baseline": 91.33333333333333,
+      "composite": 73.54148585315049,
+      "p50": 51.5,
+      "p80": 105.80000000000001
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-05-01",
+      "actual": 27,
+      "baseline": 50.166666666666664,
+      "composite": 39.03300415800416,
+      "p50": 50,
+      "p80": 105.4
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-06-01",
+      "actual": 43,
+      "baseline": 32.666666666666664,
+      "composite": 25.851957234005862,
+      "p50": 49.5,
+      "p80": 105
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-07-01",
+      "actual": 99,
+      "baseline": 34.666666666666664,
+      "composite": 31.090100111234705,
+      "p50": 49,
+      "p80": 103.2
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-08-01",
+      "actual": 299,
+      "baseline": 68.33333333333333,
+      "composite": 66.41594882189004,
+      "p50": 49.5,
+      "p80": 102.60000000000001
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-09-01",
+      "actual": 619,
+      "baseline": 189.66666666666666,
+      "composite": 238.24233165588305,
+      "p50": 50,
+      "p80": 105.80000000000001
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-10-01",
+      "actual": 476,
+      "baseline": 425.6666666666667,
+      "composite": 516.5501189559864,
+      "p50": 51.5,
+      "p80": 107.2
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-11-01",
+      "actual": 373,
+      "baseline": 494.1666666666667,
+      "composite": 557.6277168639627,
+      "p50": 53,
+      "p80": 108
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2019-12-01",
+      "actual": 295,
+      "baseline": 448.3333333333333,
+      "composite": 452.0944267222869,
+      "p50": 55.5,
+      "p80": 136.80000000000015
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2020-01-01",
+      "actual": 173,
+      "baseline": 351.1666666666667,
+      "composite": 314.8140852390852,
+      "p50": 58,
+      "p80": 154.20000000000002
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2020-02-01",
+      "actual": 194,
+      "baseline": 247,
+      "composite": 214.627151799687,
+      "p50": 61.5,
+      "p80": 165.79999999999998
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2020-03-01",
+      "actual": 74,
+      "baseline": 203.83333333333334,
+      "composite": 167.27403764119714,
+      "p50": 65,
+      "p80": 177.20000000000005
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2020-04-01",
+      "actual": 3,
+      "baseline": 130.5,
+      "composite": 103.05761430365568,
+      "p50": 68,
+      "p80": 173
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2020-05-01",
+      "actual": 1,
+      "baseline": 58.5,
+      "composite": 45.48700884504167,
+      "p50": 65,
+      "p80": 170.60000000000005
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2020-06-01",
+      "actual": 3,
+      "baseline": 13.833333333333334,
+      "composite": 10.961897256772875,
+      "p50": 61.5,
+      "p80": 168.20000000000002
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2020-07-01",
+      "actual": 5,
+      "baseline": 2.3333333333333335,
+      "composite": 2.0393352462936396,
+      "p50": 58,
+      "p80": 165.80000000000007
+    },
+    {
+      "city": "TAGUIG CITY",
+      "target": "2020-08-01",
+      "actual": 18,
+      "baseline": 3.6666666666666665,
+      "composite": 3.730655376566157,
+      "p50": 55.5,
+      "p80": 163.40000000000003
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2018-12-01",
+      "actual": 87,
+      "baseline": 160.66666666666666,
+      "composite": 151.93010272443055,
+      "p50": 67,
+      "p80": 133
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-03-01",
+      "actual": 60,
+      "baseline": 91.66666666666667,
+      "composite": 77.51946925518565,
+      "p50": 71,
+      "p80": 130.60000000000002
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-04-01",
+      "actual": 29,
+      "baseline": 72.16666666666667,
+      "composite": 60.29300058741464,
+      "p50": 69,
+      "p80": 129.4
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-05-01",
+      "actual": 44,
+      "baseline": 48.333333333333336,
+      "composite": 40.00045925490484,
+      "p50": 67,
+      "p80": 128.20000000000002
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-06-01",
+      "actual": 68,
+      "baseline": 41.666666666666664,
+      "composite": 36.084102395078006,
+      "p50": 64.5,
+      "p80": 127
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-07-01",
+      "actual": 91,
+      "baseline": 53.5,
+      "composite": 60.893524590163935,
+      "p50": 67,
+      "p80": 125.4
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-08-01",
+      "actual": 215,
+      "baseline": 75.5,
+      "composite": 91.78480522355025,
+      "p50": 67.5,
+      "p80": 123.80000000000001
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-09-01",
+      "actual": 443,
+      "baseline": 149.16666666666666,
+      "composite": 191.99494441600234,
+      "p50": 68,
+      "p80": 129.4
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-10-01",
+      "actual": 215,
+      "baseline": 308.3333333333333,
+      "composite": 341.65057420192767,
+      "p50": 69.5,
+      "p80": 140.2000000000001
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-11-01",
+      "actual": 152,
+      "baseline": 291,
+      "composite": 293.79638760313946,
+      "p50": 71,
+      "p80": 169
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2019-12-01",
+      "actual": 125,
+      "baseline": 221.5,
+      "composite": 207.17995525356315,
+      "p50": 71,
+      "p80": 165.60000000000008
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2020-01-01",
+      "actual": 79,
+      "baseline": 149,
+      "composite": 133.06227424968804,
+      "p50": 71,
+      "p80": 162.20000000000002
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2020-02-01",
+      "actual": 85,
+      "baseline": 106.5,
+      "composite": 97.10181524083393,
+      "p50": 75,
+      "p80": 158.79999999999998
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2020-03-01",
+      "actual": 56,
+      "baseline": 89.66666666666667,
+      "composite": 76.0880704041721,
+      "p50": 79,
+      "p80": 155.40000000000003
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2020-04-01",
+      "actual": 10,
+      "baseline": 69.5,
+      "composite": 57.25151558515897,
+      "p50": 75,
+      "p80": 152
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2020-05-01",
+      "actual": 10,
+      "baseline": 37.833333333333336,
+      "composite": 31.308429056258973,
+      "p50": 71,
+      "p80": 148.20000000000007
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2020-06-01",
+      "actual": 9,
+      "baseline": 17.666666666666668,
+      "composite": 15.332951240600519,
+      "p50": 71,
+      "p80": 144.40000000000003
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2020-07-01",
+      "actual": 19,
+      "baseline": 9.5,
+      "composite": 10.14064436591862,
+      "p50": 71,
+      "p80": 140.6000000000001
+    },
+    {
+      "city": "VALENZUELA CITY",
+      "target": "2020-08-01",
+      "actual": 25,
+      "baseline": 14.166666666666666,
+      "composite": 16.968752098301213,
+      "p50": 69.5,
+      "p80": 136.80000000000007
+    }
+  ]
+}

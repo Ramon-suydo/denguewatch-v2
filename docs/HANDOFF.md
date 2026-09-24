@@ -33,13 +33,13 @@ npm run app:setup
 npm run reports:enable
 ```
 
-This applies the two new migrations, schedules hourly deletion of records older
+This applies the three pending migrations, schedules hourly deletion of records older
 than 90 days, populates forecasts from real historical_surveillance rows, and opens
 consented submissions using the approved public contact. Verify the public API,
 cron job, and cached results afterward. Do not insert a synthetic health report
 into the hosted project for a smoke test.
 
-See PUBLIC_APP.md for details. Use Node >=22.12 (local Node 22.18 is available).
+See PUBLIC_APP.md and RISK_MODEL.md for details. The risk/grid additions are on feat/risk-grid, branched from feat/public-app; neither branch has been pushed by the assistant. Use Node >=22.12 (local Node 22.18 is available).
 After ingestion changes, refresh saved results with npm run forecast:refresh.
 
 The user pushes. Test locally and self-review before merging near the defense;
