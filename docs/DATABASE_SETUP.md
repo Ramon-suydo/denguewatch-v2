@@ -1,3 +1,5 @@
+> This document describes the completed initial data milestone. For the new public app, forecast cache, and reporting lifecycle migrations, see [PUBLIC_APP.md](PUBLIC_APP.md). Do not repeat initial migration setup on an existing project.
+
 # Database setup and verification
 
 The app scaffold intentionally renders no UI. The SQL and importer are ready;

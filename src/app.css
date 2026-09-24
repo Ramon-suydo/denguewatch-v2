@@ -1,0 +1,324 @@
+@reference "./index.css";
+@layer components {
+  .page-header {
+    @apply bg-teal-900 text-teal-100;
+    padding-block: 2.5rem;
+    overflow: hidden;
+  }
+  .page-header .dw-container {
+    position: relative;
+  }
+  .page-header .dw-container > div {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+  .page-header h1 {
+    color: white;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    margin-bottom: 1rem;
+  }
+  .page-header p {
+    max-width: 740px;
+  }
+  .page-monitor {
+    position: absolute;
+    width: 380px;
+    right: -100px;
+    top: -1rem;
+    opacity: 0.15;
+  }
+  .app-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-block: 2rem 4rem;
+    min-height: 50vh;
+  }
+  .app-content section {
+    min-width: 0;
+  }
+  .app-content section > .muted {
+    margin-bottom: 1rem;
+  }
+  .narrow-content {
+    max-width: 880px;
+  }
+  .data-notice {
+    @apply bg-teal-50 text-teal-900 border-teal-200 rounded-control;
+    border-width: 1px;
+    border-left-width: 4px;
+    padding: 1rem 1.25rem;
+  }
+  .data-state {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    min-height: 100px;
+  }
+  .loading-dot {
+    @apply bg-teal-600;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .city-selector {
+    align-items: flex-end;
+    margin-bottom: 0;
+  }
+  .city-selector .dw-field {
+    width: 360px;
+    max-width: 100%;
+  }
+  .city-selector p {
+    margin-top: 0.5rem;
+  }
+  .content-stack {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .history-chart {
+    height: 350px;
+    width: 100%;
+    min-width: 0;
+  }
+  .chart-caption {
+    font-size: 1rem;
+    color: theme("colors.warm.600");
+    margin-block: 1rem;
+  }
+  .source-details,
+  .method-details {
+    margin-top: 1rem;
+  }
+  .source-details p,
+  .method-details p {
+    margin-top: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+  .source-details summary,
+  .method-details summary {
+    @apply text-teal-700;
+    padding-block: 0.5rem;
+    font-weight: 600;
+  }
+  .method-details ul,
+  .city-popup ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-block: 0.75rem;
+  }
+  .forecast-panel > p {
+    margin-block: 1rem;
+  }
+  .forecast-numbers {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-block: 1.5rem;
+  }
+  .forecast-numbers span,
+  .forecast-numbers strong {
+    display: block;
+  }
+  .forecast-numbers strong {
+    @apply text-teal-900;
+    font-size: 2.5rem;
+    line-height: 1.3;
+  }
+  .forecast-numbers .forecast-date {
+    font-size: 1.5rem;
+    padding-top: 0.7rem;
+  }
+  .community-section {
+    @apply bg-source-community-surface rounded-panel;
+    padding: 1.5rem;
+  }
+  .community-section .eyebrow {
+    @apply text-source-community-ink;
+  }
+  .app-content .detail-link {
+    margin-top: -1rem;
+    margin-bottom: 0;
+  }
+  .app-content .detail-link .text-link {
+    margin-top: 0;
+  }
+  .app-content td,
+  .app-content th {
+    vertical-align: top;
+  }
+  .app-content td .risk-badge {
+    white-space: normal;
+    min-width: 150px;
+  }
+  .app-content th a,
+  .prose a {
+    @apply text-teal-700;
+    text-decoration: underline;
+  }
+  .app-content .table-scroll {
+    border-radius: inherit;
+  }
+  .pagination {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  .map-legend {
+    margin: 0;
+  }
+  .map-card {
+    padding: 0.5rem;
+  }
+  .map-container {
+    height: 560px;
+    border-radius: 12px;
+    z-index: 0;
+    background: theme("colors.teal.50");
+  }
+  .map-marker {
+    background: none;
+    border: 0;
+  }
+  .map-city-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid white;
+    color: white;
+    font:
+      700 16px "Source Sans 3",
+      sans-serif;
+    box-shadow: 0 2px 8px #0005;
+  }
+  .leaflet-popup-content {
+    font:
+      16px/1.5 "Source Sans 3",
+      sans-serif;
+  }
+  .city-popup p {
+    margin: 0.7rem 0;
+  }
+  .city-popup hr {
+    border-top: 1px solid theme("colors.warm.300");
+    margin-block: 1rem;
+  }
+  .leaflet-control-attribution {
+    font-size: 16px !important;
+  }
+  .medical-notice {
+    @apply bg-signal-50 text-warm-900 border-signal-700 rounded-card;
+    border: 1px solid;
+    padding: 1.5rem;
+  }
+  .medical-notice h2 {
+    font-size: 1.5rem;
+  }
+  .medical-notice p {
+    margin-top: 1rem;
+  }
+  .prose p {
+    margin-block: 1rem;
+  }
+  .prose h3 {
+    margin-top: 1.5rem;
+  }
+  .prose a,
+  .confirmation a {
+    text-decoration: underline;
+  }
+  .report-form {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .steps {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  .steps li {
+    @apply text-warm-600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .steps span {
+    @apply bg-warm-200;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .steps [aria-current] {
+    @apply text-teal-900;
+    font-weight: 700;
+  }
+  .steps [aria-current] span {
+    @apply bg-teal-800 text-white;
+  }
+  .step-title {
+    font-size: 1.5rem;
+  }
+  .form-error {
+    @apply text-warm-900 bg-warm-100;
+    border: 2px dashed theme("colors.warm.600");
+    padding: 1rem;
+  }
+  .confirmation p {
+    margin-block: 1rem;
+  }
+  .reference-code {
+    @apply bg-teal-50 text-teal-950 rounded-control;
+    padding: 1rem;
+    font-family: monospace;
+    overflow-wrap: anywhere;
+    font-size: 1.25rem;
+    user-select: all;
+  }
+}
+@media (max-width: 800px) {
+  .city-selector {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .city-selector .dw-field {
+    width: 100%;
+  }
+  .app-content .section-heading {
+    flex-wrap: wrap;
+  }
+  .app-content .section-heading .dw-field {
+    width: 100%;
+  }
+  .history-chart {
+    height: 300px;
+  }
+  .map-container {
+    height: 450px;
+  }
+  .steps {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .community-section {
+    padding: 1rem;
+  }
+  .app-content .table-scroll table {
+    min-width: 550px;
+  }
+}

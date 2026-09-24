@@ -44,6 +44,7 @@ before(async () => {
   await db.query('insert into private.admin_users(user_id) values ($1)', [ADMIN]);
   dataset = await loadDataset('data/raw');
   await importDataset(database, dataset);
+  await db.exec("update public.community_policy set contact_email='research@example.test',submissions_enabled=true");
   lgu = (await db.query<{id:string}>("select id from public.lgus where name = 'MANILA CITY'")).rows[0].id;
 });
 after(async () => { await db.close(); });
@@ -162,4 +163,41 @@ test('no public raw reads; groups below five suppressed; code withdrawal removes
 test('constraints also protect privileged direct writes', async () => {
   await assert.rejects(db.query("update public.community_reports set contact_opt_in=false, contact_value='forbidden'"));
   await assert.rejects(db.query("update public.community_reports set report_date='2999-01-01'"));
+});
+
+test('real-source forecasts persist for all cities and public users cannot change them or collection policy', async () => {
+  const { refreshForecasts } = await import('../scripts/lib/forecast-cache.ts');
+  const summaries=await refreshForecasts(database,'2026-09-24');
+  assert.equal(summaries.length,17);
+  assert.ok(summaries.every(row=>row.months>=24));
+  assert.ok(summaries.every(row=>row.as_of && row.as_of<'2021-01-01'));
+  const before=await db.query('select lgu_id,input_digest,predicted_cases from public.city_forecasts order by lgu_id');
+  await refreshForecasts(database,'2026-09-24');
+  assert.deepEqual((await db.query('select lgu_id,input_digest,predicted_cases from public.city_forecasts order by lgu_id')).rows,before.rows);
+  await asRole('anon','',async()=>{
+    assert.equal((await db.query('select * from public.city_forecasts')).rows.length,17);
+    await assert.rejects(db.query('delete from public.city_forecasts'),/permission denied/);
+    await assert.rejects(db.query('update public.community_policy set submissions_enabled=true'),/permission denied/);
+    await assert.rejects(db.query('select private.purge_expired_community_reports()'),/permission denied/);
+  });
+});
+
+test('collection gate and global daily ceiling apply to direct anonymous RPC calls', async () => {
+  await db.exec('update public.community_policy set submissions_enabled=false');
+  await assert.rejects(asRole('anon','',()=>submit()),/not open/);
+  await db.exec('update public.community_policy set submissions_enabled=true');
+  await assert.rejects(asRole('anon','',()=>submit({optIn:true,contact:null})),/contact value/);
+  await db.query(`insert into public.community_reports(reference_code,lgu_id,report_date,status,consent_version,consent_at,created_at,deleted_at)
+    select encode(sha256(convert_to('quota-test-'||n,'UTF8')),'hex'),$1,'2020-01-06','self_suspected','community-v1',now(),now(),now() from generate_series(1,100) n`,[lgu]);
+  try {await assert.rejects(asRole('anon','',()=>submit()),/daily submission limit/);}
+  finally {await db.query("delete from public.community_reports where reference_code in (select encode(sha256(convert_to('quota-test-'||n,'UTF8')),'hex') from generate_series(1,100) n)");}
+});
+
+test('expired rows are suppressed immediately and the owner cleanup removes them', async () => {
+  await db.query(`insert into public.community_reports(reference_code,lgu_id,report_date,status,consent_version,consent_at,created_at,contact_opt_in,contact_value,barangay_text)
+    select encode(sha256(convert_to('expiry-test-'||n,'UTF8')),'hex'),$1,'2024-04-01','self_suspected','community-v1',now()-interval '91 days',now()-interval '91 days',true,'expired@example.test','Sample barangay' from generate_series(1,5) n`,[lgu]);
+  await asRole('anon','',async()=>assert.equal((await db.query("select * from public.community_reports_weekly_agg() where week_start='2024-04-01'")).rows.length,0));
+  const result=await db.query<{removed:number}>('select private.purge_expired_community_reports()::integer as removed');
+  assert.ok(result.rows[0].removed>=5);
+  assert.equal((await db.query("select 1 from public.community_reports where contact_value='expired@example.test'")).rows.length,0);
 });

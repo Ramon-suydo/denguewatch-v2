@@ -12,6 +12,10 @@ export default defineConfig({
     command:
       "node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4173 --strictPort",
     url: "http://127.0.0.1:4173",
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
+    env: {
+      VITE_SUPABASE_URL: "https://denguewatch-tests.invalid",
+      VITE_SUPABASE_ANON_KEY: "isolated-public-test-key",
+    },
   },
 });

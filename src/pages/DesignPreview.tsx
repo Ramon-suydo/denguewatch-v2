@@ -52,6 +52,7 @@ export function DesignPreview() {
   );
   return (
     <LayoutShell
+      preview
       items={[
         { label: "Overview", href: "#overview", active: true },
         { label: "Area snapshot", href: "#areas" },

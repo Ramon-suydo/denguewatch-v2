@@ -1,9 +1,10 @@
 # DengueWatch
 
 Vite + React + TypeScript + Tailwind scaffold with Supabase data migrations.
-The app opens a responsive design-system preview with illustrative data for identity approval.
-Run npm run dev to review it locally; no live health data is fetched.
+Public dashboard, city history, NCR map, and voluntary community reporting built on the shared design system.
+Run npm run dev to review it locally. Public pages read Supabase; hosted app migrations and report activation require the setup described below.
 
+- [Public app, forecast formula and hosted setup](docs/PUBLIC_APP.md)
 - [Design system, contrast and preview checks](docs/design-system.md)
 
 - [Dataset findings](docs/DATA_QUALITY.md)

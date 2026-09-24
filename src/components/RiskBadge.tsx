@@ -1,6 +1,8 @@
-export type RiskLevel = "Low" | "Moderate" | "High" | "Insufficient data";
+export type RiskLevel =
+  "Low" | "Medium" | "Moderate" | "High" | "Insufficient data";
 const tiers = {
   Low: ["low", "●"],
+  Medium: ["moderate", "\u25b2"],
   Moderate: ["moderate", "▲"],
   High: ["high", "◆"],
   "Insufficient data": ["insufficient", "—"],

@@ -7,12 +7,13 @@ import "@fontsource/source-serif-4/latin-400.css";
 import "@fontsource/source-serif-4/latin-400-italic.css";
 import "@fontsource/source-serif-4/latin-600.css";
 import "./index.css";
-import { DesignPreview } from "./pages/DesignPreview";
+import { App } from "./App";
+import "./app.css";
 import { ToastProvider } from "./components/ui";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ToastProvider>
-      <DesignPreview />
+      <App />
     </ToastProvider>
   </StrictMode>,
 );

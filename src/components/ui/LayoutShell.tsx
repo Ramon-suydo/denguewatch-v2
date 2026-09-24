@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "./Button";
 import { MonitoringLine } from "./MonitoringLine";
 export type NavItem = { label: string; href: string; active?: boolean };
@@ -13,14 +14,14 @@ export function TopNav({
   return (
     <header className="top-nav">
       <div className="dw-container nav-inner">
-        <a className="wordmark" href="#main" aria-label="DengueWatch home">
+        <Link className="wordmark" to="/" aria-label="DengueWatch home">
           <span className="brand-symbol">
             <MonitoringLine />
           </span>
           <span>
             Dengue<span className="wordmark-light">Watch</span>
           </span>
-        </a>
+        </Link>
         <Button
           className="menu-toggle"
           variant="ghost"
@@ -34,17 +35,27 @@ export function TopNav({
           id="main-navigation"
           aria-label="Main navigation"
           className={expanded ? "nav-links expanded" : "nav-links"}
+          onClick={() => setExpanded(false)}
         >
-          {items.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              aria-current={item.active ? "page" : undefined}
-              onClick={() => setExpanded(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {items.map((item) =>
+            item.href.startsWith("#") ? (
+              <a
+                key={item.href}
+                href={item.href}
+                aria-current={item.active ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                to={item.href}
+                aria-current={item.active ? "page" : undefined}
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
           {action}
         </nav>
       </div>
@@ -55,10 +66,12 @@ export function LayoutShell({
   children,
   items,
   action,
+  preview = false,
 }: {
   children: ReactNode;
   items: NavItem[];
   action?: ReactNode;
+  preview?: boolean;
 }) {
   return (
     <>
@@ -70,11 +83,18 @@ export function LayoutShell({
         {children}
       </main>
       <footer className="dw-container site-footer">
-        <span>
-          DengueWatch <span aria-hidden="true">/</span> Community health, in
-          focus.
-        </span>
-        <span>Design preview · Illustrative data only</span>
+        <span>DengueWatch / Community health, in focus.</span>
+        {preview ? (
+          <span>Design preview · Illustrative data only</span>
+        ) : (
+          <>
+            <span>Thesis / research · Not an official DOH service</span>
+            <span>
+              <Link to="/terms">Terms</Link> ·{" "}
+              <Link to="/privacy">Privacy & withdrawal</Link>
+            </span>
+          </>
+        )}
       </footer>
     </>
   );

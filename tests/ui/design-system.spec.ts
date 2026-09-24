@@ -8,7 +8,7 @@ test("preview interactions, consent, focus restoration and desktop accessibility
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.setViewportSize({ width: 1440, height: 1100 });
-  await page.goto("/");
+  await page.goto("/design-preview");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
   await expect(page.locator("body")).toHaveCSS("font-family", /Source Sans 3/);
@@ -86,7 +86,7 @@ test("responsive layout, mobile menu and mobile accessibility", async ({
 }) => {
   for (const width of [320, 390, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 844 });
-    await page.goto("/");
+    await page.goto("/design-preview");
     await expect(page.locator(".recharts-surface").first()).toBeVisible();
     expect(
       await page.evaluate(

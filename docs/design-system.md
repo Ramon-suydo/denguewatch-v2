@@ -1,6 +1,6 @@
 # DengueWatch design system
 
-This branch intentionally contains one identity approval preview at `/`. All counts,
+This branch intentionally contains one identity approval preview at `/design-preview`. All counts,
 risk levels, sources and dates are illustrative; no Supabase requests or writes occur.
 Approve the identity before extending it to the application's real pages.
 
