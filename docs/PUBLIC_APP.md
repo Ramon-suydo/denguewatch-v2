@@ -57,7 +57,7 @@ Manila daily data remains a separate chart, not an input to NCR monthly estimate
 ## Collection, withdrawal, and retention
 
 The owner approved 90 days and achilleslang23@gmail.com as the public research contact.
-The pending lifecycle migration publishes that contact but leaves submissions
+The applied lifecycle migration publishes that contact but leaves submissions
 disabled until the maintenance job and explicit enable step are completed.
 
 The existing security-definer submit_community_report signature is retained.
@@ -85,18 +85,17 @@ enable reporting, edit the public contact, modify cache records, or invoke the
 private purge function. Raw report RLS from the prior migration is preserved.
 No service-role key or database credentials enter the browser.
 
-## Exact hosted change (requires approval in this session)
+## Hosted setup status
 
-Automatic approval review rejected the first hosted setup attempt because explicit
-authorization for a shared-database mutation was missing. No migrations, cron job,
-forecasts, or report settings were changed in the hosted project by that attempt.
+On 2026-09-24, explicit user authorization covered the three migrations and cache
+population only. Ran npm run app:setup successfully. Read-only verification
+confirmed 17 forecasts, 17 risk-input records, 650 backtest rows, unchanged 7,350
+historical rows, public read access, RLS, and the active hourly retention job.
 
-After approval, using the existing ignored .env.local and Node >=22.12:
-
-```powershell
-npm run app:setup
-npm run reports:enable
-```
+**Real submissions remain disabled (submissions_enabled=false).**
+Do not run reports:enable until after the upcoming content/consent review and
+later explicit authorization. No synthetic report was submitted.
+See HANDOFF.md for verification evidence and the next task.
 
 app:setup applies ONLY 20260924000300_forecast_cache.sql and
 20260924000400_community_lifecycle.sql and
@@ -137,7 +136,7 @@ date rejection, opt-in reset, RPC submission/withdrawal, mobile widths, and axe 
 
 Screenshots under ignored .artifacts/public-app/ are captured using real historical
 source fixtures in isolated browser tests. They demonstrate implemented UI; they
-are not evidence that the pending migrations are live.
+are not deployment evidence; hosted verification is recorded separately in HANDOFF.md.
 
 Test locally and self-review before merging near the defense. The user pushes.
 Every main push is a live Vercel deployment. vercel.json handles direct SPA routes.

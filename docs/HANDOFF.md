@@ -1,47 +1,47 @@
-# Session handoff - public app, 24 September 2026
+# Handoff
+Branch: feat/risk-grid.
 
-Branch: feat/public-app. The public-app implementation is ready for review.
+## Hosted setup completed
+On 2026-09-24, the user explicitly authorized applying the three pending migrations
+and populating hosted caches, while expressly deferring report activation.
 
-## Implemented and checked
+Ran npm run app:setup successfully against the configured hosted Supabase project.
+The transaction applied:
+- 20260924000300_forecast_cache.sql
+- 20260924000400_community_lifecycle.sql
+- 20260924000500_composite_risk.sql
 
-- Public dashboard, full city histories/incidence, Leaflet NCR map, three-step
-  reporting, terms, privacy and reference-code withdrawal.
-- Shared teal/amber design system reused; /design-preview is preserved.
-- Monthly WMA forecast and city-distribution thresholds with explicit historical
-  dates and insufficient current-data labels. No community mixing or accuracy claim.
-- Two pending migrations: protected forecast cache and 90-day report lifecycle.
-- Approved public contact: achilleslang23@gmail.com. Reports stay disabled until
-  the owner explicitly activates them after retention cleanup is scheduled.
-- 17 data/security tests, 9 browser tests, contrast checks and production build pass.
-- Browser screenshots: .artifacts/public-app/dashboard.png and mobile.png.
-  They use real source data in intercepted local test responses, not hosted writes.
-- The malformed ignored local API URL was corrected from a bare project reference
-  after matching it to both the anon key and database project. No secret was printed.
-- Read-only hosted API checks confirm 17 LGUs and 7,350 historical observations.
-  New city_forecasts and community_policy tables are not present (PGRST205).
+Independent read-only verification confirmed:
+- All three migration versions recorded.
+- 17 city forecasts and 17 city-scoped risk-input records.
+- 650 backtest records (325 paired predictions across two methods).
+- Historical dataset unchanged at 7,350 observations.
+- Public REST reads succeed for forecasts, risk inputs and policy.
+- RLS enabled; anonymous inserts/updates denied on all three new tables.
+- Active hourly retention schedule, minute 17, with 90-day retention.
+- submissions_enabled = false. No reports:enable command was run.
 
-## Required next step
+Verification evidence: ignored .artifacts/hosted-setup-verification.json and
+.artifacts/forecast-verification.json. No synthetic report was submitted.
+The job is scheduled; execution history was not yet established by this check.
 
-Automatic approval review rejected running npm run app:setup against the configured
-shared Supabase project because explicit hosted-write authorization was missing.
-No hosted mutations were made. Do not retry via another tool or route to bypass it.
+## Next work: content and consent review
+Keep real submissions CLOSED through the user's upcoming content/consent pass.
+Do not run reports:enable without later explicit authorization.
+Approved research contact remains achilleslang23@gmail.com.
 
-Once the user explicitly authorizes the exact hosted changes, run:
+## Implemented locally
+Public dashboard, city detail/history/incidence, Map/Grid with all 17 cities,
+report consent flow, privacy/terms, secure submission/deletion RPCs, shared design
+system, saved forecasts and transparent factor breakdowns.
 
-```powershell
-npm run app:setup
-npm run reports:enable
-```
+Seasonality improved holdout MAE but failed the predeclared development threshold;
+trend-only remains selected. Community/weather weights remain zero. The cached
+January 2021 estimates do not establish current risk. See RISK_MODEL.md.
+Latest implementation checks: 19 data/model/security tests, 10 browser tests,
+production build and contrast checks passed.
 
-This applies the three pending migrations, schedules hourly deletion of records older
-than 90 days, populates forecasts from real historical_surveillance rows, and opens
-consented submissions using the approved public contact. Verify the public API,
-cron job, and cached results afterward. Do not insert a synthetic health report
-into the hosted project for a smoke test.
-
-See PUBLIC_APP.md and RISK_MODEL.md for details. The risk/grid additions are on feat/risk-grid, branched from feat/public-app; neither branch has been pushed by the assistant. Use Node >=22.12 (local Node 22.18 is available).
-After ingestion changes, refresh saved results with npm run forecast:refresh.
-
-The user pushes. Test locally and self-review before merging near the defense;
-a push to main is a live Vercel deployment. Exact dataset citation placeholders
-still require source-owner review; see DATA_QUALITY.md.
+No frontend push/deployment was performed. The user pushes:
+git push -u origin feat/risk-grid
+Test locally and self-review before merging near the defense; main deploys live.
+Exact source citation placeholders still need source-owner review.

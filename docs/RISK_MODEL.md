@@ -1,5 +1,5 @@
 # Risk model and city grid
-Run `npm run risk:backtest` to reproduce [every paired prediction and city metric](risk-backtest.json) from the real local source files. Run `npm run app:setup` only against the intended database after reviewing the migrations; it applies pending migrations and refreshes caches atomically. No hosted changes were made for this task.
+Run `npm run risk:backtest` to reproduce [every paired prediction and city metric](risk-backtest.json) from the real local source files. Run `npm run app:setup` only against the intended database after reviewing the migrations; it applies pending migrations and refreshes caches atomically. Hosted setup was subsequently authorized and completed on 2026-09-24; caches and backtests are populated. Real submissions remain disabled pending the content/consent review. See HANDOFF.md.
 
 ## Predeclared comparison
 One-step rolling-origin evaluation: each target is a complete, unflagged monthly observation; train only on earlier complete source-label months. Require 24 training months, distinct city Q50/Q80 thresholds, and latest eligible month immediately before the target. Seasonality needs at least two observations in every calendar month. Evaluate both models on exactly the same eligible targets (325 across 17 cities). Exclusions mean this is not an estimate of accuracy on all months.
