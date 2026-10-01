@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import { Select } from "./ui";
+import { SourceCitation } from "./SourceCitation";
 import { colors } from "../theme/palette.js";
 import type { Observation, PeriodType } from "../lib/types";
 import { formatDate, nextMonth } from "../lib/dates";
@@ -211,16 +212,11 @@ export function HistoryChart({
       <details className="source-details">
         <summary>Source & data quality</summary>
         <p>{chosen}</p>
-        <p>
-          {rows
-            .find((row) => row.source === chosen)
-            ?.source_citation?.startsWith("TODO:")
-            ? "Exact DOH/FOI citation is awaiting source-owner review."
-            : rows.find((row) => row.source === chosen)?.source_citation}
-        </p>
+        <SourceCitation source={chosen} />
         <p>
           Published source values are preserved, including partial periods and
-          quality flags; only eligible months enter forecasts. Monthly data is
+          quality flags. The weekly forecast uses only the weekly source;
+          the separate legacy monthly risk display uses eligible historical months. Monthly data is
           derived from weekly data and must not be added to it. Manila daily
           totals differ from the weekly source.
         </p>

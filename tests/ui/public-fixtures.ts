@@ -69,14 +69,15 @@ export async function mockPublicApi(
       const period = url.searchParams.get("period_type")?.replace("eq.", "");
       const start = Number(url.searchParams.get("offset") ?? 0);
       const limit = Number(url.searchParams.get("limit") ?? 500);
-      historyOffsets.push(start);
+      if (city) historyOffsets.push(start);
       return respond(
         fixture.rows
-          .filter((row) => row.lgu_id === city && row.period_type === period)
-          .sort(
-            (a, b) =>
-              a.period_start.localeCompare(b.period_start) || a.id - b.id,
-          )
+          .filter((row) => (!city || row.lgu_id === city) && row.period_type === period
+            && (!url.searchParams.get("source") || row.source === url.searchParams.get("source")!.replace("eq.", "")))
+          .sort((a, b) => {
+            const direction = url.searchParams.get("order")?.includes("desc") ? -1 : 1;
+            return direction * (a.period_start.localeCompare(b.period_start) || a.id - b.id);
+          })
           .slice(start, start + limit),
       );
     }

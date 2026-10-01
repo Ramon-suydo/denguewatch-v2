@@ -8,11 +8,27 @@ import type {
   PeriodType,
 } from "./types";
 import { recentMonday } from "./dates";
+import { publishedSources } from "./source-metadata";
 function check(error: { message: string } | null) {
   if (error)
     throw new Error(
       "The data service could not complete this request. Please try again.",
     );
+}
+export async function fetchSourceCoverage(signal: AbortSignal) {
+  return Promise.all(publishedSources.map(async ({ source, period, label }) => {
+    const { data, error } = await getSupabase()
+      .from("historical_surveillance")
+      .select("period_start")
+      .eq("source", source)
+      .eq("period_type", period)
+      .order("period_start", { ascending: false })
+      .limit(1)
+      .abortSignal(signal)
+      .retry(false);
+    check(error);
+    return { source, period, label, date: data?.[0]?.period_start ?? null };
+  }));
 }
 export async function fetchRisks(
   signal: AbortSignal,

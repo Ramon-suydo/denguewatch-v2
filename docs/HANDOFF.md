@@ -100,3 +100,47 @@ Next: Day 3 shared disclaimer/footer attribution review, then cached-data demo
 readiness. Exact DOH/FOI citations await owner review. Submissions stay closed.
 Test locally and self-review before merging; main deploys live. User pushes:
 `git push -u origin feat/risk-grid`.
+
+## Shared disclaimers and transparency: 2026-10-01 (Day 3)
+
+LayoutShell now renders one SharedDisclaimer on every route, including the
+preview and not-found page: historical statistical estimates, not medical
+advice/emergency/outbreak alerts or a substitute for DOH/local health guidance;
+community reports remain unverified and separate from official data.
+
+Footer attribution uses the centralized src/lib/source-metadata.ts config.
+Each of the three sources has title, issuing office, date obtained, FOI ID, URL
+and usage terms, currently [pending]. Fill this file once; footer, Data & Sources,
+chart source details and forecast citation details read it. The npm test citation
+check warns (18 pending fields), not fails. The visible footer placeholder is
+[exact citation pending]. No source provenance or usage permission was invented.
+
+Last data period is read from historical_surveillance by source and period,
+not from model cache dates. The footer identifies the newest source separately
+(Manila daily only) and also shows NCR weekly/monthly labels. Failed reads show
+Unavailable with retry; empty sources show No records. No real-time claim.
+
+Model transparency reads metrics from the bundled backtest artifact, comparing
+the strongest baseline (currently four-week mean) first, then seasonal naive,
+with MAE skill against both (21.5% and 61.0% at one week). Added training/selection
+and test windows, actual per-LGU fit/intercept and lag/seasonality inputs, known
+limitations and potential data improvements. The recent-count explanation is a
+baseline comparison, not proven feature attribution. sMAPE 68.2% versus 64.9%
+is an aggregate result; no separate low-case-week score exists. One-week 2019
+interval coverage 71.4%/88.2% versus nominal 80%/95% is shown from the cache.
+Test evidence ends 2021-01-10; no later-year or season-level outbreak claim.
+
+Copy audit fixed stale monthly forecast wording in chart details and explicitly
+labels Map/Grid as legacy monthly/historical. No forecasting/data-policy changes,
+new dependencies, hosted writes, submission activation or push performed.
+
+Checks: npm test (24 passed, expected pending-citation warning), npm run build,
+all 13 browser checks with PLAYWRIGHT_CHANNEL=msedge, and npm run test:contrast
+passed. Browser checks cover all public routes at 320/390/768, artifact-number
+agreement, and DB coverage changes/failure/empty reads. Production build still
+reports a large-chunk warning; Day 4 demo/performance review remains pending.
+
+Next: Day 4 cached-data demo readiness, console checks and mobile/performance
+review. Exact citations await owner review; real submissions remain closed.
+Test locally and self-review before merging; main deploys live. User pushes:
+`git push -u origin feat/risk-grid`.

@@ -2,6 +2,8 @@ import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { mkdir } from "node:fs/promises";
 import { mockPublicApi } from "./public-fixtures";
+import cache from "../../src/data/weekly-forecast-v1.json" with { type: "json" };
+import { sourceAttribution } from "../../src/lib/source-metadata";
 
 test("dashboard and full city series use real-source fixtures, keep provenance separate, and paginate Manila daily data", async ({
   page,
@@ -206,12 +208,22 @@ test("map popups distinguish old official trends and community counts; tile fail
 test("public routes are responsive and legal information stays available on phones", async ({
   page,
 }) => {
-  await mockPublicApi(page);
+  const fixture = await mockPublicApi(page);
+  await page.route("https://tile.openstreetmap.org/**", route => route.abort());
   for (const width of [320, 390, 768]) {
     await page.setViewportSize({ width, height: 844 });
-    for (const route of ["/", "/report", "/privacy", "/terms", "/data-sources"]) {
+    for (const route of ["/", "/dashboard", "/city/" + fixture.cities[0].id, "/map", "/report", "/privacy", "/terms", "/data-sources", "/design-preview", "/not-found"]) {
       await page.goto(route);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      const notice = page.getByRole("complementary", { name: "Estimates, not alerts" });
+      await expect(notice).toHaveCount(1);
+      await expect(notice).toContainText("Community reports are unverified and are not part of official data");
+      await expect(notice).toContainText("not medical advice, an emergency or outbreak alert");
+      const footer = page.getByRole("contentinfo");
+      await expect(footer).toContainText(sourceAttribution());
+      await expect(footer).toContainText("Last data period: Dec 2, 2023 (Manila daily only)");
+      await expect(footer).toContainText("NCR weekly: Jan 10, 2021");
+      await expect(footer.getByRole("link", { name: "Data & Sources" })).toBeVisible();
       await expect(page.getByText("Loading data…")).toHaveCount(0);
       expect(
         await page.evaluate(
@@ -308,4 +320,56 @@ test("weekly forecast cache exposes all horizons, matched model metrics and hist
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
   expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze()).violations).toEqual([]);
   expect(errors).toEqual([]);
+});
+
+test("model transparency numbers and baseline order match the cached artifact", async ({ page }) => {
+  await mockPublicApi(page);
+  await page.goto("/");
+  const transparency = page.getByRole("region", { name: "Model transparency" });
+  const score = (model: string, cohort = "all-2019-onward", horizon = 1) => cache.summary.find(s => s.city === "ALL NCR" && s.model === model && s.cohort === cohort && s.horizon === horizon)!;
+  const model = score(cache.selected), mean = score("mean-4"), naive = score("seasonal-naive");
+  const improvement = (value: number | null, base: number | null) => value === null || base === null || base === 0 ? "Unavailable" : (100 * (base - value) / base).toFixed(1) + "%";
+  const headline = transparency.getByTestId("headline-baseline-comparison");
+  await expect(headline).toContainText(model.mae!.toFixed(2));
+  await expect(headline).toContainText(mean.mae!.toFixed(2));
+  await expect(headline).toContainText(naive.mae!.toFixed(2));
+  await expect(headline).toContainText(improvement(model.mae, mean.mae));
+  await expect(headline).toContainText(improvement(model.mae, naive.mae));
+  expect((await headline.innerText()).indexOf("4-week mean")).toBeLessThan((await headline.innerText()).indexOf("Seasonal naive"));
+  await expect(transparency.getByTestId("smape-limitation")).toContainText(model.smape!.toFixed(1) + "%");
+  await expect(transparency.getByTestId("smape-limitation")).toContainText(mean.smape!.toFixed(1) + "%");
+  const excludedCovid = score(cache.selected, "without-covid");
+  await expect(transparency.getByTestId("interval-limitation")).toContainText(excludedCovid.coverage80!.toFixed(1) + "%/" + excludedCovid.coverage95!.toFixed(1) + "%");
+  await expect(transparency).toContainText(cache.metadata.evaluation);
+  await expect(transparency).toContainText("There is no evidence on later years");
+  for (const cohort of ["all-2019-onward", "without-covid", "covid-only"]) {
+    await page.getByLabel("Backtest reporting period").selectOption(cohort);
+    for (const horizon of [1, 2, 4]) {
+      await page.getByLabel("Forecast horizon").selectOption(String(horizon));
+      const m = score(cache.selected, cohort, horizon), b = score("mean-4", cohort, horizon), n = score("seasonal-naive", cohort, horizon);
+      await expect(page.getByTestId("slice-baseline-comparison")).toContainText(improvement(m.mae, b.mae));
+      await expect(page.getByTestId("slice-baseline-comparison")).toContainText(improvement(m.mae, n.mae));
+    }
+  }
+});
+
+test("footer follows DB coverage changes and never substitutes cached dates when reads fail", async ({ page }) => {
+  await mockPublicApi(page);
+  await page.route("**/rest/v1/historical_surveillance**", route => {
+    const period = new URL(route.request().url()).searchParams.get("period_type");
+    const date = period === "eq.day" ? "2031-01-01" : period === "eq.week" ? "2030-12-29" : "2030-12-01";
+    return route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify([{ period_start: date }]) });
+  });
+  await page.goto("/data-sources");
+  const footer = page.getByRole("contentinfo");
+  await expect(footer).toContainText("Last data period: Jan 1, 2031 (Manila daily only)");
+  await expect(footer).toContainText("NCR weekly: Dec 29, 2030");
+  await page.route("**/rest/v1/historical_surveillance**", route => route.fulfill({ status: 503, contentType: "application/json", body: JSON.stringify({ message: "unavailable" }) }));
+  await page.reload();
+  await expect(footer).toContainText("Last data period: Unavailable (data service could not be reached)");
+  await expect(footer).not.toContainText("Jan 1, 2031");
+  await expect(footer).not.toContainText("Dec 2, 2023");
+  await page.route("**/rest/v1/historical_surveillance**", route => route.fulfill({ status: 200, contentType: "application/json", body: "[]" }));
+  await footer.getByRole("button", { name: "Retry data period" }).click();
+  await expect(footer).toContainText("Last data period: No published records available");
 });

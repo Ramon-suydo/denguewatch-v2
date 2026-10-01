@@ -1,6 +1,8 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Card } from "../components/ui";
 import { PageHeader } from "../components/PageHeader";
+import { SourceCitation } from "../components/SourceCitation";
+import { pendingCitationFields } from "../lib/source-metadata";
 
 // Audit figures from docs/DATA_QUALITY.md, not live database totals.
 const sources = [
@@ -24,12 +26,12 @@ export function DataSources() {
           outbreak warnings.
         </p>
         <Card className="prose">
-          <h2>Source attribution awaiting review</h2>
+          <h2>{pendingCitationFields().length ? "Source attribution awaiting review" : "Source attribution"}</h2>
           <p>
             The dataset owner identifies the supplied files as Department of
-            Health (DOH) and Freedom of Information (FOI) sources. Exact dataset
-            URLs, FOI request identifiers, citation text, and redistribution
-            terms await source-owner review. DengueWatch is a thesis/research
+            Health (DOH) and Freedom of Information (FOI) sources. Source details
+            are listed below; any pending field still requires source-owner review.
+            DengueWatch is a thesis/research
             application, not an official DOH service.
           </p>
           <p>
@@ -66,6 +68,14 @@ export function DataSources() {
               </tbody>
             </table>
           </div>
+        </Card>
+        <Card className="prose">
+          <h2>Citation details</h2>
+          {sources.map(([file, period]) => <section key={file}>
+            <h3>{period}</h3>
+            <p>{file.split("_").map((part, i) => <span key={i}>{i > 0 && "_"}{part}<wbr /></span>)}</p>
+            <SourceCitation source={file} />
+          </section>)}
         </Card>
         <Card className="prose">
           <h2>Gaps and incomplete periods</h2>

@@ -39,7 +39,7 @@ test("mobile defaults to all 17 city cards without map tiles, with sorting and f
     fullPage: false,
   });
   await page.locator(".city-grid-card h2 a").first().click();
-  await page.getByText("Inspect factor contributions").click();
-  await expect(page.getByText(/Community: 0% weight/)).toBeVisible();
-  await expect(page.getByText(/Weather: 0% weight/)).toBeVisible();
+  await expect(page.getByRole("region", { name: "Model transparency" })).toBeVisible();
+  await page.getByText("Inputs, training and interval limitations").click();
+  await expect(page.getByText(/Deaths, population, weather, community reports, monthly aggregates and Manila daily data are not predictors/)).toBeVisible();
 });

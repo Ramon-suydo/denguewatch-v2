@@ -39,7 +39,7 @@ export function Terms() {
           <p>
             Reporting is optional and requires explicit consent to the{" "}
             <Link to="/report">participation notice</Link>. Submit only your own
-            information, accurately to the best of your knowledge. Do not submit
+            information, truthfully to the best of your knowledge. Do not submit
             someone else’s name, exact address, patient identifier, or contact
             information. Do not knowingly submit false reports, repeatedly
             submit the same report, or try to identify people from aggregate

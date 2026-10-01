@@ -2,6 +2,11 @@ import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
 import { MonitoringLine } from "./MonitoringLine";
+import { SharedDisclaimer } from "../SharedDisclaimer";
+import { fetchSourceCoverage } from "../../lib/api";
+import { useResource } from "../../lib/resources";
+import { formatDate } from "../../lib/dates";
+import { sourceAttribution } from "../../lib/source-metadata";
 export type NavItem = { label: string; href: string; active?: boolean };
 export function TopNav({
   items,
@@ -73,6 +78,8 @@ export function LayoutShell({
   action?: ReactNode;
   preview?: boolean;
 }) {
+  const coverage = useResource("source-coverage", fetchSourceCoverage);
+  const latest = coverage.data?.filter(row => row.date).sort((a, b) => b.date!.localeCompare(a.date!))[0];
   return (
     <>
       <a className="skip-link" href="#main">
@@ -80,22 +87,30 @@ export function LayoutShell({
       </a>
       <TopNav items={items} action={action} />
       <main id="main" tabIndex={-1}>
+        <div className="dw-container"><SharedDisclaimer /></div>
         {children}
       </main>
       <footer className="dw-container site-footer">
         <span>DengueWatch / Community health, in focus.</span>
-        {preview ? (
-          <span>Design preview · Illustrative data only</span>
-        ) : (
-          <>
-            <span>Thesis / research · Not an official DOH service</span>
-            <span>
-              <Link to="/data-sources">Data & Sources</Link> ·{" "}
-              <Link to="/terms">Terms</Link> ·{" "}
-              <Link to="/privacy">Privacy & withdrawal</Link>
-            </span>
-          </>
-        )}
+        {preview && <span>Design preview · Illustrative data only</span>}
+        <span>Thesis / research · Not an official DOH service</span>
+        <span>Data attribution: {sourceAttribution()}</span>
+        <span>
+          Last data period: {coverage.loading ? "Checking published records…"
+            : coverage.error ? "Unavailable (data service could not be reached)"
+            : latest ? `${formatDate(latest.date)} (${latest.label})`
+            : "No published records available"}.
+          {coverage.data?.filter(row => row !== latest).map(row =>
+            <span key={row.source}> {row.label}: {row.date ? formatDate(row.date) : "No records"}.</span>,
+          )}
+          {" "}Source date labels, not real-time data.
+          {coverage.error && <button className="text-link" onClick={coverage.retry}>Retry data period</button>}
+        </span>
+        <span>
+          <Link to="/data-sources">Data & Sources</Link> ·{" "}
+          <Link to="/terms">Terms</Link> ·{" "}
+          <Link to="/privacy">Privacy & withdrawal</Link>
+        </span>
       </footer>
     </>
   );

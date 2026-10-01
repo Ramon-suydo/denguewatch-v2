@@ -59,7 +59,8 @@ export function MapPage() {
         )}
         <div className="section-heading">
           <p className="data-notice">
-            Historical observations do not establish present-day risk. Gray
+            This is the legacy monthly/historical risk display, separate from
+            weekly case forecasts. Historical observations do not establish present-day risk. Gray
             markers mean current data is insufficient.
           </p>
           <Select
@@ -68,12 +69,12 @@ export function MapPage() {
             onChange={(event) => setMode(event.target.value)}
           >
             <option value="current">Current risk</option>
-            <option value="historical">Latest historical model signal</option>
+            <option value="historical">Latest historical monthly model signal</option>
           </Select>
         </div>
         {mode === "historical" && (
           <p className="data-notice">
-            You are viewing dated historical signals, not current risk. Open a
+            You are viewing dated historical monthly signals, not current risk. Open a
             marker for its forecast month.
           </p>
         )}
