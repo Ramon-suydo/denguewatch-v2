@@ -8,7 +8,7 @@ import { CommunitySection } from "../components/CommunitySection";
 import { useAppData } from "../lib/resources";
 export function CityDetail() {
   const { id } = useParams();
-  const { cities, forecasts } = useAppData();
+  const { cities } = useAppData();
   return (
     <>
       <PageHeader
@@ -16,7 +16,7 @@ export function CityDetail() {
         title={
           cities.data?.find((city) => city.id === id)?.name ?? "City history"
         }
-        description="Inspect full source series, incidence, and the reasoning behind the saved historical estimate."
+        description="Inspect full source series, incidence, and weekly forecast estimates and their backtest performance."
       />
       <div className="dw-container app-content">
         <Link className="text-link" to="/">
@@ -45,13 +45,7 @@ export function CityDetail() {
                     : "Daily observations are not supplied for this city."}
                 </p>
                 <HistoricalExplorer key={city.id} city={city} detail />
-                <ReadState resource={forecasts}>
-                  {(rows) => (
-                    <ForecastPanel
-                      forecast={rows.find((row) => row.lgu_id === city.id)}
-                    />
-                  )}
-                </ReadState>
+                <ForecastPanel cityName={city.name} />
                 <CommunitySection city={city.id} />
               </>
             );

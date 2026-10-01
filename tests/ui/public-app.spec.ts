@@ -14,7 +14,7 @@ test("dashboard and full city series use real-source fixtures, keep provenance s
   await expect(
     page.getByRole("heading", { name: "Historical case trend" }),
   ).toBeVisible();
-  await expect(page.locator(".history-chart svg").first()).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="history-title"] .history-chart svg').first()).toBeVisible();
   await expect(
     page.getByText(
       "No community reports yet for this city, or fewer than five in each week. Small counts are hidden for privacy.",
@@ -38,7 +38,7 @@ test("dashboard and full city series use real-source fixtures, keep provenance s
   await page.getByText("View exact case values").click();
   await expect(page.locator(".chart-table tbody tr")).toHaveCount(40);
   await page.getByLabel("Period type").selectOption("month");
-  await expect(page.locator(".history-chart svg")).toHaveCount(2);
+  await expect(page.locator('section[aria-labelledby="history-title"] .history-chart svg')).toHaveCount(2);
   expect(
     (
       await new AxeBuilder({ page })
@@ -48,7 +48,7 @@ test("dashboard and full city series use real-source fixtures, keep provenance s
   ).toEqual([]);
   expect(errors).toEqual([]);
   await page.goto("/");
-  await expect(page.locator(".history-chart svg")).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="history-title"] .history-chart svg')).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
   await mkdir(".artifacts/public-app", { recursive: true });
   await page.screenshot({
@@ -222,7 +222,7 @@ test("public routes are responsive and legal information stays available on phon
   }
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await expect(page.locator(".history-chart svg")).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="history-title"] .history-chart svg')).toBeVisible();
   expect(
     (
       await new AxeBuilder({ page })
@@ -260,7 +260,8 @@ test("publishable community volumes remain separate and are labelled as a lower 
     section.getByText("reports in publishable weeks.", { exact: false }),
   ).toContainText("7");
   await expect(section.getByText("Community · Unverified")).toBeVisible();
-  await expect(page.locator(".forecast-numbers").first()).toContainText("41.0");
+  await expect(page.getByText("Model: Ridge regression.", { exact: false })).toBeVisible();
+  await expect(page.getByRole("region", { name: "Forecast estimates and prediction intervals" }).locator("tbody tr")).toHaveCount(3);
 });
 
 test("loading can resolve to empty city data without inventing observations", async ({
@@ -285,4 +286,26 @@ test("loading can resolve to empty city data without inventing observations", as
   await expect(
     page.getByRole("heading", { name: "No cities available yet" }),
   ).toBeVisible();
+});
+
+test("weekly forecast cache exposes all horizons, matched model metrics and historical uncertainty accessibly", async ({ page }) => {
+  await mockPublicApi(page);
+  const errors: string[] = [];
+  page.on("pageerror", error => errors.push(error.message));
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Weekly forecast estimates" })).toBeVisible();
+  await expect(page.getByText("Ridge beats seasonal naive in 17 of 17 LGUs", { exact: false })).toBeVisible();
+  const estimates = page.getByRole("region", { name: "Forecast estimates and prediction intervals" });
+  await expect(estimates.locator("tbody tr")).toHaveCount(3);
+  await expect(estimates).toContainText("Jan 17, 2021");
+  await page.getByLabel("Forecast horizon").selectOption("4");
+  await expect(page.locator(".forecast-date")).toContainText("Feb 7, 2021");
+  await page.getByLabel("Backtest reporting period").selectOption("without-covid");
+  await expect(page.getByText(/Removing those targets leaves only 2019/)).toBeVisible();
+  await expect(page.getByRole("region", { name: "Walk-forward model performance" }).locator("tbody tr")).toHaveCount(6);
+  await page.setViewportSize({ width: 320, height: 844 });
+  await page.getByText("Inputs, training and interval limitations").click();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
+  expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze()).violations).toEqual([]);
+  expect(errors).toEqual([]);
 });

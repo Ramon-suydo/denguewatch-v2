@@ -67,25 +67,21 @@ export function Dashboard() {
                     Explore {city.name} in detail ↗
                   </Link>
                 </div>
-                <ReadState resource={forecasts}>
-                  {(rows) => (
-                    <ForecastPanel
-                      forecast={rows.find((row) => row.lgu_id === city.id)}
-                    />
-                  )}
-                </ReadState>
+                <ForecastPanel cityName={city.name} />
                 <section aria-labelledby="risk-title">
                   <div className="section-heading">
                     <div>
                       <p className="eyebrow">ACROSS THE REGION</p>
-                      <h2 id="risk-title">City risk overview</h2>
+                      <h2 id="risk-title">Legacy monthly risk overview</h2>
                     </div>
                     <Link className="text-link" to="/map">
                       Explore the map ↗
                     </Link>
                   </div>
                   <p className="muted">
-                    Current risk is insufficient when the saved forecast month
+                    This separate legacy display uses monthly historical
+                    thresholds, not the weekly forecasting model. Current risk
+                    is insufficient when the saved forecast month
                     has expired. A historical signal is not a current warning
                     level.
                   </p>

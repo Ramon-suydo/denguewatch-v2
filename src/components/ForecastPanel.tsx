@@ -1,166 +1,124 @@
-import { useAppData } from "../lib/resources";
-import { UnverifiedBadge } from "./UnverifiedBadge";
-import { Card } from "./ui";
-import { RiskBadge } from "./RiskBadge";
+import { useState } from "react";
+import { Area, ComposedChart, CartesianGrid, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Link } from "react-router-dom";
+import { Card, Select } from "./ui";
+import cache from "../data/weekly-forecast-v1.json";
+import { colors } from "../theme/palette.js";
 import { formatDate } from "../lib/dates";
-import { currentRisk, historicalOnly } from "../lib/forecast";
-import type { Forecast } from "../lib/types";
-export function ForecastPanel({
-  forecast,
-}: {
-  forecast: Forecast | undefined;
-}) {
-  const { risks } = useAppData();
-  const inputs = risks.data?.find((r) => r.lgu_id === forecast?.lgu_id)?.inputs;
-  if (!forecast)
-    return (
-      <Card>
-        <h2>Forecast not available</h2>
-        <p className="muted">
-          No saved estimate is available for this city yet.
-        </p>
-        <RiskBadge level="Insufficient data" />
-      </Card>
-    );
-  const old = historicalOnly(forecast);
+
+const modelNames: Record<string, string> = { "seasonal-naive": "Seasonal naive", "mean-4": "4-week mean", ridge: "Ridge regression" };
+const number = (n: number | null) => n === null ? "Unavailable" : n.toFixed(2);
+const percent = (n: number | null) => n === null ? "Unavailable" : n.toFixed(1) + "%";
+
+export function ForecastPanel({ cityName }: { cityName: string }) {
+  const [horizon, setHorizon] = useState(1);
+  const [cohort, setCohort] = useState("all-2019-onward");
+  const saved = cache.forecasts.find(row => row.city === cityName);
+  if (!saved) return <Card><h2>Weekly forecast unavailable</h2><p>No audited weekly cache is available for this LGU.</p></Card>;
+  const selected = saved.horizons.find(h => h.horizon === horizon)!;
+  const forecast = selected.models.find(m => m.model === cache.selected)!;
+  const naive = selected.models.find(m => m.model === "seasonal-naive")!;
+  const performance = cache.summary.filter(s => s.cohort === cohort && s.horizon === horizon && (s.city === cityName || s.city === "ALL NCR"));
+  const overall = performance.find(s => s.city === "ALL NCR" && s.model === cache.selected)!;
+  const wins = cache.cities.filter(city => {
+    const rows = cache.summary.filter(s => s.city === city && s.horizon === horizon && s.cohort === cohort);
+    const ridge = rows.find(s => s.model === "ridge")?.mae;
+    const baseline = rows.find(s => s.model === "seasonal-naive")?.mae;
+    return ridge != null && baseline != null && ridge < baseline;
+  }).length;
+  const availability = cache.availability.find(a => a.city === cityName && a.horizon === horizon)!;
+  const bands = saved.horizons.map(h => {
+    const m = h.models.find(row => row.model === cache.selected)!;
+    return { date: h.target, estimate: m.predicted,
+      band80: m.interval ? [m.interval.low80, m.interval.high80] : null,
+      band95: m.interval ? [m.interval.low95, m.interval.high95] : null };
+  });
+  const series = [
+    ...saved.history.map(p => ({ date: p.date, observed: p.cases, estimate: null, band80: null, band95: null })),
+    ...bands,
+  ];
+  const undercoverage = performance.some(s => s.intervalN > 0 && ((s.coverage80 !== null && s.coverage80 < 70) || (s.coverage95 !== null && s.coverage95 < 85)));
   return (
-    <Card className="forecast-panel">
-      <div className="section-heading">
-        <h2>Forecast & explanation</h2>
-        <RiskBadge level={currentRisk(forecast)} />
-      </div>
-      <p className="data-notice">
-        {old
-          ? "Historical estimate only. These observations are too old to describe current conditions."
-          : "Model signal for this month; not an official alert or individual diagnosis."}
-      </p>
-      <div className="forecast-numbers">
-        <div>
-          <span className="muted">Estimated cases</span>
-          <strong>
-            {forecast.predicted_cases === null
-              ? "—"
-              : forecast.predicted_cases.toFixed(1)}
-          </strong>
+    <section aria-labelledby="weekly-forecast-title" className="content-stack">
+      <Card className="forecast-panel">
+        <div className="section-heading">
+          <h2 id="weekly-forecast-title">Weekly forecast estimates</h2>
+          <Select label="Forecast horizon" value={horizon} onChange={e => setHorizon(Number(e.target.value))}>
+            <option value={1}>1 week ahead</option><option value={2}>2 weeks ahead</option><option value={4}>4 weeks ahead</option>
+          </Select>
         </div>
-        <div>
-          <span className="muted">Forecast month</span>
-          <strong className="forecast-date">
-            {formatDate(forecast.forecast_for)}
-          </strong>
+        <p className="data-notice">
+          Historical estimate only. Based on weekly labels through {formatDate(saved.origin)};
+          these records cannot establish current conditions. Estimates only, not medical advice
+          or official warning levels.
+        </p>
+        <div className="forecast-numbers">
+          <div><span className="muted">Estimated weekly cases</span><strong>{number(forecast.predicted)}</strong></div>
+          <div><span className="muted">Target source label</span><strong className="forecast-date">{formatDate(selected.target)}</strong></div>
         </div>
-      </div>
-      <p>
-        Historical signal: <RiskBadge level={forecast.risk_label} />{" "}
-        <span className="muted">
-          Based on data through {formatDate(forecast.data_as_of)}.
-        </span>
-      </p>
-      <p className="muted">{forecast.reason}</p>
-      <details className="method-details">
-        <summary>Inspect factor contributions</summary>
-        {risks.loading ? (
-          <p>Loading saved factors…</p>
-        ) : risks.error ? (
-          <p>
-            Factor breakdown unavailable.{" "}
-            <button className="text-link" onClick={risks.retry}>
-              Retry factors
-            </button>
-          </p>
-        ) : !inputs ? (
-          <p>No saved factor breakdown yet.</p>
-        ) : (
-          <>
-            <p>
-              Saved factors evaluated on {formatDate(inputs.evaluated_on)}.
-              Scope: city, not barangay.
-            </p>
-            <p>
-              Trend: {(inputs.trend.weight * 100).toFixed(0)}% weight;{" "}
-              {inputs.trend.contribution?.toFixed(2) ?? "unavailable"} cases
-              contributed.
-            </p>
-            <p>
-              Seasonality: {(inputs.seasonality.weight * 100).toFixed(0)}%
-              weight; ratio{" "}
-              {inputs.seasonality.ratio?.toFixed(2) ?? "unavailable"} for the
-              forecast month;{" "}
-              {inputs.seasonality.contribution?.toFixed(2) ?? "unavailable"}{" "}
-              cases contributed. {inputs.seasonality.status}.
-            </p>
-            <p>
-              Calendar-month context (
-              {inputs.current_calendar_seasonality.month}): historical ratio{" "}
-              {inputs.current_calendar_seasonality.ratio?.toFixed(2) ??
-                "unavailable"}
-              .{" "}
-              {inputs.current_calendar_seasonality.high_season === null
-                ? "Insufficient seasonal history."
-                : inputs.current_calendar_seasonality.high_season
-                  ? "Historically above the yearly average."
-                  : "Historically at or below the yearly average."}{" "}
-              This does not establish current risk.
-            </p>
-            <UnverifiedBadge />
-            <p>
-              Community: 0% weight. {inputs.community.signal.status} Direction:{" "}
-              {inputs.community.signal.direction ?? "unavailable"}. No aligned
-              historical validation; cannot elevate risk.
-            </p>
-            <p>Weather: 0% weight. {inputs.weather.status}.</p>
-            <p>
-              Candidate formula: 75% × trend + 25% × trend × seasonal ratio.
-              Retain only with at least 5% lower mean absolute error in both
-              development and holdout, plus improvement in a majority of cities.
-              See the repository backtest report for paired predictions and
-              limitations.
-            </p>
-          </>
-        )}
-      </details>
-      <details className="method-details">
-        <summary>How this estimate is calculated</summary>
-        <p>
-          The oldest, middle, and newest eligible months receive weights 1, 2,
-          and 3. Divide their weighted sum by 6. These are the three most recent
-          complete source-label months; excluded months can leave gaps.
-        </p>
-        {forecast.input_periods.length > 0 && (
-          <ul>
-            {forecast.input_periods.map((point) => (
-              <li key={point.date}>
-                {formatDate(point.date)}: {point.cases} cases × {point.weight}
-              </li>
-            ))}
-          </ul>
-        )}
-        <p>
-          Low: at or below the city’s median (
-          {forecast.p50?.toFixed(1) ?? "unavailable"}). Medium: above the median
-          and at or below its 80th percentile (
-          {forecast.p80?.toFixed(1) ?? "unavailable"}). High: above the 80th
-          percentile.
-        </p>
-        <p>
-          Baseline: {forecast.baseline_count} eligible months,{" "}
-          {formatDate(forecast.baseline_start)} to{" "}
-          {formatDate(forecast.baseline_end)}. At least 24 months and distinct
-          thresholds are required. Partial months, missing weekly labels, and
-          flagged suspect aggregates are excluded. Weekly and daily sources are
-          never combined with monthly data.
-        </p>
-        <p>
-          This model has not been validated for clinical or outbreak decisions
-          and has no claimed accuracy or confidence interval. Community reports
-          never affect it.
-        </p>
-        <p className="muted">
-          Method: {forecast.method_version}. Computed{" "}
-          {formatDate(forecast.computed_at)}. Current labels expire at the end
-          of the forecast month.
-        </p>
-      </details>
-    </Card>
+        <p>Model: {modelNames[cache.selected]}. Seasonal-naive estimate: {number(naive.predicted)} cases.</p>
+        <p className="muted">Shaded bands: nominal 80% and 95% prediction intervals from earlier out-of-sample errors, not guaranteed coverage. The 1/2/4-week points are separate direct forecasts; connecting lines do not supply a 3-week forecast.</p>
+        <figure>
+          <figcaption>Recent observed cases (gray), estimates (teal), 80% band (teal), 95% band (gray). Exact values below.</figcaption>
+          <div className="history-chart">
+            <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+              <ComposedChart data={series} accessibilityLayer margin={{ top: 16, right: 24, bottom: 8, left: 0 }}>
+                <CartesianGrid vertical={false} stroke={colors.warm[200]} strokeDasharray="4 4" />
+                <XAxis dataKey="date" minTickGap={60} tick={{ fill: colors.warm[600] }} tickFormatter={date => formatDate(String(date))} />
+                <YAxis allowDecimals={false} width={55} tick={{ fill: colors.warm[600] }} />
+                <Tooltip labelFormatter={date => formatDate(String(date))} />
+                <Area dataKey="band95" name="95% interval" type="linear" stroke={colors.warm[500]} fill={colors.warm[200]} fillOpacity={.7} isAnimationActive={false} />
+                <Area dataKey="band80" name="80% interval" type="linear" stroke={colors.teal[600]} fill={colors.teal[100]} fillOpacity={.8} isAnimationActive={false} />
+                <Line dataKey="observed" name="Observed cases" stroke={colors.warm[600]} dot={false} isAnimationActive={false} />
+                <Line dataKey="estimate" name="Estimate" stroke={colors.teal[600]} strokeWidth={3} dot={{ r: 4 }} isAnimationActive={false} />
+              </ComposedChart>
+            </ResponsiveContainer>
+          </div>
+        </figure>
+        <div className="table-scroll" role="region" aria-label="Forecast estimates and prediction intervals" tabIndex={0}>
+          <table>
+            <caption>{cityName}: historical weekly forecasts using {modelNames[cache.selected]}</caption>
+            <thead><tr><th scope="col">Ahead</th><th scope="col">Target label</th><th scope="col">Estimate</th><th scope="col">80% interval</th><th scope="col">95% interval</th><th scope="col">Calibration errors</th></tr></thead>
+            <tbody>{saved.horizons.map(h => {
+              const m = h.models.find(row => row.model === cache.selected)!;
+              return <tr key={h.horizon}><th scope="row">{h.horizon} weeks</th><td>{formatDate(h.target)}</td><td>{number(m.predicted)}</td><td>{m.interval ? `${number(m.interval.low80)} to ${number(m.interval.high80)}` : "Unavailable"}</td><td>{m.interval ? `${number(m.interval.low95)} to ${number(m.interval.high95)}` : "Unavailable"}</td><td>{m.interval?.n ?? 0}</td></tr>;
+            })}</tbody>
+          </table>
+        </div>
+      </Card>
+      <Card className="prose">
+        <h2>Model performance</h2>
+        <Select label="Backtest reporting period" value={cohort} onChange={e => setCohort(e.target.value)}>
+          <option value="all-2019-onward">2019 onward, including COVID period</option>
+          <option value="without-covid">Without COVID-period targets (2019 only)</option>
+          <option value="covid-only">COVID-period targets (2020–January 2021)</option>
+          <option value="development-2018">2018 development, not held-out test</option>
+        </Select>
+        <p>Ridge beats seasonal naive in {wins} of {cache.cities.length} LGUs at the {horizon}-week horizon for this period. This is lower MAE, not an accuracy percentage.</p>
+        <p>{modelNames[cache.selected]} is the shipped default, selected using 2018 one-week development MAE only. Ridge must beat both baselines by at least 5% and improve a majority of LGUs. 2019 onward outcomes do not choose the model.</p>
+        <p>{modelNames[cache.selected]} overall: MAE {number(overall.mae)}, RMSE {number(overall.rmse)}, sMAPE {percent(overall.smape)}. Overall metrics pool LGU-target observations; high-count LGUs can dominate case-error metrics.</p>
+        {undercoverage && <p className="data-notice">Interval coverage is more than 10 percentage points below nominal for at least one displayed model. These intervals are poorly calibrated in this period; do not interpret them as guaranteed probabilities.</p>}
+        <div className="table-scroll" role="region" aria-label="Walk-forward model performance" tabIndex={0}>
+          <table>
+            <caption>Matched targets only; errors in cases, sMAPE and skill in percent. Negative skill means worse than seasonal naive.</caption>
+            <thead><tr><th scope="col">Scope</th><th scope="col">Model</th><th scope="col">N</th><th scope="col">MAE</th><th scope="col">RMSE</th><th scope="col">sMAPE</th><th scope="col">Skill vs naive</th><th scope="col">80% coverage</th><th scope="col">95% coverage</th><th scope="col">Interval N</th></tr></thead>
+            <tbody>{performance.map(s => <tr key={s.city + s.model}><th scope="row">{s.city}</th><td>{modelNames[s.model]}</td><td>{s.n}</td><td>{number(s.mae)}</td><td>{number(s.rmse)}</td><td>{percent(s.smape)}</td><td>{percent(s.skill)}</td><td>{percent(s.coverage80)}</td><td>{percent(s.coverage95)}</td><td>{s.intervalN}</td></tr>)}</tbody>
+          </table>
+        </div>
+        <p>COVID caveat: 2020–2021 is flagged as a distorted reporting period, not proof of changed disease incidence. Removing those targets leaves only 2019 for evaluation; it does not remove earlier COVID observations from later rolling training windows.</p>
+        <p>Common support for {cityName}, {horizon}-week horizon: {availability.paired} of {availability.targets} calendar targets from 2019 onward. Missing or suspect targets, missing exact lags, and insufficient training history are skipped for every model, never replaced by zero. Metrics do not describe the excluded observations.</p>
+        <details className="method-details">
+          <summary>Inputs, training and interval limitations</summary>
+          <p>{cache.metadata.ridge}</p>
+          <p>{cache.metadata.gaps}</p>
+          <p>{cache.metadata.intervals}</p>
+          <p>Deaths, population, weather, community reports, monthly aggregates and Manila daily data are not predictors. The source has {cache.metadata.observations.toLocaleString("en-PH")} weekly rows; {cache.metadata.excludedSuspectRows} flagged suspect rows are unavailable to fitting and scoring. Available large peaks are retained.</p>
+          <p>Intervals use local historical residuals and are uncertain with small samples or reporting shifts. sMAPE is zero when actual and forecast are both zero; it can be large for small counts. Ridge can improve MAE while worsening sMAPE. Forecasts are weekly counts at source date labels, not individual infection probabilities.</p>
+          <p>Training window: {cache.metadata.trainWindow.first} to each origin, ending {cache.metadata.trainWindow.last}. Version: {cache.metadata.version}; generated {formatDate(cache.metadata.runAt)}. Bundled research cache; independent of the legacy monthly risk table.</p>
+          <p>Source: {cache.metadata.source}. SHA-256: <code>{cache.metadata.checksum.slice(0, 32)}<wbr />{cache.metadata.checksum.slice(32)}</code>.</p>
+          <Link className="text-link" to="/data-sources">Data & Sources: attribution and full limitations</Link>
+        </details>
+      </Card>
+    </section>
   );
 }
