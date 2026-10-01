@@ -209,7 +209,7 @@ test("public routes are responsive and legal information stays available on phon
   await mockPublicApi(page);
   for (const width of [320, 390, 768]) {
     await page.setViewportSize({ width, height: 844 });
-    for (const route of ["/", "/report", "/privacy", "/terms"]) {
+    for (const route of ["/", "/report", "/privacy", "/terms", "/data-sources"]) {
       await page.goto(route);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
       await expect(page.getByText("Loading data…")).toHaveCount(0);

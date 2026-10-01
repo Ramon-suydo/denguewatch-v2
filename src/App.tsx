@@ -27,6 +27,9 @@ const Privacy = lazy(() =>
 const Terms = lazy(() =>
   import("./pages/Terms").then((module) => ({ default: module.Terms })),
 );
+const DataSources = lazy(() =>
+  import("./pages/DataSources").then((module) => ({ default: module.DataSources })),
+);
 const DesignPreview = lazy(() =>
   import("./pages/DesignPreview").then((module) => ({
     default: module.DesignPreview,
@@ -65,13 +68,15 @@ function PublicRoutes() {
         ? "NCR map"
         : location.pathname === "/report"
           ? "Community report"
-          : location.pathname === "/privacy"
-            ? "Privacy"
-            : location.pathname === "/terms"
-              ? "Terms"
-              : location.pathname.startsWith("/city/")
-                ? "City history"
-                : "Public dashboard") + " | DengueWatch";
+          : location.pathname === "/data-sources"
+            ? "Data & Sources"
+            : location.pathname === "/privacy"
+              ? "Privacy"
+              : location.pathname === "/terms"
+                ? "Terms"
+                : location.pathname.startsWith("/city/")
+                  ? "City history"
+                  : "Public dashboard") + " | DengueWatch";
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: "instant" });
       document.getElementById("main")?.focus({ preventScroll: true });
@@ -94,6 +99,11 @@ function PublicRoutes() {
               location.pathname === "/" || location.pathname === "/dashboard",
           },
           { label: "Map", href: "/map", active: location.pathname === "/map" },
+          {
+            label: "Data & Sources",
+            href: "/data-sources",
+            active: location.pathname === "/data-sources",
+          },
           {
             label: "Privacy",
             href: "/privacy",
@@ -122,6 +132,7 @@ function PublicRoutes() {
               <Route path="/report" element={<Report />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/data-sources" element={<DataSources />} />
               <Route
                 path="*"
                 element={

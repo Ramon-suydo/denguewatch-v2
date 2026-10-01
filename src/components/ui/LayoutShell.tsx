@@ -90,6 +90,7 @@ export function LayoutShell({
           <>
             <span>Thesis / research · Not an official DOH service</span>
             <span>
+              <Link to="/data-sources">Data & Sources</Link> ·{" "}
               <Link to="/terms">Terms</Link> ·{" "}
               <Link to="/privacy">Privacy & withdrawal</Link>
             </span>

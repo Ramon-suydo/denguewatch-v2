@@ -45,3 +45,23 @@ No frontend push/deployment was performed. The user pushes:
 git push -u origin feat/risk-grid
 Test locally and self-review before merging near the defense; main deploys live.
 Exact source citation placeholders still need source-owner review.
+
+## Core-page review: 2026-10-01
+
+Preserved the existing Supabase dashboard, city detail/history, and risk grid.
+Added /data-sources with navigation/footer links, audited coverage and gap counts,
+source overlaps, mortality anomalies, population/geography limits, and explicit
+DOH/FOI citation placeholders. Counts are labeled as the 2026-09-23 file audit,
+not live database counts. Updated the existing responsive-route check to include
+this page at 320, 390, and 768 pixels.
+
+Checks: npm test (19 passed), npm run build, npm run test:contrast, and
+npm run test:ui -- tests/ui/public-app.spec.ts (7 passed with
+PLAYWRIGHT_CHANNEL=msedge). Default Playwright Chromium is absent on this machine;
+installed Edge works. No hosted writes, report activation, or push performed.
+
+Next Tier 0 work: assess existing forecast/backtest implementation against the
+new handoff request for seasonal-naive and moving-average baselines, one stronger
+model, walk-forward per-LGU MAE/RMSE/sMAPE, and prediction intervals. Existing
+model selection does not by itself establish that all these requirements are met.
+Then verify shared disclaimers/attribution and cached-data demo readiness.
