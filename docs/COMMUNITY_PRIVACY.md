@@ -88,3 +88,9 @@ backup retention are [pending] in src/lib/legal.ts. Community-v1 consent is a
 reusable unticked required block, gated by the existing disabled policy and
 matching version. The consent draft changes before any collection; it is not
 retroactive consent. Follow LAUNCH_CHECKLIST.md before any activation.
+
+Owner update (2026-10-03, legal-v1.1): controller name/contact are now supplied in
+src/lib/legal.ts. Launch retention is Not applicable, form closed; the 90-day DB
+setting is unchanged. Provider-default log/backup descriptions are supplied but
+not verified durations. The earlier Day 5 pending-field note above is superseded;
+DPO designation, provider settings and any future launch policy still need review.

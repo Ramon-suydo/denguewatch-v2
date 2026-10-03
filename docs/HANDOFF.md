@@ -243,3 +243,32 @@ model-link rerun passed after diff review. No dependencies added; largest JS chu
 Next: owner fills pending metadata, school DPO/lawyer reviews drafts and rehearses
 the local demo/printed handout. Submissions stay closed. Test locally and self-review
 before merging; main deploys live. User pushes: git push -u origin feat/risk-grid.
+
+## Owner metadata update — 2026-10-03
+
+legal-v1.1 uses the owner-supplied controller name (DengueWatch student research
+team, University Perpetual Help College of Manila) and controller research contact
+achilleslang23@gmail.com. A DPO appointment is not asserted. Launch retention says
+Not applicable, form closed; the existing 90-day DB configuration is unchanged.
+Technical-log retention is per Vercel/Supabase defaults; backup retention per
+Supabase defaults. These labels do not establish verified durations or settings.
+
+Canonical source metadata now contains the supplied titles/offices and usage
+terms Not stated. Acquisition dates and FOI IDs are Not available; URLs are
+not public. The original acquisition channel is unverified: neither a request ID
+nor an assertion that no FOI request existed was invented, and file/audit dates
+were not substituted for acquisition dates. Weekly/daily specific offices remain
+unconfirmed; monthly is explicitly derived from weekly, not independent.
+
+All metadata fields are filled, but 14 source fields remain unverified/incomplete.
+The existing exact-citation warning remains visible and npm test still warns.
+Unknown/default descriptions must not silently count as verified citation evidence.
+Launch checklist, privacy copy and defense Q&A distinguish supplied values from
+review decisions. COMMUNITY_PRIVACY's earlier pending-field notes are superseded
+by this update: controller/contact are supplied, provider durations/provenance and
+future launch retention still need review. Submissions remain closed; no DB writes.
+
+Checks: npm test (26 passed), npm run build (once each), targeted legal/consent/
+offline A4 PDF/model-link browser check passed. No new dependency or push.
+Next: source-owner provenance and school DPO/lawyer/provider review. Test locally
+before merging. User pushes: git push -u origin feat/risk-grid.

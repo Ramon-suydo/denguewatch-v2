@@ -6,7 +6,7 @@ No report-activation command is authorized by this checklist.
 - [ ] Server-side rate limiting and abuse protection on every public RPC path:
   submit, withdraw and aggregate reads. Existing serialized 100/day submission
   ceiling does not protect all paths or prevent fabricated reports/quota denial.
-- [ ] Reconfirm final retention [pending]; current DB setting is 90 days.
+- [ ] Decide retention before opening; owner currently specifies "Not applicable, form closed". Current DB setting is 90 days.
   Verify hourly purge execution and withdrawn/expired records, plus provider
   backup deletion, technical-log retention and processing locations.
 - [ ] Review deployed RLS/grants, definer search paths, anonymous/private access,
@@ -15,8 +15,9 @@ No report-activation command is authorized by this checklist.
   purposes/lawful basis, Privacy/Terms/disclaimer and proposed liability clause.
   Version material text changes before accepting reports; review access/correction,
   lost-code requests, complaint handling, identity checks and incident response.
-- [ ] Fill controller identity and controller/DPO contact [pending]. The previously
-  approved research email does not establish the accountable controller/DPO.
+- [ ] Review the owner-supplied controller: DengueWatch student research team,
+  University Perpetual Help College of Manila; contact achilleslang23@gmail.com.
+  Confirm institutional accountability and DPO designation; an email is not proof of appointment.
 - [ ] Verify processor agreements, provider settings/locations, logging/backups,
   and security/privacy assessment. No report fields or codes in logs/URLs/storage.
 - [ ] DPO determines NPC registration obligations for the accountable entity.
@@ -35,9 +36,13 @@ Primary review references:
 [NPC registration reminder](https://privacy.gov.ph/reminder-on-mandatory-data-protection-officer-and-data-processing-system-registration/),
 [NPC exemption guidance](https://privacy.gov.ph/pips-and-pics/exemption/).
 
-Every remaining placeholder:
-- src/lib/legal.ts: controller name; controller/DPO contact; final launch retention;
-  technical-log retention; provider backup retention.
-- src/lib/source-metadata.ts, for each of NCR weekly, derived NCR monthly and
-  Manila daily: title; issuing office; date obtained; FOI request ID; URL; usage terms
-  (18 source fields). The visible [exact citation pending] label clears when filled.
+Owner metadata supplied on 2026-10-03 (legal-v1.1):
+- Controller identity/contact are filled in src/lib/legal.ts. Launch retention is
+  "Not applicable, form closed"; a retention decision is required before opening.
+- Technical logs: per Vercel/Supabase defaults. Backups: per Supabase defaults.
+  These descriptions are not verified durations; confirm deployed plans/settings.
+- For each of NCR weekly, derived NCR monthly and Manila daily: date obtained
+  and FOI request ID are "Not available", URL is "not public", usage terms
+  "Not stated". Original acquisition channel is unverified; no FOI request is
+  claimed absent or invented. Weekly/daily issuing offices remain nonspecific.
+  Exact citation warning stays visible until provenance/usage terms are confirmed.

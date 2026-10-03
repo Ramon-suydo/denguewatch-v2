@@ -1,9 +1,9 @@
 ﻿import { Link } from "react-router-dom";
-import { citationFields, sourceMetadata, CITATION_PENDING, PENDING } from "../lib/source-metadata";
+import { citationFields, sourceMetadata, CITATION_PENDING, PENDING, pendingCitationFields } from "../lib/source-metadata";
 
 export function SourceCitation({ source }: { source: string }) {
   const metadata = sourceMetadata[source];
-  const pending = !metadata || Object.values(metadata).some(value => value === PENDING);
+  const pending = !metadata || pendingCitationFields().some(field => field.startsWith(source + ":"));
   return (
     <div className="prose">
       {pending && <p>{CITATION_PENDING}</p>}

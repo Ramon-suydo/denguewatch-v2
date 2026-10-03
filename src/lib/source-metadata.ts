@@ -1,4 +1,4 @@
-﻿export const PENDING = "[pending]";
+export const PENDING = "[pending]";
 export const CITATION_PENDING = "[exact citation pending]";
 export const citationFields = {
   title: "Title",
@@ -19,16 +19,19 @@ export interface SourceMetadata {
 // Owner fills each source here once. Never infer an exact citation from a filename.
 export const sourceMetadata: Record<string, SourceMetadata> = {
   "ncr_dengue_monthly_with_rates.csv": {
-    title: PENDING, issuingOffice: PENDING, dateObtained: PENDING,
-    foiRequestId: PENDING, url: PENDING, usageTerms: PENDING,
+    title: "NCR Dengue Monthly with Rates (ncr_dengue_monthly_with_rates.csv)",
+    issuingOffice: "Derived from the NCR weekly DOH file; not an independent source",
+    dateObtained: "Not available", foiRequestId: "Not available", url: "not public", usageTerms: "Not stated",
   },
   "doh-epi-dengue-data-2016-2021.csv": {
-    title: PENDING, issuingOffice: PENDING, dateObtained: PENDING,
-    foiRequestId: PENDING, url: PENDING, usageTerms: PENDING,
+    title: "DOH EPI Dengue Data 2016-2021 (doh-epi-dengue-data-2016-2021.csv), filtered to National Capital Region",
+    issuingOffice: "Department of Health (specific office not confirmed)",
+    dateObtained: "Not available", foiRequestId: "Not available", url: "not public", usageTerms: "Not stated",
   },
   "Daily_Reported_Cases_of_Dengue_in_the_City_of_Manila_from_2018_to_2023.xlsx": {
-    title: PENDING, issuingOffice: PENDING, dateObtained: PENDING,
-    foiRequestId: PENDING, url: PENDING, usageTerms: PENDING,
+    title: "Daily Reported Cases of Dengue in the City of Manila, 2018 to 2023 (workbook)",
+    issuingOffice: "City of Manila (specific office not confirmed)",
+    dateObtained: "Not available", foiRequestId: "Not available", url: "not public", usageTerms: "Not stated",
   },
 };
 export const publishedSources = [
@@ -38,7 +41,7 @@ export const publishedSources = [
 ] as const;
 export function pendingCitationFields(): string[] {
   return Object.entries(sourceMetadata).flatMap(([source, metadata]) =>
-    Object.entries(metadata).filter(([, value]) => value === PENDING).map(([field]) => `${source}: ${field}`),
+    Object.entries(metadata).filter(([, value]) => value === PENDING || /^(not available|not public|not stated)$/i.test(value) || value.includes("not confirmed")).map(([field]) => `${source}: ${field}`),
   );
 }
 export function sourceAttribution(): string {

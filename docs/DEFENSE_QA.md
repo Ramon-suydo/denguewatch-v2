@@ -80,8 +80,11 @@ not a clinical validation or legal-compliance assessment.
     [RA 10173 §3(l)(2), published by the NPC](https://privacy.gov.ph/data-privacy-act/).
     Dormant community-v1 consent is unticked, with separate optional contact;
     withdrawal codes are hashed and small aggregates suppressed, without a
-    guarantee of anonymity. The existing DB setting is 90 days; final launch
-    retention/controller identity/contact remain pending. Lawyer/school DPO review
+    guarantee of anonymity. The existing DB setting is 90 days; launch retention is
+    "Not applicable, form closed"; the owner names the DengueWatch student research
+    team, University Perpetual Help College of Manila, with achilleslang23@gmail.com
+    as controller contact. A DPO designation is not confirmed. Provider-default
+    log/backup labels do not establish verified retention durations. Lawyer/school DPO review
     must cover rights handling, consent, liability, processors and registration.
     Registration is not automatically ruled out by being a thesis: NPC Circular
     2022-04 covers controllers/processors with 250+ employees, sensitive data on

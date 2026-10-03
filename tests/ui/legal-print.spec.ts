@@ -13,7 +13,7 @@ test("draft legal sections, dormant consent, no app storage and offline A4 repor
   await expect(page.getByRole("heading", { name: "Legal and privacy notices" })).toBeVisible();
   await expect(page.getByText(/Version legal-v1/)).toHaveCount(6);
   for (const title of ["Privacy Notice", "Terms of Use", "Forecast & Medical Disclaimer", "Data Sources & Attribution", "Model Transparency", "Cookie/Storage Notice"]) await expect(page.getByRole("heading", { name: title, exact: true })).toBeVisible();
-  await expect(page.getByText(/Controller\/DPO contact: \[pending\]/)).toBeVisible();
+  await expect(page.getByText(/Controller contact:/)).toContainText("achilleslang23@gmail.com");
   expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze()).violations).toEqual([]);
   await page.getByRole("link", { name: "Open the existing model transparency panel" }).click();
   await expect(page.getByRole("heading", { name: "Model transparency", exact: true })).toBeInViewport();
