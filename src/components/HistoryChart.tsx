@@ -155,7 +155,7 @@ export function HistoryChart({
         </ResponsiveContainer>
       </div>
       <p className="muted chart-caption">
-        Gaps are missing observations, not zero.{" "}
+        ⓘ Gaps are missing observations, not zero.{" "}
         {period === "week"
           ? "Weekly dates retain source labels; start/end boundaries are unconfirmed."
           : ""}

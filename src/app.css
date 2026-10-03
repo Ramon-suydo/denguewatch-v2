@@ -391,3 +391,14 @@ a:not(.skip-link) { display: inline-flex; align-items: center; padding-block: 0.
 
 /* Long supplied source filenames must wrap on narrow screens. */
 .prose dd { overflow-wrap: anywhere; }
+
+.coverage-row { display: grid; grid-template-columns: 65px minmax(0,1fr) 90px; gap: .75rem; align-items: center; margin-block: 1rem; }
+.coverage-track { position: relative; height: 24px; background: var(--color-neutral-100); border: 1px solid var(--color-neutral-500); overflow: hidden; }
+.coverage-track > span { position: absolute; height: 100%; min-width: 2px; }
+.coverage-present { background: var(--color-navy-700); }
+.coverage-gap { background: repeating-linear-gradient(135deg, white, white 2px, #647086 2px, #647086 4px); }
+.inline-info { color: var(--color-neutral-600); font-size: .9rem; }
+.checksum { overflow-wrap: anywhere; }
+.data-notes summary { font-weight: 700; }
+.data-notes li { margin-block: 1rem; }
+@media (max-width:480px) { .coverage-row { grid-template-columns: 1fr; gap: .25rem; } }

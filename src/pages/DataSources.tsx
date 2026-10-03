@@ -1,150 +1,49 @@
 import { Link } from "react-router-dom";
 import { Card } from "../components/ui";
+import { StatCard } from "../components/StatCard";
 import { PageHeader } from "../components/PageHeader";
 import { SourceCitation } from "../components/SourceCitation";
 import { pendingCitationFields } from "../lib/source-metadata";
-
-// Audit figures from docs/DATA_QUALITY.md, not live database totals.
-const sources = [
-  ["ncr_dengue_monthly_with_rates.csv", "Monthly (derived from weekly)", "17 NCR LGUs", "1 January 2016–1 January 2021", "1,037"],
-  ["doh-epi-dengue-data-2016-2021.csv", "Weekly (source date labels)", "17 NCR LGUs", "10 January 2016–10 January 2021", "4,403"],
-  ["Daily_Reported_Cases_of_Dengue_in_the_City_of_Manila_from_2018_to_2023.xlsx", "Daily (separate source)", "Manila City only", "1 January 2018–2 December 2023", "1,910"],
-];
-
+import { loadDemoSnapshot } from "../lib/demo-snapshot";
+import { useResource } from "../lib/resources";
+import { ReadState } from "../components/PageState";
+import { dataConfidence, coverageSegments } from "../lib/data-confidence";
+import { formatDate } from "../lib/dates";
+import cache from "../data/weekly-forecast-v1.json";
 export function DataSources() {
-  return (
-    <>
-      <PageHeader
-        eyebrow="PUBLISHED DATA AND LIMITATIONS"
-        title="Data & Sources"
-        description="Understand coverage, missing observations, and the limits of the historical records before interpreting a chart or estimate."
-      />
-      <div className="ui-container app-content content-stack">
-        <p className="data-notice">
-          Historical records do not establish current dengue conditions.
-          Forecasts are research estimates only, not medical advice or official
-          outbreak warnings.
-        </p>
-        <Card className="prose">
-          <h2>{pendingCitationFields().length ? "Source attribution awaiting review" : "Source attribution"}</h2>
-          <p>
-            The dataset owner identifies the supplied files as Department of
-            Health (DOH) and Freedom of Information (FOI) sources. Source details
-            are listed below; any pending field still requires source-owner review.
-            DengueWatch is a thesis/research
-            application, not an official DOH service.
-          </p>
-          <p>
-            The figures below describe the files audited on 23 September 2026:
-            17 NCR LGUs and 7,350 observations across three sources. These are
-            audit figures, not a live database count or a count of unique cases.
-            Never sum daily, weekly, and monthly case totals.
-          </p>
-        </Card>
-        <Card>
-          <h2>Audited source coverage</h2>
-          <div className="table-scroll" role="region" aria-label="Audited source coverage" tabIndex={0}>
-            <table>
-              <caption>Supplied files; dates are source labels, not guaranteed complete periods.</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Source file</th>
-                  <th scope="col">Period</th>
-                  <th scope="col">Geography</th>
-                  <th scope="col">First–last label</th>
-                  <th scope="col">Observations</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sources.map(([file, period, geography, coverage, rows]) => (
-                  <tr key={file}>
-                    <th scope="row">{file}</th>
-                    <td>{period}</td>
-                    <td>{geography}</td>
-                    <td>{coverage}</td>
-                    <td>{rows}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Card>
-        <Card className="prose">
-          <h2>Citation details</h2>
-          {sources.map(([file, period]) => <section key={file}>
-            <h3>{period}</h3>
-            <p>{file.split("_").map((part, i) => <span key={i}>{i > 0 && "_"}{part}<wbr /></span>)}</p>
-            <SourceCitation source={file} />
-          </section>)}
-        </Card>
-        <Card className="prose">
-          <h2>Gaps and incomplete periods</h2>
-          <p>
-            Missing is not zero. Every NCR LGU has three internal weekly gaps:
-            13 November 2016, 6 January 2019, and 15 November 2020. Weekly labels
-            are Sundays; supplied metadata does not establish whether they are
-            week starts or ends. Labels are preserved without shifting dates.
-          </p>
-          <p>
-            January 2021 monthly values contain only two weekly records per LGU.
-            Coverage starts partway through January 2016 and ends early in
-            January 2021. A monthly row does not guarantee a complete month.
-          </p>
-          <p>
-            Manila has 281 absent dates relative to the full 2018–2023 calendar
-            years: 6 in 2018, 12 in 2019, 170 in 2020, 49 in 2021, 13 in 2022,
-            and 31 in 2023. The final 29 days of 2023 are outside supplied
-            coverage, not internal gaps. The workbook cannot establish whether
-            other absent dates are missing observations or omitted zero-report
-            days; they remain gaps.
-          </p>
-        </Card>
-        <Card className="prose">
-          <h2>Overlaps and source disagreements</h2>
-          <p>
-            Monthly CSV values exactly match grouping weekly rows by their
-            label month. Monthly data is derived, not an independent validation
-            set. Training and testing must not cross overlapping representations
-            of the same observations.
-          </p>
-          <p>
-            Manila daily and weekly totals disagree during overlapping years:
-            3,641 versus 3,620 cases in 2018; 3,961 versus 3,901 in 2019; and
-            697 versus 689 in 2020. Differences in coverage, definitions, or
-            revisions have not been established. Keep each source and period
-            type separate; do not combine or silently reconcile them.
-          </p>
-          <h3>Deaths and anomalies</h3>
-          <p>
-            Deaths exceed cases in 155 weekly and 41 monthly rows. These values
-            are preserved and flagged, and affected rows must be excluded from
-            mortality claims and forecast validation. Large case peaks alone
-            are not evidence of an error.
-          </p>
-          <p>
-            The daily workbook has no deaths field: all 1,910 death values remain
-            NULL, not zero. One Quezon City weekly death value (7 May 2017) is
-            also missing. Its supplied monthly aggregate is retained with a
-            missing-deaths flag; it does not prove complete mortality reporting.
-          </p>
-          <h3>Population and geography</h3>
-          <p>
-            Incidence uses the monthly file’s fixed population_2020, not a
-            current population estimate. Arithmetic checks do not establish
-            external population provenance. Current PSGC identifiers do not
-            establish that historical boundaries match current boundaries.
-            Pateros is NCR’s municipality; daily data covers Manila only.
-          </p>
-          <h3>Community reports</h3>
-          <p>
-            Community reports are unverified, kept separate from official data,
-            and excluded from the current forecasts. Weekly city counts below
-            five are hidden, so displayed community counts are lower bounds,
-            not complete totals.
-          </p>
-          <Link className="text-link" to="/">Explore the historical dashboard</Link>
-        </Card>
-      </div>
-    </>
-  );
+ const snapshot=useResource("confidence-audit",loadDemoSnapshot);
+ return <><PageHeader eyebrow="PUBLISHED DATA, CHECKED" title="Data confidence" description="Trace Manila’s records from source files to charts and tested estimates." />
+ <div className="ui-container app-content content-stack"><ReadState resource={snapshot}>{data=>{
+  const audit=dataConfidence(data), weekly=audit.sources.find(source=>source.period==="week")!, daily=audit.sources.find(source=>source.period==="day")!;
+  const score=cache.summary.find(row=>row.city==="MANILA CITY"&&row.horizon===1&&row.cohort==="all-2019-onward"&&row.model===cache.selected)!;
+  const baseline=cache.summary.find(row=>row.city==="MANILA CITY"&&row.horizon===1&&row.cohort==="all-2019-onward"&&row.model==="mean-4")!;
+  const first=Date.parse(weekly.first), last=Date.parse(daily.last)+86400000, x=(date:string)=>(Date.parse(date)-first)/(last-first)*100;
+  return <>
+   <section aria-labelledby="verified-work-title"><div className="section-heading"><h2 id="verified-work-title">Verified work, visible evidence</h2></div>
+    <p>Audit snapshot: {formatDate(data.metadata.createdAt)}. These figures describe checked records, not live conditions or unique cases.</p>
+    <div className="stat-grid">
+     <StatCard label="Manila rows audited" value={audit.rows.length.toLocaleString("en-PH")} detail="Weekly, derived monthly and separate daily records; case totals are never added across sources." />
+     <StatCard label="Full-row verification" value={audit.verification?"Matched":"Not established"} detail="Snapshot verification compares every official row with audited source files." />
+     <StatCard label="Years represented" value={`${audit.firstYear}–${audit.lastYear}`} detail="Source labels with gaps and partial periods preserved." />
+     <StatCard label="Latest data period" value={formatDate(audit.latest)} detail="Historical source label, not a real-time update." />
+    </div>
+   </section>
+   <Card><h2>Manila coverage</h2><p className="chart-takeaway">Weekly records span {formatDate(weekly.first)} to {formatDate(weekly.last)}; the separate daily series extends to {formatDate(daily.last)}.</p>
+    <div className="coverage-timeline" role="img" aria-label="Manila weekly and daily coverage; hatched segments mark not-reported dates within each source’s first and last labels.">
+     {[weekly,daily].map(source=><div className="coverage-row" key={source.source}><strong>{source.period==="week"?"Weekly":"Daily"}</strong><div className="coverage-track">{coverageSegments(source.rows.map(row=>row.period_start),source.period==="week"?7:1).map(segment=><span key={segment.date} className={segment.reported?"coverage-present":"coverage-gap"} style={{left:`${x(segment.date)}%`,width:`${x(segment.end)-x(segment.date)}%`}} title={`${segment.reported?"Reported":"Not reported"}: ${segment.date} to ${segment.end} (end exclusive)`}/>)}</div><span>{source.first.slice(0,4)}–{source.last.slice(0,4)}</span></div>)}
+    </div>
+    <p className="inline-info">ⓘ Hatching means not reported, never zero; blank track lies outside that source’s coverage. Exact dates and counts follow.</p>
+    <div className="table-scroll" role="region" aria-label="Manila source coverage" tabIndex={0}><table><thead><tr><th>Records</th><th>First label</th><th>Last label</th><th>Rows</th></tr></thead><tbody>{audit.sources.map(source=><tr key={source.source}><th>{source.period==="week"?"Weekly":source.period==="day"?"Manila daily":"Monthly (derived from weekly)"}</th><td>{formatDate(source.first)}</td><td>{formatDate(source.last)}</td><td>{source.rows.length.toLocaleString("en-PH")}</td></tr>)}</tbody></table></div>
+   </Card>
+   <Card><h2>Tested against a simple baseline</h2><p>Manila’s one-week test MAE: {score.mae?.toFixed(2)} cases for {cache.selected}, compared with {baseline.mae?.toFixed(2)} for the 4-week mean. Backtesting uses past-only training, not random splits.</p><Link className="text-link" to="/#model-transparency-title">Read the model evidence and limits</Link></Card>
+   <Card className="prose"><details className="data-notes"><summary>Data notes · 5 notes</summary><ol>
+    <li><strong>Historical, not live.</strong> Weekly labels cover {formatDate(weekly.first)}–{formatDate(weekly.last)}; daily dates cover {formatDate(daily.first)}–{formatDate(daily.last)}. Weekly start/end semantics are unconfirmed, partial months stay partial, and monthly records are derived from weekly, not independent evidence.</li>
+    <li><strong>Missing is not zero.</strong> A missing row stays “Not reported”; an explicit zero stays “Reported zero”. Fixed 2020 incidence denominators verify arithmetic, not current population or matching historical boundaries.</li>
+    <li><strong>Two separate Manila series.</strong> Reported daily versus weekly case totals: {audit.overlaps.map(row=>`${row.year}: ${row.day.toLocaleString("en-PH")} vs ${row.week.toLocaleString("en-PH")}`).join("; ")}. Differences in coverage or definitions remain unconfirmed; never add or silently reconcile the sources.</li>
+    <li><strong>Deaths excluded from forecasts.</strong> {audit.rows.filter(row=>row.deaths!==null&&row.deaths>row.cases).length} Manila rows with deaths exceeding cases are preserved and flagged, excluded from mortality claims and forecast validation. Daily deaths are unavailable (NULL); large case peaks alone are not errors.</li>
+    <li><strong>Community reports are unverified.</strong> They stay separate from official data and forecasts, with submissions closed. Counts below five are hidden; any displayed counts are lower bounds.</li>
+   </ol></details></Card>
+   <Card className="prose"><h2>{pendingCitationFields().length?"Source attribution awaiting review":"Source attribution"}</h2><p>DOH/FOI citation fields still require source-owner review where marked unavailable, unconfirmed or pending. This is a research application, not an official DOH service.</p>{audit.sources.map(source=><section key={source.source}><h3>{source.period==="day"?"Manila daily":source.period==="week"?"Manila weekly":"Manila monthly (derived)"}</h3><SourceCitation source={source.source}/><details><summary>Source checksum (SHA-256)</summary><code className="checksum">{data.metadata.sourceChecksums.find(item=>item.source===source.source)?.sha256??"Unavailable"}</code></details></section>)}</Card>
+  </>;
+ }}</ReadState></div></>;
 }

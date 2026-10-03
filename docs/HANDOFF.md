@@ -380,3 +380,20 @@ Next: Phase 2 visual-first Home, then Phase 3 verified Tondo geography/populatio
 No barangay counts, population totals or boundaries invented. No Supabase writes,
 merge, push or tag change. Self-review and test locally before merging near defense.
 User push: git push -u origin feat/manila-redesign.
+
+
+## Data confidence — item A (2026-10-04)
+
+Data & Sources now leads with verified Manila work: 2,230 scoped rows, recorded
+full-row source verification, source fingerprints, years and last source label,
+all derived from the committed audit snapshot. Weekly/daily coverage bars hatch
+missing observations; annual overlap differences and suspect Manila rows are
+computed. Model summary uses the cached Manila one-week test, linked to its panel.
+Five closed-by-default notes retain historical/non-live dates, missing vs zero,
+separate daily/weekly/monthly sources, mortality exclusions and unverified community
+counts. All broader disclosures remain in DATA_QUALITY.md; no other LGU details
+appear in the page body. Citation warnings and shared footer were not edited.
+Added contextual info beside history gaps and model MAE. No stronger accuracy claim.
+Checks once: 28 unit tests, production build, disclosure/axe browser check at
+320/390/768/1280 pass. No new dependency, snapshot/DB change, push or tag mutation.
+Next: item B requires real Tondo boundary/population import; none existed on branch.

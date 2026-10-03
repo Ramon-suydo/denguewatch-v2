@@ -91,6 +91,7 @@ export function ForecastPanel({ cityName }: { cityName: string }) {
       </Card>
       <Card className="prose" role="region" aria-labelledby="model-transparency-title">
         <h2 id="model-transparency-title">Model transparency</h2>
+        <p className="inline-info">ⓘ A smaller MAE means fewer case-count errors on this historical test; it does not establish performance on newer data. <a href="/data-sources">Data confidence and source notes</a>.</p>
         <p>Predicts weekly reported case counts per LGU at {saved.horizons.map(h => h.horizon).join("/")} weeks ahead, using source date labels.</p>
         <p>Inputs: the four most recent weekly counts available at the origin (lags 1–4 for the one-week forecast), the target’s 52-week lag, and annual sine/cosine seasonality. Each LGU and horizon has its own fit and intercept. Multi-step fits use only counts known at the origin.</p>
         <p>Training: {formatDate(cache.metadata.trainWindow.first)} through each rolling origin, with training-only scaling. Windows: {cache.metadata.evaluation}.</p>
