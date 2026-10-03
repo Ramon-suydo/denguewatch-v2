@@ -10,7 +10,7 @@ export function PageHeader({
 }) {
   return (
     <section className="page-header">
-      <div className="dw-container">
+      <div className="ui-container">
         <div>
           <p className="eyebrow">{eyebrow}</p>
           <h1>{title}</h1>

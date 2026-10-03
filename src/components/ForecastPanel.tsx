@@ -73,7 +73,7 @@ export function ForecastPanel({ cityName }: { cityName: string }) {
         <p>Model: {modelNames[cache.selected]}. 4-week mean estimate: {number(meanForecast.predicted)} cases; seasonal-naive estimate: {number(naive.predicted)} cases.</p>
         <p className="muted">Shaded bands: nominal 80% and 95% prediction intervals from earlier out-of-sample errors, not guaranteed coverage. The 1/2/4-week points are separate direct forecasts; connecting lines do not supply a 3-week forecast.</p>
         <figure>
-          <figcaption>Recent observed cases (gray), estimates (teal), 80% band (teal), 95% band (gray). Exact values below.</figcaption>
+          <figcaption>Recent observed cases (gray), estimates (navy), 80% band (navy), 95% band (gray). Exact values below.</figcaption>
           <Suspense fallback={<div className="history-chart chart-skeleton" role="status">Loading forecast chart…</div>}>
             <ForecastChart data={series} />
           </Suspense>

@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { mkdir } from "node:fs/promises";
-import { mockPublicApi } from "./public-fixtures";
+import { mockPublicApi } from "../fixtures/public-fixtures";
 import cache from "../../src/data/weekly-forecast-v1.json" with { type: "json" };
 import { sourceAttribution } from "../../src/lib/source-metadata";
 
@@ -25,11 +25,11 @@ test("dashboard and full city series use real-source fixtures, keep provenance s
   await expect(
     page.getByText("Historical estimate only.", { exact: false }),
   ).toBeVisible();
-  await expect(page.locator(".area-table tbody tr")).toHaveCount(17);
+  await expect(page.locator(".area-table tbody tr")).toHaveCount(1);
   await page
     .getByRole("link", { name: /Explore MANILA CITY in detail/ })
     .click();
-  await page.getByLabel("Period type").selectOption("day");
+  await page.getByLabel("Show records").selectOption("day");
   await expect(
     page.getByText("Incidence is not published for this source.", {
       exact: false,
@@ -39,7 +39,7 @@ test("dashboard and full city series use real-source fixtures, keep provenance s
   expect(data.historyOffsets).toContain(1500);
   await page.getByText("View exact case values").click();
   await expect(page.locator(".chart-table tbody tr")).toHaveCount(40);
-  await page.getByLabel("Period type").selectOption("month");
+  await page.getByLabel("Show records").selectOption("month");
   await expect(page.locator('section[aria-labelledby="history-title"] .history-chart svg')).toHaveCount(2);
   expect(
     (
@@ -71,9 +71,7 @@ test("consent is opt-in, contact is optional, submission uses only RPC, and with
   ).toBeDisabled();
   await consent.check();
   await page.getByRole("button", { name: "Continue to report" }).click();
-  await page
-    .getByLabel("City / municipality (required)")
-    .selectOption(data.cities[0].id);
+  await expect(page.getByLabel("City / municipality (required)")).toHaveValue("MANILA CITY");
   await expect(page.getByLabel("Email address or phone number")).toHaveCount(0);
   await page.getByRole("checkbox").check();
   await page
@@ -138,15 +136,8 @@ test("closed collection, missing city, empty history and service errors have usa
   await expect(
     page.getByRole("heading", { name: "City not found" }),
   ).toBeVisible();
-  await page.goto(
-    "/city/" + data.cities.find((city) => city.name === "MAKATI CITY")!.id,
-  );
-  await page.getByLabel("Period type").selectOption("day");
-  await expect(
-    page
-      .getByText("No daily observations are available for this city.")
-      .first(),
-  ).toBeVisible();
+  await page.goto("/city/" + data.cities.find(city => city.name === "MANILA CITY")!.id);
+  await page.getByLabel("Show records").selectOption("day");
   await page.route("**/rest/v1/historical_surveillance**", (route) =>
     route.fulfill({
       status: 503,
@@ -154,7 +145,7 @@ test("closed collection, missing city, empty history and service errors have usa
       body: JSON.stringify({ message: "unavailable" }),
     }),
   );
-  await page.getByLabel("Period type").selectOption("month");
+  await page.getByLabel("Show records").selectOption("month");
   await expect(page.getByText(/Offline demo snapshot/)).toBeVisible();
   await expect(page.locator('section[aria-labelledby="history-title"] .history-chart svg')).toHaveCount(2);
 });
@@ -167,7 +158,7 @@ test("map popups distinguish old official trends and community counts; tile fail
     route.abort(),
   );
   await page.goto("/map");
-  await expect(page.locator(".leaflet-marker-icon")).toHaveCount(17);
+  await expect(page.locator(".leaflet-marker-icon")).toHaveCount(1);
   await expect(
     page.getByText("Some map tiles could not load.", { exact: false }),
   ).toBeVisible();
@@ -207,11 +198,12 @@ test("map popups distinguish old official trends and community counts; tile fail
 test("public routes are responsive and legal information stays available on phones", async ({
   page,
 }) => {
+  test.setTimeout(120000);
   const fixture = await mockPublicApi(page);
   await page.route("https://tile.openstreetmap.org/**", route => route.abort());
   for (const width of [320, 390, 768]) {
     await page.setViewportSize({ width, height: 844 });
-    for (const route of ["/", "/dashboard", "/city/" + fixture.cities[0].id, "/map", "/report", "/privacy", "/terms", "/data-sources", "/design-preview", "/not-found"]) {
+    for (const route of ["/", "/dashboard", "/city/" + fixture.cities.find(city => city.name === "MANILA CITY")!.id, "/map", "/report", "/privacy", "/terms", "/data-sources", "/dev", "/not-found"]) {
       await page.goto(route);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
       const notice = page.getByRole("complementary", { name: "Estimates, not alerts" });

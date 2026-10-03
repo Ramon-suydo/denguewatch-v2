@@ -82,8 +82,13 @@ export function HistoryChart({
         the supplied rates using the fixed 2020 population denominator.
       </p>
     );
+  const observed = data.filter(point => point.value !== null);
+  const latest = observed.at(-1)!;
+  const peak = observed.reduce((best, point) => point.value! > best.value! ? point : best);
+  const reported = new Set(rows.filter(row => row.source === chosen).map(row => row.period_start));
   return (
     <figure>
+      <p className="chart-takeaway">The latest reported value is {latest.value!.toLocaleString("en-PH")} {metric === "cases" ? "cases" : "cases per 100,000"} on {formatDate(latest.date)}; the highest in this series is {peak.value!.toLocaleString("en-PH")} on {formatDate(peak.date)}.</p>
       <figcaption className="chart-caption">
         {unit} · {formatDate(data[0]?.date)} — {formatDate(data.at(-1)?.date)}
       </figcaption>
@@ -107,13 +112,13 @@ export function HistoryChart({
           >
             <CartesianGrid
               vertical={false}
-              stroke={colors.warm[200]}
+              stroke={colors.neutral[200]}
               strokeDasharray="4 4"
             />
             <XAxis
               dataKey="date"
               minTickGap={60}
-              tick={{ fill: colors.warm[600], fontSize: 16 }}
+              tick={{ fill: colors.neutral[600], fontSize: 16 }}
               tickFormatter={(date) =>
                 new Date(date + "T00:00:00Z").toLocaleDateString("en-PH", {
                   month: "short",
@@ -125,7 +130,7 @@ export function HistoryChart({
             <YAxis
               width={55}
               allowDecimals={metric === "incidence"}
-              tick={{ fill: colors.warm[600], fontSize: 16 }}
+              tick={{ fill: colors.neutral[600], fontSize: 16 }}
             />
             <Tooltip
               labelFormatter={(value) => formatDate(String(value))}
@@ -140,7 +145,7 @@ export function HistoryChart({
               name={unit}
               type="linear"
               dataKey="value"
-              stroke={colors.teal[600]}
+              stroke={colors.navy[600]}
               strokeWidth={2}
               dot={data.length < 80}
               connectNulls={false}
@@ -158,6 +163,7 @@ export function HistoryChart({
           ? "Rates use the source’s fixed 2020 population, not current population."
           : ""}
       </p>
+      <div className="chart-legend"><span><i className="legend-missing" />Not reported (no source row)</span><span><i className="legend-zero" />Reported zero (0)</span></div>
       <details className="chart-table">
         <summary>
           View exact {metric === "cases" ? "case" : "incidence"} values
@@ -182,7 +188,7 @@ export function HistoryChart({
                   <td>
                     {point.value?.toLocaleString("en-PH", {
                       maximumFractionDigits: 2,
-                    }) ?? "No observation"}
+                    }) ?? (reported.has(point.date) ? "Rate unavailable" : "Not reported")}{point.value === 0 && metric === "cases" ? " (reported zero)" : ""}
                   </td>
                 </tr>
               ))}
@@ -191,7 +197,7 @@ export function HistoryChart({
         </div>
         <div className="pagination">
           <button
-            className="dw-button dw-button-secondary"
+            className="ui-button ui-button-secondary"
             disabled={safePage === 0}
             onClick={() => setTablePage(safePage - 1)}
           >
@@ -201,7 +207,7 @@ export function HistoryChart({
             Page {safePage + 1} of {pageCount}
           </span>
           <button
-            className="dw-button dw-button-secondary"
+            className="ui-button ui-button-secondary"
             disabled={safePage + 1 >= pageCount}
             onClick={() => setTablePage(safePage + 1)}
           >

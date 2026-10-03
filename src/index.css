@@ -4,17 +4,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
+    scroll-padding-top: 100px;
   }
   body {
-    @apply bg-warm-50 text-warm-900 font-sans;
+    @apply bg-neutral-50 text-neutral-900 font-sans;
     margin: 0;
     font-size: 18px;
     line-height: 1.5;
   }
   h1,
   h2 {
-    @apply font-serif text-teal-900;
+    @apply font-display text-navy-900;
     font-weight: 400;
     line-height: 1.18;
   }
@@ -22,7 +22,7 @@
     font-size: clamp(1.65rem, 2.5vw, 2rem);
   }
   h3 {
-    @apply text-teal-900;
+    @apply text-navy-900;
     font-size: 1.125rem;
     font-weight: 600;
   }
@@ -40,19 +40,19 @@
     text-underline-offset: 5px;
   }
   :focus-visible {
-    outline: 3px solid theme("colors.teal.600");
+    outline: 3px solid theme("colors.navy.600");
     outline-offset: 4px;
   }
   ::selection {
-    @apply bg-signal-100 text-teal-950;
+    @apply bg-gold-100 text-navy-950;
   }
 }
 @layer components {
-  .dw-container {
+  .ui-container {
     @apply mx-auto w-full max-w-content;
     padding-inline: 2rem;
   }
-  .dw-button {
+  .ui-button {
     @apply inline-flex items-center justify-center gap-2 rounded-control font-semibold;
     min-height: 46px;
     padding: 0.65rem 1.1rem;
@@ -62,35 +62,35 @@
       background-color 160ms,
       box-shadow 160ms;
   }
-  .dw-button-primary {
-    @apply bg-signal-500 text-teal-950;
+  .ui-button-primary {
+    @apply bg-gold-500 text-navy-950;
   }
-  .dw-button-primary:hover:not(:disabled) {
-    @apply bg-signal-400;
+  .ui-button-primary:hover:not(:disabled) {
+    @apply bg-gold-400;
   }
-  .dw-button-secondary {
-    @apply bg-white text-teal-800 border-teal-600;
+  .ui-button-secondary {
+    @apply bg-white text-navy-800 border-navy-600;
   }
-  .dw-button-secondary:hover:not(:disabled) {
-    @apply bg-teal-50;
+  .ui-button-secondary:hover:not(:disabled) {
+    @apply bg-navy-50;
   }
-  .dw-button-ghost {
-    @apply text-teal-700;
+  .ui-button-ghost {
+    @apply text-navy-700;
   }
-  .dw-button-ghost:hover:not(:disabled) {
-    @apply bg-teal-50;
+  .ui-button-ghost:hover:not(:disabled) {
+    @apply bg-navy-50;
   }
-  .dw-button:disabled {
-    @apply bg-warm-200 text-warm-600;
+  .ui-button:disabled {
+    @apply bg-neutral-200 text-neutral-600;
     cursor: not-allowed;
   }
-  .dw-card {
-    @apply rounded-card border border-warm-200 bg-white shadow-card;
+  .ui-card {
+    @apply rounded-card border border-neutral-200 bg-white shadow-card;
     padding: 1.5rem;
     min-width: 0;
   }
-  .dw-badge {
-    @apply inline-flex items-center bg-warm-100 text-warm-600 rounded-control;
+  .ui-badge {
+    @apply inline-flex items-center bg-neutral-100 text-neutral-600 rounded-control;
     padding: 0.3rem 0.65rem;
     font-size: 1rem;
     font-weight: 600;
@@ -134,72 +134,72 @@
   .source-official {
     @apply text-source-official-ink bg-source-official-surface border-source-official-border;
   }
-  .dw-field {
+  .ui-field {
     display: grid;
     gap: 0.4rem;
   }
-  .dw-field label {
-    @apply text-warm-700;
+  .ui-field label {
+    @apply text-neutral-700;
     font-size: 1rem;
     font-weight: 600;
   }
-  .dw-field input,
-  .dw-field select {
-    @apply rounded-control border border-warm-500 bg-white text-warm-900;
+  .ui-field input,
+  .ui-field select {
+    @apply rounded-control border border-neutral-500 bg-white text-neutral-900;
     width: 100%;
     min-height: 48px;
     padding: 0.65rem 0.85rem;
   }
-  .dw-field select {
+  .ui-field select {
     padding-right: 2rem;
   }
-  .dw-field input::placeholder {
-    @apply text-warm-500;
+  .ui-field input::placeholder {
+    @apply text-neutral-500;
     opacity: 1;
   }
-  .dw-field [aria-invalid="true"] {
+  .ui-field [aria-invalid="true"] {
     border-width: 2px;
     border-style: dashed;
   }
-  .dw-hint,
-  .dw-error {
-    @apply text-warm-600;
+  .ui-hint,
+  .ui-error {
+    @apply text-neutral-600;
     font-size: 1rem;
   }
-  .dw-error {
+  .ui-error {
     font-weight: 600;
   }
-  .dw-field :disabled {
-    @apply bg-warm-100;
+  .ui-field :disabled {
+    @apply bg-neutral-100;
     cursor: not-allowed;
   }
-  .dw-checkbox {
+  .ui-checkbox {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
     padding-block: 0.6rem;
     cursor: pointer;
   }
-  .dw-checkbox input {
+  .ui-checkbox input {
     width: 22px;
     height: 22px;
     flex: 0 0 22px;
     margin-top: 0.2rem;
-    accent-color: theme("colors.teal.700");
+    accent-color: theme("colors.navy.700");
   }
-  .dw-modal {
-    @apply rounded-panel bg-white text-warm-900 shadow-raised;
-    border: 1px solid theme("colors.warm.300");
+  .ui-modal {
+    @apply rounded-panel bg-white text-neutral-900 shadow-raised;
+    border: 1px solid theme("colors.neutral.300");
     padding: 2rem;
     margin: auto;
     width: min(560px, calc(100% - 2rem));
     max-height: calc(100dvh - 2rem);
     overflow-y: auto;
   }
-  .dw-modal::backdrop {
-    background: rgb(9 43 43 / 0.6);
+  .ui-modal::backdrop {
+    background: rgb(7 11 31 / 0.6);
   }
-  .dw-modal form {
+  .ui-modal form {
     margin-top: 1.5rem;
   }
   .modal-actions {
@@ -215,21 +215,21 @@
     bottom: 1rem;
     max-width: min(440px, calc(100% - 2rem));
   }
-  .dw-toast {
-    @apply bg-teal-950 text-white rounded-card shadow-raised;
+  .ui-toast {
+    @apply bg-navy-950 text-white rounded-card shadow-raised;
     display: flex;
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.25rem;
   }
-  .dw-toast .dw-button {
+  .ui-toast .ui-button {
     color: white;
   }
-  .dw-toast .dw-button:hover {
-    @apply bg-teal-800;
+  .ui-toast .ui-button:hover {
+    @apply bg-navy-800;
   }
   .skip-link {
-    @apply bg-white text-teal-950;
+    @apply bg-white text-navy-950;
     position: fixed;
     top: -100px;
     left: 1rem;
@@ -240,7 +240,7 @@
     top: 1rem;
   }
   .top-nav {
-    @apply bg-teal-950 text-white;
+    @apply bg-navy-950 text-white;
   }
   .nav-inner {
     display: flex;
@@ -262,7 +262,7 @@
     font-weight: 400;
   }
   .brand-symbol {
-    @apply text-signal-400;
+    @apply text-navy-700;
     display: block;
     width: 38px;
     overflow: hidden;
@@ -282,20 +282,20 @@
     padding-block: 1rem;
   }
   .nav-links > a[aria-current] {
-    @apply text-signal-300;
+    @apply text-navy-700;
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 12px;
   }
   .top-nav :focus-visible {
-    outline-color: theme("colors.signal.400");
+    outline-color: theme("colors.gold.400");
   }
   .menu-toggle {
     display: none;
     color: white;
   }
   .overview-hero {
-    @apply bg-teal-900;
+    @apply bg-navy-900;
     overflow: hidden;
   }
   .hero-inner {
@@ -313,13 +313,13 @@
     margin-bottom: 0.65rem;
   }
   .hero-copy .eyebrow {
-    @apply text-teal-100;
+    @apply text-navy-100;
     display: flex;
     align-items: center;
     gap: 0.65rem;
   }
   .status-dot {
-    @apply bg-signal-400;
+    @apply bg-gold-400;
     display: inline-block;
     width: 7px;
     height: 7px;
@@ -332,10 +332,10 @@
     line-height: 1.12;
   }
   .hero-copy h1 em {
-    @apply text-teal-200;
+    @apply text-navy-200;
   }
   .hero-copy > p {
-    @apply text-teal-100;
+    @apply text-navy-100;
     margin-top: 1.25rem;
     line-height: 1.65;
   }
@@ -348,7 +348,7 @@
     border-left: 1px solid rgb(173 210 202 / 0.25);
   }
   .hero-monitor {
-    @apply text-teal-200;
+    @apply text-navy-200;
     opacity: 0.42;
     position: absolute;
     width: 120%;
@@ -360,7 +360,7 @@
     padding-top: 5rem;
   }
   .hero-note-label {
-    @apply text-teal-200;
+    @apply text-navy-200;
     font-size: 1rem;
     letter-spacing: 0.12em;
     font-weight: 600;
@@ -379,12 +379,12 @@
     align-items: center;
     gap: 1rem;
     padding-block: 1.25rem;
-    border-bottom: 1px solid theme("colors.warm.200");
+    border-bottom: 1px solid theme("colors.neutral.200");
     font-size: 1rem;
   }
   .preview-notice p,
   .muted {
-    @apply text-warm-600;
+    @apply text-neutral-600;
   }
   .section-heading {
     display: flex;
@@ -399,7 +399,7 @@
   .snapshot-heading {
     padding-top: 2rem;
   }
-  .snapshot-heading .dw-field {
+  .snapshot-heading .ui-field {
     min-width: 180px;
   }
   .stat-grid {
@@ -408,12 +408,12 @@
     gap: 1.25rem;
   }
   .stat-label {
-    @apply font-sans text-warm-600;
+    @apply font-sans text-neutral-600;
     font-size: 1rem;
     font-weight: 600;
   }
   .stat-value {
-    @apply text-teal-900;
+    @apply text-navy-900;
     font-size: 2.9rem;
     line-height: 1.15;
     letter-spacing: -0.04em;
@@ -422,7 +422,7 @@
     margin-top: 0.8rem;
   }
   .stat-detail {
-    @apply text-warm-600;
+    @apply text-neutral-600;
     font-size: 1rem;
     margin-top: 0.5rem;
     min-height: 3rem;
@@ -431,7 +431,7 @@
     margin-top: 0.8rem;
   }
   .stat-context {
-    @apply text-teal-700;
+    @apply text-navy-700;
     font-size: 1rem;
     font-weight: 600;
   }
@@ -442,7 +442,7 @@
     margin-top: 1.5rem;
   }
   .trend-panel .eyebrow {
-    @apply text-warm-600;
+    @apply text-neutral-600;
   }
   .trend-panel h2 {
     font-size: 1.7rem;
@@ -462,10 +462,10 @@
   .chart-legend i {
     display: inline-block;
     width: 22px;
-    border-top: 3px solid theme("colors.teal.600");
+    border-top: 3px solid theme("colors.navy.600");
   }
   .chart-legend .legend-previous {
-    border-color: theme("colors.warm.500");
+    border-color: theme("colors.neutral.500");
     border-top-style: dashed;
   }
   .trend-chart {
@@ -478,24 +478,24 @@
     font-size: 1rem;
   }
   .chart-table summary {
-    @apply text-teal-700;
+    @apply text-navy-700;
     padding-block: 0.5rem;
     text-decoration: underline;
     text-underline-offset: 4px;
   }
   .panel-footnote {
-    @apply text-warm-600;
+    @apply text-neutral-600;
     font-size: 1rem;
-    border-top: 1px solid theme("colors.warm.200");
+    border-top: 1px solid theme("colors.neutral.200");
     padding-top: 1rem;
     margin-top: 1rem;
   }
   .reading-panel {
-    @apply bg-teal-50 border-teal-100;
+    @apply bg-navy-50 border-navy-100;
     padding: 1.75rem;
   }
   .section-number {
-    @apply text-teal-700;
+    @apply text-navy-700;
     font-size: 1rem;
     letter-spacing: 0.08em;
     font-weight: 700;
@@ -505,19 +505,19 @@
     font-size: 1.9rem;
   }
   .reading-panel > p {
-    @apply text-warm-700;
+    @apply text-neutral-700;
     margin-top: 0.75rem;
   }
   .reading-item {
     margin-top: 1.25rem;
   }
   .reading-item p {
-    @apply text-warm-600;
+    @apply text-neutral-600;
     font-size: 1rem;
     margin-top: 0.4rem;
   }
   .text-link {
-    @apply text-signal-700;
+    @apply text-navy-700;
     display: inline-block;
     font-weight: 600;
     text-decoration: underline;
@@ -527,7 +527,7 @@
   .area-heading {
     margin-top: 3rem;
   }
-  .area-heading .dw-field {
+  .area-heading .ui-field {
     width: 260px;
   }
   .area-table {
@@ -551,13 +551,13 @@
   th,
   td {
     padding: 1.15rem 1.5rem;
-    border-bottom: 1px solid theme("colors.warm.200");
+    border-bottom: 1px solid theme("colors.neutral.200");
   }
   thead {
-    @apply bg-warm-100 text-warm-600;
+    @apply bg-neutral-100 text-neutral-600;
   }
   tbody th {
-    @apply text-teal-900;
+    @apply text-navy-900;
     font-weight: 600;
   }
   .case-count {
@@ -565,12 +565,12 @@
     font-variant-numeric: tabular-nums;
   }
   .table-note {
-    @apply text-warm-600;
+    @apply text-neutral-600;
     padding: 1rem 1.5rem;
     font-size: 1rem;
   }
   .empty-state {
-    @apply text-warm-600;
+    @apply text-neutral-600;
     padding: 2rem;
   }
   .design-guide {
@@ -603,10 +603,10 @@
     font-size: 1rem;
   }
   .swatch-row code {
-    @apply text-warm-600;
+    @apply text-neutral-600;
   }
   .type-specimen {
-    @apply font-serif text-teal-900;
+    @apply font-display text-navy-900;
     font-size: 1.8rem;
     margin-block: 0.75rem;
   }
@@ -629,23 +629,23 @@
     margin-top: 0.8rem;
   }
   .site-footer {
-    @apply text-warm-600;
+    @apply text-neutral-600;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     padding-block: 1.5rem;
-    border-top: 1px solid theme("colors.warm.200");
+    border-top: 1px solid theme("colors.neutral.200");
     font-size: 1rem;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .dw-revealed {
+  .ui-revealed {
     animation: reveal 500ms ease-out both;
   }
   @keyframes reveal {
     from {
       opacity: 0.65;
-      transform: translateY(10px);
+      transform: translateY(12px);
     }
     to {
       opacity: 1;
@@ -676,7 +676,7 @@
   }
 }
 @media (max-width: 800px) {
-  .dw-container {
+  .ui-container {
     padding-inline: 1.25rem;
   }
   .nav-inner {
@@ -689,7 +689,7 @@
     display: inline-flex;
   }
   .menu-toggle:hover:not(:disabled) {
-    background: theme("colors.teal.800");
+    background: theme("colors.navy.800");
   }
   .nav-links {
     display: none;
@@ -723,8 +723,8 @@
   .area-heading {
     flex-direction: column;
   }
-  .snapshot-heading .dw-field,
-  .area-heading .dw-field {
+  .snapshot-heading .ui-field,
+  .area-heading .ui-field {
     width: 100%;
   }
   .preview-notice {
@@ -738,7 +738,7 @@
   }
 }
 @media (max-width: 480px) {
-  .dw-container {
+  .ui-container {
     padding-inline: 1rem;
   }
   .stat-grid {
@@ -747,7 +747,7 @@
   .stat-detail {
     min-height: auto;
   }
-  .dw-card {
+  .ui-card {
     padding: 1.25rem;
   }
   .area-table {
@@ -766,7 +766,7 @@
   .eyebrow {
     letter-spacing: 0.08em;
   }
-  .dw-modal {
+  .ui-modal {
     padding: 1.25rem;
   }
   .modal-actions {
@@ -776,3 +776,58 @@
     gap: 0.6rem;
   }
 }
+
+/* iACADEMY visual language: shared chrome and accessible semantic tokens. */
+h1, h2, h3 { font-family: Montserrat, sans-serif; font-weight: 800; letter-spacing: -.025em; }
+.brand-rail { height: 3px; flex: none; background: linear-gradient(90deg, #2dd4dc, #3b5bff, #d4af37); }
+.site-chrome { padding-top: 83px; background: linear-gradient(115deg, #070b1f, #16255a); }
+.top-nav { position: fixed; inset: 0 0 auto; z-index: 100; background: transparent; transition: background .2s; }
+.top-nav.is-scrolled { background: rgb(7 11 31 / .8); backdrop-filter: blur(16px); }
+.nav-inner { min-height: 80px; gap: 1rem; padding-block: .5rem; }
+.wordmark { font-family: Montserrat, sans-serif; font-weight: 800; font-size: 1.3rem; white-space: nowrap; }
+.wordmark-light { font-weight: 500; }
+.brand-symbol { color: #2dd4dc; }
+.nav-links { gap: .25rem; }
+.nav-links > a { border-radius: 999px; padding: .5rem .8rem; color: #fff; font-size: .88rem; text-decoration: none; }
+.nav-links > a:hover { background: rgb(255 255 255 / .12); color: #fff; }
+.nav-links > a[aria-current="page"] { background: rgb(255 255 255 / .1); color: #fff; }
+.nav-links > a[aria-current="page"]::before { content: ""; width: 6px; height: 6px; border-radius: 50%; margin-right: .5rem; background: #2dd4dc; box-shadow: 0 0 10px #2dd4dc; }
+.nav-links > a.community-link { border: 1px solid rgb(255 255 255 / .6); font-size: .8rem; }
+.menu-toggle, .menu-toggle:hover:not(:disabled) { color: white; }
+.honesty-inner { display: flex; gap: .5rem 1rem; flex-wrap: wrap; align-items: center; padding-block: .5rem; }
+.honesty-strip { color: #e5eaff; font-size: .8rem; line-height: 1.6; border-bottom: 1px solid rgb(255 255 255 / .15); }
+.honesty-strip a { color: #e8c874; }
+.honesty-strip .snapshot-notice { margin: 0; padding: 0; border: 0; background: transparent; }
+.honesty-strip .ui-badge { background: #16255a; color: #e8c874; border-color: #8192bf; }
+.ui-button { border-radius: 999px; font-weight: 700; }
+.ui-button-primary { background: #d4af37; color: #070b1f; }
+.ui-button-primary:hover:not(:disabled) { background: #e8c874; }
+.ui-button-secondary { border-color: #24396f; color: #24396f; background: white; }
+.hero .ui-button-secondary { color: white; border-color: white; background: transparent; }
+.ui-card { position: relative; box-shadow: 0 10px 30px -20px rgb(7 11 31 / .32); }
+.index-card::after { content: ""; position: absolute; top: 0; right: 1.25rem; width: 3rem; height: 3px; background: linear-gradient(90deg, #3b5bff, #2dd4dc); }
+.interactive-card { transition: transform .2s, box-shadow .2s; }
+.interactive-card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -22px rgb(7 11 31 / .35); }
+.section-heading { border-left: 4px solid; border-image: linear-gradient(#2dd4dc, #3b5bff, #d4af37) 1; padding-left: 1rem; }
+.chart-takeaway { font-weight: 700; color: #24396f; margin-block: .75rem; }
+.legend-missing { width: 20px; height: 16px; background: repeating-linear-gradient(135deg, white, white 3px, #647086 3px, #647086 4px); border: 1px solid #647086; }
+.legend-zero { width: 20px; height: 16px; background: #edf2ff; border: 1px solid #647086; }
+.site-footer { display: block; max-width: none; padding: 0; border: 0; background: #070b1f; color: #e5eaff; }
+.footer-inner { display: grid; gap: .75rem; padding-block: 2rem; font-size: .9rem; }
+.site-footer a, .site-footer .text-link { color: #e8c874; }
+.site-footer .data-notice { margin: 0 0 1rem; background: #0f1a3d; color: #e5eaff; border: 1px solid #617bc3; }
+.site-footer .data-notice h2 { color: #e8c874; }
+@media (max-width: 1100px) {
+ .menu-toggle { display: inline-flex; margin-left: auto; }
+ .nav-inner { flex-wrap: nowrap; min-height: 80px; }
+ .nav-links { display: none; position: absolute; top: 83px; left: 0; right: 0; width: auto; padding: 1rem; flex-direction: column; align-items: stretch; background: #070b1f; max-height: calc(100dvh - 83px); overflow: auto; }
+ .nav-links.expanded { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .top-nav, .interactive-card { transition: none; }
+ .interactive-card:hover { transform: none; }
+}
+
+.section-number { font-family: Fraunces, serif; font-weight: 600; }
+
+.page-header .eyebrow { font-family: Fraunces, serif; font-weight: 600; }

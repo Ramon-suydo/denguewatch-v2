@@ -9,7 +9,7 @@ export function Toast({
   onDismiss: () => void;
 }) {
   return (
-    <div className="dw-toast">
+    <div className="ui-toast">
       <span>{message}</span>
       <Button
         variant="ghost"

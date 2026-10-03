@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Button,
@@ -20,6 +20,7 @@ import { COMMUNITY_CONSENT } from "../lib/legal";
 export function Report() {
   const { cities, policy, community } = useAppData();
   const toast = useToast();
+  useEffect(() => { setCity(cities.data?.find(item => item.name === "MANILA CITY")?.id ?? ""); }, [cities.data]);
   const [step, setStep] = useState(1);
   const [consent, setConsent] = useState(false);
   const [city, setCity] = useState("");
@@ -90,7 +91,7 @@ export function Report() {
         title="Share a community signal."
         description="Your report stays separate from official surveillance. No account, name, or exact address is required."
       />
-      <div className="dw-container app-content narrow-content">
+      <div className="ui-container app-content narrow-content">
         <ol className="steps" aria-label="Report progress">
           {["Understand & consent", "Your report", "Save your code"].map(
             (label, index) => (
@@ -190,20 +191,7 @@ export function Report() {
                       ) : (
                         <Card>
                           <form className="report-form" onSubmit={submit}>
-                            <Select
-                              label="City / municipality (required)"
-                              value={city}
-                              required
-                              disabled={busy}
-                              onChange={(event) => setCity(event.target.value)}
-                            >
-                              <option value="">Choose a city</option>
-                              {list.map((item) => (
-                                <option key={item.id} value={item.id}>
-                                  {item.name}
-                                </option>
-                              ))}
-                            </Select>
+                            <Input label="City / municipality (required)" value="MANILA CITY" readOnly />
                             <Input
                               label="Barangay (optional)"
                               maxLength={100}

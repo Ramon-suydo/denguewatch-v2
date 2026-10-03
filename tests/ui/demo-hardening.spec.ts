@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFile } from "node:fs/promises";
-import { mockPublicApi } from "./public-fixtures";
+import { mockPublicApi } from "../fixtures/public-fixtures";
 test.describe.configure({ timeout: 180000 });
 const snapshot = JSON.parse(await readFile("public/demo-snapshot.json", "utf8"));
-const routes = ["/", "/dashboard", "/city/" + snapshot.cities.find((c: { name: string }) => c.name === "MANILA CITY").id, "/map", "/report", "/privacy", "/terms", "/legal", "/data-sources", "/design-preview", "/city/not-an-lgu", "/not-found"];
+const routes = ["/", "/dashboard", "/city/" + snapshot.cities.find((c: { name: string }) => c.name === "MANILA CITY").id, "/map", "/report", "/privacy", "/terms", "/legal", "/data-sources", "/dev", "/city/not-an-lgu", "/not-found"];
 function watch(page: import("@playwright/test").Page) {
   const issues: string[] = [];
   page.on("pageerror", error => issues.push(error.message));
@@ -51,7 +51,7 @@ test("offline snapshot needs no Supabase or external network and works with brow
   await page.goto("/");
   await expect(page.getByText(/Offline demo snapshot/)).toBeVisible();
   await page.getByRole("link", { name: /Explore MANILA CITY in detail/ }).click();
-  await page.getByLabel("Period type").selectOption("day");
+  await page.getByLabel("Show records").selectOption("day");
   await page.getByText("View exact case values").click();
   await expect(page.locator(".chart-table tbody tr")).toHaveCount(40);
   await page.goto("/report");
@@ -89,6 +89,6 @@ test("four-second timeout selects the snapshot without console noise", async ({ 
   await page.goto("/");
   await expect(page.getByText(/Offline demo snapshot/)).toBeVisible({ timeout: 6500 });
   expect(Date.now() - started).toBeLessThan(6500);
-  await expect(page.locator(".area-table tbody tr")).toHaveCount(17);
+  await expect(page.locator(".area-table tbody tr")).toHaveCount(1);
   expect(issues).toEqual([]);
 });

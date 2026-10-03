@@ -13,7 +13,7 @@ export function Select({
   const generatedId = useId();
   const fieldId = id ?? generatedId;
   return (
-    <div className={`dw-field ${className}`}>
+    <div className={`ui-field ${className}`}>
       <label htmlFor={fieldId}>{label}</label>
       <select
         {...props}
@@ -26,7 +26,7 @@ export function Select({
         }
       />
       {error && (
-        <p className="dw-error" id={`${fieldId}-error`}>
+        <p className="ui-error" id={`${fieldId}-error`}>
           {error}
         </p>
       )}

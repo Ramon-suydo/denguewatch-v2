@@ -19,7 +19,7 @@ export function DataSources() {
         title="Data & Sources"
         description="Understand coverage, missing observations, and the limits of the historical records before interpreting a chart or estimate."
       />
-      <div className="dw-container app-content content-stack">
+      <div className="ui-container app-content content-stack">
         <p className="data-notice">
           Historical records do not establish current dengue conditions.
           Forecasts are research estimates only, not medical advice or official

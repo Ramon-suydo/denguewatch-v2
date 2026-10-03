@@ -68,7 +68,7 @@ export function useResource<T>(
   return { ...current, retry: () => setAttempt((value) => value + 1) };
 }
 function useAppResources() {
-  const cities = useResource("cities", fetchCities);
+  const cities = useResource("cities", async signal => (await fetchCities(signal)).filter(city => city.name === "MANILA CITY"));
   const forecasts = useResource("forecasts", fetchForecasts);
   const community = useResource("community", fetchCommunity);
   const policy = useResource("policy", fetchPolicy);

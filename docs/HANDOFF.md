@@ -343,3 +343,40 @@ before final captures so skeletons were not mistaken for settled defects.
 No UI/data/model/schema changes or hosted reads/writes performed in this phase.
 Next: Phase 1 palette/fonts/nav/cards/footer; close misleading CTA and quarantine
 public fixture preview. Tests/build run once below before Phase 0 commit.
+
+
+## Manila redesign — Phase 1 (2026-10-03)
+
+Branch feat/manila-redesign; defense-v1 remains bfdff26009b168b2c9a063519d2bdc92a2737f76.
+Shared navy/gold/cobalt/cyan theme now covers public, legal and 404 pages.
+Montserrat 500–800, Roboto 400/500/700 and Fraunces 600 are self-hosted;
+only these three requested font packages were added; old font packages removed.
+Retired dw-* classes and teal/amber tokens. Added brand rail, pill navigation,
+scroll blur, index-card accents, section bars and interactive-only hover lift.
+One integrated honesty strip shows derived weekly/daily periods and offline badge;
+full disclaimer and attribution remain in the shared footer. Closed community
+navigation now reads “Community reports: opening soon”. No submissions enabled.
+Presentation filters cities to Manila; source data and NCR backtests remain intact.
+Removed city pickers and city sorting controls; historical period labels are plain.
+Charts have computed takeaways; history legend/table distinguish missing from zero.
+DesignPreview and public API fixtures moved to tests/fixtures. /dev requires DEV
+and VITE_TEST_FIXTURES=true; production rejects that flag. Verified no preview
+fixture markers/chunks in dist. Normal /dev and /design-preview resolve to 404.
+Checks: 27 unit tests pass; final production build passes; 18 contrast pairs pass.
+Browser suite: 17 pass initially; both failed checks pass after targeted recheck
+(wait for lazy preview chart before interaction; extend multi-route loop timeout).
+Includes online/offline axe at 320/390/768/1280, console hygiene, 44px targets,
+keyboard/reduced motion, fully offline warmed routes, timeout fallback and A4 print.
+Final production-only 320px smoke also passes: menu/neutral CTA, closed form, axe,
+console and /dev plus /design-preview 404; no fixture data is shipped.
+Initial font export paths corrected; final rebuild required stopping preview to
+release a Windows snapshot file lock. No repeat unit run or dependency workaround.
+48 production screenshots plus four home viewport captures: ignored
+.artifacts/manila-phase1/; zero overflow, page errors or external requests.
+Largest JS chunk 474.00 kB (138.06 kB gzip); charts/routes remain lazy-loaded.
+Unchanged: raw data, snapshot, model/backtest, schema, provenance and closed gate.
+Existing laptop Node20.19.4 remains below declared >=22.12.0; no runtime migration.
+Next: Phase 2 visual-first Home, then Phase 3 verified Tondo geography/population.
+No barangay counts, population totals or boundaries invented. No Supabase writes,
+merge, push or tag change. Self-review and test locally before merging near defense.
+User push: git push -u origin feat/manila-redesign.

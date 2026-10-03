@@ -14,7 +14,7 @@ export function Checkbox({
   const fieldId = id ?? generatedId;
   return (
     <div className={className}>
-      <label className="dw-checkbox" htmlFor={fieldId}>
+      <label className="ui-checkbox" htmlFor={fieldId}>
         <input
           {...props}
           id={fieldId}
@@ -29,7 +29,7 @@ export function Checkbox({
         <span>{label}</span>
       </label>
       {error && (
-        <p className="dw-error" id={`${fieldId}-error`}>
+        <p className="ui-error" id={`${fieldId}-error`}>
           {error}
         </p>
       )}

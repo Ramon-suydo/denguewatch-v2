@@ -4,5 +4,5 @@ export function Badge({
   className = "",
   ...props
 }: HTMLAttributes<HTMLSpanElement>) {
-  return <span className={`dw-badge ${className}`} {...props} />;
+  return <span className={`ui-badge ${className}`} {...props} />;
 }

@@ -10,7 +10,7 @@ export function Button({
   return (
     <button
       type={type}
-      className={`dw-button dw-button-${variant} ${className}`}
+      className={`ui-button ui-button-${variant} ${className}`}
       {...props}
     />
   );

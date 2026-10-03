@@ -61,7 +61,7 @@ export function Modal({
       tabIndex={-1}
       onKeyDown={trapFocus}
       ref={ref}
-      className="dw-modal"
+      className="ui-modal"
       aria-labelledby={titleId}
       onCancel={(event) => {
         event.preventDefault();

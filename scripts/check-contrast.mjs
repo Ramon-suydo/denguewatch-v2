@@ -22,13 +22,15 @@ for (const [tier, value] of Object.entries(colors.risk))
   check("Risk " + tier, value.ink, value.surface);
 for (const [source, value] of Object.entries(colors.source))
   check("Source " + source, value.ink, value.surface);
-check("Primary button", colors.teal[950], colors.signal[500]);
-check("Primary hover", colors.teal[950], colors.signal[400]);
-check("Amber link on white", colors.signal[700], "#ffffff");
-check("Amber link on teal surface", colors.signal[700], colors.teal[50]);
-check("Muted text on warm surface", colors.warm[600], colors.warm[50]);
-check("Input placeholder", colors.warm[500], "#ffffff");
-check("Hero heading", "#ffffff", colors.teal[900]);
-check("Hero secondary text", colors.teal[200], colors.teal[900]);
-check("Input boundary", colors.warm[500], "#ffffff", 3);
-check("Focus outline", colors.teal[600], "#ffffff", 3);
+check("Primary button", colors.navy[950], colors.gold[500]);
+check("Primary hover", colors.navy[950], colors.gold[400]);
+check("Link on white", colors.navy[700], "#ffffff");
+check("Link on paper", colors.navy[700], colors.paper);
+check("Gold footer link", colors.gold[400], colors.navy[950]);
+check("Cyan active dot", colors.pop.cyan, colors.navy[900], 3);
+check("Muted text on warm surface", colors.neutral[600], colors.neutral[50]);
+check("Input placeholder", colors.neutral[500], "#ffffff");
+check("Hero heading", "#ffffff", colors.navy[900]);
+check("Hero secondary text", colors.navy[200], colors.navy[900]);
+check("Input boundary", colors.neutral[500], "#ffffff", 3);
+check("Focus outline", colors.navy[600], "#ffffff", 3);

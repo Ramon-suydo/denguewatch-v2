@@ -22,9 +22,9 @@ export function CityDetail() {
         }
         description="Inspect full source series, incidence, and weekly forecast estimates and their backtest performance."
       />
-      <div className="dw-container app-content city-report-page">
+      <div className="ui-container app-content city-report-page">
         <Link className="text-link" to="/">
-          ← All NCR cities
+          ← Manila overview
         </Link>
         <ReadState resource={cities}>
           {(list) => {

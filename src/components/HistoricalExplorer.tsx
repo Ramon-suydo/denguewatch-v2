@@ -28,13 +28,13 @@ export function HistoricalExplorer({
           </h2>
         </div>
         <Select
-          label="Period type"
+          label="Show records"
           value={period}
           onChange={(event) => setPeriod(event.target.value as PeriodType)}
         >
-          <option value="month">Monthly · NCR</option>
-          <option value="week">Weekly · NCR</option>
-          <option value="day">Daily · Manila only</option>
+          <option value="month">Monthly history (derived)</option>
+          <option value="week">Weekly history</option>
+          <option value="day">Manila daily history</option>
         </Select>
       </div>
       <ReadState resource={history}>

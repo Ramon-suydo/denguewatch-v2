@@ -8,7 +8,7 @@ export function Reveal({ children }: { children: ReactNode }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
-        element.classList.add("dw-revealed");
+        element.classList.add("ui-revealed");
         observer.disconnect();
       },
       { threshold: 0.1 },

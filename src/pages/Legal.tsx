@@ -8,7 +8,7 @@ import { useAppData } from "../lib/resources";
 export function Legal() {
   const { cities } = useAppData();
   return <><PageHeader eyebrow="REVIEW DRAFTS" title="Legal and privacy notices" description="Draft notices describing this research prototype and its current closed collection." />
-    <div className="dw-container app-content narrow-content content-stack">
+    <div className="ui-container app-content narrow-content content-stack">
       <Card><nav aria-label="Legal sections"><a href="#privacy">Privacy</a>{" · "}<a href="#terms">Terms</a>{" · "}<a href="#forecast">Forecast disclaimer</a>{" · "}<a href="#sources">Sources</a>{" · "}<a href="#model">Model transparency</a>{" · "}<a href="#storage">Cookies/storage</a></nav></Card>
       <Card id="privacy"><PrivacyDraft /></Card><Card id="terms"><TermsDraft /></Card><Card id="forecast"><ForecastDisclaimerDraft /></Card>
       <Card id="sources"><DraftMark /><h2>Data Sources & Attribution</h2><p>DOH/FOI attribution fields await source-owner verification. Pending fields do not establish reuse permission.</p>{publishedSources.map(s => <section key={s.source}><h3>{s.label}</h3><SourceCitation source={s.source} /></section>)}</Card>

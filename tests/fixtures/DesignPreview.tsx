@@ -11,12 +11,12 @@ import {
   Reveal,
   Select,
   useToast,
-} from "../components/ui";
-import { RiskBadge, type RiskLevel } from "../components/RiskBadge";
-import { UnverifiedBadge } from "../components/UnverifiedBadge";
-import { StatCard } from "../components/StatCard";
+} from "../../src/components/ui";
+import { RiskBadge, type RiskLevel } from "../../src/components/RiskBadge";
+import { UnverifiedBadge } from "../../src/components/UnverifiedBadge";
+import { StatCard } from "../../src/components/StatCard";
 const TrendChart = lazy(() =>
-  import("../components/TrendChart").then((module) => ({
+  import("../../src/components/TrendChart").then((module) => ({
     default: module.TrendChart,
   })),
 );
@@ -70,7 +70,7 @@ export function DesignPreview() {
       }
     >
       <section className="overview-hero" id="overview">
-        <div className="dw-container hero-inner">
+        <div className="ui-container hero-inner">
           <div className="hero-copy">
             <div className="eyebrow">
               <span className="status-dot" /> COMMUNITY HEALTH MONITORING
@@ -99,7 +99,7 @@ export function DesignPreview() {
           </div>
         </div>
       </section>
-      <div className="dw-container preview-content">
+      <div className="ui-container preview-content">
         <div className="preview-notice">
           <Badge>Design preview</Badge>
           <p>
@@ -110,7 +110,7 @@ export function DesignPreview() {
         <section aria-labelledby="snapshot-title">
           <div className="section-heading snapshot-heading">
             <div>
-              <p className="eyebrow text-teal-600">SITUATION AT A GLANCE</p>
+              <p className="eyebrow text-navy-600">SITUATION AT A GLANCE</p>
               <h2 id="snapshot-title">Community overview</h2>
               <p className="muted">
                 Sample reporting window · ending 21 September 2026
@@ -290,19 +290,19 @@ export function DesignPreview() {
                 <h3>A considered palette</h3>
                 <div className="swatch-row">
                   <div>
-                    <span className="swatch bg-teal-900" />
+                    <span className="swatch bg-navy-900" />
                     <strong>Deep Teal</strong>
-                    <code>#103938</code>
+                    <code>#0f1a3d</code>
                   </div>
                   <div>
-                    <span className="swatch bg-signal-500" />
+                    <span className="swatch bg-gold-500" />
                     <strong>Signal Amber</strong>
-                    <code>#E68A2E</code>
+                    <code>#d4af37</code>
                   </div>
                   <div>
-                    <span className="swatch bg-warm-100" />
+                    <span className="swatch bg-neutral-100" />
                     <strong>Warm Gray</strong>
-                    <code>#F2F0EB</code>
+                    <code>#f7f5f0</code>
                   </div>
                 </div>
                 <p className="muted">
@@ -314,7 +314,7 @@ export function DesignPreview() {
                 <h3>Authority, with approachability</h3>
                 <p className="type-specimen">Information that cares.</p>
                 <p>
-                  Source Serif 4 headings pair with Source Sans 3 for readable
+                  Montserrat headings pair with Roboto for readable
                   labels, clear numbers, and an editorial voice.
                 </p>
                 <div className="button-specimens">

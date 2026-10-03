@@ -19,7 +19,7 @@ export function Input({
       .filter(Boolean)
       .join(" ") || undefined;
   return (
-    <div className={`dw-field ${className}`}>
+    <div className={`ui-field ${className}`}>
       <label htmlFor={fieldId}>{label}</label>
       <input
         {...props}
@@ -28,12 +28,12 @@ export function Input({
         aria-describedby={description}
       />
       {hint && (
-        <p id={`${fieldId}-hint`} className="dw-hint">
+        <p id={`${fieldId}-hint`} className="ui-hint">
           {hint}
         </p>
       )}
       {error && (
-        <p id={`${fieldId}-error`} className="dw-error">
+        <p id={`${fieldId}-error`} className="ui-error">
           {error}
         </p>
       )}

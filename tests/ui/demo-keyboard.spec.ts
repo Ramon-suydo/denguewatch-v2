@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { mockPublicApi } from "./public-fixtures";
+import { mockPublicApi } from "../fixtures/public-fixtures";
 test("keyboard skip link, visible focus and reduced motion", async ({ page }) => {
   await mockPublicApi(page, { open: false });
   await page.emulateMedia({ reducedMotion: "reduce" });

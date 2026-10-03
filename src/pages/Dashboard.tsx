@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Card, Select } from "../components/ui";
+import { Card } from "../components/ui";
 import { PageHeader } from "../components/PageHeader";
 import { ReadState } from "../components/PageState";
 import { HistoricalExplorer } from "../components/HistoricalExplorer";
@@ -13,20 +12,14 @@ import { currentRisk } from "../lib/forecast";
 import { formatDate } from "../lib/dates";
 export function Dashboard() {
   const { cities, forecasts } = useAppData();
-  const [selected, setSelected] = useState("");
   return (
     <>
       <PageHeader
         eyebrow="PUBLIC SITUATIONAL AWARENESS"
-        title="Community health, in focus."
-        description="Explore NCR’s published dengue history and clearly separated community signals. No account required."
+        title="Manila dengue history, in focus."
+        description="Explore Manila’s published dengue history. Community reports remain separate and collection is closed."
       />
-      <div className="dw-container app-content">
-        <p className="data-notice">
-          Historical coverage: NCR monthly/weekly 2016–January 2021; Manila
-          daily 2018–2 December 2023. These records do not establish current
-          dengue conditions.
-        </p>
+      <div className="ui-container app-content">
         <ReadState resource={cities}>
           {(list) => {
             if (!list.length)
@@ -36,10 +29,7 @@ export function Dashboard() {
                   <p>Published data has not been loaded.</p>
                 </Card>
               );
-            const city =
-              list.find((item) => item.id === selected) ??
-              list.find((item) => item.name === "MANILA CITY") ??
-              list[0];
+            const city = list[0];
             return (
               <>
                 <div className="section-heading city-selector">
@@ -49,17 +39,7 @@ export function Dashboard() {
                       Published source data · historical, not live
                     </p>
                   </div>
-                  <Select
-                    label="Choose an NCR city / municipality"
-                    value={city.id}
-                    onChange={(event) => setSelected(event.target.value)}
-                  >
-                    {list.map((item) => (
-                      <option key={item.id} value={item.id}>
-                        {item.name}
-                      </option>
-                    ))}
-                  </Select>
+
                 </div>
                 <HistoricalExplorer key={city.id} city={city} />
                 <div className="section-heading detail-link">
@@ -71,8 +51,8 @@ export function Dashboard() {
                 <section aria-labelledby="risk-title">
                   <div className="section-heading">
                     <div>
-                      <p className="eyebrow">ACROSS THE REGION</p>
-                      <h2 id="risk-title">Legacy monthly risk overview</h2>
+                      <p className="eyebrow">MANILA HISTORICAL CONTEXT</p>
+                      <h2 id="risk-title">Manila monthly historical context</h2>
                     </div>
                     <Link className="text-link" to="/map">
                       Explore the map ↗
@@ -98,7 +78,7 @@ export function Dashboard() {
                             <thead>
                               <tr>
                                 <th scope="col">City / municipality</th>
-                                <th scope="col">Current risk</th>
+                                <th scope="col">Current evidence</th>
                                 <th scope="col">Historical signal</th>
                                 <th scope="col">Forecast for</th>
                               </tr>

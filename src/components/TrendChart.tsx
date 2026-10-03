@@ -25,9 +25,10 @@ export function TrendChart({
   return (
     <figure aria-labelledby={id}>
       <figcaption id={id} className="sr-only">
-        {title}. Solid teal: selected period. Dashed gray: previous period.
+        {title}. Solid navy: selected period. Dashed gray: previous period.
         Exact values in the table below.
       </figcaption>
+      <p className="chart-takeaway">{data.filter(point => point.cases !== null).length} of {data.length} displayed weeks have reported counts; missing weeks remain gaps.</p>
       {data.length ? (
         <>
           <div className="chart-legend">
@@ -49,14 +50,14 @@ export function TrendChart({
               >
                 <CartesianGrid
                   vertical={false}
-                  stroke={colors.warm[200]}
+                  stroke={colors.neutral[200]}
                   strokeDasharray="4 4"
                 />
                 <XAxis
                   dataKey="week"
                   tickLine={false}
                   axisLine={false}
-                  tick={{ fill: colors.warm[600], fontSize: 16 }}
+                  tick={{ fill: colors.neutral[600], fontSize: 16 }}
                   minTickGap={24}
                   dy={10}
                 />
@@ -64,13 +65,13 @@ export function TrendChart({
                   allowDecimals={false}
                   tickLine={false}
                   axisLine={false}
-                  tick={{ fill: colors.warm[600], fontSize: 16 }}
+                  tick={{ fill: colors.neutral[600], fontSize: 16 }}
                   width={40}
                 />
                 <Tooltip
                   contentStyle={{
                     borderRadius: 8,
-                    borderColor: colors.warm[400],
+                    borderColor: colors.neutral[400],
                     fontSize: 16,
                   }}
                 />
@@ -78,7 +79,7 @@ export function TrendChart({
                   name="Previous period"
                   dataKey="previous"
                   type="linear"
-                  stroke={colors.warm[500]}
+                  stroke={colors.neutral[500]}
                   strokeWidth={2}
                   strokeDasharray="6 6"
                   dot={false}
@@ -88,7 +89,7 @@ export function TrendChart({
                   name="Selected period"
                   dataKey="cases"
                   type="linear"
-                  stroke={colors.teal[600]}
+                  stroke={colors.navy[600]}
                   strokeWidth={3}
                   dot={{ r: 4, fill: "#fff", strokeWidth: 2 }}
                   activeDot={{ r: 6 }}

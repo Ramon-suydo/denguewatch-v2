@@ -31,11 +31,8 @@ const Terms = lazy(() =>
 const DataSources = lazy(() =>
   import("./pages/DataSources").then((module) => ({ default: module.DataSources })),
 );
-const DesignPreview = lazy(() =>
-  import("./pages/DesignPreview").then((module) => ({
-    default: module.DesignPreview,
-  })),
-);
+const DesignPreview = import.meta.env.DEV && import.meta.env.VITE_TEST_FIXTURES === "true"
+  ? lazy(() => import("../tests/fixtures/DesignPreview").then(module => ({ default: module.DesignPreview }))) : null;
 class AppErrorBoundary extends Component<
   { children: ReactNode },
   { failed: boolean }
@@ -46,7 +43,7 @@ class AppErrorBoundary extends Component<
   }
   render() {
     return this.state.failed ? (
-      <div className="dw-container app-content">
+      <div className="ui-container app-content">
         <Card>
           <h1>This page could not open</h1>
           <p role="alert">
@@ -66,7 +63,7 @@ function PublicRoutes() {
   useEffect(() => {
     document.title =
       (location.pathname === "/map"
-        ? "NCR map"
+        ? "Manila map"
         : location.pathname === "/report"
           ? "Community report"
           : location.pathname === "/data-sources"
@@ -85,7 +82,7 @@ function PublicRoutes() {
       document.getElementById("main")?.focus({ preventScroll: true });
     }
   }, [location.pathname, location.hash]);
-  if (location.pathname === "/design-preview")
+  if (location.pathname === "/dev" && DesignPreview)
     return (
       <Suspense fallback={<Loading />}>
         <DesignPreview />
@@ -114,15 +111,15 @@ function PublicRoutes() {
           },
         ]}
         action={
-          <Link className="dw-button dw-button-primary" to="/report">
-            Report a signal ↗
+          <Link className="community-link" to="/report">
+            Community reports: opening soon
           </Link>
         }
       >
         <AppErrorBoundary key={location.pathname}>
           <Suspense
             fallback={
-              <div className="dw-container app-content">
+              <div className="ui-container app-content">
                 <Loading label="Opening page…" />
               </div>
             }
@@ -140,7 +137,7 @@ function PublicRoutes() {
               <Route
                 path="*"
                 element={
-                  <div className="dw-container app-content">
+                  <div className="ui-container app-content">
                     <Card>
                       <h1>Page not found</h1>
                       <p>This address does not match a DengueWatch page.</p>

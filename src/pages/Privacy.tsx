@@ -55,7 +55,7 @@ export function Privacy() {
         title="Privacy, in plain language."
         description="Voluntary participation, minimal collection, and a clear way to withdraw."
       />
-      <div className="dw-container app-content narrow-content">
+      <div className="ui-container app-content narrow-content">
         <Card>
           <ReadState resource={policy}>
             {(notice) => <ParticipationNotice policy={notice} />}

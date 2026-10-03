@@ -25,15 +25,15 @@ export function MapPage() {
     window.matchMedia("(max-width: 767px)").matches ? "grid" : "map",
   );
   const view = offline ? "grid" : requestedView;
-  const [sort, setSort] = useState("risk");
+  const sort = "risk";
   return (
     <>
       <PageHeader
-        eyebrow="NCR AT A GLANCE"
-        title="Place the signals in context."
-        description="City-level markers, never patient locations. Explore a city to inspect its data and explanation."
+        eyebrow="MANILA HISTORICAL CONTEXT"
+        title="Manila, in context."
+        description="Manila city-level history, never patient locations. The Tondo barangay map follows the verified geography build."
       />
-      <div className="dw-container app-content">
+      <div className="ui-container app-content">
         <div className="badge-row" role="group" aria-label="City view">
           <Button
             variant={view === "map" ? "primary" : "secondary"}
@@ -52,17 +52,6 @@ export function MapPage() {
           </Button>
         </div>
         {offline && <p className="muted">Offline demo uses the city grid; external map tiles are unavailable.</p>}
-        {view === "grid" && (
-          <Select
-            label="Sort cities"
-            value={sort}
-            onChange={(e) => setSort(e.target.value)}
-          >
-            <option value="risk">Risk level</option>
-            <option value="name">Alphabetically</option>
-            <option value="cases">Case count</option>
-          </Select>
-        )}
         <div className="section-heading">
           <p className="data-notice">
             This is the legacy monthly/historical risk display, separate from
@@ -104,10 +93,9 @@ export function MapPage() {
                         {(records) => (
                           <>
                             <p className="muted">
-                              Monthly counts use the same source across all 17
-                              cities. Manila also has a later daily series in
-                              its detail view. Case-count sorting compares
-                              volume, not population-adjusted risk.
+                              Manila monthly counts and its separate daily series
+                              are not added together. Barangay counts and boundaries
+                              are not supplied in this phase.
                             </p>
                             <CityGrid
                               cities={list}

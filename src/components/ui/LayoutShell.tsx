@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
 import { MonitoringLine } from "./MonitoringLine";
@@ -18,9 +18,11 @@ export function TopNav({
   action?: ReactNode;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => { const update = () => setScrolled(window.scrollY > 10); update(); window.addEventListener("scroll", update, { passive: true }); return () => window.removeEventListener("scroll", update); }, []);
   return (
-    <header className="top-nav">
-      <div className="dw-container nav-inner">
+    <header className={"top-nav" + (scrolled ? " is-scrolled" : "")}>
+      <div className="ui-container nav-inner">
         <Link className="wordmark" to="/" aria-label="DengueWatch home">
           <span className="brand-symbol">
             <MonitoringLine />
@@ -36,7 +38,7 @@ export function TopNav({
           aria-controls="main-navigation"
           onClick={() => setExpanded(!expanded)}
         >
-          {expanded ? "Close menu" : "Menu ☰"}
+          {expanded ? "Close menu" : "Menu"}
         </Button>
         <nav
           id="main-navigation"
@@ -66,6 +68,7 @@ export function TopNav({
           {action}
         </nav>
       </div>
+      <div className="brand-rail" aria-hidden="true" />
     </header>
   );
 }
@@ -87,12 +90,18 @@ export function LayoutShell({
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <TopNav items={items} action={action} />
+      <div className="site-chrome">
+        <TopNav items={items} action={action} />
+        <div className="honesty-strip"><div className="ui-container honesty-inner">
+          <span>Historical estimates, not alerts. {coverage.loading ? "Checking data periods…" : coverage.error ? "Data periods unavailable." : "Data: " + coverage.data?.filter(row => row.period === "week" || row.period === "day").map(row => row.date ? `${new Date(row.date + "T00:00:00Z").toLocaleDateString("en-PH", { month: "short", year: "numeric", timeZone: "UTC" })} (${row.period === "week" ? "weekly" : "daily"})` : `${row.label}: not reported`).join(" / ") + "."} <Link to="/data-sources">Details</Link></span>
+          <SnapshotNotice compact />
+        </div></div>
+      </div>
       <main id="main" tabIndex={-1}>
-        <div className="dw-container"><SnapshotNotice /><SharedDisclaimer /></div>
         {children}
       </main>
-      <footer className="dw-container site-footer">
+      <footer className="site-footer"><div className="brand-rail" aria-hidden="true" /><div className="ui-container footer-inner">
+        <SharedDisclaimer />
         <span>DengueWatch / Community health, in focus.</span>
         {preview && <span>Design preview · Illustrative data only</span>}
         <span>Thesis / research · Not an official DOH service</span>
@@ -113,7 +122,7 @@ export function LayoutShell({
           <Link to="/legal">Legal & privacy drafts</Link> · <Link to="/terms">Terms</Link> ·{" "}
           <Link to="/privacy">Privacy & withdrawal</Link>
         </span>
-      </footer>
+      </div></footer>
     </>
   );
 }
