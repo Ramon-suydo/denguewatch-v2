@@ -11,7 +11,7 @@
     "build": "tsc --noEmit \u0026\u0026 vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/data-and-security.test.ts tests/database-tls.test.ts tests/forecast.test.ts tests/composite.test.ts tests/weekly-forecast.test.ts tests/source-metadata.test.ts",
+    "test": "tsx --test tests/data-and-security.test.ts tests/database-tls.test.ts tests/forecast.test.ts tests/composite.test.ts tests/weekly-forecast.test.ts tests/source-metadata.test.ts tests/demo-snapshot.test.ts",
     "data:audit": "tsx scripts/ingest-historical.ts --dry-run",
     "ingest": "tsx scripts/ingest-historical.ts",
     "db:verify": "tsx scripts/ingest-historical.ts --verify-only",
@@ -20,6 +20,7 @@
     "forecast:refresh": "tsx scripts/manage-public-app.ts --refresh",
     "app:setup": "tsx scripts/manage-public-app.ts --apply",
     "reports:enable": "tsx scripts/manage-public-app.ts --enable-reports",
+    "demo:snapshot": "tsx scripts/demo-snapshot.ts",
     "forecast:backtest": "tsx scripts/backtest-weekly.ts",
     "risk:backtest": "tsx scripts/backtest-risk.ts"
   },

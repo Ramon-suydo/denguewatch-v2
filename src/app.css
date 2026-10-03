@@ -344,3 +344,25 @@
   padding-top: 1rem;
   margin-top: 1rem;
 }
+
+/* Shared targets and reserved chart frames for the defense demo. */
+a:not(.skip-link), summary, button, select, input:not([type="checkbox"]) {
+  min-height: 44px;
+}
+a.text-link, .site-footer a, .prose a, .source-details a, .chart-table a,
+.area-table a, .city-grid-card a, .nav-links > a {
+  display: inline-flex;
+  align-items: center;
+  padding-block: 0.5rem;
+}
+summary { padding-block: 0.75rem; }
+.chart-skeleton {
+  display: grid;
+  align-items: center;
+  background: var(--color-warm-100);
+  color: var(--color-warm-600);
+}
+
+a:not(.skip-link) { display: inline-flex; align-items: center; padding-block: 0.5rem; }
+.dw-checkbox { min-height: 44px; align-items: center; }
+.leaflet-control-zoom a, .leaflet-popup-close-button { width: 44px !important; height: 44px !important; line-height: 44px !important; }

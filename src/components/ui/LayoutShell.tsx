@@ -2,6 +2,8 @@ import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
 import { MonitoringLine } from "./MonitoringLine";
+import { SnapshotNotice } from "../SnapshotNotice";
+import { isSnapshotMode } from "../../lib/demo-snapshot";
 import { SharedDisclaimer } from "../SharedDisclaimer";
 import { fetchSourceCoverage } from "../../lib/api";
 import { useResource } from "../../lib/resources";
@@ -87,7 +89,7 @@ export function LayoutShell({
       </a>
       <TopNav items={items} action={action} />
       <main id="main" tabIndex={-1}>
-        <div className="dw-container"><SharedDisclaimer /></div>
+        <div className="dw-container"><SnapshotNotice /><SharedDisclaimer /></div>
         {children}
       </main>
       <footer className="dw-container site-footer">
@@ -103,7 +105,7 @@ export function LayoutShell({
           {coverage.data?.filter(row => row !== latest).map(row =>
             <span key={row.source}> {row.label}: {row.date ? formatDate(row.date) : "No records"}.</span>,
           )}
-          {" "}Source date labels, not real-time data.
+          {" "}Source date labels, not real-time data. {isSnapshotMode() && "Coverage from the verified demo snapshot."}
           {coverage.error && <button className="text-link" onClick={coverage.retry}>Retry data period</button>}
         </span>
         <span>

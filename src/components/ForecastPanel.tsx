@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { Area, ComposedChart, CartesianGrid, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { lazy, Suspense, useState } from "react";
 import { Card, Select } from "./ui";
 import cache from "../data/weekly-forecast-v1.json";
-import { colors } from "../theme/palette.js";
 import { formatDate } from "../lib/dates";
 import { skill } from "../lib/weekly-forecast";
 import { SourceCitation } from "./SourceCitation";
 
+const ForecastChart = lazy(() => import("./ForecastChart").then(module => ({ default: module.ForecastChart })));
 const modelNames: Record<string, string> = { "seasonal-naive": "Seasonal naive", "mean-4": "4-week mean", ridge: "Ridge regression" };
 const number = (n: number | null) => n === null ? "Unavailable" : n.toFixed(2);
 const percent = (n: number | null) => n === null ? "Unavailable" : n.toFixed(1) + "%";
@@ -75,20 +74,9 @@ export function ForecastPanel({ cityName }: { cityName: string }) {
         <p className="muted">Shaded bands: nominal 80% and 95% prediction intervals from earlier out-of-sample errors, not guaranteed coverage. The 1/2/4-week points are separate direct forecasts; connecting lines do not supply a 3-week forecast.</p>
         <figure>
           <figcaption>Recent observed cases (gray), estimates (teal), 80% band (teal), 95% band (gray). Exact values below.</figcaption>
-          <div className="history-chart">
-            <ResponsiveContainer width="100%" height="100%" minWidth={0}>
-              <ComposedChart data={series} accessibilityLayer margin={{ top: 16, right: 24, bottom: 8, left: 0 }}>
-                <CartesianGrid vertical={false} stroke={colors.warm[200]} strokeDasharray="4 4" />
-                <XAxis dataKey="date" minTickGap={60} tick={{ fill: colors.warm[600] }} tickFormatter={date => formatDate(String(date))} />
-                <YAxis allowDecimals={false} width={55} tick={{ fill: colors.warm[600] }} />
-                <Tooltip labelFormatter={date => formatDate(String(date))} />
-                <Area dataKey="band95" name="95% interval" type="linear" stroke={colors.warm[500]} fill={colors.warm[200]} fillOpacity={.7} isAnimationActive={false} />
-                <Area dataKey="band80" name="80% interval" type="linear" stroke={colors.teal[600]} fill={colors.teal[100]} fillOpacity={.8} isAnimationActive={false} />
-                <Line dataKey="observed" name="Observed cases" stroke={colors.warm[600]} dot={false} isAnimationActive={false} />
-                <Line dataKey="estimate" name="Estimate" stroke={colors.teal[600]} strokeWidth={3} dot={{ r: 4 }} isAnimationActive={false} />
-              </ComposedChart>
-            </ResponsiveContainer>
-          </div>
+          <Suspense fallback={<div className="history-chart chart-skeleton" role="status">Loading forecast chart…</div>}>
+            <ForecastChart data={series} />
+          </Suspense>
         </figure>
         <div className="table-scroll" role="region" aria-label="Forecast estimates and prediction intervals" tabIndex={0}>
           <table>

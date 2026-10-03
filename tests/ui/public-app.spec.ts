@@ -155,9 +155,8 @@ test("closed collection, missing city, empty history and service errors have usa
     }),
   );
   await page.getByLabel("Period type").selectOption("month");
-  await expect(page.getByRole("alert")).toContainText("data service");
-  await page.getByRole("button", { name: "Try again" }).click();
-  await expect(page.getByRole("alert")).toBeVisible();
+  await expect(page.getByText(/Offline demo snapshot/)).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="history-title"] .history-chart svg')).toHaveCount(2);
 });
 
 test("map popups distinguish old official trends and community counts; tile failures keep the list usable", async ({
@@ -353,7 +352,7 @@ test("model transparency numbers and baseline order match the cached artifact", 
   }
 });
 
-test("footer follows DB coverage changes and never substitutes cached dates when reads fail", async ({ page }) => {
+test("footer follows DB changes and explicitly labels snapshot coverage after failed reads", async ({ page }) => {
   await mockPublicApi(page);
   await page.route("**/rest/v1/historical_surveillance**", route => {
     const period = new URL(route.request().url()).searchParams.get("period_type");
@@ -366,10 +365,11 @@ test("footer follows DB coverage changes and never substitutes cached dates when
   await expect(footer).toContainText("NCR weekly: Dec 29, 2030");
   await page.route("**/rest/v1/historical_surveillance**", route => route.fulfill({ status: 503, contentType: "application/json", body: JSON.stringify({ message: "unavailable" }) }));
   await page.reload();
-  await expect(footer).toContainText("Last data period: Unavailable (data service could not be reached)");
+  await expect(page.getByText(/Offline demo snapshot/)).toBeVisible();
+  await expect(footer).toContainText("Coverage from the verified demo snapshot");
   await expect(footer).not.toContainText("Jan 1, 2031");
-  await expect(footer).not.toContainText("Dec 2, 2023");
+  await expect(footer).toContainText("Dec 2, 2023");
   await page.route("**/rest/v1/historical_surveillance**", route => route.fulfill({ status: 200, contentType: "application/json", body: "[]" }));
-  await footer.getByRole("button", { name: "Retry data period" }).click();
+  await page.reload();
   await expect(footer).toContainText("Last data period: No published records available");
 });

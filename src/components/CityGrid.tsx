@@ -9,7 +9,7 @@ import type { City, Forecast, CommunityWeek } from "../lib/types";
 import type { riskInputs } from "../lib/composite";
 export type RiskRecord = {
   lgu_id: string;
-  inputs: ReturnType<typeof riskInputs>;
+  inputs: Pick<ReturnType<typeof riskInputs>, "latest" | "trend" | "seasonality" | "current_calendar_seasonality">;
 };
 export function CityGrid({
   cities,

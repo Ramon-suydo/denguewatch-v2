@@ -1,5 +1,6 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState, useSyncExternalStore } from "react";
 import { Link } from "react-router-dom";
+import { isSnapshotMode, snapshotDate, subscribeSnapshot } from "../lib/demo-snapshot";
 import { CityGrid } from "../components/CityGrid";
 import { Card, Select, Button } from "../components/ui";
 import { PageHeader } from "../components/PageHeader";
@@ -17,10 +18,13 @@ const LeafletMap = lazy(() =>
 );
 export function MapPage() {
   const { cities, forecasts, community, risks } = useAppData();
+  useSyncExternalStore(subscribeSnapshot, snapshotDate, () => null);
+  const offline = isSnapshotMode();
   const [mode, setMode] = useState("current");
-  const [view, setView] = useState(() =>
+  const [requestedView, setView] = useState(() =>
     window.matchMedia("(max-width: 767px)").matches ? "grid" : "map",
   );
+  const view = offline ? "grid" : requestedView;
   const [sort, setSort] = useState("risk");
   return (
     <>
@@ -34,6 +38,7 @@ export function MapPage() {
           <Button
             variant={view === "map" ? "primary" : "secondary"}
             aria-pressed={view === "map"}
+            disabled={offline}
             onClick={() => setView("map")}
           >
             Map
@@ -46,6 +51,7 @@ export function MapPage() {
             Grid
           </Button>
         </div>
+        {offline && <p className="muted">Offline demo uses the city grid; external map tiles are unavailable.</p>}
         {view === "grid" && (
           <Select
             label="Sort cities"

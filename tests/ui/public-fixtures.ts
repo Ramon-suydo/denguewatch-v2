@@ -1,3 +1,4 @@
+import { readFile } from "node:fs/promises";
 import type { Page } from "@playwright/test";
 import { loadDataset } from "../../scripts/lib/historical";
 import { riskInputs } from "../../src/lib/composite";
@@ -6,9 +7,10 @@ import type { City, Observation } from "../../src/lib/types";
 let cached: ReturnType<typeof build> | undefined;
 async function build() {
   const dataset = await loadDataset("data/raw");
+  const snapshot = JSON.parse(await readFile("public/demo-snapshot.json", "utf8"));
   const cities: City[] = dataset.lgus.map((city, index) => ({
     ...city,
-    id: "00000000-0000-4000-8000-" + String(index + 1).padStart(12, "0"),
+    id: snapshot.cities.find((saved: { name: string }) => saved.name === city.name)!.id,
   }));
   const rows: Observation[] = dataset.observations.map((row, index) => ({
     ...row,

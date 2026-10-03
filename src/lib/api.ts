@@ -1,3 +1,4 @@
+import { readPublished, requireOnlineMutation } from "./demo-snapshot";
 import { getSupabase } from "./supabase";
 import type {
   City,
@@ -15,7 +16,7 @@ function check(error: { message: string } | null) {
       "The data service could not complete this request. Please try again.",
     );
 }
-export async function fetchSourceCoverage(signal: AbortSignal) {
+async function onlineSourceCoverage(signal: AbortSignal) {
   return Promise.all(publishedSources.map(async ({ source, period, label }) => {
     const { data, error } = await getSupabase()
       .from("historical_surveillance")
@@ -30,7 +31,7 @@ export async function fetchSourceCoverage(signal: AbortSignal) {
     return { source, period, label, date: data?.[0]?.period_start ?? null };
   }));
 }
-export async function fetchRisks(
+async function onlineRisks(
   signal: AbortSignal,
 ): Promise<import("../components/CityGrid").RiskRecord[]> {
   const { data, error } = await getSupabase()
@@ -41,7 +42,7 @@ export async function fetchRisks(
   check(error);
   return data ?? [];
 }
-export async function fetchCities(signal: AbortSignal): Promise<City[]> {
+async function onlineCities(signal: AbortSignal): Promise<City[]> {
   const { data, error } = await getSupabase()
     .from("lgus")
     .select("id,name,psgc_code,population,population_year,population_source")
@@ -52,7 +53,7 @@ export async function fetchCities(signal: AbortSignal): Promise<City[]> {
   check(error);
   return data ?? [];
 }
-export async function fetchForecasts(signal: AbortSignal): Promise<Forecast[]> {
+async function onlineForecasts(signal: AbortSignal): Promise<Forecast[]> {
   const { data, error } = await getSupabase()
     .from("city_forecasts")
     .select("*")
@@ -62,7 +63,7 @@ export async function fetchForecasts(signal: AbortSignal): Promise<Forecast[]> {
   check(error);
   return data ?? [];
 }
-export async function fetchCommunity(
+async function onlineCommunity(
   signal: AbortSignal,
 ): Promise<CommunityWeek[]> {
   const { data, error } = await getSupabase()
@@ -74,7 +75,7 @@ export async function fetchCommunity(
   check(error);
   return data ?? [];
 }
-export async function fetchPolicy(
+async function onlinePolicy(
   signal: AbortSignal,
 ): Promise<CommunityPolicy> {
   const { data, error } = await getSupabase()
@@ -88,7 +89,7 @@ export async function fetchPolicy(
   if (!data) throw new Error("The participation notice is not available yet.");
   return data;
 }
-export async function fetchHistory(
+async function onlineHistory(
   city: string,
   period: PeriodType,
   signal: AbortSignal,
@@ -115,6 +116,19 @@ export async function fetchHistory(
   }
   return all;
 }
+export const fetchSourceCoverage = (signal: AbortSignal) => readPublished(signal, onlineSourceCoverage,
+  snapshot => publishedSources.map(({ source, period, label }) => ({ source, period, label, date: snapshot.coverage.find(row => row.source === source)?.date ?? null })));
+export const fetchCities = (signal: AbortSignal) => readPublished(signal, onlineCities, snapshot => snapshot.cities);
+export const fetchForecasts = (signal: AbortSignal) => readPublished(signal, onlineForecasts, snapshot => snapshot.forecasts);
+export const fetchRisks = (signal: AbortSignal) => readPublished(signal, onlineRisks, snapshot => snapshot.risks);
+export const fetchHistory = (city: string, period: PeriodType, signal: AbortSignal) => readPublished(signal,
+  child => onlineHistory(city, period, child), snapshot => snapshot.history.filter(row => row.lgu_id === city && row.period_type === period));
+export const fetchCommunity = (signal: AbortSignal) => readPublished(signal, onlineCommunity, () => {
+  throw new Error("Community reports are unavailable in the offline demo; no counts are inferred.");
+});
+export const fetchPolicy = (signal: AbortSignal) => readPublished(signal, onlinePolicy, () => ({
+  id: true, retention_days: 90, contact_email: null, submissions_enabled: false, consent_version: "community-v1",
+}));
 export interface ReportInput {
   city: string;
   date: string;
@@ -128,6 +142,7 @@ export async function submitReport(
   input: ReportInput,
   version: string,
 ): Promise<string> {
+  requireOnlineMutation();
   const { data, error } = await getSupabase().rpc("submit_community_report", {
     p_lgu_id: input.city,
     p_report_date: input.date,
@@ -152,6 +167,7 @@ export async function submitReport(
   return data;
 }
 export async function deleteReport(code: string): Promise<void> {
+  requireOnlineMutation();
   const { error } = await getSupabase().rpc("delete_community_report", {
     p_reference_code: code.trim().toUpperCase(),
   });

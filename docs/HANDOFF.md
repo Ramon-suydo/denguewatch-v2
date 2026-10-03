@@ -144,3 +144,47 @@ Next: Day 4 cached-data demo readiness, console checks and mobile/performance
 review. Exact citations await owner review; real submissions remain closed.
 Test locally and self-review before merging; main deploys live. User pushes:
 `git push -u origin feat/risk-grid`.
+
+## Day 4 — demo hardening (2026-10-03)
+
+Completed on feat/risk-grid. `npm run demo:snapshot` verifies official DB rows
+against audited raw files in a read-only repeatable-read transaction, then writes
+public/demo-snapshot.json atomically. Snapshot date: 2026-10-03T03:17:58.331Z;
+17 LGUs, 4,403 weekly, 1,037 monthly, 1,910 daily observations (7,350 total).
+Includes per-source hashes, coverage/quality audit, official legacy risks and
+forecasts, 650 legacy backtest rows, weekly cache and full weekly backtest/hash.
+It exports no community reports, contacts or policy records. Source surprises
+fail closed and preserve the previous snapshot. Public JSON is 7.16 MB uncompressed.
+
+All published reads try Supabase first and fall back after failure/about four
+seconds, when browser connectivity is absent, or with VITE_DEMO_MODE=true.
+Fallback is consistent across resources until reload, visibly dated, and source
+coverage in the footer is labelled as snapshot coverage. Empty live responses
+remain empty; missing community counts stay unavailable, never zero. Offline
+policy is closed; submission/withdrawal calls are blocked, never queued or faked.
+Offline map uses the 17-LGU grid without requesting external tiles.
+
+Dashboard/routes and chart modules load lazily; historical/forecast skeletons
+reserve chart heights. Largest JS chunk: 785.78 -> 474.27 kB; gzip 219.39 ->
+138.19 kB. No large-chunk warning; no dependency added. Tap targets are >=44px,
+including report legal links/map controls. Inline favicon avoids offline fetch
+errors. Existing labelled risk levels, chart tables, focus/modal behavior and
+reduced-motion rules are retained.
+
+Checks: npm test (26 passed; expected 18 pending citation fields warning), npm
+run build, all 18 browser cases (one existing toast assertion was scoped to its
+region and rerun), and npm run test:contrast passed. Online/offline checks cover
+11 public/missing routes at 320/390/768/1280px, no horizontal overflow, usable
+tap targets, no serious/critical axe findings and no browser console warnings or
+errors. Keyboard skip/focus/reduced-motion and modal focus checks pass. Separate
+production-build smoke passed all 11 routes with external network blocked and
+then warmed SPA navigation with the browser fully offline, with clean console.
+
+Use docs/DEMO_SCRIPT.md for the five-minute click path and local demo build
+commands; docs/DEFENSE_QA.md has 12 source/backtest-grounded panel answers.
+This is not a PWA: cold hosted-page reload without assets/network is not promised;
+serve the bundled build locally for the defense and keep it running. No hosted
+writes, report activation or push performed. Exact DOH/FOI metadata remains pending.
+Next: rehearse the local demo, supply citations and review draft privacy/legal
+copy with the school DPO. Test locally and self-review before merging; main deploys
+live. User pushes: `git push -u origin feat/risk-grid`.

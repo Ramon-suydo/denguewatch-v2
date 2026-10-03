@@ -41,7 +41,7 @@ export function HistoricalExplorer({
         {(rows) => (
           <div className="content-stack">
             <Card>
-              <Suspense fallback={<Loading label="Loading chart…" />}>
+              <Suspense fallback={<div className="history-chart chart-skeleton" role="status">Loading chart…</div>}>
                 <HistoryChart rows={rows} period={period} />
               </Suspense>
             </Card>
@@ -53,7 +53,7 @@ export function HistoricalExplorer({
                   rates are not estimated from a current population.
                 </p>
                 <Suspense
-                  fallback={<Loading label="Loading incidence chart…" />}
+                  fallback={<div className="history-chart chart-skeleton" role="status">Loading incidence chart…</div>}
                 >
                   <HistoryChart
                     rows={rows}

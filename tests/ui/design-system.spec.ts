@@ -55,7 +55,7 @@ test("preview interactions, consent, focus restoration and desktop accessibility
   await trigger.click();
   await page.getByRole("checkbox").check();
   await page.getByRole("button", { name: "Continue preview" }).click();
-  await expect(page.getByRole("status")).toContainText(
+  await expect(page.locator(".toast-region")).toContainText(
     "No report or consent was saved",
   );
   await page.getByRole("button", { name: "Dismiss notification" }).click();

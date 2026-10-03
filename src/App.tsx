@@ -9,7 +9,7 @@ import {
 import { LayoutShell, Button, Card } from "./components/ui";
 import { Loading } from "./components/PageState";
 import { AppDataProvider } from "./lib/resources";
-import { Dashboard } from "./pages/Dashboard";
+const Dashboard = lazy(() => import("./pages/Dashboard").then(module => ({ default: module.Dashboard })));
 const CityDetail = lazy(() =>
   import("./pages/CityDetail").then((module) => ({
     default: module.CityDetail,
