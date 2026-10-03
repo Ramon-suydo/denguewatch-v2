@@ -329,3 +329,17 @@ validate a supported environment separately, not at the venue; use prepared dist
 No feature/dependency, DB mutation, report activation, push or merge performed.
 Next: copy ZIP/PDF to USB, rehearse locally, self-review before any merge. main
 pushes deploy live. User pushes: git push -u origin feat/risk-grid.
+
+## Manila redesign — Phase 0 (2026-10-03)
+
+Branch feat/manila-redesign; defense-v1 resolves to
+bfdff26009b168b2c9a063519d2bdc92a2737f76 and must remain untouched.
+Read only the four specified iACADEMY reference files via public raw URLs;
+no external repository changes. Baseline audit: docs/REDESIGN_PHASE0.md.
+48 screenshots of 12 current route patterns at 320/390/768/1280, using verified
+snapshot reads with external network blocked. Zero horizontal overflow/page errors.
+Full/viewport captures are ignored .artifacts/manila-phase0/. Charts were awaited
+before final captures so skeletons were not mistaken for settled defects.
+No UI/data/model/schema changes or hosted reads/writes performed in this phase.
+Next: Phase 1 palette/fonts/nav/cards/footer; close misleading CTA and quarantine
+public fixture preview. Tests/build run once below before Phase 0 commit.
