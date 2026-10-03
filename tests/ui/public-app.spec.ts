@@ -150,49 +150,13 @@ test("closed collection, missing city, empty history and service errors have usa
   await expect(page.locator('section[aria-labelledby="history-title"] .history-chart svg')).toHaveCount(2);
 });
 
-test("map popups distinguish old official trends and community counts; tile failures keep the list usable", async ({
-  page,
-}) => {
-  await mockPublicApi(page);
-  await page.route("https://tile.openstreetmap.org/**", (route) =>
-    route.abort(),
-  );
-  await page.goto("/map");
-  await expect(page.locator(".leaflet-marker-icon")).toHaveCount(1);
-  await expect(
-    page.getByText("Some map tiles could not load.", { exact: false }),
-  ).toBeVisible();
-  await page.getByLabel("Map risk display").selectOption("historical");
-  await page.locator('.leaflet-marker-icon[title^="MANILA CITY"]').click();
-  await expect(
-    page
-      .locator(".leaflet-popup")
-      .getByText("Recent eligible historical months"),
-  ).toBeVisible();
-  await expect(
-    page.locator(".leaflet-popup").getByText("Community · Unverified"),
-  ).toBeVisible();
-  await expect(
-    page
-      .locator(".leaflet-popup")
-      .getByText(
-        "No community reports yet for this city, or fewer than five in each week. Small counts are hidden for privacy.",
-      ),
-  ).toBeVisible();
-  await page.locator(".leaflet-popup-close-button").click();
-  await page.setViewportSize({ width: 390, height: 844 });
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBeTruthy();
-  expect(
-    (
-      await new AxeBuilder({ page })
-        .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
-        .analyze()
-    ).violations,
-  ).toEqual([]);
+test("Tondo map keeps unavailable values separate in its accessible table",async({page})=>{
+ await mockPublicApi(page,{open:false});await page.goto("/map");
+ await page.getByRole("button",{name:"Table",exact:true}).click();
+ await page.getByLabel("Search barangay").fill("Barangay 21");
+ const missing=page.locator(".map-table tbody tr").filter({has:page.getByRole("button",{name:"Barangay 21",exact:true})});
+ await expect(missing).toContainText("Not available");await expect(missing).toContainText("No boundary data");
+ await page.getByRole("button",{name:"Dengue cases · locked"}).click();await expect(missing).toContainText("Not reported");
 });
 
 test("public routes are responsive and legal information stays available on phones", async ({

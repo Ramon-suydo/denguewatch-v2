@@ -34,3 +34,24 @@ check("Hero heading", "#ffffff", colors.navy[900]);
 check("Hero secondary text", colors.navy[200], colors.navy[900]);
 check("Input boundary", colors.neutral[500], "#ffffff", 3);
 check("Focus outline", colors.navy[600], "#ffffff", 3);
+
+check("Dark map text", "#ffffff", colors.navy[950]);
+check("Dark map source links", colors.gold[400], colors.navy[900]);
+check("Dark map focus", colors.gold[400], colors.navy[900], 3);
+check("Dark map outlines", colors.pop.cyan, colors.navy[950], 3);
+const {mapRamp,visionMatrices,simulatedLuminance,linearRgb,luminance:mapLuminance}=await import("../src/lib/map-colors.js");
+for(const [name,matrix] of Object.entries(visionMatrices)) {
+ const values=mapRamp.map(color=>simulatedLuminance(color,matrix));
+ assert.ok(values.every((value,index)=>index===0||value>values[index-1]),`Map ramp reverses luminance in ${name}`);
+ console.log(`Map ramp ${name}: monotonic luminance`);
+}
+
+for(const [name,matrix] of Object.entries(visionMatrices)) {
+ let prior=-1;
+ for(let step=0;step<=300;step++) {
+  const t=step/100,index=Math.min(2,Math.floor(t)),f=t-index,a=linearRgb(mapRamp[index]),b=linearRgb(mapRamp[index+1]),rgb=a.map((v,j)=>v+(b[j]-v)*f);
+  const value=mapLuminance(matrix.map(row=>Math.max(0,Math.min(1,row.reduce((sum,v,j)=>sum+v*rgb[j],0)))));
+  assert.ok(value+1e-10>=prior,`Interpolated map ramp reverses in ${name}`); prior=value;
+ }
+ console.log(`Map ramp ${name}: all 301 interpolated samples pass`);
+}

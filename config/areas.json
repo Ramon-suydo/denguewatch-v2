@@ -1,0 +1,31 @@
+{
+  "tondo": {
+    "id": "tondo",
+    "name": "Tondo",
+    "cityPsgc": "1380600000",
+    "firstBarangay": 1,
+    "lastBarangay": 267,
+    "districts": [
+      {
+        "name": "Tondo I West",
+        "first": 1,
+        "last": 146
+      },
+      {
+        "name": "Tondo II East",
+        "first": 147,
+        "last": 267
+      }
+    ],
+    "populationTotal": 654220,
+    "populationKnownTotal": 653007,
+    "populationKnownRows": 258,
+    "quarantined": [
+      {
+        "name": "Barangay 202-A",
+        "population": 1213,
+        "reason": "Upstream boundary maps 202-A to Barangay 202 and duplicates PSGC 1380601202; independent code review required"
+      }
+    ]
+  }
+}

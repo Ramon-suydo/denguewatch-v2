@@ -1,4 +1,4 @@
-﻿import { readFile, mkdir, writeFile, rename } from "node:fs/promises";
+import { readFile, mkdir, writeFile, rename } from "node:fs/promises";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { config } from "dotenv";
@@ -49,7 +49,8 @@ async function main() {
       month: history.filter(r => r.period_type === "month").length, day: history.filter(r => r.period_type === "day").length };
     assert.deepEqual(counts, { lgus: 17, week: 4403, month: 1037, day: 1910 });
     const coverage = dataset.audit.summaries.map(s => ({ source: s.source, period: s.period_type, date: s.end }));
-    const snapshot = { metadata: { version: "demo-db-v1", createdAt: new Date().toISOString(),
+    const area = JSON.parse(await readFile("public/geo/tondo.json", "utf8"));
+    const snapshot = { areas: { tondo: area }, metadata: { version: "demo-db-v1", createdAt: new Date().toISOString(),
       verified: "Every official observation and LGU metadata matched audited raw files in a read-only repeatable-read transaction",
       counts, sourceChecksums: dataset.audit.summaries.map(s => ({ source: s.source, sha256: s.sha256 })),
       backtestChecksum: createHash("sha256").update(evidenceBytes).digest("hex") },

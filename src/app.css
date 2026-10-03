@@ -402,3 +402,47 @@ a:not(.skip-link) { display: inline-flex; align-items: center; padding-block: 0.
 .data-notes summary { font-weight: 700; }
 .data-notes li { margin-block: 1rem; }
 @media (max-width:480px) { .coverage-row { grid-template-columns: 1fr; gap: .25rem; } }
+
+/* Offline map chrome; values and shapes come only from the committed source artifact. */
+.tondo-map { position: relative; min-height: 800px; border-radius: 1.5rem; background: var(--color-navy-950); color: white; padding: 1.25rem; overflow: hidden; }
+.map-loading { display: grid; place-items: center; }
+.tondo-map h2, .tondo-map h3 { color: white; }
+.map-toolbar { display: flex; gap: .75rem; align-items: end; flex-wrap: wrap; }
+.map-toolbar .ui-field { flex: 1 1 200px; max-width: 300px; }
+.map-toolbar label { color: white; font-size: .85rem; }
+.map-segments { display: flex; flex-wrap: wrap; gap: .25rem; padding: .25rem; border: 1px solid var(--color-navy-400); border-radius: 1.75rem; background: var(--color-navy-900); }
+.map-segments .ui-button { font-size: .85rem; padding-inline: .75rem; }
+.tondo-map .ui-button-ghost { color: white; }
+.tondo-map .ui-button-ghost:hover:not(:disabled) { background: var(--color-navy-700); color: white; }
+.tondo-map :focus-visible { outline: 3px solid var(--color-gold-400); outline-offset: 3px; }
+.map-takeaway, .map-context { font-size: .9rem; line-height: 1.5; margin: .75rem 0; }
+.map-context { color: var(--color-navy-100); }
+.map-coverage { margin-block: .5rem; }
+.map-coverage > summary { width: fit-content; border: 1px solid var(--color-navy-400); border-radius: 999px; padding: .6rem 1rem; font-size: .85rem; }
+.map-drawer { border: 1px solid var(--color-navy-400); border-radius: 1rem; padding: 1.25rem; background: var(--color-navy-900); margin-block: .5rem; }
+.map-drawer a { color: var(--color-gold-400); }
+.district-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.missing-boundary, .legend-no-data { background: repeating-linear-gradient(135deg, transparent, transparent 6px, rgb(152 171 226 / .1) 6px, rgb(152 171 226 / .1) 8px); }
+.map-legend { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; font-size: .85rem; }
+.map-ramp { flex: 1; min-width: 80px; height: 6px; border-radius: 999px; }
+.legend-no-data { border: 1px solid var(--color-navy-300); padding: .3rem .5rem; border-radius: .5rem; }
+.barangay-svg { display: block; width: 100%; height: 580px; touch-action: pan-y; }
+.barangay-svg path[role="button"] { cursor: pointer; }
+.map-zoom { display: flex; gap: .25rem; width: fit-content; border: 1px solid var(--color-navy-400); background: var(--color-navy-900); border-radius: 999px; }
+.map-locked { margin: 0; padding: 1rem; border: 1px solid var(--color-navy-400); border-radius: 1rem; color: var(--color-gold-400); background: var(--color-navy-900); }
+.barangay-info { position: absolute; right: 1.25rem; bottom: 1.25rem; max-width: 300px; background: var(--color-navy-900); border: 1px solid var(--color-navy-300); border-radius: 1rem; padding: 1rem; box-shadow: var(--shadow-card); z-index: 2; }
+.barangay-info h2 { font-size: 1.2rem; margin: 0; }
+.barangay-info p, .barangay-info dl { font-size: .85rem; }
+.barangay-info dl { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem .75rem; }
+.barangay-info dd { margin: 0; }
+.barangay-info > button:not(.ui-button), .map-table button { color: white; background: transparent; border: 0; text-decoration: underline; }
+.map-table { max-height: 640px; margin-top: 1rem; padding-bottom: 320px; }
+.tondo-map table { min-width: 650px; color: white; }
+.tondo-map table caption, .tondo-map th, .tondo-map td { color: white; background: transparent; }
+.tondo-map tbody tr:hover { background: var(--color-navy-800); }
+.map-comparison { border-top: 1px solid var(--color-navy-400); margin-top: .75rem; }
+@media(max-width:600px) { .tondo-map { padding: .8rem; min-height: 900px; } .map-toolbar { align-items: stretch; } .map-toolbar .ui-field { max-width: none; flex-basis: 100%; } .map-segments { width: fit-content; } .map-segments .ui-button { padding-inline: .55rem; font-size: .78rem; } .barangay-svg { height: 520px; } .barangay-info { bottom: .8rem; left: .8rem; right: .8rem; max-width: none; } }
+
+.tondo-map thead { background: var(--color-navy-800); }
+
+@media(max-width:600px) { .barangay-info { position: fixed; max-height: min(60dvh,420px); overflow: auto; } }

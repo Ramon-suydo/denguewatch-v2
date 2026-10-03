@@ -831,3 +831,39 @@ h1, h2, h3 { font-family: Montserrat, sans-serif; font-weight: 800; letter-spaci
 .section-number { font-family: Fraunces, serif; font-weight: 600; }
 
 .page-header .eyebrow { font-family: Fraunces, serif; font-weight: 600; }
+
+/* Expose the configured legacy Tailwind tokens to native CSS consumers. */
+:root {
+  --color-navy-50: theme("colors.navy.50");
+  --color-navy-100: theme("colors.navy.100");
+  --color-navy-200: theme("colors.navy.200");
+  --color-navy-300: theme("colors.navy.300");
+  --color-navy-400: theme("colors.navy.400");
+  --color-navy-500: theme("colors.navy.500");
+  --color-navy-600: theme("colors.navy.600");
+  --color-navy-700: theme("colors.navy.700");
+  --color-navy-800: theme("colors.navy.800");
+  --color-navy-900: theme("colors.navy.900");
+  --color-navy-950: theme("colors.navy.950");
+  --color-gold-50: theme("colors.gold.50");
+  --color-gold-100: theme("colors.gold.100");
+  --color-gold-200: theme("colors.gold.200");
+  --color-gold-300: theme("colors.gold.300");
+  --color-gold-400: theme("colors.gold.400");
+  --color-gold-500: theme("colors.gold.500");
+  --color-gold-600: theme("colors.gold.600");
+  --color-gold-700: theme("colors.gold.700");
+  --color-gold-800: theme("colors.gold.800");
+  --color-gold-900: theme("colors.gold.900");
+  --color-neutral-50: theme("colors.neutral.50");
+  --color-neutral-100: theme("colors.neutral.100");
+  --color-neutral-200: theme("colors.neutral.200");
+  --color-neutral-300: theme("colors.neutral.300");
+  --color-neutral-400: theme("colors.neutral.400");
+  --color-neutral-500: theme("colors.neutral.500");
+  --color-neutral-600: theme("colors.neutral.600");
+  --color-neutral-700: theme("colors.neutral.700");
+  --color-neutral-800: theme("colors.neutral.800");
+  --color-neutral-900: theme("colors.neutral.900");
+  --shadow-card: theme("boxShadow.card");
+}

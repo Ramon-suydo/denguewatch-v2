@@ -397,3 +397,54 @@ Added contextual info beside history gaps and model MAE. No stronger accuracy cl
 Checks once: 28 unit tests, production build, disclosure/axe browser check at
 320/390/768/1280 pass. No new dependency, snapshot/DB change, push or tag mutation.
 Next: item B requires real Tondo boundary/population import; none existed on branch.
+
+
+## Tondo minimalist map — item B (2026-10-04)
+
+Replaced /map city markers/basemap with a lazy offline SVG map card. Areas is the
+default, Heat uses weighted centroid kernels/blur clipped to source polygons,
+Table is searchable/sortable. Population and crowding use real PSA 2020 values;
+crowding is explicitly not disease risk. Cases is locked behind a separate hook;
+no city count, report or forecast is assigned to a barangay. Empty filters show
+No data, not zero. Coverage/source drawer, district chips, deep-link selection,
+arrow focus, keyboard +/-/0, pointer pan, two pins and mobile info sheet included.
+
+Source verification corrected the planned 267 assumption: 258 numeric entries
+in the requested 1–267 range have polygons/population. Missing numbers are
+21,22,23,24,27,40,113,114,115; these stay unavailable, not zero or synthetic shapes.
+PSA separately lists 202-A (1,213 people), so 653,007 + 1,213 reconciles 654,220.
+202-A geometry is quarantined because the repository maps it to Barangay 202’s
+PSGC 1380601202, a duplicate identity; never guess a replacement or merge it.
+267 is the requested numeric scope, not a verified current administrative count.
+Details/license/fingerprints: docs/TONDO_MAP_SOURCES.md and source-metadata.ts.
+
+config/areas.json + npm run geo:build produces committed paths/areas/centroids
+and TopoJSON. Small d3-geo/topojson tools and types added for build-time geometry;
+map runtime imports no geometry library. Local equal-area projection for km².
+public/geo/tondo.json is 64.7 kB; lazy map JS 11.68 kB/4.39 kB gzip.
+Snapshot includes the geometry/population artifact; demo:snapshot retains it on
+regeneration. Existing surveillance rows, audit timestamp/checksums and backtests
+are unchanged. Offline reads use the snapshot before attempting geometry fetches.
+
+Exact brand cyan reverses brightness before gold under protanopia. Only the map
+stop dims cyan by 10% linear light and lifts red slightly to avoid a tritanopia
+gamut dip between stops; brand tokens unchanged. All 301 interpolated samples
+pass each simulation, and the legend uses the same linear-light interpolation. Normal/protanopia/
+deuteranopia/tritanopia stop-order checks pass; hatching, labels and table remain.
+Checks: 30 unit tests once, plus the changed quarantine tests (2 pass), final
+build, 22 contrast pairs and four simulated ramp checks pass. Full browser run
+had 16 pass/4 fail; targeted fixes/rechecks resolve all 20. Fixed missing native
+CSS token variables, inherited light table header and offline geometry retry.
+Confidence timeline now also resolves native theme tokens correctly. Rebuilds
+required these browser fixes; final note encoding corrected to UTF-8. Snapshot copy verified structurally against
+HEAD and restored to preserve every original surveillance field exactly. No repeated
+full unit suite. Production offline capture checks 3 map views at 4 widths, no
+horizontal overflow, axe findings, console issues or external network requests;
+16 captures in ignored .artifacts/tondo-final/ precede the final minor gamut
+adjustment; the affected map browser check passes after that adjustment.
+Final largest JS chunk 475.59 kB/138.66 kB gzip. Existing Node20 mismatch kept.
+
+No hosted Supabase write, schema/community launch, push, merge or defense-v1 change.
+Next: independent PSGC review for 202-A/source gaps; Phase 2 Home remains unbuilt.
+Test locally and self-review before merging. User push:
+git push -u origin feat/manila-redesign.

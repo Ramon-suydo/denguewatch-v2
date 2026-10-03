@@ -49,3 +49,9 @@ export function sourceAttribution(): string {
     ? `DOH/FOI ${CITATION_PENDING}`
     : [...new Set(Object.values(sourceMetadata).map(source => source.issuingOffice))].join("; ");
 }
+
+// Map inputs are distinct from the dengue surveillance files and their citations.
+export const mapSourceMetadata: Record<string, SourceMetadata> = {
+ boundaries: {title:"Tondo boundaries, NAMRIA/PSA snapshot via barangay-boundaries-repository",issuingOffice:"NAMRIA / PSA, repository curated by bendlikeabamboo",dateObtained:"2026-10-04",foiRequestId:"None; public repository",url:"https://github.com/bendlikeabamboo/barangay-boundaries-repository",usageTerms:"Repository MIT license; retain upstream NAMRIA/PSA attribution"},
+ population: {title:"PSA 2020 CPH: Total Population by Barangay, City of Manila",issuingOffice:"Philippine Statistics Authority, NCR Provincial Statistical Office I",dateObtained:"2026-10-04",foiRequestId:"None; public PSA publication",url:"https://rssoncr.psa.gov.ph/sites/default/files/Manila_0.pdf",usageTerms:"Not stated in the publication; attribution retained"},
+};

@@ -3,6 +3,7 @@ import type { RiskRecord } from "../components/CityGrid";
 export interface DemoSnapshot {
   metadata: { version: string; createdAt: string; verified?: string; counts: { lgus: number; week: number; month: number; day: number }; sourceChecksums: { source: string; sha256: string }[]; backtestChecksum: string };
   cities: City[]; history: (Observation & { deaths: number | null; source_sha256: string })[]; forecasts: Forecast[]; risks: RiskRecord[];
+  areas?: Record<string, unknown>;
   coverage: { source: string; period: string; date: string | null }[];
 }
 const forced = import.meta.env?.VITE_DEMO_MODE === "true";
