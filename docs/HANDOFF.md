@@ -188,3 +188,58 @@ writes, report activation or push performed. Exact DOH/FOI metadata remains pend
 Next: rehearse the local demo, supply citations and review draft privacy/legal
 copy with the school DPO. Test locally and self-review before merging; main deploys
 live. User pushes: `git push -u origin feat/risk-grid`.
+
+## Day 5 — review drafts and print export (2026-10-03)
+
+/legal is a lazy-loaded, footer-linked set of six legal-v1 review sections:
+Privacy, Terms, Forecast/Medical Disclaimer, Sources (canonical metadata),
+Model Transparency (link to the existing LGU panel), and Cookie/Storage notice.
+All say Draft for review / Not legal advice and carry version/date. /privacy
+and /terms reuse the same draft copy; the existing withdrawal flow is preserved.
+
+Reality audit: no app analytics/advertising SDK, cookies, localStorage/sessionStorage
+writes or remote font/CDN loader. Fonts/scripts are local; browsers may cache
+public assets. Online public Supabase anon reads have auth persistence disabled.
+Vercel/Supabase and online OpenStreetMap tiles receive request metadata; provider
+log/backup retention/settings and locations require verification. Withdrawal codes
+stay out of URLs/storage; optional copy uses clipboard only on request. Community
+submissions remain closed; offline snapshot/mutations behavior is unchanged.
+
+Existing 90-day DB retention and previously approved research email are preserved
+as facts, not final public-launch policy or controller/DPO designation. Five fields
+in src/lib/legal.ts remain [pending]: controller name, controller/DPO contact,
+final launch retention, technical-log retention, provider backup retention.
+Source metadata remains 18 pending fields: title, issuing office, obtained date,
+FOI request ID, URL and usage terms for each of the three sources.
+
+CommunityConsent is reusable, unticked/required and versioned community-v1;
+text is centralized in src/lib/legal.ts. Continue/submit requires the existing
+policy gate and matching consent version. No hosted mutation or activation ran.
+LAUNCH_CHECKLIST.md covers every-RPC rate limiting/abuse controls, retention,
+RLS/grants, consent/lawful-basis/liability/right-request review, controller contact,
+provider arrangements and NPC registration/exemption assessment by the school DPO.
+Health-data/rights and registration descriptions link official NPC references;
+no legal status or exemption is claimed. COMMUNITY_PRIVACY and DEFENSE_QA are
+updated to match the current implementation and applied hosted migrations.
+
+LGU detail has Print report, using browser print/PDF with A4 CSS. It includes
+weekly DB/snapshot observations, dated trend/exact rows (gaps break the line),
+1/2/4-week cached estimates and 80/95 intervals, per-LGU artifact-derived MAE
+comparison versus the four-week mean, limitations, shared disclaimer, source
+metadata/checksum, model version/run date, generated time and snapshot date.
+Weekly latest label is distinct from cached forecast origin; a newer DB label
+never updates the model implicitly. Nav/interactive charts are excluded from the
+printed report while frames remain measurable to prevent resize warnings.
+
+Checks: npm test (26 passed; expected pending-citation warning), npm run build
+(once each), all 19 browser tests and contrast checks passed. The new print check
+renders an actual A4 PDF fully offline, asserts artifact score/disclaimer/source
+text and empty app storage, and checks the model link scrolls to its existing
+panel. All 12 routes/missing routes pass online/offline mobile checks at
+320/390/768/1280, serious/critical axe and console checks. Final targeted print/
+model-link rerun passed after diff review. No dependencies added; largest JS chunk
+474.67 kB (gzip 138.33); no large-chunk warning. DEMO_SCRIPT includes the handout.
+
+Next: owner fills pending metadata, school DPO/lawyer reviews drafts and rehearses
+the local demo/printed handout. Submissions stay closed. Test locally and self-review
+before merging; main deploys live. User pushes: git push -u origin feat/risk-grid.

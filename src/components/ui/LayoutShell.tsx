@@ -110,7 +110,7 @@ export function LayoutShell({
         </span>
         <span>
           <Link to="/data-sources">Data & Sources</Link> ·{" "}
-          <Link to="/terms">Terms</Link> ·{" "}
+          <Link to="/legal">Legal & privacy drafts</Link> · <Link to="/terms">Terms</Link> ·{" "}
           <Link to="/privacy">Privacy & withdrawal</Link>
         </span>
       </footer>

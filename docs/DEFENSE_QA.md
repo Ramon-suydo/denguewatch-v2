@@ -1,4 +1,4 @@
-﻿# Defense Q&A — research demonstration
+# Defense Q&A — research demonstration
 
 These answers refer to the audited current sources in DATA_QUALITY.md and the
 weekly-ridge-v1 cached backtest. Exact DOH/FOI citations remain pending. This is
@@ -72,15 +72,23 @@ not a clinical validation or legal-compliance assessment.
     health-office and qualified clinical guidance.
 
 11. **How are community reports and privacy handled?**
-    Reports remain unverified and separate from official surveillance and models.
-    Real submissions are closed; the offline snapshot contains no reports,
-    contacts or policy records. Existing consent is unticked/versioned; small
-    aggregates below five are suppressed; private withdrawal codes are hashed.
-    Individual health information is sensitive personal information under
-    RA 10173 §3(l)(2), as published by the
-    [National Privacy Commission](https://privacy.gov.ph/data-privacy-act/).
-    School DPO/legal review must assess the launch, retention, server protections
-    and applicable registration obligations; the app does not claim certification.
+    Today collection is closed; no app analytics, cookies or local/session storage
+    is installed. Fonts/scripts are local, but online Supabase reads and
+    OpenStreetMap tiles expose request metadata to providers; Vercel/provider
+    log and backup retention need verification. The snapshot contains no reports
+    or contacts. Health reports would be sensitive personal information under
+    [RA 10173 §3(l)(2), published by the NPC](https://privacy.gov.ph/data-privacy-act/).
+    Dormant community-v1 consent is unticked, with separate optional contact;
+    withdrawal codes are hashed and small aggregates suppressed, without a
+    guarantee of anonymity. The existing DB setting is 90 days; final launch
+    retention/controller identity/contact remain pending. Lawyer/school DPO review
+    must cover rights handling, consent, liability, processors and registration.
+    Registration is not automatically ruled out by being a thesis: NPC Circular
+    2022-04 covers controllers/processors with 250+ employees, sensitive data on
+    1,000+ people, or processing likely to risk subjects' rights/freedoms.
+    The DPO must assess the school/controller as a whole and any exemption route;
+    no registration status or exemption is claimed. See the
+    [NPC registration guidance](https://privacy.gov.ph/reminder-on-mandatory-data-protection-officer-and-data-processing-system-registration/).
 
 12. **What would newer DOH data realistically add?**
     More recent weekly years can provide relevant held-out periods and more

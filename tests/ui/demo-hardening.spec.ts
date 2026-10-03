@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { mockPublicApi } from "./public-fixtures";
 test.describe.configure({ timeout: 180000 });
 const snapshot = JSON.parse(await readFile("public/demo-snapshot.json", "utf8"));
-const routes = ["/", "/dashboard", "/city/" + snapshot.cities.find((c: { name: string }) => c.name === "MANILA CITY").id, "/map", "/report", "/privacy", "/terms", "/data-sources", "/design-preview", "/city/not-an-lgu", "/not-found"];
+const routes = ["/", "/dashboard", "/city/" + snapshot.cities.find((c: { name: string }) => c.name === "MANILA CITY").id, "/map", "/report", "/privacy", "/terms", "/legal", "/data-sources", "/design-preview", "/city/not-an-lgu", "/not-found"];
 function watch(page: import("@playwright/test").Page) {
   const issues: string[] = [];
   page.on("pageerror", error => issues.push(error.message));

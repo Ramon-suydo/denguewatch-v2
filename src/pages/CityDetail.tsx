@@ -1,4 +1,5 @@
-import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { Card } from "../components/ui";
 import { PageHeader } from "../components/PageHeader";
 import { ReadState } from "../components/PageState";
@@ -6,9 +7,12 @@ import { HistoricalExplorer } from "../components/HistoricalExplorer";
 import { ForecastPanel } from "../components/ForecastPanel";
 import { CommunitySection } from "../components/CommunitySection";
 import { useAppData } from "../lib/resources";
+import { LguPrintReport } from "../components/LguPrintReport";
 export function CityDetail() {
   const { id } = useParams();
   const { cities } = useAppData();
+  const location = useLocation();
+  useEffect(() => { if (location.hash === "#model-transparency-title") { const frame = requestAnimationFrame(() => document.getElementById("model-transparency-title")?.scrollIntoView()); return () => cancelAnimationFrame(frame); } }, [location.hash, cities.data]);
   return (
     <>
       <PageHeader
@@ -18,7 +22,7 @@ export function CityDetail() {
         }
         description="Inspect full source series, incidence, and weekly forecast estimates and their backtest performance."
       />
-      <div className="dw-container app-content">
+      <div className="dw-container app-content city-report-page">
         <Link className="text-link" to="/">
           ← All NCR cities
         </Link>
@@ -37,6 +41,8 @@ export function CityDetail() {
               );
             return (
               <>
+                <LguPrintReport key={city.id} city={city} />
+                <div className="screen-only content-stack">
                 <p className="data-notice">
                   Monthly records cover January 2016–January 2021, not all of
                   2021.{" "}
@@ -47,6 +53,7 @@ export function CityDetail() {
                 <HistoricalExplorer key={city.id} city={city} detail />
                 <ForecastPanel cityName={city.name} />
                 <CommunitySection city={city.id} />
+                </div>
               </>
             );
           }}

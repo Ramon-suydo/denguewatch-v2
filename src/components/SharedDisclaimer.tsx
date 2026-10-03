@@ -1,7 +1,7 @@
-﻿export function SharedDisclaimer() {
+export function SharedDisclaimer({ id = "shared-disclaimer-title" }: { id?: string }) {
   return (
-    <aside className="data-notice" aria-labelledby="shared-disclaimer-title">
-      <h2 id="shared-disclaimer-title" className="eyebrow">Estimates, not alerts</h2>
+    <aside className="data-notice" aria-labelledby={id}>
+      <h2 id={id} className="eyebrow">Estimates, not alerts</h2>
       <p>
         Forecasts are statistical estimates from historical published data.
         They are not medical advice, an emergency or outbreak alert, or a

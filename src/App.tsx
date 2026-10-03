@@ -9,6 +9,7 @@ import {
 import { LayoutShell, Button, Card } from "./components/ui";
 import { Loading } from "./components/PageState";
 import { AppDataProvider } from "./lib/resources";
+const Legal = lazy(() => import("./pages/Legal").then(module => ({ default: module.Legal })));
 const Dashboard = lazy(() => import("./pages/Dashboard").then(module => ({ default: module.Dashboard })));
 const CityDetail = lazy(() =>
   import("./pages/CityDetail").then((module) => ({
@@ -70,7 +71,9 @@ function PublicRoutes() {
           ? "Community report"
           : location.pathname === "/data-sources"
             ? "Data & Sources"
-            : location.pathname === "/privacy"
+            : location.pathname === "/legal"
+              ? "Legal and privacy drafts"
+              : location.pathname === "/privacy"
               ? "Privacy"
               : location.pathname === "/terms"
                 ? "Terms"
@@ -107,7 +110,7 @@ function PublicRoutes() {
           {
             label: "Privacy",
             href: "/privacy",
-            active: location.pathname === "/privacy",
+            active: location.pathname === "/privacy" || location.pathname === "/legal",
           },
         ]}
         action={
@@ -132,6 +135,7 @@ function PublicRoutes() {
               <Route path="/report" element={<Report />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/legal" element={<Legal />} />
               <Route path="/data-sources" element={<DataSources />} />
               <Route
                 path="*"

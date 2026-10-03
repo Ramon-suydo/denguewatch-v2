@@ -66,6 +66,25 @@ report content is sold or shared with third parties for their own purposes.
 Supabase processes storage and Vercel serves the site; OpenStreetMap receives
 map requests/IP addresses, not report content. There are no advertising analytics.
 
-The implementation and isolated tests are complete, but hosted app migrations and
-activation are pending explicit approval after automatic review blocked the attempt.
+Hosted migrations and caches were applied with authorization on 2026-09-24.
+Real submissions remain disabled; no activation has been authorized.
 See [PUBLIC_APP.md](PUBLIC_APP.md) for exact commands, changes and validation.
+
+
+## Day 5 review drafts (2026-10-03)
+
+/legal and the existing /privacy and /terms pages carry legal-v1 review drafts.
+No app analytics, cookies, localStorage/sessionStorage or remote font/CDN loader
+is installed. Browser caching is distinct from app storage. Online public anon
+reads send request metadata to Supabase; Vercel serves the app and the online
+map requests OpenStreetMap tiles. Provider log/backup retention and locations
+are not verified. Offline snapshot contains official/model data only; mutations
+are blocked. The online code-based withdrawal path remains available.
+
+The previously approved 90-day DB setting and research email above remain facts,
+not a final controller designation or newly settled launch policy. Controller
+identity/contact, final public-launch retention, technical-log retention and
+backup retention are [pending] in src/lib/legal.ts. Community-v1 consent is a
+reusable unticked required block, gated by the existing disabled policy and
+matching version. The consent draft changes before any collection; it is not
+retroactive consent. Follow LAUNCH_CHECKLIST.md before any activation.

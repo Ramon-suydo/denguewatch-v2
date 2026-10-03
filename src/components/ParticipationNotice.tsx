@@ -4,6 +4,7 @@ export function ParticipationNotice({ policy }: { policy: CommunityPolicy }) {
   return (
     <div className="prose">
       <h2>Before you choose to report</h2>
+      <p>Draft for review. Not legal advice. Version community-v1 · 2026-10-03. Final launch retention/controller details await review in <Link to="/legal#privacy">Privacy</Link>.</p>
       <p>
         Participation is voluntary. This is a thesis/research application, not
         an official Department of Health service. A report is a self-reported
@@ -11,7 +12,7 @@ export function ParticipationNotice({ policy }: { policy: CommunityPolicy }) {
       </p>
       <h3>What we collect and why</h3>
       <p>
-        We ask for your city or municipality, report date, and self-reported
+        If reporting opens after review, we would ask for your city or municipality, report date, and self-reported
         status to study broad patterns. Barangay text is optional. We record
         your consent version and submission time. Please do not enter names,
         exact addresses, patient numbers, or other people’s details.
@@ -30,7 +31,7 @@ export function ParticipationNotice({ policy }: { policy: CommunityPolicy }) {
       </p>
       <h3>Retention and your control</h3>
       <p>
-        Reports expire {policy.retention_days} days after submission and leave
+        The existing setting expires reports after {policy.retention_days} days after submission and leave
         public aggregates immediately at expiry. An hourly cleanup removes
         expired database rows. Until then, your secret reference code lets you
         withdraw your report and immediately clear optional contact and barangay

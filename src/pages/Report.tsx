@@ -15,6 +15,8 @@ import { ParticipationNotice } from "../components/ParticipationNotice";
 import { useAppData } from "../lib/resources";
 import { submitReport } from "../lib/api";
 import { manilaToday } from "../lib/dates";
+import { CommunityConsent } from "../components/CommunityConsent";
+import { COMMUNITY_CONSENT } from "../lib/legal";
 export function Report() {
   const { cities, policy, community } = useAppData();
   const toast = useToast();
@@ -45,7 +47,7 @@ export function Report() {
       date > manilaToday() ||
       !date ||
       !cities.data?.some((item) => item.id === city) ||
-      !policy.data.submissions_enabled
+      (!policy.data.submissions_enabled || policy.data.consent_version !== COMMUNITY_CONSENT.version)
     ) {
       setError(
         "Check your consent, city, date, and whether submissions are open.",
@@ -62,7 +64,7 @@ export function Report() {
     try {
       const reference = await submitReport(
         { city, date, status, barangay, contactOptIn: optIn, contact, consent },
-        policy.data.consent_version,
+        COMMUNITY_CONSENT.version,
       );
       setCode(reference);
       setContact("");
@@ -163,21 +165,9 @@ export function Report() {
                     <MedicalNotice />
                     <Card>
                       <ParticipationNotice policy={notice} />
-                      <Checkbox
-                        label={
-                          <>
-                            I have read this explanation and voluntarily agree
-                            to this report being used as described. I understand
-                            it is not medical care.{" "}
-                            <Link to="/terms">Terms</Link> ·{" "}
-                            <Link to="/privacy">Privacy</Link>
-                          </>
-                        }
-                        checked={consent}
-                        onChange={(event) => setConsent(event.target.checked)}
-                      />
+                      <CommunityConsent checked={consent} onChange={setConsent} />
                       <Button
-                        disabled={!consent || !notice.submissions_enabled}
+                        disabled={!consent || !notice.submissions_enabled || notice.consent_version !== COMMUNITY_CONSENT.version}
                         onClick={() => go(2)}
                       >
                         Continue to report
@@ -298,7 +288,7 @@ export function Report() {
                                 disabled={
                                   busy ||
                                   !consent ||
-                                  !notice.submissions_enabled
+                                  (!notice.submissions_enabled || notice.consent_version !== COMMUNITY_CONSENT.version)
                                 }
                               >
                                 {busy

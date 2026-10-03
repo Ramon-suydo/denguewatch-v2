@@ -1,4 +1,4 @@
-﻿# Five-minute defense demo
+# Five-minute defense demo
 
 Use the locally served build, not the hosted site, when venue Wi-Fi is uncertain.
 The verified DB snapshot was captured on 2026-10-03. It contains 17 LGUs and
@@ -37,7 +37,7 @@ No contacts, policy records or community reports are exported.
 | 2:30–3:15 | Backtest period: without COVID targets | “This leaves only 2019, not a counterfactual without COVID. One-week interval coverage drops to 71.4%/88.2% versus nominal 80/95. sMAPE is worse than the mean baseline overall; low-case relative errors need care.” No claimed current warning or accuracy percentage. |
 | 3:15–4:05 | `/data-sources` | Show source overlap, three weekly gaps, incomplete January 2021, anomalous deaths, daily missing dates and citation placeholders. “Monthly is derived; Manila daily is separate and disagrees in overlapping years. We never add these sources.” |
 | 4:05–4:35 | `/map`, Grid | Show all 17 LGUs with risk labels. “These are legacy monthly/historical distribution labels, separate from the weekly count model. Offline mode uses the grid instead of external tiles.” |
-| 4:35–5:00 | `/report`, then `/privacy` | Show the unticked consent checkbox and closed collection. “Community reports are unverified, separate from official data, and excluded from this snapshot/model. Privacy documents require review before launch.” End with newer DOH data as the next validation step. |
+| 4:35–5:00 | `/report`, then `/privacy` | Show the unticked consent checkbox and closed collection; /legal holds versioned review drafts. “Community reports are unverified, separate from official data, and excluded from this snapshot/model. Privacy documents require review before launch.” End with newer DOH data as the next validation step. |
 
 ## If something breaks
 
@@ -57,3 +57,5 @@ No contacts, policy records or community reports are exported.
 - Everything fails: use the saved screenshots in `.artifacts/public-app`, these
   notes, `docs/WEEKLY_FORECAST.md`, and the checked-in backtest JSON. Explain the
   failure honestly and distinguish cached results from a running live system.
+
+Optional offline handout: open an LGU detail page, choose Print report and save as PDF. The A4 report uses the official weekly series and cached forecast/interval/comparison evidence, includes the disclaimer and pending source citations, and labels its generated/snapshot dates.
