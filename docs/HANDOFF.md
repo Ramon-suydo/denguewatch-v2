@@ -272,3 +272,60 @@ Checks: npm test (26 passed), npm run build (once each), targeted legal/consent/
 offline A4 PDF/model-link browser check passed. No new dependency or push.
 Next: source-owner provenance and school DPO/lawyer/provider review. Test locally
 before merging. User pushes: git push -u origin feat/risk-grid.
+
+## Day 6 — feature freeze / final defense package (2026-10-03)
+
+No replacement metadata block was included (only a paste placeholder), so the
+previous owner-supplied legal-v1.1/source values are preserved exactly. Not available,
+not public and Not stated render plainly; exact-citation warnings remain because
+provenance/usage terms are not verified. Draft review labels and collection gate stay.
+
+DEMO_SCRIPT and DEFENSE_QA now include final artifact-derived one/two/four-week
+MAE/RMSE/sMAPE/paired support and comparison versus the four-week mean. One-week
+ridge MAE 8.82, mean 11.23, seasonal naive 22.58; ridge RMSE 20.89 and sMAPE 68.22%
+versus mean 64.95%. Intervals 79.75%/92.54% overall, 71.43%/88.22% in 2019-only
+without COVID targets. Snapshot 2026-10-03T03:17:58.331Z; weekly evidence ends
+2021-01-10. No retraining/data refresh performed.
+
+Privacy answer correctly says no new community health submissions while closed,
+not zero personal-data processing: online infrastructure request metadata and the
+withdrawal-code RPC still exist. Health-data/rights/NPC references and lawyer/DPO
+review remain in the draft answer. Provider defaults are not verified durations.
+
+DEFENSE_DAY.md has exact npm ci/build/preview commands, compiled VITE_DEMO_MODE,
+offline checklist, print/PDF and screenshot backup, static-server fallback and
+do-not-touch list. A pre-freeze build copy exists locally at ignored
+.artifacts/defense-freeze-06bc5bb/dist. Final ignored ZIP:
+.artifacts/denguewatch-defense-2026-10-03.zip (5,126,340 bytes), containing forced
+snapshot-mode dist/, three defense docs, four final screenshots, Manila PDF and
+cached JSON evidence. Copy ZIP to USB; it is not in Git or a fresh clone. JSON
+alone is evidence, not a runnable UI. Cold hosted offline reload is not promised.
+
+Final checks: npm test once (26 passed), full browser suite once (16 passed,
+3 found horizontal overflow from newly supplied source filenames), then only
+those 3 rerun and passed after .prose dd overflow-wrap:anywhere. A second build
+was necessary to include this CSS bug fix; final largest JS 475.25 kB/gzip138.52,
+no large-chunk warning. Contrast passed once. A benign Node color warning first
+stopped the PowerShell launcher before any browser tests began; warning handling
+was corrected. Production offline smoke passed 12 routes with external network
+blocked, then warmed SPA navigation with browser fully offline; zero external
+requests and console warnings/errors, closed consent, Not available rendering,
+320px legal layout and actual PDF verified. Smoke harness was corrected to use
+baseURL and warm modules within one SPA session rather than full reloads.
+
+Security: no .env/certificate files in tracked paths or reachable history;
+231 unique reachable Git blobs scanned against known private local credentials,
+private-key/token patterns and service-role JWTs: no findings. This heuristic
+scan is not proof against every possible unknown credential. src has no TODO or
+console.log matches. .env.local/certs/.artifacts remain ignored. ZIP's 54 files
+passed the same credential-pattern check and prohibited-path check; no findings.
+Detailed logs/audits are local ignored .artifacts/day6-* files.
+
+Deliberately unchanged: models, thresholds, sources/snapshot/backtest, schema,
+90-day DB setting, closed reports, provider defaults and unverified provenance.
+Runtime mismatch also left unchanged: this laptop is Node20.19.4/npm10.8.2,
+below project's declared Node>=22.12.0 despite passing checks. Runbook records it;
+validate a supported environment separately, not at the venue; use prepared dist.
+No feature/dependency, DB mutation, report activation, push or merge performed.
+Next: copy ZIP/PDF to USB, rehearse locally, self-review before any merge. main
+pushes deploy live. User pushes: git push -u origin feat/risk-grid.

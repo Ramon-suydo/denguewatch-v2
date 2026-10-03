@@ -35,6 +35,8 @@ not a clinical validation or legal-compliance assessment.
    Ridge beats seasonal naive in 17/17 LGUs on MAE. Ridge MAE at two/four weeks
    is 9.94/12.37. These are paired common-support results, not clinical accuracy.
    Ridge sMAPE is worse than the mean overall: 68.22% versus 64.95%.
+   One-week RMSE: ridge 20.89, mean 25.21, seasonal naive 51.70;
+   each is scored on 1,462 paired targets. MAE/RMSE are case-count errors.
 
 6. **Why is seasonal naive comparatively weak?**
    It repeats the label exactly 52 weeks earlier and ignores the latest case
@@ -72,7 +74,11 @@ not a clinical validation or legal-compliance assessment.
     health-office and qualified clinical guidance.
 
 11. **How are community reports and privacy handled?**
-    Today collection is closed; no app analytics, cookies or local/session storage
+    Today community health submissions are closed; no new community health records
+    are accepted. Legal-v1.1 documents remain drafts for review, not legal advice.
+    This is not a claim that no personal data is processed: provider request
+    metadata can be logged and online withdrawal can process a private code.
+    No app analytics, cookies or local/session storage
     is installed. Fonts/scripts are local, but online Supabase reads and
     OpenStreetMap tiles expose request metadata to providers; Vercel/provider
     log and backup retention need verification. The snapshot contains no reports
@@ -105,3 +111,11 @@ not a clinical validation or legal-compliance assessment.
 Sources for numerical answers: `src/data/weekly-forecast-v1.json`,
 `docs/weekly-backtest-v1.json`, `docs/WEEKLY_FORECAST.md` and `docs/DATA_QUALITY.md`.
 The live-source attribution fields are configured in `src/lib/source-metadata.ts`.
+
+
+Feature freeze: no model/data/schema/dependency changes. The snapshot date is
+2026-10-03T03:17:58.331Z (UTC); model evidence generation is 2026-10-01, not a
+new data period. See DEMO_SCRIPT.md for the artifact-derived 1/2/4-week table and
+DEFENSE_DAY.md for local startup and fallback. Source acquisition dates/FOI IDs
+are Not available, URLs not public and usage terms Not stated; those are honest
+unknowns, not verified citations or a statement that no FOI request existed.

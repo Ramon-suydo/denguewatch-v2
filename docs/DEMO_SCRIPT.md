@@ -8,9 +8,8 @@ No contacts, policy records or community reports are exported.
 
 ## Prepare before leaving
 
-1. With the approved DB connection available, run `npm run demo:snapshot`.
-   This is read-only, checks every official source value, and preserves the old
-   snapshot if verification fails. Do not regenerate it during the presentation.
+1. Use the committed verified snapshot. Feature freeze: do not regenerate data
+   or retrain before the defense. Follow `docs/DEFENSE_DAY.md` for laptop setup.
 2. For a deterministic local demo, build with the public demo flag:
 
    ```powershell
@@ -59,3 +58,40 @@ No contacts, policy records or community reports are exported.
   failure honestly and distinguish cached results from a running live system.
 
 Optional offline handout: open an LGU detail page, choose Print report and save as PDF. The A4 report uses the official weekly series and cached forecast/interval/comparison evidence, includes the disclaimer and pending source citations, and labels its generated/snapshot dates.
+
+
+## Frozen evidence — 2026-10-03
+
+Model weekly-ridge-v1; artifact generated 2026-10-01T15:21:21.994Z.
+Snapshot captured 2026-10-03T03:17:58.331Z (UTC); 17 LGUs / 7,350 rows.
+2018 is selection/calibration; paired walk-forward test targets are 2019 onward,
+ending 2021-01-10. These are count-error metrics, not clinical accuracy.
+
+| Ahead | Model | Paired targets | MAE | RMSE | sMAPE | MAE skill vs mean |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| 1 weeks | ridge | 1462 | 8.82 | 20.89 | 68.22% | 21.5% |
+| 1 weeks | mean-4 | 1462 | 11.23 | 25.21 | 64.95% | 0.0% |
+| 1 weeks | seasonal-naive | 1462 | 22.58 | 51.70 | 93.77% | -101.1% |
+| 2 weeks | ridge | 1462 | 9.94 | 23.25 | 72.36% | 30.6% |
+| 2 weeks | mean-4 | 1462 | 14.32 | 32.55 | 73.13% | 0.0% |
+| 2 weeks | seasonal-naive | 1462 | 23.79 | 56.13 | 94.38% | -66.2% |
+| 4 weeks | ridge | 1448 | 12.37 | 27.77 | 79.70% | 38.1% |
+| 4 weeks | mean-4 | 1448 | 19.99 | 45.93 | 86.19% | 0.0% |
+| 4 weeks | seasonal-naive | 1448 | 25.21 | 59.02 | 94.99% | -26.1% |
+
+One-week all-period 80%/95% interval coverage: 79.75%/92.54%. Excluding COVID
+targets leaves only 2019: 71.43%/88.22%, below nominal 80%/95%. Ridge sMAPE is
+worse than the mean overall (68.22% vs 64.95%); do not present only MAE gains.
+
+At /legal say: "These are legal-v1.1 drafts for review, not legal advice. Health
+information would be sensitive personal information under RA 10173. Community
+health submissions are closed and the demo snapshot contains no personal reports.
+This does not mean zero personal-data processing: hosted request metadata may be
+logged, and the online withdrawal RPC can process a private code. The forced local
+demo makes no Supabase or external map requests. Controller contact is
+achilleslang23@gmail.com; a DPO designation is not confirmed. Provider-default
+retention descriptions are not verified durations."
+
+Metadata renders Not available / not public / Not stated plainly. Exact-citation
+warnings remain because original acquisition details, specific offices and usage
+terms are unverified. No source permission or legal status is inferred.

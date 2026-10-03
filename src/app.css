@@ -388,3 +388,6 @@ a:not(.skip-link) { display: inline-flex; align-items: center; padding-block: 0.
   .lgu-print-report a { color: #000; padding: 0; min-height: 0; }
   .lgu-print-report dd { margin-left: 0; overflow-wrap: anywhere; }
 }
+
+/* Long supplied source filenames must wrap on narrow screens. */
+.prose dd { overflow-wrap: anywhere; }
