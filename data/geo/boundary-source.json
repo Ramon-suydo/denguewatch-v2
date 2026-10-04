@@ -1,0 +1,10 @@
+{
+  "source": "HDX COD-AB Philippines v03, NAMRIA via OCHA",
+  "url": "https://data.humdata.org/dataset/cod-ab-phl",
+  "resourceUrl": "https://data.humdata.org/dataset/caf116df-f984-4deb-85ca-41b349d3f313/resource/0120c30e-ba8b-487d-83f5-a664eddd3a8e/download/phl_admin_boundaries.geojson.zip",
+  "validOn": "2025-02-13",
+  "obtained": "2026-10-04",
+  "license": "CC BY 3.0 IGO",
+  "sourceZipSha256": "032db5d91fcb8a13aef378d6b4453da7225ef7f0fb9c0a1c3bf3c2205d0010d6",
+  "selection": "Exact City of Manila and numbered barangays 1-267, before topology construction and simplification. PSGC joined by original NAMRIA ADM4 PCODE plus exact name from existing reviewed crosswalk."
+}

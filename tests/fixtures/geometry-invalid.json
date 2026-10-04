@@ -1,0 +1,138 @@
+[
+  {
+    "reason": "Fewer than four",
+    "feature": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "reason": "Self-intersecting",
+    "feature": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1,
+              1
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "reason": "Outside source",
+    "feature": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "reason": "Zero ring area",
+    "feature": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ]
+      }
+    }
+  }
+]

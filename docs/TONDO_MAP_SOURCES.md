@@ -2,20 +2,23 @@
 
 Obtained 2026-10-04. No patient data or barangay dengue counts are supplied.
 
-- Boundaries: NAMRIA/PSA 2023-10-24 snapshot, from bendlikeabamboo/barangay-boundaries-repository, hierarchical_t0p005/barangays.geojson. Repository MIT license copied to data/geo/LICENSE-boundaries.txt. Retain NAMRIA/PSA attribution; repository license does not independently establish every upstream permission. Full downloaded GeoJSON SHA-256: 10606e46cd7b4b34a61f4975f3568bb3c11a48fa355cbe3c4d78c3737e0fcfa9.
+- Boundaries: **unsimplified** HDX COD-AB Philippines v03, NAMRIA via OCHA Philippines; valid-on 2025-02-13. https://data.humdata.org/dataset/cod-ab-phl. CC BY 3.0 IGO; credit NAMRIA and OCHA/HDX. Source archive SHA-256: 032db5d91fcb8a13aef378d6b4453da7225ef7f0fb9c0a1c3bf3c2205d0010d6. Committed full-resolution Tondo extract and City of Manila reference are local; no runtime download.
+- PSGC crosswalk only: bendlikeabamboo/barangay-boundaries-repository (MIT, license retained in data/geo/LICENSE-boundaries.txt). Join original NAMRIA ADM4 PCODE plus exact barangay name; no numeric-code guessing. Its 0.005-degree geometry is retired: 256/258 polygons were triangles and exceeded 5% area error.
 - Population: PSA NCR Provincial Statistical Office I, 2020 CPH Manila_0.pdf, https://rssoncr.psa.gov.ph/sites/default/files/Manila_0.pdf, pages 2–3. Public parsed table extracted by barangay number; known values committed in data/geo/psa-2020-tondo.json. Usage terms not stated; attribution retained.
 
 The requested range 1–267 has 258 polygons and 258 extracted population entries.
 Absent in both extracts: 21, 22, 23, 24, 27, 40, 113, 114, 115. Their population,
 PSGC and geometry stay unavailable; no values or shapes are invented. The known
 population sum is 653,007 versus the publication’s Tondo total of 654,220: 1,213
-remain unallocated. This is a source/extraction discrepancy, not proof that these
-numbers are current administrative units or have zero population. Review original
+are recorded in PSA’s separate Barangay 202-A entry, which reconciles the total.
+That entry’s repository PSGC duplicates Barangay 202 and stays quarantined; it is
+not merged into 202 or assigned to a missing number. The nine absent numbers are
+not proof of current administrative units or zero population. Review original
 PSA tables and current PSGC before expanding coverage. The build pins the exact
 known-row count and discrepancy and fails if these change; it does not assert a
 267-row population reconciliation.
 
-PSGC values come from the boundary repository. Check City of Manila geography,
+PSGC values come from the boundary repository crosswalk; geometry comes from unsimplified HDX/NAMRIA. Check City of Manila geography,
 exact source barangay names, ten-digit prefix and uniqueness; preserve codes rather
 than computing them from numbers (codes after 202 do not follow a fixed offset).
 Upstream fuzzy match status is preserved in the committed extract. This validates
@@ -49,3 +52,32 @@ simulation is a check, not a guarantee for every viewer/display; labels, hatchin
 exact values and the accessible table remain essential. Brand tokens are unchanged.
 
 Simulation reference: Machado, Oliveira and Fernandes (2009), DOI 10.1109/TVCG.2009.113, https://pubmed.ncbi.nlm.nih.gov/19834201/.
+
+## Geometry repair and build gates
+
+Select City of Manila and configured Tondo numbers from full-resolution boundaries
+before building topology (the selected polygons themselves define the Tondo clip).
+Exterior rings are clockwise for d3 spherical rendering; holes counterclockwise.
+One shared-arc Visvalingam threshold is relative to the smallest original ring,
+with 1e6 topology quantization. Halve the threshold until every simplified polygon
+has four distinct vertices, positive area, no self-intersections or invalid holes,
+and no more than 5% area change against its original equal-area measurement.
+Check all coordinates against the City of Manila boundary-derived bounding box.
+Invalid input is quarantined, retains any known population, and has no drawn path;
+coverage lists its reason. Invalid simplification fails before writing output.
+
+Full-resolution vertices: 9,996; simplified: 5,738 (old input: 1,036).
+Worst simplified area change: 3.612%; no geometry quarantined in this source.
+Per-polygon vertex/area comparisons are in metadata.geometryQa.polygons.
+Barangays 20, 105 and 128 exceed ten times median polygon area and remain explicitly
+listed for review in the coverage drawer. This flags size, not incorrectness or risk.
+Projected polygon fill and browser bounding-box shares must stay below 35% of the
+900×680 map canvas at reset zoom. Browser QA also checks 258 drawn paths and saves
+.artifacts/tondo-geometry-{320,390,768,1280}.png.
+
+PSA table independently confirms Barangay 20 has Tondo's largest recorded
+population, 45,772 (Manila_0.pdf pages 1–2). The population legend stays 56–45,772.
+Geometry areas include the source's coastline/administrative extent; they are not
+surveyed residential land area. Crowding is therefore contextual, not disease risk.
+
+Phase 2 remains paused until the owner approves the repaired map visually.

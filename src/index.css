@@ -780,7 +780,7 @@
 /* iACADEMY visual language: shared chrome and accessible semantic tokens. */
 h1, h2, h3 { font-family: Montserrat, sans-serif; font-weight: 800; letter-spacing: -.025em; }
 .brand-rail { height: 3px; flex: none; background: linear-gradient(90deg, #2dd4dc, #3b5bff, #d4af37); }
-.site-chrome { padding-top: 83px; background: linear-gradient(115deg, #070b1f, #16255a); }
+.site-chrome { padding-top: var(--nav-height,83px); background: linear-gradient(115deg, #070b1f, #16255a); }
 .top-nav { position: fixed; inset: 0 0 auto; z-index: 100; background: transparent; transition: background .2s; }
 .top-nav.is-scrolled { background: rgb(7 11 31 / .8); backdrop-filter: blur(16px); }
 .nav-inner { min-height: 80px; gap: 1rem; padding-block: .5rem; }

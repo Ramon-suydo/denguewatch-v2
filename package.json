@@ -51,6 +51,7 @@
     "@types/react-dom": "^19.3.0",
     "@types/topojson-client": "^3.1.5",
     "@types/topojson-server": "^3.0.4",
+    "@types/topojson-simplify": "^3.0.3",
     "@vitejs/plugin-react": "^6.1.1",
     "csv-parse": "^7.0.2",
     "dotenv": "^18.0.3",
@@ -59,6 +60,7 @@
     "supabase": "^2.117.0",
     "tailwindcss": "^4.3.3",
     "topojson-server": "^3.0.1",
+    "topojson-simplify": "^3.0.3",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vite": "^8.3.0"

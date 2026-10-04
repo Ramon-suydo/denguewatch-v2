@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
 import { MonitoringLine } from "./MonitoringLine";
@@ -17,11 +17,13 @@ export function TopNav({
   items: NavItem[];
   action?: ReactNode;
 }) {
+  const header = useRef<HTMLElement>(null);
+  useEffect(() => { const element = header.current; if (!element) return; const observer = new ResizeObserver(() => document.documentElement.style.setProperty("--nav-height", `${element.getBoundingClientRect().height}px`)); observer.observe(element); return () => observer.disconnect(); }, []);
   const [expanded, setExpanded] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => { const update = () => setScrolled(window.scrollY > 10); update(); window.addEventListener("scroll", update, { passive: true }); return () => window.removeEventListener("scroll", update); }, []);
   return (
-    <header className={"top-nav" + (scrolled ? " is-scrolled" : "")}>
+    <header ref={header} className={"top-nav" + (scrolled ? " is-scrolled" : "")}>
       <div className="ui-container nav-inner">
         <Link className="wordmark" to="/" aria-label="DengueWatch home">
           <span className="brand-symbol">

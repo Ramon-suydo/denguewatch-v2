@@ -21,3 +21,23 @@ test("offline Tondo areas, weighted heat, locked cases, keyboard, comparison and
  await page.getByLabel('Search barangay').fill('unmatched');await expect(page.locator('.map-legend')).toContainText('No data');await expect(page.locator('.map-table tbody tr')).toHaveCount(0);await page.getByLabel('Search barangay').fill('');for(const width of [320,390,768,1280]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);}
  expect(issues).toEqual([]);expect(external).toEqual([]);
 });
+
+test("validated Areas rendering and docked details clear navigation at four widths",async({page})=>{
+ await page.addInitScript(()=>Object.defineProperty(navigator,"onLine",{get:()=>false}));
+ for(const width of [320,390,768,1280]){
+  await page.setViewportSize({width,height:1000});await page.goto("/map?area=tondo&b=20");await expect(page.locator('.barangay-svg path[role="button"]')).toHaveCount(area.metadata.mapped);
+  expect(await page.evaluate(()=>{
+   const nav=document.querySelector('.top-nav')!.getBoundingClientRect(),title=document.querySelector('h1')!.getBoundingClientRect();
+   const info=document.querySelector('.barangay-info')!.getBoundingClientRect(),map=document.querySelector('.barangay-svg')!.getBoundingClientRect();
+   const overlap=info.left<map.right&&info.right>map.left&&info.top<map.bottom&&info.bottom>map.top;
+   const buttons=[...document.querySelectorAll('.barangay-actions button')].map(b=>b.getBoundingClientRect());
+   const collide=buttons[0].left<buttons[1].right&&buttons[0].right>buttons[1].left&&buttons[0].top<buttons[1].bottom&&buttons[0].bottom>buttons[1].top;
+   const svg=document.querySelector<SVGSVGElement>('.barangay-svg')!;
+   const shares=[...svg.querySelectorAll<SVGPathElement>('path[role="button"]')].map(p=>{const b=p.getBBox();return b.width*b.height/(900*680);});
+   return {titleClear:title.top>=nav.bottom,overlap,collide,scroll:document.documentElement.scrollWidth>innerWidth,maxShapeBoxShare:Math.max(...shares),buttonsLarge:buttons.every(b=>b.height>=44&&b.width>=44)};
+  })).toEqual({titleClear:true,overlap:false,collide:false,scroll:false,maxShapeBoxShare:expect.any(Number),buttonsLarge:true});
+  const maxShare=await page.locator('.barangay-svg').evaluate(svg=>Math.max(...[...svg.querySelectorAll<SVGPathElement>('path[role="button"]')].map(p=>{const b=p.getBBox();return b.width*b.height/(900*680);})));expect(maxShare).toBeLessThan(.35);
+  await page.screenshot({path:`.artifacts/tondo-geometry-${width}.png`,fullPage:true});
+  expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
+ }
+});

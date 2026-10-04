@@ -448,3 +448,11 @@ No hosted Supabase write, schema/community launch, push, merge or defense-v1 cha
 Next: independent PSGC review for 202-A/source gaps; Phase 2 Home remains unbuilt.
 Test locally and self-review before merging. User push:
 git push -u origin feat/manila-redesign.
+
+## Focused Tondo geometry repair — 2026-10-04
+- Replaced destructive hierarchical_t0p005 geometry (256 triangles; 1,036 vertices) with unsimplified HDX COD-AB/NAMRIA polygons; preserved reviewed PCODE/name→PSGC joins. Source manifest/checksum and full-resolution Manila reference committed locally.
+- geo:build now selects Tondo first, rewinds exterior/holes for d3, simplifies shared topology, validates geometry/derived city bounds and <=5% per-polygon area drift; invalid input is quarantined without a path. QA artifact stores every polygon’s original/simplified vertices and areas.
+- 258/267 mapped; same nine source gaps; 202-A remains quarantined. 9,996 original→5,738 simplified vertices; max drift 3.612%; total area 10.932420→10.933818 km². Large polygons 20/105/128 listed for review. PSA confirms Barangay 20=45,772; population legend remains 56–45,772.
+- Desktop side panel/mobile bottom panel occupy their own layout space; Pin and Close use shared buttons. Navbar clearance follows measured height. Screenshots .artifacts/tondo-geometry-{320,390,768,1280}.png; desktop/mobile visually inspected.
+- Checks: 32 unit tests, production build (after correcting two TypeScript errors), two offline map browser tests at all four widths with axe and shape-count/share/layout gates, contrast and color-vision simulations pass. Geometry artifact 185,226 bytes (~52,478 gzip); lazy map JS 12.46 kB (~4.59 gzip). Surveillance snapshot values unchanged; no hosted DB writes, submissions remain closed, defense-v1 untouched.
+- STOP: Phase 2 remains paused pending owner visual confirmation. Test locally and self-review before merging near the defense.

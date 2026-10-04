@@ -1,6 +1,9 @@
 import {test} from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
+import {coordinateBounds,geometryIssue,rewindForD3,vertexCount} from "../scripts/geometry-qa";
+import {geoArea} from "d3-geo";
+import {feature as fromTopology} from "topojson-client";
 import {useBarangayCases} from "../src/lib/area-map";
 import {mapRamp,visionMatrices,simulatedLuminance,mapColor} from "../src/lib/map-colors.js";
 const area=JSON.parse(await readFile("public/geo/tondo.json","utf8"));
@@ -20,4 +23,20 @@ test("map covers real source shapes and populations with explicit missing record
 test("map ramp preserves monotonic luminance in three color-vision simulations and absence is distinct from zero",()=>{
  for(const matrix of Object.values(visionMatrices)){const values=mapRamp.map(c=>simulatedLuminance(c,matrix));assert.ok(values.every((v,i)=>!i||v>values[i-1]));}
  assert.equal(mapColor(null,0,100),"url(#no-data)");assert.notEqual(mapColor(0,0,100),mapColor(null,0,100));
+});
+
+test("committed shared topology passes per-polygon validity, winding and five-percent area gates",async()=>{
+ const source=JSON.parse(await readFile("data/geo/tondo-boundaries.geojson","utf8"));const city=JSON.parse(await readFile("data/geo/manila-boundary.geojson","utf8"));
+ const topology=JSON.parse(await readFile("public/geo/tondo.topojson","utf8"));const simplified=fromTopology(topology,topology.objects.barangays) as any;
+ const bounds=coordinateBounds(city.features);assert.deepEqual(bounds,area.metadata.geometryQa.manilaBounds);
+ assert.equal(simplified.features.length,area.metadata.mapped);assert.equal(area.metadata.geometryQa.quarantinedGeometry.length,0);
+ for(const f of source.features){assert.equal(geometryIssue(f,bounds),null);assert.ok(geoArea(rewindForD3(f))<2*Math.PI);}
+ for(const f of simplified.features){assert.equal(geometryIssue(f,bounds),null);assert.ok(vertexCount(f)>=5);assert.ok(geoArea(f)<2*Math.PI);}
+ for(const row of area.metadata.geometryQa.polygons){assert.ok(row.originalAreaKm2>0);assert.ok(row.simplifiedAreaKm2>0);assert.ok(Math.abs(row.areaChangePercent)<=5);assert.ok(row.renderedAreaShare<.35);}
+ assert.ok(topology.arcs.length>0);assert.ok(area.metadata.geometryQa.simplifiedVertices<area.metadata.geometryQa.originalVertices);
+ assert.equal(area.rows.reduce((highest:any,row:any)=>row.population>highest.population?row:highest,area.rows[0]).number,20);assert.equal(area.rows.find((row:any)=>row.number===20).population,45772);
+});
+test("invalid or collapsed polygons are rejected rather than drawn",async()=>{
+ const fixtures=JSON.parse(await readFile("tests/fixtures/geometry-invalid.json","utf8"));
+ for(const fixture of fixtures)assert.match(geometryIssue(fixture.feature,[0,0,10,10])??"",new RegExp(fixture.reason));
 });
