@@ -34,4 +34,22 @@ git push -u origin feat/case-form
 
 Open a GitHub PR targeting main, review the diff and preview, and merge after
 local checks pass. The merge deploys production. Small main commits use
- git push origin main. See DEPLOYMENT.md for initial setup.
+ git push origin main. See [deployment setup](docs/DEPLOYMENT.md).
+
+## Current thesis collaboration
+
+The active integration branch is `feat/manila-redesign`. Create a short feature
+branch from it; target it with your pull request until the redesign is approved.
+
+```powershell
+git fetch origin
+git switch feat/manila-redesign
+git pull --ff-only origin feat/manila-redesign
+git switch -c feat/your-change
+```
+
+Run npm test, npm run build, npm run test:contrast, and the relevant browser checks.
+Read docs/HANDOFF.md and the current task files before editing. Preserve the data
+rules in docs/DATA_QUALITY.md, the closed submissions gate, source disclosures and
+the defense-v1 fallback tag. New raw datasets stay local until reviewed; no hosted
+Supabase writes without the owner's explicit authorization.

@@ -131,7 +131,7 @@ the scheduled job. Monitor cron.job_run_details through the owner's dashboard.
 Playwright runs its own server with an invalid test-only Supabase host and fake
 public key; this prevents accidental dependence on local/live credentials.
 Install its Chromium browser, or set PLAYWRIGHT_CHANNEL=chrome to use installed
-Chrome. Tests cover pagination, empty/suppressed states, map tile failure, future
+Chrome. Tests cover pagination, empty/suppressed states, offline map geometry, future
 date rejection, opt-in reset, RPC submission/withdrawal, mobile widths, and axe AA.
 
 Screenshots under ignored .artifacts/public-app/ are captured using real historical
@@ -145,10 +145,9 @@ Every main push is a live Vercel deployment. vercel.json handles direct SPA rout
 
 - [WHO dengue warning signs](https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue),
   checked 24 September 2026; linked directly in the report notice.
-- [Leaflet API](https://leafletjs.com/reference.html) and
-  [OpenStreetMap tile policy](https://operations.osmfoundation.org/policies/tiles/).
-  Tiles retain attribution, use HTTPS, and are not bulk-prefetched. No API key is
-  needed. Representative markers are approximate city centers, not boundaries.
+- Current map: offline Tondo barangay Areas, Heat and Table views, with no remote
+  basemap tiles. See [Tondo sources and geometry QA](TONDO_MAP_SOURCES.md).
+  The older NCR marker map has been retired on the redesign branch.
 - [Supabase Cron](https://supabase.com/docs/guides/cron).
 - See DATA_QUALITY.md for source gaps, provenance limitations, and citation
   placeholders. Exact DOH/FOI dataset citations still need source-owner review.

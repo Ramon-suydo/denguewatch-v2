@@ -24,7 +24,7 @@ async function screens(page: import("@playwright/test").Page) {
       expect(axe.violations.filter(v => ["serious", "critical"].includes(v.impact ?? "")), `${route} ${width}`).toEqual([]);
       const small = await page.locator("button:visible:not([disabled]), select:visible, summary:visible, a:visible:not(.skip-link)").evaluateAll(elements => elements.filter(e => {
         const box = e.getBoundingClientRect();
-        return box.height < 43.5 && !e.closest(".leaflet-container");
+        return box.height < 43.5;
       }).map(e => e.textContent?.trim().slice(0, 50)));
       expect(small, `tap targets ${route} ${width}`).toEqual([]);
     }
@@ -33,7 +33,6 @@ async function screens(page: import("@playwright/test").Page) {
 test("all public routes: online console hygiene, mobile/table targets and axe", async ({ page }) => {
   const issues = watch(page);
   await mockPublicApi(page, { open: false });
-  await page.route("https://tile.openstreetmap.org/**", route => route.fulfill({ status: 200, contentType: "image/png", body: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jB1sAAAAASUVORK5CYII=", "base64") }));
   await screens(page);
   expect(issues).toEqual([]);
 });

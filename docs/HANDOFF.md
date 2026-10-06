@@ -456,3 +456,12 @@ git push -u origin feat/manila-redesign.
 - Desktop side panel/mobile bottom panel occupy their own layout space; Pin and Close use shared buttons. Navbar clearance follows measured height. Screenshots .artifacts/tondo-geometry-{320,390,768,1280}.png; desktop/mobile visually inspected.
 - Checks: 32 unit tests, production build (after correcting two TypeScript errors), two offline map browser tests at all four widths with axe and shape-count/share/layout gates, contrast and color-vision simulations pass. Geometry artifact 185,226 bytes (~52,478 gzip); lazy map JS 12.46 kB (~4.59 gzip). Surveillance snapshot values unchanged; no hosted DB writes, submissions remain closed, defense-v1 untouched.
 - STOP: Phase 2 remains paused pending owner visual confirmation. Test locally and self-review before merging near the defense.
+
+## Partner-ready repository cleanup — 2026-10-06
+- Owner explicitly authorizes publishing all completed work on feat/manila-redesign. Main and defense-v1 remain unchanged; Phase 2 still awaits map visual approval.
+- README now describes actual Manila/Tondo functionality, offline setup, checks, directory ownership, and partner branches/PRs. Deployment guide moved into docs/DEPLOYMENT.md; links and stale defense click paths updated.
+- Removed unused Leaflet component/dependencies/styles and obsolete tile mocks. Added editor defaults while exempting raw source bytes; new data/raw files are ignored, existing verified published files remain tracked.
+- Patched transitive source-map-js 1.2.1→1.2.2 for GHSA-68fv-2mgg-jv7q. npm audit reports zero vulnerabilities. No broad dependency upgrade or new feature.
+- Checks: 32 unit tests; 21 browser tests (all public routes, four widths, axe, keyboard, closed submissions, print, cached/offline and timeout behavior); build; contrast/ramp simulations; git diff --check; local documentation links. All pass. Production smoke: 12 routes, zero console issues/external requests, 258 shapes; screenshot .artifacts/push-review-{320,1280}.png, desktop inspected.
+- Historical secret-pattern scan covers 343 text blobs: no private keys, recognized secret tokens or database passwords detected. Local env/cert files remain ignored; src has no TODO/FIXME or console logging. No hosted database writes. Existing Node 20 laptop engine mismatch retained; collaborators should use declared Node >=22.12.
+- Before merging into main, test locally and self-review; main deploys production. Partner checks out feat/manila-redesign and creates a feature branch from it.

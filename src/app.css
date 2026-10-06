@@ -104,8 +104,7 @@
     padding-block: 0.5rem;
     font-weight: 600;
   }
-  .method-details ul,
-  .city-popup ul {
+  .method-details ul {
     list-style: disc;
     padding-left: 1.5rem;
     margin-block: 0.75rem;
@@ -171,48 +170,6 @@
   }
   .map-legend {
     margin: 0;
-  }
-  .map-card {
-    padding: 0.5rem;
-  }
-  .map-container {
-    height: 560px;
-    border-radius: 12px;
-    z-index: 0;
-    background: theme("colors.navy.50");
-  }
-  .map-marker {
-    background: none;
-    border: 0;
-  }
-  .map-city-dot {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 3px solid white;
-    color: white;
-    font:
-      700 16px "Roboto",
-      sans-serif;
-    box-shadow: 0 2px 8px #0005;
-  }
-  .leaflet-popup-content {
-    font:
-      16px/1.5 "Roboto",
-      sans-serif;
-  }
-  .city-popup p {
-    margin: 0.7rem 0;
-  }
-  .city-popup hr {
-    border-top: 1px solid theme("colors.neutral.300");
-    margin-block: 1rem;
-  }
-  .leaflet-control-attribution {
-    font-size: 16px !important;
   }
   .medical-notice {
     @apply bg-gold-50 text-neutral-900 border-gold-700 rounded-card;
@@ -308,9 +265,6 @@
   .history-chart {
     height: 300px;
   }
-  .map-container {
-    height: 450px;
-  }
   .steps {
     flex-direction: column;
     gap: 0.75rem;
@@ -365,7 +319,6 @@ summary { padding-block: 0.75rem; }
 
 a:not(.skip-link) { display: inline-flex; align-items: center; padding-block: 0.5rem; }
 .ui-checkbox { min-height: 44px; align-items: center; }
-.leaflet-control-zoom a, .leaflet-popup-close-button { width: 44px !important; height: 44px !important; line-height: 44px !important; }
 
 .lgu-print-report { display: none; }
 @page { size: A4; margin: 16mm; }

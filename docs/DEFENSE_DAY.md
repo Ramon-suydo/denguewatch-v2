@@ -47,17 +47,18 @@ npm run preview -- --host 127.0.0.1 --port 4173 --strictPort
 Open http://127.0.0.1:4173/. Confirm Offline demo snapshot (Oct 3, 2026), and that
 /report says collection is closed and its unchecked consent cannot enable collection.
 Follow DEMO_SCRIPT.md: Dashboard → Manila detail/weekly forecasts → exclude COVID
-targets → Data & Sources → Map/Grid → closed Report → legal-v1.1 review drafts.
+targets → Data confidence → Tondo Areas/Table → closed Report → legal-v1.1 review drafts.
 From Manila detail, Print report → Save as PDF; keep the resulting handout locally.
 
 ## Offline checklist
 
 - [ ] Disconnect Wi-Fi/mobile hotspot; keep local loopback networking available.
-- [ ] Reload the local root page. Snapshot badge and all 17 LGUs appear.
+- [ ] Reload the local root page. Snapshot badge and Manila dashboard appear; NCR data remains in the snapshot.
 - [ ] Open all planned routes once; load history/daily/forecast charts and fonts.
 - [ ] Check 1/2/4-week estimates, interval table, mean comparison and COVID caveat.
 - [ ] Open Manila's separate daily series without adding it to weekly/monthly.
-- [ ] Map uses Grid without external tiles. Community counts are unavailable, not zero.
+- [ ] Tondo Areas/Table loads 258 boundaries without external tiles; 9 are missing.
+  Barangay dengue counts remain locked and community counts unavailable, not zero.
 - [ ] /legal shows the supplied controller/contact, Not available source fields,
   review labels and exact-citation warning; no verified office/permission is invented.
 - [ ] Print/PDF includes the disclaimer, dated source/model evidence and intervals.

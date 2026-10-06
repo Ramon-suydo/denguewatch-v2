@@ -31,11 +31,11 @@ No contacts, policy records or community reports are exported.
 | Time | Route/action | What to say and show |
 | --- | --- | --- |
 | 0:00–0:40 | `/`: shared notice and snapshot badge | “This is a research demonstration using a dated verified snapshot, not live surveillance or an official outbreak alert.” Point to source-specific footer dates. |
-| 0:40–1:20 | Dashboard city selector, historical chart | Select Manila, then weekly observations. “Missing weeks remain gaps; large observed peaks are retained. Counts are published source labels.” Open the exact-values table. |
+| 0:40–1:20 | Dashboard → Manila detail, historical chart | Open Manila detail, then choose weekly observations. “Missing weeks remain gaps; large observed peaks are retained. Counts are published source labels.” Open the exact-values table. |
 | 1:20–2:30 | Manila detail link; weekly forecast and Model transparency | Show 1/2/4-week controls and interval table. Lead with MAE against the stronger four-week mean: 8.82 vs 11.23 (21.5% skill), then seasonal naive 22.58 (61.0%). “Selection used 2018; test starts in 2019. Most observed baseline gain comes from recent counts.” |
 | 2:30–3:15 | Backtest period: without COVID targets | “This leaves only 2019, not a counterfactual without COVID. One-week interval coverage drops to 71.4%/88.2% versus nominal 80/95. sMAPE is worse than the mean baseline overall; low-case relative errors need care.” No claimed current warning or accuracy percentage. |
-| 3:15–4:05 | `/data-sources` | Show source overlap, three weekly gaps, incomplete January 2021, anomalous deaths, daily missing dates and citation placeholders. “Monthly is derived; Manila daily is separate and disagrees in overlapping years. We never add these sources.” |
-| 4:05–4:35 | `/map`, Grid | Show all 17 LGUs with risk labels. “These are legacy monthly/historical distribution labels, separate from the weekly count model. Offline mode uses the grid instead of external tiles.” |
+| 3:15–4:05 | `/data-sources` | Lead with verified Manila rows and weekly/daily coverage. Open the five Data notes for missing values, separate sources and excluded deaths; keep citation placeholders visible. “Monthly is derived; Manila daily is separate and disagrees in overlapping years. We never add these sources.” |
+| 4:05–4:35 | `/map`, Areas → Table | Show real Tondo boundaries and PSA 2020 population. “258 of the requested 267 numbers have boundaries. Crowding is not disease risk; barangay dengue data remains locked. Missing values are not zero.” |
 | 4:35–5:00 | `/report`, then `/privacy` | Show the unticked consent checkbox and closed collection; /legal holds versioned review drafts. “Community reports are unverified, separate from official data, and excluded from this snapshot/model. Privacy documents require review before launch.” End with newer DOH data as the next validation step. |
 
 ## If something breaks
@@ -44,7 +44,8 @@ No contacts, policy records or community reports are exported.
   dated snapshot. For the defense, the forced demo build avoids the wait entirely.
 - Hosted site cannot open offline: use the running local preview. This is not a
   PWA; a cold hosted-page reload with no access to app assets is not promised.
-- A map tile fails: show Grid. In snapshot mode external tiles are not requested.
+- Map display fails: choose Table or use the saved Tondo screenshots. Geometry is
+  committed locally; no basemap tiles are requested.
 - A chart has not loaded yet: wait for its reserved-height skeleton, then use its
   exact-value table or the forecast interval table. Never invent a missing value.
 - Wrong LGU or URL: use Dashboard navigation; the styled missing/404 state does
