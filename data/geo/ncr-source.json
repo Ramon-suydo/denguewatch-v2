@@ -1,0 +1,12 @@
+{
+  "source": "HDX COD-AB Philippines v03, NAMRIA via OCHA",
+  "url": "https://data.humdata.org/dataset/cod-ab-phl",
+  "resourceUrl": "https://data.humdata.org/dataset/caf116df-f984-4deb-85ca-41b349d3f313/resource/0120c30e-ba8b-487d-83f5-a664eddd3a8e/download/phl_admin_boundaries.geojson.zip",
+  "validOn": "2025-02-13",
+  "obtained": "2026-10-04",
+  "license": "CC BY 3.0 IGO",
+  "sourceZipSha256": "032db5d91fcb8a13aef378d6b4453da7225ef7f0fb9c0a1c3bf3c2205d0010d6",
+  "selection": "Exact adm1_pcode PH13, all 17 administrative level 3 city/municipal features; no boundaries invented. Boundary vintage 2025-02-13 is not proof of 2016-2021 boundaries.",
+  "reused_verified_local_archive": true,
+  "output_sha256": "cca0af638abd93730b020ca6563564bb1451e1343dd2710dce5bf7a5281c691c"
+}

@@ -1,0 +1,2938 @@
+{
+  "version": 2,
+  "sourceFiles": [
+    {
+      "name": "ncr_dengue_monthly_with_rates.csv",
+      "sha256": "66ea1f9f5fff0a049b547d08e802f47d015cb5c8a979acfb10606fe4a1e953e6"
+    },
+    {
+      "name": "doh-epi-dengue-data-2016-2021.csv",
+      "sha256": "4e993553f10081b4e6b35a0d4b3c9bd0cc271765645a123fcb2e0c5d7084633c"
+    },
+    {
+      "name": "Daily_Reported_Cases_of_Dengue_in_the_City_of_Manila_from_2018_to_2023.xlsx",
+      "sha256": "f066701654e86b9b49305a84bc08a0823613eb83cde3df067f338fbae145849d"
+    }
+  ],
+  "national": {
+    "rows": 32701,
+    "hxlRows": 1,
+    "locations": 126,
+    "regions": 17
+  },
+  "audit": {
+    "summaries": [
+      {
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "period_type": "month",
+        "rows": 1037,
+        "start": "2016-01-01",
+        "end": "2021-01-01",
+        "lgus": [
+          "CALOOCAN CITY",
+          "LAS PINAS CITY",
+          "MAKATI CITY",
+          "MALABON CITY",
+          "MANDALUYONG CITY",
+          "MANILA CITY",
+          "MARIKINA CITY",
+          "MUNTINLUPA CITY",
+          "NAVOTAS CITY",
+          "PARANAQUE CITY",
+          "PASAY CITY",
+          "PASIG CITY",
+          "PATEROS",
+          "QUEZON CITY",
+          "SAN JUAN CITY",
+          "TAGUIG CITY",
+          "VALENZUELA CITY"
+        ],
+        "cases": 116147,
+        "known_deaths": 4009,
+        "unknown_death_rows": 0,
+        "deaths_exceed_cases": 41,
+        "max_cases": 3265,
+        "sha256": "66ea1f9f5fff0a049b547d08e802f47d015cb5c8a979acfb10606fe4a1e953e6"
+      },
+      {
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "period_type": "week",
+        "rows": 4403,
+        "start": "2016-01-10",
+        "end": "2021-01-10",
+        "lgus": [
+          "CALOOCAN CITY",
+          "LAS PINAS CITY",
+          "MAKATI CITY",
+          "MALABON CITY",
+          "MANDALUYONG CITY",
+          "MANILA CITY",
+          "MARIKINA CITY",
+          "MUNTINLUPA CITY",
+          "NAVOTAS CITY",
+          "PARANAQUE CITY",
+          "PASAY CITY",
+          "PASIG CITY",
+          "PATEROS",
+          "QUEZON CITY",
+          "SAN JUAN CITY",
+          "TAGUIG CITY",
+          "VALENZUELA CITY"
+        ],
+        "cases": 116147,
+        "known_deaths": 4009,
+        "unknown_death_rows": 1,
+        "deaths_exceed_cases": 155,
+        "max_cases": 812,
+        "sha256": "4e993553f10081b4e6b35a0d4b3c9bd0cc271765645a123fcb2e0c5d7084633c"
+      },
+      {
+        "source": "Daily_Reported_Cases_of_Dengue_in_the_City_of_Manila_from_2018_to_2023.xlsx",
+        "period_type": "day",
+        "rows": 1910,
+        "start": "2018-01-01",
+        "end": "2023-12-02",
+        "lgus": [
+          "MANILA CITY"
+        ],
+        "cases": 14635,
+        "known_deaths": 0,
+        "unknown_death_rows": 1910,
+        "deaths_exceed_cases": 0,
+        "max_cases": 46,
+        "sha256": "f066701654e86b9b49305a84bc08a0823613eb83cde3df067f338fbae145849d"
+      }
+    ],
+    "dailyYears": [
+      {
+        "year": 2018,
+        "rows": 359,
+        "cases": 3641,
+        "start": "2018-01-01",
+        "end": "2018-12-30",
+        "missing_dates": [
+          "2018-03-27",
+          "2018-04-19",
+          "2018-05-06",
+          "2018-06-07",
+          "2018-06-27",
+          "2018-12-31"
+        ]
+      },
+      {
+        "year": 2019,
+        "rows": 353,
+        "cases": 3961,
+        "start": "2019-01-01",
+        "end": "2019-12-29",
+        "missing_dates": [
+          "2019-04-06",
+          "2019-04-17",
+          "2019-04-25",
+          "2019-05-01",
+          "2019-05-08",
+          "2019-05-11",
+          "2019-05-13",
+          "2019-05-17",
+          "2019-05-23",
+          "2019-06-06",
+          "2019-12-30",
+          "2019-12-31"
+        ]
+      },
+      {
+        "year": 2020,
+        "rows": 196,
+        "cases": 697,
+        "start": "2020-01-01",
+        "end": "2020-12-30",
+        "missing_dates": [
+          "2020-03-06",
+          "2020-03-16",
+          "2020-03-18",
+          "2020-03-22",
+          "2020-03-23",
+          "2020-03-24",
+          "2020-03-26",
+          "2020-03-29",
+          "2020-03-30",
+          "2020-03-31",
+          "2020-04-01",
+          "2020-04-02",
+          "2020-04-04",
+          "2020-04-05",
+          "2020-04-06",
+          "2020-04-07",
+          "2020-04-08",
+          "2020-04-09",
+          "2020-04-10",
+          "2020-04-11",
+          "2020-04-12",
+          "2020-04-13",
+          "2020-04-14",
+          "2020-04-15",
+          "2020-04-16",
+          "2020-04-17",
+          "2020-04-18",
+          "2020-04-19",
+          "2020-04-20",
+          "2020-04-21",
+          "2020-04-23",
+          "2020-04-24",
+          "2020-04-25",
+          "2020-04-26",
+          "2020-04-27",
+          "2020-04-28",
+          "2020-04-29",
+          "2020-04-30",
+          "2020-05-01",
+          "2020-05-02",
+          "2020-05-04",
+          "2020-05-06",
+          "2020-05-07",
+          "2020-05-08",
+          "2020-05-09",
+          "2020-05-10",
+          "2020-05-13",
+          "2020-05-14",
+          "2020-05-15",
+          "2020-05-16",
+          "2020-05-17",
+          "2020-05-18",
+          "2020-05-19",
+          "2020-05-20",
+          "2020-05-21",
+          "2020-05-23",
+          "2020-05-24",
+          "2020-05-25",
+          "2020-05-26",
+          "2020-05-28",
+          "2020-05-29",
+          "2020-05-30",
+          "2020-05-31",
+          "2020-06-01",
+          "2020-06-03",
+          "2020-06-04",
+          "2020-06-05",
+          "2020-06-06",
+          "2020-06-07",
+          "2020-06-08",
+          "2020-06-09",
+          "2020-06-12",
+          "2020-06-13",
+          "2020-06-14",
+          "2020-06-16",
+          "2020-06-17",
+          "2020-06-18",
+          "2020-06-19",
+          "2020-06-20",
+          "2020-06-21",
+          "2020-06-22",
+          "2020-06-23",
+          "2020-06-24",
+          "2020-06-25",
+          "2020-06-26",
+          "2020-06-27",
+          "2020-06-28",
+          "2020-06-29",
+          "2020-06-30",
+          "2020-07-01",
+          "2020-07-02",
+          "2020-07-03",
+          "2020-07-04",
+          "2020-07-05",
+          "2020-07-06",
+          "2020-07-07",
+          "2020-07-08",
+          "2020-07-09",
+          "2020-07-11",
+          "2020-07-13",
+          "2020-07-14",
+          "2020-07-15",
+          "2020-07-17",
+          "2020-07-18",
+          "2020-07-19",
+          "2020-07-20",
+          "2020-07-21",
+          "2020-07-22",
+          "2020-07-23",
+          "2020-07-25",
+          "2020-07-26",
+          "2020-07-27",
+          "2020-07-28",
+          "2020-07-29",
+          "2020-07-30",
+          "2020-07-31",
+          "2020-08-01",
+          "2020-08-02",
+          "2020-08-03",
+          "2020-08-04",
+          "2020-08-07",
+          "2020-08-09",
+          "2020-08-10",
+          "2020-08-11",
+          "2020-08-12",
+          "2020-08-13",
+          "2020-08-15",
+          "2020-08-16",
+          "2020-08-17",
+          "2020-08-18",
+          "2020-08-21",
+          "2020-08-23",
+          "2020-08-24",
+          "2020-08-26",
+          "2020-08-27",
+          "2020-08-28",
+          "2020-08-29",
+          "2020-08-30",
+          "2020-09-03",
+          "2020-09-04",
+          "2020-09-05",
+          "2020-09-07",
+          "2020-09-12",
+          "2020-09-13",
+          "2020-09-17",
+          "2020-09-18",
+          "2020-09-19",
+          "2020-09-22",
+          "2020-09-23",
+          "2020-09-24",
+          "2020-09-25",
+          "2020-09-26",
+          "2020-09-27",
+          "2020-09-28",
+          "2020-09-29",
+          "2020-09-30",
+          "2020-10-03",
+          "2020-10-13",
+          "2020-10-19",
+          "2020-10-21",
+          "2020-10-31",
+          "2020-11-05",
+          "2020-11-07",
+          "2020-11-09",
+          "2020-11-10",
+          "2020-11-30",
+          "2020-12-01",
+          "2020-12-08",
+          "2020-12-15",
+          "2020-12-31"
+        ]
+      },
+      {
+        "year": 2021,
+        "rows": 316,
+        "cases": 1214,
+        "start": "2021-01-01",
+        "end": "2021-12-29",
+        "missing_dates": [
+          "2021-01-25",
+          "2021-02-26",
+          "2021-03-16",
+          "2021-03-24",
+          "2021-03-26",
+          "2021-03-30",
+          "2021-04-02",
+          "2021-04-04",
+          "2021-04-06",
+          "2021-04-10",
+          "2021-04-15",
+          "2021-04-21",
+          "2021-04-24",
+          "2021-04-29",
+          "2021-05-02",
+          "2021-05-06",
+          "2021-05-09",
+          "2021-05-13",
+          "2021-05-14",
+          "2021-05-18",
+          "2021-05-20",
+          "2021-05-22",
+          "2021-05-25",
+          "2021-05-26",
+          "2021-05-28",
+          "2021-05-30",
+          "2021-05-31",
+          "2021-06-02",
+          "2021-06-04",
+          "2021-06-08",
+          "2021-06-11",
+          "2021-06-14",
+          "2021-06-17",
+          "2021-06-25",
+          "2021-06-29",
+          "2021-07-04",
+          "2021-07-07",
+          "2021-08-01",
+          "2021-08-06",
+          "2021-08-16",
+          "2021-08-20",
+          "2021-08-27",
+          "2021-08-31",
+          "2021-09-03",
+          "2021-09-11",
+          "2021-09-15",
+          "2021-12-26",
+          "2021-12-30",
+          "2021-12-31"
+        ]
+      },
+      {
+        "year": 2022,
+        "rows": 352,
+        "cases": 2669,
+        "start": "2022-01-01",
+        "end": "2022-12-29",
+        "missing_dates": [
+          "2022-01-04",
+          "2022-01-11",
+          "2022-01-17",
+          "2022-01-24",
+          "2022-02-19",
+          "2022-02-26",
+          "2022-03-21",
+          "2022-03-25",
+          "2022-04-06",
+          "2022-12-14",
+          "2022-12-17",
+          "2022-12-30",
+          "2022-12-31"
+        ]
+      },
+      {
+        "year": 2023,
+        "rows": 334,
+        "cases": 2453,
+        "start": "2023-01-01",
+        "end": "2023-12-02",
+        "missing_dates": [
+          "2023-04-29",
+          "2023-07-31",
+          "2023-12-03",
+          "2023-12-04",
+          "2023-12-05",
+          "2023-12-06",
+          "2023-12-07",
+          "2023-12-08",
+          "2023-12-09",
+          "2023-12-10",
+          "2023-12-11",
+          "2023-12-12",
+          "2023-12-13",
+          "2023-12-14",
+          "2023-12-15",
+          "2023-12-16",
+          "2023-12-17",
+          "2023-12-18",
+          "2023-12-19",
+          "2023-12-20",
+          "2023-12-21",
+          "2023-12-22",
+          "2023-12-23",
+          "2023-12-24",
+          "2023-12-25",
+          "2023-12-26",
+          "2023-12-27",
+          "2023-12-28",
+          "2023-12-29",
+          "2023-12-30",
+          "2023-12-31"
+        ]
+      }
+    ],
+    "weeklyGaps": [
+      {
+        "lgu": "CALOOCAN CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "MALABON CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "MANILA CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "NAVOTAS CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "PASAY CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "PASIG CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      },
+      {
+        "lgu": "PATEROS",
+        "missing_dates": [
+          "2016-11-13",
+          "2019-01-06",
+          "2020-11-15"
+        ]
+      }
+    ],
+    "suspectRows": [
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2016-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 80,
+        "deaths": 102
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 80,
+        "deaths": 153
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2020-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 21,
+        "deaths": 22
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 17,
+        "deaths": 25
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2016-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 41,
+        "deaths": 51
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 28,
+        "deaths": 36
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2016-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 31,
+        "deaths": 40
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 22,
+        "deaths": 30
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2020-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 3,
+        "deaths": 6
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 3,
+        "deaths": 8
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 41,
+        "deaths": 58
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 6,
+        "deaths": 9
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 41,
+        "deaths": 68
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 4,
+        "deaths": 5
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 177,
+        "deaths": 288
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2016-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 39,
+        "deaths": 44
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 24,
+        "deaths": 43
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 3,
+        "deaths": 7
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 15,
+        "deaths": 29
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 1,
+        "deaths": 3
+      },
+      {
+        "lgu": "NAVOTAS CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 7,
+        "deaths": 9
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2016-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 70,
+        "deaths": 83
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 70,
+        "deaths": 103
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 6,
+        "deaths": 15
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2016-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 22,
+        "deaths": 39
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2020-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 1,
+        "deaths": 2
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 94,
+        "deaths": 178
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 6,
+        "deaths": 16
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2016-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 7,
+        "deaths": 10
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2016-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 347,
+        "deaths": 374
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 272,
+        "deaths": 463
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2020-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 28,
+        "deaths": 38
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 22,
+        "deaths": 35
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2016-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 26,
+        "deaths": 30
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 21,
+        "deaths": 28
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2020-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 0,
+        "deaths": 3
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 47,
+        "deaths": 62
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2020-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 8,
+        "deaths": 17
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2016-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 47,
+        "deaths": 63
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2020-09-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 19,
+        "deaths": 20
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2020-10-01",
+        "source": "ncr_dengue_monthly_with_rates.csv",
+        "cases": 18,
+        "deaths": 26
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 56
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 46
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 52
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 49
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 52
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 27
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 24
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 8
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 9
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 19
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 21
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 19
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 8
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 9
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 13
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 37
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 23
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 20
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 15
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 22
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 28
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 20
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 30
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 16
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 22
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 110
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 98
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 82
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 99
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 107
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 29
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 14
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 24
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 6
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 13
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 10
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 5
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 14
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 9
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 6
+      },
+      {
+        "lgu": "NAVOTAS CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 4
+      },
+      {
+        "lgu": "NAVOTAS CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 3
+      },
+      {
+        "lgu": "NAVOTAS CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "NAVOTAS CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 7
+      },
+      {
+        "lgu": "NAVOTAS CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 38
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 44
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 44
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 12
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 47
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 21
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 18
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 14
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 6
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 6
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 45
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 50
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 61
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 41
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 76
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 4
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 6
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 4
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 3
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 7
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 203
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 2,
+        "deaths": 167
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 193
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 114
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 156
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 15
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 15
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 1,
+        "deaths": 10
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 10
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 8
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 15
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 25
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 16
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 20
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 26
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2016-09-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 25
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2016-09-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 17
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2016-10-02",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 22
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2016-10-16",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 20
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2016-10-30",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 21
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2018-05-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 10
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 12
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 10
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 15
+      },
+      {
+        "lgu": "CALOOCAN CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 11
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 2
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 2
+      },
+      {
+        "lgu": "LAS PINAS CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 2
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 3
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 3
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 4
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 4
+      },
+      {
+        "lgu": "MAKATI CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 7
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 3
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 2
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 4
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 5
+      },
+      {
+        "lgu": "MALABON CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 11
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 3
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 2
+      },
+      {
+        "lgu": "MANDALUYONG CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 4
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 5
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 4
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 7
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 10
+      },
+      {
+        "lgu": "MANILA CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 6
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 2
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 4
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 3
+      },
+      {
+        "lgu": "MARIKINA CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 6
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 3
+      },
+      {
+        "lgu": "MUNTINLUPA CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 8
+      },
+      {
+        "lgu": "NAVOTAS CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "NAVOTAS CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 14
+      },
+      {
+        "lgu": "PARANAQUE CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 13
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 2
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "PASAY CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 5
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 5
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 11
+      },
+      {
+        "lgu": "PASIG CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 7
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "PATEROS",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 26
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 12
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 13
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 22
+      },
+      {
+        "lgu": "QUEZON CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 29
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 2
+      },
+      {
+        "lgu": "SAN JUAN CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 1
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 9
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 8
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 2
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 12
+      },
+      {
+        "lgu": "TAGUIG CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 10
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2020-09-06",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 12
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2020-09-20",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 8
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2020-10-04",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 15
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2020-10-18",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 11
+      },
+      {
+        "lgu": "VALENZUELA CITY",
+        "date": "2020-11-01",
+        "source": "doh-epi-dengue-data-2016-2021.csv",
+        "cases": 0,
+        "deaths": 19
+      }
+    ]
+  },
+  "daily": {
+    "rows": 1910,
+    "zeroRows": 0,
+    "last": "2023-12-02",
+    "absentWithinCoverage": [
+      {
+        "year": 2018,
+        "absent": 6
+      },
+      {
+        "year": 2019,
+        "absent": 12
+      },
+      {
+        "year": 2020,
+        "absent": 170
+      },
+      {
+        "year": 2021,
+        "absent": 49
+      },
+      {
+        "year": 2022,
+        "absent": 13
+      },
+      {
+        "year": 2023,
+        "absent": 2
+      }
+    ],
+    "outsideCoverage": 29
+  },
+  "suppliedWeekly": {
+    "rows": 308,
+    "blank": 5,
+    "fewerThanSeven": 94,
+    "last": "2023-11-26",
+    "sha256": "33710b2f5812aa8fbd6d9ffc4a760ead1b6765f94f91a5444890e0dc542256ee",
+    "matchesDaily": true,
+    "omittedFinalWeek": {
+      "week_ending": "2023-12-03",
+      "week_start": "2023-11-27",
+      "epi_week": "2023-W48",
+      "source": "Daily_Reported_Cases_of_Dengue_in_the_City_of_Manila_from_2018_to_2023.xlsx",
+      "scenario": "Z",
+      "cases": null,
+      "cases_recorded": 30,
+      "days_with_rows": 6,
+      "calendar_days_in_coverage": 6,
+      "reliable": false,
+      "flags": [
+        "absent_dates_unconfirmed",
+        "absent_dates_assumed_zero",
+        "partial_boundary_week_excluded"
+      ]
+    }
+  },
+  "duplicateWeeklyPresent": false,
+  "reconciliation": {
+    "n": 156,
+    "dailyTotal": 8255,
+    "dohTotal": 8244,
+    "mae": 13.224358974358974,
+    "maxDifference": 78,
+    "correlation": 0.9293662488094924,
+    "pairs": [
+      {
+        "date": "2018-01-07",
+        "daily": 60,
+        "doh": 69
+      },
+      {
+        "date": "2018-01-14",
+        "daily": 72,
+        "doh": 52
+      },
+      {
+        "date": "2018-01-21",
+        "daily": 84,
+        "doh": 79
+      },
+      {
+        "date": "2018-01-28",
+        "daily": 62,
+        "doh": 73
+      },
+      {
+        "date": "2018-02-04",
+        "daily": 82,
+        "doh": 67
+      },
+      {
+        "date": "2018-02-11",
+        "daily": 63,
+        "doh": 84
+      },
+      {
+        "date": "2018-02-18",
+        "daily": 74,
+        "doh": 67
+      },
+      {
+        "date": "2018-02-25",
+        "daily": 63,
+        "doh": 72
+      },
+      {
+        "date": "2018-03-04",
+        "daily": 68,
+        "doh": 63
+      },
+      {
+        "date": "2018-03-11",
+        "daily": 55,
+        "doh": 29
+      },
+      {
+        "date": "2018-03-18",
+        "daily": 32,
+        "doh": 41
+      },
+      {
+        "date": "2018-03-25",
+        "daily": 27,
+        "doh": 24
+      },
+      {
+        "date": "2018-04-01",
+        "daily": 28,
+        "doh": 29
+      },
+      {
+        "date": "2018-04-08",
+        "daily": 23,
+        "doh": 30
+      },
+      {
+        "date": "2018-04-15",
+        "daily": 25,
+        "doh": 20
+      },
+      {
+        "date": "2018-04-22",
+        "daily": 24,
+        "doh": 24
+      },
+      {
+        "date": "2018-04-29",
+        "daily": 23,
+        "doh": 27
+      },
+      {
+        "date": "2018-05-06",
+        "daily": 12,
+        "doh": 24
+      },
+      {
+        "date": "2018-05-13",
+        "daily": 16,
+        "doh": 9
+      },
+      {
+        "date": "2018-05-20",
+        "daily": 24,
+        "doh": 18
+      },
+      {
+        "date": "2018-05-27",
+        "daily": 21,
+        "doh": 26
+      },
+      {
+        "date": "2018-06-03",
+        "daily": 29,
+        "doh": 15
+      },
+      {
+        "date": "2018-06-10",
+        "daily": 13,
+        "doh": 30
+      },
+      {
+        "date": "2018-06-17",
+        "daily": 21,
+        "doh": 10
+      },
+      {
+        "date": "2018-06-24",
+        "daily": 26,
+        "doh": 24
+      },
+      {
+        "date": "2018-07-01",
+        "daily": 34,
+        "doh": 29
+      },
+      {
+        "date": "2018-07-08",
+        "daily": 27,
+        "doh": 26
+      },
+      {
+        "date": "2018-07-15",
+        "daily": 40,
+        "doh": 38
+      },
+      {
+        "date": "2018-07-22",
+        "daily": 55,
+        "doh": 47
+      },
+      {
+        "date": "2018-07-29",
+        "daily": 61,
+        "doh": 53
+      },
+      {
+        "date": "2018-08-05",
+        "daily": 63,
+        "doh": 61
+      },
+      {
+        "date": "2018-08-12",
+        "daily": 54,
+        "doh": 58
+      },
+      {
+        "date": "2018-08-19",
+        "daily": 81,
+        "doh": 68
+      },
+      {
+        "date": "2018-08-26",
+        "daily": 93,
+        "doh": 79
+      },
+      {
+        "date": "2018-09-02",
+        "daily": 88,
+        "doh": 98
+      },
+      {
+        "date": "2018-09-09",
+        "daily": 137,
+        "doh": 99
+      },
+      {
+        "date": "2018-09-16",
+        "daily": 118,
+        "doh": 129
+      },
+      {
+        "date": "2018-09-23",
+        "daily": 141,
+        "doh": 122
+      },
+      {
+        "date": "2018-09-30",
+        "daily": 133,
+        "doh": 151
+      },
+      {
+        "date": "2018-10-07",
+        "daily": 190,
+        "doh": 159
+      },
+      {
+        "date": "2018-10-14",
+        "daily": 194,
+        "doh": 189
+      },
+      {
+        "date": "2018-10-21",
+        "daily": 142,
+        "doh": 179
+      },
+      {
+        "date": "2018-10-28",
+        "daily": 81,
+        "doh": 104
+      },
+      {
+        "date": "2018-11-04",
+        "daily": 130,
+        "doh": 119
+      },
+      {
+        "date": "2018-11-11",
+        "daily": 133,
+        "doh": 128
+      },
+      {
+        "date": "2018-11-18",
+        "daily": 135,
+        "doh": 137
+      },
+      {
+        "date": "2018-11-25",
+        "daily": 108,
+        "doh": 118
+      },
+      {
+        "date": "2018-12-02",
+        "daily": 109,
+        "doh": 95
+      },
+      {
+        "date": "2018-12-09",
+        "daily": 78,
+        "doh": 101
+      },
+      {
+        "date": "2018-12-16",
+        "daily": 77,
+        "doh": 75
+      },
+      {
+        "date": "2018-12-23",
+        "daily": 63,
+        "doh": 72
+      },
+      {
+        "date": "2018-12-30",
+        "daily": 49,
+        "doh": 80
+      },
+      {
+        "date": "2019-01-13",
+        "daily": 99,
+        "doh": 55
+      },
+      {
+        "date": "2019-01-20",
+        "daily": 67,
+        "doh": 99
+      },
+      {
+        "date": "2019-01-27",
+        "daily": 76,
+        "doh": 91
+      },
+      {
+        "date": "2019-02-03",
+        "daily": 56,
+        "doh": 75
+      },
+      {
+        "date": "2019-02-10",
+        "daily": 50,
+        "doh": 64
+      },
+      {
+        "date": "2019-02-17",
+        "daily": 40,
+        "doh": 55
+      },
+      {
+        "date": "2019-02-24",
+        "daily": 35,
+        "doh": 40
+      },
+      {
+        "date": "2019-03-03",
+        "daily": 31,
+        "doh": 34
+      },
+      {
+        "date": "2019-03-10",
+        "daily": 29,
+        "doh": 34
+      },
+      {
+        "date": "2019-03-17",
+        "daily": 21,
+        "doh": 31
+      },
+      {
+        "date": "2019-03-24",
+        "daily": 25,
+        "doh": 27
+      },
+      {
+        "date": "2019-03-31",
+        "daily": 15,
+        "doh": 21
+      },
+      {
+        "date": "2019-04-07",
+        "daily": 22,
+        "doh": 20
+      },
+      {
+        "date": "2019-04-14",
+        "daily": 22,
+        "doh": 19
+      },
+      {
+        "date": "2019-04-21",
+        "daily": 14,
+        "doh": 23
+      },
+      {
+        "date": "2019-04-28",
+        "daily": 17,
+        "doh": 1
+      },
+      {
+        "date": "2019-05-05",
+        "daily": 14,
+        "doh": 17
+      },
+      {
+        "date": "2019-05-12",
+        "daily": 8,
+        "doh": 17
+      },
+      {
+        "date": "2019-05-19",
+        "daily": 12,
+        "doh": 10
+      },
+      {
+        "date": "2019-05-26",
+        "daily": 13,
+        "doh": 5
+      },
+      {
+        "date": "2019-06-02",
+        "daily": 20,
+        "doh": 10
+      },
+      {
+        "date": "2019-06-09",
+        "daily": 24,
+        "doh": 12
+      },
+      {
+        "date": "2019-06-16",
+        "daily": 23,
+        "doh": 28
+      },
+      {
+        "date": "2019-06-23",
+        "daily": 31,
+        "doh": 18
+      },
+      {
+        "date": "2019-06-30",
+        "daily": 27,
+        "doh": 28
+      },
+      {
+        "date": "2019-07-07",
+        "daily": 32,
+        "doh": 32
+      },
+      {
+        "date": "2019-07-14",
+        "daily": 46,
+        "doh": 25
+      },
+      {
+        "date": "2019-07-21",
+        "daily": 76,
+        "doh": 41
+      },
+      {
+        "date": "2019-07-28",
+        "daily": 76,
+        "doh": 55
+      },
+      {
+        "date": "2019-08-04",
+        "daily": 94,
+        "doh": 75
+      },
+      {
+        "date": "2019-08-11",
+        "daily": 140,
+        "doh": 76
+      },
+      {
+        "date": "2019-08-18",
+        "daily": 161,
+        "doh": 114
+      },
+      {
+        "date": "2019-08-25",
+        "daily": 211,
+        "doh": 144
+      },
+      {
+        "date": "2019-09-01",
+        "daily": 257,
+        "doh": 179
+      },
+      {
+        "date": "2019-09-08",
+        "daily": 167,
+        "doh": 240
+      },
+      {
+        "date": "2019-09-15",
+        "daily": 174,
+        "doh": 211
+      },
+      {
+        "date": "2019-09-22",
+        "daily": 173,
+        "doh": 196
+      },
+      {
+        "date": "2019-09-29",
+        "daily": 157,
+        "doh": 171
+      },
+      {
+        "date": "2019-10-06",
+        "daily": 146,
+        "doh": 178
+      },
+      {
+        "date": "2019-10-13",
+        "daily": 174,
+        "doh": 135
+      },
+      {
+        "date": "2019-10-20",
+        "daily": 131,
+        "doh": 163
+      },
+      {
+        "date": "2019-10-27",
+        "daily": 133,
+        "doh": 163
+      },
+      {
+        "date": "2019-11-03",
+        "daily": 121,
+        "doh": 128
+      },
+      {
+        "date": "2019-11-10",
+        "daily": 146,
+        "doh": 108
+      },
+      {
+        "date": "2019-11-17",
+        "daily": 83,
+        "doh": 143
+      },
+      {
+        "date": "2019-11-24",
+        "daily": 94,
+        "doh": 123
+      },
+      {
+        "date": "2019-12-01",
+        "daily": 98,
+        "doh": 85
+      },
+      {
+        "date": "2019-12-08",
+        "daily": 74,
+        "doh": 101
+      },
+      {
+        "date": "2019-12-15",
+        "daily": 74,
+        "doh": 74
+      },
+      {
+        "date": "2019-12-22",
+        "daily": 32,
+        "doh": 61
+      },
+      {
+        "date": "2019-12-29",
+        "daily": 24,
+        "doh": 46
+      },
+      {
+        "date": "2020-01-05",
+        "daily": 62,
+        "doh": 11
+      },
+      {
+        "date": "2020-01-12",
+        "daily": 85,
+        "doh": 53
+      },
+      {
+        "date": "2020-01-19",
+        "daily": 59,
+        "doh": 92
+      },
+      {
+        "date": "2020-01-26",
+        "daily": 41,
+        "doh": 63
+      },
+      {
+        "date": "2020-02-02",
+        "daily": 49,
+        "doh": 46
+      },
+      {
+        "date": "2020-02-09",
+        "daily": 42,
+        "doh": 49
+      },
+      {
+        "date": "2020-02-16",
+        "daily": 38,
+        "doh": 43
+      },
+      {
+        "date": "2020-02-23",
+        "daily": 31,
+        "doh": 40
+      },
+      {
+        "date": "2020-03-01",
+        "daily": 26,
+        "doh": 32
+      },
+      {
+        "date": "2020-03-08",
+        "daily": 25,
+        "doh": 30
+      },
+      {
+        "date": "2020-03-15",
+        "daily": 11,
+        "doh": 27
+      },
+      {
+        "date": "2020-03-22",
+        "daily": 7,
+        "doh": 16
+      },
+      {
+        "date": "2020-03-29",
+        "daily": 4,
+        "doh": 8
+      },
+      {
+        "date": "2020-04-05",
+        "daily": 2,
+        "doh": 5
+      },
+      {
+        "date": "2020-04-12",
+        "daily": 0,
+        "doh": 5
+      },
+      {
+        "date": "2020-04-19",
+        "daily": 0,
+        "doh": 2
+      },
+      {
+        "date": "2020-04-26",
+        "daily": 1,
+        "doh": 0
+      },
+      {
+        "date": "2020-05-03",
+        "daily": 1,
+        "doh": 1
+      },
+      {
+        "date": "2020-05-10",
+        "daily": 1,
+        "doh": 0
+      },
+      {
+        "date": "2020-05-17",
+        "daily": 2,
+        "doh": 2
+      },
+      {
+        "date": "2020-05-24",
+        "daily": 1,
+        "doh": 1
+      },
+      {
+        "date": "2020-05-31",
+        "daily": 1,
+        "doh": 0
+      },
+      {
+        "date": "2020-06-07",
+        "daily": 1,
+        "doh": 2
+      },
+      {
+        "date": "2020-06-14",
+        "daily": 3,
+        "doh": 0
+      },
+      {
+        "date": "2020-06-21",
+        "daily": 1,
+        "doh": 4
+      },
+      {
+        "date": "2020-06-28",
+        "daily": 0,
+        "doh": 1
+      },
+      {
+        "date": "2020-07-05",
+        "daily": 0,
+        "doh": 1
+      },
+      {
+        "date": "2020-07-12",
+        "daily": 3,
+        "doh": 0
+      },
+      {
+        "date": "2020-07-19",
+        "daily": 1,
+        "doh": 1
+      },
+      {
+        "date": "2020-07-26",
+        "daily": 1,
+        "doh": 2
+      },
+      {
+        "date": "2020-08-02",
+        "daily": 0,
+        "doh": 1
+      },
+      {
+        "date": "2020-08-09",
+        "daily": 3,
+        "doh": 1
+      },
+      {
+        "date": "2020-08-16",
+        "daily": 1,
+        "doh": 1
+      },
+      {
+        "date": "2020-08-23",
+        "daily": 4,
+        "doh": 4
+      },
+      {
+        "date": "2020-08-30",
+        "daily": 1,
+        "doh": 0
+      },
+      {
+        "date": "2020-09-06",
+        "daily": 5,
+        "doh": 0
+      },
+      {
+        "date": "2020-09-13",
+        "daily": 6,
+        "doh": 4
+      },
+      {
+        "date": "2020-09-20",
+        "daily": 6,
+        "doh": 0
+      },
+      {
+        "date": "2020-09-27",
+        "daily": 1,
+        "doh": 7
+      },
+      {
+        "date": "2020-10-04",
+        "daily": 4,
+        "doh": 0
+      },
+      {
+        "date": "2020-10-11",
+        "daily": 11,
+        "doh": 1
+      },
+      {
+        "date": "2020-10-18",
+        "daily": 12,
+        "doh": 0
+      },
+      {
+        "date": "2020-10-25",
+        "daily": 11,
+        "doh": 16
+      },
+      {
+        "date": "2020-11-01",
+        "daily": 12,
+        "doh": 0
+      },
+      {
+        "date": "2020-11-08",
+        "daily": 6,
+        "doh": 19
+      },
+      {
+        "date": "2020-11-22",
+        "daily": 25,
+        "doh": 7
+      },
+      {
+        "date": "2020-11-29",
+        "daily": 17,
+        "doh": 15
+      },
+      {
+        "date": "2020-12-06",
+        "daily": 15,
+        "doh": 21
+      },
+      {
+        "date": "2020-12-13",
+        "daily": 15,
+        "doh": 17
+      },
+      {
+        "date": "2020-12-20",
+        "daily": 17,
+        "doh": 19
+      },
+      {
+        "date": "2020-12-27",
+        "daily": 16,
+        "doh": 19
+      },
+      {
+        "date": "2021-01-03",
+        "daily": 17,
+        "doh": 21
+      },
+      {
+        "date": "2021-01-10",
+        "daily": 25,
+        "doh": 13
+      }
+    ]
+  },
+  "geo": [
+    {
+      "name": "boundary-source.json",
+      "bytes": 690,
+      "sha256": "87fb0e2c54d811fe9e703cf4a910f34fc9edad8fe75bfce20cbc092ee17cce66",
+      "shape": null
+    },
+    {
+      "name": "LICENSE-boundaries.txt",
+      "bytes": 1072,
+      "sha256": "4382ddd5f6cf65fcbc9bce08896978c2c3cb4c36288d6c20c95eed88975f892c",
+      "shape": null
+    },
+    {
+      "name": "manila-boundary.geojson",
+      "bytes": 285572,
+      "sha256": "57450ffc99925a02150893e57150f1e531c56afa4fd95f5a6bbb50d62aaa05e5",
+      "shape": {
+        "features": 1,
+        "geometryTypes": [
+          "Polygon"
+        ],
+        "properties": [
+          "adm3_name",
+          "adm3_name1",
+          "adm3_name2",
+          "adm3_name3",
+          "adm3_pcode",
+          "adm2_name",
+          "adm2_name1",
+          "adm2_name2",
+          "adm2_name3",
+          "adm2_pcode",
+          "adm1_name",
+          "adm1_name1",
+          "adm1_name2",
+          "adm1_name3",
+          "adm1_pcode",
+          "adm0_name",
+          "adm0_name1",
+          "adm0_name2",
+          "adm0_name3",
+          "adm0_pcode",
+          "valid_on",
+          "valid_to",
+          "area_sqkm",
+          "version",
+          "lang",
+          "lang1",
+          "lang2",
+          "lang3",
+          "adm3_ref_name",
+          "center_lat",
+          "center_lon"
+        ]
+      }
+    },
+    {
+      "name": "ncr-boundaries.geojson",
+      "bytes": 1519650,
+      "sha256": "cca0af638abd93730b020ca6563564bb1451e1343dd2710dce5bf7a5281c691c",
+      "shape": {
+        "features": 17,
+        "geometryTypes": [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        "properties": [
+          "adm3_name",
+          "adm3_name1",
+          "adm3_name2",
+          "adm3_name3",
+          "adm3_pcode",
+          "adm2_name",
+          "adm2_name1",
+          "adm2_name2",
+          "adm2_name3",
+          "adm2_pcode",
+          "adm1_name",
+          "adm1_name1",
+          "adm1_name2",
+          "adm1_name3",
+          "adm1_pcode",
+          "adm0_name",
+          "adm0_name1",
+          "adm0_name2",
+          "adm0_name3",
+          "adm0_pcode",
+          "valid_on",
+          "valid_to",
+          "area_sqkm",
+          "version",
+          "lang",
+          "lang1",
+          "lang2",
+          "lang3",
+          "adm3_ref_name",
+          "center_lat",
+          "center_lon"
+        ]
+      }
+    },
+    {
+      "name": "ncr-source.json",
+      "bytes": 796,
+      "sha256": "78bcd38b3694fc82b8c1e88cc30031253c19e70df0a085a26160a2aeb8fcbd3a",
+      "shape": null
+    },
+    {
+      "name": "psa-2020-tondo.json",
+      "bytes": 2695,
+      "sha256": "797b1fd215cd0e7709f7fc7a46c8bcc43db76570e4b48fb09f53c17fc4aafd4a",
+      "shape": null
+    },
+    {
+      "name": "tondo-boundaries.geojson",
+      "bytes": 450769,
+      "sha256": "c5cecd61991da372429b462f62e8d5c673f901fc59fa2fad7a083cf08f55984c",
+      "shape": {
+        "features": 258,
+        "geometryTypes": [
+          "Polygon"
+        ],
+        "properties": [
+          "number",
+          "psgc",
+          "matchStatus",
+          "sourcePcode",
+          "sourceName",
+          "sourceCity"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+[
+  {
+    "city": "CALOOCAN CITY",
+    "population_2020": 1661584,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "LAS PINAS CITY",
+    "population_2020": 606293,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "MAKATI CITY",
+    "population_2020": 629616,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "MALABON CITY",
+    "population_2020": 380522,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "MANDALUYONG CITY",
+    "population_2020": 425758,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "MANILA CITY",
+    "population_2020": 1846513,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "MARIKINA CITY",
+    "population_2020": 456059,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "MUNTINLUPA CITY",
+    "population_2020": 543445,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "NAVOTAS CITY",
+    "population_2020": 247543,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "PARANAQUE CITY",
+    "population_2020": 689992,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "PASAY CITY",
+    "population_2020": 440656,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "PASIG CITY",
+    "population_2020": 803159,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "QUEZON CITY",
+    "population_2020": 2960048,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "SAN JUAN CITY",
+    "population_2020": 126347,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "TAGUIG CITY",
+    "population_2020": 886722,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "VALENZUELA CITY",
+    "population_2020": 714978,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  },
+  {
+    "city": "PATEROS",
+    "population_2020": 65227,
+    "source": "ncr_dengue_monthly_with_rates.csv",
+    "status": "unverified; confirm against PSA 2020 census"
+  }
+]

@@ -1,0 +1,3837 @@
+{
+  "source": "ERA5 reanalysis via Open-Meteo; not station gauges or real-time forecast vintages",
+  "availability": "Assume a minimum 7-day lag after the end of each weather week (provider documents ~5-day delay). Reanalysis revisions can use information unavailable historically; retrospective sensitivity, not validated operational weather skill.",
+  "coordinates": {
+    "latitude": 14.59932236,
+    "longitude": 120.98493761,
+    "source": "HDX Manila boundary center"
+  },
+  "provenance": [
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2015-01-01&end_date=2015-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:36.285Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "10a753745704f972fd32deb42bdee88a1e0e8ebbbb49467915a8a39e1f6dea3e"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2016-01-01&end_date=2016-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:37.187Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "c882cc9a8c01121fc8e6f583c9cb43cb5efee8ad84ceb593d2df913620a330c9"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2017-01-01&end_date=2017-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:37.865Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "b68829a417d65ad280af926b9ec5d0fe7e82c9381b4edab735b8bbf5b1e1e6c1"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2018-01-01&end_date=2018-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:38.551Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "ac8e2c4ee124a76f005e1bd945171434d292bccf1b1c2d64f1f1f113b01d29a1"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2019-01-01&end_date=2019-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:39.231Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "0bc27187450e5f98ac0db9dd81adccce6f35b5fd3c1bfe4401b4f9a9eba5c1fb"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2020-01-01&end_date=2020-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:39.704Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "f0e2869349b8eacc77b3bcade7611073e498ddd99861cf60d67f12f8f6e20773"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2021-01-01&end_date=2021-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:40.178Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "f17193219838a04166905e3579fcc71a0449ef71e30afd9a0d5eda8b18f1f94a"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2022-01-01&end_date=2022-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:40.662Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "a0386001ebd4be59969aab5303374863cac4ffafcd29256ab28fba209d3f2324"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2023-01-01&end_date=2023-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:41.143Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "94f9e9b8eb165311129f894244d8f5e4e9edffda16501fae6e817c3dc573c133"
+    }
+  ],
+  "rows": [
+    {
+      "week_ending": "2015-01-11",
+      "hours": 168,
+      "rainfall_mm": 0.7,
+      "temperature_c": 25.352380952380933,
+      "humidity_percent": 76.85714285714286,
+      "week_start": "2015-01-05"
+    },
+    {
+      "week_ending": "2015-01-18",
+      "hours": 168,
+      "rainfall_mm": 39.900000000000006,
+      "temperature_c": 25.00416666666665,
+      "humidity_percent": 76.47619047619048,
+      "week_start": "2015-01-12"
+    },
+    {
+      "week_ending": "2015-01-25",
+      "hours": 168,
+      "rainfall_mm": 4.199999999999999,
+      "temperature_c": 25.469047619047622,
+      "humidity_percent": 77.66071428571429,
+      "week_start": "2015-01-19"
+    },
+    {
+      "week_ending": "2015-02-01",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 25.721428571428575,
+      "humidity_percent": 74.71428571428571,
+      "week_start": "2015-01-26"
+    },
+    {
+      "week_ending": "2015-02-08",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 25.552976190476183,
+      "humidity_percent": 70.14880952380952,
+      "week_start": "2015-02-02"
+    },
+    {
+      "week_ending": "2015-02-15",
+      "hours": 168,
+      "rainfall_mm": 8.499999999999998,
+      "temperature_c": 26.111904761904764,
+      "humidity_percent": 74.27380952380952,
+      "week_start": "2015-02-09"
+    },
+    {
+      "week_ending": "2015-02-22",
+      "hours": 168,
+      "rainfall_mm": 0.30000000000000004,
+      "temperature_c": 26.30416666666668,
+      "humidity_percent": 71.33333333333333,
+      "week_start": "2015-02-16"
+    },
+    {
+      "week_ending": "2015-03-01",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 27.132738095238103,
+      "humidity_percent": 68.95833333333333,
+      "week_start": "2015-02-23"
+    },
+    {
+      "week_ending": "2015-03-08",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 27.399999999999984,
+      "humidity_percent": 66.27380952380952,
+      "week_start": "2015-03-02"
+    },
+    {
+      "week_ending": "2015-03-15",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 26.94523809523809,
+      "humidity_percent": 67.76190476190476,
+      "week_start": "2015-03-09"
+    },
+    {
+      "week_ending": "2015-03-22",
+      "hours": 168,
+      "rainfall_mm": 4.4,
+      "temperature_c": 27.41726190476192,
+      "humidity_percent": 67.46428571428571,
+      "week_start": "2015-03-16"
+    },
+    {
+      "week_ending": "2015-03-29",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 27.96488095238097,
+      "humidity_percent": 69.66666666666667,
+      "week_start": "2015-03-23"
+    },
+    {
+      "week_ending": "2015-04-05",
+      "hours": 168,
+      "rainfall_mm": 3.3,
+      "temperature_c": 28.796428571428578,
+      "humidity_percent": 68.58333333333333,
+      "week_start": "2015-03-30"
+    },
+    {
+      "week_ending": "2015-04-12",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.77142857142857,
+      "humidity_percent": 66.33928571428571,
+      "week_start": "2015-04-06"
+    },
+    {
+      "week_ending": "2015-04-19",
+      "hours": 168,
+      "rainfall_mm": 1.9,
+      "temperature_c": 29.532738095238095,
+      "humidity_percent": 68.28571428571429,
+      "week_start": "2015-04-13"
+    },
+    {
+      "week_ending": "2015-04-26",
+      "hours": 168,
+      "rainfall_mm": 2.8,
+      "temperature_c": 29.93392857142858,
+      "humidity_percent": 66.23214285714286,
+      "week_start": "2015-04-20"
+    },
+    {
+      "week_ending": "2015-05-03",
+      "hours": 168,
+      "rainfall_mm": 3.6,
+      "temperature_c": 30.46130952380953,
+      "humidity_percent": 64.18452380952381,
+      "week_start": "2015-04-27"
+    },
+    {
+      "week_ending": "2015-05-10",
+      "hours": 168,
+      "rainfall_mm": 14.799999999999997,
+      "temperature_c": 30.142857142857153,
+      "humidity_percent": 69.33333333333333,
+      "week_start": "2015-05-04"
+    },
+    {
+      "week_ending": "2015-05-17",
+      "hours": 168,
+      "rainfall_mm": 0.7000000000000001,
+      "temperature_c": 30.89642857142859,
+      "humidity_percent": 64.11309523809524,
+      "week_start": "2015-05-11"
+    },
+    {
+      "week_ending": "2015-05-24",
+      "hours": 168,
+      "rainfall_mm": 4.499999999999999,
+      "temperature_c": 30.697619047619042,
+      "humidity_percent": 67.52380952380952,
+      "week_start": "2015-05-18"
+    },
+    {
+      "week_ending": "2015-05-31",
+      "hours": 168,
+      "rainfall_mm": 9.799999999999997,
+      "temperature_c": 30.401190476190475,
+      "humidity_percent": 70.88095238095238,
+      "week_start": "2015-05-25"
+    },
+    {
+      "week_ending": "2015-06-07",
+      "hours": 168,
+      "rainfall_mm": 3.2,
+      "temperature_c": 31.188690476190498,
+      "humidity_percent": 64.69642857142857,
+      "week_start": "2015-06-01"
+    },
+    {
+      "week_ending": "2015-06-14",
+      "hours": 168,
+      "rainfall_mm": 10.899999999999997,
+      "temperature_c": 30.850000000000005,
+      "humidity_percent": 67.39880952380952,
+      "week_start": "2015-06-08"
+    },
+    {
+      "week_ending": "2015-06-21",
+      "hours": 168,
+      "rainfall_mm": 43,
+      "temperature_c": 29.35416666666669,
+      "humidity_percent": 75.3452380952381,
+      "week_start": "2015-06-15"
+    },
+    {
+      "week_ending": "2015-06-28",
+      "hours": 168,
+      "rainfall_mm": 22.500000000000007,
+      "temperature_c": 29.409523809523826,
+      "humidity_percent": 76.96428571428571,
+      "week_start": "2015-06-22"
+    },
+    {
+      "week_ending": "2015-07-05",
+      "hours": 168,
+      "rainfall_mm": 47.8,
+      "temperature_c": 28.773809523809526,
+      "humidity_percent": 80.0952380952381,
+      "week_start": "2015-06-29"
+    },
+    {
+      "week_ending": "2015-07-12",
+      "hours": 168,
+      "rainfall_mm": 109.00000000000003,
+      "temperature_c": 27.067857142857157,
+      "humidity_percent": 87.23809523809524,
+      "week_start": "2015-07-06"
+    },
+    {
+      "week_ending": "2015-07-19",
+      "hours": 168,
+      "rainfall_mm": 22.399999999999988,
+      "temperature_c": 28.68869047619048,
+      "humidity_percent": 80.51785714285714,
+      "week_start": "2015-07-13"
+    },
+    {
+      "week_ending": "2015-07-26",
+      "hours": 168,
+      "rainfall_mm": 18.499999999999996,
+      "temperature_c": 28.473214285714306,
+      "humidity_percent": 78.73214285714286,
+      "week_start": "2015-07-20"
+    },
+    {
+      "week_ending": "2015-08-02",
+      "hours": 168,
+      "rainfall_mm": 29.800000000000004,
+      "temperature_c": 28.439880952380957,
+      "humidity_percent": 76.7797619047619,
+      "week_start": "2015-07-27"
+    },
+    {
+      "week_ending": "2015-08-09",
+      "hours": 168,
+      "rainfall_mm": 21.399999999999995,
+      "temperature_c": 28.607142857142883,
+      "humidity_percent": 80.02380952380952,
+      "week_start": "2015-08-03"
+    },
+    {
+      "week_ending": "2015-08-16",
+      "hours": 168,
+      "rainfall_mm": 42.90000000000003,
+      "temperature_c": 28.739880952380968,
+      "humidity_percent": 81.19047619047619,
+      "week_start": "2015-08-10"
+    },
+    {
+      "week_ending": "2015-08-23",
+      "hours": 168,
+      "rainfall_mm": 61.4,
+      "temperature_c": 28.264285714285723,
+      "humidity_percent": 82.77380952380952,
+      "week_start": "2015-08-17"
+    },
+    {
+      "week_ending": "2015-08-30",
+      "hours": 168,
+      "rainfall_mm": 45,
+      "temperature_c": 28.010714285714275,
+      "humidity_percent": 81.45833333333333,
+      "week_start": "2015-08-24"
+    },
+    {
+      "week_ending": "2015-09-06",
+      "hours": 168,
+      "rainfall_mm": 27.6,
+      "temperature_c": 28.50416666666667,
+      "humidity_percent": 79.82142857142857,
+      "week_start": "2015-08-31"
+    },
+    {
+      "week_ending": "2015-09-13",
+      "hours": 168,
+      "rainfall_mm": 87.2,
+      "temperature_c": 28.03333333333332,
+      "humidity_percent": 83.00595238095238,
+      "week_start": "2015-09-07"
+    },
+    {
+      "week_ending": "2015-09-20",
+      "hours": 168,
+      "rainfall_mm": 33.099999999999994,
+      "temperature_c": 28.450595238095236,
+      "humidity_percent": 79.64285714285714,
+      "week_start": "2015-09-14"
+    },
+    {
+      "week_ending": "2015-09-27",
+      "hours": 168,
+      "rainfall_mm": 33.00000000000003,
+      "temperature_c": 28.432738095238072,
+      "humidity_percent": 82,
+      "week_start": "2015-09-21"
+    },
+    {
+      "week_ending": "2015-10-04",
+      "hours": 168,
+      "rainfall_mm": 121.89999999999996,
+      "temperature_c": 27.72202380952381,
+      "humidity_percent": 83.70833333333333,
+      "week_start": "2015-09-28"
+    },
+    {
+      "week_ending": "2015-10-11",
+      "hours": 168,
+      "rainfall_mm": 6.100000000000002,
+      "temperature_c": 28.735119047619055,
+      "humidity_percent": 79.20833333333333,
+      "week_start": "2015-10-05"
+    },
+    {
+      "week_ending": "2015-10-18",
+      "hours": 168,
+      "rainfall_mm": 83.3,
+      "temperature_c": 28.114285714285703,
+      "humidity_percent": 81.23809523809524,
+      "week_start": "2015-10-12"
+    },
+    {
+      "week_ending": "2015-10-25",
+      "hours": 168,
+      "rainfall_mm": 18.600000000000005,
+      "temperature_c": 28.142857142857153,
+      "humidity_percent": 79.73214285714286,
+      "week_start": "2015-10-19"
+    },
+    {
+      "week_ending": "2015-11-01",
+      "hours": 168,
+      "rainfall_mm": 1.3,
+      "temperature_c": 28.49821428571428,
+      "humidity_percent": 74.83333333333333,
+      "week_start": "2015-10-26"
+    },
+    {
+      "week_ending": "2015-11-08",
+      "hours": 168,
+      "rainfall_mm": 0.6000000000000001,
+      "temperature_c": 29.058333333333312,
+      "humidity_percent": 73.04761904761905,
+      "week_start": "2015-11-02"
+    },
+    {
+      "week_ending": "2015-11-15",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 28.915476190476188,
+      "humidity_percent": 71.26785714285714,
+      "week_start": "2015-11-09"
+    },
+    {
+      "week_ending": "2015-11-22",
+      "hours": 168,
+      "rainfall_mm": 0.30000000000000004,
+      "temperature_c": 28.944642857142835,
+      "humidity_percent": 70.38095238095238,
+      "week_start": "2015-11-16"
+    },
+    {
+      "week_ending": "2015-11-29",
+      "hours": 168,
+      "rainfall_mm": 0.7,
+      "temperature_c": 28.597023809523815,
+      "humidity_percent": 71.29761904761905,
+      "week_start": "2015-11-23"
+    },
+    {
+      "week_ending": "2015-12-06",
+      "hours": 168,
+      "rainfall_mm": 6.6000000000000005,
+      "temperature_c": 28.347619047619062,
+      "humidity_percent": 73.33928571428571,
+      "week_start": "2015-11-30"
+    },
+    {
+      "week_ending": "2015-12-13",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 28.68630952380951,
+      "humidity_percent": 74.36309523809524,
+      "week_start": "2015-12-07"
+    },
+    {
+      "week_ending": "2015-12-20",
+      "hours": 168,
+      "rainfall_mm": 204.09999999999977,
+      "temperature_c": 26.075000000000006,
+      "humidity_percent": 84.75,
+      "week_start": "2015-12-14"
+    },
+    {
+      "week_ending": "2015-12-27",
+      "hours": 168,
+      "rainfall_mm": 17,
+      "temperature_c": 26.83452380952383,
+      "humidity_percent": 79.5,
+      "week_start": "2015-12-21"
+    },
+    {
+      "week_ending": "2016-01-03",
+      "hours": 168,
+      "rainfall_mm": 40.40000000000001,
+      "temperature_c": 26.427380952380947,
+      "humidity_percent": 79.99404761904762,
+      "week_start": "2015-12-28"
+    },
+    {
+      "week_ending": "2016-01-10",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 26.989880952380958,
+      "humidity_percent": 78.3452380952381,
+      "week_start": "2016-01-04"
+    },
+    {
+      "week_ending": "2016-01-17",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 27.576190476190465,
+      "humidity_percent": 76.53571428571429,
+      "week_start": "2016-01-11"
+    },
+    {
+      "week_ending": "2016-01-24",
+      "hours": 168,
+      "rainfall_mm": 0.6000000000000001,
+      "temperature_c": 27.679166666666664,
+      "humidity_percent": 73.75,
+      "week_start": "2016-01-18"
+    },
+    {
+      "week_ending": "2016-01-31",
+      "hours": 168,
+      "rainfall_mm": 3.9,
+      "temperature_c": 26.76726190476192,
+      "humidity_percent": 74.38095238095238,
+      "week_start": "2016-01-25"
+    },
+    {
+      "week_ending": "2016-02-07",
+      "hours": 168,
+      "rainfall_mm": 22.2,
+      "temperature_c": 27.011904761904756,
+      "humidity_percent": 77,
+      "week_start": "2016-02-01"
+    },
+    {
+      "week_ending": "2016-02-14",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 26.49404761904761,
+      "humidity_percent": 73.33928571428571,
+      "week_start": "2016-02-08"
+    },
+    {
+      "week_ending": "2016-02-21",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 26.980357142857137,
+      "humidity_percent": 72.44047619047619,
+      "week_start": "2016-02-15"
+    },
+    {
+      "week_ending": "2016-02-28",
+      "hours": 168,
+      "rainfall_mm": 5.399999999999999,
+      "temperature_c": 27.31666666666666,
+      "humidity_percent": 71.98809523809524,
+      "week_start": "2016-02-22"
+    },
+    {
+      "week_ending": "2016-03-06",
+      "hours": 168,
+      "rainfall_mm": 8.6,
+      "temperature_c": 27.199999999999996,
+      "humidity_percent": 77.07738095238095,
+      "week_start": "2016-02-29"
+    },
+    {
+      "week_ending": "2016-03-13",
+      "hours": 168,
+      "rainfall_mm": 0.4,
+      "temperature_c": 29.21011904761905,
+      "humidity_percent": 69.83928571428571,
+      "week_start": "2016-03-07"
+    },
+    {
+      "week_ending": "2016-03-20",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 29.14464285714287,
+      "humidity_percent": 68.53571428571429,
+      "week_start": "2016-03-14"
+    },
+    {
+      "week_ending": "2016-03-27",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 29.396428571428558,
+      "humidity_percent": 67.97619047619048,
+      "week_start": "2016-03-21"
+    },
+    {
+      "week_ending": "2016-04-03",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 28.866666666666667,
+      "humidity_percent": 70.48214285714286,
+      "week_start": "2016-03-28"
+    },
+    {
+      "week_ending": "2016-04-10",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 29.985714285714273,
+      "humidity_percent": 66.73214285714286,
+      "week_start": "2016-04-04"
+    },
+    {
+      "week_ending": "2016-04-17",
+      "hours": 168,
+      "rainfall_mm": 1.4,
+      "temperature_c": 31.029761904761905,
+      "humidity_percent": 67.13690476190476,
+      "week_start": "2016-04-11"
+    },
+    {
+      "week_ending": "2016-04-24",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 30.81428571428571,
+      "humidity_percent": 65.31547619047619,
+      "week_start": "2016-04-18"
+    },
+    {
+      "week_ending": "2016-05-01",
+      "hours": 168,
+      "rainfall_mm": 5.3999999999999995,
+      "temperature_c": 30.79523809523809,
+      "humidity_percent": 67.11904761904762,
+      "week_start": "2016-04-25"
+    },
+    {
+      "week_ending": "2016-05-08",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 31.43630952380952,
+      "humidity_percent": 64.70238095238095,
+      "week_start": "2016-05-02"
+    },
+    {
+      "week_ending": "2016-05-15",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 31.45714285714286,
+      "humidity_percent": 64.75595238095238,
+      "week_start": "2016-05-09"
+    },
+    {
+      "week_ending": "2016-05-22",
+      "hours": 168,
+      "rainfall_mm": 45.000000000000014,
+      "temperature_c": 30.073214285714293,
+      "humidity_percent": 73.70833333333333,
+      "week_start": "2016-05-16"
+    },
+    {
+      "week_ending": "2016-05-29",
+      "hours": 168,
+      "rainfall_mm": 36.7,
+      "temperature_c": 29.55833333333334,
+      "humidity_percent": 79.63095238095238,
+      "week_start": "2016-05-23"
+    },
+    {
+      "week_ending": "2016-06-05",
+      "hours": 168,
+      "rainfall_mm": 29.00000000000001,
+      "temperature_c": 29.535119047619045,
+      "humidity_percent": 78.79761904761905,
+      "week_start": "2016-05-30"
+    },
+    {
+      "week_ending": "2016-06-12",
+      "hours": 168,
+      "rainfall_mm": 56.70000000000004,
+      "temperature_c": 28.97976190476192,
+      "humidity_percent": 81.06547619047619,
+      "week_start": "2016-06-06"
+    },
+    {
+      "week_ending": "2016-06-19",
+      "hours": 168,
+      "rainfall_mm": 6.799999999999999,
+      "temperature_c": 30.10357142857144,
+      "humidity_percent": 75.20238095238095,
+      "week_start": "2016-06-13"
+    },
+    {
+      "week_ending": "2016-06-26",
+      "hours": 168,
+      "rainfall_mm": 44.90000000000002,
+      "temperature_c": 29.257738095238114,
+      "humidity_percent": 77.69642857142857,
+      "week_start": "2016-06-20"
+    },
+    {
+      "week_ending": "2016-07-03",
+      "hours": 168,
+      "rainfall_mm": 66.6,
+      "temperature_c": 28.66249999999999,
+      "humidity_percent": 80.07738095238095,
+      "week_start": "2016-06-27"
+    },
+    {
+      "week_ending": "2016-07-10",
+      "hours": 168,
+      "rainfall_mm": 128.2,
+      "temperature_c": 27.364285714285707,
+      "humidity_percent": 85.47619047619048,
+      "week_start": "2016-07-04"
+    },
+    {
+      "week_ending": "2016-07-17",
+      "hours": 168,
+      "rainfall_mm": 17.7,
+      "temperature_c": 28.966666666666676,
+      "humidity_percent": 80.94642857142857,
+      "week_start": "2016-07-11"
+    },
+    {
+      "week_ending": "2016-07-24",
+      "hours": 168,
+      "rainfall_mm": 36,
+      "temperature_c": 29.134523809523802,
+      "humidity_percent": 77.47619047619048,
+      "week_start": "2016-07-18"
+    },
+    {
+      "week_ending": "2016-07-31",
+      "hours": 168,
+      "rainfall_mm": 25.2,
+      "temperature_c": 29.107738095238087,
+      "humidity_percent": 78.9047619047619,
+      "week_start": "2016-07-25"
+    },
+    {
+      "week_ending": "2016-08-07",
+      "hours": 168,
+      "rainfall_mm": 61.50000000000001,
+      "temperature_c": 28.280357142857156,
+      "humidity_percent": 82.78571428571429,
+      "week_start": "2016-08-01"
+    },
+    {
+      "week_ending": "2016-08-14",
+      "hours": 168,
+      "rainfall_mm": 198.8,
+      "temperature_c": 26.821428571428566,
+      "humidity_percent": 89.6547619047619,
+      "week_start": "2016-08-08"
+    },
+    {
+      "week_ending": "2016-08-21",
+      "hours": 168,
+      "rainfall_mm": 70.60000000000005,
+      "temperature_c": 28.104166666666682,
+      "humidity_percent": 87.39880952380952,
+      "week_start": "2016-08-15"
+    },
+    {
+      "week_ending": "2016-08-28",
+      "hours": 168,
+      "rainfall_mm": 47.40000000000008,
+      "temperature_c": 27.98154761904762,
+      "humidity_percent": 86.3452380952381,
+      "week_start": "2016-08-22"
+    },
+    {
+      "week_ending": "2016-09-04",
+      "hours": 168,
+      "rainfall_mm": 15.299999999999994,
+      "temperature_c": 28.467857142857135,
+      "humidity_percent": 83.2202380952381,
+      "week_start": "2016-08-29"
+    },
+    {
+      "week_ending": "2016-09-11",
+      "hours": 168,
+      "rainfall_mm": 31.6,
+      "temperature_c": 28.641666666666673,
+      "humidity_percent": 81.46428571428571,
+      "week_start": "2016-09-05"
+    },
+    {
+      "week_ending": "2016-09-18",
+      "hours": 168,
+      "rainfall_mm": 37.699999999999996,
+      "temperature_c": 28.01845238095236,
+      "humidity_percent": 84.27380952380952,
+      "week_start": "2016-09-12"
+    },
+    {
+      "week_ending": "2016-09-25",
+      "hours": 168,
+      "rainfall_mm": 64.8,
+      "temperature_c": 28.077380952380956,
+      "humidity_percent": 84.08333333333333,
+      "week_start": "2016-09-19"
+    },
+    {
+      "week_ending": "2016-10-02",
+      "hours": 168,
+      "rainfall_mm": 53.80000000000004,
+      "temperature_c": 27.240476190476176,
+      "humidity_percent": 86.82738095238095,
+      "week_start": "2016-09-26"
+    },
+    {
+      "week_ending": "2016-10-09",
+      "hours": 168,
+      "rainfall_mm": 89.00000000000001,
+      "temperature_c": 27.451190476190472,
+      "humidity_percent": 85.82738095238095,
+      "week_start": "2016-10-03"
+    },
+    {
+      "week_ending": "2016-10-16",
+      "hours": 168,
+      "rainfall_mm": 135.40000000000003,
+      "temperature_c": 27.50595238095237,
+      "humidity_percent": 85.2797619047619,
+      "week_start": "2016-10-10"
+    },
+    {
+      "week_ending": "2016-10-23",
+      "hours": 168,
+      "rainfall_mm": 20.300000000000004,
+      "temperature_c": 28.392857142857142,
+      "humidity_percent": 83.73809523809524,
+      "week_start": "2016-10-17"
+    },
+    {
+      "week_ending": "2016-10-30",
+      "hours": 168,
+      "rainfall_mm": 0.8,
+      "temperature_c": 28.89166666666665,
+      "humidity_percent": 77.71428571428571,
+      "week_start": "2016-10-24"
+    },
+    {
+      "week_ending": "2016-11-06",
+      "hours": 168,
+      "rainfall_mm": 7.7,
+      "temperature_c": 27.802380952380965,
+      "humidity_percent": 81.07142857142857,
+      "week_start": "2016-10-31"
+    },
+    {
+      "week_ending": "2016-11-13",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 27.65000000000003,
+      "humidity_percent": 73.60119047619048,
+      "week_start": "2016-11-07"
+    },
+    {
+      "week_ending": "2016-11-20",
+      "hours": 168,
+      "rainfall_mm": 2.6,
+      "temperature_c": 28.22559523809523,
+      "humidity_percent": 79.42261904761905,
+      "week_start": "2016-11-14"
+    },
+    {
+      "week_ending": "2016-11-27",
+      "hours": 168,
+      "rainfall_mm": 43.90000000000002,
+      "temperature_c": 27.819642857142835,
+      "humidity_percent": 78.58333333333333,
+      "week_start": "2016-11-21"
+    },
+    {
+      "week_ending": "2016-12-04",
+      "hours": 168,
+      "rainfall_mm": 1.2,
+      "temperature_c": 28.034523809523822,
+      "humidity_percent": 78.30952380952381,
+      "week_start": "2016-11-28"
+    },
+    {
+      "week_ending": "2016-12-11",
+      "hours": 168,
+      "rainfall_mm": 34.30000000000001,
+      "temperature_c": 27.754761904761896,
+      "humidity_percent": 80.47619047619048,
+      "week_start": "2016-12-05"
+    },
+    {
+      "week_ending": "2016-12-18",
+      "hours": 168,
+      "rainfall_mm": 199.2,
+      "temperature_c": 26.588095238095224,
+      "humidity_percent": 84.55357142857143,
+      "week_start": "2016-12-12"
+    },
+    {
+      "week_ending": "2016-12-25",
+      "hours": 168,
+      "rainfall_mm": 0.7,
+      "temperature_c": 27.466666666666658,
+      "humidity_percent": 77.11309523809524,
+      "week_start": "2016-12-19"
+    },
+    {
+      "week_ending": "2017-01-01",
+      "hours": 168,
+      "rainfall_mm": 22.90000000000001,
+      "temperature_c": 27.36726190476191,
+      "humidity_percent": 81.375,
+      "week_start": "2016-12-26"
+    },
+    {
+      "week_ending": "2017-01-08",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 26.885714285714297,
+      "humidity_percent": 75.67857142857143,
+      "week_start": "2017-01-02"
+    },
+    {
+      "week_ending": "2017-01-15",
+      "hours": 168,
+      "rainfall_mm": 35.80000000000001,
+      "temperature_c": 26.53869047619046,
+      "humidity_percent": 80.53571428571429,
+      "week_start": "2017-01-09"
+    },
+    {
+      "week_ending": "2017-01-22",
+      "hours": 168,
+      "rainfall_mm": 6.3,
+      "temperature_c": 26.32916666666667,
+      "humidity_percent": 72.32738095238095,
+      "week_start": "2017-01-16"
+    },
+    {
+      "week_ending": "2017-01-29",
+      "hours": 168,
+      "rainfall_mm": 10.299999999999999,
+      "temperature_c": 25.68452380952381,
+      "humidity_percent": 80,
+      "week_start": "2017-01-23"
+    },
+    {
+      "week_ending": "2017-02-05",
+      "hours": 168,
+      "rainfall_mm": 26.90000000000001,
+      "temperature_c": 26.662500000000012,
+      "humidity_percent": 78.66071428571429,
+      "week_start": "2017-01-30"
+    },
+    {
+      "week_ending": "2017-02-12",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 25.956547619047623,
+      "humidity_percent": 71.92857142857143,
+      "week_start": "2017-02-06"
+    },
+    {
+      "week_ending": "2017-02-19",
+      "hours": 168,
+      "rainfall_mm": 1.1,
+      "temperature_c": 25.533333333333342,
+      "humidity_percent": 71.38690476190476,
+      "week_start": "2017-02-13"
+    },
+    {
+      "week_ending": "2017-02-26",
+      "hours": 168,
+      "rainfall_mm": 0.7,
+      "temperature_c": 27.85297619047618,
+      "humidity_percent": 72.41666666666667,
+      "week_start": "2017-02-20"
+    },
+    {
+      "week_ending": "2017-03-05",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 27.536904761904765,
+      "humidity_percent": 71.66071428571429,
+      "week_start": "2017-02-27"
+    },
+    {
+      "week_ending": "2017-03-12",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 27.636904761904773,
+      "humidity_percent": 68.89880952380952,
+      "week_start": "2017-03-06"
+    },
+    {
+      "week_ending": "2017-03-19",
+      "hours": 168,
+      "rainfall_mm": 0.8999999999999999,
+      "temperature_c": 27.930952380952363,
+      "humidity_percent": 68.56547619047619,
+      "week_start": "2017-03-13"
+    },
+    {
+      "week_ending": "2017-03-26",
+      "hours": 168,
+      "rainfall_mm": 2.6999999999999997,
+      "temperature_c": 28.826190476190483,
+      "humidity_percent": 70.82142857142857,
+      "week_start": "2017-03-20"
+    },
+    {
+      "week_ending": "2017-04-02",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 28.47202380952381,
+      "humidity_percent": 67.89880952380952,
+      "week_start": "2017-03-27"
+    },
+    {
+      "week_ending": "2017-04-09",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 28.352380952380948,
+      "humidity_percent": 67.86904761904762,
+      "week_start": "2017-04-03"
+    },
+    {
+      "week_ending": "2017-04-16",
+      "hours": 168,
+      "rainfall_mm": 3.4,
+      "temperature_c": 29.98035714285714,
+      "humidity_percent": 67.04761904761905,
+      "week_start": "2017-04-10"
+    },
+    {
+      "week_ending": "2017-04-23",
+      "hours": 168,
+      "rainfall_mm": 5.699999999999997,
+      "temperature_c": 30.1017857142857,
+      "humidity_percent": 71.93452380952381,
+      "week_start": "2017-04-17"
+    },
+    {
+      "week_ending": "2017-04-30",
+      "hours": 168,
+      "rainfall_mm": 7.699999999999999,
+      "temperature_c": 30.45535714285715,
+      "humidity_percent": 68.01190476190476,
+      "week_start": "2017-04-24"
+    },
+    {
+      "week_ending": "2017-05-07",
+      "hours": 168,
+      "rainfall_mm": 3.9000000000000004,
+      "temperature_c": 30.433928571428552,
+      "humidity_percent": 69.94642857142857,
+      "week_start": "2017-05-01"
+    },
+    {
+      "week_ending": "2017-05-14",
+      "hours": 168,
+      "rainfall_mm": 0.30000000000000004,
+      "temperature_c": 31.036904761904772,
+      "humidity_percent": 66.16071428571429,
+      "week_start": "2017-05-08"
+    },
+    {
+      "week_ending": "2017-05-21",
+      "hours": 168,
+      "rainfall_mm": 13.399999999999999,
+      "temperature_c": 30.256547619047616,
+      "humidity_percent": 73.20833333333333,
+      "week_start": "2017-05-15"
+    },
+    {
+      "week_ending": "2017-05-28",
+      "hours": 168,
+      "rainfall_mm": 69.20000000000002,
+      "temperature_c": 28.761904761904766,
+      "humidity_percent": 82.78571428571429,
+      "week_start": "2017-05-22"
+    },
+    {
+      "week_ending": "2017-06-04",
+      "hours": 168,
+      "rainfall_mm": 42.50000000000002,
+      "temperature_c": 29.532142857142862,
+      "humidity_percent": 79.73214285714286,
+      "week_start": "2017-05-29"
+    },
+    {
+      "week_ending": "2017-06-11",
+      "hours": 168,
+      "rainfall_mm": 35.400000000000006,
+      "temperature_c": 29.020238095238113,
+      "humidity_percent": 79.91071428571429,
+      "week_start": "2017-06-05"
+    },
+    {
+      "week_ending": "2017-06-18",
+      "hours": 168,
+      "rainfall_mm": 7.1,
+      "temperature_c": 30.03452380952381,
+      "humidity_percent": 74.96428571428571,
+      "week_start": "2017-06-12"
+    },
+    {
+      "week_ending": "2017-06-25",
+      "hours": 168,
+      "rainfall_mm": 22.699999999999996,
+      "temperature_c": 29.85595238095239,
+      "humidity_percent": 73.64285714285714,
+      "week_start": "2017-06-19"
+    },
+    {
+      "week_ending": "2017-07-02",
+      "hours": 168,
+      "rainfall_mm": 41.60000000000001,
+      "temperature_c": 29.12678571428571,
+      "humidity_percent": 77.07142857142857,
+      "week_start": "2017-06-26"
+    },
+    {
+      "week_ending": "2017-07-09",
+      "hours": 168,
+      "rainfall_mm": 39.900000000000006,
+      "temperature_c": 28.37559523809522,
+      "humidity_percent": 79.74404761904762,
+      "week_start": "2017-07-03"
+    },
+    {
+      "week_ending": "2017-07-16",
+      "hours": 168,
+      "rainfall_mm": 78.10000000000001,
+      "temperature_c": 28.041666666666682,
+      "humidity_percent": 82.0297619047619,
+      "week_start": "2017-07-10"
+    },
+    {
+      "week_ending": "2017-07-23",
+      "hours": 168,
+      "rainfall_mm": 68.50000000000006,
+      "temperature_c": 27.969642857142876,
+      "humidity_percent": 82.53571428571429,
+      "week_start": "2017-07-17"
+    },
+    {
+      "week_ending": "2017-07-30",
+      "hours": 168,
+      "rainfall_mm": 95.6,
+      "temperature_c": 27.610714285714288,
+      "humidity_percent": 86.39285714285714,
+      "week_start": "2017-07-24"
+    },
+    {
+      "week_ending": "2017-08-06",
+      "hours": 168,
+      "rainfall_mm": 95.60000000000001,
+      "temperature_c": 28.026785714285698,
+      "humidity_percent": 86.54166666666667,
+      "week_start": "2017-07-31"
+    },
+    {
+      "week_ending": "2017-08-13",
+      "hours": 168,
+      "rainfall_mm": 28.700000000000003,
+      "temperature_c": 29.125595238095247,
+      "humidity_percent": 81,
+      "week_start": "2017-08-07"
+    },
+    {
+      "week_ending": "2017-08-20",
+      "hours": 168,
+      "rainfall_mm": 62.900000000000006,
+      "temperature_c": 28.866071428571423,
+      "humidity_percent": 80.10714285714286,
+      "week_start": "2017-08-14"
+    },
+    {
+      "week_ending": "2017-08-27",
+      "hours": 168,
+      "rainfall_mm": 80.39999999999996,
+      "temperature_c": 27.34523809523809,
+      "humidity_percent": 85.17261904761905,
+      "week_start": "2017-08-21"
+    },
+    {
+      "week_ending": "2017-09-03",
+      "hours": 168,
+      "rainfall_mm": 23.200000000000014,
+      "temperature_c": 28.413690476190474,
+      "humidity_percent": 83.42261904761905,
+      "week_start": "2017-08-28"
+    },
+    {
+      "week_ending": "2017-09-10",
+      "hours": 168,
+      "rainfall_mm": 16.299999999999997,
+      "temperature_c": 29.228571428571428,
+      "humidity_percent": 79.36904761904762,
+      "week_start": "2017-09-04"
+    },
+    {
+      "week_ending": "2017-09-17",
+      "hours": 168,
+      "rainfall_mm": 147.09999999999988,
+      "temperature_c": 28.1422619047619,
+      "humidity_percent": 84.21428571428571,
+      "week_start": "2017-09-11"
+    },
+    {
+      "week_ending": "2017-09-24",
+      "hours": 168,
+      "rainfall_mm": 90.80000000000001,
+      "temperature_c": 28.270238095238092,
+      "humidity_percent": 83.05357142857143,
+      "week_start": "2017-09-18"
+    },
+    {
+      "week_ending": "2017-10-01",
+      "hours": 168,
+      "rainfall_mm": 35.900000000000006,
+      "temperature_c": 28.093452380952375,
+      "humidity_percent": 83.91071428571429,
+      "week_start": "2017-09-25"
+    },
+    {
+      "week_ending": "2017-10-08",
+      "hours": 168,
+      "rainfall_mm": 50.399999999999984,
+      "temperature_c": 28.226785714285718,
+      "humidity_percent": 82.3452380952381,
+      "week_start": "2017-10-02"
+    },
+    {
+      "week_ending": "2017-10-15",
+      "hours": 168,
+      "rainfall_mm": 98.19999999999999,
+      "temperature_c": 27.45952380952381,
+      "humidity_percent": 87.51190476190476,
+      "week_start": "2017-10-09"
+    },
+    {
+      "week_ending": "2017-10-22",
+      "hours": 168,
+      "rainfall_mm": 6.499999999999998,
+      "temperature_c": 28.40119047619048,
+      "humidity_percent": 82.30357142857143,
+      "week_start": "2017-10-16"
+    },
+    {
+      "week_ending": "2017-10-29",
+      "hours": 168,
+      "rainfall_mm": 9.499999999999993,
+      "temperature_c": 27.922619047619065,
+      "humidity_percent": 79.68452380952381,
+      "week_start": "2017-10-23"
+    },
+    {
+      "week_ending": "2017-11-05",
+      "hours": 168,
+      "rainfall_mm": 58.000000000000036,
+      "temperature_c": 27.18273809523809,
+      "humidity_percent": 84.33928571428571,
+      "week_start": "2017-10-30"
+    },
+    {
+      "week_ending": "2017-11-12",
+      "hours": 168,
+      "rainfall_mm": 72.79999999999998,
+      "temperature_c": 28.01785714285714,
+      "humidity_percent": 81.70833333333333,
+      "week_start": "2017-11-06"
+    },
+    {
+      "week_ending": "2017-11-19",
+      "hours": 168,
+      "rainfall_mm": 8.499999999999998,
+      "temperature_c": 28.359523809523807,
+      "humidity_percent": 81.08333333333333,
+      "week_start": "2017-11-13"
+    },
+    {
+      "week_ending": "2017-11-26",
+      "hours": 168,
+      "rainfall_mm": 1.9000000000000006,
+      "temperature_c": 28.266071428571422,
+      "humidity_percent": 78.80357142857143,
+      "week_start": "2017-11-20"
+    },
+    {
+      "week_ending": "2017-12-03",
+      "hours": 168,
+      "rainfall_mm": 1.5,
+      "temperature_c": 28.545238095238087,
+      "humidity_percent": 78.11904761904762,
+      "week_start": "2017-11-27"
+    },
+    {
+      "week_ending": "2017-12-10",
+      "hours": 168,
+      "rainfall_mm": 44.00000000000002,
+      "temperature_c": 27.77440476190477,
+      "humidity_percent": 80.29166666666667,
+      "week_start": "2017-12-04"
+    },
+    {
+      "week_ending": "2017-12-17",
+      "hours": 168,
+      "rainfall_mm": 14.600000000000001,
+      "temperature_c": 26.382738095238103,
+      "humidity_percent": 77.55952380952381,
+      "week_start": "2017-12-11"
+    },
+    {
+      "week_ending": "2017-12-24",
+      "hours": 168,
+      "rainfall_mm": 35.20000000000004,
+      "temperature_c": 26.726785714285704,
+      "humidity_percent": 83.03571428571429,
+      "week_start": "2017-12-18"
+    },
+    {
+      "week_ending": "2017-12-31",
+      "hours": 168,
+      "rainfall_mm": 25.9,
+      "temperature_c": 26.724999999999984,
+      "humidity_percent": 79.08333333333333,
+      "week_start": "2017-12-25"
+    },
+    {
+      "week_ending": "2018-01-07",
+      "hours": 168,
+      "rainfall_mm": 33.5,
+      "temperature_c": 26.673214285714284,
+      "humidity_percent": 78.80357142857143,
+      "week_start": "2018-01-01"
+    },
+    {
+      "week_ending": "2018-01-14",
+      "hours": 168,
+      "rainfall_mm": 5.199999999999998,
+      "temperature_c": 26.28809523809526,
+      "humidity_percent": 77.16666666666667,
+      "week_start": "2018-01-08"
+    },
+    {
+      "week_ending": "2018-01-21",
+      "hours": 168,
+      "rainfall_mm": 83.39999999999999,
+      "temperature_c": 26.462500000000016,
+      "humidity_percent": 80.57738095238095,
+      "week_start": "2018-01-15"
+    },
+    {
+      "week_ending": "2018-01-28",
+      "hours": 168,
+      "rainfall_mm": 90.3,
+      "temperature_c": 26.777380952380934,
+      "humidity_percent": 81.75595238095238,
+      "week_start": "2018-01-22"
+    },
+    {
+      "week_ending": "2018-02-04",
+      "hours": 168,
+      "rainfall_mm": 1.3000000000000003,
+      "temperature_c": 26.518452380952382,
+      "humidity_percent": 78.51190476190476,
+      "week_start": "2018-01-29"
+    },
+    {
+      "week_ending": "2018-02-11",
+      "hours": 168,
+      "rainfall_mm": 2.4,
+      "temperature_c": 25.99345238095237,
+      "humidity_percent": 78.67857142857143,
+      "week_start": "2018-02-05"
+    },
+    {
+      "week_ending": "2018-02-18",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 27.343452380952385,
+      "humidity_percent": 76.52380952380952,
+      "week_start": "2018-02-12"
+    },
+    {
+      "week_ending": "2018-02-25",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.184523809523814,
+      "humidity_percent": 70.89880952380952,
+      "week_start": "2018-02-19"
+    },
+    {
+      "week_ending": "2018-03-04",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 28.601190476190464,
+      "humidity_percent": 73.18452380952381,
+      "week_start": "2018-02-26"
+    },
+    {
+      "week_ending": "2018-03-11",
+      "hours": 168,
+      "rainfall_mm": 1,
+      "temperature_c": 28.012500000000014,
+      "humidity_percent": 70.63095238095238,
+      "week_start": "2018-03-05"
+    },
+    {
+      "week_ending": "2018-03-18",
+      "hours": 168,
+      "rainfall_mm": 0.7000000000000001,
+      "temperature_c": 28.162500000000005,
+      "humidity_percent": 67.92261904761905,
+      "week_start": "2018-03-12"
+    },
+    {
+      "week_ending": "2018-03-25",
+      "hours": 168,
+      "rainfall_mm": 0.7,
+      "temperature_c": 27.905952380952368,
+      "humidity_percent": 65.72619047619048,
+      "week_start": "2018-03-19"
+    },
+    {
+      "week_ending": "2018-04-01",
+      "hours": 168,
+      "rainfall_mm": 1.3,
+      "temperature_c": 27.654761904761916,
+      "humidity_percent": 68.10119047619048,
+      "week_start": "2018-03-26"
+    },
+    {
+      "week_ending": "2018-04-08",
+      "hours": 168,
+      "rainfall_mm": 0.8999999999999999,
+      "temperature_c": 28.452380952380953,
+      "humidity_percent": 69.30952380952381,
+      "week_start": "2018-04-02"
+    },
+    {
+      "week_ending": "2018-04-15",
+      "hours": 168,
+      "rainfall_mm": 1.4000000000000001,
+      "temperature_c": 29.730357142857148,
+      "humidity_percent": 69.91666666666667,
+      "week_start": "2018-04-09"
+    },
+    {
+      "week_ending": "2018-04-22",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 29.91666666666666,
+      "humidity_percent": 66.66666666666667,
+      "week_start": "2018-04-16"
+    },
+    {
+      "week_ending": "2018-04-29",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 30.74702380952381,
+      "humidity_percent": 65.86904761904762,
+      "week_start": "2018-04-23"
+    },
+    {
+      "week_ending": "2018-05-06",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 30.651785714285715,
+      "humidity_percent": 67.24404761904762,
+      "week_start": "2018-04-30"
+    },
+    {
+      "week_ending": "2018-05-13",
+      "hours": 168,
+      "rainfall_mm": 3.1,
+      "temperature_c": 30.830952380952358,
+      "humidity_percent": 66.20833333333333,
+      "week_start": "2018-05-07"
+    },
+    {
+      "week_ending": "2018-05-20",
+      "hours": 168,
+      "rainfall_mm": 1.5000000000000002,
+      "temperature_c": 31.261309523809523,
+      "humidity_percent": 65.53571428571429,
+      "week_start": "2018-05-14"
+    },
+    {
+      "week_ending": "2018-05-27",
+      "hours": 168,
+      "rainfall_mm": 5.9,
+      "temperature_c": 31.02380952380951,
+      "humidity_percent": 66.78571428571429,
+      "week_start": "2018-05-21"
+    },
+    {
+      "week_ending": "2018-06-03",
+      "hours": 168,
+      "rainfall_mm": 11.9,
+      "temperature_c": 31.019642857142863,
+      "humidity_percent": 68.21428571428571,
+      "week_start": "2018-05-28"
+    },
+    {
+      "week_ending": "2018-06-10",
+      "hours": 168,
+      "rainfall_mm": 128.59999999999997,
+      "temperature_c": 28.52083333333333,
+      "humidity_percent": 81.17857142857143,
+      "week_start": "2018-06-04"
+    },
+    {
+      "week_ending": "2018-06-17",
+      "hours": 168,
+      "rainfall_mm": 76.39999999999998,
+      "temperature_c": 27.451190476190476,
+      "humidity_percent": 87.25,
+      "week_start": "2018-06-11"
+    },
+    {
+      "week_ending": "2018-06-24",
+      "hours": 168,
+      "rainfall_mm": 52.70000000000002,
+      "temperature_c": 28.33035714285716,
+      "humidity_percent": 81.79166666666667,
+      "week_start": "2018-06-18"
+    },
+    {
+      "week_ending": "2018-07-01",
+      "hours": 168,
+      "rainfall_mm": 50.500000000000064,
+      "temperature_c": 27.953571428571433,
+      "humidity_percent": 83.63690476190476,
+      "week_start": "2018-06-25"
+    },
+    {
+      "week_ending": "2018-07-08",
+      "hours": 168,
+      "rainfall_mm": 77.99999999999999,
+      "temperature_c": 27.916071428571442,
+      "humidity_percent": 84.60714285714286,
+      "week_start": "2018-07-02"
+    },
+    {
+      "week_ending": "2018-07-15",
+      "hours": 168,
+      "rainfall_mm": 216.60000000000005,
+      "temperature_c": 27.005357142857136,
+      "humidity_percent": 88.23214285714286,
+      "week_start": "2018-07-09"
+    },
+    {
+      "week_ending": "2018-07-22",
+      "hours": 168,
+      "rainfall_mm": 162.40000000000003,
+      "temperature_c": 26.770833333333318,
+      "humidity_percent": 90.5,
+      "week_start": "2018-07-16"
+    },
+    {
+      "week_ending": "2018-07-29",
+      "hours": 168,
+      "rainfall_mm": 146.29999999999987,
+      "temperature_c": 26.85,
+      "humidity_percent": 88.50595238095238,
+      "week_start": "2018-07-23"
+    },
+    {
+      "week_ending": "2018-08-05",
+      "hours": 168,
+      "rainfall_mm": 49.20000000000002,
+      "temperature_c": 27.66904761904763,
+      "humidity_percent": 86.04761904761905,
+      "week_start": "2018-07-30"
+    },
+    {
+      "week_ending": "2018-08-12",
+      "hours": 168,
+      "rainfall_mm": 116.60000000000004,
+      "temperature_c": 27.222619047619055,
+      "humidity_percent": 86.79761904761905,
+      "week_start": "2018-08-06"
+    },
+    {
+      "week_ending": "2018-08-19",
+      "hours": 168,
+      "rainfall_mm": 71.00000000000009,
+      "temperature_c": 27.412500000000012,
+      "humidity_percent": 86.96428571428571,
+      "week_start": "2018-08-13"
+    },
+    {
+      "week_ending": "2018-08-26",
+      "hours": 168,
+      "rainfall_mm": 40.999999999999986,
+      "temperature_c": 27.75238095238094,
+      "humidity_percent": 86.35714285714286,
+      "week_start": "2018-08-20"
+    },
+    {
+      "week_ending": "2018-09-02",
+      "hours": 168,
+      "rainfall_mm": 43.599999999999994,
+      "temperature_c": 28.225000000000005,
+      "humidity_percent": 80.69642857142857,
+      "week_start": "2018-08-27"
+    },
+    {
+      "week_ending": "2018-09-09",
+      "hours": 168,
+      "rainfall_mm": 101.6,
+      "temperature_c": 27.14940476190476,
+      "humidity_percent": 86.50595238095238,
+      "week_start": "2018-09-03"
+    },
+    {
+      "week_ending": "2018-09-16",
+      "hours": 168,
+      "rainfall_mm": 93.20000000000003,
+      "temperature_c": 27.514285714285727,
+      "humidity_percent": 85.8452380952381,
+      "week_start": "2018-09-10"
+    },
+    {
+      "week_ending": "2018-09-23",
+      "hours": 168,
+      "rainfall_mm": 17.2,
+      "temperature_c": 28.37142857142857,
+      "humidity_percent": 81.42857142857143,
+      "week_start": "2018-09-17"
+    },
+    {
+      "week_ending": "2018-09-30",
+      "hours": 168,
+      "rainfall_mm": 9.899999999999999,
+      "temperature_c": 28.56785714285715,
+      "humidity_percent": 81.73214285714286,
+      "week_start": "2018-09-24"
+    },
+    {
+      "week_ending": "2018-10-07",
+      "hours": 168,
+      "rainfall_mm": 49.50000000000001,
+      "temperature_c": 28.1654761904762,
+      "humidity_percent": 80.25,
+      "week_start": "2018-10-01"
+    },
+    {
+      "week_ending": "2018-10-14",
+      "hours": 168,
+      "rainfall_mm": 2.4000000000000004,
+      "temperature_c": 29.115476190476183,
+      "humidity_percent": 77.55357142857143,
+      "week_start": "2018-10-08"
+    },
+    {
+      "week_ending": "2018-10-21",
+      "hours": 168,
+      "rainfall_mm": 10.799999999999997,
+      "temperature_c": 28.732142857142858,
+      "humidity_percent": 77.60714285714286,
+      "week_start": "2018-10-15"
+    },
+    {
+      "week_ending": "2018-10-28",
+      "hours": 168,
+      "rainfall_mm": 1.1,
+      "temperature_c": 28.88035714285715,
+      "humidity_percent": 71.22619047619048,
+      "week_start": "2018-10-22"
+    },
+    {
+      "week_ending": "2018-11-04",
+      "hours": 168,
+      "rainfall_mm": 15.799999999999994,
+      "temperature_c": 28.616071428571427,
+      "humidity_percent": 75.96428571428571,
+      "week_start": "2018-10-29"
+    },
+    {
+      "week_ending": "2018-11-11",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.801190476190474,
+      "humidity_percent": 70.07738095238095,
+      "week_start": "2018-11-05"
+    },
+    {
+      "week_ending": "2018-11-18",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 28.889285714285723,
+      "humidity_percent": 68.96428571428571,
+      "week_start": "2018-11-12"
+    },
+    {
+      "week_ending": "2018-11-25",
+      "hours": 168,
+      "rainfall_mm": 2.0000000000000004,
+      "temperature_c": 28.024999999999995,
+      "humidity_percent": 74.3452380952381,
+      "week_start": "2018-11-19"
+    },
+    {
+      "week_ending": "2018-12-02",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.204166666666662,
+      "humidity_percent": 71.46428571428571,
+      "week_start": "2018-11-26"
+    },
+    {
+      "week_ending": "2018-12-09",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 28.550000000000004,
+      "humidity_percent": 73.13095238095238,
+      "week_start": "2018-12-03"
+    },
+    {
+      "week_ending": "2018-12-16",
+      "hours": 168,
+      "rainfall_mm": 3.000000000000001,
+      "temperature_c": 27.83392857142856,
+      "humidity_percent": 74.83928571428571,
+      "week_start": "2018-12-10"
+    },
+    {
+      "week_ending": "2018-12-23",
+      "hours": 168,
+      "rainfall_mm": 69.30000000000001,
+      "temperature_c": 27.192261904761896,
+      "humidity_percent": 76.20238095238095,
+      "week_start": "2018-12-17"
+    },
+    {
+      "week_ending": "2018-12-30",
+      "hours": 168,
+      "rainfall_mm": 135.1,
+      "temperature_c": 26.35535714285713,
+      "humidity_percent": 83.24404761904762,
+      "week_start": "2018-12-24"
+    },
+    {
+      "week_ending": "2019-01-06",
+      "hours": 168,
+      "rainfall_mm": 2.6000000000000005,
+      "temperature_c": 26.52857142857144,
+      "humidity_percent": 81.22619047619048,
+      "week_start": "2018-12-31"
+    },
+    {
+      "week_ending": "2019-01-13",
+      "hours": 168,
+      "rainfall_mm": 0.7,
+      "temperature_c": 26.692261904761907,
+      "humidity_percent": 76.19642857142857,
+      "week_start": "2019-01-07"
+    },
+    {
+      "week_ending": "2019-01-20",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 26.60059523809522,
+      "humidity_percent": 72.28571428571429,
+      "week_start": "2019-01-14"
+    },
+    {
+      "week_ending": "2019-01-27",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 26.351190476190474,
+      "humidity_percent": 72.14880952380952,
+      "week_start": "2019-01-21"
+    },
+    {
+      "week_ending": "2019-02-03",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 25.757738095238107,
+      "humidity_percent": 71.70238095238095,
+      "week_start": "2019-01-28"
+    },
+    {
+      "week_ending": "2019-02-10",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 26.75595238095238,
+      "humidity_percent": 71.03571428571429,
+      "week_start": "2019-02-04"
+    },
+    {
+      "week_ending": "2019-02-17",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 26.866666666666656,
+      "humidity_percent": 69.61904761904762,
+      "week_start": "2019-02-11"
+    },
+    {
+      "week_ending": "2019-02-24",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 27.18809523809524,
+      "humidity_percent": 66.13095238095238,
+      "week_start": "2019-02-18"
+    },
+    {
+      "week_ending": "2019-03-03",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 27.052976190476198,
+      "humidity_percent": 67.89880952380952,
+      "week_start": "2019-02-25"
+    },
+    {
+      "week_ending": "2019-03-10",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.191071428571416,
+      "humidity_percent": 67.86309523809524,
+      "week_start": "2019-03-04"
+    },
+    {
+      "week_ending": "2019-03-17",
+      "hours": 168,
+      "rainfall_mm": 2,
+      "temperature_c": 28.428571428571434,
+      "humidity_percent": 67.69047619047619,
+      "week_start": "2019-03-11"
+    },
+    {
+      "week_ending": "2019-03-24",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.798214285714288,
+      "humidity_percent": 64.73214285714286,
+      "week_start": "2019-03-18"
+    },
+    {
+      "week_ending": "2019-03-31",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.90833333333333,
+      "humidity_percent": 64.67857142857143,
+      "week_start": "2019-03-25"
+    },
+    {
+      "week_ending": "2019-04-07",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 29.60773809523808,
+      "humidity_percent": 63.976190476190474,
+      "week_start": "2019-04-01"
+    },
+    {
+      "week_ending": "2019-04-14",
+      "hours": 168,
+      "rainfall_mm": 7.900000000000001,
+      "temperature_c": 30.270833333333332,
+      "humidity_percent": 69.29166666666667,
+      "week_start": "2019-04-08"
+    },
+    {
+      "week_ending": "2019-04-21",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 30.788095238095252,
+      "humidity_percent": 64.38095238095238,
+      "week_start": "2019-04-15"
+    },
+    {
+      "week_ending": "2019-04-28",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 30.725595238095224,
+      "humidity_percent": 62.166666666666664,
+      "week_start": "2019-04-22"
+    },
+    {
+      "week_ending": "2019-05-05",
+      "hours": 168,
+      "rainfall_mm": 10.200000000000001,
+      "temperature_c": 30.355952380952388,
+      "humidity_percent": 68.45833333333333,
+      "week_start": "2019-04-29"
+    },
+    {
+      "week_ending": "2019-05-12",
+      "hours": 168,
+      "rainfall_mm": 61.700000000000024,
+      "temperature_c": 28.334523809523812,
+      "humidity_percent": 83.86309523809524,
+      "week_start": "2019-05-06"
+    },
+    {
+      "week_ending": "2019-05-19",
+      "hours": 168,
+      "rainfall_mm": 5.699999999999998,
+      "temperature_c": 30.63095238095237,
+      "humidity_percent": 74.23214285714286,
+      "week_start": "2019-05-13"
+    },
+    {
+      "week_ending": "2019-05-26",
+      "hours": 168,
+      "rainfall_mm": 31.700000000000003,
+      "temperature_c": 29.572023809523802,
+      "humidity_percent": 76.73809523809524,
+      "week_start": "2019-05-20"
+    },
+    {
+      "week_ending": "2019-06-02",
+      "hours": 168,
+      "rainfall_mm": 18.8,
+      "temperature_c": 30.139285714285695,
+      "humidity_percent": 75.31547619047619,
+      "week_start": "2019-05-27"
+    },
+    {
+      "week_ending": "2019-06-09",
+      "hours": 168,
+      "rainfall_mm": 8.299999999999999,
+      "temperature_c": 31.341666666666654,
+      "humidity_percent": 68.33928571428571,
+      "week_start": "2019-06-03"
+    },
+    {
+      "week_ending": "2019-06-16",
+      "hours": 168,
+      "rainfall_mm": 24.4,
+      "temperature_c": 29.852976190476188,
+      "humidity_percent": 76.54761904761905,
+      "week_start": "2019-06-10"
+    },
+    {
+      "week_ending": "2019-06-23",
+      "hours": 168,
+      "rainfall_mm": 11.999999999999995,
+      "temperature_c": 30.870833333333334,
+      "humidity_percent": 70.89285714285714,
+      "week_start": "2019-06-17"
+    },
+    {
+      "week_ending": "2019-06-30",
+      "hours": 168,
+      "rainfall_mm": 99.40000000000002,
+      "temperature_c": 27.92142857142859,
+      "humidity_percent": 84.32142857142857,
+      "week_start": "2019-06-24"
+    },
+    {
+      "week_ending": "2019-07-07",
+      "hours": 168,
+      "rainfall_mm": 91.89999999999999,
+      "temperature_c": 28.76726190476192,
+      "humidity_percent": 79.95833333333333,
+      "week_start": "2019-07-01"
+    },
+    {
+      "week_ending": "2019-07-14",
+      "hours": 168,
+      "rainfall_mm": 16.999999999999993,
+      "temperature_c": 29.266071428571433,
+      "humidity_percent": 78.04166666666667,
+      "week_start": "2019-07-08"
+    },
+    {
+      "week_ending": "2019-07-21",
+      "hours": 168,
+      "rainfall_mm": 96.89999999999999,
+      "temperature_c": 27.841666666666658,
+      "humidity_percent": 84.75595238095238,
+      "week_start": "2019-07-15"
+    },
+    {
+      "week_ending": "2019-07-28",
+      "hours": 168,
+      "rainfall_mm": 63.60000000000002,
+      "temperature_c": 27.8107142857143,
+      "humidity_percent": 84.49404761904762,
+      "week_start": "2019-07-22"
+    },
+    {
+      "week_ending": "2019-08-04",
+      "hours": 168,
+      "rainfall_mm": 186.60000000000008,
+      "temperature_c": 26.756547619047627,
+      "humidity_percent": 87.88690476190476,
+      "week_start": "2019-07-29"
+    },
+    {
+      "week_ending": "2019-08-11",
+      "hours": 168,
+      "rainfall_mm": 80.79999999999997,
+      "temperature_c": 27.6875,
+      "humidity_percent": 86.20833333333333,
+      "week_start": "2019-08-05"
+    },
+    {
+      "week_ending": "2019-08-18",
+      "hours": 168,
+      "rainfall_mm": 20.69999999999998,
+      "temperature_c": 28.90357142857144,
+      "humidity_percent": 82.23809523809524,
+      "week_start": "2019-08-12"
+    },
+    {
+      "week_ending": "2019-08-25",
+      "hours": 168,
+      "rainfall_mm": 60.900000000000034,
+      "temperature_c": 27.62738095238096,
+      "humidity_percent": 85.92857142857143,
+      "week_start": "2019-08-19"
+    },
+    {
+      "week_ending": "2019-09-01",
+      "hours": 168,
+      "rainfall_mm": 97.70000000000003,
+      "temperature_c": 27.25416666666668,
+      "humidity_percent": 85.29761904761905,
+      "week_start": "2019-08-26"
+    },
+    {
+      "week_ending": "2019-09-08",
+      "hours": 168,
+      "rainfall_mm": 40.800000000000054,
+      "temperature_c": 28.14880952380951,
+      "humidity_percent": 82.01190476190476,
+      "week_start": "2019-09-02"
+    },
+    {
+      "week_ending": "2019-09-15",
+      "hours": 168,
+      "rainfall_mm": 87.10000000000005,
+      "temperature_c": 27.02142857142859,
+      "humidity_percent": 86.33333333333333,
+      "week_start": "2019-09-09"
+    },
+    {
+      "week_ending": "2019-09-22",
+      "hours": 168,
+      "rainfall_mm": 166.70000000000002,
+      "temperature_c": 26.864285714285703,
+      "humidity_percent": 86.7202380952381,
+      "week_start": "2019-09-16"
+    },
+    {
+      "week_ending": "2019-09-29",
+      "hours": 168,
+      "rainfall_mm": 4.5,
+      "temperature_c": 28.968452380952392,
+      "humidity_percent": 79.32142857142857,
+      "week_start": "2019-09-23"
+    },
+    {
+      "week_ending": "2019-10-06",
+      "hours": 168,
+      "rainfall_mm": 23.700000000000014,
+      "temperature_c": 28.10178571428572,
+      "humidity_percent": 80.85714285714286,
+      "week_start": "2019-09-30"
+    },
+    {
+      "week_ending": "2019-10-13",
+      "hours": 168,
+      "rainfall_mm": 2.0000000000000004,
+      "temperature_c": 28.825000000000006,
+      "humidity_percent": 74.76785714285714,
+      "week_start": "2019-10-07"
+    },
+    {
+      "week_ending": "2019-10-20",
+      "hours": 168,
+      "rainfall_mm": 0.7,
+      "temperature_c": 29.022023809523812,
+      "humidity_percent": 73.77380952380952,
+      "week_start": "2019-10-14"
+    },
+    {
+      "week_ending": "2019-10-27",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 29.434523809523814,
+      "humidity_percent": 71.32142857142857,
+      "week_start": "2019-10-21"
+    },
+    {
+      "week_ending": "2019-11-03",
+      "hours": 168,
+      "rainfall_mm": 17.299999999999997,
+      "temperature_c": 28.26726190476191,
+      "humidity_percent": 78.94642857142857,
+      "week_start": "2019-10-28"
+    },
+    {
+      "week_ending": "2019-11-10",
+      "hours": 168,
+      "rainfall_mm": 30.300000000000008,
+      "temperature_c": 27.846428571428564,
+      "humidity_percent": 82.83928571428571,
+      "week_start": "2019-11-04"
+    },
+    {
+      "week_ending": "2019-11-17",
+      "hours": 168,
+      "rainfall_mm": 6.999999999999999,
+      "temperature_c": 27.89226190476192,
+      "humidity_percent": 78.24404761904762,
+      "week_start": "2019-11-11"
+    },
+    {
+      "week_ending": "2019-11-24",
+      "hours": 168,
+      "rainfall_mm": 2.6000000000000005,
+      "temperature_c": 28.39226190476192,
+      "humidity_percent": 79.76785714285714,
+      "week_start": "2019-11-18"
+    },
+    {
+      "week_ending": "2019-12-01",
+      "hours": 168,
+      "rainfall_mm": 1.2,
+      "temperature_c": 27.93154761904763,
+      "humidity_percent": 73.22619047619048,
+      "week_start": "2019-11-25"
+    },
+    {
+      "week_ending": "2019-12-08",
+      "hours": 168,
+      "rainfall_mm": 64.1,
+      "temperature_c": 27.448214285714286,
+      "humidity_percent": 78.80357142857143,
+      "week_start": "2019-12-02"
+    },
+    {
+      "week_ending": "2019-12-15",
+      "hours": 168,
+      "rainfall_mm": 5.699999999999999,
+      "temperature_c": 27.316666666666677,
+      "humidity_percent": 77.5297619047619,
+      "week_start": "2019-12-09"
+    },
+    {
+      "week_ending": "2019-12-22",
+      "hours": 168,
+      "rainfall_mm": 0.4,
+      "temperature_c": 27.833333333333318,
+      "humidity_percent": 76.25595238095238,
+      "week_start": "2019-12-16"
+    },
+    {
+      "week_ending": "2019-12-29",
+      "hours": 168,
+      "rainfall_mm": 17.8,
+      "temperature_c": 27.470833333333342,
+      "humidity_percent": 79.5952380952381,
+      "week_start": "2019-12-23"
+    },
+    {
+      "week_ending": "2020-01-05",
+      "hours": 168,
+      "rainfall_mm": 0.7999999999999999,
+      "temperature_c": 27.34642857142857,
+      "humidity_percent": 74.63690476190476,
+      "week_start": "2019-12-30"
+    },
+    {
+      "week_ending": "2020-01-12",
+      "hours": 168,
+      "rainfall_mm": 0.4,
+      "temperature_c": 27.35833333333331,
+      "humidity_percent": 73.82738095238095,
+      "week_start": "2020-01-06"
+    },
+    {
+      "week_ending": "2020-01-19",
+      "hours": 168,
+      "rainfall_mm": 0.7999999999999999,
+      "temperature_c": 27.494642857142864,
+      "humidity_percent": 74.78571428571429,
+      "week_start": "2020-01-13"
+    },
+    {
+      "week_ending": "2020-01-26",
+      "hours": 168,
+      "rainfall_mm": 4.6,
+      "temperature_c": 26.953571428571415,
+      "humidity_percent": 73.86309523809524,
+      "week_start": "2020-01-20"
+    },
+    {
+      "week_ending": "2020-02-02",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 26.51785714285716,
+      "humidity_percent": 72.46428571428571,
+      "week_start": "2020-01-27"
+    },
+    {
+      "week_ending": "2020-02-09",
+      "hours": 168,
+      "rainfall_mm": 3.1000000000000005,
+      "temperature_c": 26.58928571428572,
+      "humidity_percent": 73.08333333333333,
+      "week_start": "2020-02-03"
+    },
+    {
+      "week_ending": "2020-02-16",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 26.934523809523814,
+      "humidity_percent": 69.42857142857143,
+      "week_start": "2020-02-10"
+    },
+    {
+      "week_ending": "2020-02-23",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 26.772619047619038,
+      "humidity_percent": 67.75,
+      "week_start": "2020-02-17"
+    },
+    {
+      "week_ending": "2020-03-01",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 27.399404761904766,
+      "humidity_percent": 70.8452380952381,
+      "week_start": "2020-02-24"
+    },
+    {
+      "week_ending": "2020-03-08",
+      "hours": 168,
+      "rainfall_mm": 0.7999999999999999,
+      "temperature_c": 28.23095238095237,
+      "humidity_percent": 70.2797619047619,
+      "week_start": "2020-03-02"
+    },
+    {
+      "week_ending": "2020-03-15",
+      "hours": 168,
+      "rainfall_mm": 2.5,
+      "temperature_c": 29.264880952380953,
+      "humidity_percent": 69.67261904761905,
+      "week_start": "2020-03-09"
+    },
+    {
+      "week_ending": "2020-03-22",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.802380952380958,
+      "humidity_percent": 68.86309523809524,
+      "week_start": "2020-03-16"
+    },
+    {
+      "week_ending": "2020-03-29",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 29.466071428571436,
+      "humidity_percent": 67.33928571428571,
+      "week_start": "2020-03-23"
+    },
+    {
+      "week_ending": "2020-04-05",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 29.78690476190476,
+      "humidity_percent": 64.89880952380952,
+      "week_start": "2020-03-30"
+    },
+    {
+      "week_ending": "2020-04-12",
+      "hours": 168,
+      "rainfall_mm": 1.9000000000000001,
+      "temperature_c": 29.60714285714285,
+      "humidity_percent": 68.73809523809524,
+      "week_start": "2020-04-06"
+    },
+    {
+      "week_ending": "2020-04-19",
+      "hours": 168,
+      "rainfall_mm": 1.8,
+      "temperature_c": 29.499404761904753,
+      "humidity_percent": 70.96428571428571,
+      "week_start": "2020-04-13"
+    },
+    {
+      "week_ending": "2020-04-26",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 30.776785714285715,
+      "humidity_percent": 67.25595238095238,
+      "week_start": "2020-04-20"
+    },
+    {
+      "week_ending": "2020-05-03",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 30.43333333333332,
+      "humidity_percent": 67.51190476190476,
+      "week_start": "2020-04-27"
+    },
+    {
+      "week_ending": "2020-05-10",
+      "hours": 168,
+      "rainfall_mm": 4.8,
+      "temperature_c": 31.616071428571423,
+      "humidity_percent": 68.03571428571429,
+      "week_start": "2020-05-04"
+    },
+    {
+      "week_ending": "2020-05-17",
+      "hours": 168,
+      "rainfall_mm": 113.10000000000001,
+      "temperature_c": 30.248214285714283,
+      "humidity_percent": 73.1547619047619,
+      "week_start": "2020-05-11"
+    },
+    {
+      "week_ending": "2020-05-24",
+      "hours": 168,
+      "rainfall_mm": 33.9,
+      "temperature_c": 29.91428571428572,
+      "humidity_percent": 79.42857142857143,
+      "week_start": "2020-05-18"
+    },
+    {
+      "week_ending": "2020-05-31",
+      "hours": 168,
+      "rainfall_mm": 7.000000000000002,
+      "temperature_c": 30.194642857142867,
+      "humidity_percent": 75.125,
+      "week_start": "2020-05-25"
+    },
+    {
+      "week_ending": "2020-06-07",
+      "hours": 168,
+      "rainfall_mm": 3,
+      "temperature_c": 31.48452380952383,
+      "humidity_percent": 66.20833333333333,
+      "week_start": "2020-06-01"
+    },
+    {
+      "week_ending": "2020-06-14",
+      "hours": 168,
+      "rainfall_mm": 103.30000000000004,
+      "temperature_c": 29.31607142857143,
+      "humidity_percent": 76.32142857142857,
+      "week_start": "2020-06-08"
+    },
+    {
+      "week_ending": "2020-06-21",
+      "hours": 168,
+      "rainfall_mm": 35.699999999999996,
+      "temperature_c": 29.519642857142852,
+      "humidity_percent": 77.49404761904762,
+      "week_start": "2020-06-15"
+    },
+    {
+      "week_ending": "2020-06-28",
+      "hours": 168,
+      "rainfall_mm": 31.2,
+      "temperature_c": 29.47142857142857,
+      "humidity_percent": 77.99404761904762,
+      "week_start": "2020-06-22"
+    },
+    {
+      "week_ending": "2020-07-05",
+      "hours": 168,
+      "rainfall_mm": 21.300000000000004,
+      "temperature_c": 29.248809523809513,
+      "humidity_percent": 76.20238095238095,
+      "week_start": "2020-06-29"
+    },
+    {
+      "week_ending": "2020-07-12",
+      "hours": 168,
+      "rainfall_mm": 30.700000000000003,
+      "temperature_c": 29.57916666666665,
+      "humidity_percent": 77.73214285714286,
+      "week_start": "2020-07-06"
+    },
+    {
+      "week_ending": "2020-07-19",
+      "hours": 168,
+      "rainfall_mm": 15.699999999999994,
+      "temperature_c": 29.570833333333326,
+      "humidity_percent": 76.11904761904762,
+      "week_start": "2020-07-13"
+    },
+    {
+      "week_ending": "2020-07-26",
+      "hours": 168,
+      "rainfall_mm": 36.20000000000001,
+      "temperature_c": 29.147619047619038,
+      "humidity_percent": 78.0297619047619,
+      "week_start": "2020-07-20"
+    },
+    {
+      "week_ending": "2020-08-02",
+      "hours": 168,
+      "rainfall_mm": 156.39999999999998,
+      "temperature_c": 27.85773809523811,
+      "humidity_percent": 83.92857142857143,
+      "week_start": "2020-07-27"
+    },
+    {
+      "week_ending": "2020-08-09",
+      "hours": 168,
+      "rainfall_mm": 111.8,
+      "temperature_c": 28.090476190476178,
+      "humidity_percent": 83.14880952380952,
+      "week_start": "2020-08-03"
+    },
+    {
+      "week_ending": "2020-08-16",
+      "hours": 168,
+      "rainfall_mm": 53.000000000000036,
+      "temperature_c": 27.91904761904763,
+      "humidity_percent": 83.66666666666667,
+      "week_start": "2020-08-10"
+    },
+    {
+      "week_ending": "2020-08-23",
+      "hours": 168,
+      "rainfall_mm": 78.49999999999997,
+      "temperature_c": 27.93630952380951,
+      "humidity_percent": 84.93452380952381,
+      "week_start": "2020-08-17"
+    },
+    {
+      "week_ending": "2020-08-30",
+      "hours": 168,
+      "rainfall_mm": 18.400000000000006,
+      "temperature_c": 29.212499999999984,
+      "humidity_percent": 80.0952380952381,
+      "week_start": "2020-08-24"
+    },
+    {
+      "week_ending": "2020-09-06",
+      "hours": 168,
+      "rainfall_mm": 24.400000000000006,
+      "temperature_c": 29.02559523809524,
+      "humidity_percent": 81.66666666666667,
+      "week_start": "2020-08-31"
+    },
+    {
+      "week_ending": "2020-09-13",
+      "hours": 168,
+      "rainfall_mm": 39.00000000000001,
+      "temperature_c": 29.094642857142855,
+      "humidity_percent": 78.9702380952381,
+      "week_start": "2020-09-07"
+    },
+    {
+      "week_ending": "2020-09-20",
+      "hours": 168,
+      "rainfall_mm": 60.200000000000074,
+      "temperature_c": 28.326190476190483,
+      "humidity_percent": 82.77380952380952,
+      "week_start": "2020-09-14"
+    },
+    {
+      "week_ending": "2020-09-27",
+      "hours": 168,
+      "rainfall_mm": 50.40000000000003,
+      "temperature_c": 28.691071428571437,
+      "humidity_percent": 81.43452380952381,
+      "week_start": "2020-09-21"
+    },
+    {
+      "week_ending": "2020-10-04",
+      "hours": 168,
+      "rainfall_mm": 31.700000000000006,
+      "temperature_c": 28.709523809523798,
+      "humidity_percent": 81.98214285714286,
+      "week_start": "2020-09-28"
+    },
+    {
+      "week_ending": "2020-10-11",
+      "hours": 168,
+      "rainfall_mm": 85.10000000000002,
+      "temperature_c": 27.950000000000006,
+      "humidity_percent": 83.67857142857143,
+      "week_start": "2020-10-05"
+    },
+    {
+      "week_ending": "2020-10-18",
+      "hours": 168,
+      "rainfall_mm": 79.50000000000001,
+      "temperature_c": 27.55833333333333,
+      "humidity_percent": 84.39285714285714,
+      "week_start": "2020-10-12"
+    },
+    {
+      "week_ending": "2020-10-25",
+      "hours": 168,
+      "rainfall_mm": 156.99999999999986,
+      "temperature_c": 27.694642857142878,
+      "humidity_percent": 84.81547619047619,
+      "week_start": "2020-10-19"
+    },
+    {
+      "week_ending": "2020-11-01",
+      "hours": 168,
+      "rainfall_mm": 97.09999999999997,
+      "temperature_c": 27.60416666666666,
+      "humidity_percent": 82.04166666666667,
+      "week_start": "2020-10-26"
+    },
+    {
+      "week_ending": "2020-11-08",
+      "hours": 168,
+      "rainfall_mm": 34.20000000000001,
+      "temperature_c": 27.685119047619043,
+      "humidity_percent": 82.60119047619048,
+      "week_start": "2020-11-02"
+    },
+    {
+      "week_ending": "2020-11-15",
+      "hours": 168,
+      "rainfall_mm": 223.89999999999998,
+      "temperature_c": 27.759523809523813,
+      "humidity_percent": 83.70833333333333,
+      "week_start": "2020-11-09"
+    },
+    {
+      "week_ending": "2020-11-22",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 28.444047619047648,
+      "humidity_percent": 77.58928571428571,
+      "week_start": "2020-11-16"
+    },
+    {
+      "week_ending": "2020-11-29",
+      "hours": 168,
+      "rainfall_mm": 5.5,
+      "temperature_c": 27.639285714285716,
+      "humidity_percent": 76.60119047619048,
+      "week_start": "2020-11-23"
+    },
+    {
+      "week_ending": "2020-12-06",
+      "hours": 168,
+      "rainfall_mm": 107.89999999999999,
+      "temperature_c": 27.574999999999974,
+      "humidity_percent": 79.48214285714286,
+      "week_start": "2020-11-30"
+    },
+    {
+      "week_ending": "2020-12-13",
+      "hours": 168,
+      "rainfall_mm": 26.999999999999996,
+      "temperature_c": 27.75178571428572,
+      "humidity_percent": 83.68452380952381,
+      "week_start": "2020-12-07"
+    },
+    {
+      "week_ending": "2020-12-20",
+      "hours": 168,
+      "rainfall_mm": 94.19999999999999,
+      "temperature_c": 27.25119047619048,
+      "humidity_percent": 81.38690476190476,
+      "week_start": "2020-12-14"
+    },
+    {
+      "week_ending": "2020-12-27",
+      "hours": 168,
+      "rainfall_mm": 57.29999999999999,
+      "temperature_c": 27.40238095238095,
+      "humidity_percent": 82.30952380952381,
+      "week_start": "2020-12-21"
+    },
+    {
+      "week_ending": "2021-01-03",
+      "hours": 168,
+      "rainfall_mm": 28.600000000000005,
+      "temperature_c": 26.67083333333335,
+      "humidity_percent": 80.79761904761905,
+      "week_start": "2020-12-28"
+    },
+    {
+      "week_ending": "2021-01-10",
+      "hours": 168,
+      "rainfall_mm": 2.2,
+      "temperature_c": 26.650595238095224,
+      "humidity_percent": 78.33928571428571,
+      "week_start": "2021-01-04"
+    },
+    {
+      "week_ending": "2021-01-17",
+      "hours": 168,
+      "rainfall_mm": 6.199999999999999,
+      "temperature_c": 26.11845238095238,
+      "humidity_percent": 75.49404761904762,
+      "week_start": "2021-01-11"
+    },
+    {
+      "week_ending": "2021-01-24",
+      "hours": 168,
+      "rainfall_mm": 53.400000000000034,
+      "temperature_c": 26.745833333333344,
+      "humidity_percent": 84.45238095238095,
+      "week_start": "2021-01-18"
+    },
+    {
+      "week_ending": "2021-01-31",
+      "hours": 168,
+      "rainfall_mm": 2.2,
+      "temperature_c": 26.38273809523809,
+      "humidity_percent": 75.92261904761905,
+      "week_start": "2021-01-25"
+    },
+    {
+      "week_ending": "2021-02-07",
+      "hours": 168,
+      "rainfall_mm": 0.2,
+      "temperature_c": 26.667857142857162,
+      "humidity_percent": 74.41071428571429,
+      "week_start": "2021-02-01"
+    },
+    {
+      "week_ending": "2021-02-14",
+      "hours": 168,
+      "rainfall_mm": 12.699999999999994,
+      "temperature_c": 26.776190476190468,
+      "humidity_percent": 80.08928571428571,
+      "week_start": "2021-02-08"
+    },
+    {
+      "week_ending": "2021-02-21",
+      "hours": 168,
+      "rainfall_mm": 6.5,
+      "temperature_c": 25.869642857142864,
+      "humidity_percent": 71.54761904761905,
+      "week_start": "2021-02-15"
+    },
+    {
+      "week_ending": "2021-02-28",
+      "hours": 168,
+      "rainfall_mm": 45.100000000000016,
+      "temperature_c": 27.519047619047612,
+      "humidity_percent": 79.81547619047619,
+      "week_start": "2021-02-22"
+    },
+    {
+      "week_ending": "2021-03-07",
+      "hours": 168,
+      "rainfall_mm": 1,
+      "temperature_c": 28.1845238095238,
+      "humidity_percent": 74.51190476190476,
+      "week_start": "2021-03-01"
+    },
+    {
+      "week_ending": "2021-03-14",
+      "hours": 168,
+      "rainfall_mm": 10.799999999999997,
+      "temperature_c": 27.522023809523823,
+      "humidity_percent": 71.66071428571429,
+      "week_start": "2021-03-08"
+    },
+    {
+      "week_ending": "2021-03-21",
+      "hours": 168,
+      "rainfall_mm": 12.399999999999997,
+      "temperature_c": 28.52083333333334,
+      "humidity_percent": 78.69047619047619,
+      "week_start": "2021-03-15"
+    },
+    {
+      "week_ending": "2021-03-28",
+      "hours": 168,
+      "rainfall_mm": 0.4,
+      "temperature_c": 28.9577380952381,
+      "humidity_percent": 71.05952380952381,
+      "week_start": "2021-03-22"
+    },
+    {
+      "week_ending": "2021-04-04",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 29.610119047619058,
+      "humidity_percent": 67.35714285714286,
+      "week_start": "2021-03-29"
+    },
+    {
+      "week_ending": "2021-04-11",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 28.948809523809516,
+      "humidity_percent": 67.23214285714286,
+      "week_start": "2021-04-05"
+    },
+    {
+      "week_ending": "2021-04-18",
+      "hours": 168,
+      "rainfall_mm": 5.3,
+      "temperature_c": 29.339285714285715,
+      "humidity_percent": 70.49404761904762,
+      "week_start": "2021-04-12"
+    },
+    {
+      "week_ending": "2021-04-25",
+      "hours": 168,
+      "rainfall_mm": 1.8,
+      "temperature_c": 29.359523809523818,
+      "humidity_percent": 71.71428571428571,
+      "week_start": "2021-04-19"
+    },
+    {
+      "week_ending": "2021-05-02",
+      "hours": 168,
+      "rainfall_mm": 0.6,
+      "temperature_c": 29.255357142857147,
+      "humidity_percent": 68.99404761904762,
+      "week_start": "2021-04-26"
+    },
+    {
+      "week_ending": "2021-05-09",
+      "hours": 168,
+      "rainfall_mm": 1.2,
+      "temperature_c": 30.56428571428571,
+      "humidity_percent": 67.94642857142857,
+      "week_start": "2021-05-03"
+    },
+    {
+      "week_ending": "2021-05-16",
+      "hours": 168,
+      "rainfall_mm": 1.3,
+      "temperature_c": 30.98035714285714,
+      "humidity_percent": 67.54761904761905,
+      "week_start": "2021-05-10"
+    },
+    {
+      "week_ending": "2021-05-23",
+      "hours": 168,
+      "rainfall_mm": 6.3,
+      "temperature_c": 30.720238095238106,
+      "humidity_percent": 69.19642857142857,
+      "week_start": "2021-05-17"
+    },
+    {
+      "week_ending": "2021-05-30",
+      "hours": 168,
+      "rainfall_mm": 4.6,
+      "temperature_c": 31.299404761904768,
+      "humidity_percent": 66.72619047619048,
+      "week_start": "2021-05-24"
+    },
+    {
+      "week_ending": "2021-06-06",
+      "hours": 168,
+      "rainfall_mm": 77.49999999999996,
+      "temperature_c": 29.600000000000012,
+      "humidity_percent": 78.53571428571429,
+      "week_start": "2021-05-31"
+    },
+    {
+      "week_ending": "2021-06-13",
+      "hours": 168,
+      "rainfall_mm": 76.90000000000002,
+      "temperature_c": 28.173809523809513,
+      "humidity_percent": 81.94642857142857,
+      "week_start": "2021-06-07"
+    },
+    {
+      "week_ending": "2021-06-20",
+      "hours": 168,
+      "rainfall_mm": 11.999999999999998,
+      "temperature_c": 29.378571428571437,
+      "humidity_percent": 78.44642857142857,
+      "week_start": "2021-06-14"
+    },
+    {
+      "week_ending": "2021-06-27",
+      "hours": 168,
+      "rainfall_mm": 40.40000000000004,
+      "temperature_c": 28.364880952380947,
+      "humidity_percent": 81.96428571428571,
+      "week_start": "2021-06-21"
+    },
+    {
+      "week_ending": "2021-07-04",
+      "hours": 168,
+      "rainfall_mm": 52.600000000000016,
+      "temperature_c": 28.795238095238098,
+      "humidity_percent": 79.81547619047619,
+      "week_start": "2021-06-28"
+    },
+    {
+      "week_ending": "2021-07-11",
+      "hours": 168,
+      "rainfall_mm": 27.40000000000001,
+      "temperature_c": 28.894642857142827,
+      "humidity_percent": 78.50595238095238,
+      "week_start": "2021-07-05"
+    },
+    {
+      "week_ending": "2021-07-18",
+      "hours": 168,
+      "rainfall_mm": 42.400000000000006,
+      "temperature_c": 28.61964285714286,
+      "humidity_percent": 80.625,
+      "week_start": "2021-07-12"
+    },
+    {
+      "week_ending": "2021-07-25",
+      "hours": 168,
+      "rainfall_mm": 106.20000000000003,
+      "temperature_c": 26.82916666666667,
+      "humidity_percent": 89.22619047619048,
+      "week_start": "2021-07-19"
+    },
+    {
+      "week_ending": "2021-08-01",
+      "hours": 168,
+      "rainfall_mm": 64.00000000000004,
+      "temperature_c": 28.219047619047636,
+      "humidity_percent": 85.60714285714286,
+      "week_start": "2021-07-26"
+    },
+    {
+      "week_ending": "2021-08-08",
+      "hours": 168,
+      "rainfall_mm": 36.40000000000002,
+      "temperature_c": 28.90059523809524,
+      "humidity_percent": 82.96428571428571,
+      "week_start": "2021-08-02"
+    },
+    {
+      "week_ending": "2021-08-15",
+      "hours": 168,
+      "rainfall_mm": 51.500000000000014,
+      "temperature_c": 28.06190476190478,
+      "humidity_percent": 81.38095238095238,
+      "week_start": "2021-08-09"
+    },
+    {
+      "week_ending": "2021-08-22",
+      "hours": 168,
+      "rainfall_mm": 27.5,
+      "temperature_c": 28.493452380952384,
+      "humidity_percent": 80.20238095238095,
+      "week_start": "2021-08-16"
+    },
+    {
+      "week_ending": "2021-08-29",
+      "hours": 168,
+      "rainfall_mm": 49.4,
+      "temperature_c": 27.763095238095236,
+      "humidity_percent": 82.41071428571429,
+      "week_start": "2021-08-23"
+    },
+    {
+      "week_ending": "2021-09-05",
+      "hours": 168,
+      "rainfall_mm": 26.600000000000016,
+      "temperature_c": 28.05952380952382,
+      "humidity_percent": 82,
+      "week_start": "2021-08-30"
+    },
+    {
+      "week_ending": "2021-09-12",
+      "hours": 168,
+      "rainfall_mm": 249.09999999999994,
+      "temperature_c": 27.170833333333338,
+      "humidity_percent": 86.35119047619048,
+      "week_start": "2021-09-06"
+    },
+    {
+      "week_ending": "2021-09-19",
+      "hours": 168,
+      "rainfall_mm": 25.799999999999997,
+      "temperature_c": 28.401190476190475,
+      "humidity_percent": 81.83333333333333,
+      "week_start": "2021-09-13"
+    },
+    {
+      "week_ending": "2021-09-26",
+      "hours": 168,
+      "rainfall_mm": 15.299999999999997,
+      "temperature_c": 28.8720238095238,
+      "humidity_percent": 78.54761904761905,
+      "week_start": "2021-09-20"
+    },
+    {
+      "week_ending": "2021-10-03",
+      "hours": 168,
+      "rainfall_mm": 27.89999999999999,
+      "temperature_c": 28.547023809523814,
+      "humidity_percent": 82.61309523809524,
+      "week_start": "2021-09-27"
+    },
+    {
+      "week_ending": "2021-10-10",
+      "hours": 168,
+      "rainfall_mm": 51.000000000000036,
+      "temperature_c": 28.021428571428583,
+      "humidity_percent": 82.79166666666667,
+      "week_start": "2021-10-04"
+    },
+    {
+      "week_ending": "2021-10-17",
+      "hours": 168,
+      "rainfall_mm": 63,
+      "temperature_c": 27.798214285714266,
+      "humidity_percent": 84.29761904761905,
+      "week_start": "2021-10-11"
+    },
+    {
+      "week_ending": "2021-10-24",
+      "hours": 168,
+      "rainfall_mm": 15.999999999999996,
+      "temperature_c": 28.11726190476191,
+      "humidity_percent": 80.01190476190476,
+      "week_start": "2021-10-18"
+    },
+    {
+      "week_ending": "2021-10-31",
+      "hours": 168,
+      "rainfall_mm": 5.099999999999999,
+      "temperature_c": 28.133333333333336,
+      "humidity_percent": 75.63095238095238,
+      "week_start": "2021-10-25"
+    },
+    {
+      "week_ending": "2021-11-07",
+      "hours": 168,
+      "rainfall_mm": 10.8,
+      "temperature_c": 28.664285714285683,
+      "humidity_percent": 75.45833333333333,
+      "week_start": "2021-11-01"
+    },
+    {
+      "week_ending": "2021-11-14",
+      "hours": 168,
+      "rainfall_mm": 1.7999999999999998,
+      "temperature_c": 28.692857142857125,
+      "humidity_percent": 76.35119047619048,
+      "week_start": "2021-11-08"
+    },
+    {
+      "week_ending": "2021-11-21",
+      "hours": 168,
+      "rainfall_mm": 40.5,
+      "temperature_c": 28.617261904761904,
+      "humidity_percent": 76.83928571428571,
+      "week_start": "2021-11-15"
+    },
+    {
+      "week_ending": "2021-11-28",
+      "hours": 168,
+      "rainfall_mm": 5.499999999999999,
+      "temperature_c": 28.173214285714295,
+      "humidity_percent": 79.54761904761905,
+      "week_start": "2021-11-22"
+    },
+    {
+      "week_ending": "2021-12-05",
+      "hours": 168,
+      "rainfall_mm": 2.5000000000000004,
+      "temperature_c": 27.522023809523812,
+      "humidity_percent": 72.73214285714286,
+      "week_start": "2021-11-29"
+    },
+    {
+      "week_ending": "2021-12-12",
+      "hours": 168,
+      "rainfall_mm": 0.6,
+      "temperature_c": 27.022619047619038,
+      "humidity_percent": 69.58928571428571,
+      "week_start": "2021-12-06"
+    },
+    {
+      "week_ending": "2021-12-19",
+      "hours": 168,
+      "rainfall_mm": 17.299999999999994,
+      "temperature_c": 27.199999999999985,
+      "humidity_percent": 75.79166666666667,
+      "week_start": "2021-12-13"
+    },
+    {
+      "week_ending": "2021-12-26",
+      "hours": 168,
+      "rainfall_mm": 7.4,
+      "temperature_c": 27.707738095238103,
+      "humidity_percent": 78.4702380952381,
+      "week_start": "2021-12-20"
+    },
+    {
+      "week_ending": "2022-01-02",
+      "hours": 168,
+      "rainfall_mm": 16.300000000000004,
+      "temperature_c": 26.16666666666668,
+      "humidity_percent": 72.36309523809524,
+      "week_start": "2021-12-27"
+    },
+    {
+      "week_ending": "2022-01-09",
+      "hours": 168,
+      "rainfall_mm": 0.6,
+      "temperature_c": 26.797619047619047,
+      "humidity_percent": 70.47619047619048,
+      "week_start": "2022-01-03"
+    },
+    {
+      "week_ending": "2022-01-16",
+      "hours": 168,
+      "rainfall_mm": 1.6000000000000005,
+      "temperature_c": 26.4220238095238,
+      "humidity_percent": 70.58928571428571,
+      "week_start": "2022-01-10"
+    },
+    {
+      "week_ending": "2022-01-23",
+      "hours": 168,
+      "rainfall_mm": 4.6000000000000005,
+      "temperature_c": 26.641071428571415,
+      "humidity_percent": 72.41666666666667,
+      "week_start": "2022-01-17"
+    },
+    {
+      "week_ending": "2022-01-30",
+      "hours": 168,
+      "rainfall_mm": 7.799999999999995,
+      "temperature_c": 27.957142857142838,
+      "humidity_percent": 75.60714285714286,
+      "week_start": "2022-01-24"
+    },
+    {
+      "week_ending": "2022-02-06",
+      "hours": 168,
+      "rainfall_mm": 0.6,
+      "temperature_c": 27.364880952380954,
+      "humidity_percent": 70.35714285714286,
+      "week_start": "2022-01-31"
+    },
+    {
+      "week_ending": "2022-02-13",
+      "hours": 168,
+      "rainfall_mm": 0.30000000000000004,
+      "temperature_c": 27.62380952380951,
+      "humidity_percent": 71.7797619047619,
+      "week_start": "2022-02-07"
+    },
+    {
+      "week_ending": "2022-02-20",
+      "hours": 168,
+      "rainfall_mm": 2.000000000000001,
+      "temperature_c": 28.048214285714288,
+      "humidity_percent": 72.92857142857143,
+      "week_start": "2022-02-14"
+    },
+    {
+      "week_ending": "2022-02-27",
+      "hours": 168,
+      "rainfall_mm": 1.0999999999999999,
+      "temperature_c": 27.67023809523808,
+      "humidity_percent": 71.96428571428571,
+      "week_start": "2022-02-21"
+    },
+    {
+      "week_ending": "2022-03-06",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.363690476190477,
+      "humidity_percent": 68.56547619047619,
+      "week_start": "2022-02-28"
+    },
+    {
+      "week_ending": "2022-03-13",
+      "hours": 168,
+      "rainfall_mm": 4.399999999999999,
+      "temperature_c": 28.408928571428582,
+      "humidity_percent": 69.33333333333333,
+      "week_start": "2022-03-07"
+    },
+    {
+      "week_ending": "2022-03-20",
+      "hours": 168,
+      "rainfall_mm": 11.099999999999998,
+      "temperature_c": 29.33511904761904,
+      "humidity_percent": 74.27380952380952,
+      "week_start": "2022-03-14"
+    },
+    {
+      "week_ending": "2022-03-27",
+      "hours": 168,
+      "rainfall_mm": 0.9,
+      "temperature_c": 30.207738095238092,
+      "humidity_percent": 67.55357142857143,
+      "week_start": "2022-03-21"
+    },
+    {
+      "week_ending": "2022-04-03",
+      "hours": 168,
+      "rainfall_mm": 2.500000000000001,
+      "temperature_c": 29.54583333333332,
+      "humidity_percent": 67.67857142857143,
+      "week_start": "2022-03-28"
+    },
+    {
+      "week_ending": "2022-04-10",
+      "hours": 168,
+      "rainfall_mm": 7.399999999999994,
+      "temperature_c": 28.220833333333335,
+      "humidity_percent": 73.7797619047619,
+      "week_start": "2022-04-04"
+    },
+    {
+      "week_ending": "2022-04-17",
+      "hours": 168,
+      "rainfall_mm": 11.99999999999999,
+      "temperature_c": 28.74940476190477,
+      "humidity_percent": 73,
+      "week_start": "2022-04-11"
+    },
+    {
+      "week_ending": "2022-04-24",
+      "hours": 168,
+      "rainfall_mm": 0.6,
+      "temperature_c": 29.77916666666668,
+      "humidity_percent": 67.5952380952381,
+      "week_start": "2022-04-18"
+    },
+    {
+      "week_ending": "2022-05-01",
+      "hours": 168,
+      "rainfall_mm": 2.5000000000000004,
+      "temperature_c": 30.310119047619054,
+      "humidity_percent": 68.91666666666667,
+      "week_start": "2022-04-25"
+    },
+    {
+      "week_ending": "2022-05-08",
+      "hours": 168,
+      "rainfall_mm": 0.1,
+      "temperature_c": 30.898809523809536,
+      "humidity_percent": 64.54761904761905,
+      "week_start": "2022-05-02"
+    },
+    {
+      "week_ending": "2022-05-15",
+      "hours": 168,
+      "rainfall_mm": 18.5,
+      "temperature_c": 30.509523809523817,
+      "humidity_percent": 68.23809523809524,
+      "week_start": "2022-05-09"
+    },
+    {
+      "week_ending": "2022-05-22",
+      "hours": 168,
+      "rainfall_mm": 127.19999999999993,
+      "temperature_c": 27.890476190476186,
+      "humidity_percent": 81.92261904761905,
+      "week_start": "2022-05-16"
+    },
+    {
+      "week_ending": "2022-05-29",
+      "hours": 168,
+      "rainfall_mm": 49.700000000000045,
+      "temperature_c": 29.053571428571427,
+      "humidity_percent": 78.30357142857143,
+      "week_start": "2022-05-23"
+    },
+    {
+      "week_ending": "2022-06-05",
+      "hours": 168,
+      "rainfall_mm": 16.700000000000003,
+      "temperature_c": 29.27261904761904,
+      "humidity_percent": 77.07142857142857,
+      "week_start": "2022-05-30"
+    },
+    {
+      "week_ending": "2022-06-12",
+      "hours": 168,
+      "rainfall_mm": 16.899999999999988,
+      "temperature_c": 29.83035714285714,
+      "humidity_percent": 74.60714285714286,
+      "week_start": "2022-06-06"
+    },
+    {
+      "week_ending": "2022-06-19",
+      "hours": 168,
+      "rainfall_mm": 18,
+      "temperature_c": 30.013095238095232,
+      "humidity_percent": 72.29761904761905,
+      "week_start": "2022-06-13"
+    },
+    {
+      "week_ending": "2022-06-26",
+      "hours": 168,
+      "rainfall_mm": 54.300000000000004,
+      "temperature_c": 28.990476190476173,
+      "humidity_percent": 76.0297619047619,
+      "week_start": "2022-06-20"
+    },
+    {
+      "week_ending": "2022-07-03",
+      "hours": 168,
+      "rainfall_mm": 105.89999999999988,
+      "temperature_c": 28.26666666666665,
+      "humidity_percent": 80.73809523809524,
+      "week_start": "2022-06-27"
+    },
+    {
+      "week_ending": "2022-07-10",
+      "hours": 168,
+      "rainfall_mm": 146.39999999999984,
+      "temperature_c": 28.427380952380936,
+      "humidity_percent": 81.66666666666667,
+      "week_start": "2022-07-04"
+    },
+    {
+      "week_ending": "2022-07-17",
+      "hours": 168,
+      "rainfall_mm": 69.90000000000002,
+      "temperature_c": 28.495238095238072,
+      "humidity_percent": 82.51190476190476,
+      "week_start": "2022-07-11"
+    },
+    {
+      "week_ending": "2022-07-24",
+      "hours": 168,
+      "rainfall_mm": 29.800000000000026,
+      "temperature_c": 28.904166666666676,
+      "humidity_percent": 79.625,
+      "week_start": "2022-07-18"
+    },
+    {
+      "week_ending": "2022-07-31",
+      "hours": 168,
+      "rainfall_mm": 70.80000000000004,
+      "temperature_c": 28.2845238095238,
+      "humidity_percent": 82.88690476190476,
+      "week_start": "2022-07-25"
+    },
+    {
+      "week_ending": "2022-08-07",
+      "hours": 168,
+      "rainfall_mm": 171.19999999999996,
+      "temperature_c": 27.510119047619046,
+      "humidity_percent": 84.17261904761905,
+      "week_start": "2022-08-01"
+    },
+    {
+      "week_ending": "2022-08-14",
+      "hours": 168,
+      "rainfall_mm": 54.20000000000002,
+      "temperature_c": 27.905952380952378,
+      "humidity_percent": 81.69642857142857,
+      "week_start": "2022-08-08"
+    },
+    {
+      "week_ending": "2022-08-21",
+      "hours": 168,
+      "rainfall_mm": 47.60000000000003,
+      "temperature_c": 27.741666666666646,
+      "humidity_percent": 83.14880952380952,
+      "week_start": "2022-08-15"
+    },
+    {
+      "week_ending": "2022-08-28",
+      "hours": 168,
+      "rainfall_mm": 117.19999999999987,
+      "temperature_c": 27.955357142857153,
+      "humidity_percent": 83.05357142857143,
+      "week_start": "2022-08-22"
+    },
+    {
+      "week_ending": "2022-09-04",
+      "hours": 168,
+      "rainfall_mm": 70.20000000000002,
+      "temperature_c": 27.786309523809525,
+      "humidity_percent": 85,
+      "week_start": "2022-08-29"
+    },
+    {
+      "week_ending": "2022-09-11",
+      "hours": 168,
+      "rainfall_mm": 39.30000000000002,
+      "temperature_c": 28.491071428571438,
+      "humidity_percent": 82.02380952380952,
+      "week_start": "2022-09-05"
+    },
+    {
+      "week_ending": "2022-09-18",
+      "hours": 168,
+      "rainfall_mm": 36.6,
+      "temperature_c": 27.97916666666665,
+      "humidity_percent": 82.73214285714286,
+      "week_start": "2022-09-12"
+    },
+    {
+      "week_ending": "2022-09-25",
+      "hours": 168,
+      "rainfall_mm": 119,
+      "temperature_c": 27.0422619047619,
+      "humidity_percent": 86.11309523809524,
+      "week_start": "2022-09-19"
+    },
+    {
+      "week_ending": "2022-10-02",
+      "hours": 168,
+      "rainfall_mm": 59.40000000000006,
+      "temperature_c": 27.990476190476194,
+      "humidity_percent": 81.55357142857143,
+      "week_start": "2022-09-26"
+    },
+    {
+      "week_ending": "2022-10-09",
+      "hours": 168,
+      "rainfall_mm": 15.899999999999993,
+      "temperature_c": 28.815476190476197,
+      "humidity_percent": 77.58333333333333,
+      "week_start": "2022-10-03"
+    },
+    {
+      "week_ending": "2022-10-16",
+      "hours": 168,
+      "rainfall_mm": 27.80000000000004,
+      "temperature_c": 28.856547619047628,
+      "humidity_percent": 78.10119047619048,
+      "week_start": "2022-10-10"
+    },
+    {
+      "week_ending": "2022-10-23",
+      "hours": 168,
+      "rainfall_mm": 54.700000000000045,
+      "temperature_c": 28.198214285714275,
+      "humidity_percent": 82.06547619047619,
+      "week_start": "2022-10-17"
+    },
+    {
+      "week_ending": "2022-10-30",
+      "hours": 168,
+      "rainfall_mm": 163.5,
+      "temperature_c": 27.70654761904762,
+      "humidity_percent": 80.94642857142857,
+      "week_start": "2022-10-24"
+    },
+    {
+      "week_ending": "2022-11-06",
+      "hours": 168,
+      "rainfall_mm": 29.200000000000017,
+      "temperature_c": 27.827976190476175,
+      "humidity_percent": 81.70238095238095,
+      "week_start": "2022-10-31"
+    },
+    {
+      "week_ending": "2022-11-13",
+      "hours": 168,
+      "rainfall_mm": 6.799999999999996,
+      "temperature_c": 28.441071428571437,
+      "humidity_percent": 78.95833333333333,
+      "week_start": "2022-11-07"
+    },
+    {
+      "week_ending": "2022-11-20",
+      "hours": 168,
+      "rainfall_mm": 63.00000000000002,
+      "temperature_c": 28.017261904761902,
+      "humidity_percent": 79.60714285714286,
+      "week_start": "2022-11-14"
+    },
+    {
+      "week_ending": "2022-11-27",
+      "hours": 168,
+      "rainfall_mm": 6.199999999999997,
+      "temperature_c": 28.448809523809544,
+      "humidity_percent": 78.125,
+      "week_start": "2022-11-21"
+    },
+    {
+      "week_ending": "2022-12-04",
+      "hours": 168,
+      "rainfall_mm": 2.2000000000000006,
+      "temperature_c": 28.527380952380966,
+      "humidity_percent": 76.60714285714286,
+      "week_start": "2022-11-28"
+    },
+    {
+      "week_ending": "2022-12-11",
+      "hours": 168,
+      "rainfall_mm": 11,
+      "temperature_c": 27.798809523809524,
+      "humidity_percent": 78.49404761904762,
+      "week_start": "2022-12-05"
+    },
+    {
+      "week_ending": "2022-12-18",
+      "hours": 168,
+      "rainfall_mm": 6.7999999999999945,
+      "temperature_c": 27.819047619047627,
+      "humidity_percent": 78.5952380952381,
+      "week_start": "2022-12-12"
+    },
+    {
+      "week_ending": "2022-12-25",
+      "hours": 168,
+      "rainfall_mm": 37.10000000000003,
+      "temperature_c": 25.901785714285698,
+      "humidity_percent": 76.8452380952381,
+      "week_start": "2022-12-19"
+    },
+    {
+      "week_ending": "2023-01-01",
+      "hours": 168,
+      "rainfall_mm": 25.500000000000004,
+      "temperature_c": 26.06845238095238,
+      "humidity_percent": 76.38095238095238,
+      "week_start": "2022-12-26"
+    },
+    {
+      "week_ending": "2023-01-08",
+      "hours": 168,
+      "rainfall_mm": 25.90000000000003,
+      "temperature_c": 26.264285714285716,
+      "humidity_percent": 80.68452380952381,
+      "week_start": "2023-01-02"
+    },
+    {
+      "week_ending": "2023-01-15",
+      "hours": 168,
+      "rainfall_mm": 14.399999999999995,
+      "temperature_c": 26.10357142857144,
+      "humidity_percent": 78.06547619047619,
+      "week_start": "2023-01-09"
+    },
+    {
+      "week_ending": "2023-01-22",
+      "hours": 168,
+      "rainfall_mm": 33.90000000000003,
+      "temperature_c": 26.285714285714292,
+      "humidity_percent": 79.58928571428571,
+      "week_start": "2023-01-16"
+    },
+    {
+      "week_ending": "2023-01-29",
+      "hours": 168,
+      "rainfall_mm": 39.20000000000002,
+      "temperature_c": 25.747023809523814,
+      "humidity_percent": 75.38095238095238,
+      "week_start": "2023-01-23"
+    },
+    {
+      "week_ending": "2023-02-05",
+      "hours": 168,
+      "rainfall_mm": 2.0000000000000004,
+      "temperature_c": 26.385119047619057,
+      "humidity_percent": 75.4047619047619,
+      "week_start": "2023-01-30"
+    },
+    {
+      "week_ending": "2023-02-12",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 27.010119047619053,
+      "humidity_percent": 75.875,
+      "week_start": "2023-02-06"
+    },
+    {
+      "week_ending": "2023-02-19",
+      "hours": 168,
+      "rainfall_mm": 50.99999999999999,
+      "temperature_c": 26.342857142857163,
+      "humidity_percent": 72.17857142857143,
+      "week_start": "2023-02-13"
+    },
+    {
+      "week_ending": "2023-02-26",
+      "hours": 168,
+      "rainfall_mm": 10.19999999999999,
+      "temperature_c": 27.052976190476194,
+      "humidity_percent": 77.69642857142857,
+      "week_start": "2023-02-20"
+    },
+    {
+      "week_ending": "2023-03-05",
+      "hours": 168,
+      "rainfall_mm": 3.1000000000000005,
+      "temperature_c": 26.357738095238076,
+      "humidity_percent": 69.13095238095238,
+      "week_start": "2023-02-27"
+    },
+    {
+      "week_ending": "2023-03-12",
+      "hours": 168,
+      "rainfall_mm": 0.5,
+      "temperature_c": 26.464285714285715,
+      "humidity_percent": 67.5297619047619,
+      "week_start": "2023-03-06"
+    },
+    {
+      "week_ending": "2023-03-19",
+      "hours": 168,
+      "rainfall_mm": 0.6,
+      "temperature_c": 27.452976190476182,
+      "humidity_percent": 69.01190476190476,
+      "week_start": "2023-03-13"
+    },
+    {
+      "week_ending": "2023-03-26",
+      "hours": 168,
+      "rainfall_mm": 0,
+      "temperature_c": 28.858928571428585,
+      "humidity_percent": 68.08333333333333,
+      "week_start": "2023-03-20"
+    },
+    {
+      "week_ending": "2023-04-02",
+      "hours": 168,
+      "rainfall_mm": 0.4,
+      "temperature_c": 29.3345238095238,
+      "humidity_percent": 66.79166666666667,
+      "week_start": "2023-03-27"
+    },
+    {
+      "week_ending": "2023-04-09",
+      "hours": 168,
+      "rainfall_mm": 1.7000000000000004,
+      "temperature_c": 28.83273809523809,
+      "humidity_percent": 66.99404761904762,
+      "week_start": "2023-04-03"
+    },
+    {
+      "week_ending": "2023-04-16",
+      "hours": 168,
+      "rainfall_mm": 133.99999999999991,
+      "temperature_c": 27.798214285714284,
+      "humidity_percent": 78.125,
+      "week_start": "2023-04-10"
+    },
+    {
+      "week_ending": "2023-04-23",
+      "hours": 168,
+      "rainfall_mm": 3.1000000000000005,
+      "temperature_c": 29.923214285714295,
+      "humidity_percent": 74.2797619047619,
+      "week_start": "2023-04-17"
+    },
+    {
+      "week_ending": "2023-04-30",
+      "hours": 168,
+      "rainfall_mm": 11.699999999999992,
+      "temperature_c": 29.74702380952382,
+      "humidity_percent": 70.53571428571429,
+      "week_start": "2023-04-24"
+    },
+    {
+      "week_ending": "2023-05-07",
+      "hours": 168,
+      "rainfall_mm": 0.9999999999999999,
+      "temperature_c": 30.533928571428575,
+      "humidity_percent": 67.69642857142857,
+      "week_start": "2023-05-01"
+    },
+    {
+      "week_ending": "2023-05-14",
+      "hours": 168,
+      "rainfall_mm": 41.80000000000002,
+      "temperature_c": 29.70833333333333,
+      "humidity_percent": 75.17261904761905,
+      "week_start": "2023-05-08"
+    },
+    {
+      "week_ending": "2023-05-21",
+      "hours": 168,
+      "rainfall_mm": 37.40000000000003,
+      "temperature_c": 29.33750000000002,
+      "humidity_percent": 80.14285714285714,
+      "week_start": "2023-05-15"
+    },
+    {
+      "week_ending": "2023-05-28",
+      "hours": 168,
+      "rainfall_mm": 37.00000000000003,
+      "temperature_c": 29.28749999999999,
+      "humidity_percent": 78.58928571428571,
+      "week_start": "2023-05-22"
+    },
+    {
+      "week_ending": "2023-06-04",
+      "hours": 168,
+      "rainfall_mm": 41.80000000000001,
+      "temperature_c": 29.361309523809513,
+      "humidity_percent": 78.71428571428571,
+      "week_start": "2023-05-29"
+    },
+    {
+      "week_ending": "2023-06-11",
+      "hours": 168,
+      "rainfall_mm": 65.80000000000005,
+      "temperature_c": 28.432142857142864,
+      "humidity_percent": 82.64285714285714,
+      "week_start": "2023-06-05"
+    },
+    {
+      "week_ending": "2023-06-18",
+      "hours": 168,
+      "rainfall_mm": 22.200000000000006,
+      "temperature_c": 29.19523809523809,
+      "humidity_percent": 79.68452380952381,
+      "week_start": "2023-06-12"
+    },
+    {
+      "week_ending": "2023-06-25",
+      "hours": 168,
+      "rainfall_mm": 13.599999999999998,
+      "temperature_c": 29.73392857142857,
+      "humidity_percent": 73.88690476190476,
+      "week_start": "2023-06-19"
+    },
+    {
+      "week_ending": "2023-07-02",
+      "hours": 168,
+      "rainfall_mm": 73.90000000000006,
+      "temperature_c": 28.91964285714286,
+      "humidity_percent": 79.01785714285714,
+      "week_start": "2023-06-26"
+    },
+    {
+      "week_ending": "2023-07-09",
+      "hours": 168,
+      "rainfall_mm": 5.499999999999999,
+      "temperature_c": 30.43095238095238,
+      "humidity_percent": 72.60714285714286,
+      "week_start": "2023-07-03"
+    },
+    {
+      "week_ending": "2023-07-16",
+      "hours": 168,
+      "rainfall_mm": 209.90000000000003,
+      "temperature_c": 28.258928571428562,
+      "humidity_percent": 81.75595238095238,
+      "week_start": "2023-07-10"
+    },
+    {
+      "week_ending": "2023-07-23",
+      "hours": 168,
+      "rainfall_mm": 38.10000000000002,
+      "temperature_c": 28.632738095238086,
+      "humidity_percent": 80.99404761904762,
+      "week_start": "2023-07-17"
+    },
+    {
+      "week_ending": "2023-07-30",
+      "hours": 168,
+      "rainfall_mm": 114.29999999999993,
+      "temperature_c": 27.52261904761906,
+      "humidity_percent": 86.89285714285714,
+      "week_start": "2023-07-24"
+    },
+    {
+      "week_ending": "2023-08-06",
+      "hours": 168,
+      "rainfall_mm": 40.90000000000007,
+      "temperature_c": 28.216666666666665,
+      "humidity_percent": 84.91071428571429,
+      "week_start": "2023-07-31"
+    },
+    {
+      "week_ending": "2023-08-13",
+      "hours": 168,
+      "rainfall_mm": 20.900000000000002,
+      "temperature_c": 29.310714285714283,
+      "humidity_percent": 81.86904761904762,
+      "week_start": "2023-08-07"
+    },
+    {
+      "week_ending": "2023-08-20",
+      "hours": 168,
+      "rainfall_mm": 21.9,
+      "temperature_c": 29.116071428571427,
+      "humidity_percent": 79.67261904761905,
+      "week_start": "2023-08-14"
+    },
+    {
+      "week_ending": "2023-08-27",
+      "hours": 168,
+      "rainfall_mm": 73.60000000000004,
+      "temperature_c": 28.267261904761902,
+      "humidity_percent": 82.83928571428571,
+      "week_start": "2023-08-21"
+    },
+    {
+      "week_ending": "2023-09-03",
+      "hours": 168,
+      "rainfall_mm": 109.90000000000002,
+      "temperature_c": 27.69285714285715,
+      "humidity_percent": 87.3452380952381,
+      "week_start": "2023-08-28"
+    },
+    {
+      "week_ending": "2023-09-10",
+      "hours": 168,
+      "rainfall_mm": 41.30000000000001,
+      "temperature_c": 28.63095238095238,
+      "humidity_percent": 83.11904761904762,
+      "week_start": "2023-09-04"
+    },
+    {
+      "week_ending": "2023-09-17",
+      "hours": 168,
+      "rainfall_mm": 38.80000000000003,
+      "temperature_c": 28.27321428571429,
+      "humidity_percent": 82.625,
+      "week_start": "2023-09-11"
+    },
+    {
+      "week_ending": "2023-09-24",
+      "hours": 168,
+      "rainfall_mm": 53.59999999999999,
+      "temperature_c": 28.84761904761904,
+      "humidity_percent": 80.83333333333333,
+      "week_start": "2023-09-18"
+    },
+    {
+      "week_ending": "2023-10-01",
+      "hours": 168,
+      "rainfall_mm": 44.600000000000044,
+      "temperature_c": 28.5059523809524,
+      "humidity_percent": 83.70833333333333,
+      "week_start": "2023-09-25"
+    },
+    {
+      "week_ending": "2023-10-08",
+      "hours": 168,
+      "rainfall_mm": 70.39999999999998,
+      "temperature_c": 27.951785714285716,
+      "humidity_percent": 84.94047619047619,
+      "week_start": "2023-10-02"
+    },
+    {
+      "week_ending": "2023-10-15",
+      "hours": 168,
+      "rainfall_mm": 24.299999999999997,
+      "temperature_c": 28.854166666666657,
+      "humidity_percent": 79.07738095238095,
+      "week_start": "2023-10-09"
+    },
+    {
+      "week_ending": "2023-10-22",
+      "hours": 168,
+      "rainfall_mm": 36.00000000000004,
+      "temperature_c": 28.116666666666667,
+      "humidity_percent": 81.60119047619048,
+      "week_start": "2023-10-16"
+    },
+    {
+      "week_ending": "2023-10-29",
+      "hours": 168,
+      "rainfall_mm": 12.299999999999988,
+      "temperature_c": 28.507738095238086,
+      "humidity_percent": 80.0297619047619,
+      "week_start": "2023-10-23"
+    },
+    {
+      "week_ending": "2023-11-05",
+      "hours": 168,
+      "rainfall_mm": 29.600000000000023,
+      "temperature_c": 28.864285714285714,
+      "humidity_percent": 77.7797619047619,
+      "week_start": "2023-10-30"
+    },
+    {
+      "week_ending": "2023-11-12",
+      "hours": 168,
+      "rainfall_mm": 3.7000000000000015,
+      "temperature_c": 29.035714285714302,
+      "humidity_percent": 77.0952380952381,
+      "week_start": "2023-11-06"
+    },
+    {
+      "week_ending": "2023-11-19",
+      "hours": 168,
+      "rainfall_mm": 13.899999999999997,
+      "temperature_c": 28.203571428571422,
+      "humidity_percent": 73.85119047619048,
+      "week_start": "2023-11-13"
+    },
+    {
+      "week_ending": "2023-11-26",
+      "hours": 168,
+      "rainfall_mm": 12.899999999999999,
+      "temperature_c": 27.906547619047615,
+      "humidity_percent": 76.13095238095238,
+      "week_start": "2023-11-20"
+    },
+    {
+      "week_ending": "2023-12-03",
+      "hours": 168,
+      "rainfall_mm": 2.2000000000000006,
+      "temperature_c": 28.529166666666658,
+      "humidity_percent": 76.73214285714286,
+      "week_start": "2023-11-27"
+    },
+    {
+      "week_ending": "2023-12-10",
+      "hours": 168,
+      "rainfall_mm": 2.2,
+      "temperature_c": 28.971428571428564,
+      "humidity_percent": 74.58333333333333,
+      "week_start": "2023-12-04"
+    },
+    {
+      "week_ending": "2023-12-17",
+      "hours": 168,
+      "rainfall_mm": 14.999999999999996,
+      "temperature_c": 28.263690476190476,
+      "humidity_percent": 75.06547619047619,
+      "week_start": "2023-12-11"
+    },
+    {
+      "week_ending": "2023-12-24",
+      "hours": 168,
+      "rainfall_mm": 62.40000000000003,
+      "temperature_c": 27.26845238095239,
+      "humidity_percent": 79.67261904761905,
+      "week_start": "2023-12-18"
+    },
+    {
+      "week_ending": "2023-12-31",
+      "hours": 168,
+      "rainfall_mm": 3.200000000000001,
+      "temperature_c": 27.646428571428583,
+      "humidity_percent": 79.45238095238095,
+      "week_start": "2023-12-25"
+    }
+  ]
+}
