@@ -1,3 +1,5 @@
+> Archived context: Legacy monthly risk model. The replacement Manila implementation and current evidence are in [EVALUATION.md](EVALUATION.md) and [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md). These earlier model claims are not the current public forecast.
+
 # Risk model and city grid
 Run `npm run risk:backtest` to reproduce [every paired prediction and city metric](risk-backtest.json) from the real local source files. Run `npm run app:setup` only against the intended database after reviewing the migrations; it applies pending migrations and refreshes caches atomically. Hosted setup was subsequently authorized and completed on 2026-09-24; caches and backtests are populated. Real submissions remain disabled pending the content/consent review. See HANDOFF.md.
 

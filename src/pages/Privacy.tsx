@@ -2,9 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Button, Card, Input } from "../components/ui";
 import { PageHeader } from "../components/PageHeader";
-import { ParticipationNotice } from "../components/ParticipationNotice";
-import { ReadState } from "../components/PageState";
-import { useAppData } from "../lib/resources";
+
 import { deleteReport } from "../lib/api";
 import { PrivacyDraft } from "../components/LegalDrafts";
 export function Privacy() {
@@ -15,7 +13,7 @@ export function Privacy() {
         document.getElementById("withdraw")?.scrollIntoView(),
       );
   }, [location.hash]);
-  const { policy, community } = useAppData();
+
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -24,9 +22,11 @@ export function Privacy() {
   async function withdraw(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (pending.current) return;
-    if (!/^DW-[A-F0-9]{24}$/.test(code.trim().toUpperCase())) {
+    if (
+      !/^(DW-[A-F0-9]{24}|DW2-[A-F0-9]{32})$/.test(code.trim().toUpperCase())
+    ) {
       setError(
-        "Use DW- followed by the 24 letters/numbers from your reference code.",
+        "Use the full DW- or DW2- reference code issued with your report.",
       );
       return;
     }
@@ -38,7 +38,6 @@ export function Privacy() {
       await deleteReport(code);
       setCode("");
       setDone(true);
-      community.retry();
     } catch {
       setError(
         "The request could not be completed. You can safely retry with the same code.",
@@ -57,9 +56,13 @@ export function Privacy() {
       />
       <div className="ui-container app-content narrow-content">
         <Card>
-          <ReadState resource={policy}>
-            {(notice) => <ParticipationNotice policy={notice} />}
-          </ReadState>
+          <p className="data-notice">
+            Collection remains closed. The v2 notice describes coarse area,
+            symptom-onset date, optional symptoms and a sanitized note, with
+            90-day retention. Only approved groups of at least three are
+            eligible for publication after 72 hours. Provider logs and backups
+            require separate DPO review.
+          </p>
           <PrivacyDraft />
         </Card>
         <Card id="withdraw">
@@ -73,7 +76,7 @@ export function Privacy() {
               label="Reference code"
               autoComplete="off"
               spellCheck={false}
-              maxLength={27}
+              maxLength={36}
               required
               placeholder="DW-…"
               value={code}
@@ -93,8 +96,8 @@ export function Privacy() {
           {done && (
             <p role="status" className="data-notice">
               Request processed. If this code matched an active report, it is
-              now withdrawn and optional contact and barangay text have been
-              cleared. For privacy, we do not confirm whether a code exists.
+              now withdrawn and optional identifying fields have been cleared.
+              For privacy, we do not confirm whether a code exists.
             </p>
           )}
         </Card>

@@ -1,4 +1,4 @@
-﻿# Audit against the replacement specification
+# Audit against the replacement specification
 
 Audit date: 2026-10-25 (Asia/Manila). Baseline commit: 790becd.
 Working branch: feat/manila-evidence, based on feat/manila-redesign.
@@ -19,9 +19,12 @@ Differences from the supplied measurements:
 - Derived CSV: 308 rows, 5 zero-row weeks, 94 weeks with fewer than seven rows;
   all totals/dates/row counts match workbook aggregation. Duplicate _1.csv absent;
   no raw file was deleted. Final excluded partial week has **30 cases**.
-- Matched daily/DOH overlap: **156** common full-boundary weeks, not 151. Daily
-  **8,255**, DOH **8,244**, correlation **0.929366**, MAE **13.2244**, max **78**.
-  Detailed pairs retained; no silent reconciliation or double counting.
+- Observed-week daily/DOH overlap reproduces the supplied **151** weeks: daily
+  **8,255**, DOH **8,234**, MAE **13.5960**, max **78**. The initial audit used
+  Scenario Z and counted five blank daily weeks as zero: **156** pairs, daily
+  **8,255**, DOH **8,244**, correlation **0.929366**, MAE **13.2244**. This is a
+  cohort distinction, not a discrepancy in source bytes. Requiring seven rows
+  yields **104** pairs. All exact pairs/cohorts are retained; no double counting.
 - NCR has 4,403 records / 17 LGUs / 259 labels per LGU, with three calendar gaps
   in each city's series. One missing death value and 155 deaths>cases retained
   as flags. Death totals are not validated mortality evidence.
@@ -104,3 +107,12 @@ under Node 22.23.2. Production build passes under Node22 after restoring react-i
 Lint was absent; configured and compatibility issues being resolved. Full new
 acceptance, browser regression, deployed ZAP and Lighthouse are NOT yet verified.
 The working tree is an implementation in progress, not a seven-day completion claim.
+
+## Supplied baseline and autocorrelation cross-check
+
+[MEASUREMENTS.md](MEASUREMENTS.md) and data/processed/measurements.json record
+the national-file nulls/duplicates, NCR yearly source totals, exact calendar-lag
+autocorrelations under Z/M and 2023 audit baselines. Their separate eligible
+cohorts are not substituted for the matched full harness. The supplied blend
+cannot be reverified without specified weights and is not claimed as a measured
+result. Run npm run data:prepare to regenerate these checks.

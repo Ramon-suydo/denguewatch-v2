@@ -1,0 +1,1 @@
+﻿{"status":"not_run","reasons":["No deployed URL confirmed for the current revision","Docker executable unavailable in this environment"],"not_a_scan_report":true,"next_command":"npm run security:zap -- https://your-deployed-preview.example"}

@@ -1,3 +1,5 @@
+> Current analysis: raw absence remains unknown and raw files remain immutable. The replacement prompt explicitly evaluates Scenario Z (zero assumed only within daily coverage) and Scenario M (missing retained). See [DATA.md](DATA.md), [MEASUREMENTS.md](MEASUREMENTS.md) and [EVALUATION.md](EVALUATION.md); earlier ingestion rules below describe the preserved raw/source records.
+
 # Published dataset audit
 
 Inspected 2026-09-23 before ingestion code was written. The owner identifies the sources as DOH and FOI/Freedom of Information. Exact dataset URLs, request identifiers, citation text, and redistribution terms still need to be attached by the owner. The monthly CSV is demonstrably derived from the weekly CSV; do not imply it is an independent series.

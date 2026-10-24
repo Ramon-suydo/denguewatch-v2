@@ -1,6 +1,6 @@
 import { lazy, Suspense, useState } from "react";
 import { Card, Select } from "./ui";
-import { Loading, ReadState } from "./PageState";
+import { ReadState } from "./PageState";
 import { useResource } from "../lib/resources";
 import { fetchHistory } from "../lib/api";
 import type { City, PeriodType } from "../lib/types";
@@ -41,7 +41,13 @@ export function HistoricalExplorer({
         {(rows) => (
           <div className="content-stack">
             <Card>
-              <Suspense fallback={<div className="history-chart chart-skeleton" role="status">Loading chart…</div>}>
+              <Suspense
+                fallback={
+                  <div className="history-chart chart-skeleton" role="status">
+                    Loading chart…
+                  </div>
+                }
+              >
                 <HistoryChart rows={rows} period={period} />
               </Suspense>
             </Card>
@@ -53,7 +59,11 @@ export function HistoricalExplorer({
                   rates are not estimated from a current population.
                 </p>
                 <Suspense
-                  fallback={<div className="history-chart chart-skeleton" role="status">Loading incidence chart…</div>}
+                  fallback={
+                    <div className="history-chart chart-skeleton" role="status">
+                      Loading incidence chart…
+                    </div>
+                  }
                 >
                   <HistoryChart
                     rows={rows}

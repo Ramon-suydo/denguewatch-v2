@@ -10,6 +10,12 @@ if (!args.length || args.some((arg) => !allowed.has(arg))) {
   console.error("Use --apply, --refresh, and/or --enable-reports.");
   process.exit(1);
 }
+if (args.includes("--enable-reports")) {
+  console.error(
+    "Legacy report activation is retired. Collection stays closed pending v2 migration, owner authorization and DPO review.",
+  );
+  process.exit(1);
+}
 let committed = false;
 async function main() {
   const connection = process.env.DIRECT_DATABASE_URL;

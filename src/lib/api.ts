@@ -1,3 +1,4 @@
+import { withdrawSignal } from "./signals";
 import { readPublished, requireOnlineMutation } from "./demo-snapshot";
 import { getSupabase } from "./supabase";
 import type {
@@ -17,19 +18,21 @@ function check(error: { message: string } | null) {
     );
 }
 async function onlineSourceCoverage(signal: AbortSignal) {
-  return Promise.all(publishedSources.map(async ({ source, period, label }) => {
-    const { data, error } = await getSupabase()
-      .from("historical_surveillance")
-      .select("period_start")
-      .eq("source", source)
-      .eq("period_type", period)
-      .order("period_start", { ascending: false })
-      .limit(1)
-      .abortSignal(signal)
-      .retry(false);
-    check(error);
-    return { source, period, label, date: data?.[0]?.period_start ?? null };
-  }));
+  return Promise.all(
+    publishedSources.map(async ({ source, period, label }) => {
+      const { data, error } = await getSupabase()
+        .from("historical_surveillance")
+        .select("period_start")
+        .eq("source", source)
+        .eq("period_type", period)
+        .order("period_start", { ascending: false })
+        .limit(1)
+        .abortSignal(signal)
+        .retry(false);
+      check(error);
+      return { source, period, label, date: data?.[0]?.period_start ?? null };
+    }),
+  );
 }
 async function onlineRisks(
   signal: AbortSignal,
@@ -63,9 +66,7 @@ async function onlineForecasts(signal: AbortSignal): Promise<Forecast[]> {
   check(error);
   return data ?? [];
 }
-async function onlineCommunity(
-  signal: AbortSignal,
-): Promise<CommunityWeek[]> {
+async function onlineCommunity(signal: AbortSignal): Promise<CommunityWeek[]> {
   const { data, error } = await getSupabase()
     .rpc("community_reports_weekly_agg")
     .gte("week_start", recentMonday())
@@ -75,9 +76,7 @@ async function onlineCommunity(
   check(error);
   return data ?? [];
 }
-async function onlinePolicy(
-  signal: AbortSignal,
-): Promise<CommunityPolicy> {
+async function onlinePolicy(signal: AbortSignal): Promise<CommunityPolicy> {
   const { data, error } = await getSupabase()
     .from("community_policy")
     .select("*")
@@ -116,19 +115,49 @@ async function onlineHistory(
   }
   return all;
 }
-export const fetchSourceCoverage = (signal: AbortSignal) => readPublished(signal, onlineSourceCoverage,
-  snapshot => publishedSources.map(({ source, period, label }) => ({ source, period, label, date: snapshot.coverage.find(row => row.source === source)?.date ?? null })));
-export const fetchCities = (signal: AbortSignal) => readPublished(signal, onlineCities, snapshot => snapshot.cities);
-export const fetchForecasts = (signal: AbortSignal) => readPublished(signal, onlineForecasts, snapshot => snapshot.forecasts);
-export const fetchRisks = (signal: AbortSignal) => readPublished(signal, onlineRisks, snapshot => snapshot.risks);
-export const fetchHistory = (city: string, period: PeriodType, signal: AbortSignal) => readPublished(signal,
-  child => onlineHistory(city, period, child), snapshot => snapshot.history.filter(row => row.lgu_id === city && row.period_type === period));
-export const fetchCommunity = (signal: AbortSignal) => readPublished(signal, onlineCommunity, () => {
-  throw new Error("Community reports are unavailable in the offline demo; no counts are inferred.");
-});
-export const fetchPolicy = (signal: AbortSignal) => readPublished(signal, onlinePolicy, () => ({
-  id: true, retention_days: 90, contact_email: null, submissions_enabled: false, consent_version: "community-v1",
-}));
+export const fetchSourceCoverage = (signal: AbortSignal) =>
+  readPublished(signal, onlineSourceCoverage, (snapshot) =>
+    publishedSources.map(({ source, period, label }) => ({
+      source,
+      period,
+      label,
+      date:
+        snapshot.coverage.find((row) => row.source === source)?.date ?? null,
+    })),
+  );
+export const fetchCities = (signal: AbortSignal) =>
+  readPublished(signal, onlineCities, (snapshot) => snapshot.cities);
+export const fetchForecasts = (signal: AbortSignal) =>
+  readPublished(signal, onlineForecasts, (snapshot) => snapshot.forecasts);
+export const fetchRisks = (signal: AbortSignal) =>
+  readPublished(signal, onlineRisks, (snapshot) => snapshot.risks);
+export const fetchHistory = (
+  city: string,
+  period: PeriodType,
+  signal: AbortSignal,
+) =>
+  readPublished(
+    signal,
+    (child) => onlineHistory(city, period, child),
+    (snapshot) =>
+      snapshot.history.filter(
+        (row) => row.lgu_id === city && row.period_type === period,
+      ),
+  );
+export const fetchCommunity = (signal: AbortSignal) =>
+  readPublished(signal, onlineCommunity, () => {
+    throw new Error(
+      "Community reports are unavailable in the offline demo; no counts are inferred.",
+    );
+  });
+export const fetchPolicy = (signal: AbortSignal) =>
+  readPublished(signal, onlinePolicy, () => ({
+    id: true,
+    retention_days: 90,
+    contact_email: null,
+    submissions_enabled: false,
+    consent_version: "community-v1",
+  }));
 export interface ReportInput {
   city: string;
   date: string;
@@ -167,6 +196,7 @@ export async function submitReport(
   return data;
 }
 export async function deleteReport(code: string): Promise<void> {
+  if (code.trim().toUpperCase().startsWith("DW2-")) return withdrawSignal(code);
   requireOnlineMutation();
   const { error } = await getSupabase().rpc("delete_community_report", {
     p_reference_code: code.trim().toUpperCase(),

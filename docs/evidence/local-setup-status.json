@@ -1,0 +1,9 @@
+{
+  "status": "NOT RUN: full Docker/Auth setup",
+  "reason": "Docker executable unavailable; no hosted database contacted",
+  "verified": [
+    "local destination guards",
+    "full migration SQL role fixtures"
+  ],
+  "community_reporting": "closed"
+}

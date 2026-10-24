@@ -973,6 +973,11 @@
       "source_pcode": "PH1303901202"
     },
     {
+      "code": "PH1303901922|Barangay 202-A",
+      "label": "Barangay 202-A",
+      "source_pcode": "PH1303901922"
+    },
+    {
       "code": "PH1303901203|Barangay 203",
       "label": "Barangay 203",
       "source_pcode": "PH1303901203"
@@ -2878,6 +2883,11 @@
       "source_pcode": "PH1303901587"
     },
     {
+      "code": "PH1303901987|Barangay 587-A",
+      "label": "Barangay 587-A",
+      "source_pcode": "PH1303901987"
+    },
+    {
       "code": "PH1303901588|Barangay 588",
       "label": "Barangay 588",
       "source_pcode": "PH1303901588"
@@ -3238,9 +3248,19 @@
       "source_pcode": "PH1303901659"
     },
     {
+      "code": "PH1303901959|Barangay 659-A",
+      "label": "Barangay 659-A",
+      "source_pcode": "PH1303901959"
+    },
+    {
       "code": "PH1303901660|Barangay 660",
       "label": "Barangay 660",
       "source_pcode": "PH1303901660"
+    },
+    {
+      "code": "PH1303901960|Barangay 660-A",
+      "label": "Barangay 660-A",
+      "source_pcode": "PH1303901960"
     },
     {
       "code": "PH1303901661|Barangay 661",
@@ -3258,9 +3278,19 @@
       "source_pcode": "PH1303901663"
     },
     {
+      "code": "PH1303901963|Barangay 663-A",
+      "label": "Barangay 663-A",
+      "source_pcode": "PH1303901963"
+    },
+    {
       "code": "PH1303901664|Barangay 664",
       "label": "Barangay 664",
       "source_pcode": "PH1303901664"
+    },
+    {
+      "code": "PH1303901964|Barangay 664-A",
+      "label": "Barangay 664-A",
+      "source_pcode": "PH1303901964"
     },
     {
       "code": "PH1303901666|Barangay 666",
@@ -4028,6 +4058,11 @@
       "source_pcode": "PH1303901818"
     },
     {
+      "code": "PH1303901918|Barangay 818-A",
+      "label": "Barangay 818-A",
+      "source_pcode": "PH1303901918"
+    },
+    {
       "code": "PH1303901819|Barangay 819",
       "label": "Barangay 819",
       "source_pcode": "PH1303901819"
@@ -4459,41 +4494,6 @@
     }
   ],
   "quarantined_non_barangay_features": [
-    {
-      "code": "PH1303901922|Barangay 202-A",
-      "label": "Barangay 202-A",
-      "source_pcode": "PH1303901922"
-    },
-    {
-      "code": "PH1303901987|Barangay 587-A",
-      "label": "Barangay 587-A",
-      "source_pcode": "PH1303901987"
-    },
-    {
-      "code": "PH1303901959|Barangay 659-A",
-      "label": "Barangay 659-A",
-      "source_pcode": "PH1303901959"
-    },
-    {
-      "code": "PH1303901960|Barangay 660-A",
-      "label": "Barangay 660-A",
-      "source_pcode": "PH1303901960"
-    },
-    {
-      "code": "PH1303901963|Barangay 663-A",
-      "label": "Barangay 663-A",
-      "source_pcode": "PH1303901963"
-    },
-    {
-      "code": "PH1303901964|Barangay 664-A",
-      "label": "Barangay 664-A",
-      "source_pcode": "PH1303901964"
-    },
-    {
-      "code": "PH1303901918|Barangay 818-A",
-      "label": "Barangay 818-A",
-      "source_pcode": "PH1303901918"
-    },
     {
       "code": "PH1303901906|Manila North Cemetery",
       "label": "Manila North Cemetery",

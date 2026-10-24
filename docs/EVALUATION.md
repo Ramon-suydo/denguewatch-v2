@@ -131,3 +131,91 @@ Training-only standardization, fixed L2=20, log1p target, no lognormal bias corr
 24 gradient-boosted stumps, learning rate .05, minimum leaf 16, 7 training-only quantile split candidates, L2 leaf=10, log1p target. Fixed, no tuning on test folds.
 
 80% absolute-residual conformal radius with finite-sample rank; at least 20 matured out-of-sample targets by origin. No coverage guarantee under drift.
+
+## Threshold-episode lead time and driver fits
+
+A threshold episode begins only when a scored one-week target is above its past-only threshold and the immediately preceding calendar week is observed at/below threshold. Gaps do not establish episode onset. Lead is the earliest positive forecast targeting that onset among 1/2/4-week horizons. This measures research threshold episodes, not medically confirmed outbreaks. Eligible events, misses and exact origins are saved in evaluation.json.
+
+|Horizon set|Scenario|Model|Eligible onsets|Detected|Mean lead weeks|
+|---|---|---|---:|---:|---:|
+|primary-1-2|Z|naive|18|7|2.000|
+|primary-1-2|Z|mean-4|18|7|2.000|
+|primary-1-2|Z|seasonal-naive|18|5|2.000|
+|primary-1-2|Z|endemic-channel|18|7|2.000|
+|primary-1-2|Z|ridge-cases|18|6|1.833|
+|primary-1-2|Z|ridge-weather|18|6|2.000|
+|primary-1-2|Z|tree-cases|18|5|2.000|
+|primary-1-2|Z|tree-weather|18|5|2.000|
+|primary-1-2|M|naive|9|3|2.000|
+|primary-1-2|M|mean-4|9|3|2.000|
+|primary-1-2|M|seasonal-naive|9|3|2.000|
+|primary-1-2|M|endemic-channel|9|5|2.000|
+|primary-1-2|M|ridge-cases|9|3|2.000|
+|primary-1-2|M|ridge-weather|9|5|2.000|
+|primary-1-2|M|tree-cases|9|3|1.667|
+|primary-1-2|M|tree-weather|9|3|1.667|
+|exploratory-1-2-4|Z|naive|18|9|3.778|
+|exploratory-1-2-4|Z|mean-4|18|9|3.778|
+|exploratory-1-2-4|Z|seasonal-naive|18|5|4.000|
+|exploratory-1-2-4|Z|endemic-channel|18|9|3.778|
+|exploratory-1-2-4|Z|ridge-cases|18|9|3.222|
+|exploratory-1-2-4|Z|ridge-weather|18|8|3.000|
+|exploratory-1-2-4|Z|tree-cases|18|5|4.000|
+|exploratory-1-2-4|Z|tree-weather|18|5|4.000|
+|exploratory-1-2-4|M|naive|9|4|3.000|
+|exploratory-1-2-4|M|mean-4|9|3|4.000|
+|exploratory-1-2-4|M|seasonal-naive|9|3|4.000|
+|exploratory-1-2-4|M|endemic-channel|9|5|3.600|
+|exploratory-1-2-4|M|ridge-cases|9|4|3.500|
+|exploratory-1-2-4|M|ridge-weather|9|6|3.667|
+|exploratory-1-2-4|M|tree-cases|9|3|3.000|
+|exploratory-1-2-4|M|tree-weather|9|3|3.000|
+
+Descriptive final one-week ridge coefficients and normalized boosted-stump split gains are saved by scenario/model with fit origin and feature names. These are training-fit summaries, not causal driver effects or out-of-sample feature attribution. Weather remains excluded from the public baseline.
+
+## Alternate-source sensitivity (case-only)
+
+These experiments replace 2018–2020 targets/training with DOH. Sample support changes; do not interpret between-experiment MAE differences as paired model skill. They do not test weather robustness under the alternate source.
+
+|Scenario/source|Fold|Horizon|Model|N|MAE|
+|---|---|---:|---|---:|---:|
+|Z|2023|1|naive|48|10.042|
+|Z|test-2018-2023|1|naive|308|10.328|
+|Z|2023|1|ridge-cases|48|10.233|
+|Z|test-2018-2023|1|ridge-cases|308|10.858|
+|Z|2023|2|naive|48|12.604|
+|Z|test-2018-2023|2|naive|308|14.130|
+|Z|2023|2|ridge-cases|48|11.189|
+|Z|test-2018-2023|2|ridge-cases|308|13.298|
+|M|2023|1|naive|29|8.897|
+|M|test-2018-2023|1|naive|116|15.474|
+|M|2023|1|ridge-cases|29|9.548|
+|M|test-2018-2023|1|ridge-cases|116|16.356|
+|M|2023|2|naive|28|11.393|
+|M|test-2018-2023|2|naive|117|22.897|
+|M|2023|2|ridge-cases|28|11.151|
+|M|test-2018-2023|2|ridge-cases|117|22.175|
+|Z-DOH-sensitivity|2023|1|naive|48|10.042|
+|Z-DOH-sensitivity|test-2018-2023|1|naive|288|10.531|
+|Z-DOH-sensitivity|2023|1|ridge-cases|48|10.417|
+|Z-DOH-sensitivity|test-2018-2023|1|ridge-cases|288|11.213|
+|Z-DOH-sensitivity|2023|2|naive|48|12.604|
+|Z-DOH-sensitivity|test-2018-2023|2|naive|288|14.424|
+|Z-DOH-sensitivity|2023|2|ridge-cases|48|11.239|
+|Z-DOH-sensitivity|test-2018-2023|2|ridge-cases|288|13.408|
+|M-DOH-sensitivity|2023|1|naive|33|9.152|
+|M-DOH-sensitivity|test-2018-2023|1|naive|209|11.847|
+|M-DOH-sensitivity|2023|1|ridge-cases|33|9.702|
+|M-DOH-sensitivity|test-2018-2023|1|ridge-cases|209|12.981|
+|M-DOH-sensitivity|2023|2|naive|32|12.063|
+|M-DOH-sensitivity|test-2018-2023|2|naive|208|16.721|
+|M-DOH-sensitivity|2023|2|ridge-cases|32|10.960|
+|M-DOH-sensitivity|test-2018-2023|2|ridge-cases|208|15.659|
+
+## Figures
+
+![Historical 2023 actual versus forecast](figures/forecast-vs-actual.png)
+
+![Error by horizon and scenario](figures/error-by-horizon.png)
+
+Recreate with npm run evaluate:plots (Python 3 with matplotlib). Missing targets break the plot line; no zero is inserted.

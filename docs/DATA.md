@@ -1,4 +1,4 @@
-﻿# Data assumptions and dictionary
+# Data assumptions and dictionary
 
 Run `npm run data:prepare` to regenerate `data/processed/*.json` and
 `data/validation_report.md`. Raw bytes are never changed and no database is used.
@@ -37,12 +37,18 @@ never summed. Death anomalies are disclosed and their DOH training targets remai
 excluded under the existing quality policy; death counts are never predictors.
 Daily source questions are evaluated using both scenarios.
 
-Reverified overlap is **156** full-boundary weeks (including zero-row weeks under
-Z), not the prompt's 151: daily-derived total **8,255**, DOH **8,244**, correlation
-**0.929366**, MAE **13.2244**, max difference **78**. Pair-level evidence is in
-audit.json. These totals are restricted to common labels; annual totals cannot be
-substituted. The final source dates differ. Alternate-source sensitivity must be
-reported separately; close totals do not prove interchangeable weekly targets.
+Reverified observed-week overlap matches the supplied **151 weeks**: daily
+**8,255**, DOH **8,234**, MAE **13.5960**, maximum difference **78**, correlation
+about **0.93**. This excludes five all-absent daily-derived weeks. Scenario Z's
+zero-assumed comparison includes them: **156** paired weeks, daily **8,255**,
+DOH **8,244**, correlation **0.929366**, MAE **13.2244**. Requiring seven daily
+rows yields **104** paired weeks, daily **7,767**, DOH **7,780**, MAE **17.2019**.
+All three cohorts and exact pairs are recorded in audit.json. Do not describe
+cohort differences as conflicting source files or silently mix denominators.
+
+The alternate-source sensitivity uses DOH for 2018–2020. It reports case-only
+baselines/regression separately; it does not establish weather robustness under
+the alternate source. Completeness and scored samples change between experiments.
 
 ## Geography
 

@@ -15,3 +15,6 @@ the frozen 2017 ridge candidate and all negative results remain in EVALUATION.md
 The conservative public promotion decision follows evaluation and is not claimed
 to be preregistered. Population rates are descriptive, not current incidence.
 Raw files never change; `data/processed/` contains reproducible evidence.
+
+Evaluation `falseAlarmRate` is FP / (FP + TN), the false-positive rate.
+The fraction of issued alerts that are false is 1 minus precision.

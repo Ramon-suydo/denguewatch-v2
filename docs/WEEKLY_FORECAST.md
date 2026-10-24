@@ -1,3 +1,5 @@
+> Archived context: Legacy NCR-only weekly model. The replacement Manila implementation and current evidence are in [EVALUATION.md](EVALUATION.md) and [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md). These earlier model claims are not the current public forecast.
+
 ﻿# Weekly forecast v1 (defense research estimates)
 
 Run `npm run forecast:backtest` from the repository root. It makes no hosted

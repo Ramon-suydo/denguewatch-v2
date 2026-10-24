@@ -31,7 +31,7 @@ with zipfile.ZipFile(archive) as z, z.open('phl_admin4.geojson') as raw:
 
 assert len(result)>=258
 assert len({r['code'] for r in result})==len(result)
-quarantined=[r for r in result if not __import__('re').fullmatch(r'Barangay [0-9]+[A-Za-z]?',r['label'])]
+quarantined=[r for r in result if not __import__('re').fullmatch(r'Barangay [0-9]+(?:-[A-Za-z])?',r['label'])]
 result=[r for r in result if r not in quarantined]
 result=sorted(result,key=lambda r:(int(''.join(c for c in r['label'] if c.isdigit()) or '999999'),r['label']))
 output={'version':1,'source':manifest['source'],'url':manifest['url'],'license':manifest['license'],'source_zip_sha256':manifest['sourceZipSha256'],'valid_on':manifest['validOn'],'identity_note':'Composite source PCODE and exact label, not an inferred PSGC replacement. City-only selection allowed when an area is not listed. No case counts are assigned to these areas.','quarantined_non_barangay_features':quarantined,'rows':result}

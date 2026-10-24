@@ -7,10 +7,14 @@ import type { City, Observation } from "../../src/lib/types";
 let cached: ReturnType<typeof build> | undefined;
 async function build() {
   const dataset = await loadDataset("data/raw");
-  const snapshot = JSON.parse(await readFile("public/demo-snapshot.json", "utf8"));
-  const cities: City[] = dataset.lgus.map((city, index) => ({
+  const snapshot = JSON.parse(
+    await readFile("public/demo-snapshot.json", "utf8"),
+  );
+  const cities: City[] = dataset.lgus.map((city) => ({
     ...city,
-    id: snapshot.cities.find((saved: { name: string }) => saved.name === city.name)!.id,
+    id: snapshot.cities.find(
+      (saved: { name: string }) => saved.name === city.name,
+    )!.id,
   }));
   const rows: Observation[] = dataset.observations.map((row, index) => ({
     ...row,
@@ -57,6 +61,9 @@ export async function mockPublicApi(
         })),
       );
     if (resource === "city_forecasts") return respond(fixture.forecasts);
+    if (resource === "reporting_v2_policy")
+      return respond({ enabled: open, consent_version: "community-v2" });
+    if (resource === "community_signal_aggregates") return respond([]);
     if (resource === "community_policy")
       return respond({
         id: true,
@@ -74,11 +81,22 @@ export async function mockPublicApi(
       if (city) historyOffsets.push(start);
       return respond(
         fixture.rows
-          .filter((row) => (!city || row.lgu_id === city) && row.period_type === period
-            && (!url.searchParams.get("source") || row.source === url.searchParams.get("source")!.replace("eq.", "")))
+          .filter(
+            (row) =>
+              (!city || row.lgu_id === city) &&
+              row.period_type === period &&
+              (!url.searchParams.get("source") ||
+                row.source ===
+                  url.searchParams.get("source")!.replace("eq.", "")),
+          )
           .sort((a, b) => {
-            const direction = url.searchParams.get("order")?.includes("desc") ? -1 : 1;
-            return direction * (a.period_start.localeCompare(b.period_start) || a.id - b.id);
+            const direction = url.searchParams.get("order")?.includes("desc")
+              ? -1
+              : 1;
+            return (
+              direction *
+              (a.period_start.localeCompare(b.period_start) || a.id - b.id)
+            );
           })
           .slice(start, start + limit),
       );

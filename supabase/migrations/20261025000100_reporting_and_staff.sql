@@ -54,6 +54,7 @@ create table public.staff_audit (
  record_id uuid,at timestamptz not null default now()
 );
 alter table public.staff_audit enable row level security;
+revoke all on sequence public.staff_audit_id_seq from public,anon,authenticated;
 revoke all on public.staff_audit from public,anon,authenticated;
 grant select on public.staff_audit to authenticated;
 create policy audit_admin_read on public.staff_audit for select to authenticated using((select public.staff_role())='admin');
@@ -207,3 +208,19 @@ create or replace function public.submit_community_report(p_lgu_id uuid,p_report
 returns text language plpgsql security definer set search_path='' as $$begin raise exception 'Legacy collection is closed';end;$$;
 create or replace function public.community_reports_weekly_agg() returns table(lgu_id uuid,week_start date,report_count bigint)
 language sql stable security definer set search_path='' as $$ select null::uuid,null::date,0::bigint where false;$$;
+-- Reuse the reviewed hourly job when pg_cron is available/preloaded. PGlite
+-- intentionally lacks it; deployed scheduling/execution still needs verification.
+do $retention$
+begin
+ if not exists(select 1 from pg_extension where extname='pg_cron')
+ and exists(select 1 from pg_available_extensions where name='pg_cron')
+ and coalesce(current_setting('shared_preload_libraries',true),'') like '%pg_cron%' then
+  execute 'create extension if not exists pg_cron with schema pg_catalog';
+ end if;
+ if exists(select 1 from pg_extension where extname='pg_cron') then
+  execute $job$select cron.schedule('denguewatch-community-retention','17 * * * *','select private.purge_expired_community_reports()')$job$;
+ else
+  raise notice 'pg_cron unavailable: retention job not scheduled; collection stays closed pending owner verification';
+ end if;
+end;
+$retention$;

@@ -25,7 +25,11 @@ export function useResource<T>(
   loader: (signal: AbortSignal) => Promise<T>,
 ): Resource<T> {
   const [attempt, setAttempt] = useState(0);
-  const mode = useSyncExternalStore(subscribeSnapshot, snapshotDate, () => null);
+  const mode = useSyncExternalStore(
+    subscribeSnapshot,
+    snapshotDate,
+    () => null,
+  );
   const [state, setState] = useState<{
     key: string;
     mode: string | null;
@@ -59,7 +63,6 @@ export function useResource<T>(
       });
     return () => controller.abort();
     // key is the complete identity of a read. Avoid rerunning on inline loaders.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, attempt, mode]);
   const current =
     state.key === key && state.attempt === attempt && state.mode === mode
@@ -68,7 +71,9 @@ export function useResource<T>(
   return { ...current, retry: () => setAttempt((value) => value + 1) };
 }
 function useAppResources() {
-  const cities = useResource("cities", async signal => (await fetchCities(signal)).filter(city => city.name === "MANILA CITY"));
+  const cities = useResource("cities", async (signal) =>
+    (await fetchCities(signal)).filter((city) => city.name === "MANILA CITY"),
+  );
   const forecasts = useResource("forecasts", fetchForecasts);
   const community = useResource("community", fetchCommunity);
   const policy = useResource("policy", fetchPolicy);

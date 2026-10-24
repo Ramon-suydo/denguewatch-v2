@@ -9,6 +9,8 @@ Generated with npm run data:prepare; no database writes.
 - Stitched weeks per scenario: 413; source changes on 2018-01-01.
 - Complete boundary weeks only; final partial week retained for audit, excluded from forecasts/scoring.
 - Duplicate weekly _1.csv present: false. Raw files untouched.
-- Reconciliation: 156 paired weeks; daily 8255, DOH 8244; MAE 13.2244, correlation 0.929366, maximum difference 78.
+- Reconciliation: 151 paired weeks; daily 8255, DOH 8234; MAE 13.5960, correlation 0.927118, maximum difference 78.
+- Zero-assumed overlap (includes blank derived weeks): 156; daily 8255, DOH 8244, MAE 13.2244.
+- Seven-row-week overlap: 104; daily 7767, DOH 7780, MAE 17.2019.
 - Operational DOH Sunday-week-ending interpretation remains unconfirmed.
 - See data/processed/audit.json for nulls, gaps, anomalies, schemas and fingerprints.

@@ -1,5 +1,6 @@
 # Handoff
-Branch: feat/risk-grid.
+Current branch: feat/manila-evidence. Earlier entries below are historical.
+Current specification: FINAL_REQUIREMENTS.md. Current evidence and release gates: IMPLEMENTATION_STATUS.md.
 
 ## Hosted setup completed
 On 2026-09-24, the user explicitly authorized applying the three pending migrations
@@ -465,3 +466,28 @@ git push -u origin feat/manila-redesign.
 - Checks: 32 unit tests; 21 browser tests (all public routes, four widths, axe, keyboard, closed submissions, print, cached/offline and timeout behavior); build; contrast/ramp simulations; git diff --check; local documentation links. All pass. Production smoke: 12 routes, zero console issues/external requests, 258 shapes; screenshot .artifacts/push-review-{320,1280}.png, desktop inspected.
 - Historical secret-pattern scan covers 343 text blobs: no private keys, recognized secret tokens or database passwords detected. Local env/cert files remain ignored; src has no TODO/FIXME or console logging. No hosted database writes. Existing Node 20 laptop engine mismatch retained; collaborators should use declared Node >=22.12.
 - Before merging into main, test locally and self-review; main deploys production. Partner checks out feat/manila-redesign and creates a feature branch from it.
+
+## Replacement specification — 2026-10-25
+
+Owner supplied FINAL_REQUIREMENTS.md, replacing the older redesign/Tondo scope.
+Implemented on feat/manila-evidence from feat/manila-redesign; main and defense-v1
+unchanged. Start with README, AUDIT, DATA, MEASUREMENTS, EVALUATION and
+IMPLEMENTATION_STATUS before proposing further work.
+
+- Immutable daily-derived Z/M series, explicit DOH join, source reconciliation,
+  verified ERA5 provenance, fixed-seed rolling evaluation and read-only APIs.
+- Current public baseline is persistence; primary weather ridge comparisons are
+  negative. Never claim current 2026 risk or clinically validated outbreak alerts.
+- Public Manila history, historical 17-city NCR map, methodology/driver/alert tables,
+  prevention and bilingual Home/Prevention/Report; PWA public-only cache.
+- V2 reporting/roles/moderation/upload/audit/retention migrations prepared and tested
+  locally. Collection stays closed; legacy activation command is retired.
+- Local DB password equals a public identifier: rotate before hosted use. New
+  hosted migrations, real Auth/MFA/purge verification, DPO/provenance review,
+  deployed ZAP and human usability evidence remain outside verified local results.
+- Docker is absent; guarded local staff setup provided but its full Docker/Auth
+  execution is unverified. Public demo works without DB credentials.
+
+Test locally and self-review before merging risky work near defense. User pushes:
+`git push -u origin feat/manila-evidence`. Do not apply hosted migrations or open
+collection without later explicit owner authorization.
