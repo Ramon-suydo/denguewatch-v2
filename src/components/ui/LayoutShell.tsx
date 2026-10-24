@@ -144,7 +144,7 @@ export function LayoutShell({
             <span>
               Historical estimates, not alerts. Bundled source periods.{" "}
               {coverage.loading
-                ? "Checking data periodsâ€¦"
+                ? "Checking data periods…"
                 : coverage.error
                   ? "Data periods unavailable."
                   : "Data: " +
@@ -174,13 +174,13 @@ export function LayoutShell({
         <div className="ui-container footer-inner">
           <SharedDisclaimer />
           <span>DengueWatch / Community health, in focus.</span>
-          {preview && <span>Design preview Â· Illustrative data only</span>}
-          <span>Thesis / research Â· Not an official DOH service</span>
+          {preview && <span>Design preview · Illustrative data only</span>}
+          <span>Thesis / research · Not an official DOH service</span>
           <span>Data attribution: {sourceAttribution()}</span>
           <span>
             Last data period:{" "}
             {coverage.loading
-              ? "Checking published recordsâ€¦"
+              ? "Checking published records…"
               : coverage.error
                 ? "Unavailable (data service could not be reached)"
                 : latest
@@ -204,9 +204,9 @@ export function LayoutShell({
             )}
           </span>
           <span>
-            <Link to="/data-sources">Data & Sources</Link> Â·{" "}
-            <Link to="/legal">Legal & privacy drafts</Link> Â·{" "}
-            <Link to="/terms">Terms</Link> Â·{" "}
+            <Link to="/data-sources">Data & Sources</Link> ·{" "}
+            <Link to="/legal">Legal & privacy drafts</Link> ·{" "}
+            <Link to="/terms">Terms</Link> ·{" "}
             <Link to="/privacy">Privacy & withdrawal</Link>
           </span>
         </div>

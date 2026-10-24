@@ -1,0 +1,44 @@
+{
+  "kind": "Actual local historical app navigation; not usability results",
+  "base": "http://127.0.0.1:43125",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "scenes": [
+    {
+      "path": "/",
+      "seconds": 8
+    },
+    {
+      "path": "/trends",
+      "seconds": 8
+    },
+    {
+      "path": "/metro-manila",
+      "seconds": 8
+    },
+    {
+      "path": "/methodology",
+      "seconds": 8
+    },
+    {
+      "path": "/prevention",
+      "seconds": 5
+    },
+    {
+      "path": "/report",
+      "seconds": 5
+    },
+    {
+      "path": "/admin",
+      "seconds": 5
+    },
+    {
+      "path": "/trends",
+      "seconds": 5
+    }
+  ],
+  "no_health_report_submitted": true,
+  "no_staff_login_attempted": true
+}
