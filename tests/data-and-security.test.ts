@@ -38,7 +38,8 @@ before(async () => {
     grant execute on function auth.uid() to anon, authenticated;
     alter default privileges in schema public grant all on tables to anon, authenticated, service_role;
     alter default privileges in schema public grant all on sequences to anon, authenticated, service_role;`);
-  for (const file of (await readdir('supabase/migrations')).filter(f => f.endsWith('.sql')).sort())
+  // Legacy v1 regression contract; reporting-v2.test.ts applies every migration and proves legacy submission is disabled.
+  for (const file of (await readdir('supabase/migrations')).filter(f => f.endsWith('.sql') && f < '20261025000100_reporting_and_staff.sql').sort())
     await db.exec(await readFile(`supabase/migrations/${file}`, 'utf8'));
   await db.query('insert into auth.users(id) values ($1),($2)', [ADMIN, VIEWER]);
   await db.query('insert into private.admin_users(user_id) values ($1)', [ADMIN]);
