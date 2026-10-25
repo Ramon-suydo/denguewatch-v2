@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-25T07:17:06.893973+00:00",
+  "members": 524,
+  "zip_bytes": 8089303,
+  "combined_folder_and_zip_bytes": 24442068,
+  "largest_member_bytes": 1330214,
+  "sha256": "5de3298bbbb35643bc721f269cdb9fafb07735062fd9c491dee11038dc3823a1",
+  "nested_archives_scanned": true,
+  "all_checksums_valid": true,
+  "release_status": "BLOCKED / NEEDS OWNER",
+  "nested_trace_members": 61,
+  "largest_uncompressed_nested_trace_member_bytes": 749010,
+  "source_commit": "d237e92929bfd8e3a9c3f60b51386fd3be0b5052",
+  "post_package_audit": {
+    "current_findings": 0,
+    "known_history_findings": 44,
+    "unexpected_history_findings": 0,
+    "release_gate_passed": false,
+    "rotation_status": "NEEDS OWNER"
+  },
+  "generation_logs": {
+    "bundle-core": "{\n  \"command\": \"python .artifacts/launch/bundle-core.py\",\n  \"started_utc\": \"2026-10-25T07:16:37.126189+00:00\",\n  \"duration_seconds\": 5.672,\n  \"exit_code\": 0\n}\nSTDOUT\n{\n  \"prepared_utc\": \"2026-10-25T07:16:37.428185+00:00\",\n  \"source_commit\": \"d237e92929bfd8e3a9c3f60b51386fd3be0b5052\",\n  \"copied_sources_docs_sql\": 278,\n  \"profiled_files\": 19,\n  \"metric_tables\": {\n    \"main-selection\": 2,\n    \"main-summaries\": 756,\n    \"main-latest\": 24,\n    \"main-episode_leads\": 32,\n    \"main-drivers\": 8,\n    \"environment-summaries\": 288,\n    \"environment-leads\": 12,\n    \"environment-drivers\": 10,\n    \"city-context\": 17,\n    \"geographic-correlations\": 6,\n    \"monthly-profile\": 24,\n    \"lag-correlations\": 48\n  },\n  \"claim_rows\": 242,\n  \"exactly_verified_claim_rows\": 66,\n  \"commands_preserved\": 100\n}\n\nSTDERR\n",
+    "bundle-finish": "{\n  \"command\": \"python .artifacts/launch/bundle-finish.py\",\n  \"started_utc\": \"2026-10-25T07:16:42.986262+00:00\",\n  \"duration_seconds\": 1.188,\n  \"exit_code\": 0\n}\nSTDOUT\n{\n  \"ui_screenshots\": 40,\n  \"numeric_occurrences\": 1766,\n  \"rls_tables\": 15,\n  \"payload_bytes_before_redaction_and_splitting\": 16222295\n}\n\nSTDERR\n",
+    "bundle-package": "{\n  \"command\": \"python .artifacts/launch/package-review.py\",\n  \"started_utc\": \"2026-10-25T07:16:44.334263+00:00\",\n  \"duration_seconds\": 22.61,\n  \"exit_code\": 0\n}\nSTDOUT\n{\n  \"utc\": \"2026-10-25T07:17:06.893973+00:00\",\n  \"members\": 524,\n  \"zip_bytes\": 8089303,\n  \"combined_folder_and_zip_bytes\": 24442068,\n  \"largest_member_bytes\": 1330214,\n  \"sha256\": \"5de3298bbbb35643bc721f269cdb9fafb07735062fd9c491dee11038dc3823a1\",\n  \"nested_archives_scanned\": true,\n  \"all_checksums_valid\": true,\n  \"release_status\": \"BLOCKED / NEEDS OWNER\"\n}\n\nSTDERR\n"
+  },
+  "packaging_logs_location": "Adjacent validation record; generated after source/test logs were sealed in the ZIP.",
+  "no_main_push": true
+}
