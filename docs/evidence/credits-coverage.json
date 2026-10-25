@@ -262,11 +262,12 @@
       "credit": "geoboundaries"
     }
   ],
-  "dependency_count": 396,
+  "dependency_count": 406,
   "fonts": [
     "Montserrat",
     "Roboto",
-    "Fraunces"
+    "Fraunces",
+    "DejaVu Sans (evaluation figures)"
   ],
   "passed": true
 }

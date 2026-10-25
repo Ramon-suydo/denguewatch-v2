@@ -201,6 +201,15 @@
       "files": [
         "@fontsource/fraunces"
       ]
+    },
+    {
+      "name": "DejaVu Sans (evaluation figures)",
+      "files": [
+        "matplotlib"
+      ],
+      "licence": "Bitstream Vera / DejaVu font licence",
+      "source_url": "/THIRD_PARTY_LICENSES.md",
+      "evidence_file": "docs/evidence/dejavu-font-license.txt"
     }
   ],
   "icons": [

@@ -21,3 +21,5 @@ Core pages and privacy support English/Filipino. Team and contacts come only fro
 ## Loading and mobile measurement
 
 Public route loading reserves one viewport of space so the safety notice and footer do not jump through the visible screen when a lazy page arrives. Dashboard reporting status imports the reporting client after the page can render. The shared photograph receives high fetch priority only on Dashboard. A real local mobile Lighthouse comparison improved performance from 65 to 91 and retained accessibility 100; CLS fell from 0.723 to 0.00053. Original and fixed logs are retained. These local scores do not verify hosted Vercel performance.
+
+The software inventory includes all 16 resolved Python packages (406 npm/Python entries total), with every Python package version pinned. Bundled Python licence files are reproduced in THIRD_PARTY_LICENSES.md, including the DejaVu font notice for evaluation figures. UI fonts remain OFL-1.1.

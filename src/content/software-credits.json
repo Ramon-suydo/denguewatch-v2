@@ -3121,50 +3121,199 @@
   },
   {
     "ecosystem": "Python",
-    "name": "numpy",
-    "version": "2.5.4",
-    "licence": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
-    "scope": "evaluation/build",
-    "source_url": ""
+    "name": "certifi",
+    "version": "2026.10.23",
+    "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
+    "scope": "evaluation/build (direct)",
+    "source_url": "https://github.com/certifi/python-certifi",
+    "canonical_name": "certifi",
+    "direct_requirement": true,
+    "dependencies": []
   },
   {
     "ecosystem": "Python",
-    "name": "scipy",
-    "version": "1.18.1",
+    "name": "contourpy",
+    "version": "1.4.0",
+    "licence": "BSD-3-Clause",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "contourpy",
+    "direct_requirement": true,
+    "dependencies": [
+      "numpy"
+    ]
+  },
+  {
+    "ecosystem": "Python",
+    "name": "cycler",
+    "version": "0.12.1",
     "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
-    "scope": "evaluation/build",
-    "source_url": ""
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "cycler",
+    "direct_requirement": true,
+    "dependencies": []
+  },
+  {
+    "ecosystem": "Python",
+    "name": "fonttools",
+    "version": "4.67.0",
+    "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
+    "scope": "evaluation/build (direct)",
+    "source_url": "http://github.com/fonttools/fonttools",
+    "canonical_name": "fonttools",
+    "direct_requirement": true,
+    "dependencies": []
+  },
+  {
+    "ecosystem": "Python",
+    "name": "kiwisolver",
+    "version": "1.5.1",
+    "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "kiwisolver",
+    "direct_requirement": true,
+    "dependencies": []
   },
   {
     "ecosystem": "Python",
     "name": "matplotlib",
     "version": "3.11.2",
     "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
-    "scope": "evaluation/build",
-    "source_url": ""
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "matplotlib",
+    "direct_requirement": true,
+    "dependencies": [
+      "contourpy",
+      "cycler",
+      "fonttools",
+      "kiwisolver",
+      "numpy",
+      "packaging",
+      "pillow",
+      "pyparsing",
+      "python-dateutil"
+    ]
   },
   {
     "ecosystem": "Python",
-    "name": "shapely",
-    "version": "2.2.0",
-    "licence": "BSD-3-Clause",
-    "scope": "evaluation/build",
-    "source_url": ""
+    "name": "numpy",
+    "version": "2.5.4",
+    "licence": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "numpy",
+    "direct_requirement": true,
+    "dependencies": []
+  },
+  {
+    "ecosystem": "Python",
+    "name": "packaging",
+    "version": "26.3",
+    "licence": "Apache-2.0 OR BSD-2-Clause",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "packaging",
+    "direct_requirement": true,
+    "dependencies": []
+  },
+  {
+    "ecosystem": "Python",
+    "name": "pillow",
+    "version": "13.0.0",
+    "licence": "MIT-CMU",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "pillow",
+    "direct_requirement": true,
+    "dependencies": []
+  },
+  {
+    "ecosystem": "Python",
+    "name": "pyparsing",
+    "version": "3.3.3",
+    "licence": "MIT",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "pyparsing",
+    "direct_requirement": true,
+    "dependencies": []
   },
   {
     "ecosystem": "Python",
     "name": "pyproj",
     "version": "3.8.0",
     "licence": "MIT",
-    "scope": "evaluation/build",
-    "source_url": "https://github.com/pyproj4/pyproj"
+    "scope": "evaluation/build (direct)",
+    "source_url": "https://github.com/pyproj4/pyproj",
+    "canonical_name": "pyproj",
+    "direct_requirement": true,
+    "dependencies": [
+      "certifi"
+    ]
   },
   {
     "ecosystem": "Python",
-    "name": "Pillow",
-    "version": "13.0.0",
-    "licence": "MIT-CMU",
-    "scope": "evaluation/build",
-    "source_url": ""
+    "name": "python-dateutil",
+    "version": "3.0.0",
+    "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
+    "scope": "evaluation/build (direct)",
+    "source_url": "https://github.com/dateutil/dateutil",
+    "canonical_name": "python-dateutil",
+    "direct_requirement": true,
+    "dependencies": [
+      "six",
+      "tzdata"
+    ]
+  },
+  {
+    "ecosystem": "Python",
+    "name": "scipy",
+    "version": "1.18.1",
+    "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "scipy",
+    "direct_requirement": true,
+    "dependencies": [
+      "numpy"
+    ]
+  },
+  {
+    "ecosystem": "Python",
+    "name": "shapely",
+    "version": "2.2.0",
+    "licence": "BSD-3-Clause",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "shapely",
+    "direct_requirement": true,
+    "dependencies": [
+      "numpy"
+    ]
+  },
+  {
+    "ecosystem": "Python",
+    "name": "six",
+    "version": "1.17.0",
+    "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
+    "scope": "evaluation/build (direct)",
+    "source_url": "https://github.com/benjaminp/six",
+    "canonical_name": "six",
+    "direct_requirement": true,
+    "dependencies": []
+  },
+  {
+    "ecosystem": "Python",
+    "name": "tzdata",
+    "version": "2026.5",
+    "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
+    "scope": "evaluation/build (direct)",
+    "source_url": "https://github.com/python/tzdata",
+    "canonical_name": "tzdata",
+    "direct_requirement": true,
+    "dependencies": []
   }
 ]
