@@ -1,5 +1,4 @@
 import cities from '../content/ncr-cities.json';
-import {score,type ModelBundle} from './scorer';
 export type WeeklyRow={city:string;week_ending:string;cases:number};
 const DAY=86400000;
 export function manilaToday(now=new Date()){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Manila',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);return ['year','month','day'].map(k=>parts.find(p=>p.type===k)!.value).join('-');}
@@ -24,9 +23,4 @@ export function cityFeatures(rows:WeeklyRow[],city:string,origin:string){
  const rest=dates.map(d=>cities.filter(c=>c!==city).reduce((sum,c)=>sum+byDate.get(d)!.get(c)!,0));const target=new Date(+new Date(origin+'T00:00:00Z')+7*DAY).toISOString().slice(0,10),tw=weekNumber(target);
  const seasonal=own.filter(r=>r.week_ending.slice(0,4)<target.slice(0,4)&&Math.min(Math.abs(weekNumber(r.week_ending)-tw),53-Math.abs(weekNumber(r.week_ending)-tw))<=2);const expectation=seasonal.length>=5?mean(seasonal.map(r=>r.cases)):mu;
  return {features:[...counts.slice(0,4),m4,mean(counts),counts[0]/Math.max(m4,1),counts[0]/threshold,weekNumber(origin),rest[0],mean(rest.slice(0,4)),...cities.map(c=>Number(c===city))],threshold,seasonalRaw:expectation/(expectation+threshold),history:counts.slice().reverse(),target,cases:counts[0]};
-}
-export function liveForecast(bundle:ModelBundle,history:WeeklyRow[],upload:unknown,today=manilaToday()){
- const incoming=validateNcrRows(upload,today),latest=incoming.at(-1)!.week_ending;if(!liveIsFresh(latest,today))throw Error('Data is older than 21 days. Upload recent weekly counts.');
- const map=new Map(history.map(r=>[r.city+'|'+r.week_ending,r]));for(const r of incoming)map.set(r.city+'|'+r.week_ending,r);const combined=[...map.values()];
- return cities.map((city,city_id)=>{const input=cityFeatures(combined,city,latest),prediction=score(bundle,input.features,bundle.chosen,input.seasonalRaw);return {city,city_id,origin:latest,target:input.target,cases:input.cases,actual_cases:null,threshold:input.threshold,currently_above:input.cases>input.threshold,label:null,history:input.history,probability:prediction.probability,predicted_class:prediction.class};});
 }

@@ -1,3 +1,15 @@
+# Current feature handoff for Claude
+
+Use branch `feat/ml-map-ux`. Earlier main/redesign publication entries below describe older source. Current intent and limitations are in HANDOFF.md, ML_METHOD.md, ML_EVALUATION.md, MAP_DESIGN.md and UX_DECISIONS.md. See evidence/mlux-checks.md for completed verification, including any owner-blocked gates.
+
+Calculation entry points: `ml/data.py` constructs past-only targets/features and explicit calendar gaps; `ml/pipeline.py` tunes within chronological training, calibrates, evaluates five methods, yearly folds, onset and label sensitivities, then exports trees. `src/ml/scorer.ts` matches scikit-learn; `src/ml/live.ts` constructs the same feature vector. `public/ml/replay.json` supplies all 70 held-out calendar weeks. RF was selected on validation; persistence wins test F1. Do not promote a model using test results or claim clinical accuracy.
+
+UI entry points: `src/redesign/Dashboard.tsx`, `RiskMap.tsx`, `src/ml/MapProvider.tsx`, `useForecast.ts`, `ForecastUI.tsx`. Runtime source resolution is city only. OpenFreeMap is Risk-Map-only, with local PMTiles then neutral polygons/SVG fallbacks. The upload UI is `src/components/NcrModelUpload.tsx`; forward migration `20261026000100_ncr_model_uploads.sql` requires existing AAL2 admin protections. Uploads do not retrain the frozen model. Do not merge risky schema/auth work without local review and a preview.
+
+NEEDS OWNER: newer reviewed 17-city counts; original photo source/licence/permission; team/controller/contact details; credential rotation; hosted migration/Auth/MFA/purge/schedule/log-retention checks; DPO approval before collection; actual English/Filipino/screen-reader usability sessions. Study metadata is verified from IEEE/Crossref; full-text protocol fidelity has not been independently checked. No invented human results or successful hosted deployment is claimed.
+
+---
+
 # Claude review guide
 
 The owner explicitly authorizes publishing the completed redesign to main on 2026-10-25 so another reviewer can inspect the whole repository. Main pushes trigger Vercel deployments. Publication does not establish deployment success, credential rotation, hosted database migration, or permission to activate reporting.

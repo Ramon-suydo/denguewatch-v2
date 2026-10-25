@@ -13,6 +13,7 @@ import { App } from "./App";
 import "./app.css";
 import "./evidence.css";
 import "./redesign.css";
+import "./ml-map.css";
 import { ToastProvider } from "./components/ui";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

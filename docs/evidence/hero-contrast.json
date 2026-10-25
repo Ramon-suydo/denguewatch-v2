@@ -6,161 +6,161 @@
       "language": "en",
       "text": "THESIS PROJECT",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 13.46129595371026,
-      "pixels_sampled": 935,
+      "worst_measured_ratio": 15.812943876335739,
+      "pixels_sampled": 684,
       "passed": true
     },
     {
       "width": 360,
       "language": "en",
-      "text": "DATA AS OF 2023-12-02",
+      "text": "CITY DATA THROUGH 2020-12-27",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 12.609407987322257,
+      "worst_measured_ratio": 14.840423072668338,
+      "pixels_sampled": 1323,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "en",
+      "text": "Replay \u00b7 historical example",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 13.582838236711765,
+      "pixels_sampled": 1632,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "en",
+      "text": "DENGUE WATCHMANILA",
+      "minimum_required": 3,
+      "worst_measured_ratio": 10.090362117512957,
+      "pixels_sampled": 19530,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "en",
+      "text": "Explore next-week city estimates through historical examples.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 9.630252091182292,
+      "pixels_sampled": 5700,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "PROYEKTO NG TESIS",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 15.812943876335739,
+      "pixels_sampled": 837,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "TALA NG LUNGSOD HANGGANG 2020-12-27",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 14.840423072668338,
+      "pixels_sampled": 1746,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "Replay \u00b7 lumang halimbawa",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 13.582838236711765,
+      "pixels_sampled": 1704,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "DENGUE WATCHMANILA",
+      "minimum_required": 3,
+      "worst_measured_ratio": 10.061660770221138,
+      "pixels_sampled": 19530,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "Tuklasin ang pagtataya sa lungsod gamit ang lumang halimbawa.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 9.573993288062484,
+      "pixels_sampled": 6090,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "THESIS PROJECT",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 16.30823336327816,
+      "pixels_sampled": 1078,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "CITY DATA THROUGH 2020-12-27",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 16.352857538316986,
+      "pixels_sampled": 2101,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "Replay \u00b7 historical example",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 13.582838236711765,
+      "pixels_sampled": 2128,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "DENGUE WATCHMANILA",
+      "minimum_required": 3,
+      "worst_measured_ratio": 3.3748524053844364,
+      "pixels_sampled": 32132,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "Explore next-week city estimates through historical examples.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 11.974140315919268,
+      "pixels_sampled": 7684,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "PROYEKTO NG TESIS",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 16.30823336327816,
       "pixels_sampled": 1320,
       "passed": true
     },
     {
-      "width": 360,
-      "language": "en",
-      "text": "Understand the patterns. Take care of each other.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 12.936861162986022,
-      "pixels_sampled": 5408,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "en",
-      "text": "DENGUE WATCHMANILA",
-      "minimum_required": 3,
-      "worst_measured_ratio": 6.992387465277938,
-      "pixels_sampled": 45126,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "en",
-      "text": "Historical evidence. Everyday awareness. No live case surveillance.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 6.249981639489727,
-      "pixels_sampled": 5580,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "fil",
-      "text": "THESIS PROJECT",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 13.46129595371026,
-      "pixels_sampled": 935,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "fil",
-      "text": "DATOS HANGGANG 2023-12-02",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 12.483339837190606,
-      "pixels_sampled": 1716,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "fil",
-      "text": "Unawain ang datos. Alagaan ang isa\u2019t isa.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 12.936861162986022,
-      "pixels_sampled": 4512,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "fil",
-      "text": "DENGUE WATCHMANILA",
-      "minimum_required": 3,
-      "worst_measured_ratio": 6.992387465277938,
-      "pixels_sampled": 45126,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "fil",
-      "text": "Makasaysayang ebidensiya. Araw-araw na pag-iingat. Hindi live na pagmamanman ng kaso.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 6.249981639489727,
-      "pixels_sampled": 7860,
-      "passed": true
-    },
-    {
       "width": 768,
-      "language": "en",
-      "text": "THESIS PROJECT",
+      "language": "fil",
+      "text": "TALA NG LUNGSOD HANGGANG 2020-12-27",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 13.810929338756887,
-      "pixels_sampled": 1430,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "en",
-      "text": "DATA AS OF 2023-12-02",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 11.532065064277122,
-      "pixels_sampled": 2015,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "en",
-      "text": "Understand the patterns. Take care of each other.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 13.0754622687449,
-      "pixels_sampled": 5100,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "en",
-      "text": "DENGUE WATCHMANILA",
-      "minimum_required": 3,
-      "worst_measured_ratio": 4.5959421095416095,
-      "pixels_sampled": 99348,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "en",
-      "text": "Historical evidence. Everyday awareness. No live case surveillance.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 4.758848098356091,
-      "pixels_sampled": 6432,
+      "worst_measured_ratio": 11.000455886347972,
+      "pixels_sampled": 2750,
       "passed": true
     },
     {
       "width": 768,
       "language": "fil",
-      "text": "THESIS PROJECT",
+      "text": "Replay \u00b7 lumang halimbawa",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 13.810929338756887,
-      "pixels_sampled": 1430,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "fil",
-      "text": "DATOS HANGGANG 2023-12-02",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 11.532065064277122,
-      "pixels_sampled": 2600,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "fil",
-      "text": "Unawain ang datos. Alagaan ang isa\u2019t isa.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 13.0754622687449,
-      "pixels_sampled": 4260,
+      "worst_measured_ratio": 13.582838236711765,
+      "pixels_sampled": 2212,
       "passed": true
     },
     {
@@ -168,17 +168,17 @@
       "language": "fil",
       "text": "DENGUE WATCHMANILA",
       "minimum_required": 3,
-      "worst_measured_ratio": 4.5959421095416095,
-      "pixels_sampled": 99348,
+      "worst_measured_ratio": 3.3748524053844364,
+      "pixels_sampled": 32132,
       "passed": true
     },
     {
       "width": 768,
       "language": "fil",
-      "text": "Makasaysayang ebidensiya. Araw-araw na pag-iingat. Hindi live na pagmamanman ng kaso.",
+      "text": "Tuklasin ang pagtataya sa lungsod gamit ang lumang halimbawa.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 4.758848098356091,
-      "pixels_sampled": 8960,
+      "worst_measured_ratio": 10.814470420398264,
+      "pixels_sampled": 8194,
       "passed": true
     },
     {
@@ -186,26 +186,26 @@
       "language": "en",
       "text": "THESIS PROJECT",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 14.219658844449887,
-      "pixels_sampled": 1430,
+      "worst_measured_ratio": 15.740506370066218,
+      "pixels_sampled": 1078,
       "passed": true
     },
     {
       "width": 1440,
       "language": "en",
-      "text": "DATA AS OF 2023-12-02",
+      "text": "CITY DATA THROUGH 2020-12-27",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 9.960757486113133,
-      "pixels_sampled": 2002,
+      "worst_measured_ratio": 10.950934061625235,
+      "pixels_sampled": 2101,
       "passed": true
     },
     {
       "width": 1440,
       "language": "en",
-      "text": "Understand the patterns. Take care of each other.",
+      "text": "Replay \u00b7 historical example",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 10.121526677340263,
-      "pixels_sampled": 8520,
+      "worst_measured_ratio": 13.582838236711765,
+      "pixels_sampled": 2128,
       "passed": true
     },
     {
@@ -213,44 +213,44 @@
       "language": "en",
       "text": "DENGUE WATCHMANILA",
       "minimum_required": 3,
-      "worst_measured_ratio": 3.118208310440536,
-      "pixels_sampled": 348766,
+      "worst_measured_ratio": 3.3748524053844364,
+      "pixels_sampled": 111066,
       "passed": true
     },
     {
       "width": 1440,
       "language": "en",
-      "text": "Historical evidence. Everyday awareness. No live case surveillance.",
+      "text": "Explore next-week city estimates through historical examples.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 8.053767948040417,
-      "pixels_sampled": 6432,
+      "worst_measured_ratio": 13.268021131801602,
+      "pixels_sampled": 7684,
       "passed": true
     },
     {
       "width": 1440,
       "language": "fil",
-      "text": "THESIS PROJECT",
+      "text": "PROYEKTO NG TESIS",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 14.219658844449887,
-      "pixels_sampled": 1430,
+      "worst_measured_ratio": 15.740506370066218,
+      "pixels_sampled": 1320,
       "passed": true
     },
     {
       "width": 1440,
       "language": "fil",
-      "text": "DATOS HANGGANG 2023-12-02",
+      "text": "TALA NG LUNGSOD HANGGANG 2020-12-27",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 9.960757486113133,
-      "pixels_sampled": 2587,
+      "worst_measured_ratio": 10.950934061625235,
+      "pixels_sampled": 2750,
       "passed": true
     },
     {
       "width": 1440,
       "language": "fil",
-      "text": "Unawain ang datos. Alagaan ang isa\u2019t isa.",
+      "text": "Replay \u00b7 lumang halimbawa",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 10.121526677340263,
-      "pixels_sampled": 7080,
+      "worst_measured_ratio": 13.582838236711765,
+      "pixels_sampled": 2212,
       "passed": true
     },
     {
@@ -258,17 +258,17 @@
       "language": "fil",
       "text": "DENGUE WATCHMANILA",
       "minimum_required": 3,
-      "worst_measured_ratio": 3.118208310440536,
-      "pixels_sampled": 348766,
+      "worst_measured_ratio": 3.3748524053844364,
+      "pixels_sampled": 111066,
       "passed": true
     },
     {
       "width": 1440,
       "language": "fil",
-      "text": "Makasaysayang ebidensiya. Araw-araw na pag-iingat. Hindi live na pagmamanman ng kaso.",
+      "text": "Tuklasin ang pagtataya sa lungsod gamit ang lumang halimbawa.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 4.576953147751645,
-      "pixels_sampled": 8960,
+      "worst_measured_ratio": 13.268021131801602,
+      "pixels_sampled": 8194,
       "passed": true
     }
   ],

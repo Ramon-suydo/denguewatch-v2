@@ -106,7 +106,7 @@ test("warmed routes and validated datasets remain available with the browser ful
   page.on("pageerror", (e) => errors.push(e.message));
   await goto(page, "/");
   await expect(
-    activeView(page).getByRole("heading", { name: "Current risk unavailable" }),
+    activeView(page).getByRole("heading", { name: "Cities to watch" }),
   ).toBeVisible();
   for (const route of [
     "/trends",
@@ -140,7 +140,7 @@ test("slow research reads show loading without inventing a current risk, then re
     await gate;
     await r.continue();
   });
-  await goto(page, "/");
+  await goto(page, "/about?drawer=methods&section=dashboard");
   await expect(activeView(page).getByText("Loading data…", { exact: true })).toBeVisible();
   await expect(
     activeView(page).getByRole("heading", { name: "Current risk unavailable" }),

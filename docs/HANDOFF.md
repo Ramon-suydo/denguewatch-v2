@@ -1,3 +1,17 @@
+# Active NCR ML / map / UX task
+
+Active branch: feat/ml-map-ux from main de0d22c. The owner requests a 17-city classification Replay/Live product, MapLibre/OpenFreeMap plus local PMTiles and a simpler Dashboard. No main push or hosted migration is included in this task. Main merge automatically deploys Vercel; test locally, self-review and inspect the preview before merging this schema/UI work near the defense.
+
+ML source checkpoint 5fc7d52, deterministic-scoring correction 419ce93 and reviewed upload migration checkpoint 01a68fd are committed. Current methods and generated results: ML_METHOD.md, ML_EVALUATION.md. Map assets and behavior: MAP_DESIGN.md and scripts/build-basemap.md. UX/human checks: UX_DECISIONS.md and USABILITY_5_SECOND_TEST.md. Final browser/build/security evidence is still being assembled; earlier redesign checks below do not certify the new feature.
+
+The source has three missing whole weeks. No zeros are imputed. Chronological test has 1071 rows / 225 positives; onset has only 20 positives. The simple rule outperforms RF on held-out F1. RF remains the training-validation selection; no test-driven replacement is hidden. Replay exports all 70 calendar weeks, including 119 unavailable city-week predictions. Source and scorer parity cover 600 actual rows, across five methods and 28 input features.
+
+The local Protomaps extract is already downloaded and checked in at the next asset commit; it is 6.7 MB, with actual source/build/SHA receipts. No owner extract is required for that bundled file. Reporting remains closed. NEEDS OWNER: newer reviewed 17-city counts, photo permission/source/licence, team/controller/contact, credential rotation, hosted install/Auth/MFA/migration/purge/log-retention verification, DPO review and real English/Filipino/screen-reader usability sessions. The IEEE citation metadata has been resolved; full-text protocol fidelity still needs a readable publisher copy if formal verification is required.
+
+---
+
+The following publication/redesign entries are historical checkpoints, not authorization to deploy this later feature branch.
+
 # Main publication handoff
 
 The owner explicitly authorizes publishing the completed redesign to main on 2026-10-25 for Claude review. Read [CLAUDE_HANDOFF.md](CLAUDE_HANDOFF.md) for the source map, calculation entry points, verified results and remaining owner steps. Every main push triggers a Vercel deployment; successful hosted operation is not verified by publication. Reporting stays closed and credential rotation remains deferred.

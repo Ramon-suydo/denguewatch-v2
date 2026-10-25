@@ -70,6 +70,11 @@
       "credit": "population"
     },
     {
+      "path": "src/ml/MapProvider.tsx",
+      "host": "tiles.openfreemap.org",
+      "credit": "openfreemap"
+    },
+    {
       "path": "src/pages/Prevention.tsx",
       "host": "ro7.doh.gov.ph",
       "credit": "doh-safety"
@@ -77,6 +82,16 @@
     {
       "path": "src/pages/Prevention.tsx",
       "host": "www.cdc.gov",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/redesign/Dashboard.tsx",
+      "host": "www.cdc.gov",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/redesign/Dashboard.tsx",
+      "host": "bangsamoro.gov.ph",
       "credit": "doh-safety"
     },
     {
@@ -90,9 +105,39 @@
       "credit": "doh-safety"
     },
     {
+      "path": "src/redesign/MlMethods.tsx",
+      "host": "doi.org",
+      "credit": "study"
+    },
+    {
       "path": "src/redesign/PrivacyNotice.tsx",
       "host": "privacy.gov.ph",
       "credit": "doh-safety"
+    },
+    {
+      "path": "scripts/build-basemap.py",
+      "host": "github.com",
+      "credit": "protomaps"
+    },
+    {
+      "path": "scripts/build-basemap.py",
+      "host": "maps.protomaps.com",
+      "credit": "protomaps"
+    },
+    {
+      "path": "scripts/build-basemap.py",
+      "host": "build-metadata.protomaps.dev",
+      "credit": "protomaps"
+    },
+    {
+      "path": "scripts/build-basemap.py",
+      "host": "build.protomaps.com",
+      "credit": "protomaps"
+    },
+    {
+      "path": "scripts/build-basemap.py",
+      "host": "protomaps.github.io",
+      "credit": "protomaps"
     },
     {
       "path": "scripts/crosscheck-map-weather.py",
@@ -200,6 +245,11 @@
       "credit": "population"
     },
     {
+      "path": "scripts/prepare-metro-map.py",
+      "host": "www.w3.org",
+      "credit": "svg-standard"
+    },
+    {
       "path": "scripts/refresh-weather-context.ts",
       "host": "archive-api.open-meteo.com",
       "credit": "open-meteo"
@@ -232,6 +282,11 @@
       "credit": "geoboundaries"
     },
     {
+      "path": "data/geo/ncr-ml-crosswalk.json",
+      "sha256": "599b966c6e2bc733d7d1f52a781c98c984d6681cf6f306d8109d35c813440f07",
+      "credit": "geoboundaries"
+    },
+    {
       "path": "data/geo/ncr-source.json",
       "sha256": "78bcd38b3694fc82b8c1e88cc30031253c19e70df0a085a26160a2aeb8fcbd3a",
       "credit": "geoboundaries"
@@ -244,6 +299,11 @@
     {
       "path": "data/geo/tondo-boundaries.geojson",
       "sha256": "c5cecd61991da372429b462f62e8d5c673f901fc59fa2fad7a083cf08f55984c",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "public/geo/ncr-cities.geojson",
+      "sha256": "6a836b3f1a6a1802335f061abaac7eff06ea402b4a09f201910ecf4979e37e02",
       "credit": "geoboundaries"
     },
     {
@@ -262,12 +322,13 @@
       "credit": "geoboundaries"
     }
   ],
-  "dependency_count": 406,
+  "dependency_count": 438,
   "fonts": [
     "Montserrat",
     "Roboto",
     "Fraunces",
-    "DejaVu Sans (evaluation figures)"
+    "DejaVu Sans (evaluation figures)",
+    "Noto Sans Regular (local map glyphs)"
   ],
   "passed": true
 }

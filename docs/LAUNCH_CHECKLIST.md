@@ -1,3 +1,15 @@
+# Current NCR ML/map checkpoint (2026-10-26)
+
+Active branch: `feat/ml-map-ux`, based on main `de0d22c`. Current scientific method and results: [ML_METHOD.md](ML_METHOD.md) and [ML_EVALUATION.md](ML_EVALUATION.md). Map and UX: [MAP_DESIGN.md](MAP_DESIGN.md), [UX_DECISIONS.md](UX_DECISIONS.md). Final verification is recorded in [evidence/mlux-checks.md](evidence/mlux-checks.md); previous redesign passes below do not certify this feature.
+
+Implemented: 17-area chronological DT/RF research, calibration and all three baselines, onset and robustness analyses, Python/TypeScript parity, dated Replay/guarded Live, AAL2 reviewed CSV versioning with audit/rollback, a lazy MapLibre map with a real local PMTiles extract and polygon/SVG fallbacks, and a simpler bilingual Dashboard. Persistence wins held-out F1. Missing calendar weeks remain missing. No current outbreak forecast is inferred from old data.
+
+NEEDS OWNER: newer reviewed 17-city counts; original photo source/licence/permission; team/controller/contact details; credential rotation; hosted migration/Auth/MFA/purge/schedule/log-retention verification; DPO approval before collection; actual English/Filipino/screen-reader usability sessions. Local checks do not establish successful hosted operation. Reports remain closed. IEEE citation metadata is resolved; independent full-text protocol verification is still unavailable.
+
+Test locally, self-review and inspect the feature preview before merging this schema/UI work near the defense. Main merge automatically deploys Vercel. No feature push, main merge, hosted migration or report activation is included in this task.
+
+---
+
 # Current redesign checkpoint
 
 Active branch: `feat/redesign`. Application source: `c2a6751`. Local redesign gates are DONE: 77 unit/integration tests, 25 SQL checks plus one local authenticated UI flow, three consecutive 36-test UI runs, 10 production tests, three offline/PWA tests, 30 measured hero-text contrast targets, mobile Lighthouse 93.0/100 performance/accessibility, zero high/medium local passive ZAP alerts and zero npm audit findings. Evaluation reproduction checked 14 byte-identical outputs. Detailed commands, source/build commits, retained failures and verification limits: [redesign-checks.md](evidence/redesign-checks.md) and [redesign-status.json](evidence/redesign-status.json).

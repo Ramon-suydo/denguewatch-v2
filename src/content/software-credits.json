@@ -569,6 +569,78 @@
   },
   {
     "ecosystem": "npm",
+    "name": "@mapbox/jsonlint-lines-primitives",
+    "version": "2.0.3",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "git://github.com/mapbox/jsonlint.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@mapbox/point-geometry",
+    "version": "1.1.0",
+    "licence": "ISC",
+    "scope": "runtime",
+    "source_url": "git@github.com:mapbox/point-geometry.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@mapbox/tiny-sdf",
+    "version": "2.3.0",
+    "licence": "BSD-2-Clause",
+    "scope": "runtime",
+    "source_url": "git+https://github.com/mapbox/tiny-sdf.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@mapbox/unitbezier",
+    "version": "1.0.0",
+    "licence": "BSD-2-Clause",
+    "scope": "runtime",
+    "source_url": "git@github.com:mapbox/unitbezier.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@mapbox/vector-tile",
+    "version": "3.0.0",
+    "licence": "BSD-3-Clause",
+    "scope": "runtime",
+    "source_url": "git+https://github.com/mapbox/vector-tile-js.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@maplibre/geojson-vt",
+    "version": "6.3.0",
+    "licence": "ISC",
+    "scope": "runtime",
+    "source_url": "https://github.com/maplibre/geojson-vt"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@maplibre/maplibre-gl-style-spec",
+    "version": "26.4.4",
+    "licence": "ISC",
+    "scope": "runtime",
+    "source_url": "https://github.com/maplibre/maplibre-style-spec"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@maplibre/mlt",
+    "version": "1.3.0",
+    "licence": "(MIT OR Apache-2.0)",
+    "scope": "runtime",
+    "source_url": "https://github.com/maplibre/maplibre-tile-spec"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@maplibre/vt-pbf",
+    "version": "4.3.3",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "https://github.com/maplibre/vt-pbf"
+  },
+  {
+    "ecosystem": "npm",
     "name": "@noble/ciphers",
     "version": "1.3.0",
     "licence": "MIT",
@@ -606,6 +678,14 @@
     "licence": "Apache-2.0",
     "scope": "development/build",
     "source_url": "git+https://github.com/microsoft/playwright.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@protomaps/basemaps",
+    "version": "5.7.2",
+    "licence": "BSD-3-Clause",
+    "scope": "runtime",
+    "source_url": "git+https://github.com/protomaps/basemaps.git"
   },
   {
     "ecosystem": "npm",
@@ -1092,7 +1172,7 @@
     "name": "@types/geojson",
     "version": "7946.0.16",
     "licence": "MIT",
-    "scope": "development/build",
+    "scope": "runtime",
     "source_url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
   },
   {
@@ -1124,7 +1204,7 @@
     "name": "@types/react",
     "version": "19.3.0",
     "licence": "MIT",
-    "scope": "development/build",
+    "scope": "runtime",
     "source_url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
   },
   {
@@ -1545,6 +1625,14 @@
   },
   {
     "ecosystem": "npm",
+    "name": "bidi-js",
+    "version": "1.1.0",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "https://github.com/lojjic/bidi-js.git"
+  },
+  {
+    "ecosystem": "npm",
     "name": "brace-expansion",
     "version": "1.1.21",
     "licence": "MIT",
@@ -1652,7 +1740,7 @@
     "name": "csstype",
     "version": "3.2.3",
     "licence": "MIT",
-    "scope": "development/build",
+    "scope": "runtime",
     "source_url": "https://github.com/frenic/csstype"
   },
   {
@@ -1798,6 +1886,14 @@
     "licence": "BSD-2-Clause",
     "scope": "development/build",
     "source_url": "git://github.com/motdotla/dotenv.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "earcut",
+    "version": "3.2.4",
+    "licence": "ISC",
+    "scope": "runtime",
+    "source_url": "git://github.com/mapbox/earcut.git"
   },
   {
     "ecosystem": "npm",
@@ -1972,7 +2068,7 @@
     "name": "fflate",
     "version": "0.8.3",
     "licence": "MIT",
-    "scope": "development/build",
+    "scope": "runtime",
     "source_url": "https://github.com/101arrowz/fflate"
   },
   {
@@ -2022,6 +2118,14 @@
     "licence": "MIT",
     "scope": "development/build",
     "source_url": "https://github.com/loganfsmyth/gensync.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "gl-matrix",
+    "version": "3.4.4",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "https://github.com/toji/gl-matrix.git"
   },
   {
     "ecosystem": "npm",
@@ -2209,11 +2313,27 @@
   },
   {
     "ecosystem": "npm",
+    "name": "json-stringify-pretty-compact",
+    "version": "4.0.0",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "lydell/json-stringify-pretty-compact"
+  },
+  {
+    "ecosystem": "npm",
     "name": "json5",
     "version": "2.2.3",
     "licence": "MIT",
     "scope": "development/build",
     "source_url": "git+https://github.com/json5/json5.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "kdbush",
+    "version": "4.1.0",
+    "licence": "ISC",
+    "scope": "runtime",
+    "source_url": "git://github.com/mourner/kdbush.git"
   },
   {
     "ecosystem": "npm",
@@ -2361,6 +2481,14 @@
   },
   {
     "ecosystem": "npm",
+    "name": "maplibre-gl",
+    "version": "6.16.0",
+    "licence": "BSD-3-Clause",
+    "scope": "runtime",
+    "source_url": "https://github.com/maplibre/maplibre-gl-js"
+  },
+  {
+    "ecosystem": "npm",
     "name": "minimatch",
     "version": "3.1.5",
     "licence": "ISC",
@@ -2369,11 +2497,27 @@
   },
   {
     "ecosystem": "npm",
+    "name": "minimist",
+    "version": "1.2.8",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "git://github.com/minimistjs/minimist.git"
+  },
+  {
+    "ecosystem": "npm",
     "name": "ms",
     "version": "2.1.3",
     "licence": "MIT",
     "scope": "development/build",
     "source_url": "vercel/ms"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "murmurhash-js",
+    "version": "1.0.0",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "git://github.com/mikolalysenko/murmurhash-js.git"
   },
   {
     "ecosystem": "npm",
@@ -2454,6 +2598,14 @@
     "licence": "MIT",
     "scope": "development/build",
     "source_url": "sindresorhus/path-key"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "pbf",
+    "version": "5.1.2",
+    "licence": "BSD-3-Clause",
+    "scope": "runtime",
+    "source_url": "git+ssh://git@github.com/mapbox/pbf.git"
   },
   {
     "ecosystem": "npm",
@@ -2553,6 +2705,14 @@
   },
   {
     "ecosystem": "npm",
+    "name": "pmtiles",
+    "version": "4.5.0",
+    "licence": "BSD-3-Clause",
+    "scope": "runtime",
+    "source_url": ""
+  },
+  {
+    "ecosystem": "npm",
     "name": "postcss",
     "version": "8.5.28",
     "licence": "MIT",
@@ -2593,6 +2753,14 @@
   },
   {
     "ecosystem": "npm",
+    "name": "potpack",
+    "version": "2.1.0",
+    "licence": "ISC",
+    "scope": "runtime",
+    "source_url": "git+https://github.com/mapbox/potpack.git"
+  },
+  {
+    "ecosystem": "npm",
     "name": "prelude-ls",
     "version": "1.2.1",
     "licence": "MIT",
@@ -2601,11 +2769,27 @@
   },
   {
     "ecosystem": "npm",
+    "name": "protocol-buffers-schema",
+    "version": "3.6.1",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "https://github.com/mafintosh/protocol-buffers-schema"
+  },
+  {
+    "ecosystem": "npm",
     "name": "punycode",
     "version": "2.3.1",
     "licence": "MIT",
     "scope": "development/build",
     "source_url": "https://github.com/mathiasbynens/punycode.js.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "quickselect",
+    "version": "3.0.0",
+    "licence": "ISC",
+    "scope": "runtime",
+    "source_url": "github:mourner/quickselect"
   },
   {
     "ecosystem": "npm",
@@ -2689,6 +2873,14 @@
   },
   {
     "ecosystem": "npm",
+    "name": "require-from-string",
+    "version": "2.0.2",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "floatdrop/require-from-string"
+  },
+  {
+    "ecosystem": "npm",
     "name": "reselect",
     "version": "5.2.0",
     "licence": "MIT",
@@ -2702,6 +2894,14 @@
     "licence": "MIT",
     "scope": "development/build",
     "source_url": "sindresorhus/resolve-from"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "resolve-protobuf-schema",
+    "version": "2.1.0",
+    "licence": "MIT",
+    "scope": "runtime",
+    "source_url": "https://github.com/mafintosh/resolve-protobuf-schema.git"
   },
   {
     "ecosystem": "npm",
@@ -2830,6 +3030,14 @@
     "licence": "MIT",
     "scope": "development/build",
     "source_url": "git+https://github.com/SuperchupuDev/tinyglobby.git"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "tinyqueue",
+    "version": "3.0.0",
+    "licence": "ISC",
+    "scope": "runtime",
+    "source_url": "https://github.com/mourner/tinyqueue.git"
   },
   {
     "ecosystem": "npm",
@@ -3132,6 +3340,17 @@
   },
   {
     "ecosystem": "Python",
+    "name": "cloudpickle",
+    "version": "3.1.2",
+    "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
+    "scope": "evaluation/build (direct)",
+    "source_url": "https://github.com/cloudpipe/cloudpickle",
+    "canonical_name": "cloudpickle",
+    "direct_requirement": true,
+    "dependencies": []
+  },
+  {
+    "ecosystem": "Python",
     "name": "contourpy",
     "version": "1.4.0",
     "licence": "BSD-3-Clause",
@@ -3167,6 +3386,19 @@
   },
   {
     "ecosystem": "Python",
+    "name": "joblib",
+    "version": "1.6.0",
+    "licence": "BSD-3-Clause",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "joblib",
+    "direct_requirement": true,
+    "dependencies": [
+      "cloudpickle"
+    ]
+  },
+  {
+    "ecosystem": "Python",
     "name": "kiwisolver",
     "version": "1.5.1",
     "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
@@ -3175,6 +3407,27 @@
     "canonical_name": "kiwisolver",
     "direct_requirement": true,
     "dependencies": []
+  },
+  {
+    "ecosystem": "Python",
+    "name": "matplotlib",
+    "version": "3.11.0",
+    "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "matplotlib",
+    "direct_requirement": true,
+    "dependencies": [
+      "contourpy",
+      "cycler",
+      "fonttools",
+      "kiwisolver",
+      "numpy",
+      "packaging",
+      "pillow",
+      "pyparsing",
+      "python-dateutil"
+    ]
   },
   {
     "ecosystem": "Python",
@@ -3196,6 +3449,17 @@
       "pyparsing",
       "python-dateutil"
     ]
+  },
+  {
+    "ecosystem": "Python",
+    "name": "narwhals",
+    "version": "2.27.1",
+    "licence": "MIT",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "narwhals",
+    "direct_requirement": true,
+    "dependencies": []
   },
   {
     "ecosystem": "Python",
@@ -3270,6 +3534,23 @@
   },
   {
     "ecosystem": "Python",
+    "name": "scikit-learn",
+    "version": "1.9.1",
+    "licence": "BSD-3-Clause",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "scikit-learn",
+    "direct_requirement": true,
+    "dependencies": [
+      "joblib",
+      "narwhals",
+      "numpy",
+      "scipy",
+      "threadpoolctl"
+    ]
+  },
+  {
+    "ecosystem": "Python",
     "name": "scipy",
     "version": "1.18.1",
     "licence": "Installed licence notice reproduced in THIRD_PARTY_LICENSES.md",
@@ -3302,6 +3583,17 @@
     "scope": "evaluation/build (direct)",
     "source_url": "https://github.com/benjaminp/six",
     "canonical_name": "six",
+    "direct_requirement": true,
+    "dependencies": []
+  },
+  {
+    "ecosystem": "Python",
+    "name": "threadpoolctl",
+    "version": "3.7.0",
+    "licence": "BSD-3-Clause",
+    "scope": "evaluation/build (direct)",
+    "source_url": "",
+    "canonical_name": "threadpoolctl",
     "direct_requirement": true,
     "dependencies": []
   },

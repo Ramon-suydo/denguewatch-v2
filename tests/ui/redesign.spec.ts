@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
 import {goto,activeView} from '../support/active-view';
-import {outlookRows,type Outlook} from '../../src/redesign/outlook';
+import {mockPublicApi} from '../fixtures/public-fixtures';
 const read=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
 
 test('three navigation destinations, footer attribution, empty owner fields and old-route drawers',async({page})=>{
@@ -32,47 +32,25 @@ test('three navigation destinations, footer attribution, empty owner fields and 
  }
 });
 
-test('national map uses every explicit match, no guessed areas, exact saved metrics and real calendar windows',async({page})=>{
- await page.clock.setFixedTime(new Date('2026-10-20T04:00:00Z'));
- await page.route('**/api/v2/outlook-weather.json',route=>route.fulfill({status:503,body:'Unavailable'}));
- const external:string[]=[];page.on('request',r=>{if(/open-meteo|power\.larc|tile\./.test(r.url()))external.push(r.url());});
- const boundaryResponse=page.waitForResponse(async response=>{if(new URL(response.url()).pathname!=='/geo/philippines.geojson'||response.status()!==200)return false;try{return Array.isArray((await response.json()).features);}catch{return false;}});
- await goto(page,'/risk-map');const boundary=await boundaryResponse;expect(boundary.status()).toBe(200);await boundary.finished();const geo=await read('public/geo/philippines.geojson'),data=await read('public/api/v2/outlook.json') as Outlook;
- const polygons=page.locator('.national-map [data-boundary-id]');await expect(polygons).toHaveCount(geo.features.length);
- await expect(page.locator('.national-map [data-no-data="true"]')).toHaveCount(8);
- expect(geo.features.filter((f:any)=>f.properties.case_name)).toHaveLength(96);
- await expect(page.locator('.province-detail')).toContainText('Weather forecast unavailable. Seasonal outlook retained.');
- const detail=page.locator('.province-detail');await expect(detail).not.toContainText('estimated cases');
- await expect(page.locator('.national-map [data-case-unit]:not([data-case-unit=""])')).toHaveCount(96);
- const manila=page.locator('.national-map [data-case-unit="MANILA CITY"]');await manila.focus();await page.keyboard.press('Enter');await expect(manila).toHaveAttribute('aria-pressed','true');
- const expected=(date:string)=>outlookRows(data,date).find(r=>r.name==='MANILA CITY')!.index!.toLocaleString('en-US',{maximumFractionDigits:1});
- for(const [label,date] of [['Today','2026-10-20'],['+3 days','2026-10-23'],['+7 days','2026-10-27']]){
-  await page.getByRole('button',{name:label,exact:true}).click();await expect(detail.locator('[data-outlook-index]')).toHaveText(expected(date));
- }
- const transform=await page.locator('.national-map>g').getAttribute('transform');await page.getByRole('button',{name:'Zoom in',exact:true}).click();expect(await page.locator('.national-map>g').getAttribute('transform')).not.toBe(transform);
- await page.getByRole('button',{name:'Reset',exact:true}).click();
- const table=page.getByRole('region',{name:'Outlook Index data table'});await page.getByText('Data table: all reporting units and unmatched areas',{exact:true}).click();
- await expect(table.locator('tbody tr')).toHaveCount(134);
- for(const row of outlookRows(data,'2026-10-27')){
-  const tr=table.locator('tbody tr').filter({has:page.getByRole('button',{name:row.name,exact:true})});
-  const matched=geo.features.some((f:any)=>f.properties.case_name===row.name);
-  await expect(tr.locator('td').first()).toHaveText(matched?row.index!.toLocaleString('en-US',{maximumFractionDigits:1}):'No data');
- }
- const metricRows=page.getByRole('region',{name:'National map validation metrics'}).locator('tbody tr');await expect(metricRows).toHaveCount(data.models.length);
- for(let i=0;i<data.models.length;i++){const r=data.models[i];await expect(metricRows.nth(i).locator('td')).toHaveText([r.model,String(r.weeks),String(r.min_units),...[r.spearman!,r.top10_hit_rate,r.normalized_rank_error].map(v=>v.toLocaleString('en-PH',{maximumFractionDigits:3}))]);}
- await page.getByLabel('Search province / city').fill('DAVAO DE ORO');await expect(table.locator('tbody tr')).toHaveCount(1);await expect(table).toContainText('Unmatched: no data');
- await table.getByRole('button',{name:'DAVAO DE ORO',exact:true}).click();await expect(detail).toContainText('No data: no explicit polygon/reporting-unit match.');
- await page.getByLabel('Map layer',{exact:true}).selectOption('history');await expect(page.getByLabel('Historical year')).toHaveValue('2020');
- await page.getByLabel('Historical source week').selectOption('2020-01-05');expect(external).toEqual([]);
+test('city map uses all 17 explicit matches and exact saved probabilities, without national or weather data',async({page})=>{
+ await mockPublicApi(page,{open:false});await page.route('https://tiles.openfreemap.org/**',r=>r.abort());
+ const forbidden:string[]=[];page.on('request',r=>{if(/open-meteo|power\.larc|philippines\.geojson|outlook\.json/.test(r.url()))forbidden.push(r.url());});
+ await goto(page,'/risk-map');const geo=await read('public/geo/ncr-cities.geojson'),crosswalk=await read('data/geo/ncr-ml-crosswalk.json'),saved=await read('public/ml/replay.json');
+ expect(geo.features).toHaveLength(17);expect(crosswalk.rows).toHaveLength(17);expect(crosswalk.unmatched).toEqual([]);expect(new Set(crosswalk.rows.map((r:any)=>r.doh_name)).size).toBe(17);
+ await expect(page.locator('.city-picker button')).toHaveCount(17);await expect(page.locator('.forecast-mode')).toContainText('Replay');await expect(page.getByRole('button',{name:'Live',exact:true})).toBeDisabled();
+ await page.waitForFunction(()=>{const host=document.querySelector('.city-map-canvas') as HTMLElement&{cityMap?:{getSource:(id:string)=>{serialize:()=>{data:{features:unknown[]}}}|undefined;getLayer:(id:string)=>unknown;queryRenderedFeatures:(query:unknown)=>unknown[]}}|null;const map=host?.cityMap;return map?.getSource('ncr-risk')?.serialize().data.features.length===17&&map.getLayer('ncr-fill')&&map.queryRenderedFeatures({layers:['ncr-fill']}).length>0;});
+ await page.getByRole('button',{name:'Show data table',exact:true}).click();const table=page.getByRole('region',{name:'City prediction data'});await expect(table.locator('tbody tr')).toHaveCount(17);
+ const expected=saved.rows.filter((r:any)=>r.target===saved.weeks[0]);for(const r of expected)await expect(table.locator(`tr[data-city-row="${r.city}"]`)).toHaveAttribute('data-probability',String(r.probability));
+ await page.getByLabel('Find a city',{exact:true}).fill('Manila');await expect(table.locator('tbody tr')).toHaveCount(1);await expect(table).toContainText('Manila');await expect(page.locator('.traffic-legend')).toContainText('Resolution: city.');expect(forbidden).toEqual([]);
 });
 
 test('Dashboard and Manila map panel expose saved MAEs and backtest values, with bilingual core pages and privacy',async({page})=>{
  const data=await read('public/api/v2/manila.json');
- for(const path of ['/','/risk-map']){
-  await goto(page,path);await expect(page.getByRole('heading',{name:'Current risk unavailable'})).toBeVisible();
+ for(const path of ['/about?drawer=methods&section=dashboard']){
+  await goto(page,path);await expect(activeView(page).getByRole('heading',{name:'Current risk unavailable'})).toBeVisible();
   for(const h of [1,2]){const expected=data.summaries.find((r:any)=>r.scenario==='M'&&r.fold==='test-2018-2023'&&r.model==='naive'&&r.horizon===h).mae;await expect(page.locator(`[data-panel-horizon="${h}"]`)).toHaveAttribute('data-panel-mae',String(expected));}
  }
- for(const [path,heading] of [['/','Hindi alam ang panganib ngayon'],['/risk-map','MGA PATTERN, HINDI HULA.'],['/report','Unawain at pumayag']]){
+ for(const [path,heading] of [['/','Mga dapat bantayan'],['/risk-map','Mapa ng Panganib'],['/report','Unawain at pumayag']]){
   await goto(page,path);await page.getByRole('button',{name:'Filipino',exact:true}).click();await expect(page.getByRole('heading',{name:heading,exact:true})).toBeVisible();await expect(page.locator('html')).toHaveAttribute('lang','fil');
   await page.getByRole('button',{name:'English',exact:true}).click();
  }
@@ -82,7 +60,7 @@ test('Dashboard and Manila map panel expose saved MAEs and backtest values, with
 
 
 test('Dashboard numeric analytics reproduce published series, exact backtest rows and forecast values',async({page})=>{
- await goto(page,'/');const data=await read('public/api/v2/manila.json'),backtest=await read('public/api/v2/dashboard.json');
+ await goto(page,'/about?drawer=methods&section=dashboard');const data=await read('public/api/v2/manila.json'),backtest=await read('public/api/v2/dashboard.json');
  const format=(v:number,digits=1)=>v.toLocaleString('en-PH',{maximumFractionDigits:digits});
  for(const scenario of ['M','Z']){
   await page.getByLabel('Absent-day scenario',{exact:true}).selectOption(scenario);
@@ -100,22 +78,13 @@ test('Dashboard numeric analytics reproduce published series, exact backtest row
 });
 
 
-test('historical map layer and accessible table expose the same saved year/week counts',async({page})=>{
- // Synthetic local aggregate fixtures test filtering only; these never enter shipped data or a model.
- await page.route('**/rest/v1/rpc/community_signal_aggregates**',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify([{area_label:'ABRA',week_start:'2020-01-05',report_count:3},{area_label:'CEBU',week_start:'2020-01-05',report_count:5}])}));
- await goto(page,'/risk-map');const data=await read('public/api/v2/outlook.json'),geo=await read('public/geo/philippines.geojson');
- await page.getByLabel('Map layer',{exact:true}).selectOption('history');await page.getByLabel('Historical year').selectOption('2019');
- const table=page.locator('details').filter({has:page.getByText('Data table: all reporting units and unmatched areas',{exact:true})});await table.locator('summary').click();
- for(const week of ['', '2019-09-08']){
-  await page.getByLabel('Historical source week').selectOption(week);
-  for(const name of Object.keys(data.profiles)){
-   const tr=table.locator('tbody tr').filter({has:page.getByRole('button',{name,exact:true})}),records=data.history[name].filter((r:any)=>r.date.startsWith('2019')&&(!week||r.date===week));
-   const matched=geo.features.some((f:any)=>f.properties.case_name===name),expected=matched&&records.length?records.reduce((total:number,r:any)=>total+r.cases,0).toLocaleString('en-PH'):'No data';
-   await expect(tr.locator('td').first()).toHaveText(expected);
-  }
+test('every Replay calendar week and all 17 table rows match saved predictions and missing-data flags',async({page})=>{
+ test.setTimeout(120000);await mockPublicApi(page,{open:false});await page.route('https://tiles.openfreemap.org/**',r=>r.abort());await goto(page,'/risk-map');const data=await read('public/ml/replay.json');await page.getByRole('button',{name:'Show data table',exact:true}).click();const slider=page.getByLabel('Choose an example week',{exact:true});await slider.focus();const table=page.getByRole('region',{name:'City prediction data'});let unavailable=0;
+ for(let i=0;i<data.weeks.length;i++){
+  if(i)await slider.press('ArrowRight');await expect(page.locator('.replay-controls output')).toHaveText(data.weeks[i]);
+  const expected=data.rows.filter((r:any)=>r.target===data.weeks[i]);expect(expected).toHaveLength(17);
+  const actual=await table.locator('tbody tr').evaluateAll(rows=>rows.map(row=>({city:row.getAttribute('data-city-row'),probability:row.getAttribute('data-probability'),level:row.querySelector('[data-risk-level]')?.getAttribute('data-risk-level')})));
+  expect(actual).toEqual(expected.map((r:any)=>({city:r.city,probability:r.probability===null?'missing':String(r.probability),level:r.probability===null?'no-data':String(data.bands.filter((cut:number)=>r.probability>=cut).length)})));unavailable+=expected.filter((r:any)=>r.probability===null).length;
  }
- await expect(page.locator('.map-legend')).toContainText('Lower recorded count');
- await expect(page.locator('.province-detail')).not.toContainText('Weather forecast');
- await expect(page.locator('.map-page')).toContainText('Historical period: 2019');
- await page.getByLabel('Map layer',{exact:true}).selectOption('community');await expect(table).toHaveCount(0);await page.getByLabel('Search province / city').fill('CEBU');const groups=page.getByRole('region',{name:'Unverified community aggregates'});await expect(groups.locator('tbody tr')).toHaveCount(1);await expect(groups).toContainText('CEBU');await expect(groups).not.toContainText('ABRA');
+ expect(unavailable).toBe(119);await expect(table).toContainText('No estimate');await expect(page.locator('.city-detail')).toContainText('Some source weeks are missing');
 });

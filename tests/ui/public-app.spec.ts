@@ -209,7 +209,7 @@ test("loading resolves to an explicit empty snapshot without fabricated values",
       }),
     });
   });
-  await goto(page, "/");
+  await goto(page, "/about?drawer=methods&section=dashboard");
   await expect(activeView(page).getByText("Loading data…", { exact: true })).toBeVisible();
   release();
   await expect(
@@ -279,7 +279,7 @@ test("bundled footer dates never become a false live DB coverage claim", async (
   await goto(page, "/");
   const footer = page.locator("footer.photo-footer, footer.site-footer");
   await expect(footer).toContainText("Dec 2, 2023");
-  await expect(footer).toContainText("Jan 10, 2021");
+  await expect(footer).toContainText("Dec 27, 2020");
   await expect(footer).not.toContainText("2031");
   await expect(
     activeView(page).getByText("Bundled source periods.", { exact: false }),

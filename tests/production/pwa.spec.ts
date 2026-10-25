@@ -1,66 +1,18 @@
 import {goto,activeView} from '../support/active-view';
 import { test, expect } from "@playwright/test";
-test("production PWA installs public cache, survives offline reload, and never caches staff/report requests", async ({
-  page,
-  context,
-}) => {
-  test.setTimeout(60000);
-  await goto(page, "/");
-  await expect(
-    activeView(page).getByRole("heading", { name: "Current risk unavailable" }),
-  ).toBeVisible();
-  await page.evaluate(async () => {
-    await navigator.serviceWorker.ready;
-    if (!navigator.serviceWorker.controller)
-      await new Promise<void>((r) =>
-        navigator.serviceWorker.addEventListener(
-          "controllerchange",
-          () => r(),
-          { once: true },
-        ),
-      );
-  });
-  const cache = await page.evaluate(async () => {
-    const names = await caches.keys();
-    const requests = (
-      await Promise.all(
-        names
-          .filter((n) => n.startsWith("dw-research-"))
-          .map(async (n) =>
-            (await (await caches.open(n)).keys()).map((r) => r.url),
-          ),
-      )
-    ).flat();
-    return { names, requests };
-  });
-  expect(cache.names.some((n) => n.startsWith("dw-research-"))).toBe(true);
-  expect(
-    cache.requests.some(
-      (url) =>
-        url.includes("supabase.co") ||
-        new URL(url).pathname.startsWith("/admin"),
-    ),
-  ).toBe(false);
-  expect(cache.requests.some(url=>new URL(url).pathname.startsWith('/img/source/'))).toBe(false);
-  expect(cache.requests.some(url=>['/api/v2/weather.json','/api/v2/outlook-weather.json'].includes(new URL(url).pathname))).toBe(false);
-  await context.setOffline(true);
-  await goto(page, "/trends");
-  await expect(
-    activeView(page).getByRole("heading", { name: "Weekly recorded cases" }),
-  ).toBeVisible();
-  await expect(
-    page.locator("main>.evidence-banner"),
-  ).toBeVisible();
-  await goto(page, "/metro-manila");
-  await expect(page.locator(".ncr-city-map path")).toHaveCount(17);
-  await expect(
-    page.getByText("Data ends January 2021.", { exact: true }),
-  ).toBeVisible();
-  await goto(page,'/risk-map');await expect(page.locator('.national-map [data-boundary-id]')).toHaveCount(104);await expect(page.locator('.national-map [data-no-data="true"]')).toHaveCount(8);
-  await expect(page.locator('.province-detail')).toContainText('Weather forecast unavailable. Seasonal outlook retained.');
-  await goto(page,'/report');await page.getByRole('checkbox').check();await expect(page.getByRole('button',{name:'Continue to report',exact:true})).toBeDisabled();
-  await goto(page,'/about');await expect(page.locator('#image-credit')).toContainText('Background photograph by Sumarie Slabber');
-
+test("production PWA isolates map caching, serves offline PMTiles ranges, and keeps reports map-free",async({page,context})=>{
+ test.setTimeout(90000);const violations:string[]=[];await page.exposeFunction('recordOfflinePolicy',(directive:string)=>violations.push(directive));await page.addInitScript(()=>document.addEventListener('securitypolicyviolation',e=>{void (window as any).recordOfflinePolicy(e.violatedDirective);}));const mapRequests:string[]=[];page.on('request',r=>{if(/MapProvider|maplibre|\.pmtiles|openfreemap|ncr-cities\.geojson/.test(r.url()))mapRequests.push(r.url());});
+ await page.route('https://tiles.openfreemap.org/**',r=>r.abort());await goto(page,'/');await expect(page.locator('.top-city-list li')).toHaveCount(3);
+ await page.evaluate(async()=>{await navigator.serviceWorker.ready;if(!navigator.serviceWorker.controller)await new Promise<void>(r=>navigator.serviceWorker.addEventListener('controllerchange',()=>r(),{once:true}));});
+ const cachePaths=()=>page.evaluate(async()=>(await Promise.all((await caches.keys()).filter(n=>n.startsWith('dw-research-')).map(async n=>(await(await caches.open(n)).keys()).map(r=>new URL(r.url).pathname)))).flat());
+ let paths=await cachePaths();expect(paths.some(p=>p.includes('MapProvider')||p.endsWith('.pmtiles')||p.includes('ncr-cities'))).toBe(false);expect(mapRequests).toEqual([]);
+ await goto(page,'/report');await expect(page.getByRole('heading',{level:1})).toBeVisible();expect(mapRequests).toEqual([]);
+ await goto(page,'/risk-map');await expect(page.locator('.city-picker button')).toHaveCount(17);await page.waitForFunction(()=>{const m=(document.querySelector('.city-map-canvas') as HTMLElement&{cityMap:any})?.cityMap;return m?.getLayer('ncr-fill')&&m.queryRenderedFeatures({layers:['ncr-fill']}).length>0;});
+ await expect.poll(async()=>(await cachePaths()).includes('/basemap/metro-manila.pmtiles')).toBe(true);
+ await context.setOffline(true);await page.reload();await expect(page.locator('.city-picker button')).toHaveCount(17);await expect(page.locator('.basemap-indicator')).toContainText('offline');await page.waitForFunction(()=>{const m=(document.querySelector('.city-map-canvas') as HTMLElement&{cityMap:any})?.cityMap;return m?.getLayer('ncr-fill')&&m.queryRenderedFeatures({layers:['ncr-fill']}).length>0;});
+ const range=await page.evaluate(async()=>{const r=await fetch('/basemap/metro-manila.pmtiles',{headers:{Range:'bytes=0-126'}});return {status:r.status,bytes:(await r.arrayBuffer()).byteLength,range:r.headers.get('Content-Range')};});expect(range).toEqual({status:206,bytes:127,range:'bytes 0-126/6712783'});
+ mapRequests.length=0;await goto(page,'/report');await page.getByRole('checkbox').check();await expect(page.getByRole('button',{name:'Continue to report',exact:true})).toBeDisabled();expect(mapRequests).toEqual([]);
+ expect(violations).toEqual([]);paths=await cachePaths();expect(paths.some(p=>p.startsWith('/admin')||p.includes('rest/v1')||p.startsWith('/img/source/'))).toBe(false);
 });
 test("production serves security headers and rejects fixture pages and legacy report preview", async ({
   page,

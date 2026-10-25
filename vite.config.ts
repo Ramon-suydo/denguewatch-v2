@@ -84,11 +84,12 @@ export default defineConfig(({ command, mode }) => {
   const version=JSON.parse(readFileSync('package.json','utf8')).version;
   let commit='unavailable';try{commit=execFileSync('git',['rev-parse','--short','HEAD'],{encoding:'utf8'}).trim();}catch{}
   const dataAsOf=JSON.parse(readFileSync('public/api/v2/manila.json','utf8')).data_as_of;
-  const nationalAsOf=JSON.parse(readFileSync('data/processed/map_evaluation.json','utf8')).case_data_as_of;
-  let evaluationDate='not recorded';try{evaluationDate=JSON.parse(readFileSync('data/processed/map_evaluation.json','utf8')).evaluation_date??'not recorded';}catch{}
+  const nationalAsOf=JSON.parse(readFileSync('public/ml/summary.json','utf8')).data_as_of;
+  let evaluationDate='not recorded';try{evaluationDate=JSON.parse(readFileSync('docs/evidence/ml-run.json','utf8')).evaluation_date_manila??'not recorded';}catch{}
   return {
     define:{__APP_META__:JSON.stringify({version,commit,evaluationDate,dataAsOf,nationalAsOf})},
-    plugins: [react(), tailwindcss()],
+    build:{manifest:true},
+    plugins: [react(), tailwindcss(), {name:'route-csp-preview',configurePreviewServer(server){server.middlewares.use((request,response,next)=>{const path=new URL(request.url??'/', 'http://localhost').pathname;const policies=JSON.parse(readFileSync('vercel.json','utf8')).headers;const policy=policies.find((rule:{source:string})=>rule.source===(/^\/risk-map(?:\/|$)/.test(path)?'/risk-map/:path*':'/((?!risk-map(?:/|$)).*)'));response.setHeader('Content-Security-Policy',policy.headers[0].value);next();});}}],
     preview: {
       headers: Object.fromEntries(
         JSON.parse(readFileSync("vercel.json", "utf8")).headers[0].headers.map(

@@ -14,7 +14,7 @@ test("weather failure leaves historical persistence usable and providers stay se
   await page.route("**/api/v2/weather.json", (route) =>
     route.fulfill({ status: 503, body: "unavailable" }),
   );
-  await goto(page, "/");
+  await goto(page, "/about?drawer=methods&section=dashboard");
   await expect(
     activeView(page).getByRole("heading", { name: "Current risk unavailable" }),
   ).toBeVisible();
