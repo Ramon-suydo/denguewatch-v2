@@ -24,8 +24,11 @@ createRoot(document.getElementById("root")!).render(
 
 if (import.meta.env.PROD && "serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    void navigator.serviceWorker.register("/sw.js").catch(() => {
-      /* Public pages remain usable if offline setup fails. */
-    });
-  });
+    const install = () => { void navigator.serviceWorker.register("/sw.js").catch(() => { /* Public pages remain usable if offline setup fails. */ }); };
+    // Let the first screen settle before downloading the full offline catalogue.
+    window.setTimeout(() => {
+      if ('requestIdleCallback' in window) window.requestIdleCallback(install, {timeout: 2000});
+      else install();
+    }, 3000);
+  }, {once: true});
 }

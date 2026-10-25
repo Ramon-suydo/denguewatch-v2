@@ -6,13 +6,6 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from "react";
-import {
-  fetchCities,
-  fetchRisks,
-  fetchCommunity,
-  fetchForecasts,
-  fetchPolicy,
-} from "./api";
 import { snapshotDate, subscribeSnapshot } from "./demo-snapshot";
 export interface Resource<T> {
   data: T | null;
@@ -72,12 +65,12 @@ export function useResource<T>(
 }
 function useAppResources() {
   const cities = useResource("cities", async (signal) =>
-    (await fetchCities(signal)).filter((city) => city.name === "MANILA CITY"),
+    (await (await import("./api")).fetchCities(signal)).filter((city) => city.name === "MANILA CITY"),
   );
-  const forecasts = useResource("forecasts", fetchForecasts);
-  const community = useResource("community", fetchCommunity);
-  const policy = useResource("policy", fetchPolicy);
-  const risks = useResource("risks", fetchRisks);
+  const forecasts = useResource("forecasts", async signal => (await import("./api")).fetchForecasts(signal));
+  const community = useResource("community", async signal => (await import("./api")).fetchCommunity(signal));
+  const policy = useResource("policy", async signal => (await import("./api")).fetchPolicy(signal));
+  const risks = useResource("risks", async signal => (await import("./api")).fetchRisks(signal));
   return { cities, forecasts, community, policy, risks };
 }
 const Context = createContext<ReturnType<typeof useAppResources> | null>(null);

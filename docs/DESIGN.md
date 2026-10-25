@@ -25,3 +25,5 @@ Public route loading reserves one viewport of space so the safety notice and foo
 The software inventory includes all 16 resolved Python packages (406 npm/Python entries total), with every Python package version pinned. Bundled Python licence files are reproduced in THIRD_PARTY_LICENSES.md, including the DejaVu font notice for evaluation figures. UI fonts remain OFL-1.1.
 
 Keyboard focus uses two opaque light/dark inks across image, cards and map classes. A computed-colour browser regression reproduced the old gold-on-card failure at 1.66:1 and now verifies at least 3:1 for the light map controls and a dark province. The national SVG also receives a white stroke plus dark outline.
+
+First-screen loading: legacy API imports now occur only when the legacy data provider is used. Collapsed weekly/backtest tables mount on opening, and offline-cache registration waits until the first screen settles (three seconds plus an idle callback). Mobile Lighthouse on this source measured performance 93/accessibility 100; full offline behavior remains a separate browser gate.
