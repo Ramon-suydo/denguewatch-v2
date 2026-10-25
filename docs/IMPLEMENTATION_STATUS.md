@@ -4,7 +4,9 @@ Active work is on `feat/redesign`, based on latest main e9a3047. No redesign dep
 
 Implemented: photographic Dashboard, local national outlook, coarse anonymous report flow and footer-linked About; optimized source-preserving AVIF/WebP; measured pixel contrast prebuild gate; explicit national crosswalk; strictly earlier-year rank validation; weather excluded after failed improvement gate; generated npm/Python credits; bilingual privacy and actual server receipt; a forward-only report-scope/rate-hash migration.
 
-Local release verification is IN PROGRESS. Diagnostic browser failures are retained and are not passed gates. Final evidence will be recorded in `docs/evidence/redesign-checks.md`. Existing launch evidence below predates this redesign and must not be read as a fresh redesign pass.
+Local redesign gates are DONE: 77 unit/integration tests, 25 SQL checks plus one local authenticated UI flow, three consecutive 36-test UI runs, 10 production tests, three offline/PWA tests, 30 measured hero-text contrast targets, mobile Lighthouse 93.0/100 performance/accessibility, zero high/medium local passive ZAP alerts and zero npm audit findings. Evaluation reproduction checked 14 byte-identical outputs. Detailed commands, source/build commits, retained failures and verification limits: [redesign-checks.md](evidence/redesign-checks.md) and [redesign-status.json](evidence/redesign-status.json).
+
+Release remains NEEDS OWNER: the secret audit reports zero current, 44 known historical and zero unexpected historical findings; rotation is deferred. No hosted deployment, successful live operation, participant collection, human usability or DPO approval is claimed. Older launch records below remain historical.
 
 NEEDS OWNER: photo source/licence/written permission; team/school/contact fields in src/content/about.json; credential rotation; Supabase/Vercel deployment and hosted schedules/Auth/log-retention verification; validated reporting geography and population/catchment mapping; institutional DPO review before opening collection; actual usability sessions. No hosted writes or real participant records are used in this work.
 

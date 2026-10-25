@@ -1,6 +1,8 @@
 # Current redesign checkpoint
 
-Active branch: feat/redesign. Fresh evidence belongs in evidence/redesign-checks.md; older launch counts below are historical. The new schema guard is committed at 0c424c8. The first redesigned browser suite passed 35/35; final repeated runs follow the last review fixes. Credential rotation and hosted/human verification remain NEEDS OWNER. Main merge is a live Vercel deployment. Do not activate reports before institutional privacy and hosted checks.
+Active branch: `feat/redesign`. Application source: `c2a6751`. Local redesign gates are DONE: 77 unit/integration tests, 25 SQL checks plus one local authenticated UI flow, three consecutive 36-test UI runs, 10 production tests, three offline/PWA tests, 30 measured hero-text contrast targets, mobile Lighthouse 93.0/100 performance/accessibility, zero high/medium local passive ZAP alerts and zero npm audit findings. Evaluation reproduction checked 14 byte-identical outputs. Detailed commands, source/build commits, retained failures and verification limits: [redesign-checks.md](evidence/redesign-checks.md) and [redesign-status.json](evidence/redesign-status.json).
+
+NEEDS OWNER: photo source/licence/written permission; src/content/about.json team/controller/contact; credential rotation; hosted Vercel/Supabase/Auth/MFA/schedules/log-retention verification; DPO review; real usability and Filipino review; verified population/catchment mapping. Collection stays closed. Test locally, self-review and inspect the feature preview before merging; main merge automatically deploys Vercel.
 
 ---
 

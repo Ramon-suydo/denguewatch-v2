@@ -1,0 +1,210 @@
+{
+  "utc": "2026-10-25T14:00:49.320821+00:00",
+  "branch": "feat/redesign",
+  "source_commit": "c2a6751b367ec02f08a80709374b2f7b9b5e25ea",
+  "ui_build_commit": "c2a6751",
+  "main_pushed": false,
+  "local_only": true,
+  "checks": {
+    "install": {
+      "command": "npm ci",
+      "started_utc": "2026-10-25T11:33:39.096217+00:00",
+      "duration_seconds": 180.875,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-clean-install.txt"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "started_utc": "2026-10-25T13:31:40.637700+00:00",
+      "duration_seconds": 5.813,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-loading-lint.txt"
+    },
+    "typecheck": {
+      "command": "npm run typecheck",
+      "started_utc": "2026-10-25T13:31:46.559701+00:00",
+      "duration_seconds": 1.687,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-loading-types.txt"
+    },
+    "unit_integration": {
+      "command": "npm test",
+      "started_utc": "2026-10-25T13:58:08.883704+00:00",
+      "duration_seconds": 35.359,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-delivery-units.txt"
+    },
+    "geography": {
+      "command": "npm run test:geography",
+      "started_utc": "2026-10-25T11:32:17.187774+00:00",
+      "duration_seconds": 17.906,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-geography.txt"
+    },
+    "contrast": {
+      "command": "npm run test:contrast",
+      "started_utc": "2026-10-25T13:11:21.556181+00:00",
+      "duration_seconds": 0.484,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-focus-contrast.txt"
+    },
+    "production_build": {
+      "command": "npm run build",
+      "started_utc": "2026-10-25T13:33:16.318137+00:00",
+      "duration_seconds": 24.203,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-verified-build.txt"
+    },
+    "database": {
+      "command": "npm run db:verify",
+      "started_utc": "2026-10-25T11:59:44.368427+00:00",
+      "duration_seconds": 62.797,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-database-verify.txt"
+    },
+    "database_catalog": {
+      "command": "node node_modules/tsx/dist/cli.mjs .artifacts/launch/redesign-catalog.ts",
+      "started_utc": "2026-10-25T13:58:44.389291+00:00",
+      "duration_seconds": 2.719,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-rls-catalog.txt"
+    },
+    "map_evaluation": {
+      "command": "npm run evaluate:map",
+      "started_utc": "2026-10-25T11:52:30.697954+00:00",
+      "duration_seconds": 13.781,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-map-reproduce.txt"
+    },
+    "evaluation": {
+      "command": "npm run evaluate",
+      "started_utc": "2026-10-25T11:47:11.753810+00:00",
+      "duration_seconds": 318.813,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-evaluation-reproduce.txt"
+    },
+    "reproduction": {
+      "command": "python .artifacts/launch/redesign-reproduce.py after",
+      "started_utc": "2026-10-25T11:52:44.640955+00:00",
+      "duration_seconds": 0.468,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-reproduce-result.txt"
+    },
+    "source_integrity": {
+      "command": "python .artifacts/launch/redesign-git-integrity.py",
+      "started_utc": "2026-10-25T12:01:59.058228+00:00",
+      "duration_seconds": 2.562,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-git-integrity.txt"
+    },
+    "software_credits": {
+      "command": "npm run credits:check",
+      "started_utc": "2026-10-25T12:35:53.777876+00:00",
+      "duration_seconds": 0.468,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-full-credit-check.txt"
+    },
+    "npm_audit": {
+      "command": "npm audit --json",
+      "started_utc": "2026-10-25T11:50:46.816434+00:00",
+      "duration_seconds": 1.875,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-dependency-audit.txt"
+    },
+    "secret_audit": {
+      "command": "npm run security:secrets",
+      "started_utc": "2026-10-25T13:58:47.195525+00:00",
+      "duration_seconds": 33.328,
+      "exit_code": 1,
+      "log": ".artifacts/launch/redesign-delivery-secret-audit.txt"
+    },
+    "lighthouse": {
+      "command": "node .artifacts/launch/lighthouse-final.mjs",
+      "started_utc": "2026-10-25T13:32:15.358008+00:00",
+      "duration_seconds": 19.062,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-loading-lighthouse.txt"
+    },
+    "zap": {
+      "command": "npm run security:zap -- http://127.0.0.1:43142",
+      "started_utc": "2026-10-25T13:59:32.376833+00:00",
+      "duration_seconds": 43.031,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-verified-zap.txt"
+    },
+    "ui_run_1": {
+      "command": "npm run test:ui -- --workers=1",
+      "started_utc": "2026-10-25T13:33:55.609040+00:00",
+      "duration_seconds": 478.954,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-verified-ui-1.txt"
+    },
+    "ui_run_2": {
+      "command": "npm run test:ui -- --workers=1",
+      "started_utc": "2026-10-25T13:41:54.691112+00:00",
+      "duration_seconds": 457.656,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-verified-ui-2.txt"
+    },
+    "ui_run_3": {
+      "command": "npm run test:ui -- --workers=1",
+      "started_utc": "2026-10-25T13:49:32.472021+00:00",
+      "duration_seconds": 415.078,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-verified-ui-3.txt"
+    },
+    "production_browser": {
+      "command": "npm run test:production -- --workers=1",
+      "started_utc": "2026-10-25T13:56:27.645935+00:00",
+      "duration_seconds": 77.547,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-verified-production.txt"
+    },
+    "pwa": {
+      "command": "npm run test:pwa -- --workers=1",
+      "started_utc": "2026-10-25T13:57:45.292141+00:00",
+      "duration_seconds": 15.735,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-verified-pwa.txt"
+    },
+    "screenshots": {
+      "command": "node .artifacts/launch/redesign-capture.mjs",
+      "started_utc": "2026-10-25T14:00:15.512102+00:00",
+      "duration_seconds": 23.625,
+      "exit_code": 0,
+      "log": ".artifacts/launch/redesign-delivery-captures.txt"
+    }
+  },
+  "local_results": {
+    "units": 77,
+    "db_sql": 25,
+    "db_ui": 1,
+    "three_ui_runs": [
+      36,
+      36,
+      36
+    ],
+    "production": 10,
+    "pwa": 3,
+    "lighthouse": {
+      "performance": 93.0,
+      "accessibility": 100,
+      "best-practices": 96.0,
+      "seo": 100
+    },
+    "zap_high_medium": 0,
+    "hero_text_targets": 30,
+    "hero_contrast_passed": true,
+    "dependencies_credited": 406
+  },
+  "owner_blockers": [
+    "Hero photograph source URL and written licence/permission from Sumarie Slabber",
+    "Team/school/controller/contact fields in src/content/about.json",
+    "Deferred credential rotation; private environment and repository secrets/rotation attestation",
+    "Hosted Vercel preview, Supabase migration/Auth/MFA/scheduling/log-retention verification",
+    "Institutional DPO review before collection opens",
+    "Real usability sessions and Filipino content review",
+    "Formal Manila/DOH data citations and verified population/catchment mapping"
+  ],
+  "release_status": "NEEDS OWNER: historical exposure rotation and hosted/human gates remain pending"
+}

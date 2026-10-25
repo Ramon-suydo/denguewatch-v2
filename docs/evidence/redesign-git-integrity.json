@@ -1,0 +1,7 @@
+{
+  "committed_weather_responses_verified": 24,
+  "original_photo_and_derivatives_verified": 9,
+  "original_case_files_unchanged_in_git": 3,
+  "published_case_source_hash_matches_git_bytes": true,
+  "passed": true
+}
