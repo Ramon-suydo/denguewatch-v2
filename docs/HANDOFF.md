@@ -1,3 +1,11 @@
+# Active redesign handoff
+
+Current branch: `feat/redesign`, created from main e9a3047. The active specification is the owner's three-page redesign prompt. Current behavior/methods: MAP_METHOD.md and DESIGN.md. Current verification: evidence/redesign-checks.md. The separate footer About page is not in main navigation. Old public research routes redirect to real methods/privacy drawers. Current risk remains unavailable; weather is excluded from the national index. Anonymous reporting adds coarse national units and a shared old/new RPC rate guard in one forward migration; collection stays closed.
+
+NEEDS OWNER: photo permission/source/licence; about.json team/controller/contact; credential rotation and hosted Vercel/Supabase/Auth/schedules/log-retention verification; DPO review; real usability test; population/catchment verification. The configured Vercel install path has not been run on Vercel. Local harnesses do not verify hosted services. No redesign main push or report activation is claimed.
+
+---
+
 > Historical project record. Current launch status and owner blockers are in IMPLEMENTATION_STATUS.md and LAUNCH_CHECKLIST.md. Older check counts, deployed states and instructions below are not current verification.
 
 # Handoff

@@ -13,13 +13,13 @@ async function files(dir) {
 const assets = (await files("dist"))
   .filter(
     (p) =>
-      p.startsWith("dist/assets/") ||
+      p.startsWith("dist/assets/") || /dist\/img\/manila-\d+\.(avif|webp)$/.test(p) || p === "dist/geo/philippines.geojson" ||
       [
         "dist/index.html",
         "dist/manifest.webmanifest",
         "dist/icon.svg",
       ].includes(p) ||
-      (p.startsWith("dist/api/v2/") && p !== "dist/api/v2/weather.json"),
+      (p.startsWith("dist/api/v2/") && !["dist/api/v2/weather.json","dist/api/v2/outlook-weather.json"].includes(p)),
   )
   .map((p) => "/" + p.slice(5));
 const hash = createHash("sha256");

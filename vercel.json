@@ -44,5 +44,6 @@
       "source": "/((?!assets/|healthz\\.txt|robots\\.txt|api/|geo/|sw.js|manifest.webmanifest|icon.svg|demo-snapshot.json).*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "installCommand": "npm ci && dnf install -y nss mesa-libgbm && python3 -m pip install --user Pillow==13.0.0 && npx playwright install chromium"
 }

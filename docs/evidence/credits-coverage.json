@@ -223,7 +223,7 @@
     },
     {
       "path": "data/geo/national-crosswalk.json",
-      "sha256": "4e115e58ec83f952d270233fd27671aa139f76d4b0ba508635cefb5c8a1e3952",
+      "sha256": "5685905e51ff1690be15970d158cf3176ccddad7375ff7d96ce3c8ba5ddb449d",
       "credit": "geoboundaries"
     },
     {
@@ -248,7 +248,7 @@
     },
     {
       "path": "public/geo/philippines.geojson",
-      "sha256": "04860c262b8607f0ff72aecaf2552bdca61f6aed4d38d08857a1be52585e5ab8",
+      "sha256": "84a05802fa19c027ac35c0f33127ba76cd81e1ab4c1a56bd1359d31876761f3b",
       "credit": "geoboundaries"
     },
     {

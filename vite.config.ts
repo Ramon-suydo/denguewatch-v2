@@ -1,4 +1,5 @@
 import { defineConfig, loadEnv } from "vite";
+import {execFileSync} from "node:child_process";
 import { readFileSync } from "node:fs";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -80,7 +81,13 @@ export default defineConfig(({ command, mode }) => {
       throw new Error("Invalid public Supabase key; build blocked.");
     }
   }
+  const version=JSON.parse(readFileSync('package.json','utf8')).version;
+  let commit='unavailable';try{commit=execFileSync('git',['rev-parse','--short','HEAD'],{encoding:'utf8'}).trim();}catch{}
+  const dataAsOf=JSON.parse(readFileSync('public/api/v2/manila.json','utf8')).data_as_of;
+  const nationalAsOf=JSON.parse(readFileSync('data/processed/map_evaluation.json','utf8')).case_data_as_of;
+  let evaluationDate='not recorded';try{evaluationDate=JSON.parse(readFileSync('data/processed/map_evaluation.json','utf8')).evaluation_date??'not recorded';}catch{}
   return {
+    define:{__APP_META__:JSON.stringify({version,commit,evaluationDate,dataAsOf,nationalAsOf})},
     plugins: [react(), tailwindcss()],
     preview: {
       headers: Object.fromEntries(

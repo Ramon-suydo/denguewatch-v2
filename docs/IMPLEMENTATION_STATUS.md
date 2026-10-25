@@ -1,3 +1,15 @@
+# Three-page redesign status (2026-10-25)
+
+Active work is on `feat/redesign`, based on latest main e9a3047. No redesign deployment is authorized by this branch alone. Every main push automatically deploys Vercel; review locally and inspect the preview before merging this schema/UI change near the defense.
+
+Implemented: photographic Dashboard, local national outlook, coarse anonymous report flow and footer-linked About; optimized source-preserving AVIF/WebP; measured pixel contrast prebuild gate; explicit national crosswalk; strictly earlier-year rank validation; weather excluded after failed improvement gate; generated npm/Python credits; bilingual privacy and actual server receipt; a forward-only report-scope/rate-hash migration.
+
+Local release verification is IN PROGRESS. Diagnostic browser failures are retained and are not passed gates. Final evidence will be recorded in `docs/evidence/redesign-checks.md`. Existing launch evidence below predates this redesign and must not be read as a fresh redesign pass.
+
+NEEDS OWNER: photo source/licence/written permission; team/school/contact fields in src/content/about.json; credential rotation; Supabase/Vercel deployment and hosted schedules/Auth/log-retention verification; validated reporting geography and population/catchment mapping; institutional DPO review before opening collection; actual usability sessions. No hosted writes or real participant records are used in this work.
+
+---
+
 > Publication update (2026-10-25, Asia/Manila): the owner explicitly requested publishing all committed work to main, overriding the earlier local-only instruction. Source and review bundle were pushed at 5a422d0. Earlier results below describe the pre-publication checkpoint. Credential rotation and hosted/human verification remain pending; publication does not establish deployment success or authorize reporting activation.
 
 # Implementation status

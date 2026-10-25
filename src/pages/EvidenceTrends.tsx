@@ -7,7 +7,7 @@ import { ScenarioControl } from "../components/EvidenceControls";
 import { useResource } from "../lib/resources";
 import { loadEvidence, number, type Scenario } from "../lib/evidence";
 import type { ManilaWeek } from "../../scripts/lib/manila-data";
-function History({ rows }: { rows: ManilaWeek[] }) {
+export function History({ rows }: { rows: ManilaWeek[] }) {
   const valid = rows.filter((r) => r.cases !== null);
   if (!valid.length) return <p>No reliable weeks in this selection.</p>;
   const first = Date.parse(rows[0].week_ending),

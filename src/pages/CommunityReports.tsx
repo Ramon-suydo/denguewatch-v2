@@ -1,34 +1,31 @@
+import {useRedesignLanguage} from '../redesign/Language';
 import { ReportingStatus } from "../components/ReportingStatus";
 import { Card } from "../components/ui";
 import { ReadState } from "../components/PageState";
 import { useResource } from "../lib/resources";
 import { signalAggregates } from "../lib/signals";
-export function CommunityReports() {
+export function CommunityReports({embedded=false}:{embedded?:boolean}) {
+  const {t}=useRedesignLanguage();
   const reports = useResource("community-v2", signalAggregates);
   return (
     <div className="ui-container app-content evidence-page">
-      <p className="eyebrow">COMMUNITY / UNVERIFIED</p>
-      <h1>Community reports, kept separate.</h1>
+      <p className="eyebrow">{t('COMMUNITY / UNVERIFIED','KOMUNIDAD / DI-BERIPIKADO')}</p>
+      {embedded?<h2>{t('Community reports, kept separate.','Hiwalay na ulat ng komunidad.')}</h2>:<h1>{t('Community reports, kept separate.','Hiwalay na ulat ng komunidad.')}</h1>}
       <Card>
         <p>
-          <ReportingStatus /> These are community-reported, unverified
-          awareness signals, never official dengue counts or forecast inputs.
-          Staff approval is a content review, not medical verification.
+          <ReportingStatus /> {t('These are community-reported, unverified awareness signals, never official dengue counts or forecast inputs. Staff approval is a content review, not medical verification.','Di-beripikadong ulat ito ng komunidad, hindi opisyal na bilang o sangkap ng pagtataya. Pagsusuri ng nilalaman ang pag-apruba, hindi medikal na beripikasyon.')}
         </p>
         <p>
-          Publication requires at least three approved reports per area/week and
-          a minimum 72-hour delay. Missing or suppressed groups do not mean zero
-          cases. There is no validation history establishing predictive value.
+          {t('Publication requires at least three approved reports per area/week and a minimum 72-hour delay. Missing or suppressed groups do not mean zero cases. There is no validation history establishing predictive value.','Kailangan ng hindi bababa sa tatlong aprubadong ulat bawat lugar/linggo at 72-oras na paghihintay. Hindi sero ang nawawala o nakatagong grupo. Walang napatunayang kakayahang magtaya ang mga ulat.')}
         </p>
       </Card>
       <ReadState resource={reports}>
         {(rows) => (
           <Card>
-            <h2>Published community aggregates</h2>
+            <h2>{t('Published community aggregates','Inilathalang bilang ng komunidad')}</h2>
             {!rows.length ? (
               <p>
-                No publishable groups. Reports may be absent, awaiting review,
-                delayed or suppressed; no count is inferred.
+                {t('No publishable groups. Reports may be absent, awaiting review, delayed or suppressed; no count is inferred.','Walang mailathalang grupo. Maaaring walang ulat, sinusuri pa, naantala o nakatago; walang bilang na hinuhulaan.')}
               </p>
             ) : (
               <div
@@ -40,9 +37,9 @@ export function CommunityReports() {
                 <table>
                   <thead>
                     <tr>
-                      <th scope="col">Coarse area</th>
-                      <th scope="col">Onset week</th>
-                      <th scope="col">Unverified reports (lower bound)</th>
+                      <th scope="col">{t('Coarse area','Malawak na lugar')}</th>
+                      <th scope="col">{t('Onset week','Linggo ng sintomas')}</th>
+                      <th scope="col">{t('Unverified reports (lower bound)','Di-beripikadong ulat (pinakamababang bilang)')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -58,8 +55,7 @@ export function CommunityReports() {
               </div>
             )}
             <p className="muted">
-              Source: voluntary community reports, delayed and moderated;
-              displayed onset weeks are historical, not official diagnoses.
+              {t('Source: voluntary community reports, delayed and moderated; displayed onset weeks are historical, not official diagnoses.','Pinagmulan: kusang-loob na ulat ng komunidad, naantala at sinuri; makasaysayang linggo ng sintomas, hindi opisyal na diagnosis.')}
             </p>
           </Card>
         )}

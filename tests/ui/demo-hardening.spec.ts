@@ -1,4 +1,5 @@
-﻿import { test, expect } from "@playwright/test";
+import {goto,ready,activeView} from '../support/active-view';
+import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { mockPublicApi } from "../fixtures/public-fixtures";
 const routes = [
@@ -20,8 +21,7 @@ async function navigate(page: import("@playwright/test").Page, path: string) {
     history.pushState({}, "", p);
     dispatchEvent(new PopStateEvent("popstate"));
   }, path);
-  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-  await expect(page.getByText("Loading data…", { exact: true })).toHaveCount(0);
+  await ready(page,path);
 }
 test("all public routes retain mobile targets, console hygiene and axe", async ({
   page,
@@ -37,8 +37,8 @@ test("all public routes retain mobile targets, console hygiene and axe", async (
   for (const width of [320, 390, 768, 1280])
     for (const route of routes) {
       await page.setViewportSize({ width, height: 900 });
-      await page.goto(route);
-      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      await goto(page, route);
+      await expect(activeView(page).getByRole("heading", { level: 1 })).toBeVisible();
       expect(
         await page.evaluate(
           () => document.documentElement.scrollWidth <= innerWidth,
@@ -87,17 +87,14 @@ test("blocked external services leave static historical pages and closed reporti
     "/prevention",
     "/report",
   ]) {
-    await page.goto(route);
-    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await goto(page, route);
+    await expect(activeView(page).getByRole("heading", { level: 1 })).toBeVisible();
     await expect(
-      page.getByText(
-        "Offline · showing previously loaded historical research data.",
-        { exact: false },
-      ),
+      page.locator("main>.evidence-banner"),
     ).toBeVisible();
   }
   await expect(
-    page.getByText("New submissions are not open yet.", { exact: false }),
+    activeView(page).getByText("New submissions are closed.", { exact: false }),
   ).toBeVisible();
   expect(external).toEqual([]);
 });
@@ -107,9 +104,9 @@ test("warmed routes and validated datasets remain available with the browser ful
 }) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/");
+  await goto(page, "/");
   await expect(
-    page.getByRole("heading", { name: "Current risk unavailable" }),
+    activeView(page).getByRole("heading", { name: "Current risk unavailable" }),
   ).toBeVisible();
   for (const route of [
     "/trends",
@@ -129,10 +126,7 @@ test("warmed routes and validated datasets remain available with the browser ful
   ]) {
     await navigate(page, route);
     await expect(
-      page.getByText(
-        "Offline · showing previously loaded historical research data.",
-        { exact: false },
-      ),
+      page.locator("main>.evidence-banner"),
     ).toBeVisible();
   }
   expect(errors).toEqual([]);
@@ -146,13 +140,13 @@ test("slow research reads show loading without inventing a current risk, then re
     await gate;
     await r.continue();
   });
-  await page.goto("/");
-  await expect(page.getByText("Loading data…", { exact: true })).toBeVisible();
+  await goto(page, "/");
+  await expect(activeView(page).getByText("Loading data…", { exact: true })).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Current risk unavailable" }),
+    activeView(page).getByRole("heading", { name: "Current risk unavailable" }),
   ).toHaveCount(0);
   release();
   await expect(
-    page.getByRole("heading", { name: "Current risk unavailable" }),
+    activeView(page).getByRole("heading", { name: "Current risk unavailable" }),
   ).toBeVisible();
 });

@@ -1,0 +1,92 @@
+{
+  "utc": "2026-10-25T11:52:45.106955+00:00",
+  "outputs": [
+    {
+      "path": "data/processed/evaluation.json",
+      "before_sha256": "3f18ac075ea62d1ee3b46632655882eb0253a09ce21374049a0c573cd1dffb46",
+      "after_sha256": "3f18ac075ea62d1ee3b46632655882eb0253a09ce21374049a0c573cd1dffb46",
+      "byte_identical": true
+    },
+    {
+      "path": "data/processed/environment_evaluation.json",
+      "before_sha256": "82202a50bf10837b23c4c8ae0123113ff5d29b58935023f0c3703db10772a95b",
+      "after_sha256": "82202a50bf10837b23c4c8ae0123113ff5d29b58935023f0c3703db10772a95b",
+      "byte_identical": true
+    },
+    {
+      "path": "data/processed/environment_design.json",
+      "before_sha256": "1efc4ce1cde0f062e6f05d71162c73f6e98d7bad26f78446aaf120109190d609",
+      "after_sha256": "1efc4ce1cde0f062e6f05d71162c73f6e98d7bad26f78446aaf120109190d609",
+      "byte_identical": true
+    },
+    {
+      "path": "data/processed/manila_weekly.json",
+      "before_sha256": "02ac83dc7afc39c2886dc343a504eef60dec1ec31b864e90b1bf04f745c99b8a",
+      "after_sha256": "02ac83dc7afc39c2886dc343a504eef60dec1ec31b864e90b1bf04f745c99b8a",
+      "byte_identical": true
+    },
+    {
+      "path": "data/processed/weather_weekly.json",
+      "before_sha256": "42485431afd7f1649ae877efd3b77fda12fa7e5ec41d5b617da49b9a66d38557",
+      "after_sha256": "42485431afd7f1649ae877efd3b77fda12fa7e5ec41d5b617da49b9a66d38557",
+      "byte_identical": true
+    },
+    {
+      "path": "docs/weekly-backtest-v1.json",
+      "before_sha256": "0e42e37d65e97d870818b24a7d1cde6b3cb3b09a955980f3e51fa29dd92264d9",
+      "after_sha256": "0e42e37d65e97d870818b24a7d1cde6b3cb3b09a955980f3e51fa29dd92264d9",
+      "byte_identical": true
+    },
+    {
+      "path": "src/data/weekly-forecast-v1.json",
+      "before_sha256": "69add373d6cc1f3c9c8ec17c5369d11a51f2d1b6ce104e8ab196da5dd557beda",
+      "after_sha256": "69add373d6cc1f3c9c8ec17c5369d11a51f2d1b6ce104e8ab196da5dd557beda",
+      "byte_identical": true
+    },
+    {
+      "path": "public/api/v2/manila.json",
+      "before_sha256": "e2b1a3223ba90ebf0efec2c2340a176d8c397559d6cd5963a7584d6d1b967b4e",
+      "after_sha256": "e2b1a3223ba90ebf0efec2c2340a176d8c397559d6cd5963a7584d6d1b967b4e",
+      "byte_identical": true
+    },
+    {
+      "path": "public/api/v2/environment.json",
+      "before_sha256": "c74597879ec44cd837df4d175f7418ab4212854c7d9fde83b53ea0ec5a25543b",
+      "after_sha256": "c74597879ec44cd837df4d175f7418ab4212854c7d9fde83b53ea0ec5a25543b",
+      "byte_identical": true
+    },
+    {
+      "path": "public/api/v2/backtest.json",
+      "before_sha256": "45813731301caa25c2c33235670c48f3ad39959cc22211c58b31c9d1b45b2810",
+      "after_sha256": "45813731301caa25c2c33235670c48f3ad39959cc22211c58b31c9d1b45b2810",
+      "byte_identical": true
+    },
+    {
+      "path": "public/api/v2/dashboard.json",
+      "before_sha256": "3ee1de68ead8af2889678e8814c8e4355644729b2b5d489a6713faf91bbfa735",
+      "after_sha256": "3ee1de68ead8af2889678e8814c8e4355644729b2b5d489a6713faf91bbfa735",
+      "byte_identical": true
+    },
+    {
+      "path": "data/processed/map_evaluation.json",
+      "before_sha256": "011743074afcb5ab0e0346e80fb978c55c448654b23247b1e74e37f45d39eb7c",
+      "after_sha256": "011743074afcb5ab0e0346e80fb978c55c448654b23247b1e74e37f45d39eb7c",
+      "byte_identical": true
+    },
+    {
+      "path": "data/processed/map_validation_weeks.json",
+      "before_sha256": "4bf574b9b900611206a44adc01c708a6502a73eb98ed90efafa16169f06d0c15",
+      "after_sha256": "4bf574b9b900611206a44adc01c708a6502a73eb98ed90efafa16169f06d0c15",
+      "byte_identical": true
+    },
+    {
+      "path": "public/api/v2/outlook.json",
+      "before_sha256": "7dd5fb464c96c5363b30e91d1495155026c1fb78c58d441b377fff7e5990a76e",
+      "after_sha256": "7dd5fb464c96c5363b30e91d1495155026c1fb78c58d441b377fff7e5990a76e",
+      "byte_identical": true
+    }
+  ],
+  "original_raw_inputs_unchanged": true,
+  "previously_committed_migrations_unchanged": true,
+  "passed": true
+}

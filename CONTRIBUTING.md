@@ -38,13 +38,11 @@ local checks pass. The merge deploys production. Small main commits use
 
 ## Current thesis collaboration
 
-The active integration branch is `feat/manila-redesign`. Create a short feature
-branch from it; target it with your pull request until the redesign is approved.
+The current three-page redesign is on `feat/redesign`, created from main. Review its local checks and preview before merging to main; merging deploys production. For additional risky work, create a separate feat/<short-name> branch.
 
 ```powershell
 git fetch origin
-git switch feat/manila-redesign
-git pull --ff-only origin feat/manila-redesign
+git switch feat/redesign
 git switch -c feat/your-change
 ```
 

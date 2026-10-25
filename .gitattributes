@@ -7,3 +7,10 @@ data/processed/*.json text eol=lf
 src/data/*.json text eol=lf
 public/api/v2/*.json text eol=lf
 public/demo-snapshot.json text eol=lf
+
+# Keep provider responses byte-exact for SHA-256 receipt verification.
+data/external/redesign-phl-adm2.json -text
+data/external/map-weather/*.json -text
+data/geo/national-crosswalk.json text eol=lf
+public/geo/philippines.geojson text eol=lf
+src/content/*.json text eol=lf

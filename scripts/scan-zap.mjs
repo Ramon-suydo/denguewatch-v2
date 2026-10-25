@@ -9,7 +9,7 @@ const local=['localhost','127.0.0.1','[::1]'].includes(url.hostname),stem=local?
 let result;
 if(process.env.ZAP_JAR){
  const home=resolve('.artifacts/zap-home');await mkdir(home,{recursive:true});
- const pages=['/','/trends','/metro-manila','/methodology','/prevention','/report','/community','/privacy','/terms','/legal','/data-sources','/admin','/api/v2/manila.json','/api/v2/ncr.json','/api/v2/environment.json','/api/v2/weather.json'];
+ const pages=['/risk-map','/about','/api/v2/outlook.json','/api/v2/outlook-weather.json','/api/v2/dashboard.json','/geo/philippines.geojson','/','/trends','/metro-manila','/methodology','/prevention','/report','/community','/privacy','/terms','/legal','/data-sources','/admin','/api/v2/manila.json','/api/v2/ncr.json','/api/v2/environment.json','/api/v2/weather.json'];
  const plan={env:{contexts:[{name:'authorized-public-target',urls:[url.origin]}],parameters:{failOnError:true,failOnWarning:false,progressToStdout:true}},jobs:[
  {type:'passiveScan-config',parameters:{maxAlertsPerRule:50,scanOnlyInScope:true}},
  {type:'requestor',requests:pages.map(path=>({url:new URL(path,url).toString(),method:'GET',responseCode:200}))},

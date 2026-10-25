@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Card, Checkbox, Input, Select } from "../components/ui";
-import { LanguageControl, useLanguage } from "../components/EvidenceControls";
+import {useRedesignLanguage as useLanguage} from "../redesign/Language";
+import {Guidance} from "../redesign/Guidance";
+import reportingAreas from "../content/reporting-areas.json";
+import { LanguageControl } from "../components/EvidenceControls";
 import { useResource } from "../lib/resources";
-import { signalPolicy, scrubNote, submitSignal } from "../lib/signals";
+import { signalPolicy, scrubNote, submitSignalV3 } from "../lib/signals";
 import { manilaToday } from "../lib/dates";
 async function catalog(signal: AbortSignal) {
   const response = await fetch("/api/v2/barangays.json", { signal });
@@ -18,7 +21,8 @@ export function ReportV2() {
     fil = language === "fil",
     policy = useResource("report-policy-v2", signalPolicy),
     areas = useResource("manila-areas", catalog);
-  const [consent, setConsent] = useState(false),
+  const [reportType,setReportType]=useState("suspected"),[areaUnit,setAreaUnit]=useState("MANILA CITY"),[affectedRange,setAffectedRange]=useState("1"),[receipt,setReceipt]=useState<Record<string,string|string[]|number|null>|null>(null),
+    [consent, setConsent] = useState(false),
     [step, setStep] = useState(1),
     [barangay, setBarangay] = useState(""),
     [onset, setOnset] = useState(manilaToday()),
@@ -53,11 +57,11 @@ export function ReportV2() {
     setError("");
     controller.current = new AbortController();
     try {
-      const code = await submitSignal(
-        { barangay, onset, symptoms, note, consent, honeypot },
+      const result = await submitSignalV3(
+        { barangay, onset, symptoms, note, consent, honeypot,reportType,areaUnit,affectedRange },
         controller.current.signal,
       );
-      setCode(code);
+      setCode(result.code);setReceipt(result.stored);
       setNote("");
       setSymptoms([]);
       setBarangay("");
@@ -85,14 +89,14 @@ export function ReportV2() {
       </p>
       <h1>
         {t("Share an awareness signal.", "Magbahagi ng ulat para sa kaalaman.")}
-      </h1>
+      </h1><p>{t("Report a suspected case in your household or an unusual cluster you noticed. Choose only a coarse area; no GPS or free-text address is collected. Barangay selection is available only for the verified Manila catalogue; other units stay at province/city level. The onset day may be approximate.","Iulat ang pinaghihinalaang kaso sa pamilya o kakaibang kumpol sa lugar. Pumili lamang ng malawak na lugar; walang GPS o address. May talaan lamang ng barangay para sa Maynila; lalawigan/lungsod lamang ang iba. Maaaring tantiya ang araw ng pagsisimula.")}</p>
       <p>
         {t(
-          "No account, name, phone number or exact address is requested. Do not put identifying details in notes. Reports never enter official counts or forecasts.",
-          "Walang account, pangalan, telepono o eksaktong tirahang hinihingi. Hindi isinasama ang ulat sa opisyal na bilang o pagtataya.",
+          "We do not ask for your name or contact details, do not store your IP address or precise location, and use no trackers. No system can promise perfect anonymity, so do not include details that identify you or others. Reports never enter official counts, forecasts or the Outlook Index.",
+          "Hindi hinihingi ang pangalan o contact, hindi iniimbak ang IP address o eksaktong lokasyon, at walang tracker. Walang sistemang makapangangako ng ganap na anonymity; huwag maglagay ng pagkakakilanlan. Hindi kasama ang ulat sa opisyal na bilang, pagtataya o Outlook Index.",
         )}
       </p>
-      <Card>
+      <Card><p>{t("An IP address, when provided by the trusted hosting proxy, is used transiently to derive a rotating salted rate-limit hash. Raw IPs are never stored. Hashes expire after a 15-minute window and are physically removed on a successful request or the hourly retention job (up to 75 minutes). Automated note filters cannot detect every identifying detail. Retention and consent require DPO review before collection opens.","Kung ibinigay ng hosting proxy ang IP, pansamantala lamang itong ginagamit sa umiikot na salted hash. Hindi iniimbak ang IP. Natatapos ang hash window sa 15 minuto at binubura sa matagumpay na kahilingan o oras-oras na paglilinis (hanggang 75 minuto). Hindi nahuhuli ng filter ang lahat ng pagkakakilanlan. Kailangan ang pagsusuri ng DPO bago buksan ang pagtanggap.")}</p>
         {!policy.data?.enabled && (
           <p className="data-notice" role="status">
             {policy.loading
@@ -101,7 +105,7 @@ export function ReportV2() {
                   "Sinusuri ang kalagayan ng pagtanggap…",
                 )
               : t(
-                  "New submissions are not open yet.",
+                  "New submissions are closed.",
                   "Hindi pa bukas ang pagtanggap ng bagong ulat.",
                 )}
           </p>
@@ -136,10 +140,10 @@ export function ReportV2() {
             </p>
             <p>
               {t(
-                "Please report only your own experience. Do not include anyone’s identity or address.",
+                "Please report only your own household experience or a coarse, non-identifying cluster observation. Do not include anyone’s identity or address.",
                 "Sariling karanasan lamang ang iulat. Huwag ilagay ang pagkakakilanlan o tirahan ng sinuman.",
               )}{" "}
-              <Link className="text-link" to="/privacy">
+              <Link className="text-link" to="/report?drawer=privacy">
                 {t("Privacy and withdrawal", "Pagkapribado at pag-urong")}
               </Link>
               .
@@ -176,6 +180,9 @@ export function ReportV2() {
             <h2 ref={stepHeading} tabIndex={-1}>
               {t("Your report", "Iyong ulat")}
             </h2>
+            <Select label={t("Report type","Uri ng ulat")} value={reportType} onChange={e=>setReportType(e.target.value)} required><option value="suspected">{t("Suspected household / family case","Pinaghihinalaang kaso sa pamilya")}</option><option value="cluster">{t("Unusual cluster in the area","Di-karaniwang kumpol sa lugar")}</option></Select>
+            <Select label={t("Province / city (coarse reporting unit)","Lalawigan / lungsod")} value={areaUnit} onChange={e=>{setAreaUnit(e.target.value);setBarangay("");}} required>{reportingAreas.units.map(name=><option key={name}>{name}</option>)}</Select>
+            <Select label={t("People affected (approximate range)","Tinatayang bilang ng apektado")} value={affectedRange} onChange={e=>setAffectedRange(e.target.value)} required>{['1','2-4','5-9','10+'].map(range=><option key={range}>{range}</option>)}</Select>
             <Select
               label={t(
                 "Barangay (coarse area only)",
@@ -183,7 +190,7 @@ export function ReportV2() {
               )}
               value={barangay}
               onChange={(e) => setBarangay(e.target.value)}
-              disabled={busy}
+              disabled={busy||areaUnit!=="MANILA CITY"}
             >
               <option value="">
                 {t(
@@ -316,7 +323,7 @@ export function ReportV2() {
                 "Report received for review",
                 "Natanggap ang ulat para sa pagsusuri",
               )}
-            </h2>
+            </h2>{receipt&&<section aria-label="Exactly what was stored"><h3>{t("Exactly what was stored","Eksaktong naimbak")}</h3><dl>{Object.entries(receipt).map(([key,value])=><div key={key}><dt>{key.replaceAll('_',' ')}</dt><dd>{Array.isArray(value)?value.join(', '):value===null?t('Not supplied','Walang ibinigay'):String(value)}</dd></div>)}</dl></section>}<Guidance compact/>
             <p>
               {t(
                 "Unverified. This is not a medical confirmation. Save this private withdrawal code; it cannot be recovered from the app.",

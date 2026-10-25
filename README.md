@@ -1,6 +1,8 @@
 # DengueWatch
 
-A historical Manila dengue research app, with clearly separate, unverified community awareness reports. Manila case data ends 2023-12-02; NCR weekly data ends 2021-01-10. Neither is a live risk feed. The public chart starts with complete-row Scenario M; Scenario Z assumes zero for missing dates only inside source coverage. The one-week forecast is last week's value. Weather models did not establish a reliable operational improvement; longer-horizon ridge comparisons remain exploratory.
+A historical dengue research app with three main pages: Dashboard, Risk Map and Community Report. About & Credits is linked from every footer. Manila case data ends 2023-12-02; national province/city data ends 2021-01-10. Neither establishes current risk. The Manila panel shows retrospective case forecasts; the national map ranks historical seasonal count expectations, with explicit unmatched areas and population confounding. Weather failed the held-out improvement gate and is shown only as dated context. Community reports stay separate, unverified, coarse and closed by default.
+
+The redesign is on `feat/redesign`. See [MAP_METHOD](docs/MAP_METHOD.md), [DESIGN](docs/DESIGN.md), [current evidence](docs/evidence/redesign-checks.md), and [owner blockers](docs/IMPLEMENTATION_STATUS.md). Main pushes automatically deploy Vercel; review and test this schema/UI branch before merging.
 
 ## Run locally
 
@@ -8,6 +10,7 @@ Use Node 22.12+ and the Python packages in requirements-environment.txt. Public 
 
 ```powershell
 npm ci
+python -m pip install -r requirements-environment.txt
 npx playwright install chromium
 npm run dev
 ```

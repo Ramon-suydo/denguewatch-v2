@@ -1,3 +1,4 @@
+import {goto,activeView} from '../support/active-view';
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFile } from "node:fs/promises";
@@ -9,15 +10,15 @@ const evidence = JSON.parse(
 test("Manila stitched history preserves exact recorded values and source boundaries", async ({
   page,
 }) => {
-  await page.goto("/trends");
-  await page.getByText("Exact weekly values and quality flags").click();
-  const table = page.getByRole("region", { name: "Weekly history data table" });
+  await goto(page, "/trends");
+  await activeView(page).getByText("Exact weekly values and quality flags").click();
+  const table = activeView(page).getByRole("region", { name: "Weekly history data table" });
   await expect(table.locator("tbody tr")).toHaveCount(evidence.series.M.length);
   await expect(table).toContainText("Missing / excluded");
   await expect(table).toContainText("2016-11-13");
   await expect(table).toContainText("DOH EPI");
   await expect(table).toContainText("Manila daily");
-  await page.getByLabel("Absent-day scenario").selectOption("Z");
+  await activeView(page).getByLabel("Absent-day scenario").selectOption("Z");
   await expect(table.locator("tbody tr")).toHaveCount(evidence.series.Z.length);
   expect(
     (await new AxeBuilder({ page }).analyze()).violations.filter((v) =>
@@ -29,27 +30,26 @@ test("consent is opt-in, contact is optional, submission uses only RPC, and with
   page,
 }) => {
   const data = await mockPublicApi(page);
-  await page.goto("/dev/legacy-report");
-  const consent = page.getByRole("checkbox");
+  await goto(page, "/dev/legacy-report");
+  const consent = activeView(page).getByRole("checkbox");
   await expect(consent).not.toBeChecked();
   await expect(
-    page.getByRole("button", { name: "Continue to report" }),
+    activeView(page).getByRole("button", { name: "Continue to report" }),
   ).toBeDisabled();
   await consent.check();
-  await page.getByRole("button", { name: "Continue to report" }).click();
-  await expect(page.getByLabel("City / municipality (required)")).toHaveValue(
+  await activeView(page).getByRole("button", { name: "Continue to report" }).click();
+  await expect(activeView(page).getByLabel("City / municipality (required)")).toHaveValue(
     "MANILA CITY",
   );
-  await expect(page.getByLabel("Email address or phone number")).toHaveCount(0);
-  await page.getByRole("checkbox").check();
-  await page
-    .getByLabel("Email address or phone number")
+  await expect(activeView(page).getByLabel("Email address or phone number")).toHaveCount(0);
+  await activeView(page).getByRole("checkbox").check();
+  await activeView(page).getByLabel("Email address or phone number")
     .fill("test@example.test");
-  await page.getByRole("checkbox").uncheck();
-  await expect(page.getByLabel("Email address or phone number")).toHaveCount(0);
-  const date = page.getByLabel("Report date (required)");
+  await activeView(page).getByRole("checkbox").uncheck();
+  await expect(activeView(page).getByLabel("Email address or phone number")).toHaveCount(0);
+  const date = activeView(page).getByLabel("Report date (required)");
   await date.fill("2099-01-01");
-  await page.getByRole("button", { name: "Submit community report" }).click();
+  await activeView(page).getByRole("button", { name: "Submit community report" }).click();
   expect(data.submissions).toHaveLength(0);
   await date.fill("2026-01-01");
   expect(
@@ -59,9 +59,9 @@ test("consent is opt-in, contact is optional, submission uses only RPC, and with
         .analyze()
     ).violations,
   ).toEqual([]);
-  await page.getByRole("button", { name: "Submit community report" }).click();
+  await activeView(page).getByRole("button", { name: "Submit community report" }).click();
   await expect(
-    page.getByRole("heading", { name: "Report received" }),
+    activeView(page).getByRole("heading", { name: "Report received" }),
   ).toBeVisible();
   expect(data.submissions).toHaveLength(1);
   expect(data.submissions[0]).toMatchObject({
@@ -74,16 +74,15 @@ test("consent is opt-in, contact is optional, submission uses only RPC, and with
     "DW-",
   );
   expect(page.url()).not.toContain("DW-");
-  await page.getByRole("link", { name: "Privacy → Withdraw a report" }).click();
-  await page
-    .getByLabel("Reference code", { exact: true })
+  await activeView(page).getByRole("link", { name: "Privacy → Withdraw a report" }).click();
+  await activeView(page).getByLabel("Reference code", { exact: true })
     .fill("DW-AAAAAAAAAAAAAAAAAAAAAAAA");
-  await page.getByRole("button", { name: "Request withdrawal" }).click();
+  await activeView(page).getByRole("button", { name: "Request withdrawal" }).click();
   await expect(
-    page.getByText("Request processed.", { exact: false }),
+    activeView(page).getByText("Request processed.", { exact: false }),
   ).toBeVisible();
   expect(data.deletions).toHaveLength(1);
-  await expect(page.getByLabel("Reference code", { exact: true })).toHaveValue(
+  await expect(activeView(page).getByLabel("Reference code", { exact: true })).toHaveValue(
     "",
   );
 });
@@ -92,42 +91,42 @@ test("closed collection, legacy redirect, service errors and retry have usable s
   page,
 }) => {
   await mockPublicApi(page, { open: false });
-  await page.goto("/report");
+  await goto(page, "/report");
   await expect(
-    page.getByText("New submissions are not open yet.", { exact: false }),
+    activeView(page).getByText("New submissions are closed.", { exact: false }),
   ).toBeVisible();
-  await page.getByRole("checkbox").check();
+  await activeView(page).getByRole("checkbox").check();
   await expect(
-    page.getByRole("button", { name: "Continue to report" }),
+    activeView(page).getByRole("button", { name: "Continue to report" }),
   ).toBeDisabled();
-  await page.goto("/city/not-a-city");
-  await expect(page).toHaveURL(/\/trends$/);
+  await goto(page, "/city/not-a-city");
+  await expect(page).toHaveURL(/\/\?drawer=methods&section=trends$/);
   await page.route("**/api/v2/manila.json", (r) =>
     r.fulfill({ status: 503, body: "Unavailable" }),
   );
   await page.reload();
-  await expect(page.getByRole("alert")).toBeVisible();
+  await expect(activeView(page).getByRole("alert")).toBeVisible();
   await page.unroute("**/api/v2/manila.json");
-  await page.getByRole("button", { name: "Try again" }).click();
+  await activeView(page).getByRole("button", { name: "Try again" }).click();
   await expect(
-    page.getByRole("heading", { name: "Weekly recorded cases" }),
+    activeView(page).getByRole("heading", { name: "Weekly recorded cases" }),
   ).toBeVisible();
 });
 test("historical NCR map distinguishes missing source weeks from zero", async ({
   page,
 }) => {
-  await page.goto("/map");
-  await page.getByLabel("Comparison period").selectOption("week");
-  await page.getByLabel("Week label").selectOption("2016-11-13");
+  await goto(page, "/map");
+  await activeView(page).getByLabel("Comparison period").selectOption("week");
+  await activeView(page).getByLabel("Week label").selectOption("2016-11-13");
   await expect(page.locator(".ncr-city-map path")).toHaveCount(17);
   await expect(
-    page.getByRole("region", { name: "Historical NCR city ranking" }),
+    activeView(page).getByRole("region", { name: "Historical NCR city ranking" }),
   ).toContainText("Unavailable");
   await expect(
-    page.getByText("Data ends January 2021.", { exact: true }),
+    activeView(page).getByText("Data ends January 2021.", { exact: true }),
   ).toBeVisible();
   await expect(
-    page.getByText("No district or barangay case counts are inferred.", {
+    activeView(page).getByText("No district or barangay case counts are inferred.", {
       exact: false,
     }),
   ).toBeVisible();
@@ -151,12 +150,12 @@ test("public routes retain disclaimers and legal access on phones", async ({
       "/not-found",
     ]) {
       await page.setViewportSize({ width, height: 844 });
-      await page.goto(route);
-      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      await goto(page, route);
+      await expect(activeView(page).getByRole("heading", { level: 1 })).toBeVisible();
       await expect(
-        page.getByRole("complementary", { name: "Estimates, not alerts" }),
+        page.locator('aside[aria-labelledby="shared-disclaimer-title"]'),
       ).toHaveCount(1);
-      await expect(page.getByRole("contentinfo")).toContainText("Dec 2, 2023");
+      await expect(page.locator("footer.photo-footer, footer.site-footer")).toContainText("Dec 2, 2023");
       expect(
         await page.evaluate(
           () => document.documentElement.scrollWidth <= innerWidth,
@@ -181,13 +180,13 @@ test("publishable community aggregates remain delayed, unverified and separate",
       ]),
     }),
   );
-  await page.goto("/community");
-  const section = page.getByRole("region", {
+  await goto(page, "/community");
+  const section = activeView(page).getByRole("region", {
     name: "Unverified community aggregates",
   });
   await expect(section).toContainText("7");
   await expect(
-    page.getByText("minimum 72-hour delay", { exact: false }),
+    activeView(page).getByText("minimum 72-hour delay", { exact: false }),
   ).toBeVisible();
   await expect(
     page.locator('[aria-label="Historical forecast table"]'),
@@ -210,11 +209,11 @@ test("loading resolves to an explicit empty snapshot without fabricated values",
       }),
     });
   });
-  await page.goto("/");
-  await expect(page.getByText("Loading data…", { exact: true })).toBeVisible();
+  await goto(page, "/");
+  await expect(activeView(page).getByText("Loading data…", { exact: true })).toBeVisible();
   release();
   await expect(
-    page.getByRole("heading", {
+    activeView(page).getByRole("heading", {
       name: "No historical research snapshot available",
     }),
   ).toBeVisible();
@@ -222,33 +221,32 @@ test("loading resolves to an explicit empty snapshot without fabricated values",
 test("historical forecast exposes all horizons and explicit interval uncertainty", async ({
   page,
 }) => {
-  await page.goto("/trends");
+  await goto(page, "/trends");
   await expect(
-    page.getByRole("heading", { name: "Historical forecast and interval" }),
+    activeView(page).getByRole("heading", { name: "Historical forecast and interval" }),
   ).toBeVisible();
-  const table = page.getByRole("region", { name: "Forecast intervals" });
+  const table = activeView(page).getByRole("region", { name: "Forecast intervals" });
   await expect(table.locator("tbody tr")).toHaveCount(3);
   await expect(table).toContainText("exploratory");
-  await page.goto("/methodology");
-  await page.getByLabel("Forecast horizon").selectOption("4");
-  await page.getByLabel("Evaluation fold").selectOption("covid-2020-2021");
+  await goto(page, "/methodology");
+  await activeView(page).getByLabel("Forecast horizon").selectOption("4");
+  await activeView(page).getByLabel("Evaluation fold").selectOption("covid-2020-2021");
   await expect(
-    page
-      .getByRole("region", { name: "Model evaluation metrics" })
+    activeView(page).getByRole("region", { name: "Model evaluation metrics" })
       .locator("tbody tr"),
   ).toHaveCount(11);
   await expect(
-    page.getByText("Intervals can under-cover", { exact: false }),
+    activeView(page).getByText("Intervals can under-cover", { exact: false }),
   ).toBeVisible();
 });
 test("model numbers exactly match saved evidence across scenarios and horizons", async ({
   page,
 }) => {
-  await page.goto("/methodology");
+  await goto(page, "/methodology");
   for (const scenario of ["M", "Z"])
     for (const horizon of [1, 2, 4]) {
-      await page.getByLabel("Absent-day scenario").selectOption(scenario);
-      await page.getByLabel("Forecast horizon").selectOption(String(horizon));
+      await activeView(page).getByLabel("Absent-day scenario").selectOption(scenario);
+      await activeView(page).getByLabel("Forecast horizon").selectOption(String(horizon));
       const row = evidence.summaries.find(
         (r: any) =>
           r.scenario === scenario &&
@@ -256,8 +254,7 @@ test("model numbers exactly match saved evidence across scenarios and horizons",
           r.fold === "test-2018-2023" &&
           r.model === "naive",
       );
-      const visible = page
-        .getByRole("region", { name: "Model evaluation metrics" })
+      const visible = activeView(page).getByRole("region", { name: "Model evaluation metrics" })
         .locator("tbody tr")
         .filter({
           has: page.getByRole("rowheader", { name: "naive", exact: true }),
@@ -279,12 +276,12 @@ test("bundled footer dates never become a false live DB coverage claim", async (
       body: JSON.stringify([{ period_start: "2031-01-01" }]),
     }),
   );
-  await page.goto("/");
-  const footer = page.getByRole("contentinfo");
+  await goto(page, "/");
+  const footer = page.locator("footer.photo-footer, footer.site-footer");
   await expect(footer).toContainText("Dec 2, 2023");
   await expect(footer).toContainText("Jan 10, 2021");
   await expect(footer).not.toContainText("2031");
   await expect(
-    page.getByText("Bundled source periods.", { exact: false }),
+    activeView(page).getByText("Bundled source periods.", { exact: false }),
   ).toBeVisible();
 });

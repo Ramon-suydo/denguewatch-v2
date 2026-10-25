@@ -1,4 +1,4 @@
-﻿import { test, expect } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 test("unauthenticated staff paths expose only sign-in and no public navigation or queue", async ({
   page,
@@ -41,7 +41,7 @@ test("v2 reporting is closed by default, opt-in and bilingual without storing he
   );
   await page.goto("/report");
   await expect(
-    page.getByText("New submissions are not open yet.", { exact: false }),
+    page.getByText("New submissions are closed.", { exact: false }),
   ).toBeVisible();
   await expect(page.getByRole("checkbox")).not.toBeChecked();
   await page.getByRole("checkbox").check();

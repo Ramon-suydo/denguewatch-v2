@@ -1,4 +1,5 @@
-﻿import { test, expect } from "@playwright/test";
+import {goto,activeView} from '../support/active-view';
+import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 test("historical NCR map is offline, keyboard accessible and never assigns district case counts", async ({
   page,
@@ -13,7 +14,7 @@ test("historical NCR map is offline, keyboard accessible and never assigns distr
     external.push(r.request().url());
     return r.abort();
   });
-  await page.goto("/map");
+  await goto(page, "/map");
   await expect(page.locator(".ncr-city-map path")).toHaveCount(17);
   const path = page.locator(".ncr-city-map path").first();
   await path.focus();
@@ -22,11 +23,10 @@ test("historical NCR map is offline, keyboard accessible and never assigns distr
   await expect(page.locator(".evidence-selection")).toContainText(
     "MANILA CITY",
   );
-  await page.getByLabel("Comparison period").selectOption("week");
-  await page.getByLabel("Week label").selectOption("2019-09-08");
+  await activeView(page).getByLabel("Comparison period").selectOption("week");
+  await activeView(page).getByLabel("Week label").selectOption("2019-09-08");
   await expect(
-    page
-      .getByRole("region", { name: "Historical NCR city ranking" })
+    activeView(page).getByRole("region", { name: "Historical NCR city ranking" })
       .locator("tbody tr"),
   ).toHaveCount(17);
   expect(external).toEqual([]);
@@ -36,14 +36,14 @@ test("all 17 city shapes and selected-city details clear navigation at four widt
 }) => {
   for (const width of [320, 390, 768, 1280]) {
     await page.setViewportSize({ width, height: 1000 });
-    await page.goto("/map");
+    await goto(page, "/map");
     await expect(page.locator(".ncr-city-map path")).toHaveCount(17);
     expect(
       await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth > innerWidth,
         titleClear:
-          document.querySelector("h1")!.getBoundingClientRect().top >=
-          document.querySelector(".top-nav")!.getBoundingClientRect().bottom,
+          document.querySelector("dialog[open] h1")!.getBoundingClientRect().top >=
+          document.querySelector("dialog[open] .section-heading")!.getBoundingClientRect().bottom,
       })),
     ).toEqual({ overflow: false, titleClear: true });
     expect(

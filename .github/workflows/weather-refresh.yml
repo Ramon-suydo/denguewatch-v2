@@ -18,14 +18,18 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
       - run: npm run weather:refresh
+      - run: npm run map:weather -- --forecast-only
       - run: npm run data:validate
       - run: npm test
       - name: Commit validated cache only
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public/api/v2/weather.json
+          git add public/api/v2/weather.json public/api/v2/outlook-weather.json
           if ! git diff --cached --quiet; then
             git commit -m 'data: refresh validated weather cache'
             git push

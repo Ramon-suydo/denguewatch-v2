@@ -1,4 +1,5 @@
-﻿import { test, expect } from "@playwright/test";
+import {goto,activeView} from '../support/active-view';
+import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 test("legal notices, closed consent, no sensitive browser storage and print-friendly public evidence", async ({
   page,
@@ -12,9 +13,9 @@ test("legal notices, closed consent, no sensitive browser storage and print-frie
       ? r.continue()
       : r.abort(),
   );
-  await page.goto("/legal");
+  await goto(page, "/legal");
   await expect(
-    page.getByRole("heading", { name: "Legal and privacy notices" }),
+    activeView(page).getByRole("heading", { name: "Legal and privacy notices" }),
   ).toBeVisible();
   for (const name of [
     "Privacy Notice",
@@ -25,21 +26,21 @@ test("legal notices, closed consent, no sensitive browser storage and print-frie
     "Cookie/Storage Notice",
   ])
     await expect(
-      page.getByRole("heading", { name, exact: true }),
+      activeView(page).getByRole("heading", { name, exact: true }),
     ).toBeVisible();
-  await page.goto("/report");
-  await expect(page.getByRole("checkbox")).not.toBeChecked();
-  await page.getByRole("checkbox").check();
+  await goto(page, "/report");
+  await expect(activeView(page).getByRole("checkbox")).not.toBeChecked();
+  await activeView(page).getByRole("checkbox").check();
   await expect(
-    page.getByRole("button", { name: "Continue to report" }),
+    activeView(page).getByRole("button", { name: "Continue to report" }),
   ).toBeDisabled();
-  await page.goto("/methodology");
+  await goto(page, "/methodology");
   await expect(
-    page.getByRole("heading", { name: "Forecast comparison" }),
+    activeView(page).getByRole("heading", { name: "Forecast comparison" }),
   ).toBeVisible();
   await page.emulateMedia({ media: "print" });
   await expect(
-    page.getByRole("heading", {
+    activeView(page).getByRole("heading", {
       name: "What was tested. What remains uncertain.",
     }),
   ).toBeVisible();

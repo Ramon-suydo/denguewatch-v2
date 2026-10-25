@@ -1,3 +1,11 @@
+# Redesign build requirements
+
+The screenshot contrast gate runs a real browser on every build. `vercel.json` installs Chromium plus native nss/mesa-libgbm dependencies and Pillow; Linux invokes python3. CI installs Chromium with its system dependencies and the pinned Python environment. No contrast test is skipped on Vercel. This install path is configured but **NOT VERIFIED on a hosted Vercel build**; inspect the preview build logs before merging. Use Node 22 and preserve the repo install command in dashboard settings.
+
+Vercel documents Amazon Linux 2023, Python and native dnf package installation in its [build image reference](https://vercel.com/docs/builds/build-image). Playwright documents [browser installation](https://playwright.dev/docs/browsers). Exact hosted image/runtime compatibility still needs the owner's preview deployment. Do not open community collection merely because a frontend build passes.
+
+---
+
 > Historical project record. Current launch status and owner blockers are in IMPLEMENTATION_STATUS.md and LAUNCH_CHECKLIST.md. Older check counts, deployed states and instructions below are not current verification.
 
 # Deployment and local staff setup

@@ -54,10 +54,12 @@ export function useLanguage() {
       return "en";
     }
   });
+  useEffect(()=>{const receive=(event:Event)=>{const next=(event as CustomEvent).detail;if(next==='en'||next==='fil')setLanguage(next);};window.addEventListener('dw-language-change',receive);return()=>window.removeEventListener('dw-language-change',receive);},[]);
   useEffect(() => {
     document.documentElement.lang = language;
     try {
       localStorage.setItem("dw-language", language);
+      window.dispatchEvent(new CustomEvent("dw-language-change",{detail:language}));
     } catch {}
   }, [language]);
   return { language, setLanguage };

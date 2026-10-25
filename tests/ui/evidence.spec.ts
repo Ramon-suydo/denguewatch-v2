@@ -1,3 +1,4 @@
+import {goto,activeView} from '../support/active-view';
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { mkdir } from "node:fs/promises";
@@ -16,17 +17,17 @@ test("research pages: mobile/desktop, no overflow, no critical or serious axe is
       "/prevention",
     ]) {
       await page.setViewportSize({ width, height: 900 });
-      await page.goto(route);
-      await expect(page.locator("h1")).toBeVisible();
+      await goto(page, route);
+      await expect(activeView(page).locator("h1")).toBeVisible();
       if (route === "/")
         await expect(
-          page.getByRole("heading", { name: "Current risk unavailable" }),
+          activeView(page).getByRole("heading", { name: "Current risk unavailable" }),
         ).toBeVisible();
       if (route === "/metro-manila")
         await expect(page.locator(".ncr-city-map path")).toHaveCount(17);
       if (route === "/methodology")
         await expect(
-          page.getByRole("heading", { name: "Forecast comparison" }),
+          activeView(page).getByRole("heading", { name: "Forecast comparison" }),
         ).toBeVisible();
       expect(
         await page.evaluate(
@@ -43,9 +44,9 @@ test("research pages: mobile/desktop, no overflow, no critical or serious axe is
     }
   expect(errors).toEqual([]);
   await mkdir(".artifacts/evidence-ui", { recursive: true });
-  await page.goto("/");
+  await goto(page, "/");
   await expect(
-    page.getByRole("heading", { name: "Current risk unavailable" }),
+    activeView(page).getByRole("heading", { name: "Current risk unavailable" }),
   ).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({
@@ -61,51 +62,51 @@ test("research pages: mobile/desktop, no overflow, no critical or serious axe is
 test("scenario and year changes keep absence explicit; NCR remains historical", async ({
   page,
 }) => {
-  await page.goto("/trends");
+  await goto(page, "/trends");
   await expect(
-    page.getByRole("heading", { name: "Weekly recorded cases" }),
+    activeView(page).getByRole("heading", { name: "Weekly recorded cases" }),
   ).toBeVisible();
-  await page.getByLabel("Absent-day scenario").selectOption("Z");
+  await activeView(page).getByLabel("Absent-day scenario").selectOption("Z");
   await expect(
-    page.getByText("Zero is assumed only", { exact: false }),
+    activeView(page).getByText("Zero is assumed only", { exact: false }),
   ).toBeVisible();
-  await page.getByLabel("History year").selectOption("2020");
-  await page.getByText("Exact weekly values and quality flags").click();
+  await activeView(page).getByLabel("History year").selectOption("2020");
+  await activeView(page).getByText("Exact weekly values and quality flags").click();
   await expect(
-    page.getByRole("region", { name: "Weekly history data table" }),
+    activeView(page).getByRole("region", { name: "Weekly history data table" }),
   ).toBeVisible();
-  await page.goto("/metro-manila");
+  await goto(page, "/metro-manila");
   await expect(
-    page.getByText("Data ends January 2021.", { exact: true }),
+    activeView(page).getByText("Data ends January 2021.", { exact: true }),
   ).toBeVisible();
-  await page.getByLabel("Comparison period").selectOption("week");
-  await page.getByLabel("Week label").selectOption("2016-11-06");
+  await activeView(page).getByLabel("Comparison period").selectOption("week");
+  await activeView(page).getByLabel("Week label").selectOption("2016-11-06");
   await expect(page.locator(".ncr-city-map path")).toHaveCount(17);
 });
 test("Filipino home/prevention, missing API retry, and legacy forecasts isolated", async ({
   page,
 }) => {
-  await page.goto("/");
-  await page.getByRole("button", { name: "Filipino", exact: true }).click();
+  await goto(page, "/");
+  await activeView(page).getByRole("button", { name: "Filipino", exact: true }).click();
   await expect(
-    page.getByRole("heading", { name: "Kulang ang kasalukuyang datos" }),
+    activeView(page).getByRole("heading", { name: "Hindi alam ang panganib ngayon" }),
   ).toBeVisible();
-  await page.goto("/prevention");
-  await expect(page.getByRole("heading", { name: "4S ng DOH" })).toBeVisible();
-  await page.goto("/city/old-id");
-  await expect(page).toHaveURL(/\/trends$/);
+  await goto(page, "/prevention");
+  await expect(activeView(page).getByRole("heading", { name: "4S ng DOH" })).toBeVisible();
+  await goto(page, "/city/old-id");
+  await expect(page).toHaveURL(/\/\?drawer=methods&section=trends$/);
   let failedRequests = 0;
   await page.route("**/api/v2/manila.json", (route) => {
     failedRequests++;
     return route.fulfill({ status: 503, body: "Unavailable" });
   });
-  await page.goto("/");
-  await expect(page.getByRole("alert")).toContainText("could not load");
+  await goto(page, "/");
+  await expect(activeView(page).getByRole("alert")).toContainText("could not load");
   expect(failedRequests).toBeGreaterThan(0);
-  await expect(page.getByRole("button", { name: "Try again" })).toBeVisible();
+  await expect(activeView(page).getByRole("button", { name: "Try again" })).toBeVisible();
   await page.unroute("**/api/v2/manila.json");
-  await page.getByRole("button", { name: "Try again" }).click();
+  await activeView(page).getByRole("button", { name: "Try again" }).click();
   await expect(
-    page.getByRole("heading", { name: "Kulang ang kasalukuyang datos" }),
+    activeView(page).getByRole("heading", { name: "Hindi alam ang panganib ngayon" }),
   ).toBeVisible();
 });

@@ -1,3 +1,9 @@
+# Current redesign checkpoint
+
+Active branch: feat/redesign. Fresh evidence belongs in evidence/redesign-checks.md; older launch counts below are historical. The new schema guard is committed at 0c424c8. The first redesigned browser suite passed 35/35; final repeated runs follow the last review fixes. Credential rotation and hosted/human verification remain NEEDS OWNER. Main merge is a live Vercel deployment. Do not activate reports before institutional privacy and hosted checks.
+
+---
+
 > Publication update (2026-10-25, Asia/Manila): the owner explicitly requested publishing all committed work to main, overriding the earlier local-only instruction. Source and review bundle were pushed at 5a422d0. Earlier results below describe the pre-publication checkpoint. Credential rotation and hosted/human verification remain pending; publication does not establish deployment success or authorize reporting activation.
 
 # Launch checklist

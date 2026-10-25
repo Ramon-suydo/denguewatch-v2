@@ -1,3 +1,21 @@
+# Three-page redesign: defense questions
+
+**Why is the national map an outlook and not a forecast?** National cases stop in January 2021. The map ranks old seasonal count expectations, not next-week cases or present infection risk. Only Manila has a separate historical case-forecast panel, and its source also ends in December 2023. Current risk is unavailable.
+
+**Does weather drive the national colours?** No. The earlier-year rolling tests for 2018, 2019 and 2020 did not show consistent improvement over seasonal controls. Weather context is dated, cached, and excluded from the index. Missing weather leaves the seasonal outlook usable. See MAP_METHOD.md and the saved evaluation tables.
+
+**Is this population-adjusted risk?** No. Verified PSA denominators matching every surveillance catchment are unavailable. Counts are confounded by population size and reporting. The app discloses this prominently and does not publish national per-100,000 rates.
+
+**Do all polygons match?** No. There are 104 local polygons, 96 explicit name matches, 8 no-data polygons and 30 surveillance units without matched polygons. An exact name is not proof that separately reported cities and province catchments align. No guessed district-to-city reassignment occurs.
+
+**Are community reports anonymous and medically confirmed?** They omit names, contacts, GPS and raw stored IPs; privacy cannot be guaranteed. A transient proxy IP can produce a rotating, expiring salted hash for throttling. Staff review content, not diagnoses. At least three approved reports and a 72-hour delay are required for public groups. Reports never enter the index, forecasts or official counts. Collection remains closed until institutional privacy and hosted checks are complete.
+
+**Who owns the photograph and project?** The project owner identifies Sumarie Slabber as photographer. Written permission/licence and source URL remain NEEDS OWNER. Team, school and contacts remain hidden until supplied through src/content/about.json. No affiliation or permission is invented.
+
+**What was verified locally versus on the host?** Read the latest redesign evidence ledger. Embedded PostgreSQL tests execute real migrations/RLS/abuse guards, but do not verify Supabase Auth, deployed infrastructure logs, schedules, credentials or Vercel. Credential rotation, hosted checks, DPO review and usability sessions remain NEEDS OWNER. A local pass must never be described as a hosted pass.
+
+---
+
 # Defense questions and honest answers
 
 Current source of release truth: [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) and [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md).

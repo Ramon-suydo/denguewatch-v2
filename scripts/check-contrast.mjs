@@ -55,3 +55,10 @@ for(const [name,matrix] of Object.entries(visionMatrices)) {
  }
  console.log(`Map ramp ${name}: all 301 interpolated samples pass`);
 }
+
+check('Photographic footer credit','#e9f3f8','#071b2b');
+check('Photographic primary CTA','#082d30','#c7efe5');
+check('Photographic card text','#102a43','#f8fbfc');
+check('Photographic drawer links','#075e64','#f8fbfc');
+const nationalRamp=['#e1eeee','#b5d4d2','#73aca9','#347c79','#10504f'];
+for(const [name,matrix] of Object.entries(visionMatrices)){const values=nationalRamp.map(color=>simulatedLuminance(color,matrix));assert.ok(values.every((value,index)=>index===0||value<values[index-1]),'National ramp reverses luminance: '+name);console.log('National ramp '+name+': monotonic luminance; upper class also hatched');}
