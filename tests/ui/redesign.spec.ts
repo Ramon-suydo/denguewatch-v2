@@ -36,7 +36,8 @@ test('national map uses every explicit match, no guessed areas, exact saved metr
  await page.clock.setFixedTime(new Date('2026-10-20T04:00:00Z'));
  await page.route('**/api/v2/outlook-weather.json',route=>route.fulfill({status:503,body:'Unavailable'}));
  const external:string[]=[];page.on('request',r=>{if(/open-meteo|power\.larc|tile\./.test(r.url()))external.push(r.url());});
- await goto(page,'/risk-map');const geo=await read('public/geo/philippines.geojson'),data=await read('public/api/v2/outlook.json') as Outlook;
+ const boundaryResponse=page.waitForResponse(async response=>{if(new URL(response.url()).pathname!=='/geo/philippines.geojson'||response.status()!==200)return false;try{return Array.isArray((await response.json()).features);}catch{return false;}});
+ await goto(page,'/risk-map');const boundary=await boundaryResponse;expect(boundary.status()).toBe(200);await boundary.finished();const geo=await read('public/geo/philippines.geojson'),data=await read('public/api/v2/outlook.json') as Outlook;
  const polygons=page.locator('.national-map [data-boundary-id]');await expect(polygons).toHaveCount(geo.features.length);
  await expect(page.locator('.national-map [data-no-data="true"]')).toHaveCount(8);
  expect(geo.features.filter((f:any)=>f.properties.case_name)).toHaveLength(96);

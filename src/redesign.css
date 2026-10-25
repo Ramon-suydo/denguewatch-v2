@@ -24,3 +24,7 @@
 .photo-app .map-page .ui-card .index-number{font-size:4rem;line-height:1}.photo-app .map-page .ui-card .forecast-number{font-size:clamp(2.3rem,5vw,3.8rem)}
 
 .public-page-loading{min-height:100svh;display:grid;place-items:center}
+
+/* Two opaque focus inks stay visible on photograph, light cards and every map class. */
+.photo-app :focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px #071b2b}
+.photo-app .national-map [role=button]:focus-visible{outline:3px solid #071b2b;outline-offset:2px;stroke:#fff;stroke-width:4px}
