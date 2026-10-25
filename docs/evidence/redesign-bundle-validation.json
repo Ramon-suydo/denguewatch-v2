@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-25T14:02:35.354725+00:00",
+  "members": 578,
+  "zip_bytes": 7028984,
+  "combined_folder_and_zip_bytes": 24933748,
+  "largest_member_bytes": 1073851,
+  "sha256": "8e8544738b7b9bc2a783b9ab558e390b2565973289a4d7894b34602499462537",
+  "nested_archives_scanned": true,
+  "all_checksums_valid": true,
+  "release_status": "BLOCKED / NEEDS OWNER",
+  "independent_archive_reopened": true,
+  "screenshots_verified": 8,
+  "required_local_results_verified": true,
+  "nested_archive_integrity": [
+    {
+      "archive": "diagnostics/redesign-browser-diagnostic.trace.zip",
+      "members": 39,
+      "largest_member_bytes": 749010
+    }
+  ]
+}
