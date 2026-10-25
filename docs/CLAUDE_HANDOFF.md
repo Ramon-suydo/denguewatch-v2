@@ -1,3 +1,5 @@
+> Publication update (2026-10-25, Asia/Manila): the owner explicitly requested publishing all committed work to main, overriding the earlier local-only instruction. Source and review bundle were pushed at 5a422d0. Earlier results below describe the pre-publication checkpoint. Credential rotation and hosted/human verification remain pending; publication does not establish deployment success or authorize reporting activation.
+
 # Claude continuation handoff
 
 Start with IMPLEMENTATION_STATUS.md, LAUNCH_FIX_REPORT.md, LAUNCH_CHECKLIST.md and ROTATE_CREDENTIALS.md. The review_bundle.zip at the repository root contains current source/SQL, full fresh command logs including failures, data profiles and model tables, scanner reports, actual UI captures, redaction notes and SHA256SUMS. Review source copies are sanitized and some large files are split; use the Git checkout to run the app.

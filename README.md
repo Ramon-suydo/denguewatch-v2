@@ -30,7 +30,7 @@ npm run security:secrets
 
 ## Release status
 
-Work is on fix/launch. Main deploys automatically and must not be updated until every release gate passes. Credential rotation was explicitly deferred by the owner, so hosted verification, migrations, first admin/MFA, schedule execution and reporting activation remain NEEDS OWNER. See docs/IMPLEMENTATION_STATUS.md, docs/LAUNCH_CHECKLIST.md and docs/ROTATE_CREDENTIALS.md for actual results and exact owner steps. Test locally and self-review the schema/auth changes before merging near the defense.
+The owner explicitly requested publishing the completed work to main on 2026-10-25, and the source plus sanitized review bundle were pushed. Main pushes may trigger Vercel automatically; deployment success has not been verified. Credential rotation, hosted verification, first admin/MFA, retention execution and reporting activation remain NEEDS OWNER. The bundled evidence preserves the earlier local checkpoint; publication is not proof that hosted release gates passed. See docs/IMPLEMENTATION_STATUS.md, docs/LAUNCH_CHECKLIST.md and docs/ROTATE_CREDENTIALS.md. Test locally and self-review schema/auth changes before further deployment near the defense.
 
 The server reporting policy fails closed until verification and explicit activation. One-line kill switch after configuring rotated server credentials: `npm run reports:off`. Browser flags cannot override database authorization. Community reports never enter official counts or forecasts.
 

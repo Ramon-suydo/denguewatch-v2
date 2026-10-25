@@ -1,3 +1,5 @@
+> Publication update (2026-10-25, Asia/Manila): the owner explicitly requested publishing all committed work to main, overriding the earlier local-only instruction. Source and review bundle were pushed at 5a422d0. Earlier results below describe the pre-publication checkpoint. Credential rotation and hosted/human verification remain pending; publication does not establish deployment success or authorize reporting activation.
+
 # Launch checklist
 
 **BLOCKED: owner deferred credential rotation. Do not push main or activate reporting.** Updated 2026-10-25T07:14:00.872864+00:00.

@@ -1,3 +1,5 @@
+> Publication update (2026-10-25, Asia/Manila): the owner explicitly requested publishing all committed work to main, overriding the earlier local-only instruction. Source and review bundle were pushed at 5a422d0. Earlier results below describe the pre-publication checkpoint. Credential rotation and hosted/human verification remain pending; publication does not establish deployment success or authorize reporting activation.
+
 # Launch fix report
 
 Work branch: fix/launch. Release is blocked by owner-deferred credential rotation and unverified hosted/human steps. No main push, live database write, report activation, real community submission or history rewrite is claimed. See IMPLEMENTATION_STATUS.md for final counts and scan timestamps. The review ZIP includes every captured command output, including failed attempts.
