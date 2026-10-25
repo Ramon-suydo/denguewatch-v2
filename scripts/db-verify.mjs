@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process';
 import { verifyRetentionWorkflow } from './lib/retention-workflow.mjs';
 import { connectDatabase,verifyDatabase,failClosed } from './lib/hosted.mjs';
-const result=spawnSync(process.execPath,['node_modules/tsx/dist/cli.mjs','--test','tests/data-and-security.test.ts','tests/reporting-v2.test.ts','tests/retention-launch.test.ts'],{stdio:'inherit'});
+const result=spawnSync(process.execPath,['node_modules/tsx/dist/cli.mjs','--test','tests/data-and-security.test.ts','tests/reporting-v2.test.ts','tests/reporting-scope.test.ts','tests/retention-launch.test.ts'],{stdio:'inherit'});
 if(result.status!==0){process.exitCode=result.status??1;}
 else if(process.argv.includes('--hosted')){
  let db;

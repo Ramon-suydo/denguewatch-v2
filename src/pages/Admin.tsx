@@ -6,6 +6,7 @@ import { getSupabase } from "../lib/supabase";
 type Signal = {
   id: string;
   barangay_code: string | null;
+  area_unit?:string|null; report_type?:string|null;affected_range?:string|null;
   onset_date: string;
   symptoms: string[];
   note_text: string | null;
@@ -269,9 +270,9 @@ export function Admin() {
                       {r.onset_date} · {r.moderation}
                     </h3>
                     <p>Reference ID: {r.id}</p>
-                    <p>Area: {r.barangay_code ?? "Manila city only"}</p>
+                    <p>Area: {r.area_unit ?? "MANILA CITY"} ? {r.barangay_code ?? "area not specified"}</p>
                     <p>Symptoms: {r.symptoms.join(", ") || "Not specified"}</p>
-                    {r.note_text && <p>Sanitized note: {r.note_text}</p>}
+                    <p>Report type: {r.report_type??"suspected"} ? People affected: {r.affected_range??"not supplied"}</p>{r.note_text && <p>Sanitized note: {r.note_text}</p>}
                     <div className="evidence-actions">
                       <Button
                         disabled={busy}

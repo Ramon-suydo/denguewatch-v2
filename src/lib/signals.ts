@@ -98,6 +98,47 @@ export async function submitSignal(
     );
   return data;
 }
+export async function submitSignalV3(
+  input: {
+    barangay: string;
+    onset: string;
+    symptoms: string[];
+    note: string;
+    consent: boolean;
+    honeypot: string;
+    reportType:string;areaUnit:string;affectedRange:string;
+  },
+  signal: AbortSignal,
+) {
+  requireOnlineMutation();
+  const { data: challenges, error: challengeError } =
+    await getSupabase().rpc("report_challenge");
+  if (challengeError || !challenges?.[0])
+    throw Error(
+      "Reporting is closed or temporarily unavailable. No submission was sent.",
+    );
+  const challenge = challenges[0],
+    nonce = await proof(challenge, signal);
+  if (signal.aborted) throw new DOMException("Cancelled", "AbortError");
+  const { data, error } = await getSupabase().rpc("submit_signal_v3", {
+    p_report_type:input.reportType,p_area_unit:input.areaUnit,p_affected_range:input.affectedRange,
+    p_challenge: challenge.challenge_id,
+    p_nonce: nonce,
+    p_barangay: input.barangay || null,
+    p_onset: input.onset,
+    p_symptoms: input.symptoms,
+    p_note: scrubNote(input.note) || null,
+    p_consent: input.consent,
+    p_version: SIGNAL_VERSION,
+    p_honeypot: input.honeypot,
+  });
+  if (error || typeof data !== "object" || !data || !/^DW2-[A-F0-9]{32}$/.test(data.code) || !data.stored)
+    throw Error(
+      "We could not confirm whether this report was saved. Do not submit again automatically; contact the research team for help.",
+    );
+  return data as {code:string;stored:Record<string,string|string[]|number|null>};
+}
+
 export async function withdrawSignal(code: string) {
   requireOnlineMutation();
   const { error } = await getSupabase().rpc("withdraw_signal", {
