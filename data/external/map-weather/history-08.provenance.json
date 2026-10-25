@@ -1,0 +1,24 @@
+{
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=11.846472%2C6.059524%2C12.854334%2C6.284656%2C10.291237%2C6.534961%2C5.95376%2C9.670497&longitude=124.940201%2C125.158097%2C123.928502%2C124.853132%2C125.05199%2C124.431228%2C121.055392%2C125.737379&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&start_date=2016-01-01&end_date=2020-12-31&models=era5",
+  "retrieved_utc": "2026-10-25T08:44:11.439587+00:00",
+  "sha256": "20238b6d010020aeae3386e918e5d31ff3261ffd224824918d989cd032e855db",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "SAMAR",
+    "SARANGANI",
+    "SORSOGON",
+    "SOUTH COTABATO",
+    "SOUTHERN LEYTE",
+    "SULTAN KUDARAT",
+    "SULU",
+    "SURIGAO DEL NORTE"
+  ],
+  "kind": "history",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

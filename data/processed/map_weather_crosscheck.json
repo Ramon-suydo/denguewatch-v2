@@ -1,0 +1,894 @@
+{
+  "scope": "Four named centroid sample, not all provinces. Monthly aggregation reduces but does not eliminate UTC versus Asia/Manila daily-boundary mismatch. Products/grid cells differ; disagreement is retained, not corrected into source cases.",
+  "resolution": "ERA5 about 28 km; POWER meteorology roughly 0.5 x 0.625 degrees (about 55-70 km). No household exposure estimate.",
+  "results": [
+    {
+      "unit": "MANILA CITY",
+      "status": "cross-checked",
+      "months": [
+        {
+          "month": "2018-01",
+          "n": 31,
+          "temperature_bias_c": 2.5525806451612887,
+          "precipitation_total_difference_mm": -9.930000000000007
+        },
+        {
+          "month": "2018-02",
+          "n": 28,
+          "temperature_bias_c": 2.693571428571424,
+          "precipitation_total_difference_mm": -95.42
+        },
+        {
+          "month": "2018-03",
+          "n": 31,
+          "temperature_bias_c": 3.187096774193545,
+          "precipitation_total_difference_mm": -90.08999999999999
+        },
+        {
+          "month": "2018-04",
+          "n": 30,
+          "temperature_bias_c": 2.9096666666666593,
+          "precipitation_total_difference_mm": -76.88
+        },
+        {
+          "month": "2018-05",
+          "n": 31,
+          "temperature_bias_c": 3.13129032258065,
+          "precipitation_total_difference_mm": -111.73
+        },
+        {
+          "month": "2018-06",
+          "n": 30,
+          "temperature_bias_c": 1.6693333333333342,
+          "precipitation_total_difference_mm": -70.99000000000001
+        },
+        {
+          "month": "2018-07",
+          "n": 31,
+          "temperature_bias_c": 1.3196774193548428,
+          "precipitation_total_difference_mm": 157.10000000000002
+        },
+        {
+          "month": "2018-08",
+          "n": 31,
+          "temperature_bias_c": 1.8051612903225838,
+          "precipitation_total_difference_mm": -11.350000000000023
+        },
+        {
+          "month": "2018-09",
+          "n": 30,
+          "temperature_bias_c": 1.6973333333333294,
+          "precipitation_total_difference_mm": -37.099999999999994
+        },
+        {
+          "month": "2018-10",
+          "n": 31,
+          "temperature_bias_c": 2.7193548387096733,
+          "precipitation_total_difference_mm": -76.83999999999999
+        },
+        {
+          "month": "2018-11",
+          "n": 30,
+          "temperature_bias_c": 3.28766666666667,
+          "precipitation_total_difference_mm": -118.30999999999999
+        },
+        {
+          "month": "2018-12",
+          "n": 31,
+          "temperature_bias_c": 2.673225806451619,
+          "precipitation_total_difference_mm": -280.38
+        },
+        {
+          "month": "2019-01",
+          "n": 31,
+          "temperature_bias_c": 3.2035483870967774,
+          "precipitation_total_difference_mm": -91.27
+        },
+        {
+          "month": "2019-02",
+          "n": 28,
+          "temperature_bias_c": 3.2260714285714265,
+          "precipitation_total_difference_mm": -25.19
+        },
+        {
+          "month": "2019-03",
+          "n": 31,
+          "temperature_bias_c": 2.2106451612903264,
+          "precipitation_total_difference_mm": -16.12
+        },
+        {
+          "month": "2019-04",
+          "n": 30,
+          "temperature_bias_c": 2.143333333333331,
+          "precipitation_total_difference_mm": -42.57
+        },
+        {
+          "month": "2019-05",
+          "n": 31,
+          "temperature_bias_c": 1.2003225806451603,
+          "precipitation_total_difference_mm": -82.09
+        },
+        {
+          "month": "2019-06",
+          "n": 30,
+          "temperature_bias_c": 2.2030000000000065,
+          "precipitation_total_difference_mm": -46.08000000000001
+        },
+        {
+          "month": "2019-07",
+          "n": 31,
+          "temperature_bias_c": 1.7406451612903204,
+          "precipitation_total_difference_mm": 72.72999999999999
+        },
+        {
+          "month": "2019-08",
+          "n": 31,
+          "temperature_bias_c": 1.6206451612903265,
+          "precipitation_total_difference_mm": 49.96999999999997
+        },
+        {
+          "month": "2019-09",
+          "n": 30,
+          "temperature_bias_c": 1.685666666666659,
+          "precipitation_total_difference_mm": 56.74000000000001
+        },
+        {
+          "month": "2019-10",
+          "n": 31,
+          "temperature_bias_c": 2.619999999999994,
+          "precipitation_total_difference_mm": -150.41
+        },
+        {
+          "month": "2019-11",
+          "n": 30,
+          "temperature_bias_c": 2.550999999999995,
+          "precipitation_total_difference_mm": -137.41000000000003
+        },
+        {
+          "month": "2019-12",
+          "n": 31,
+          "temperature_bias_c": 2.741290322580646,
+          "precipitation_total_difference_mm": -236.55
+        },
+        {
+          "month": "2020-01",
+          "n": 31,
+          "temperature_bias_c": 2.879032258064523,
+          "precipitation_total_difference_mm": -124.77
+        },
+        {
+          "month": "2020-02",
+          "n": 29,
+          "temperature_bias_c": 3.555172413793109,
+          "precipitation_total_difference_mm": -733.5400000000001
+        },
+        {
+          "month": "2020-03",
+          "n": 31,
+          "temperature_bias_c": 3.7087096774193604,
+          "precipitation_total_difference_mm": -649.8900000000001
+        },
+        {
+          "month": "2020-04",
+          "n": 30,
+          "temperature_bias_c": 3.5990000000000038,
+          "precipitation_total_difference_mm": -524.8399999999999
+        },
+        {
+          "month": "2020-05",
+          "n": 31,
+          "temperature_bias_c": 2.558709677419362,
+          "precipitation_total_difference_mm": -124.21000000000001
+        },
+        {
+          "month": "2020-06",
+          "n": 30,
+          "temperature_bias_c": 2.5603333333333325,
+          "precipitation_total_difference_mm": -386.0400000000001
+        },
+        {
+          "month": "2020-07",
+          "n": 31,
+          "temperature_bias_c": 2.2787096774193643,
+          "precipitation_total_difference_mm": -6.289999999999992
+        },
+        {
+          "month": "2020-08",
+          "n": 31,
+          "temperature_bias_c": 1.7216129032258074,
+          "precipitation_total_difference_mm": 40.23000000000002
+        },
+        {
+          "month": "2020-09",
+          "n": 30,
+          "temperature_bias_c": 1.8129999999999953,
+          "precipitation_total_difference_mm": -112.26000000000002
+        },
+        {
+          "month": "2020-10",
+          "n": 31,
+          "temperature_bias_c": 1.7438709677419375,
+          "precipitation_total_difference_mm": -650.3800000000001
+        },
+        {
+          "month": "2020-11",
+          "n": 30,
+          "temperature_bias_c": 2.399000000000001,
+          "precipitation_total_difference_mm": -795.19
+        },
+        {
+          "month": "2020-12",
+          "n": 31,
+          "temperature_bias_c": 2.5019354838709624,
+          "precipitation_total_difference_mm": -546.75
+        }
+      ]
+    },
+    {
+      "unit": "ALBAY",
+      "status": "cross-checked",
+      "months": [
+        {
+          "month": "2018-01",
+          "n": 31,
+          "temperature_bias_c": 0.030645161290319578,
+          "precipitation_total_difference_mm": -439.84
+        },
+        {
+          "month": "2018-02",
+          "n": 28,
+          "temperature_bias_c": 0.1421428571428578,
+          "precipitation_total_difference_mm": -208.73999999999998
+        },
+        {
+          "month": "2018-03",
+          "n": 31,
+          "temperature_bias_c": 0.4761290322580578,
+          "precipitation_total_difference_mm": -115.09000000000002
+        },
+        {
+          "month": "2018-04",
+          "n": 30,
+          "temperature_bias_c": 0.6776666666666671,
+          "precipitation_total_difference_mm": -51.81999999999999
+        },
+        {
+          "month": "2018-05",
+          "n": 31,
+          "temperature_bias_c": 0.7764516129032231,
+          "precipitation_total_difference_mm": -13.030000000000001
+        },
+        {
+          "month": "2018-06",
+          "n": 30,
+          "temperature_bias_c": -0.21766666666666978,
+          "precipitation_total_difference_mm": 269.97
+        },
+        {
+          "month": "2018-07",
+          "n": 31,
+          "temperature_bias_c": -0.07516129032257979,
+          "precipitation_total_difference_mm": 586.65
+        },
+        {
+          "month": "2018-08",
+          "n": 31,
+          "temperature_bias_c": 0.2835483870967721,
+          "precipitation_total_difference_mm": 300.16999999999996
+        },
+        {
+          "month": "2018-09",
+          "n": 30,
+          "temperature_bias_c": 0.016999999999988802,
+          "precipitation_total_difference_mm": 137.45
+        },
+        {
+          "month": "2018-10",
+          "n": 31,
+          "temperature_bias_c": 0.3883870967741885,
+          "precipitation_total_difference_mm": 18.08
+        },
+        {
+          "month": "2018-11",
+          "n": 30,
+          "temperature_bias_c": 0.5073333333333281,
+          "precipitation_total_difference_mm": -185.82
+        },
+        {
+          "month": "2018-12",
+          "n": 31,
+          "temperature_bias_c": 0.3170967741935513,
+          "precipitation_total_difference_mm": -431.36999999999995
+        },
+        {
+          "month": "2019-01",
+          "n": 31,
+          "temperature_bias_c": 0.6338709677419274,
+          "precipitation_total_difference_mm": -74.87
+        },
+        {
+          "month": "2019-02",
+          "n": 28,
+          "temperature_bias_c": 0.928928571428564,
+          "precipitation_total_difference_mm": -33.15
+        },
+        {
+          "month": "2019-03",
+          "n": 31,
+          "temperature_bias_c": 1.2658064516129137,
+          "precipitation_total_difference_mm": -36.71
+        },
+        {
+          "month": "2019-04",
+          "n": 30,
+          "temperature_bias_c": 0.9486666666666679,
+          "precipitation_total_difference_mm": -50.24999999999999
+        },
+        {
+          "month": "2019-05",
+          "n": 31,
+          "temperature_bias_c": -0.5083870967741966,
+          "precipitation_total_difference_mm": 98.17999999999998
+        },
+        {
+          "month": "2019-06",
+          "n": 30,
+          "temperature_bias_c": -0.052666666666656425,
+          "precipitation_total_difference_mm": 77.17999999999998
+        },
+        {
+          "month": "2019-07",
+          "n": 31,
+          "temperature_bias_c": -0.2448387096774134,
+          "precipitation_total_difference_mm": 203.72
+        },
+        {
+          "month": "2019-08",
+          "n": 31,
+          "temperature_bias_c": 0.13451612903226007,
+          "precipitation_total_difference_mm": 304.85
+        },
+        {
+          "month": "2019-09",
+          "n": 30,
+          "temperature_bias_c": 0.16466666666666896,
+          "precipitation_total_difference_mm": 188.67
+        },
+        {
+          "month": "2019-10",
+          "n": 31,
+          "temperature_bias_c": 0.19774193548386876,
+          "precipitation_total_difference_mm": -53.56999999999999
+        },
+        {
+          "month": "2019-11",
+          "n": 30,
+          "temperature_bias_c": 0.24366666666666958,
+          "precipitation_total_difference_mm": 112.77000000000001
+        },
+        {
+          "month": "2019-12",
+          "n": 31,
+          "temperature_bias_c": 0.4722580645161294,
+          "precipitation_total_difference_mm": -136.64
+        },
+        {
+          "month": "2020-01",
+          "n": 31,
+          "temperature_bias_c": 0.43580645161289766,
+          "precipitation_total_difference_mm": -219.49
+        },
+        {
+          "month": "2020-02",
+          "n": 29,
+          "temperature_bias_c": 0.7796551724138006,
+          "precipitation_total_difference_mm": -136.28
+        },
+        {
+          "month": "2020-03",
+          "n": 31,
+          "temperature_bias_c": 1.307741935483861,
+          "precipitation_total_difference_mm": -138.54000000000002
+        },
+        {
+          "month": "2020-04",
+          "n": 30,
+          "temperature_bias_c": 1.3619999999999912,
+          "precipitation_total_difference_mm": -29.150000000000002
+        },
+        {
+          "month": "2020-05",
+          "n": 31,
+          "temperature_bias_c": 0.7161290322580633,
+          "precipitation_total_difference_mm": 2.569999999999993
+        },
+        {
+          "month": "2020-06",
+          "n": 30,
+          "temperature_bias_c": 0.581666666666667,
+          "precipitation_total_difference_mm": 19.25999999999999
+        },
+        {
+          "month": "2020-07",
+          "n": 31,
+          "temperature_bias_c": 0.26870967741935203,
+          "precipitation_total_difference_mm": 119.04999999999998
+        },
+        {
+          "month": "2020-08",
+          "n": 31,
+          "temperature_bias_c": -0.005161290322579504,
+          "precipitation_total_difference_mm": 268.13
+        },
+        {
+          "month": "2020-09",
+          "n": 30,
+          "temperature_bias_c": -0.15000000000000213,
+          "precipitation_total_difference_mm": 106.34000000000003
+        },
+        {
+          "month": "2020-10",
+          "n": 31,
+          "temperature_bias_c": -0.2341935483870934,
+          "precipitation_total_difference_mm": -34.690000000000055
+        },
+        {
+          "month": "2020-11",
+          "n": 30,
+          "temperature_bias_c": 0.22833333333333528,
+          "precipitation_total_difference_mm": -130.21999999999997
+        },
+        {
+          "month": "2020-12",
+          "n": 31,
+          "temperature_bias_c": 0.1483870967741936,
+          "precipitation_total_difference_mm": -375.03999999999996
+        }
+      ]
+    },
+    {
+      "unit": "CEBU",
+      "status": "cross-checked",
+      "months": [
+        {
+          "month": "2018-01",
+          "n": 31,
+          "temperature_bias_c": -0.7632258064516115,
+          "precipitation_total_difference_mm": 6.789999999999964
+        },
+        {
+          "month": "2018-02",
+          "n": 28,
+          "temperature_bias_c": -0.5278571428571368,
+          "precipitation_total_difference_mm": -51.44
+        },
+        {
+          "month": "2018-03",
+          "n": 31,
+          "temperature_bias_c": -0.3554838709677419,
+          "precipitation_total_difference_mm": -7.170000000000002
+        },
+        {
+          "month": "2018-04",
+          "n": 30,
+          "temperature_bias_c": -0.7146666666666697,
+          "precipitation_total_difference_mm": 16.269999999999996
+        },
+        {
+          "month": "2018-05",
+          "n": 31,
+          "temperature_bias_c": -1.2409677419354743,
+          "precipitation_total_difference_mm": 110.24
+        },
+        {
+          "month": "2018-06",
+          "n": 30,
+          "temperature_bias_c": -0.9670000000000023,
+          "precipitation_total_difference_mm": -14.48999999999998
+        },
+        {
+          "month": "2018-07",
+          "n": 31,
+          "temperature_bias_c": -0.5909677419354828,
+          "precipitation_total_difference_mm": -60.44000000000001
+        },
+        {
+          "month": "2018-08",
+          "n": 31,
+          "temperature_bias_c": -0.4999999999999929,
+          "precipitation_total_difference_mm": -14.969999999999985
+        },
+        {
+          "month": "2018-09",
+          "n": 30,
+          "temperature_bias_c": -0.7146666666666697,
+          "precipitation_total_difference_mm": -10.27000000000001
+        },
+        {
+          "month": "2018-10",
+          "n": 31,
+          "temperature_bias_c": -0.8516129032257993,
+          "precipitation_total_difference_mm": -2.789999999999992
+        },
+        {
+          "month": "2018-11",
+          "n": 30,
+          "temperature_bias_c": -0.7819999999999965,
+          "precipitation_total_difference_mm": 152.34
+        },
+        {
+          "month": "2018-12",
+          "n": 31,
+          "temperature_bias_c": -0.6700000000000017,
+          "precipitation_total_difference_mm": -16.30000000000001
+        },
+        {
+          "month": "2019-01",
+          "n": 31,
+          "temperature_bias_c": 0.017419354838711598,
+          "precipitation_total_difference_mm": -105.62999999999998
+        },
+        {
+          "month": "2019-02",
+          "n": 28,
+          "temperature_bias_c": 0.05928571428571772,
+          "precipitation_total_difference_mm": -110.55999999999999
+        },
+        {
+          "month": "2019-03",
+          "n": 31,
+          "temperature_bias_c": 0.11032258064516043,
+          "precipitation_total_difference_mm": -135.8
+        },
+        {
+          "month": "2019-04",
+          "n": 30,
+          "temperature_bias_c": 0.6656666666666666,
+          "precipitation_total_difference_mm": -165.29000000000002
+        },
+        {
+          "month": "2019-05",
+          "n": 31,
+          "temperature_bias_c": -0.44451612903226234,
+          "precipitation_total_difference_mm": -88.03
+        },
+        {
+          "month": "2019-06",
+          "n": 30,
+          "temperature_bias_c": -0.6673333333333318,
+          "precipitation_total_difference_mm": -161.15
+        },
+        {
+          "month": "2019-07",
+          "n": 31,
+          "temperature_bias_c": -0.6722580645161287,
+          "precipitation_total_difference_mm": -93.85
+        },
+        {
+          "month": "2019-08",
+          "n": 31,
+          "temperature_bias_c": -0.17709677419355074,
+          "precipitation_total_difference_mm": -230.79999999999998
+        },
+        {
+          "month": "2019-09",
+          "n": 30,
+          "temperature_bias_c": -0.2976666666666681,
+          "precipitation_total_difference_mm": -226.39
+        },
+        {
+          "month": "2019-10",
+          "n": 31,
+          "temperature_bias_c": -0.7109677419354874,
+          "precipitation_total_difference_mm": -98.07999999999998
+        },
+        {
+          "month": "2019-11",
+          "n": 30,
+          "temperature_bias_c": -0.5049999999999883,
+          "precipitation_total_difference_mm": 48.95
+        },
+        {
+          "month": "2019-12",
+          "n": 31,
+          "temperature_bias_c": -0.5706451612903258,
+          "precipitation_total_difference_mm": -4.22999999999999
+        },
+        {
+          "month": "2020-01",
+          "n": 31,
+          "temperature_bias_c": -0.3509677419354915,
+          "precipitation_total_difference_mm": 3.6999999999999886
+        },
+        {
+          "month": "2020-02",
+          "n": 29,
+          "temperature_bias_c": -0.04137931034482989,
+          "precipitation_total_difference_mm": -82.74
+        },
+        {
+          "month": "2020-03",
+          "n": 31,
+          "temperature_bias_c": -0.6329032258064444,
+          "precipitation_total_difference_mm": 10.850000000000001
+        },
+        {
+          "month": "2020-04",
+          "n": 30,
+          "temperature_bias_c": -1.2986666666666729,
+          "precipitation_total_difference_mm": 39.959999999999994
+        },
+        {
+          "month": "2020-05",
+          "n": 31,
+          "temperature_bias_c": -1.4335483870967742,
+          "precipitation_total_difference_mm": -3.460000000000008
+        },
+        {
+          "month": "2020-06",
+          "n": 30,
+          "temperature_bias_c": -1.0090000000000003,
+          "precipitation_total_difference_mm": 86.13999999999999
+        },
+        {
+          "month": "2020-07",
+          "n": 31,
+          "temperature_bias_c": -0.754516129032254,
+          "precipitation_total_difference_mm": 60.620000000000005
+        },
+        {
+          "month": "2020-08",
+          "n": 31,
+          "temperature_bias_c": -0.5558064516129022,
+          "precipitation_total_difference_mm": -98.71000000000004
+        },
+        {
+          "month": "2020-09",
+          "n": 30,
+          "temperature_bias_c": -1.0256666666666625,
+          "precipitation_total_difference_mm": 87.84
+        },
+        {
+          "month": "2020-10",
+          "n": 31,
+          "temperature_bias_c": -0.8274193548387103,
+          "precipitation_total_difference_mm": -218.06
+        },
+        {
+          "month": "2020-11",
+          "n": 30,
+          "temperature_bias_c": -0.5826666666666647,
+          "precipitation_total_difference_mm": -49.81999999999999
+        },
+        {
+          "month": "2020-12",
+          "n": 31,
+          "temperature_bias_c": -0.6600000000000037,
+          "precipitation_total_difference_mm": -61.64999999999998
+        }
+      ]
+    },
+    {
+      "unit": "DAVAO DEL SUR",
+      "status": "cross-checked",
+      "months": [
+        {
+          "month": "2018-01",
+          "n": 31,
+          "temperature_bias_c": -11.135161290322584,
+          "precipitation_total_difference_mm": 124.43
+        },
+        {
+          "month": "2018-02",
+          "n": 28,
+          "temperature_bias_c": -10.912499999999994,
+          "precipitation_total_difference_mm": 67.29
+        },
+        {
+          "month": "2018-03",
+          "n": 31,
+          "temperature_bias_c": -10.4216129032258,
+          "precipitation_total_difference_mm": 58.15999999999999
+        },
+        {
+          "month": "2018-04",
+          "n": 30,
+          "temperature_bias_c": -10.633666666666663,
+          "precipitation_total_difference_mm": 61.74000000000001
+        },
+        {
+          "month": "2018-05",
+          "n": 31,
+          "temperature_bias_c": -11.395161290322584,
+          "precipitation_total_difference_mm": 99.50999999999999
+        },
+        {
+          "month": "2018-06",
+          "n": 30,
+          "temperature_bias_c": -11.310666666666673,
+          "precipitation_total_difference_mm": 54.22999999999999
+        },
+        {
+          "month": "2018-07",
+          "n": 31,
+          "temperature_bias_c": -11.4758064516129,
+          "precipitation_total_difference_mm": -87.87999999999997
+        },
+        {
+          "month": "2018-08",
+          "n": 31,
+          "temperature_bias_c": -11.081290322580642,
+          "precipitation_total_difference_mm": -87.98999999999998
+        },
+        {
+          "month": "2018-09",
+          "n": 30,
+          "temperature_bias_c": -11.676333333333329,
+          "precipitation_total_difference_mm": 6.590000000000003
+        },
+        {
+          "month": "2018-10",
+          "n": 31,
+          "temperature_bias_c": -11.56774193548387,
+          "precipitation_total_difference_mm": 165.98
+        },
+        {
+          "month": "2018-11",
+          "n": 30,
+          "temperature_bias_c": -10.913333333333334,
+          "precipitation_total_difference_mm": 41.610000000000014
+        },
+        {
+          "month": "2018-12",
+          "n": 31,
+          "temperature_bias_c": -10.656129032258065,
+          "precipitation_total_difference_mm": -54.349999999999994
+        },
+        {
+          "month": "2019-01",
+          "n": 31,
+          "temperature_bias_c": -10.679354838709676,
+          "precipitation_total_difference_mm": 54.900000000000034
+        },
+        {
+          "month": "2019-02",
+          "n": 28,
+          "temperature_bias_c": -9.846071428571436,
+          "precipitation_total_difference_mm": -17.380000000000003
+        },
+        {
+          "month": "2019-03",
+          "n": 31,
+          "temperature_bias_c": -9.740000000000002,
+          "precipitation_total_difference_mm": 29.0
+        },
+        {
+          "month": "2019-04",
+          "n": 30,
+          "temperature_bias_c": -9.739,
+          "precipitation_total_difference_mm": -2.469999999999999
+        },
+        {
+          "month": "2019-05",
+          "n": 31,
+          "temperature_bias_c": -11.251290322580644,
+          "precipitation_total_difference_mm": 143.3
+        },
+        {
+          "month": "2019-06",
+          "n": 30,
+          "temperature_bias_c": -11.494333333333334,
+          "precipitation_total_difference_mm": 36.700000000000045
+        },
+        {
+          "month": "2019-07",
+          "n": 31,
+          "temperature_bias_c": -11.35709677419354,
+          "precipitation_total_difference_mm": 153.60000000000002
+        },
+        {
+          "month": "2019-08",
+          "n": 31,
+          "temperature_bias_c": -10.970322580645156,
+          "precipitation_total_difference_mm": -193.79999999999998
+        },
+        {
+          "month": "2019-09",
+          "n": 30,
+          "temperature_bias_c": -10.988,
+          "precipitation_total_difference_mm": 3.219999999999999
+        },
+        {
+          "month": "2019-10",
+          "n": 31,
+          "temperature_bias_c": -11.514838709677417,
+          "precipitation_total_difference_mm": -536.4599999999999
+        },
+        {
+          "month": "2019-11",
+          "n": 30,
+          "temperature_bias_c": -11.647999999999996,
+          "precipitation_total_difference_mm": 91.93
+        },
+        {
+          "month": "2019-12",
+          "n": 31,
+          "temperature_bias_c": -11.03161290322581,
+          "precipitation_total_difference_mm": 40.3
+        },
+        {
+          "month": "2020-01",
+          "n": 31,
+          "temperature_bias_c": -10.735161290322573,
+          "precipitation_total_difference_mm": -10.330000000000013
+        },
+        {
+          "month": "2020-02",
+          "n": 29,
+          "temperature_bias_c": -10.276551724137928,
+          "precipitation_total_difference_mm": 4.590000000000003
+        },
+        {
+          "month": "2020-03",
+          "n": 31,
+          "temperature_bias_c": -10.251935483870973,
+          "precipitation_total_difference_mm": 84.04000000000002
+        },
+        {
+          "month": "2020-04",
+          "n": 30,
+          "temperature_bias_c": -9.902999999999995,
+          "precipitation_total_difference_mm": -42.279999999999994
+        },
+        {
+          "month": "2020-05",
+          "n": 31,
+          "temperature_bias_c": -11.12483870967742,
+          "precipitation_total_difference_mm": 73.19
+        },
+        {
+          "month": "2020-06",
+          "n": 30,
+          "temperature_bias_c": -11.472666666666672,
+          "precipitation_total_difference_mm": -16.79000000000002
+        },
+        {
+          "month": "2020-07",
+          "n": 31,
+          "temperature_bias_c": -11.216774193548385,
+          "precipitation_total_difference_mm": 156.56999999999996
+        },
+        {
+          "month": "2020-08",
+          "n": 31,
+          "temperature_bias_c": -11.844838709677411,
+          "precipitation_total_difference_mm": 112.73000000000002
+        },
+        {
+          "month": "2020-09",
+          "n": 30,
+          "temperature_bias_c": -11.64833333333333,
+          "precipitation_total_difference_mm": 175.01999999999998
+        },
+        {
+          "month": "2020-10",
+          "n": 31,
+          "temperature_bias_c": -12.009677419354844,
+          "precipitation_total_difference_mm": 325.69999999999993
+        },
+        {
+          "month": "2020-11",
+          "n": 30,
+          "temperature_bias_c": -11.84633333333333,
+          "precipitation_total_difference_mm": 90.64999999999999
+        },
+        {
+          "month": "2020-12",
+          "n": 31,
+          "temperature_bias_c": -11.837741935483875,
+          "precipitation_total_difference_mm": 58.44999999999999
+        }
+      ]
+    }
+  ]
+}

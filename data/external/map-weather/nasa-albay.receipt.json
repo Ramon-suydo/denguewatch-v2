@@ -1,0 +1,9 @@
+{
+  "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M%2CPRECTOTCORR&community=AG&longitude=123.615744&latitude=13.209758&start=20180101&end=20201231&format=JSON&time-standard=UTC",
+  "retrieved_utc": "2026-10-25T08:44:18.639117+00:00",
+  "sha256": "92dc69232f55710909c3efe3f95c3897d345c4873c6c91a74870a764e1cbac25",
+  "case_unit": "ALBAY",
+  "point_method": "geometric polygon centroid",
+  "source": "NASA POWER; NASA Langley Research Center ASDC; NASA Earth Science Applied Sciences",
+  "weather_role": "Cross-check only, not an outlook input"
+}

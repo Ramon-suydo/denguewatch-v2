@@ -1,0 +1,24 @@
+{
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=8.323982%2C8.632547%2C17.101317%2C10.310959%2C9.606866%2C12.410995%2C15.619776%2C12.972113&longitude=123.690283%2C124.791486%2C121.129238%2C122.987074%2C123.033499%2C124.791786%2C121.021706%2C120.892507&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&forecast_days=8",
+  "retrieved_utc": "2026-10-25T08:45:25.812675+00:00",
+  "sha256": "471c2f44ff664c249825c2c402f58d1915a3b9f6d1bb2fbee194ea585935ae27",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "MISAMIS OCCIDENTAL",
+    "MISAMIS ORIENTAL",
+    "MOUNTAIN PROVINCE",
+    "NEGROS OCCIDENTAL",
+    "NEGROS ORIENTAL",
+    "NORTHERN SAMAR",
+    "NUEVA ECIJA",
+    "OCCIDENTAL MINDORO"
+  ],
+  "kind": "forecast",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

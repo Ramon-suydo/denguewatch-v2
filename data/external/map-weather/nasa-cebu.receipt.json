@@ -1,0 +1,9 @@
+{
+  "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M%2CPRECTOTCORR&community=AG&longitude=123.755433&latitude=10.355337&start=20180101&end=20201231&format=JSON&time-standard=UTC",
+  "retrieved_utc": "2026-10-25T08:44:19.870280+00:00",
+  "sha256": "51ff273d3b4750c5e3a15b74ea1e8655d7831bdff2a3b7fd7fc9a657507f61bc",
+  "case_unit": "CEBU",
+  "point_method": "geometric polygon centroid",
+  "source": "NASA POWER; NASA Langley Research Center ASDC; NASA Earth Science Applied Sciences",
+  "weather_role": "Cross-check only, not an outlook input"
+}

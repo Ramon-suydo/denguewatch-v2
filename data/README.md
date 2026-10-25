@@ -1,3 +1,11 @@
+# National outlook extension
+
+The unchanged DOH EPI source supplies 126 reporting-unit labels. `npm run map:prepare` creates local display geometry and an explicit crosswalk, leaving ambiguous names unmatched. Pinned geoBoundaries ADM2 metadata and the original boundary response are in data/external/redesign-phl-adm2.*. The source identifies NAMRIA/PSA/OCHA and CC BY 3.0 IGO. Existing NCR geometry supplies city display features; exact names do not verify historical catchment equivalence.
+
+`npm run map:weather` caches Open-Meteo archive/forecast responses and receipts at geometric polygon centroids; `--forecast-only` refreshes only dated context. `python scripts/crosscheck-map-weather.py` compares four NASA POWER centroid samples monthly. `npm run evaluate:map` uses strictly earlier years for 2018/2019/2020 tests and publishes complete rank metrics. Weather did not pass the improvement gate and is excluded from the index. National PSA denominators are unverified; population confounding is disclosed, with no incidence-rate claim. See ../docs/MAP_METHOD.md.
+
+---
+
 # Data provenance and attribution
 
 The code license does not grant rights to these datasets. Retain attribution and obtain data-owner permission where terms are unknown. These files contain official/department-provided aggregate counts, not individual community reports. Never add real report exports, contact details or private withdrawal codes.

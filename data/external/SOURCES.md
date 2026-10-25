@@ -1,3 +1,13 @@
+# Redesign source additions (2026-10-25)
+
+- geoBoundaries PHL ADM2, representing 2020; original metadata at https://www.geoboundaries.org/api/current/gbOpen/PHL/ADM2/ and pinned source commit 41af8f1. Attribution: NAMRIA/PSA/OCHA, CC BY 3.0 IGO. Original response and SHA-256 receipt are adjacent to this file. Simplification is a modification; historical reporting catchments remain unverified.
+- Open-Meteo archive 2016–2020 ERA5 and eight-day forecast context: https://open-meteo.com/en/docs/historical-weather-api and https://open-meteo.com/en/docs . Cached server-side for 96 matched polygon centroids with raw-response hashes and retrieval timestamps in map-weather/. History is used only for retrospective ablation. Weather is excluded from the shipped index because it did not consistently improve held-out results. Forecast context is separate and expires after 36 hours. Data attribution includes Open-Meteo, Copernicus Climate Change Service and ECMWF; free API use is non-commercial and subject to provider terms.
+- NASA POWER: https://power.larc.nasa.gov/docs/methodology/ and https://power.larc.nasa.gov/docs/acknowledgements/ . Four centroid samples (Manila City, Albay, Cebu, Davao del Sur), 2018–2020, cross-checked monthly. POWER is supported by NASA Earth Science/Applied Sciences; its web services work with NASA Langley ASDC. Different grids and UTC/Manila day cuts limit agreement; this is not national or forecast certification. Raw responses/receipts are in map-weather/ and comparisons in ../processed/map_weather_crosscheck.json.
+
+These are coarse public grid/location inputs, never participant GPS or reports. Source-supplied case files remain untouched. Image permissions are separately documented in docs/evidence/image-permission.md. Full credits are in src/content/credits.json and the footer-linked About page.
+
+---
+
 # External sources
 
 ERA5 hourly reanalysis via [Open-Meteo historical API](https://open-meteo.com/en/docs/historical-weather-api), CC BY 4.0; credit Open-Meteo and Copernicus C3S.

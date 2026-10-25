@@ -1,0 +1,24 @@
+{
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=16.580579%2C14.241445%2C8.026713%2C7.796663%2C10.974601%2C7.028448%2C13.391236%2C12.294622&longitude=120.424485%2C121.366561%2C124.037945%2C124.336145%2C124.755857%2C124.387245%2C121.971926%2C123.552374&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&forecast_days=8",
+  "retrieved_utc": "2026-10-25T08:45:24.803500+00:00",
+  "sha256": "520262a46573e0ce336f6b6ad20d8b462c4a0b7207a5faa331e1a839ad09d264",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "LA UNION",
+    "LAGUNA",
+    "LANAO DEL NORTE",
+    "LANAO DEL SUR",
+    "LEYTE",
+    "MAGUINDANAO",
+    "MARINDUQUE",
+    "MASBATE"
+  ],
+  "kind": "forecast",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "utc": "2026-10-25T08:46:14.574272+00:00",
+  "requests": [
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-00.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-01.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-02.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-03.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-04.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-05.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-06.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-07.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-08.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-09.json",
+      "cached": false,
+      "units": 8
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-10.json",
+      "cached": true
+    },
+    {
+      "kind": "history",
+      "file": "data/external/map-weather/history-11.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-00.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-01.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-02.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-03.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-04.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-05.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-06.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-07.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-08.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-09.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-10.json",
+      "cached": true
+    },
+    {
+      "kind": "forecast",
+      "file": "data/external/map-weather/forecast-11.json",
+      "cached": true
+    }
+  ],
+  "resolution_limit": "About 11-50 km grid cells; centroids are coarse area proxies, not household conditions.",
+  "browser_calls": false
+}

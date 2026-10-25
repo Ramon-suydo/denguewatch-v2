@@ -1,0 +1,276 @@
+{
+  "method": "Actual browser-rendered background with text colour/shadow hidden but layout and overlays preserved. Every pixel in every DOM text-range rectangle is tested, a conservative superset of glyph pixels; computed foreground and large-text threshold follow WCAG AA. Includes 360/768/1440 widths in English and Filipino.",
+  "results": [
+    {
+      "width": 360,
+      "language": "en",
+      "text": "THESIS PROJECT",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 13.46129595371026,
+      "pixels_sampled": 935,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "en",
+      "text": "DATA AS OF 2023-12-02",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 12.609407987322257,
+      "pixels_sampled": 1320,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "en",
+      "text": "Understand the patterns. Take care of each other.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 12.936861162986022,
+      "pixels_sampled": 5408,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "en",
+      "text": "DENGUE WATCHMANILA",
+      "minimum_required": 3,
+      "worst_measured_ratio": 6.992387465277938,
+      "pixels_sampled": 45126,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "en",
+      "text": "Historical evidence. Everyday awareness. No live case surveillance.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 6.249981639489727,
+      "pixels_sampled": 5580,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "THESIS PROJECT",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 13.46129595371026,
+      "pixels_sampled": 935,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "DATOS HANGGANG 2023-12-02",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 12.483339837190606,
+      "pixels_sampled": 1716,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "Unawain ang datos. Alagaan ang isa\u2019t isa.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 12.936861162986022,
+      "pixels_sampled": 4512,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "DENGUE WATCHMANILA",
+      "minimum_required": 3,
+      "worst_measured_ratio": 6.992387465277938,
+      "pixels_sampled": 45126,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "Makasaysayang ebidensiya. Araw-araw na pag-iingat. Hindi live na pagmamanman ng kaso.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 6.249981639489727,
+      "pixels_sampled": 7860,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "THESIS PROJECT",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 13.810929338756887,
+      "pixels_sampled": 1430,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "DATA AS OF 2023-12-02",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 11.532065064277122,
+      "pixels_sampled": 2015,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "Understand the patterns. Take care of each other.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 13.0754622687449,
+      "pixels_sampled": 5100,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "DENGUE WATCHMANILA",
+      "minimum_required": 3,
+      "worst_measured_ratio": 4.5959421095416095,
+      "pixels_sampled": 99348,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "Historical evidence. Everyday awareness. No live case surveillance.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 4.758848098356091,
+      "pixels_sampled": 6432,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "THESIS PROJECT",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 13.810929338756887,
+      "pixels_sampled": 1430,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "DATOS HANGGANG 2023-12-02",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 11.532065064277122,
+      "pixels_sampled": 2600,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "Unawain ang datos. Alagaan ang isa\u2019t isa.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 13.0754622687449,
+      "pixels_sampled": 4260,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "DENGUE WATCHMANILA",
+      "minimum_required": 3,
+      "worst_measured_ratio": 4.5959421095416095,
+      "pixels_sampled": 99348,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "Makasaysayang ebidensiya. Araw-araw na pag-iingat. Hindi live na pagmamanman ng kaso.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 4.758848098356091,
+      "pixels_sampled": 8960,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "text": "THESIS PROJECT",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 14.219658844449887,
+      "pixels_sampled": 1430,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "text": "DATA AS OF 2023-12-02",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 9.960757486113133,
+      "pixels_sampled": 2002,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "text": "Understand the patterns. Take care of each other.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 10.121526677340263,
+      "pixels_sampled": 8520,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "text": "DENGUE WATCHMANILA",
+      "minimum_required": 3,
+      "worst_measured_ratio": 3.118208310440536,
+      "pixels_sampled": 348766,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "text": "Historical evidence. Everyday awareness. No live case surveillance.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 8.053767948040417,
+      "pixels_sampled": 6432,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "fil",
+      "text": "THESIS PROJECT",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 14.219658844449887,
+      "pixels_sampled": 1430,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "fil",
+      "text": "DATOS HANGGANG 2023-12-02",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 9.960757486113133,
+      "pixels_sampled": 2587,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "fil",
+      "text": "Unawain ang datos. Alagaan ang isa\u2019t isa.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 10.121526677340263,
+      "pixels_sampled": 7080,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "fil",
+      "text": "DENGUE WATCHMANILA",
+      "minimum_required": 3,
+      "worst_measured_ratio": 3.118208310440536,
+      "pixels_sampled": 348766,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "fil",
+      "text": "Makasaysayang ebidensiya. Araw-araw na pag-iingat. Hindi live na pagmamanman ng kaso.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 4.576953147751645,
+      "pixels_sampled": 8960,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

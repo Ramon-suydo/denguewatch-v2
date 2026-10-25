@@ -1,2 +1,9 @@
 # Preserve published source bytes, including original CRLF, and audit checksums.
 data/raw/** -text whitespace=cr-at-eol
+
+# Generated research artifacts have canonical bytes across Windows/Linux checkouts.
+docs/weekly-backtest-v1.json text eol=lf
+data/processed/*.json text eol=lf
+src/data/*.json text eol=lf
+public/api/v2/*.json text eol=lf
+public/demo-snapshot.json text eol=lf

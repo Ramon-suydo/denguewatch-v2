@@ -1,0 +1,24 @@
+{
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=8.776654%2C15.478335%2C5.238871%2C15.28637%2C8.049221%2C7.679266%2C7.694946%2C14.600622&longitude=126.112918%2C120.47622%2C119.899511%2C120.143771%2C122.807277%2C122.994247%2C122.725304%2C120.98546&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&start_date=2016-01-01&end_date=2020-12-31&models=era5",
+  "retrieved_utc": "2026-10-25T08:46:16.202433+00:00",
+  "sha256": "a4fde2512f7b5e75b3a47c7e8321afe6993ece105a61f8112e14e05510e43d49",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "SURIGAO DEL SUR",
+    "TARLAC",
+    "TAWI-TAWI",
+    "ZAMBALES",
+    "ZAMBOANGA DEL NORTE",
+    "ZAMBOANGA DEL SUR",
+    "ZAMBOANGA SIBUGAY",
+    "MANILA CITY"
+  ],
+  "kind": "history",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

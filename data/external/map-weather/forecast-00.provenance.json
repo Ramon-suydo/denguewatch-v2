@@ -1,0 +1,24 @@
+{
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=17.578346%2C9.031263%2C8.421668%2C11.609772%2C13.209758%2C11.126581%2C18.105779%2C15.923375&longitude=120.803248%2C125.535512%2C125.728975%2C122.24785%2C123.615744%2C122.068048%2C121.187571%2C121.700433&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&forecast_days=8",
+  "retrieved_utc": "2026-10-25T08:45:19.618715+00:00",
+  "sha256": "17182ab91c7f33b90c948ae3ecb8277b255e31da647de2d7d27b0bcbf9818d86",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "ABRA",
+    "AGUSAN DEL NORTE",
+    "AGUSAN DEL SUR",
+    "AKLAN",
+    "ALBAY",
+    "ANTIQUE",
+    "APAYAO",
+    "AURORA"
+  ],
+  "kind": "forecast",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

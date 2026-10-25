@@ -1,0 +1,24 @@
+{
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=6.565565%2C14.6604%2C20.552772%2C13.899302%2C16.542745%2C11.596704%2C9.85375%2C8.018679&longitude=122.029544%2C120.454382%2C121.887974%2C121.029945%2C120.698977%2C124.473303%2C124.197619%2C125.006941&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&start_date=2016-01-01&end_date=2020-12-31&models=era5",
+  "retrieved_utc": "2026-10-25T08:42:57.453066+00:00",
+  "sha256": "c0ab000c5b7522f38c7c2f0fc9effa583e46e214444110155b7f82ccfe7c22d2",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "BASILAN",
+    "BATAAN",
+    "BATANES",
+    "BATANGAS",
+    "BENGUET",
+    "BILIRAN",
+    "BOHOL",
+    "BUKIDNON"
+  ],
+  "kind": "history",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

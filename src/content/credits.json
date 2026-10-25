@@ -1,0 +1,264 @@
+{
+  "hero_image": {
+    "title": "Manila twilight skyline with light trails",
+    "author": "Sumarie Slabber",
+    "source_url": "",
+    "licence": "",
+    "status": "author confirmed by project owner; licence and source URL pending"
+  },
+  "sources": [
+    {
+      "id": "doh-epi",
+      "name": "DOH Epidemiology Bureau weekly surveillance (EPI)",
+      "purpose": "Historical province/city counts and seasonal ranking validation",
+      "file": "doh-epi-dengue-data-2016-2021.csv",
+      "range": "2016-01-10 to 2021-01-10",
+      "source_url": "",
+      "licence": "unknown; data-owner confirmation required",
+      "retrieved": "unknown",
+      "aliases": [
+        "DOH",
+        "EPI",
+        "FOI",
+        "ncr_dengue_monthly_with_rates",
+        "Manila_weekly_MHD"
+      ]
+    },
+    {
+      "id": "manila-health",
+      "name": "City of Manila health department",
+      "purpose": "Daily case data provided to the project team; formal citation pending data owner",
+      "file": "Daily_Reported_Cases_of_Dengue_in_the_City_of_Manila_from_2018_to_2023.xlsx",
+      "range": "2018-01-01 to 2023-12-02",
+      "source_url": "",
+      "licence": "unknown; attribution and permission required",
+      "retrieved": "unknown",
+      "aliases": [
+        "MHD",
+        "City of Manila"
+      ]
+    },
+    {
+      "id": "population",
+      "name": "Philippine Statistics Authority (PSA)",
+      "purpose": "Existing NCR 2020 denominators; national unit-aligned denominators unverified, so outlook uses count ranks and discloses population confounding",
+      "range": "2020 census",
+      "source_url": "https://psa.gov.ph/content/highlights-philippine-population-2020-census-population-and-housing-2020-cph",
+      "licence": "source-specific terms; no blanket government-data licence assumed",
+      "retrieved": "2026-10-25 (reference checked); original supplied denominators unknown",
+      "aliases": [
+        "PSA"
+      ]
+    },
+    {
+      "id": "geoboundaries",
+      "name": "geoBoundaries / NAMRIA / PSA / OCHA Philippines",
+      "purpose": "Local Philippines province display geometry; simplified from geoBoundaries ADM2, plus existing NCR city shapes",
+      "range": "ADM2 represents 2020; existing NCR ADM3 valid 2025-02-13, not historical boundary proof",
+      "source_url": "https://www.geoboundaries.org/api/current/gbOpen/PHL/ADM2/",
+      "licence": "CC BY 3.0 IGO; retain NAMRIA/PSA/OCHA attribution; simplification changes geometry",
+      "retrieved": "2026-10-25",
+      "aliases": [
+        "geoBoundaries",
+        "NAMRIA",
+        "OCHA",
+        "HDX"
+      ]
+    },
+    {
+      "id": "open-meteo",
+      "name": "Open-Meteo / Copernicus C3S / ECMWF ERA5",
+      "purpose": "Historical centroid weather validation and separately labeled forecast context; weather excluded from outlook unless validated",
+      "range": "History 2016-2020; dated cached forecast context",
+      "source_url": "https://open-meteo.com/",
+      "licence": "CC BY 4.0 data; free hosted API is for non-commercial use within fair-use limits",
+      "retrieved": "See cache receipts; documentation verified 2026-10-25",
+      "aliases": [
+        "Open-Meteo",
+        "Copernicus",
+        "C3S",
+        "ECMWF",
+        "ERA5"
+      ]
+    },
+    {
+      "id": "nasa-power",
+      "name": "NASA POWER / NASA Langley Research Center",
+      "purpose": "Historical weather cross-check for four polygon centroids, 2018\u20132020. NASA POWER is funded by the NASA Applied Sciences Program within the Earth Science Division of the Science Mission Directorate; web services collaborate with the NASA Langley Research Center Atmospheric Science Data Center (ASDC).",
+      "range": "See cached provenance; existing Manila historical cross-check",
+      "source_url": "https://power.larc.nasa.gov/docs/",
+      "licence": "NASA POWER data access/acknowledgement terms; see original receipts",
+      "retrieved": "2026-10-25",
+      "aliases": [
+        "NASA",
+        "POWER"
+      ]
+    },
+    {
+      "id": "osm",
+      "name": "OpenStreetMap contributors",
+      "purpose": "Existing exploratory water/geography context; community data never enters official forecasts",
+      "range": "Provider snapshot dates in cache receipts",
+      "source_url": "https://www.openstreetmap.org/copyright",
+      "licence": "ODbL; OpenStreetMap contributors",
+      "retrieved": "See cache receipts",
+      "aliases": [
+        "OpenStreetMap",
+        "OSM",
+        "Overpass"
+      ]
+    },
+    {
+      "id": "elevation",
+      "name": "NASA SRTM / Open-Meteo elevation service",
+      "purpose": "Existing exploratory terrain context; not household risk",
+      "range": "SRTM mission elevation / provider cache dates",
+      "source_url": "https://open-meteo.com/en/docs/elevation-api",
+      "licence": "Provider-specific attribution recorded in receipts",
+      "retrieved": "See cache receipts",
+      "aliases": [
+        "SRTM",
+        "elevation"
+      ]
+    },
+    {
+      "id": "doh-safety",
+      "name": "DOH regional offices / MOH BARMM; National Privacy Commission; CDC; WHO",
+      "purpose": "4S prevention, urgent warning signs and RA 10173 notice drafting; DPO/clinical review still required",
+      "range": "Guidance references checked 2026-10-25",
+      "source_url": "https://bangsamoro.gov.ph/news/latest-news/moh-urges-public-to-observe-4s-strategy-against-dengue/",
+      "licence": "Links and paraphrased guidance; no agency affiliation",
+      "retrieved": "2026-10-25",
+      "aliases": [
+        "DOH",
+        "MOH BARMM",
+        "NPC",
+        "CDC",
+        "WHO"
+      ]
+    },
+    {
+      "id": "pagasa",
+      "name": "PAGASA",
+      "purpose": "Existing rainy-season contextual guidance; not an outbreak prediction",
+      "range": "Guidance reference in source manifest",
+      "source_url": "https://www.pagasa.dost.gov.ph/",
+      "licence": "Source-specific government guidance; attribution retained",
+      "retrieved": "See original source manifest",
+      "aliases": [
+        "PAGASA"
+      ]
+    },
+    {
+      "id": "opentopodata",
+      "name": "OpenTopoData / NASA SRTM",
+      "purpose": "Elevation service considered by the existing terrain pipeline; original cache provenance identifies actual provider",
+      "range": "SRTM mission / cached provider date",
+      "source_url": "https://www.opentopodata.org/",
+      "licence": "Underlying dataset and service-specific terms; see provenance",
+      "retrieved": "See original receipts",
+      "aliases": [
+        "OpenTopoData"
+      ]
+    },
+    {
+      "id": "flood-portals",
+      "name": "UP NOAH, UP DREAM/LiPAD and MGB",
+      "purpose": "Portals checked in the prior research; no licensed national analytical flood extract used",
+      "range": "Reference checks only; no derived flood layer",
+      "source_url": "https://noah.up.edu.ph/noah-studio",
+      "licence": "No flood dataset redistributed or represented as validated",
+      "retrieved": "See source manifest",
+      "aliases": [
+        "NOAH",
+        "DREAM",
+        "LiPAD",
+        "MGB"
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Montserrat",
+      "source_url": "https://fonts.google.com/specimen/Montserrat",
+      "licence": "OFL-1.1",
+      "files": [
+        "@fontsource/montserrat"
+      ]
+    },
+    {
+      "name": "Roboto",
+      "source_url": "https://fonts.google.com/specimen/Roboto",
+      "licence": "OFL-1.1",
+      "files": [
+        "@fontsource/roboto"
+      ]
+    },
+    {
+      "name": "Fraunces",
+      "source_url": "https://fonts.google.com/specimen/Fraunces",
+      "licence": "OFL-1.1",
+      "files": [
+        "@fontsource/fraunces"
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "name": "Project SVG line symbols and text glyphs",
+      "licence": "MIT project code; no third-party icon library"
+    }
+  ],
+  "covered_hosts": [
+    "api.open-meteo.com",
+    "api.opentopodata.org",
+    "archive-api.open-meteo.com",
+    "bangsamoro.gov.ph",
+    "data.humdata.org",
+    "data.nasa.gov",
+    "dream.upd.edu.ph",
+    "github.com",
+    "lipad-fmc.dream.upd.edu.ph",
+    "noah.up.edu.ph",
+    "open-meteo.com",
+    "overpass.private.coffee",
+    "power.larc.nasa.gov",
+    "privacy.gov.ph",
+    "psa.gov.ph",
+    "region11.mgb.gov.ph",
+    "ro7.doh.gov.ph",
+    "rssoncr.psa.gov.ph",
+    "www.cdc.gov",
+    "www.geoboundaries.org",
+    "www.openstreetmap.org",
+    "www.opentopodata.org",
+    "www.pagasa.dost.gov.ph",
+    "www.who.int"
+  ],
+  "provider_hosts": {
+    "archive-api.open-meteo.com": "open-meteo",
+    "api.open-meteo.com": "open-meteo",
+    "open-meteo.com": "open-meteo",
+    "power.larc.nasa.gov": "nasa-power",
+    "data.nasa.gov": "nasa-power",
+    "www.pagasa.dost.gov.ph": "pagasa",
+    "www.openstreetmap.org": "osm",
+    "overpass.private.coffee": "osm",
+    "www.opentopodata.org": "opentopodata",
+    "api.opentopodata.org": "opentopodata",
+    "psa.gov.ph": "population",
+    "rssoncr.psa.gov.ph": "population",
+    "www.geoboundaries.org": "geoboundaries",
+    "data.humdata.org": "geoboundaries",
+    "github.com": "geoboundaries",
+    "privacy.gov.ph": "doh-safety",
+    "www.who.int": "doh-safety",
+    "www.cdc.gov": "doh-safety",
+    "ro7.doh.gov.ph": "doh-safety",
+    "bangsamoro.gov.ph": "doh-safety",
+    "dream.upd.edu.ph": "flood-portals",
+    "lipad-fmc.dream.upd.edu.ph": "flood-portals",
+    "noah.up.edu.ph": "flood-portals",
+    "region11.mgb.gov.ph": "flood-portals"
+  }
+}

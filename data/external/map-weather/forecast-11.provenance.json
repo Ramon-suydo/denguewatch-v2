@@ -1,0 +1,24 @@
+{
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=14.709993%2C14.441391%2C14.553438%2C14.402301%2C14.483526%2C14.531409%2C14.545097%2C14.516636&longitude=120.979164%2C120.995211%2C121.032258%2C121.033601%2C121.015008%2C121.004%2C121.069479%2C121.062346&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&forecast_days=8",
+  "retrieved_utc": "2026-10-25T08:45:31.005643+00:00",
+  "sha256": "7cf34d14e88222a92e65dfa8fe331c7f9801f076ca7ed4b285cfdf5fc2dbba7d",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "VALENZUELA CITY",
+    "LAS PINAS CITY",
+    "MAKATI CITY",
+    "MUNTINLUPA CITY",
+    "PARANAQUE CITY",
+    "PASAY CITY",
+    "PATEROS",
+    "TAGUIG CITY"
+  ],
+  "kind": "forecast",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

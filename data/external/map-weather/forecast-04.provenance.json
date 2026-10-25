@@ -1,0 +1,24 @@
+{
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=11.647802%2C10.568966%2C16.848573%2C18.204858%2C17.247326%2C11.007587%2C16.987337%2C17.430982&longitude=125.380977%2C122.614172%2C121.207377%2C120.730039%2C120.546987%2C122.605331%2C121.961254%2C121.279524&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&forecast_days=8",
+  "retrieved_utc": "2026-10-25T08:45:23.741910+00:00",
+  "sha256": "3dc518506977ad1dd407d942633bfe80d9c8ee262dfc37bfe34c52347d6606ec",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "EASTERN SAMAR",
+    "GUIMARAS",
+    "IFUGAO",
+    "ILOCOS NORTE",
+    "ILOCOS SUR",
+    "ILOILO",
+    "ISABELA",
+    "KALINGA"
+  ],
+  "kind": "forecast",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

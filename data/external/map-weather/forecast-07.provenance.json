@@ -1,0 +1,24 @@
+{
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=12.966298%2C9.978598%2C15.058551%2C15.999466%2C14.166241%2C16.294514%2C14.617372%2C12.435663&longitude=121.263353%2C118.744361%2C120.647247%2C120.312667%2C121.962082%2C121.595474%2C121.262553%2C122.234388&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&forecast_days=8",
+  "retrieved_utc": "2026-10-25T08:45:26.852833+00:00",
+  "sha256": "fb616f6c6c2f35b2c30ce724d190767bb71acf1200893ef4cd510de8bca4ba11",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "ORIENTAL MINDORO",
+    "PALAWAN",
+    "PAMPANGA",
+    "PANGASINAN",
+    "QUEZON",
+    "QUIRINO",
+    "RIZAL",
+    "ROMBLON"
+  ],
+  "kind": "forecast",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

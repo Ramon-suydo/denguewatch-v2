@@ -1,0 +1,9 @@
+{
+  "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M%2CPRECTOTCORR&community=AG&longitude=120.98546&latitude=14.600622&start=20180101&end=20201231&format=JSON&time-standard=UTC",
+  "retrieved_utc": "2026-10-25T08:44:17.365640+00:00",
+  "sha256": "5de64d91e20a35e78b9bbe763f72809fce4f7abd7ecaac1628d890eaea594bdf",
+  "case_unit": "MANILA CITY",
+  "point_method": "geometric polygon centroid",
+  "source": "NASA POWER; NASA Langley Research Center ASDC; NASA Earth Science Applied Sciences",
+  "weather_role": "Cross-check only, not an outlook input"
+}

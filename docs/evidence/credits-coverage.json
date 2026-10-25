@@ -1,0 +1,272 @@
+{
+  "manifest_inputs": [
+    "data/external/SOURCES.md",
+    "data/README.md"
+  ],
+  "code_provider_references": [
+    {
+      "path": "src/components/EnvironmentalEvidence.tsx",
+      "host": "www.pagasa.dost.gov.ph",
+      "credit": "pagasa"
+    },
+    {
+      "path": "src/components/EnvironmentalEvidence.tsx",
+      "host": "www.openstreetmap.org",
+      "credit": "osm"
+    },
+    {
+      "path": "src/components/EnvironmentalEvidence.tsx",
+      "host": "open-meteo.com",
+      "credit": "open-meteo"
+    },
+    {
+      "path": "src/components/EnvironmentalEvidence.tsx",
+      "host": "data.nasa.gov",
+      "credit": "nasa-power"
+    },
+    {
+      "path": "src/components/EnvironmentalEvidence.tsx",
+      "host": "www.openstreetmap.org",
+      "credit": "osm"
+    },
+    {
+      "path": "src/components/EnvironmentalEvidence.tsx",
+      "host": "www.opentopodata.org",
+      "credit": "opentopodata"
+    },
+    {
+      "path": "src/components/EnvironmentalEvidence.tsx",
+      "host": "www.pagasa.dost.gov.ph",
+      "credit": "pagasa"
+    },
+    {
+      "path": "src/components/EnvironmentalEvidence.tsx",
+      "host": "www.cdc.gov",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/components/LegalDrafts.tsx",
+      "host": "privacy.gov.ph",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/components/LegalDrafts.tsx",
+      "host": "privacy.gov.ph",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/components/MedicalNotice.tsx",
+      "host": "www.who.int",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/lib/source-metadata.ts",
+      "host": "data.humdata.org",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "src/lib/source-metadata.ts",
+      "host": "rssoncr.psa.gov.ph",
+      "credit": "population"
+    },
+    {
+      "path": "src/pages/Prevention.tsx",
+      "host": "ro7.doh.gov.ph",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/pages/Prevention.tsx",
+      "host": "www.cdc.gov",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/redesign/Guidance.tsx",
+      "host": "www.cdc.gov",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/redesign/Guidance.tsx",
+      "host": "bangsamoro.gov.ph",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "src/redesign/PrivacyNotice.tsx",
+      "host": "privacy.gov.ph",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "scripts/crosscheck-map-weather.py",
+      "host": "power.larc.nasa.gov",
+      "credit": "nasa-power"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "data.nasa.gov",
+      "credit": "nasa-power"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "www.openstreetmap.org",
+      "credit": "osm"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "www.opentopodata.org",
+      "credit": "opentopodata"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "www.pagasa.dost.gov.ph",
+      "credit": "pagasa"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "www.cdc.gov",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "www.cdc.gov",
+      "credit": "doh-safety"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "noah.up.edu.ph",
+      "credit": "flood-portals"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "dream.upd.edu.ph",
+      "credit": "flood-portals"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "lipad-fmc.dream.upd.edu.ph",
+      "credit": "flood-portals"
+    },
+    {
+      "path": "scripts/document-environment.py",
+      "host": "region11.mgb.gov.ph",
+      "credit": "flood-portals"
+    },
+    {
+      "path": "scripts/fetch-map-weather.py",
+      "host": "archive-api.open-meteo.com",
+      "credit": "open-meteo"
+    },
+    {
+      "path": "scripts/fetch-map-weather.py",
+      "host": "api.open-meteo.com",
+      "credit": "open-meteo"
+    },
+    {
+      "path": "scripts/fetch_elevation.ts",
+      "host": "api.opentopodata.org",
+      "credit": "opentopodata"
+    },
+    {
+      "path": "scripts/fetch_geography.ts",
+      "host": "overpass.private.coffee",
+      "credit": "osm"
+    },
+    {
+      "path": "scripts/fetch_geography.ts",
+      "host": "www.openstreetmap.org",
+      "credit": "osm"
+    },
+    {
+      "path": "scripts/fetch_power.ts",
+      "host": "power.larc.nasa.gov",
+      "credit": "nasa-power"
+    },
+    {
+      "path": "scripts/fetch_power.ts",
+      "host": "power.larc.nasa.gov",
+      "credit": "nasa-power"
+    },
+    {
+      "path": "scripts/fetch_weather.ts",
+      "host": "archive-api.open-meteo.com",
+      "credit": "open-meteo"
+    },
+    {
+      "path": "scripts/fetch_weather.ts",
+      "host": "open-meteo.com",
+      "credit": "open-meteo"
+    },
+    {
+      "path": "scripts/lib/geography.ts",
+      "host": "psa.gov.ph",
+      "credit": "population"
+    },
+    {
+      "path": "scripts/refresh-weather-context.ts",
+      "host": "archive-api.open-meteo.com",
+      "credit": "open-meteo"
+    }
+  ],
+  "assets": [
+    {
+      "path": "data/geo/boundary-source.json",
+      "sha256": "87fb0e2c54d811fe9e703cf4a910f34fc9edad8fe75bfce20cbc092ee17cce66",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "data/geo/manila-barangays.json",
+      "sha256": "80815fdf97f104445dd9ef5331d00b506e9f50ff838e46fa59d50a6aa2fe56b0",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "data/geo/manila-boundary.geojson",
+      "sha256": "57450ffc99925a02150893e57150f1e531c56afa4fd95f5a6bbb50d62aaa05e5",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "data/geo/national-crosswalk.json",
+      "sha256": "4e115e58ec83f952d270233fd27671aa139f76d4b0ba508635cefb5c8a1e3952",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "data/geo/ncr-boundaries.geojson",
+      "sha256": "cca0af638abd93730b020ca6563564bb1451e1343dd2710dce5bf7a5281c691c",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "data/geo/ncr-source.json",
+      "sha256": "78bcd38b3694fc82b8c1e88cc30031253c19e70df0a085a26160a2aeb8fcbd3a",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "data/geo/psa-2020-tondo.json",
+      "sha256": "797b1fd215cd0e7709f7fc7a46c8bcc43db76570e4b48fb09f53c17fc4aafd4a",
+      "credit": "population"
+    },
+    {
+      "path": "data/geo/tondo-boundaries.geojson",
+      "sha256": "c5cecd61991da372429b462f62e8d5c673f901fc59fa2fad7a083cf08f55984c",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "public/geo/philippines.geojson",
+      "sha256": "04860c262b8607f0ff72aecaf2552bdca61f6aed4d38d08857a1be52585e5ab8",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "public/geo/tondo.json",
+      "sha256": "c9fe54a59bb0fda1a15470a594e7d2f37a44bb1dbd921397a468973d2d942a73",
+      "credit": "geoboundaries"
+    },
+    {
+      "path": "public/geo/tondo.topojson",
+      "sha256": "49c8d85f3119e19a97d054f1bdf61560feb7c2f9d17aaf6cb0b8cfb5d08f0db3",
+      "credit": "geoboundaries"
+    }
+  ],
+  "dependency_count": 396,
+  "fonts": [
+    "Montserrat",
+    "Roboto",
+    "Fraunces"
+  ],
+  "passed": true
+}

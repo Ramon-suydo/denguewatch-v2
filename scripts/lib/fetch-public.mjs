@@ -1,0 +1,3 @@
+// Public-provider requests only; Node's standard certificate validation stays enabled.
+const url=new URL(process.argv[2]);if(url.protocol!=='https:'||url.username||url.password||!['archive-api.open-meteo.com','api.open-meteo.com','power.larc.nasa.gov'].includes(url.hostname))throw Error('Public provider URL rejected');
+try{const response=await fetch(url,{signal:AbortSignal.timeout(120000)});if(!response.ok)throw Error('Provider HTTP '+response.status);process.stdout.write(Buffer.from(await response.arrayBuffer()));}catch(error){console.error(error.message.startsWith('Provider HTTP')?error.message:'Public provider request failed with standard TLS verification enabled');process.exitCode=1;}

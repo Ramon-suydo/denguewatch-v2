@@ -1,0 +1,24 @@
+{
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=10.355337%2C6.650463%2C7.208597%2C7.585244%2C7.01619%2C6.098145%2C7.251374%2C10.171199&longitude=123.755433%2C121.986879%2C124.231535%2C125.64225%2C125.345392%2C125.540584%2C126.298216%2C125.602536&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&forecast_days=8",
+  "retrieved_utc": "2026-10-25T08:45:22.709486+00:00",
+  "sha256": "49f43360d09cefd7e5144e1e85af9add67cb7038feb75ec54643c9899946885b",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "CEBU",
+    "ISABELA CITY",
+    "COTABATO CITY",
+    "DAVAO DEL NORTE",
+    "DAVAO DEL SUR",
+    "DAVAO OCCIDENTAL",
+    "DAVAO ORIENTAL",
+    "DINAGAT ISLANDS"
+  ],
+  "kind": "forecast",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

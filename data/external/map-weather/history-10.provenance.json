@@ -1,0 +1,24 @@
+{
+  "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.583087%2C14.647311%2C14.578867%2C14.680499%2C14.602473%2C14.730091%2C14.674119%2C14.675139&longitude=121.041395%2C121.104971%2C121.085479%2C121.060474%2C121.0367%2C121.029544%2C120.958556%2C120.935848&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&start_date=2016-01-01&end_date=2020-12-31&models=era5",
+  "retrieved_utc": "2026-10-25T08:45:17.135128+00:00",
+  "sha256": "5cded9d494a852565757d7736a65f57472074c4eeba6a1302ad878b5cca01a70",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "MANDALUYONG CITY",
+    "MARIKINA CITY",
+    "PASIG CITY",
+    "QUEZON CITY",
+    "SAN JUAN CITY",
+    "CALOOCAN CITY",
+    "MALABON CITY",
+    "NAVOTAS CITY"
+  ],
+  "kind": "history",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "url": "https://api.open-meteo.com/v1/forecast?latitude=14.978714%2C18.094219%2C14.143207%2C13.704276%2C9.172039%2C11.369926%2C13.783284%2C14.255177&longitude=121.058711%2C121.76068%2C122.727698%2C123.263151%2C124.71769%2C122.632931%2C124.236474%2C120.868443&daily=temperature_2m_mean%2Cprecipitation_sum&timezone=Asia%2FManila&forecast_days=8",
+  "retrieved_utc": "2026-10-25T08:45:21.696977+00:00",
+  "sha256": "b9e92400c25cf8a957520d23df5b5dfd9b5accc17d135785dc6990ff08f93976",
+  "license": "CC BY 4.0; free hosted API restricted to non-commercial fair use",
+  "attribution": "Weather data by Open-Meteo; historical reanalysis by Copernicus C3S / ECMWF ERA5",
+  "case_units": [
+    "BULACAN",
+    "CAGAYAN",
+    "CAMARINES NORTE",
+    "CAMARINES SUR",
+    "CAMIGUIN",
+    "CAPIZ",
+    "CATANDUANES",
+    "CAVITE"
+  ],
+  "kind": "forecast",
+  "transport": "Node standard TLS validation; no bypass",
+  "units": {
+    "time": "iso8601",
+    "temperature_2m_mean": "\u00b0C",
+    "precipitation_sum": "mm"
+  }
+}
