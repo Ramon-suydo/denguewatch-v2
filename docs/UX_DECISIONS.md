@@ -11,3 +11,5 @@ Motion is present in section reveals, count-up coverage, subtle photo movement, 
 The default Dashboard example is the first held-out week. It is not selected for favorable outcomes. Replay can show later weeks, including unavailable predictions where the real input calendar has gaps. A neutral thumbnail avoids encoding a historical risk color as a Live value.
 
 The physical map resolution is city/municipality. Display zoom and street detail do not imply sub-city model precision. Calibration and probability bands are research constructs. The baseline can outperform RF, and all saved results remain visible.
+
+The optimized shared photograph is preloaded from the initial HTML with the same responsive AVIF source set used by Photo. Lighthouse identified late discovery through the lazy Dashboard chunk; preload shortens that path without changing image pixels or audit settings.
