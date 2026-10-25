@@ -1,6 +1,6 @@
 # Handoff
 Current branch: feat/manila-evidence. Earlier entries below are historical.
-Current specification: FINAL_REQUIREMENTS.md. Current evidence and release gates: IMPLEMENTATION_STATUS.md.
+Current specification: FINAL_REQUIREMENTS.md plus ENVIRONMENT_REQUIREMENTS.md (weather/factors replacement). Current evidence and release gates: IMPLEMENTATION_STATUS.md.
 
 ## Hosted setup completed
 On 2026-09-24, the user explicitly authorized applying the three pending migrations
@@ -491,3 +491,15 @@ IMPLEMENTATION_STATUS before proposing further work.
 Test locally and self-review before merging risky work near defense. User pushes:
 `git push -u origin feat/manila-evidence`. Do not apply hosted migrations or open
 collection without later explicit owner authorization.
+
+## Environmental addendum, 2026-10-25
+
+NASA POWER cross-check, pre-2018 frozen lag selection, paired AR/season/weather
+ablations, geographic proxies and city bootstrap CIs are implemented. Read
+ENVIRONMENT.md and ENVIRONMENT_RESULTS.md. No primary 1/2-week environmental
+variant has a positive lower skill bound versus persistence; four-week findings
+remain exploratory. Population/source-vintage limitations remain explicit.
+Public forecasting stays persistence, weather failure is tested, and provider
+calls are server-only, cached and rate-limited. The daily filesystem refresh job
+is provided but no hosted schedule was installed. No hosted writes or report
+activation occurred. Credential rotation and the earlier release gates remain.

@@ -1,3 +1,4 @@
+import { ProviderAttributions } from "../components/EnvironmentalEvidence";
 import { Link } from "react-router-dom";
 import { Card } from "../components/ui";
 import { StatCard } from "../components/StatCard";
@@ -20,6 +21,7 @@ export function DataSources() {
         description="Trace Manila’s records from source files to charts and tested estimates."
       />
       <div className="ui-container app-content content-stack">
+        <ProviderAttributions />
         <ReadState resource={snapshot}>
           {(data) => {
             const audit = dataConfidence(data),

@@ -117,3 +117,9 @@ private artifacts; never force-add those to share with a collaborator.
 For the complete numerical evaluation and figures in one command, install the
 pinned Python plotting dependencies with `python -m pip install -r requirements-plots.txt`,
 then run `npm run evaluate`.
+
+Environmental extension: [sources, ablations and limits](docs/ENVIRONMENT.md).
+Install `requirements-environment.txt` for the extended evaluation, then use
+`npm run environment:fetch` once to populate public-provider caches.
+`npm run evaluate` runs entirely from those caches; `npm run weather:refresh`
+is a separate server-only daily context refresh, never a live dengue warning.

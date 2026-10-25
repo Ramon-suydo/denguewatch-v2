@@ -67,3 +67,17 @@ model performance, provider retention settings, real hosted staff sign-in/MFA,
 new hosted migrations/purge execution, and deployed ZAP. The known database
 password must be rotated because it matches a public identifier. Collection has
 not been activated. No absent evidence is presented as a pass.
+
+## Does living near a river cause dengue?
+No causal conclusion follows from this analysis. Aedes aegypti mainly breeds in
+small containers of standing water around homes, including drums, tires, pots
+and clogged drains. River proximity, low elevation and flooding are indirect
+proxies for drainage, standing water and density. The 17-city correlations are
+exploratory, use mixed source vintages and an unverified population denominator,
+and have broad intervals. See ENVIRONMENT.md.
+
+## Did season or weather beat last week?
+The controlled AR(2) ablation improves some year/season comparisons, but no
+environmental variant establishes a reliable pooled 1/2-week gain over matched
+persistence in both scenarios. Exploratory four-week gains stay exploratory.
+The public model remains persistence; no environmental promotion was made.

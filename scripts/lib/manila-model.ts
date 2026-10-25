@@ -214,7 +214,7 @@ export type Result = {
   origin: string;
   target: string;
   horizon: number;
-  model: Model;
+  model: string;
   actual: number;
   predicted: number;
   naive: number;

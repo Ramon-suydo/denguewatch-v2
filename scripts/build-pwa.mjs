@@ -19,7 +19,7 @@ const assets = (await files("dist"))
         "dist/manifest.webmanifest",
         "dist/icon.svg",
       ].includes(p) ||
-      p.startsWith("dist/api/v2/"),
+      (p.startsWith("dist/api/v2/") && p !== "dist/api/v2/weather.json"),
   )
   .map((p) => "/" + p.slice(5));
 const hash = createHash("sha256");

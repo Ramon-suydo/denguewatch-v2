@@ -1,0 +1,57 @@
+{
+  "branch": "feat/manila-evidence",
+  "runtime": "Node 22.23.2 / Python 3.12",
+  "unit_integration": {
+    "passed": 66,
+    "failed": 0,
+    "skipped": 0
+  },
+  "geography_python": {
+    "passed": 3,
+    "failed": 0
+  },
+  "browser_edge": {
+    "passed": 29,
+    "failed": 0,
+    "port": 43123,
+    "axe": "zero critical/serious in tested routes including expanded geographic context"
+  },
+  "production_pwa": {
+    "passed": 2,
+    "failed": 0
+  },
+  "lint": "pass, zero warnings",
+  "typecheck": "pass",
+  "build": "pass",
+  "offline_evaluation": "full npm run evaluate completed with ENV_OFFLINE=1",
+  "offline_provider_cache_validation": "environment:fetch completed with ENV_OFFLINE=1; no provider calls possible",
+  "original_evaluation_sha256": "3f18ac075ea62d1ee3b46632655882eb0253a09ce21374049a0c573cd1dffb46",
+  "environment_evaluation_sha256": "82202a50bf10837b23c4c8ae0123113ff5d29b58935023f0c3703db10772a95b",
+  "lighthouse_mobile": {
+    "performance": 94,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "cls": 0.002980813166801231,
+  "npm_audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "not_verified": [
+    "hosted weather scheduling",
+    "hosted Auth/migrations/retention",
+    "deployed ZAP",
+    "human usability results",
+    "population provenance confirmation",
+    "real-time forecast skill"
+  ],
+  "secret_gate": "FAIL, pre-existing database credential rotation still required",
+  "hosted_writes": false,
+  "raw_disease_files_changed": false,
+  "environment_model_promoted": false
+}

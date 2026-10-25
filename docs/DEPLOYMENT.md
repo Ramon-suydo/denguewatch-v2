@@ -82,3 +82,13 @@ For a local mobile Lighthouse run, start the production preview, then run
 Node22/Lighthouse13 toolchain; CHROME_PATH may point to installed Edge/Chrome.
 Saved reports are lab evidence for this revision, not field performance or a
 WCAG certification. Human SUS results remain blank until actually collected.
+
+## Environmental context job
+
+See ENVIRONMENT.md for the separate server filesystem job `npm run weather:refresh`.
+It throttles attempts to 24 hours, including failures. No hosted schedule was
+applied. Publish public/api/v2/weather.json from one persistent server; do not
+use per-request unsynchronized Vercel ephemeral files as a shared cache.
+The PWA deliberately excludes this recent-weather status from its permanent
+precache so daily updates can be observed; offline or stale weather falls back
+to the historical persistence forecast. No weather-based model was promoted.

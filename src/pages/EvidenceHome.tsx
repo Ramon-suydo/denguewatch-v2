@@ -1,3 +1,4 @@
+import { SeasonalWatch } from "../components/EnvironmentalEvidence";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "../components/ui";
@@ -88,6 +89,7 @@ export function EvidenceHome() {
                   </Link>
                 </div>
               </Card>
+              <SeasonalWatch fil={fil} />
               <section>
                 <h2>
                   {fil
@@ -185,8 +187,8 @@ export function EvidenceHome() {
                 </h2>
                 <p>
                   {fil
-                    ? "Sa parehong absent-day scenario, lumala ang 1–2 linggong ridge forecast nang idagdag ang panahon. Hindi ginagamit ang panahon sa pampublikong pagtataya."
-                    : "Adding weather worsened the matched ridge forecasts at both one and two weeks in both absent-day scenarios. Weather stays out of the public forecast."}
+                    ? "Walang malinaw na pagbuti sa isa hanggang dalawang linggong pagtataya sa alinmang scenario gamit ang panahon at klima. Ginagamit pa rin ang mas simpleng batayang modelo."
+                    : "Expanded season and weather tests did not establish a reliable one- to two-week gain over last-week persistence in either scenario. The public forecast keeps the simpler baseline."}
                 </p>
                 <Link className="text-link" to="/methodology">
                   {fil

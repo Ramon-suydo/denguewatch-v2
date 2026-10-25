@@ -1,0 +1,557 @@
+{
+  "lags": {
+    "Z": {
+      "cutoff": "2017-12-31",
+      "rain": 3,
+      "temperature": 1,
+      "humidity": 3,
+      "rain_window": 8,
+      "correlations": [
+        {
+          "driver": "rainfall_mm",
+          "lag": 1,
+          "n": 98,
+          "r": 0.5252286492971961
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 2,
+          "n": 98,
+          "r": 0.5483554742956148
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 3,
+          "n": 98,
+          "r": 0.6518280005494393
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 4,
+          "n": 98,
+          "r": 0.6489145387889466
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 5,
+          "n": 98,
+          "r": 0.6417159013033545
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 6,
+          "n": 98,
+          "r": 0.6351021339401346
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 7,
+          "n": 98,
+          "r": 0.6459276912790908
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 8,
+          "n": 98,
+          "r": 0.6263776219567863
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 1,
+          "n": 98,
+          "r": -0.3737665124748597
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 2,
+          "n": 98,
+          "r": -0.3107915123947458
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 3,
+          "n": 98,
+          "r": -0.24899864698285187
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 4,
+          "n": 98,
+          "r": -0.16431226603015595
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 5,
+          "n": 98,
+          "r": -0.08690323326511494
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 6,
+          "n": 98,
+          "r": 0.001441922681833596
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 7,
+          "n": 98,
+          "r": 0.09376999116929115
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 8,
+          "n": 98,
+          "r": 0.1847907392308876
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 1,
+          "n": 98,
+          "r": 0.7335051393347247
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 2,
+          "n": 98,
+          "r": 0.7549297252303206
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 3,
+          "n": 98,
+          "r": 0.8112250656560682
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 4,
+          "n": 98,
+          "r": 0.7695983429183595
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 5,
+          "n": 98,
+          "r": 0.7374496123967993
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 6,
+          "n": 98,
+          "r": 0.6869192264045423
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 7,
+          "n": 98,
+          "r": 0.6572797034188785
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 8,
+          "n": 98,
+          "r": 0.5737927591103866
+        }
+      ],
+      "window_correlations": [
+        {
+          "window": 1,
+          "n": 98,
+          "r": 0.5252286492971961
+        },
+        {
+          "window": 2,
+          "n": 98,
+          "r": 0.5829323058503761
+        },
+        {
+          "window": 4,
+          "n": 98,
+          "r": 0.7174417068794925
+        },
+        {
+          "window": 8,
+          "n": 98,
+          "r": 0.7884317751796452
+        }
+      ]
+    },
+    "M": {
+      "cutoff": "2017-12-31",
+      "rain": 3,
+      "temperature": 1,
+      "humidity": 3,
+      "rain_window": 8,
+      "correlations": [
+        {
+          "driver": "rainfall_mm",
+          "lag": 1,
+          "n": 98,
+          "r": 0.5252286492971961
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 2,
+          "n": 98,
+          "r": 0.5483554742956148
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 3,
+          "n": 98,
+          "r": 0.6518280005494393
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 4,
+          "n": 98,
+          "r": 0.6489145387889466
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 5,
+          "n": 98,
+          "r": 0.6417159013033545
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 6,
+          "n": 98,
+          "r": 0.6351021339401346
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 7,
+          "n": 98,
+          "r": 0.6459276912790908
+        },
+        {
+          "driver": "rainfall_mm",
+          "lag": 8,
+          "n": 98,
+          "r": 0.6263776219567863
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 1,
+          "n": 98,
+          "r": -0.3737665124748597
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 2,
+          "n": 98,
+          "r": -0.3107915123947458
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 3,
+          "n": 98,
+          "r": -0.24899864698285187
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 4,
+          "n": 98,
+          "r": -0.16431226603015595
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 5,
+          "n": 98,
+          "r": -0.08690323326511494
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 6,
+          "n": 98,
+          "r": 0.001441922681833596
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 7,
+          "n": 98,
+          "r": 0.09376999116929115
+        },
+        {
+          "driver": "temperature_c",
+          "lag": 8,
+          "n": 98,
+          "r": 0.1847907392308876
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 1,
+          "n": 98,
+          "r": 0.7335051393347247
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 2,
+          "n": 98,
+          "r": 0.7549297252303206
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 3,
+          "n": 98,
+          "r": 0.8112250656560682
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 4,
+          "n": 98,
+          "r": 0.7695983429183595
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 5,
+          "n": 98,
+          "r": 0.7374496123967993
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 6,
+          "n": 98,
+          "r": 0.6869192264045423
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 7,
+          "n": 98,
+          "r": 0.6572797034188785
+        },
+        {
+          "driver": "humidity_percent",
+          "lag": 8,
+          "n": 98,
+          "r": 0.5737927591103866
+        }
+      ],
+      "window_correlations": [
+        {
+          "window": 1,
+          "n": 98,
+          "r": 0.5252286492971961
+        },
+        {
+          "window": 2,
+          "n": 98,
+          "r": 0.5829323058503761
+        },
+        {
+          "window": 4,
+          "n": 98,
+          "r": 0.7174417068794925
+        },
+        {
+          "window": 8,
+          "n": 98,
+          "r": 0.7884317751796452
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "n": 469,
+    "time_caveat": "ERA5 Asia/Manila civil days versus NASA POWER LST solar-swath days; weekly boundaries may differ.",
+    "rainfall_r": 0.5751741455908299,
+    "temperature_r": 0.865531343565733,
+    "rainfall_mae_mm": 35.03582089552241,
+    "temperature_mae_c": 2.2767014417707374
+  },
+  "profile": [
+    {
+      "scenario": "Z",
+      "month": 1,
+      "n": 36,
+      "mean_cases": 46.25,
+      "complete_n": 26,
+      "complete_mean_cases": 53.80769230769231
+    },
+    {
+      "scenario": "Z",
+      "month": 2,
+      "n": 32,
+      "mean_cases": 41,
+      "complete_n": 29,
+      "complete_mean_cases": 43.689655172413794
+    },
+    {
+      "scenario": "Z",
+      "month": 3,
+      "n": 34,
+      "mean_cases": 26.5,
+      "complete_n": 28,
+      "complete_mean_cases": 29.392857142857142
+    },
+    {
+      "scenario": "Z",
+      "month": 4,
+      "n": 35,
+      "mean_cases": 20.97142857142857,
+      "complete_n": 20,
+      "complete_mean_cases": 27.2
+    },
+    {
+      "scenario": "Z",
+      "month": 5,
+      "n": 36,
+      "mean_cases": 16.194444444444443,
+      "complete_n": 21,
+      "complete_mean_cases": 22.80952380952381
+    },
+    {
+      "scenario": "Z",
+      "month": 6,
+      "n": 33,
+      "mean_cases": 23.21212121212121,
+      "complete_n": 23,
+      "complete_mean_cases": 29.956521739130434
+    },
+    {
+      "scenario": "Z",
+      "month": 7,
+      "n": 37,
+      "mean_cases": 41.91891891891892,
+      "complete_n": 30,
+      "complete_mean_cases": 49.6
+    },
+    {
+      "scenario": "Z",
+      "month": 8,
+      "n": 34,
+      "mean_cases": 70.1470588235294,
+      "complete_n": 24,
+      "complete_mean_cases": 95.25
+    },
+    {
+      "scenario": "Z",
+      "month": 9,
+      "n": 32,
+      "mean_cases": 97.40625,
+      "complete_n": 25,
+      "complete_mean_cases": 122.12
+    },
+    {
+      "scenario": "Z",
+      "month": 10,
+      "n": 34,
+      "mean_cases": 85.38235294117646,
+      "complete_n": 31,
+      "complete_mean_cases": 92.7741935483871
+    },
+    {
+      "scenario": "Z",
+      "month": 11,
+      "n": 32,
+      "mean_cases": 66.09375,
+      "complete_n": 29,
+      "complete_mean_cases": 72.06896551724138
+    },
+    {
+      "scenario": "Z",
+      "month": 12,
+      "n": 31,
+      "mean_cases": 44.38709677419355,
+      "complete_n": 26,
+      "complete_mean_cases": 49.84615384615385
+    },
+    {
+      "scenario": "M",
+      "month": 1,
+      "n": 26,
+      "mean_cases": 53.80769230769231,
+      "complete_n": 26,
+      "complete_mean_cases": 53.80769230769231
+    },
+    {
+      "scenario": "M",
+      "month": 2,
+      "n": 29,
+      "mean_cases": 43.689655172413794,
+      "complete_n": 29,
+      "complete_mean_cases": 43.689655172413794
+    },
+    {
+      "scenario": "M",
+      "month": 3,
+      "n": 28,
+      "mean_cases": 29.392857142857142,
+      "complete_n": 28,
+      "complete_mean_cases": 29.392857142857142
+    },
+    {
+      "scenario": "M",
+      "month": 4,
+      "n": 20,
+      "mean_cases": 27.2,
+      "complete_n": 20,
+      "complete_mean_cases": 27.2
+    },
+    {
+      "scenario": "M",
+      "month": 5,
+      "n": 21,
+      "mean_cases": 22.80952380952381,
+      "complete_n": 21,
+      "complete_mean_cases": 22.80952380952381
+    },
+    {
+      "scenario": "M",
+      "month": 6,
+      "n": 23,
+      "mean_cases": 29.956521739130434,
+      "complete_n": 23,
+      "complete_mean_cases": 29.956521739130434
+    },
+    {
+      "scenario": "M",
+      "month": 7,
+      "n": 30,
+      "mean_cases": 49.6,
+      "complete_n": 30,
+      "complete_mean_cases": 49.6
+    },
+    {
+      "scenario": "M",
+      "month": 8,
+      "n": 24,
+      "mean_cases": 95.25,
+      "complete_n": 24,
+      "complete_mean_cases": 95.25
+    },
+    {
+      "scenario": "M",
+      "month": 9,
+      "n": 25,
+      "mean_cases": 122.12,
+      "complete_n": 25,
+      "complete_mean_cases": 122.12
+    },
+    {
+      "scenario": "M",
+      "month": 10,
+      "n": 31,
+      "mean_cases": 92.7741935483871,
+      "complete_n": 31,
+      "complete_mean_cases": 92.7741935483871
+    },
+    {
+      "scenario": "M",
+      "month": 11,
+      "n": 29,
+      "mean_cases": 72.06896551724138,
+      "complete_n": 29,
+      "complete_mean_cases": 72.06896551724138
+    },
+    {
+      "scenario": "M",
+      "month": 12,
+      "n": 26,
+      "mean_cases": 49.84615384615385,
+      "complete_n": 26,
+      "complete_mean_cases": 49.84615384615385
+    }
+  ],
+  "selection_rule": "Maximum absolute log-case Pearson association in 2016-2017 training only, tie earliest; rainfall windows 1/2/4/8 selected there too. No test years consulted. Associations are confounded by season, not causal."
+}

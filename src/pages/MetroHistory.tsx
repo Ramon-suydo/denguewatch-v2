@@ -1,3 +1,4 @@
+import { GeographyContext } from "../components/EnvironmentalEvidence";
 import { useState } from "react";
 import { Card, Select } from "../components/ui";
 import { ReadState } from "../components/PageState";
@@ -17,6 +18,7 @@ export function MetroHistory() {
         <strong>Data ends January 2021.</strong> No current NCR forecast is
         shown. Missing weeks are not zero.
       </div>
+      <GeographyContext />
       <ReadState resource={resource}>
         {(data) => {
           const labels = [

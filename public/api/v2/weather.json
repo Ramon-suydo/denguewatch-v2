@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "historical_only": true,
+  "attempted_at": "2026-10-25T01:41:11.691Z",
+  "weather_as_of": "2026-10-11",
+  "rainfall_mm": 14.3,
+  "temperature_c": 28.860119047619044,
+  "dengue_as_of": "2023-12-02",
+  "model": "naive",
+  "source": "ERA5 / Open-Meteo; one Manila point; past completed civil weeks only",
+  "status": "available-context-only",
+  "message": "Weather is seasonal context only; showing baseline forecast. Dengue observations remain historical.",
+  "provenance": {
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2026-08-16&end_date=2026-10-17&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+    "retrieved_at": "2026-10-25T01:41:12.921Z",
+    "license": "CC BY 4.0",
+    "attribution": "Open-Meteo / Copernicus C3S / ECMWF ERA5",
+    "sha256": "39a4ab2fb63f1a31721f743a0560963fb0d25adeee0c991912d07b4565115725"
+  }
+}

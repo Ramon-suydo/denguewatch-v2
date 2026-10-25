@@ -1,3 +1,4 @@
+import { EnvironmentalEvidence } from "../components/EnvironmentalEvidence";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, Select } from "../components/ui";
@@ -20,6 +21,7 @@ export function Methodology() {
         persistence, and keep community reports outside official counts and
         models. Four weeks is exploratory.
       </p>
+      <EnvironmentalEvidence />
       <ReadState resource={resource}>
         {(data) => {
           const rows = data.summaries.filter(

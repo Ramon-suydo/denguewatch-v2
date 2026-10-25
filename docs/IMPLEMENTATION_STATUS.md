@@ -1,5 +1,7 @@
 # Implementation and release status
 
+Environmental addendum: [ENVIRONMENT.md](ENVIRONMENT.md), [computed results](ENVIRONMENT_RESULTS.md), and [check ledger](evidence/environment-checks.json). Source lags are frozen before 2018; no environmental model was promoted.
+
 Reviewed locally on 2026-10-25 on `feat/manila-evidence`. This is a historical
 research application with a closed community-reporting gate. It is not approved
 for live collection or current dengue warnings. No hosted Supabase changes were
@@ -24,15 +26,16 @@ Ramon-sufile owner does not match the configured remote.
 | Check | Actual result |
 | --- | --- |
 | Clean dependency install | Pass; npm ci |
-| Unit/integration | 57 passed, 0 failed/skipped; Node 22.23.2 |
-| Browser including axe and 360px | 27 passed; Edge; zero critical/serious axe findings in tested routes |
+| Unit/integration | 66 passed, 0 failed/skipped; Node 22.23.2 |
+| Browser including axe and 360px | 29 passed; Edge; zero critical/serious axe findings in tested routes |
 | Production PWA and headers | 2 passed; Edge; public offline reload and private-cache exclusion |
 | Lint | Pass; zero warnings |
 | Type check / production build | Pass |
+| Geographic checks | 3 passed; hand-calculated metric buffers, Spearman ties and actual 17-city bounds |
 | Contrast | Pass; token pairs and simulated-vision ramp/boundary checks |
 | Dependency audit | 0 vulnerabilities; saved dependency-audit.json |
 | Full numerical evaluation rerun | Identical evaluation.json bytes; SHA256 3f18ac075ea62d1ee3b46632655882eb0253a09ce21374049a0c573cd1dffb46 |
-| Lighthouse mobile local production | Performance 95, accessibility 100, best practices 100, SEO 100; CLS 0.003 |
+| Lighthouse mobile local production | Performance 94, accessibility 100, best practices 100, SEO 100; CLS 0.003 |
 | Raw inputs / defense-v1 | Unchanged; fallback tag bfdff26009b168b2c9a063519d2bdc92a2737f76 |
 
 Saved Lighthouse HTML/JSON and actual public screenshots/recording are under

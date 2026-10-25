@@ -1,3 +1,5 @@
+> Weather/factors replacement: [ENVIRONMENT_REQUIREMENTS.md](ENVIRONMENT_REQUIREMENTS.md) takes precedence over the original section below. See [ENVIRONMENT.md](ENVIRONMENT.md) for implementation and evidence.
+
 # DENGUEWATCH v2: FINAL CODEX PROMPT (standalone; replaces all earlier prompts)
 
 ## ROLE

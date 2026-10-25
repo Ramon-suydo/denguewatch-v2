@@ -13,11 +13,16 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements-environment.txt
       - run: npm ci
       - run: npm run security:secrets
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
+      - run: npm run test:geography
       - run: npm run build
       - run: npm run test:contrast
       - run: npm audit --audit-level=high

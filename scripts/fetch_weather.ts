@@ -1,3 +1,4 @@
+import { cachedRequest } from "./lib/source-cache.ts";
 import assert from "node:assert/strict";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
@@ -17,44 +18,8 @@ for (let year = 2015; year <= 2023; year++) {
   });
   const url = "https://archive-api.open-meteo.com/v1/archive?" + params;
   const path = `${directory}/era5-manila-${year}.json`;
-  let text: string;
-  try {
-    text = await readFile(path, "utf8");
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
-    const response = await fetch(url, { signal: AbortSignal.timeout(60000) });
-    if (!response.ok)
-      throw Error(
-        `Weather fetch failed (${response.status}). Download ${url} to ${path}; then rerun npm run weather:fetch. Existing files preserved.`,
-      );
-    text = await response.text();
-    const data = JSON.parse(text);
-    assert.ok(
-      data.hourly?.time?.length > 8700,
-      "Incomplete annual weather response",
-    );
-    await writeFile(path, text + "\n");
-    await writeFile(
-      path + ".provenance.json",
-      JSON.stringify(
-        {
-          url,
-          retrieved_at: new Date().toISOString(),
-          license: "CC BY 4.0",
-          attribution:
-            "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
-          documentation:
-            "https://open-meteo.com/en/docs/historical-weather-api",
-          sha256: createHash("sha256")
-            .update(text + "\n")
-            .digest("hex"),
-        },
-        null,
-        2,
-      ) + "\n",
-    );
-    text += "\n";
-  }
+  await cachedRequest(path,url,"CC BY 4.0","Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)");
+  const text=await readFile(path,"utf8");
   const provenance = JSON.parse(
     await readFile(path + ".provenance.json", "utf8"),
   );
@@ -149,8 +114,16 @@ await writeFile(
   "data/processed/weather_weekly.json",
   JSON.stringify(result, null, 2) + "\n",
 );
+const previousSources = await readFile(
+  "data/external/SOURCES.md",
+  "utf8",
+).catch(() => "");
+const environmentSources = previousSources.includes("<!-- environment -->")
+  ? "\n" +
+    previousSources.slice(previousSources.indexOf("<!-- environment -->"))
+  : "";
 await writeFile(
   "data/external/SOURCES.md",
-  `# External sources\n\nERA5 hourly reanalysis via [Open-Meteo historical API](https://open-meteo.com/en/docs/historical-weather-api), CC BY 4.0; credit Open-Meteo and Copernicus C3S.\nManila point from HDX boundary center: 14.59932236, 120.98493761.\nTimezone Asia/Manila; Monday–Sunday weekly precipitation sum (mm), mean 2m temperature (°C), mean relative humidity (%).\nOnly complete 168-hour weeks retained. Weather features use weeks ending at least seven days before each origin to respect the documented five-day publication delay. Final reanalysis is retrospective and may be revised; no operational vintage skill claim.\n\n${responses.map((r) => `- ${r.year}: [exact request](${r.provenance.url}), retrieved ${r.provenance.retrieved_at}, SHA-256 ${r.provenance.sha256}`).join("\n")}\n`,
+  `# External sources\n\nERA5 hourly reanalysis via [Open-Meteo historical API](https://open-meteo.com/en/docs/historical-weather-api), CC BY 4.0; credit Open-Meteo and Copernicus C3S.\nManila point from HDX boundary center: 14.59932236, 120.98493761.\nTimezone Asia/Manila; Monday–Sunday weekly precipitation sum (mm), mean 2m temperature (°C), mean relative humidity (%).\nOnly complete 168-hour weeks retained. Weather features use weeks ending at least seven days before each origin to respect the documented five-day publication delay. Final reanalysis is retrospective and may be revised; no operational vintage skill claim.\n\n${responses.map((r) => `- ${r.year}: [exact request](${r.provenance.url}), retrieved ${r.provenance.retrieved_at}, SHA-256 ${r.provenance.sha256}`).join("\n")}\n${environmentSources}`,
 );
 console.log(`Wrote ${result.rows.length} complete weather weeks.`);

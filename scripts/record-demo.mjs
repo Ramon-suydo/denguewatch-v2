@@ -37,6 +37,10 @@ try {
     path: "docs/evidence/home-1280.png",
     fullPage: true,
   });
+  await page
+    .getByRole("heading", { name: "Seasonal watch: context only" })
+    .scrollIntoViewIfNeeded();
+  await page.waitForTimeout(3000);
   await scene("/trends", ".evidence-chart", 8);
   await page
     .getByRole("heading", { name: "Historical forecast and interval" })
@@ -47,6 +51,12 @@ try {
     path: "docs/evidence/metro-manila-1280.png",
     fullPage: true,
   });
+  await page.locator(".ncr-city-map").scrollIntoViewIfNeeded();
+  await page.waitForTimeout(3000);
+  await page
+    .getByRole("button", { name: "Show exploratory city context" })
+    .click();
+  await page.waitForTimeout(3000);
   await scene("/methodology", '[aria-label="Model evaluation metrics"]', 8);
   await page
     .getByRole("heading", { name: "Did weather help?" })

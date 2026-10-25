@@ -26,7 +26,7 @@ permanently closed. Do not cite legacy insert tests as current public permission
 
 Commands: `npm test`, `npm run test:ui`, `npm run build`, `npm run test:pwa`,
 `npm run lint`, `npm audit --audit-level=high`.
-Local evidence at this checkpoint: 57 unit/integration tests, 27 browser checks,
+Local evidence at this checkpoint: 66 unit/integration tests, 29 browser checks,
 2 production PWA checks; all pass. Lint zero warnings; clean install and build
 pass. Actual runtime for final verification is Node 22.23.2. Reports/roles are
 local fixtures; real hosted staff login and scheduled purge execution are not

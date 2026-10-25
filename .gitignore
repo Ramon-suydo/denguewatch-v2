@@ -27,3 +27,15 @@ supabase/.branches/
 # New raw datasets may contain identifying data; existing verified inputs remain tracked.
 data/raw/
 data/external/era5-*.json
+
+# Public-provider caches are reproducible from the source manifest.
+data/external/power-*.json
+data/external/osm-*.json
+data/external/srtm90m-*.json
+data/external/request-*
+data/external/weather-context-*.json
+data/external/weather-refresh.lock
+
+# Python analysis bytecode
+__pycache__/
+*.py[cod]
