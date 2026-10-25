@@ -4,7 +4,7 @@ import { Card } from "../components/ui";
 import { ReadState } from "../components/PageState";
 import { useResource } from "../lib/resources";
 import { signalAggregates } from "../lib/signals";
-export function CommunityReports({embedded=false}:{embedded?:boolean}) {
+export function CommunityReports({embedded=false,query=''}:{embedded?:boolean;query?:string}) {
   const {t}=useRedesignLanguage();
   const reports = useResource("community-v2", signalAggregates);
   return (
@@ -23,7 +23,7 @@ export function CommunityReports({embedded=false}:{embedded?:boolean}) {
         {(rows) => (
           <Card>
             <h2>{t('Published community aggregates','Inilathalang bilang ng komunidad')}</h2>
-            {!rows.length ? (
+            {!rows.filter(r=>r.area_label.toLowerCase().includes(query.toLowerCase())).length ? (
               <p>
                 {t('No publishable groups. Reports may be absent, awaiting review, delayed or suppressed; no count is inferred.','Walang mailathalang grupo. Maaaring walang ulat, sinusuri pa, naantala o nakatago; walang bilang na hinuhulaan.')}
               </p>
@@ -43,7 +43,7 @@ export function CommunityReports({embedded=false}:{embedded?:boolean}) {
                     </tr>
                   </thead>
                   <tbody>
-                    {rows.map((r) => (
+                    {rows.filter(r=>r.area_label.toLowerCase().includes(query.toLowerCase())).map((r) => (
                       <tr key={r.area_label + r.week_start}>
                         <th scope="row">{r.area_label}</th>
                         <td>{r.week_start}</td>

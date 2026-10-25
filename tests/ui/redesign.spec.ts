@@ -97,3 +97,24 @@ test('Dashboard numeric analytics reproduce published series, exact backtest row
   for(let i=0;i<expected.length;i++){const r=expected[i];await expect(detail.locator('tbody tr').nth(i).locator('th,td')).toHaveText([r.origin,r.target,String(r.actual),String(r.predicted)]);}
  }
 });
+
+
+test('historical map layer and accessible table expose the same saved year/week counts',async({page})=>{
+ // Synthetic local aggregate fixtures test filtering only; these never enter shipped data or a model.
+ await page.route('**/rest/v1/rpc/community_signal_aggregates**',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify([{area_label:'ABRA',week_start:'2020-01-05',report_count:3},{area_label:'CEBU',week_start:'2020-01-05',report_count:5}])}));
+ await goto(page,'/risk-map');const data=await read('public/api/v2/outlook.json'),geo=await read('public/geo/philippines.geojson');
+ await page.getByLabel('Map layer',{exact:true}).selectOption('history');await page.getByLabel('Historical year').selectOption('2019');
+ const table=page.locator('details').filter({has:page.getByText('Data table: all reporting units and unmatched areas',{exact:true})});await table.locator('summary').click();
+ for(const week of ['', '2019-09-08']){
+  await page.getByLabel('Historical source week').selectOption(week);
+  for(const name of Object.keys(data.profiles)){
+   const tr=table.locator('tbody tr').filter({has:page.getByRole('button',{name,exact:true})}),records=data.history[name].filter((r:any)=>r.date.startsWith('2019')&&(!week||r.date===week));
+   const matched=geo.features.some((f:any)=>f.properties.case_name===name),expected=matched&&records.length?records.reduce((total:number,r:any)=>total+r.cases,0).toLocaleString('en-PH'):'No data';
+   await expect(tr.locator('td').first()).toHaveText(expected);
+  }
+ }
+ await expect(page.locator('.map-legend')).toContainText('Lower recorded count');
+ await expect(page.locator('.province-detail')).not.toContainText('Weather forecast');
+ await expect(page.locator('.map-page')).toContainText('Historical period: 2019');
+ await page.getByLabel('Map layer',{exact:true}).selectOption('community');await expect(table).toHaveCount(0);await page.getByLabel('Search province / city').fill('CEBU');const groups=page.getByRole('region',{name:'Unverified community aggregates'});await expect(groups.locator('tbody tr')).toHaveCount(1);await expect(groups).toContainText('CEBU');await expect(groups).not.toContainText('ABRA');
+});
