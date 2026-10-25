@@ -20,7 +20,8 @@ export async function reportingHarness(staffRole:'moderator'|'admin'='moderator'
   if(bearer!==token)return false;const parts=bearer.split('.'),signed=createHmac('sha256',secret).update(parts[0]+'.'+parts[1]).digest();const received=Buffer.from(parts[2],'base64url');return signed.length===received.length&&timingSafeEqual(signed,received);
  }
  async function attach(page:Page){
-  await page.route('https://denguewatch-tests.invalid/**',async route=>{
+  // Capture production-contract URLs too; never forward a test Auth or data request.
+  await page.route(/^https:\/\/(?:denguewatch-tests\.invalid|[a-z0-9-]+\.supabase\.co)(?:\/|$)/i,async route=>{
    const request=route.request(),url=new URL(request.url()),path=url.pathname;
    const data=request.postDataJSON()??{},bearer=request.headers().authorization?.replace(/^Bearer /,'')??'';
    if(path==='/auth/v1/token'){
