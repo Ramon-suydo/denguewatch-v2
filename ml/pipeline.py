@@ -24,7 +24,14 @@ def grid(name):
     if name=='DT':return [dict(max_depth=d,min_samples_leaf=l,class_weight='balanced') for d,l in itertools.product(range(3,9),[5,15])]
     return [dict(n_estimators=n,max_depth=d,min_samples_leaf=l,class_weight='balanced_subsample',n_jobs=2) for n,d,l in itertools.product([100,200,300],[4,8],[5,15])]
 def raw(name,model,X,rows,prior):
-    if name in ['DT','RF']:return model.predict_proba(X)[:,list(model.classes_).index(1)]
+    if name in ['DT','RF']:
+        # Parallel fitting is deterministic; serial prediction fixes floating-point
+        # addition order across the forest for reproducible JSON and tied scores.
+        previous_jobs=getattr(model,'n_jobs',None)
+        if name=='RF':model.n_jobs=1
+        try:return model.predict_proba(X)[:,list(model.classes_).index(1)]
+        finally:
+            if name=='RF':model.n_jobs=previous_jobs
     if name=='majority':return np.full(len(rows),prior)
     return np.array([r[name+'_raw'] for r in rows])
 def calfit(p,y):
@@ -134,6 +141,7 @@ def evaluate():
         starts=rng.integers(0,len(weeks),math.ceil(len(weeks)/4));ids=np.concatenate([groups[(int(s)+j)%len(weeks)] for s in starts for j in range(4)])[:len(test)];deltas.append(float(f1_score(y[b][ids],pred['RF']['classes'][ids],zero_division=0)-f1_score(y[b][ids],pred['persistence']['classes'][ids],zero_division=0)))
     delta=np.quantile(deltas,[.025,.975]).tolist();conclusion='RF clearly improves F1 over persistence in this comparison.' if delta[0]>0 else 'Persistence clearly improves F1 over RF in this comparison.' if delta[1]<0 else 'RF is not clearly better than the persistence rule on held-out F1.'
     result={'meta':meta,'split':boundary,'seed':SEED,'sklearn_version':sklearn.__version__,'headline':headline,'random_stratified_70_30':random_result,'sensitivity':sensitivities,'yearly':yearly,'rf_minus_persistence_f1_ci95':delta,'conclusion':conclusion,'chosen_by_validation':protocol['chosen'],'bands':protocol['bands'],'weather':'Not included; optional weather experiment deferred. No weather benefit claimed.','study_citation':'Owner-supplied IEEE document 9357035: Sarma et al., Dengue Prediction using Machine Learning Algorithms, IEEE R10-HTC 2020, DOI 10.1109/R10-HTC49770.2020.9357035. Citation metadata verified with Crossref; IEEE full text blocked by access challenge. Protocol details remain owner-described, not independently verified from full text. No accuracy transfer.'}
+    result['feature_importances']={n:dict(zip(meta['features'],protocol['packages'][n]['model'].feature_importances_.tolist())) for n in ['DT','RF']};result['selected_parameters']={n:protocol['packages'][n]['params'] for n in ['DT','RF']};result['prototype_comparison']='Prototype code was not supplied. Our explicit calendar-gap exclusions, one-hot city identity, sample SD, balanced weights, validation tuning/calibration and operating-point selection differ from a fixed-depth/fixed-point prototype. These are possible contributors, not a verified attribution of every difference.'
     dump(OUT/'evaluation.json',result);dump(OUT/'test-predictions.json',[r|{'models':{n:{'probability':float(it['probabilities'][j]),'class':int(it['classes'][j])} for n,it in pred.items()}} for j,r in enumerate(test)]);make_docs(result);print(json.dumps({'headline':{n:v['main'] for n,v in headline.items()},'conclusion':conclusion,'onset_positives':headline['RF']['onset']['positives']}))
 
 def make_docs(result):
@@ -151,6 +159,9 @@ def make_docs(result):
     lines+=['## Confusion matrices and calibration','', 'Matrix order is [[true negative, false positive], [false negative, true positive]]. Curves and full per-city metrics are in data/processed/ml/evaluation.json.','']
     for n,v in result['headline'].items():lines+=['- '+n+': '+json.dumps(v['main']['confusion_matrix'])]
     lines+=['', '![Confusion matrices](evidence/ml/confusion.png)','', '![Calibration](evidence/ml/calibration.png)','', '## Limits','', '- Operational outbreak labels are research thresholds, not official DOH outbreak declarations or diagnoses.','- All 17-city input weeks are historical. Replay is the default; no current forecast is implied.','- The expanding mean/SD threshold includes data through origin t, and never includes target t+1. No missing values are zero-filled.','- Bootstrap intervals use circular four-week blocks, retaining all cities per sampled week: 400 headline/onset draws, 200 per-city/random/yearly, 100 sensitivity. Sparse one-class samples cannot estimate AUC.','- Calibration and operating points are fitted from out-of-fold chronological training predictions. Calibration may shift across time/cities; no guarantee of operational reliability.','- Quantile risk bands are chosen from validation probabilities, before test outcomes. Displayed reliability is measured from held-out predictions, with sample counts.','- Baseline decision rules are preserved even when their scores are calibrated. Majority uses training prevalence.','- '+result['weather'],'- '+result['study_citation'],'- Administrative shape agreement does not prove catchment equivalence. Population, reporting practices, missing recent surveillance and uncertain week semantics limit generalization.','- No claim that our metrics reproduce patient-level Bangladesh classification; its 79% is not our accuracy.','']
+    lines+=['', '## Selected parameters and prototype differences','',json.dumps(result.get('selected_parameters',{})), '',result.get('prototype_comparison',''), '', '## Feature importance (impurity-based; not causal)','']
+    for name,importance in result.get('feature_importances',{}).items():
+        lines+=['### '+name,'','|Feature|Importance|','|---|---:|']+[f'|{key}|{value:.6f}|' for key,value in sorted(importance.items(),key=lambda item:-item[1])]+['']
     (DOCS/'ML_EVALUATION.md').write_text('\n'.join(lines),encoding='utf-8')
     import matplotlib;matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -170,7 +181,7 @@ def export():
     bundle=joblib.load(WORK/'trained.joblib');result=json.loads((OUT/'evaluation.json').read_text());rows,X,y,meta=dataset();assert meta==bundle['meta']==result['meta'];protocol=bundle['protocol'];exports={}
     for n,pkg in protocol['packages'].items():
         m=pkg['model'];exports[n]={'kind':'forest' if n=='RF' else 'tree' if n=='DT' else n,'trees':[tree_json(t) for t in m.estimators_] if n=='RF' else [tree_json(m)] if n=='DT' else [],'calibration':pkg['calibration'],'operating_point':pkg['operating_point'],'prior':pkg['prior'],'params':pkg['params'],'feature_importances':dict(zip(meta['features'],m.feature_importances_.tolist())) if m is not None else {}}
-    signature=hashlib.sha256(json.dumps({'source':meta['source_sha256'],'seed':SEED,'models':exports},sort_keys=True).encode()).hexdigest();model={'version':signature[:16],'feature_spec':meta['features'],'source_sha256':meta['source_sha256'],'training_window':bundle['split'],'chosen':protocol['chosen'],'bands':protocol['bands'],'models':exports,'float_input':'float32 before each tree comparison, matching scikit-learn'};dump(PUBLIC/'models.json',model)
+    signature=hashlib.sha256(json.dumps({'source':meta['source_sha256'],'seed':SEED,'models':exports},sort_keys=True).encode()).hexdigest();model={'version':signature[:16],'feature_spec':meta['features'],'source_sha256':meta['source_sha256'],'training_window':bundle['split'],'chosen':protocol['chosen'],'bands':protocol['bands'],'models':exports,'float_input':'float32 before each tree comparison, matching scikit-learn'};dump(PUBLIC/'models.json',model);dump(PUBLIC/'evaluation.json',result)
     predictions_data=json.loads((OUT/'test-predictions.json').read_text());chosen=protocol['chosen'];reliability=[]
     for level in range(4):
         group=[r for r in predictions_data if int(np.searchsorted(protocol['bands'],r['models'][chosen]['probability'],side='right'))==level];reliability.append({'level':level,'n':len(group),'outbreaks':sum(r['label'] for r in group),'observed_fraction':sum(r['label'] for r in group)/len(group) if group else None})
@@ -188,7 +199,7 @@ def export():
     # Deterministic cross-split sample, includes equality-sensitive and varied feature rows.
     ids=np.linspace(0,len(rows)-1,600,dtype=int);items=[]
     for i in ids:
-        rr=[rows[i]];xx=X[i:i+1];items.append({'features':X[i].tolist(),'persistence_raw':rows[i]['persistence_raw'],'seasonal_raw':rows[i]['seasonal_raw'],'expected':{n:{'raw':float(raw(n,pkg['model'],xx,rr,pkg['prior'])[0]),'probability':float(calibrate(raw(n,pkg['model'],xx,rr,pkg['prior']),pkg['calibration'])[0]),'class':int(classes(n,calibrate(raw(n,pkg['model'],xx,rr,pkg['prior']),pkg['calibration']),pkg['operating_point'],raw(n,pkg['model'],xx,rr,pkg['prior']))[0])} for n,pkg in protocol['packages'].items()}})
+        rr=[rows[i]];xx=X[i:i+1];items.append({'city':rows[i]['city'],'origin':rows[i]['origin'],'features':X[i].tolist(),'persistence_raw':rows[i]['persistence_raw'],'seasonal_raw':rows[i]['seasonal_raw'],'expected':{n:{'raw':float(raw(n,pkg['model'],xx,rr,pkg['prior'])[0]),'probability':float(calibrate(raw(n,pkg['model'],xx,rr,pkg['prior']),pkg['calibration'])[0]),'class':int(classes(n,calibrate(raw(n,pkg['model'],xx,rr,pkg['prior']),pkg['calibration']),pkg['operating_point'],raw(n,pkg['model'],xx,rr,pkg['prior']))[0])} for n,pkg in protocol['packages'].items()}})
     dump(ROOT/'tests/fixtures/ml-parity.json',{'version':model['version'],'rows':items});dump(PUBLIC/'summary.json',{'version':model['version'],'chosen':chosen,'data_as_of':meta['source_end'],'training_window':bundle['split'],'bands':protocol['bands'],'reliability':reliability,'metrics':{n:v['main'] for n,v in result['headline'].items()},'conclusion':result['conclusion'],'preview_week':bundle['split']['test_start'],'preview':[r for r in compact if r['target']==bundle['split']['test_start']]});print(json.dumps({'exported_models':len(exports),'parity_rows':len(items),'replay_rows':len(compact),'version':model['version'],'chosen':chosen}))
 
 class LeakageTests(unittest.TestCase):

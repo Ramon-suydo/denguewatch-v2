@@ -44,3 +44,11 @@ JSON tree traversal casts input comparisons to float32, matching scikit-learn. `
 - TimeSeriesSplit: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html
 - Decision trees: https://scikit-learn.org/stable/modules/tree.html
 - Random forests: https://scikit-learn.org/stable/modules/ensemble.html#forest
+
+### Additional interpretation limits
+
+In the onset subset, the fixed persistence rule cannot alert because currently-above rows are excluded. Its zero recall/F1 is a consequence of that definition, not evidence that every alternative is operationally useful. Compare actual positive counts and the seasonal baseline too. Week-ending counts are assumed available at the labelled origin for retrospective evaluation; release vintages and operational reporting delays are not independently verified. Live always shows the actual one-step target date, which may already have passed for a delayed upload.
+
+### Deterministic forest scoring
+
+Forest fitting may use two workers. Probability prediction uses one worker so tree probabilities are accumulated in a fixed order. Reproduction exposed sub-ULP differences in parallel prediction (unchanged model version and labels); serial scoring removes that execution-order variability. This changes no data split, target, hyperparameter search or validation criterion. Fresh exports and evaluation are regenerated after this correction.
