@@ -1,0 +1,15 @@
+{
+  "evaluated_at_utc": "2026-10-25T19:51:54.391647+00:00",
+  "evaluation_date_manila": "2026-10-26",
+  "command": {
+    "command": "node scripts/ml-run.mjs evaluate",
+    "checkout_commit": "419ce9366a44a0c9a36c712fb7e442ccb2a0dda4",
+    "checkout_initially_clean": true,
+    "started_utc": "2026-10-25T19:44:14.750647+00:00",
+    "duration_seconds": 459.641,
+    "exit_code": 0
+  },
+  "source_sha256": "4e993553f10081b4e6b35a0d4b3c9bd0cc271765645a123fcb2e0c5d7084633c",
+  "version": "d783ae4e1a32081b",
+  "proof": "ml-clean-checkout.json; clean train/evaluate/export/test, repeated export byte-identical for all 12 artifacts."
+}

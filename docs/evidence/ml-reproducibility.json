@@ -1,0 +1,40 @@
+{
+  "artifacts": 12,
+  "byte_identical": 7,
+  "changed": [
+    "data/processed/ml/evaluation.json",
+    "data/processed/ml/test-predictions.json",
+    "public/ml/evaluation.json",
+    "public/ml/replay.json",
+    "tests/fixtures/ml-parity.json"
+  ],
+  "before": {
+    "data/processed/ml/evaluation.json": "c7f3ecd7ad163ad1b5679b2fa5fdd71aea4ed4b248484e0b38a4bdb90c6ab52c",
+    "data/processed/ml/test-predictions.json": "5672a3d998adc977a9fd9e52a2c4975c44403077ac5f7e1db6c0ff796a7797b4",
+    "data/processed/ml/training.json": "cda6fdd1e1dc554f99a6d38acfd424f3db794337800514947477b6249ac0b01c",
+    "public/ml/evaluation.json": "c7f3ecd7ad163ad1b5679b2fa5fdd71aea4ed4b248484e0b38a4bdb90c6ab52c",
+    "public/ml/history.json": "a11f5138279b934e04c042854d68bfb299db56e59a64718cc581aa6e85ab3f6f",
+    "public/ml/models.json": "bd8e13cf2e7b03cd850dcefa0b12aecceaf7b12ad193863f8666c27a025f8053",
+    "public/ml/replay.json": "59401739572f401d2b1e9e837bdfb2652b0356a639811ebf0d56304ffa4ea1fc",
+    "public/ml/summary.json": "e2540c9ab519a9a5d0d85b472a18ef218a4f933279180e3af0c4eb042762419b",
+    "tests/fixtures/ml-parity.json": "4cb09ac68d5115c5972215bd8516fe92c474aa4a8becb00cfdf6a6d8f56956d9",
+    "docs/ML_EVALUATION.md": "72b5c71881b742623953a1ce19e2a1e58c6a6bde441c524394ba6c9252c06e9a",
+    "docs/evidence/ml/calibration.png": "55f9a34bfdcc10e117f289d16a3c8c0dfff3b9cbaf91e4b31b7baea7c92a0830",
+    "docs/evidence/ml/confusion.png": "72695a6bf1c4e3430314949753c212e812e3e7ad6954afbac6ced44bf078adb8"
+  },
+  "after": {
+    "data/processed/ml/evaluation.json": "4d026678db37c69563efcd509bfd52a67e8046c9d0c713ee59affe5c3009095c",
+    "data/processed/ml/test-predictions.json": "93019047896a9b84f3e8200e876c2ea6a317ed2e0a7aebb572f09e1a00f0be24",
+    "data/processed/ml/training.json": "cda6fdd1e1dc554f99a6d38acfd424f3db794337800514947477b6249ac0b01c",
+    "public/ml/evaluation.json": "4d026678db37c69563efcd509bfd52a67e8046c9d0c713ee59affe5c3009095c",
+    "public/ml/history.json": "a11f5138279b934e04c042854d68bfb299db56e59a64718cc581aa6e85ab3f6f",
+    "public/ml/models.json": "bd8e13cf2e7b03cd850dcefa0b12aecceaf7b12ad193863f8666c27a025f8053",
+    "public/ml/replay.json": "599f3d33714e116971d810c6b13e566921aa057baec0518036a741a3606723cd",
+    "public/ml/summary.json": "e2540c9ab519a9a5d0d85b472a18ef218a4f933279180e3af0c4eb042762419b",
+    "tests/fixtures/ml-parity.json": "54a12081fd3e0e6393cf1b2c732a8ccfd6ad9b6e404603929d67972b5bf022cf",
+    "docs/ML_EVALUATION.md": "72b5c71881b742623953a1ce19e2a1e58c6a6bde441c524394ba6c9252c06e9a",
+    "docs/evidence/ml/calibration.png": "55f9a34bfdcc10e117f289d16a3c8c0dfff3b9cbaf91e4b31b7baea7c92a0830",
+    "docs/evidence/ml/confusion.png": "72695a6bf1c4e3430314949753c212e812e3e7ad6954afbac6ced44bf078adb8"
+  },
+  "scope": "Initial parallel-scoring diagnostic; five byte differences were floating-point addition order. Replay maximum absolute probability difference 4.440892098500626e-16 and all classes/labels unchanged. Superseded by deterministic serial scoring and the passing clean-checkout/repeated-export proof in ml-clean-checkout.json."
+}

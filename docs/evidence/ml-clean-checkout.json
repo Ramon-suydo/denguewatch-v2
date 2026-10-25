@@ -1,0 +1,134 @@
+{
+  "runs": [
+    {
+      "command": "node scripts/ml-run.mjs train",
+      "checkout_commit": "419ce9366a44a0c9a36c712fb7e442ccb2a0dda4",
+      "checkout_initially_clean": true,
+      "started_utc": "2026-10-25T19:43:53.242111+00:00",
+      "duration_seconds": 21.516,
+      "exit_code": 0
+    },
+    {
+      "command": "node scripts/ml-run.mjs evaluate",
+      "checkout_commit": "419ce9366a44a0c9a36c712fb7e442ccb2a0dda4",
+      "checkout_initially_clean": true,
+      "started_utc": "2026-10-25T19:44:14.750647+00:00",
+      "duration_seconds": 459.641,
+      "exit_code": 0
+    },
+    {
+      "command": "node scripts/ml-run.mjs export",
+      "checkout_commit": "419ce9366a44a0c9a36c712fb7e442ccb2a0dda4",
+      "checkout_initially_clean": true,
+      "started_utc": "2026-10-25T19:51:54.394493+00:00",
+      "duration_seconds": 21.156,
+      "exit_code": 0
+    },
+    {
+      "command": "node scripts/ml-run.mjs test",
+      "checkout_commit": "419ce9366a44a0c9a36c712fb7e442ccb2a0dda4",
+      "checkout_initially_clean": true,
+      "started_utc": "2026-10-25T19:52:15.640492+00:00",
+      "duration_seconds": 7.953,
+      "exit_code": 0
+    },
+    {
+      "command": "node scripts/ml-run.mjs export",
+      "checkout_commit": "419ce9366a44a0c9a36c712fb7e442ccb2a0dda4",
+      "checkout_initially_clean": true,
+      "started_utc": "2026-10-25T19:52:23.598492+00:00",
+      "duration_seconds": 21.156,
+      "exit_code": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "data/processed/ml/evaluation.json",
+      "previous_parallel_sha256": "4d026678db37c69563efcd509bfd52a67e8046c9d0c713ee59affe5c3009095c",
+      "clean_checkout_sha256": "67ab014beb2c2695e9e8596942054de813d81b3c44909df428416a90e9182648",
+      "changed_by_deterministic_scoring": true
+    },
+    {
+      "path": "data/processed/ml/test-predictions.json",
+      "previous_parallel_sha256": "93019047896a9b84f3e8200e876c2ea6a317ed2e0a7aebb572f09e1a00f0be24",
+      "clean_checkout_sha256": "6ed9233fe676b6fafaf280d9ae58f83955a9b1d5ebdebae79dcd2d1874886d8c",
+      "changed_by_deterministic_scoring": true
+    },
+    {
+      "path": "data/processed/ml/training.json",
+      "previous_parallel_sha256": "cda6fdd1e1dc554f99a6d38acfd424f3db794337800514947477b6249ac0b01c",
+      "clean_checkout_sha256": "8ff6e1e765353e04564d887cb5186fd191563860a324ba02a60b631cca25fbbb",
+      "changed_by_deterministic_scoring": true
+    },
+    {
+      "path": "public/ml/evaluation.json",
+      "previous_parallel_sha256": "4d026678db37c69563efcd509bfd52a67e8046c9d0c713ee59affe5c3009095c",
+      "clean_checkout_sha256": "67ab014beb2c2695e9e8596942054de813d81b3c44909df428416a90e9182648",
+      "changed_by_deterministic_scoring": true
+    },
+    {
+      "path": "public/ml/history.json",
+      "previous_parallel_sha256": "a11f5138279b934e04c042854d68bfb299db56e59a64718cc581aa6e85ab3f6f",
+      "clean_checkout_sha256": "a11f5138279b934e04c042854d68bfb299db56e59a64718cc581aa6e85ab3f6f",
+      "changed_by_deterministic_scoring": false
+    },
+    {
+      "path": "public/ml/models.json",
+      "previous_parallel_sha256": "bd8e13cf2e7b03cd850dcefa0b12aecceaf7b12ad193863f8666c27a025f8053",
+      "clean_checkout_sha256": "a869dccb402c4f2928b759405f56ca7138dc20c1ff86c82c8d03fdb67e2d9444",
+      "changed_by_deterministic_scoring": true
+    },
+    {
+      "path": "public/ml/replay.json",
+      "previous_parallel_sha256": "599f3d33714e116971d810c6b13e566921aa057baec0518036a741a3606723cd",
+      "clean_checkout_sha256": "34f24c10ce5dbeed1678c50634d6c9516a164d83356446cc24b41273037fbd40",
+      "changed_by_deterministic_scoring": true
+    },
+    {
+      "path": "public/ml/summary.json",
+      "previous_parallel_sha256": "e2540c9ab519a9a5d0d85b472a18ef218a4f933279180e3af0c4eb042762419b",
+      "clean_checkout_sha256": "779dac81e0c0b249620b68eff5e36b33e4ed9a698f9b5d10982f23c348aa8c3d",
+      "changed_by_deterministic_scoring": true
+    },
+    {
+      "path": "tests/fixtures/ml-parity.json",
+      "previous_parallel_sha256": "54a12081fd3e0e6393cf1b2c732a8ccfd6ad9b6e404603929d67972b5bf022cf",
+      "clean_checkout_sha256": "5a45c33446244070485aa2a5b6af3c2e1879ca397f71b68d48b648c8bddaf500",
+      "changed_by_deterministic_scoring": true
+    },
+    {
+      "path": "docs/ML_EVALUATION.md",
+      "previous_parallel_sha256": "72b5c71881b742623953a1ce19e2a1e58c6a6bde441c524394ba6c9252c06e9a",
+      "clean_checkout_sha256": "72b5c71881b742623953a1ce19e2a1e58c6a6bde441c524394ba6c9252c06e9a",
+      "changed_by_deterministic_scoring": false
+    },
+    {
+      "path": "docs/evidence/ml/calibration.png",
+      "previous_parallel_sha256": "55f9a34bfdcc10e117f289d16a3c8c0dfff3b9cbaf91e4b31b7baea7c92a0830",
+      "clean_checkout_sha256": "55f9a34bfdcc10e117f289d16a3c8c0dfff3b9cbaf91e4b31b7baea7c92a0830",
+      "changed_by_deterministic_scoring": false
+    },
+    {
+      "path": "docs/evidence/ml/confusion.png",
+      "previous_parallel_sha256": "72695a6bf1c4e3430314949753c212e812e3e7ad6954afbac6ced44bf078adb8",
+      "clean_checkout_sha256": "72695a6bf1c4e3430314949753c212e812e3e7ad6954afbac6ced44bf078adb8",
+      "changed_by_deterministic_scoring": false
+    }
+  ],
+  "repeat_export_all_byte_identical": true,
+  "repeat_export_hashes": {
+    "data/processed/ml/evaluation.json": "67ab014beb2c2695e9e8596942054de813d81b3c44909df428416a90e9182648",
+    "data/processed/ml/test-predictions.json": "6ed9233fe676b6fafaf280d9ae58f83955a9b1d5ebdebae79dcd2d1874886d8c",
+    "data/processed/ml/training.json": "8ff6e1e765353e04564d887cb5186fd191563860a324ba02a60b631cca25fbbb",
+    "public/ml/evaluation.json": "67ab014beb2c2695e9e8596942054de813d81b3c44909df428416a90e9182648",
+    "public/ml/history.json": "a11f5138279b934e04c042854d68bfb299db56e59a64718cc581aa6e85ab3f6f",
+    "public/ml/models.json": "a869dccb402c4f2928b759405f56ca7138dc20c1ff86c82c8d03fdb67e2d9444",
+    "public/ml/replay.json": "34f24c10ce5dbeed1678c50634d6c9516a164d83356446cc24b41273037fbd40",
+    "public/ml/summary.json": "779dac81e0c0b249620b68eff5e36b33e4ed9a698f9b5d10982f23c348aa8c3d",
+    "tests/fixtures/ml-parity.json": "5a45c33446244070485aa2a5b6af3c2e1879ca397f71b68d48b648c8bddaf500",
+    "docs/ML_EVALUATION.md": "72b5c71881b742623953a1ce19e2a1e58c6a6bde441c524394ba6c9252c06e9a",
+    "docs/evidence/ml/calibration.png": "55f9a34bfdcc10e117f289d16a3c8c0dfff3b9cbaf91e4b31b7baea7c92a0830",
+    "docs/evidence/ml/confusion.png": "72695a6bf1c4e3430314949753c212e812e3e7ad6954afbac6ced44bf078adb8"
+  },
+  "scope": "Fresh detached committed checkout, no fitted cache copied. Pinned ML venv shared as interpreter only. All generated artifacts copied back after successful repeated-export equality. Previous parallel-scoring references are profiled, not treated as serial-scoring expected bytes."
+}

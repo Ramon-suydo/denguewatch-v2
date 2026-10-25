@@ -366,3 +366,78 @@ Matrix order is [[true negative, false positive], [false negative, true positive
 - Owner-supplied IEEE document 9357035: Sarma et al., Dengue Prediction using Machine Learning Algorithms, IEEE R10-HTC 2020, DOI 10.1109/R10-HTC49770.2020.9357035. Citation metadata verified with Crossref; IEEE full text blocked by access challenge. Protocol details remain owner-described, not independently verified from full text. No accuracy transfer.
 - Administrative shape agreement does not prove catchment equivalence. Population, reporting practices, missing recent surveillance and uncertain week semantics limit generalization.
 - No claim that our metrics reproduce patient-level Bangladesh classification; its 79% is not our accuracy.
+
+
+## Selected parameters and prototype differences
+
+{"DT": {"max_depth": 5, "min_samples_leaf": 5, "class_weight": "balanced"}, "RF": {"n_estimators": 100, "max_depth": 8, "min_samples_leaf": 15, "class_weight": "balanced_subsample", "n_jobs": 2}}
+
+Prototype code was not supplied. Our explicit calendar-gap exclusions, one-hot city identity, sample SD, balanced weights, validation tuning/calibration and operating-point selection differ from a fixed-depth/fixed-point prototype. These are possible contributors, not a verified attribution of every difference.
+
+## Feature importance (impurity-based; not causal)
+
+### DT
+
+|Feature|Importance|
+|---|---:|
+|threshold_ratio|0.642775|
+|rest_ncr_cases|0.168684|
+|cases_t_minus_1|0.074089|
+|week_of_year|0.058514|
+|mean_4|0.025665|
+|cases_t|0.011441|
+|mean_8|0.006963|
+|city_MUNTINLUPA CITY|0.004498|
+|city_NAVOTAS CITY|0.003034|
+|cases_t_minus_3|0.002806|
+|rest_ncr_mean_4|0.000969|
+|cases_t_minus_2|0.000563|
+|growth_ratio|0.000000|
+|city_CALOOCAN CITY|0.000000|
+|city_LAS PINAS CITY|0.000000|
+|city_MAKATI CITY|0.000000|
+|city_MALABON CITY|0.000000|
+|city_MANDALUYONG CITY|0.000000|
+|city_MANILA CITY|0.000000|
+|city_MARIKINA CITY|0.000000|
+|city_PARANAQUE CITY|0.000000|
+|city_PASAY CITY|0.000000|
+|city_PASIG CITY|0.000000|
+|city_PATEROS|0.000000|
+|city_QUEZON CITY|0.000000|
+|city_SAN JUAN CITY|0.000000|
+|city_TAGUIG CITY|0.000000|
+|city_VALENZUELA CITY|0.000000|
+
+### RF
+
+|Feature|Importance|
+|---|---:|
+|week_of_year|0.222100|
+|threshold_ratio|0.214557|
+|rest_ncr_cases|0.143759|
+|cases_t_minus_1|0.104597|
+|rest_ncr_mean_4|0.074518|
+|mean_4|0.069029|
+|mean_8|0.039005|
+|cases_t|0.038425|
+|cases_t_minus_3|0.033304|
+|cases_t_minus_2|0.027825|
+|growth_ratio|0.023823|
+|city_PATEROS|0.002218|
+|city_QUEZON CITY|0.001078|
+|city_MANILA CITY|0.000807|
+|city_MANDALUYONG CITY|0.000703|
+|city_PARANAQUE CITY|0.000532|
+|city_CALOOCAN CITY|0.000480|
+|city_SAN JUAN CITY|0.000432|
+|city_PASAY CITY|0.000397|
+|city_PASIG CITY|0.000361|
+|city_NAVOTAS CITY|0.000356|
+|city_VALENZUELA CITY|0.000310|
+|city_MARIKINA CITY|0.000289|
+|city_MUNTINLUPA CITY|0.000269|
+|city_MAKATI CITY|0.000249|
+|city_TAGUIG CITY|0.000221|
+|city_LAS PINAS CITY|0.000182|
+|city_MALABON CITY|0.000174|
