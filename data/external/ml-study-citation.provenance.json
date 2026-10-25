@@ -1,0 +1,18 @@
+{
+  "owner_supplied_url": "https://ieeexplore.ieee.org/document/9357035",
+  "title": "Dengue Prediction using Machine Learning Algorithms",
+  "authors": [
+    "Dhiman Sarma",
+    "Sohrab Hossain",
+    "Tanni Mittra",
+    "Md. Abdul Motaleb Bhuiya",
+    "Ishita Saha",
+    "Ravina Chakma"
+  ],
+  "doi": "10.1109/r10-htc49770.2020.9357035",
+  "year": 2020,
+  "conference": "2020 IEEE 8th R10 Humanitarian Technology Conference (R10-HTC)",
+  "metadata_source": "https://api.crossref.org/works/10.1109/r10-htc49770.2020.9357035",
+  "verification": "Publisher full text blocked by access challenge. Bibliographic metadata verified with Crossref. Specific protocol details remain owner-described.",
+  "use": "Protocol comparison only; patient-level results do not establish city-week outbreak accuracy."
+}
