@@ -13,3 +13,5 @@ The default Dashboard example is the first held-out week. It is not selected for
 The physical map resolution is city/municipality. Display zoom and street detail do not imply sub-city model precision. Calibration and probability bands are research constructs. The baseline can outperform RF, and all saved results remain visible.
 
 The optimized shared photograph is preloaded from the initial HTML with the same responsive AVIF source set used by Photo. Lighthouse identified late discovery through the lazy Dashboard chunk; preload shortens that path without changing image pixels or audit settings.
+
+The small primary Dashboard renders from the entry chunk. Other pages and technical evidence remain lazy. Root UI primitives import their own modules rather than the legacy layout barrel, which had pulled the data-service SDK onto the first loading path. This changes loading order, not content, data or safeguards.

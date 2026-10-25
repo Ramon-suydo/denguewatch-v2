@@ -7,7 +7,6 @@ import {ModeBanner,LevelBadge,cityName,chance} from '../ml/ForecastUI';
 import {level} from '../ml/levels';
 const Evidence=lazy(()=>import('./ClassificationEvidence').then(m=>({default:m.ClassificationEvidence})));
 export function Dashboard(){const {t,fil}=useRedesignLanguage(),forecast=useForecast(),[evidenceOpen,setEvidenceOpen]=useState(false);const data=forecast.data;
- useEffect(()=>{const link=document.createElement('link');link.rel='preload';link.as='image';link.type='image/avif';link.imageSrcset=[640,960,1280,1672].map(w=>`/img/manila-${w}.avif ${w}w`).join(', ');link.imageSizes='100vw';document.head.append(link);return()=>link.remove();},[]);
  useEffect(()=>{const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){entry.target.classList.add('revealed');observer.unobserve(entry.target);}},{threshold:.08});document.querySelectorAll('.simple-dashboard .reveal-section').forEach(node=>observer.observe(node));return()=>observer.disconnect();},[data]);
  const rows=forecast.mode==='Live'?forecast.live??[]:data?.preview??[],week=forecast.mode==='Live'?rows[0]?.target??'':data?.preview_week??'';
  const top=useMemo(()=>rows.filter(r=>r.probability!==null).slice().sort((a,b)=>b.probability!-a.probability!||a.city.localeCompare(b.city)).slice(0,3),[rows]);const high=data?rows.filter(r=>level(r.probability,data.bands)===3).length:0;

@@ -1,10 +1,11 @@
+import {Dashboard} from './redesign/Dashboard';
 import {lazy,Suspense,Component,type ReactNode} from 'react';
 import {BrowserRouter,Navigate,Route,Routes} from 'react-router-dom';
 import {Loading} from './components/PageState';
 import {AppDataProvider} from './lib/resources';
 import {LanguageProvider} from './redesign/Language';
 import {Shell,Footer} from './redesign/Shell';
-const Dashboard=lazy(()=>import('./redesign/Dashboard').then(m=>({default:m.Dashboard}))),RiskMap=lazy(()=>import('./redesign/RiskMap').then(m=>({default:m.RiskMap}))),About=lazy(()=>import('./redesign/About').then(m=>({default:m.About}))),Report=lazy(()=>import('./pages/ReportV2').then(m=>({default:m.ReportV2}))),Admin=lazy(()=>import('./pages/Admin').then(m=>({default:m.Admin})));
+const RiskMap=lazy(()=>import('./redesign/RiskMap').then(m=>({default:m.RiskMap}))),About=lazy(()=>import('./redesign/About').then(m=>({default:m.About}))),Report=lazy(()=>import('./pages/ReportV2').then(m=>({default:m.ReportV2}))),Admin=lazy(()=>import('./pages/Admin').then(m=>({default:m.Admin})));
 const DesignPreview=import.meta.env.DEV&&import.meta.env.VITE_TEST_FIXTURES==='true'?lazy(()=>import('../tests/fixtures/DesignPreview').then(m=>({default:m.DesignPreview}))):null;
 const LegacyReport=import.meta.env.DEV&&import.meta.env.VITE_TEST_FIXTURES==='true'?lazy(()=>import('./pages/Report').then(m=>({default:m.Report}))):null;
 class Boundary extends Component<{children:ReactNode},{failed:boolean}>{state={failed:false};static getDerivedStateFromError(){return {failed:true};}render(){return this.state.failed?<div className="ui-container app-content"><h1>This page could not open</h1><p role="alert">Reload the page to retry. A report must never be submitted automatically.</p><button onClick={()=>window.location.reload()}>Reload page</button></div>:this.props.children;}}

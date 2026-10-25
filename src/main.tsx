@@ -14,7 +14,7 @@ import "./app.css";
 import "./evidence.css";
 import "./redesign.css";
 import "./ml-map.css";
-import { ToastProvider } from "./components/ui";
+import { ToastProvider } from "./components/ui/Toast";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ToastProvider>
