@@ -32,3 +32,5 @@ PWA core assets and map-only assets are separately enumerated in docs/evidence/m
 - https://docs.protomaps.com/basemaps/downloads
 - https://docs.protomaps.com/pmtiles/cli
 - scripts/build-basemap.md and data/external/ml-basemap.provenance.json
+
+Glyph paths are canonical URL paths in the cache manifest, including encoded spaces. Offline checks wait for all optional map assets, require visible city labels and verify an actual PMTiles 206 response.

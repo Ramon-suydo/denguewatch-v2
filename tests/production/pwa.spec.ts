@@ -1,3 +1,4 @@
+import {readFile} from 'node:fs/promises';
 import {goto,activeView} from '../support/active-view';
 import { test, expect } from "@playwright/test";
 test("production PWA isolates map caching, serves offline PMTiles ranges, and keeps reports map-free",async({page,context})=>{
@@ -8,9 +9,9 @@ test("production PWA isolates map caching, serves offline PMTiles ranges, and ke
  let paths=await cachePaths();expect(paths.some(p=>p.includes('MapProvider')||p.endsWith('.pmtiles')||p.includes('ncr-cities'))).toBe(false);expect(mapRequests).toEqual([]);
  await goto(page,'/report');await expect(page.getByRole('heading',{level:1})).toBeVisible();expect(mapRequests).toEqual([]);
  await goto(page,'/risk-map');await expect(page.locator('.city-picker button')).toHaveCount(17);await page.waitForFunction(()=>{const m=(document.querySelector('.city-map-canvas') as HTMLElement&{cityMap:any})?.cityMap;return m?.getLayer('ncr-fill')&&m.queryRenderedFeatures({layers:['ncr-fill']}).length>0;});
- await expect.poll(async()=>(await cachePaths()).includes('/basemap/metro-manila.pmtiles')).toBe(true);
+ const mapAssets=JSON.parse(await readFile('docs/evidence/ml-pwa-assets.json','utf8')).map_only_assets as string[];await expect.poll(async()=>{const paths=await cachePaths();return mapAssets.every(asset=>paths.includes(asset));}).toBe(true);
  await context.setOffline(true);await page.reload();await expect(page.locator('.city-picker button')).toHaveCount(17);await expect(page.locator('.basemap-indicator')).toContainText('offline');await page.waitForFunction(()=>{const m=(document.querySelector('.city-map-canvas') as HTMLElement&{cityMap:any})?.cityMap;return m?.getLayer('ncr-fill')&&m.queryRenderedFeatures({layers:['ncr-fill']}).length>0;});
- const range=await page.evaluate(async()=>{const r=await fetch('/basemap/metro-manila.pmtiles',{headers:{Range:'bytes=0-126'}});return {status:r.status,bytes:(await r.arrayBuffer()).byteLength,range:r.headers.get('Content-Range')};});expect(range).toEqual({status:206,bytes:127,range:'bytes 0-126/6712783'});
+ const range=await page.evaluate(async()=>{const r=await fetch('/basemap/metro-manila.pmtiles',{headers:{Range:'bytes=0-126'}});return {status:r.status,bytes:(await r.arrayBuffer()).byteLength,range:r.headers.get('Content-Range')};});expect(range).toEqual({status:206,bytes:127,range:'bytes 0-126/6712783'});await page.waitForFunction(()=>{const m=(document.querySelector('.city-map-canvas') as HTMLElement&{cityMap:any}).cityMap;return m.getLayer('ncr-city-labels')&&m.queryRenderedFeatures({layers:['ncr-city-labels']}).length>0;});
  mapRequests.length=0;await goto(page,'/report');await page.getByRole('checkbox').check();await expect(page.getByRole('button',{name:'Continue to report',exact:true})).toBeDisabled();expect(mapRequests).toEqual([]);
  expect(violations).toEqual([]);paths=await cachePaths();expect(paths.some(p=>p.startsWith('/admin')||p.includes('rest/v1')||p.startsWith('/img/source/'))).toBe(false);
 });
