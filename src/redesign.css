@@ -20,3 +20,7 @@
 .photo-app .report-page a.text-link{color:#c7efe5}.photo-app .report-page .ui-card a.text-link{color:#075e64}.photo-app main>.data-notice{max-width:1200px;margin:24px auto;padding:24px;background:#f8fbfc;color:#102a43}.photo-app main>.data-notice h2{color:#102a43}
 
 .photo-app .ui-modal .page-header{background:#f8fbfc;color:#102a43}.photo-app .ui-modal .page-header p{color:#385469}
+
+.photo-app .map-page .ui-card .index-number{font-size:4rem;line-height:1}.photo-app .map-page .ui-card .forecast-number{font-size:clamp(2.3rem,5vw,3.8rem)}
+
+.public-page-loading{min-height:100svh;display:grid;place-items:center}
