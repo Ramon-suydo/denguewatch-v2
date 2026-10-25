@@ -1,48 +1,34 @@
-# Community launch checklist — draft for review
+# Launch checklist
 
-Version launch-v1 · 2026-10-03. Not legal advice. Submissions remain CLOSED.
-No report-activation command is authorized by this checklist.
+**BLOCKED: owner deferred credential rotation. Do not push main or activate reporting.** Updated 2026-10-25T07:14:00.872864+00:00.
 
-- [ ] Server-side rate limiting and abuse protection on every public RPC path:
-  submit, withdraw and aggregate reads. Existing serialized 100/day submission
-  ceiling does not protect all paths or prevent fabricated reports/quota denial.
-- [ ] Decide retention before opening; owner currently specifies "Not applicable, form closed". Current DB setting is 90 days.
-  Verify hourly purge execution and withdrawn/expired records, plus provider
-  backup deletion, technical-log retention and processing locations.
-- [ ] Review deployed RLS/grants, definer search paths, anonymous/private access,
-  code non-enumeration and small-cell disclosure risks.
-- [ ] Lawyer/school DPO reviews community-v1 consent, separate optional contact,
-  purposes/lawful basis, Privacy/Terms/disclaimer and proposed liability clause.
-  Version material text changes before accepting reports; review access/correction,
-  lost-code requests, complaint handling, identity checks and incident response.
-- [ ] Review the owner-supplied controller: DengueWatch student research team,
-  University Perpetual Help College of Manila; contact achilleslang23@gmail.com.
-  Confirm institutional accountability and DPO designation; an email is not proof of appointment.
-- [ ] Verify processor agreements, provider settings/locations, logging/backups,
-  and security/privacy assessment. No report fields or codes in logs/URLs/storage.
-- [ ] DPO determines NPC registration obligations for the accountable entity.
-  Under Circular 2022-04, 250+ employees, sensitive data on 1,000+ individuals or
-  processing likely to pose risk to rights/freedoms trigger mandatory registration.
-  Being a student prototype is not proof of exemption; review any applicable
-  exemption declaration route and ongoing duties with the DPO/NPC.
-- [ ] Owner supplies exact source citations/usage terms; notices and affected
-  exports use the central metadata. Review deployment/preview before launch.
-- [ ] Only after all above, obtain explicit owner authorization for activation;
-  verify policy/version and protected paths in production without real patient data.
+| Gate | Fresh local evidence | Status |
+|---|---|---|
+| Install, lint, types, geography, contrast, production build | npm ci; npm run lint; npm run typecheck; npm run test:geography (3); npm run test:contrast; npm run build: pass | DONE |
+| Unit/integration | npm test: 72 passed, zero skipped | DONE |
+| Fresh database | npm run db:verify: 24 SQL tests and 1 authenticated UI flow passed; all 11 forward migrations apply, migration ledger rerun is idempotent | DONE locally |
+| Browser stability | npm run test:ui: 31 passed in each of ui-verified-1, ui-verified-2, ui-verified-3, sequential runs; baseline default and one-worker runs also passed 29/29 before fixes | DONE |
+| Production and offline | npm run test:production: 5 passed; npm run test:pwa: 3 passed, including actual strict-CSP styles | DONE |
+| Accessibility | Browser axe assertions: zero critical/serious issues, including signed staff workspace | DONE within tested routes |
+| Dependency audit | npm audit --json: zero vulnerabilities | DONE |
+| Shipped attribution/filler | npm run data:validate passed; full marker inventory retained | DONE |
+| Evaluation and accuracy | npm run evaluate passed offline; evaluation, environmental evaluation and weekly outputs byte-identical; UI checks all 18 scenario/model/horizon MAE cells against saved output | DONE |
+| Secret audit | npm run security:secrets: 0 current findings, 44 known historical blobs, 0 unexpected history findings; exit 1 because owner deferred rotation | NEEDS OWNER |
+| Lighthouse mobile | Fresh 2026-10-25T07:11:46.373Z: performance 97, accessibility 100, best practices 96, SEO 100 | DONE |
+| ZAP local passive baseline | Fresh 2026-10-25T07:12:50.741Z: 0 High/Medium, 2 lower alerts retained | DONE |
+| Hosted verification and human approvals | No live connection, migration, reporting activation, deployed scan, usability or DPO approval claimed | NEEDS OWNER |
 
-Primary review references:
-[RA 10173](https://privacy.gov.ph/data-privacy-act/),
-[NPC data-subject rights](https://privacy.gov.ph/data-subject-rights/),
-[NPC registration reminder](https://privacy.gov.ph/reminder-on-mandatory-data-protection-officer-and-data-processing-system-registration/),
-[NPC exemption guidance](https://privacy.gov.ph/pips-and-pics/exemption/).
+## NEEDS OWNER
 
-Owner metadata supplied on 2026-10-03 (legal-v1.1):
-- Controller identity/contact are filled in src/lib/legal.ts. Launch retention is
-  "Not applicable, form closed"; a retention decision is required before opening.
-- Technical logs: per Vercel/Supabase defaults. Backups: per Supabase defaults.
-  These descriptions are not verified durations; confirm deployed plans/settings.
-- For each of NCR weekly, derived NCR monthly and Manila daily: date obtained
-  and FOI request ID are "Not available", URL is "not public", usage terms
-  "Not stated". Original acquisition channel is unverified; no FOI request is
-  claimed absent or invented. Weekly/daily issuing offices remain nonspecific.
-  Exact citation warning stays visible until provenance/usage terms are confirmed.
+1. Rotate the Supabase database password and affected server API keys in the dashboard. Privately update ignored .env.local, hosting environment variables and Actions secrets. Do not paste any values. Set CREDENTIALS_ROTATED=1 only after rotation. Configure the private exposure-guard secret using docs/ROTATE_CREDENTIALS.md.
+2. Run `npm run credentials:verify`, `npm run security:secrets`, `npm run hosted:bootstrap`, then `npm run db:verify -- --hosted`. If verification requires pending migrations, bootstrap after rotation and repeat verification. The audit attestation is not proof of revoked hosted credentials.
+3. Set BOOTSTRAP_ADMIN_EMAIL and BOOTSTRAP_ADMIN_PASSWORD privately; run `npm run hosted:admin`; remove the bootstrap password. Enroll/verify TOTP through the staff flow and exercise an actual hosted AAL2 login and authorized moderation. Local test JWTs are not hosted Auth proof.
+4. Configure repository variables SUPABASE_URL and DEPLOYED_URL, protected retention server-key secret, the private exposure fingerprint secret, and CREDENTIALS_ROTATED. Manually run Community retention and ZAP baseline workflows; inspect successful current-code runs/artifacts. Verify pg_cron or the active hourly Actions fallback using `npm run db:verify -- --hosted`. A YAML schedule alone is not proof of execution.
+5. Perform a real usability session and school/DPO review of consent, retention, withdrawal and institutional responsibility. Resolve original source retrieval dates, formal citation/redistribution terms, absence semantics and population attribution with source owners. No participants, approvals or source dates have been invented.
+6. Test locally and self-review the auth/schema changes before merging near the defense. Re-run required release gates in the intended environment. Only after every gate passes, set `$env:LAUNCH_GATES_PASSED = '1'` and run `npm run hosted:bootstrap -- --enable-reporting`. Emergency closure: `npm run reports:off`. Do not enable collection merely to demonstrate a test.
+
+Full numbered dashboard and command instructions: [ROTATE_CREDENTIALS.md](ROTATE_CREDENTIALS.md). All private configuration stays out of Git.
+
+## Branch handoff
+
+The completed local task is committed on fix/launch. To publish the review branch when ready: `git push -u origin fix/launch`. Main must not be updated until every gate passes. Once approved and every gate is independently checked, fetch current main and review ancestry/conflicts before any merge; never force push. The main deployment and real hosted smoke test remain owner work.

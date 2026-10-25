@@ -1,4 +1,4 @@
-import { open, readFile, writeFile, unlink } from "node:fs/promises";
+import { open, readFile, writeFile, unlink, mkdir } from "node:fs/promises";
 import {
   dailyWeatherContext,
   type WeatherContext,
@@ -7,6 +7,7 @@ import { cachedRequest } from "./lib/source-cache.ts";
 import { hourlyManila, aggregateDaily } from "./lib/environment.ts";
 const path = "public/api/v2/weather.json",
   lockPath = "data/external/weather-refresh.lock";
+await mkdir("data/external", {recursive:true});
 let lock;
 try {
   lock = await open(lockPath, "wx");

@@ -1,4 +1,4 @@
-﻿import { test, expect } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 test("production PWA installs public cache, survives offline reload, and never caches staff/report requests", async ({
   page,
   context,
@@ -75,4 +75,16 @@ test("production serves security headers and rejects fixture pages and legacy re
       page.getByRole("heading", { name: "Page not found" }),
     ).toBeVisible();
   }
+});
+
+test("production styles and public research charts comply with the strict CSP",async({page})=>{
+ const violations:string[]=[];
+ await page.exposeFunction('recordPolicyViolation',(directive:string)=>violations.push(directive));
+ await page.addInitScript(()=>document.addEventListener('securitypolicyviolation',event=>{void (window as any).recordPolicyViolation(event.violatedDirective);}));
+ for(const path of ['/','/trends','/methodology','/data-sources']){
+  await page.goto(path);await expect(page.getByRole('heading',{level:1})).toBeVisible();
+  if(path==='/methodology')await expect(page.getByRole('heading',{name:'How accurate is this?'})).toBeVisible();
+  if(path==='/data-sources')await expect(page.locator('.coverage-present').first()).not.toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+ }
+ expect(violations).toEqual([]);
 });

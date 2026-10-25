@@ -1,8 +1,5 @@
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { config } from "dotenv";
-import pg from "pg";
-import { readDatabaseCa } from "./lib/database-tls.ts";
-import { refreshForecasts } from "./lib/forecast-cache.ts";
 config({ path: [".env.local", ".env"], quiet: true });
 const args = process.argv.slice(2);
 const allowed = new Set(["--apply", "--refresh", "--enable-reports"]);
@@ -16,6 +13,10 @@ if (args.includes("--enable-reports")) {
   );
   process.exit(1);
 }
+// Reject retired activation before loading database/forecast dependencies.
+const [{ default: pg }, { readDatabaseCa }, { refreshForecasts }] = await Promise.all([
+  import("pg"), import("./lib/database-tls.ts"), import("./lib/forecast-cache.ts"),
+]);
 let committed = false;
 async function main() {
   const connection = process.env.DIRECT_DATABASE_URL;

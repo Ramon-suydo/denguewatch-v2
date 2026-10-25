@@ -1,83 +1,28 @@
-﻿# Defense questions and honest answers
+# Defense questions and honest answers
 
-**What does the app claim?** Manila city historical 1–2-week activity forecasting,
-weather-versus-persistence evaluation, historical NCR patterns and a separate
-unverified community-awareness layer. Current risk is unavailable without recent
-official observations. It is not a medical or outbreak declaration service.
+Current source of release truth: [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) and [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md).
 
-**Why Manila only?** The supplied daily Manila series extends through 2023. The
-NCR city-level weekly comparison ends January 2021. That supports a narrower,
-clearer claim than a live NCR-wide forecast.
+**Is this live dengue surveillance?** No. Manila cases end 2023-12-02 and NCR weekly observations end 2021-01-10. Weather updates do not make case counts current. Community awareness reports are unverified and never added to official counts or forecasts.
 
-**Why a simple model?** Short-term persistence is strong. The frozen 2017 ridge
-candidate does not establish consistent held-out 1/2-week gains over naive;
-uncertainty intervals include no gain. The public historical display therefore
-uses persistence. This conservative promotion choice followed evaluation and is
-not called preregistered. See EVALUATION.md for actual values and negative results.
+**What do absent dates mean?** The source owner has not confirmed their meaning. M excludes incomplete daily weeks; Z treats absent daily dates as zero only within source coverage. Both are shown; the public chart starts with M. DOH gaps remain missing.
 
-**Did weather improve accuracy?** In the primary 2018–2023 paired comparison,
-weather worsens ridge MAE at 1 and 2 weeks in both Z and M. ERA5 is reanalysis,
-not station gauges or historical real-time vintages. This does not show that
-weather is causally irrelevant to dengue. Alternative-source sensitivity is a
-separate case-only experiment, not proof of weather robustness under that source.
+**How good is the forecast?** The visible Methodology accuracy table reads actual saved MAEs and is regression-tested against the evaluation JSON for both scenarios. One-week persistence means last week's value. Some two/four-week ridge comparisons improve retrospective error but remain exploratory with wide uncertainty. Weather did not establish a reliable operational improvement. This is not prospective clinical validation.
 
-**Why two absent-day scenarios?** No recorded workbook day has zero cases, and
-252 dates are absent within coverage. The source does not confirm zero versus
-missing. Z explicitly assumes zero; M excludes weeks without seven daily rows.
-Their scored samples differ, so their errors cannot be compared as identical
-cohorts. The 29 days after 2023-12-02 are outside coverage, not missing observations.
+**Did the evaluation reproduce?** The full fresh offline evaluation completed and the main evaluation, environmental evaluation and weekly datasets were byte-identical to their previous hashes. Same-code reproducibility does not establish independent scientific validity.
 
-**Why not a district or barangay case map?** No verified Manila subcity official
-case series was supplied. The map shows NCR city-level history. Barangay labels
-in the report form are coarse source-location choices only; no city count is
-allocated to them. Community aggregates, if eligible after review, remain
-unverified reports rather than official case figures.
+**Can a real user submit now?** Collection fails closed until the owner rotates credentials, verifies hosted migrations/Auth/scheduling, completes human reviews and explicitly activates the server policy. Local tests demonstrate submission, moderation, below-threshold suppression, delayed publication at three reports, withdrawal and denied raw reads against disposable actual SQL. They do not prove a real hosted login, TOTP, delivery or deployment.
 
-**Do the two Manila sources agree?** On 151 observed paired weeks, daily 8,255
-versus DOH 8,234, MAE 13.5960 and correlation about .93. Including five blank daily
-weeks under Z gives 156 pairs. Similar totals do not make weeks interchangeable;
-source change and alternate-source sensitivity are disclosed.
+**Is the system secure/compliant?** Local RLS/abuse tests, role/AAL2 tests, scanner reports and tested accessibility assertions passed in their stated scope. The secret gate correctly remains blocked on rotation; hosted scans and real Auth remain unverified. These checks do not establish legal compliance. Usability and DPO approval remain NEEDS OWNER.
 
-**How are alerts evaluated?** Past-only seasonal 90th-percentile research
-thresholds, precision/recall/F1/AUC/Brier/false-positive rates, plus explicitly
-defined threshold-episode lead time. These are research thresholds, not verified
-DOH outbreak classifications. Sparse groups can make metrics undefined. Nominal
-80% intervals are tested and can under-cover; no guaranteed protection is claimed.
+**What is the source citation?** DOH Epidemiology Bureau EPI weekly source file and coverage are recorded honestly; retrieval is unknown. Daily data was provided by the City of Manila health department to the project team; formal citation and usage permission remain pending the data owner. MIT covers code, not third-party source ownership.
 
-**How are false reports handled?** Closed-by-default collection, one-use PoW,
-honeypot, schema limits, global quotas, duplicate/burst quarantine, staff review,
-merge/reject, >=3 approved reports, >=72-hour delay and withdrawal/retention.
-Moderation cannot prove identity or clinical truth. Reports never train the model
-or change official counts. Predictive value is future work.
+## NEEDS OWNER
 
-**How is RA 10173 addressed?** Sensitive-health-data minimization, explicit
-versioned consent, no names/contact/GPS/IP fields, staff-only raw access, hashed
-bearer withdrawal codes, suppression/delay and 90-day expiry. Provider logs,
-backups, free-text leakage, children/third-party reports, lawful basis and actual
-controller/DPO arrangements still require review. This is not a compliance
-certification or claim of guaranteed anonymity.
+1. Rotate the Supabase database password and affected server API keys in the dashboard. Privately update ignored .env.local, hosting environment variables and Actions secrets. Do not paste any values. Set CREDENTIALS_ROTATED=1 only after rotation. Configure the private exposure-guard secret using docs/ROTATE_CREDENTIALS.md.
+2. Run `npm run credentials:verify`, `npm run security:secrets`, `npm run hosted:bootstrap`, then `npm run db:verify -- --hosted`. If verification requires pending migrations, bootstrap after rotation and repeat verification. The audit attestation is not proof of revoked hosted credentials.
+3. Set BOOTSTRAP_ADMIN_EMAIL and BOOTSTRAP_ADMIN_PASSWORD privately; run `npm run hosted:admin`; remove the bootstrap password. Enroll/verify TOTP through the staff flow and exercise an actual hosted AAL2 login and authorized moderation. Local test JWTs are not hosted Auth proof.
+4. Configure repository variables SUPABASE_URL and DEPLOYED_URL, protected retention server-key secret, the private exposure fingerprint secret, and CREDENTIALS_ROTATED. Manually run Community retention and ZAP baseline workflows; inspect successful current-code runs/artifacts. Verify pg_cron or the active hourly Actions fallback using `npm run db:verify -- --hosted`. A YAML schedule alone is not proof of execution.
+5. Perform a real usability session and school/DPO review of consent, retention, withdrawal and institutional responsibility. Resolve original source retrieval dates, formal citation/redistribution terms, absence semantics and population attribution with source owners. No participants, approvals or source dates have been invented.
+6. Test locally and self-review the auth/schema changes before merging near the defense. Re-run required release gates in the intended environment. Only after every gate passes, set `$env:LAUNCH_GATES_PASSED = '1'` and run `npm run hosted:bootstrap -- --enable-reporting`. Emergency closure: `npm run reports:off`. Do not enable collection merely to demonstrate a test.
 
-**What is verified?** Local source/SQL/model tests, browser/axe/keyboard/mobile
-checks, build, dependency audit, production offline cache and local headers,
-reproducible evidence and a saved Lighthouse mobile lab report. See the final
-implementation status for the exact counts and commit.
-
-**What is not verified?** Human usability results, current disease risk, future
-model performance, provider retention settings, real hosted staff sign-in/MFA,
-new hosted migrations/purge execution, and deployed ZAP. The known database
-password must be rotated because it matches a public identifier. Collection has
-not been activated. No absent evidence is presented as a pass.
-
-## Does living near a river cause dengue?
-No causal conclusion follows from this analysis. Aedes aegypti mainly breeds in
-small containers of standing water around homes, including drums, tires, pots
-and clogged drains. River proximity, low elevation and flooding are indirect
-proxies for drainage, standing water and density. The 17-city correlations are
-exploratory, use mixed source vintages and an unverified population denominator,
-and have broad intervals. See ENVIRONMENT.md.
-
-## Did season or weather beat last week?
-The controlled AR(2) ablation improves some year/season comparisons, but no
-environmental variant establishes a reliable pooled 1/2-week gain over matched
-persistence in both scenarios. Exploratory four-week gains stay exploratory.
-The public model remains persistence; no environmental promotion was made.
+Full numbered dashboard and command instructions: [ROTATE_CREDENTIALS.md](ROTATE_CREDENTIALS.md). All private configuration stays out of Git.

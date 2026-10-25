@@ -1,57 +1,120 @@
 {
-  "branch": "feat/manila-evidence",
-  "runtime": "Node 22.23.2 / Python 3.12",
+  "utc": "2026-10-25T07:14:01.044866+00:00",
+  "branch": "fix/launch",
+  "runtime": {
+    "node": "v22.23.2",
+    "platform": "win32",
+    "arch": "x64",
+    "python": "3.12.7",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "shapely": "2.2.0",
+      "pyproj": "3.8.0"
+    }
+  },
   "unit_integration": {
-    "passed": 66,
+    "passed": 72,
     "failed": 0,
     "skipped": 0
   },
-  "geography_python": {
-    "passed": 3,
-    "failed": 0
+  "fresh_database": {
+    "sql_passed": 24,
+    "ui_passed": 1,
+    "migrations": 11,
+    "engine": "disposable PGlite PostgreSQL; hosted Supabase Auth unverified"
   },
   "browser_edge": {
-    "passed": 29,
-    "failed": 0,
-    "port": 43123,
-    "axe": "zero critical/serious in tested routes including expanded geographic context"
+    "runs": [
+      {
+        "command": "npm run test:ui",
+        "started_utc": "2026-10-25T07:00:29.063774+00:00",
+        "duration_seconds": 202.218,
+        "exit_code": 0
+      },
+      {
+        "command": "npm run test:ui",
+        "started_utc": "2026-10-25T07:03:51.408950+00:00",
+        "duration_seconds": 191.61,
+        "exit_code": 0
+      },
+      {
+        "command": "npm run test:ui",
+        "started_utc": "2026-10-25T07:07:03.140169+00:00",
+        "duration_seconds": 206.515,
+        "exit_code": 0
+      }
+    ],
+    "passed_per_run": 31,
+    "axe": "zero critical/serious in tested routes including authenticated workspace"
   },
-  "production_pwa": {
-    "passed": 2,
-    "failed": 0
+  "production": {
+    "passed": 5
   },
-  "lint": "pass, zero warnings",
-  "typecheck": "pass",
-  "build": "pass",
-  "offline_evaluation": "full npm run evaluate completed with ENV_OFFLINE=1",
-  "offline_provider_cache_validation": "environment:fetch completed with ENV_OFFLINE=1; no provider calls possible",
-  "original_evaluation_sha256": "3f18ac075ea62d1ee3b46632655882eb0253a09ce21374049a0c573cd1dffb46",
-  "environment_evaluation_sha256": "82202a50bf10837b23c4c8ae0123113ff5d29b58935023f0c3703db10772a95b",
+  "pwa": {
+    "passed": 3
+  },
+  "lint": "passed",
+  "types": "passed as part of final build",
+  "build": "passed",
+  "geography": {
+    "passed": 3
+  },
+  "contrast": "passed",
+  "evaluation": {
+    "comparison_utc": "2026-10-25T06:21:33.482404+00:00",
+    "outputs": [
+      {
+        "path": "data/processed/evaluation.json",
+        "before_sha256": "3f18ac075ea62d1ee3b46632655882eb0253a09ce21374049a0c573cd1dffb46",
+        "after_sha256": "3f18ac075ea62d1ee3b46632655882eb0253a09ce21374049a0c573cd1dffb46",
+        "byte_identical": true
+      },
+      {
+        "path": "data/processed/environment_evaluation.json",
+        "before_sha256": "82202a50bf10837b23c4c8ae0123113ff5d29b58935023f0c3703db10772a95b",
+        "after_sha256": "82202a50bf10837b23c4c8ae0123113ff5d29b58935023f0c3703db10772a95b",
+        "byte_identical": true
+      },
+      {
+        "path": "data/processed/manila_weekly.json",
+        "before_sha256": "02ac83dc7afc39c2886dc343a504eef60dec1ec31b864e90b1bf04f745c99b8a",
+        "after_sha256": "02ac83dc7afc39c2886dc343a504eef60dec1ec31b864e90b1bf04f745c99b8a",
+        "byte_identical": true
+      }
+    ],
+    "scope": "Fresh full offline evaluation; same-code reproducibility, not independent scientific validation."
+  },
   "lighthouse_mobile": {
-    "performance": 94,
+    "performance": 97,
     "accessibility": 100,
-    "best-practices": 100,
+    "best-practices": 96,
     "seo": 100
   },
-  "cls": 0.002980813166801231,
-  "npm_audit": {
-    "info": 0,
-    "low": 0,
-    "moderate": 0,
-    "high": 0,
-    "critical": 0,
-    "total": 0
+  "lighthouse_utc": "2026-10-25T07:11:46.373Z",
+  "zap_local": {
+    "target": "http://127.0.0.1:43142",
+    "utc": "2026-10-25T07:12:50.741Z",
+    "mode": "passive baseline; no active scan or authenticated coverage",
+    "runtime_exit_code": 0,
+    "high_or_medium_alerts": 0,
+    "low_or_info_alerts": 2,
+    "passed": true
   },
-  "not_verified": [
-    "hosted weather scheduling",
-    "hosted Auth/migrations/retention",
-    "deployed ZAP",
-    "human usability results",
-    "population provenance confirmation",
-    "real-time forecast skill"
-  ],
-  "secret_gate": "FAIL, pre-existing database credential rotation still required",
+  "secret_gate": "FAIL: owner deferred rotation; 0 current findings, 44 known historical blobs",
   "hosted_writes": false,
+  "main_pushed": false,
+  "reporting_activation_attempted": false,
+  "hosted_reporting_status": "NOT VERIFIED; no activation attempted",
   "raw_disease_files_changed": false,
-  "environment_model_promoted": false
+  "environment_model_promoted": false,
+  "not_verified": [
+    "credential revocation/live authentication",
+    "hosted migrations/Auth/TOTP/retention execution",
+    "deployed scans and workflow execution",
+    "human usability and DPO approval",
+    "source-owner absent-date semantics/usage permission/formal reference",
+    "current prospective forecasting accuracy"
+  ]
 }

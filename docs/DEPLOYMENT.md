@@ -1,4 +1,6 @@
-﻿# Deployment and local staff setup
+> Historical project record. Current launch status and owner blockers are in IMPLEMENTATION_STATUS.md and LAUNCH_CHECKLIST.md. Older check counts, deployed states and instructions below are not current verification.
+
+# Deployment and local staff setup
 
 Use Node 22.12+ and `npm ci`. Current branch: feat/manila-evidence. Public pages
 work without Supabase from committed historical JSON. `npm run demo` is the
@@ -69,7 +71,7 @@ git push -u origin feat/manila-evidence
 
 Open the first PR against feat/manila-redesign per CONTRIBUTING.md. Test locally,
 self-review the schema/auth diff and preview, and keep defense-v1 unchanged before
-any merge near the defense. The configured remote is Ramon-suydo/denguewatch-v2;
+any merge near the defense. The configured remote is Ramon-suydo/denguewatch;
 the supplied standalone prompt names Ramon-sufile. No remote was changed.
 
 ## External verification after deployment

@@ -1,3 +1,4 @@
+import { ForecastAccuracy } from "../components/ForecastAccuracy";
 import { EnvironmentalEvidence } from "../components/EnvironmentalEvidence";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -61,6 +62,7 @@ export function Methodology() {
                 </p>
               </Card>
               <ScenarioControl value={scenario} onChange={setScenario} />
+              <ForecastAccuracy data={data} scenario={scenario} />
               <div className="evidence-filters">
                 <Select
                   label="Evaluation fold"

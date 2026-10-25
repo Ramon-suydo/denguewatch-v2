@@ -1,9 +1,8 @@
 {
-  "status": "NOT RUN: full Docker/Auth setup",
-  "reason": "Docker executable unavailable; no hosted database contacted",
-  "verified": [
-    "local destination guards",
-    "full migration SQL role fixtures"
-  ],
-  "community_reporting": "closed"
+  "utc": "2026-10-25T07:14:01.044866+00:00",
+  "full_docker_auth_stack": "NOT RUN: Docker absent",
+  "fresh_embedded_postgres": "PASS: 11 migrations, 24 SQL tests and one signed disposable local-browser reporting flow",
+  "hosted_contacted": false,
+  "real_auth_mfa_verified": false,
+  "activation_attempted": false
 }

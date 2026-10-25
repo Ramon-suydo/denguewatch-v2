@@ -79,7 +79,7 @@ export async function cachedRequest(
       method: options.body ? "POST" : "GET",
       headers: {
         "User-Agent":
-          "DengueWatch-research/2 (https://github.com/Ramon-suydo/denguewatch-v2)",
+          "DengueWatch-research/2 (this repository (see the origin remote))",
         ...(options.body
           ? { "Content-Type": "application/x-www-form-urlencoded" }
           : {}),

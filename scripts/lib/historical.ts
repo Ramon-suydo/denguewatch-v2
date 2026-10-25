@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import { parse } from 'csv-parse/sync';
 import readWorkbook, { type CellValue } from 'read-excel-file/node';
 import { LGUS, normalizeLgu } from './geography.ts';
+import { sourceCitations } from './source-citations.ts';
 
 export const SOURCES = {
   month: 'ncr_dengue_monthly_with_rates.csv',
@@ -52,7 +53,7 @@ function excelDate(value: CellValue): string {
 }
 function base(type: Observation['period_type'], hash: string): Observation {
   return { lgu_name: '', period_start: '', period_type: type, cases: 0, deaths: null,
-    source: SOURCES[type], source_citation: 'TODO: exact DOH/FOI dataset citation',
+    source: SOURCES[type], source_citation: sourceCitations[SOURCES[type]],
     source_sha256: hash, period_date_semantics: type === 'week' ? 'source_date_label' : type === 'month' ? 'calendar_month_start' : 'calendar_day',
     quality_flags: [], population: null, population_year: null, incidence_per_100k: null, weeks_reported: null };
 }

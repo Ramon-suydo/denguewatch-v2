@@ -1,3 +1,4 @@
+import { ReportingStatus } from "../components/ReportingStatus";
 import { SeasonalWatch } from "../components/EnvironmentalEvidence";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -24,6 +25,7 @@ export function EvidenceHome() {
           ? "Alamin ang datos. Kumilos nang maaga."
           : "Know the evidence. Take care early."}
       </h1>
+      <p><ReportingStatus /></p>
       <p className="evidence-intro">
         {fil
           ? "Kasaysayan ng dengue sa Maynila, pagsusuri ng pagtataya, at malinaw na mga limitasyon."
@@ -85,7 +87,7 @@ export function EvidenceHome() {
                   <Link className="ui-button ui-button-secondary" to="/report">
                     {fil
                       ? "Mag-ulat · sarado pa"
-                      : "Report a case · collection closed"}
+                      : "Check community reporting status"}
                   </Link>
                 </div>
               </Card>

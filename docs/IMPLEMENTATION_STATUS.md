@@ -1,89 +1,42 @@
-# Implementation and release status
+# Implementation status
 
-Environmental addendum: [ENVIRONMENT.md](ENVIRONMENT.md), [computed results](ENVIRONMENT_RESULTS.md), and [check ledger](evidence/environment-checks.json). Source lags are frozen before 2018; no environmental model was promoted.
+Updated 2026-10-25T07:14:00.872864+00:00. Work is local on fix/launch. Main has not been merged or pushed; main pushes automatically deploy. The owner explicitly chose to defer credential rotation and continue locally. **The release is blocked.**
 
-Reviewed locally on 2026-10-25 on `feat/manila-evidence`. This is a historical
-research application with a closed community-reporting gate. It is not approved
-for live collection or current dengue warnings. No hosted Supabase changes were
-made. The repository remote is Ramon-suydo/denguewatch-v2; the pasted request's
-Ramon-sufile owner does not match the configured remote.
+| Gate | Fresh local evidence | Status |
+|---|---|---|
+| Install, lint, types, geography, contrast, production build | npm ci; npm run lint; npm run typecheck; npm run test:geography (3); npm run test:contrast; npm run build: pass | DONE |
+| Unit/integration | npm test: 72 passed, zero skipped | DONE |
+| Fresh database | npm run db:verify: 24 SQL tests and 1 authenticated UI flow passed; all 11 forward migrations apply, migration ledger rerun is idempotent | DONE locally |
+| Browser stability | npm run test:ui: 31 passed in each of ui-verified-1, ui-verified-2, ui-verified-3, sequential runs; baseline default and one-worker runs also passed 29/29 before fixes | DONE |
+| Production and offline | npm run test:production: 5 passed; npm run test:pwa: 3 passed, including actual strict-CSP styles | DONE |
+| Accessibility | Browser axe assertions: zero critical/serious issues, including signed staff workspace | DONE within tested routes |
+| Dependency audit | npm audit --json: zero vulnerabilities | DONE |
+| Shipped attribution/filler | npm run data:validate passed; full marker inventory retained | DONE |
+| Evaluation and accuracy | npm run evaluate passed offline; evaluation, environmental evaluation and weekly outputs byte-identical; UI checks all 18 scenario/model/horizon MAE cells against saved output | DONE |
+| Secret audit | npm run security:secrets: 0 current findings, 44 known historical blobs, 0 unexpected history findings; exit 1 because owner deferred rotation | NEEDS OWNER |
+| Lighthouse mobile | Fresh 2026-10-25T07:11:46.373Z: performance 97, accessibility 100, best practices 96, SEO 100 | DONE |
+| ZAP local passive baseline | Fresh 2026-10-25T07:12:50.741Z: 0 High/Medium, 2 lower alerts retained | DONE |
+| Hosted verification and human approvals | No live connection, migration, reporting activation, deployed scan, usability or DPO approval claimed | NEEDS OWNER |
 
-## Implemented and verified locally
+## Root-cause corrections
 
-- Immutable source ingestion, both absent-day scenarios, source reconciliation,
-  lagged ERA5 provenance, expanding-window evaluation, weather ablations, alert
-  metrics, intervals, source sensitivity, descriptive drivers and figures.
-- Persistence remains the conservative public model. Weather worsens matched
-  1/2-week ridge error in both primary scenarios. Neither scenario establishes
-  a reliable complex-model improvement at those horizons. See EVALUATION.md.
-- Manila historical public pages, real 17-city NCR historical map, bilingual
-  Home/Prevention/Report, static public APIs, accessible tables and public PWA.
-- Separate staff layout, server roles, audited moderation/uploads, closed
-  submissions, proof-of-work, consent, withdrawal, suppression/delay, retention
-  function and conditional cron installation; full migration role tests.
-- Local setup guards, CI configuration, privacy/security docs and defense kit.
+The reproduced production retry failure came from a cache-first service worker bypassing API interception: the captured network response was 200 instead of the intended 503. The same test passed when only service workers were blocked. Ordinary UI tests now block workers, while PWA tests retain them; the error/retry test asserts an actual visible accessible alert and retry. Health-URL readiness and retained failure traces/videos support diagnosis. A later navigation-status regression made external requests on the offline map; status lookup is now scoped to home/report/community, preserving the original no-network map assertion. The failed run is retained. The older copied-bundle failures were not reproduced in the canonical checkout; their historical cause remains unverified.
 
-| Check | Actual result |
-| --- | --- |
-| Clean dependency install | Pass; npm ci |
-| Unit/integration | 66 passed, 0 failed/skipped; Node 22.23.2 |
-| Browser including axe and 360px | 29 passed; Edge; zero critical/serious axe findings in tested routes |
-| Production PWA and headers | 2 passed; Edge; public offline reload and private-cache exclusion |
-| Lint | Pass; zero warnings |
-| Type check / production build | Pass |
-| Geographic checks | 3 passed; hand-calculated metric buffers, Spearman ties and actual 17-city bounds |
-| Contrast | Pass; token pairs and simulated-vision ramp/boundary checks |
-| Dependency audit | 0 vulnerabilities; saved dependency-audit.json |
-| Full numerical evaluation rerun | Identical evaluation.json bytes; SHA256 3f18ac075ea62d1ee3b46632655882eb0253a09ce21374049a0c573cd1dffb46 |
-| Lighthouse mobile local production | Performance 94, accessibility 100, best practices 100, SEO 100; CLS 0.003 |
-| Raw inputs / defense-v1 | Unchanged; fallback tag bfdff26009b168b2c9a063519d2bdc92a2737f76 |
+Forward migrations correct source citations without changing applied SQL, protect retention RPC execution, enforce AAL2 for current staff RPCs and legacy admin RLS. Staff sign-in performs real SDK MFA enrollment/challenge; hosted execution remains pending. Database policy drives public collection status and fails closed. Reports stay unverified, delayed, threshold-suppressed and separate from official observations and models. Local signed Auth/PostgREST fixtures use actual SQL and disposable synthetic records; they are clearly labeled and excluded from production builds.
 
-Saved Lighthouse HTML/JSON and actual public screenshots/recording are under
-[evidence](evidence/). These are lab and navigation artifacts, not field
-performance, a complete WCAG certification or human usability findings.
-Evaluation figures are under [figures](figures/). The usability results template
-is deliberately blank.
+The first passive ZAP run found a Medium inline-style CSP weakness. The CSP now disallows inline style attributes; production chart/style tests pass and the final passive scan has no High/Medium findings. No active or authenticated penetration test is claimed.
 
-## Open release blockers and unverified work
+Manila case observations end 2023-12-02 and NCR ends 2021-01-10. These are historical research displays. Weather has its own status/date and unavailable fallback. Public charts default to complete-row scenario M; scenario Z assumes missing daily dates are zero only within coverage. The one-week forecast is last week's value; longer ridge comparisons are exploratory with wide uncertainty. Weather did not establish an operational improvement. Saved MAEs feed the visible accuracy table. Saved-checksum labels do not claim a fresh hosted full-row audit.
 
-1. **Credential rotation required.** The history audit finds the known local
-   database password because it equals a public project identifier. Treat it as
-   exposed; rotate it and update private configuration before hosted use. The
-   secret gate is unresolved. No private credential value is included here.
-   The heuristic scan covers reachable fetched history, not unknown secrets or
-   unreachable remote objects. CI without the private environment cannot prove
-   rotation of this credential.
-2. **Hosted deployment is unverified.** The two new 20261025 migrations, role
-   appointment, hosted Auth and actual scheduled purge execution have not been
-   applied or tested. Supabase/Docker local full-stack setup is blocked by absent
-   Docker here; only its guards and SQL fixtures were tested. No demo staff login
-   was fabricated. Follow DEPLOYMENT.md with owner authorization.
-3. **ZAP baseline not run.** Docker is unavailable and no deployed URL for this
-   revision was confirmed. evidence/zap-status.json states this; it is not a scan
-   report. Run and review the documented deployed baseline before release.
-4. **Governance and source confirmation remain.** Obtain DPO review, staff MFA
-   decision, data-owner confirmation of absent dates and source week semantics,
-   and confirmation of the population denominator and boundary vintage.
-5. **Human evaluation remains.** Recruit users, run the tasks and original SUS
-   questionnaire, record actual observations and complete the blank results.
-   Report-spike protocol remains a draft requiring a health-worker review.
-6. **CI and preview remain.** Workflow is configured but has not run on GitHub
-   for this branch. Test the Vercel preview and self-review before merging.
+The retired activation command initially exceeded its unchanged five-second regression timeout because it imported database/forecast modules before rejecting the command. It now rejects before dynamically importing those modules. The original failed log and later passes are retained. No test or safeguard was skipped, deleted or weakened.
 
-Public historical demo can run with `npm ci` then `npm run demo`; it does not
-require hosted secrets. Reports stay closed. The source ends in December 2023;
-NCR source ends January 2021. Neither supplies current 2026 disease activity.
+## NEEDS OWNER
 
-## Handoff
+1. Rotate the Supabase database password and affected server API keys in the dashboard. Privately update ignored .env.local, hosting environment variables and Actions secrets. Do not paste any values. Set CREDENTIALS_ROTATED=1 only after rotation. Configure the private exposure-guard secret using docs/ROTATE_CREDENTIALS.md.
+2. Run `npm run credentials:verify`, `npm run security:secrets`, `npm run hosted:bootstrap`, then `npm run db:verify -- --hosted`. If verification requires pending migrations, bootstrap after rotation and repeat verification. The audit attestation is not proof of revoked hosted credentials.
+3. Set BOOTSTRAP_ADMIN_EMAIL and BOOTSTRAP_ADMIN_PASSWORD privately; run `npm run hosted:admin`; remove the bootstrap password. Enroll/verify TOTP through the staff flow and exercise an actual hosted AAL2 login and authorized moderation. Local test JWTs are not hosted Auth proof.
+4. Configure repository variables SUPABASE_URL and DEPLOYED_URL, protected retention server-key secret, the private exposure fingerprint secret, and CREDENTIALS_ROTATED. Manually run Community retention and ZAP baseline workflows; inspect successful current-code runs/artifacts. Verify pg_cron or the active hourly Actions fallback using `npm run db:verify -- --hosted`. A YAML schedule alone is not proof of execution.
+5. Perform a real usability session and school/DPO review of consent, retention, withdrawal and institutional responsibility. Resolve original source retrieval dates, formal citation/redistribution terms, absence semantics and population attribution with source owners. No participants, approvals or source dates have been invented.
+6. Test locally and self-review the auth/schema changes before merging near the defense. Re-run required release gates in the intended environment. Only after every gate passes, set `$env:LAUNCH_GATES_PASSED = '1'` and run `npm run hosted:bootstrap -- --enable-reporting`. Emergency closure: `npm run reports:off`. Do not enable collection merely to demonstrate a test.
 
-Read README.md, DATA.md, EVALUATION.md, SECURITY_TESTS.md and DEPLOYMENT.md before
-changing the model or enabling collection. Preserve both scenarios and the
-negative weather result. Do not merge into main until the release gates are
-resolved; a main push triggers live Vercel deployment. The integration target is
-`feat/manila-redesign` until the redesign is approved.
-
-The user runs the push:
-
-```powershell
-git push -u origin feat/manila-evidence
-```
+Full numbered dashboard and command instructions: [ROTATE_CREDENTIALS.md](ROTATE_CREDENTIALS.md). All private configuration stays out of Git.

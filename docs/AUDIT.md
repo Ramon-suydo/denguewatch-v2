@@ -1,9 +1,11 @@
+> Historical project record. Current launch status and owner blockers are in IMPLEMENTATION_STATUS.md and LAUNCH_CHECKLIST.md. Older check counts, deployed states and instructions below are not current verification.
+
 # Audit against the replacement specification
 
 Audit date: 2026-10-25 (Asia/Manila). Baseline commit: 790becd.
 Working branch: feat/manila-evidence, based on feat/manila-redesign.
-The supplied prompt names Ramon-sufile/denguewatch-v2; this checkout's configured
-remote is Ramon-suydo/denguewatch-v2. No remote was changed.
+The supplied prompt names Ramon-sufile/denguewatch; this checkout's configured
+remote is Ramon-suydo/denguewatch. No remote was changed.
 
 ## Reproducible data evidence
 

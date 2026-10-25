@@ -1,125 +1,41 @@
-﻿# DengueWatch v2
+# DengueWatch
 
-A Manila-focused research app built with React 19, TypeScript, Vite, Tailwind,
-Recharts and Supabase. It shows supplied 2016–2023 Manila history, tests 1–2-week
-forecasts under two absent-day assumptions, compares historical NCR cities, and
-provides a separate closed-by-default community reporting/staff workflow.
+A historical Manila dengue research app, with clearly separate, unverified community awareness reports. Manila case data ends 2023-12-02; NCR weekly data ends 2021-01-10. Neither is a live risk feed. The public chart starts with complete-row Scenario M; Scenario Z assumes zero for missing dates only inside source coverage. The one-week forecast is last week's value. Weather models did not establish a reliable operational improvement; longer-horizon ridge comparisons remain exploratory.
 
-**Current risk is unavailable:** supplied official data ends in 2023; the NCR map
-permanently states that data ends January 2021. No district case figures, live NCR
-forecast, fabricated KPI, SMS/email alert or PDF-export feature is offered.
+## Run locally
 
-The current implementation branch is `feat/manila-evidence`, based on
-`feat/manila-redesign`. `main` deploys live; `defense-v1` remains the frozen fallback.
-Do not merge schema/auth work without local testing and self-review.
-
-## Run the public demo
-
-Use Node **22.12 or newer** (`.nvmrc` selects 22).
+Use Node 22.12+ and the Python packages in requirements-environment.txt. Public research pages can use their bundled files without private credentials.
 
 ```powershell
 npm ci
-npm run demo
+npx playwright install chromium
+npm run dev
 ```
 
-`npm run demo` builds and serves a production preview on localhost. No database
-credentials are required for the committed public research APIs. For source
-editing use `npm run dev`. Windows users with a reserved port can choose
-`npm run preview -- --host 127.0.0.1 --port 43125`.
-
-Public routes: `/`, `/trends`, `/metro-manila` (also `/map`), `/prevention`,
-`/report`, `/community`, `/methodology`, `/data-sources`, `/privacy`, `/terms` and
-`/legal`. Home/Prevention/Report have English/Filipino content. `/admin` uses a
-separate staff layout. Legacy `/city/:id` links redirect to Manila Trends.
-
-## Evidence and reproducibility
-
-```powershell
-npm run data:prepare
-npm run evaluate
-npm run data:publish
-```
-
-Evaluation uses fixed seeds, expanding origins and past-only fitting/scaling,
-paired support per scenario/horizon, cases/weather ablations, both missing-day
-scenarios and a separate DOH-source sensitivity. Public forecasts conservatively
-use persistence. Weather did **not** improve the primary matched 1/2-week ridge
-MAE under either scenario. No causal or present-day accuracy claim is made.
-
-Processed inputs, per-origin evidence, model metrics and provenance are versioned.
-`npm run evaluate` works with committed processed weather; `npm run weather:fetch`
-recreates weather from verified Open-Meteo ERA5 requests/caches. Full figures can
-be regenerated using `npm run evaluate:plots` with Python 3 and matplotlib.
-Raw files are immutable. A missing date is not silently zero: M preserves missing;
-Z explicitly assumes zero only inside supplied daily coverage. Source citations,
-NCR population provenance and DOH week-boundary semantics remain qualified.
-
-- [Implementation status and remaining gates](docs/IMPLEMENTATION_STATUS.md)
-- [Audit](docs/AUDIT.md), [dictionary and assumptions](docs/DATA.md),
-  [reverified supplied measurements](docs/MEASUREMENTS.md)
-- [Evaluation and figures](docs/EVALUATION.md), [API contract](docs/API.md)
-- [Weather provenance](data/external/SOURCES.md)
-
-## Checks
+For an installed Edge browser on Windows, set `$env:PLAYWRIGHT_CHANNEL = 'msedge'` before browser checks. Tests use isolated public configuration and disposable, clearly labeled local report data; they never submit to hosting.
 
 ```powershell
 npm run lint
 npm run typecheck
 npm test
-npm run build
+npm run db:verify
+npm run test:geography
 npm run test:contrast
-npx playwright install chromium
+npm run build
 npm run test:ui
+npm run test:production
 npm run test:pwa
-npm audit --audit-level=high
+npm run security:secrets
 ```
 
-Set `PLAYWRIGHT_CHANNEL=msedge` or `chrome` to use an installed browser.
-`PLAYWRIGHT_PORT` overrides the browser-test port on Windows. CI runs checks on
-pushes and pull requests. Browser fixtures are development-only; production
-builds reject their flag. [Saved mobile Lighthouse report](docs/evidence/lighthouse-mobile.report.html).
+## Release status
 
-## Local staff setup
+Work is on fix/launch. Main deploys automatically and must not be updated until every release gate passes. Credential rotation was explicitly deferred by the owner, so hosted verification, migrations, first admin/MFA, schedule execution and reporting activation remain NEEDS OWNER. See docs/IMPLEMENTATION_STATUS.md, docs/LAUNCH_CHECKLIST.md and docs/ROTATE_CREDENTIALS.md for actual results and exact owner steps. Test locally and self-review the schema/auth changes before merging near the defense.
 
-With local Docker running, `npm run setup:local` starts local Supabase, applies
-local migrations, seeds the supplied official history, creates a random-password
-local demo administrator and keeps reporting **closed**. It refuses non-loopback
-API/database URLs and remote Docker contexts. It never uses hosted DB credentials.
-Then run `npm run staff:dev` and open `/admin`; credentials are stored only in the
-ignored `.artifacts/local-staff-credentials.json`. No fake health reports are seeded.
-The complete Docker/Auth path could not be exercised here because Docker is absent;
-local SQL/role behavior is tested separately. See [deployment](docs/DEPLOYMENT.md).
+The server reporting policy fails closed until verification and explicit activation. One-line kill switch after configuring rotated server credentials: `npm run reports:off`. Browser flags cannot override database authorization. Community reports never enter official counts or forecasts.
 
-## Release gates
+## Architecture and attribution
 
-The local database password matches a public project identifier in Git history.
-**Rotate it in Supabase and update local configuration before hosted use.** The
-known-value secret scan must not be described as clean. A CI checkout without the
-private env file cannot establish that rotation happened.
+React/Vite serves same-origin research JSON and an allowlisted offline PWA cache. Supabase Auth provides staff sessions; PostgreSQL RLS and audited RPCs enforce appointed roles, MFA claims, moderation, suppression, withdrawal and retention. Node/Python scripts handle ingestion, evaluation and operations. Embedded PostgreSQL tests verify actual migrations/RPCs; the local signed Auth/PostgREST adapter is not proof of hosted Supabase Auth/TOTP behavior.
 
-New hosted migrations, real staff Auth/MFA, actual purge-job execution, deployed
-headers, DPO/consent/provenance review and deployed ZAP remain unverified. Collection
-has not been activated. `npm run reports:enable` is retired and fails before any
-DB connection. Public reports are never official counts or model inputs.
-
-- [Privacy](docs/PRIVACY.md), [security](docs/SECURITY.md),
-  [threat model](docs/THREAT_MODEL.md), [security tests](docs/SECURITY_TESTS.md)
-- [Usability plan — blank results](docs/USABILITY_PLAN.md),
-  [health-worker protocol](docs/PROTOCOL.md)
-- [Five-minute demo/fallback](docs/DEMO.md), [defense answers](docs/DEFENSE_QA.md)
-
-Follow [CONTRIBUTING.md](CONTRIBUTING.md). Work stays on feature branches and
-initial PRs target `feat/manila-redesign`. The user pushes unless explicitly
-requesting otherwise. No hosted write, report activation or production merge is
-part of a routine build. Ignore env/certs, build outputs, local raw additions and
-private artifacts; never force-add those to share with a collaborator.
-
-For the complete numerical evaluation and figures in one command, install the
-pinned Python plotting dependencies with `python -m pip install -r requirements-plots.txt`,
-then run `npm run evaluate`.
-
-Environmental extension: [sources, ablations and limits](docs/ENVIRONMENT.md).
-Install `requirements-environment.txt` for the extended evaluation, then use
-`npm run environment:fetch` once to populate public-provider caches.
-`npm run evaluate` runs entirely from those caches; `npm run weather:refresh`
-is a separate server-only daily context refresh, never a live dengue warning.
+Code is MIT licensed. Data and third-party assets retain their own attribution/usage terms; see data/README.md. Original health-file retrieval dates and redistribution permissions remain unknown where the source owner has not supplied them. Never commit environment files, certificates, credentials, real report exports or personal health information. Configure the hook with `git config core.hooksPath .githooks`.

@@ -99,7 +99,12 @@ export type NcrEvidence = {
 const memory = new Map<string, unknown>();
 async function json(path: string, signal: AbortSignal) {
   if (!navigator.onLine && memory.has(path)) return memory.get(path) as any;
-  const response = await fetch(path, { signal });
+  let response: Response;
+  try { response = await fetch(path, { signal }); }
+  catch (error) {
+    if (signal.aborted) throw error;
+    throw Error("Bundled research data could not load. Reconnect or retry.");
+  }
   if (!response.ok)
     throw Error("Bundled research data could not load. Reconnect or retry.");
   const data = await response.json();

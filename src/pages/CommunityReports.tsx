@@ -1,4 +1,5 @@
-﻿import { Card } from "../components/ui";
+import { ReportingStatus } from "../components/ReportingStatus";
+import { Card } from "../components/ui";
 import { ReadState } from "../components/PageState";
 import { useResource } from "../lib/resources";
 import { signalAggregates } from "../lib/signals";
@@ -10,7 +11,7 @@ export function CommunityReports() {
       <h1>Community reports, kept separate.</h1>
       <Card>
         <p>
-          Collection remains closed. These are community-reported, unverified
+          <ReportingStatus /> These are community-reported, unverified
           awareness signals, never official dengue counts or forecast inputs.
           Staff approval is a content review, not medical verification.
         </p>

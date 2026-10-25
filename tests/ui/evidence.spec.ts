@@ -94,11 +94,15 @@ test("Filipino home/prevention, missing API retry, and legacy forecasts isolated
   await expect(page.getByRole("heading", { name: "4S ng DOH" })).toBeVisible();
   await page.goto("/city/old-id");
   await expect(page).toHaveURL(/\/trends$/);
-  await page.route("**/api/v2/manila.json", (route) =>
-    route.fulfill({ status: 503, body: "Unavailable" }),
-  );
+  let failedRequests = 0;
+  await page.route("**/api/v2/manila.json", (route) => {
+    failedRequests++;
+    return route.fulfill({ status: 503, body: "Unavailable" });
+  });
   await page.goto("/");
   await expect(page.getByRole("alert")).toContainText("could not load");
+  expect(failedRequests).toBeGreaterThan(0);
+  await expect(page.getByRole("button", { name: "Try again" })).toBeVisible();
   await page.unroute("**/api/v2/manila.json");
   await page.getByRole("button", { name: "Try again" }).click();
   await expect(

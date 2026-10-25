@@ -1,0 +1,32 @@
+name: Weather cache refresh
+on:
+  schedule:
+    - cron: '31 21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: weather-cache-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run weather:refresh
+      - run: npm run data:validate
+      - run: npm test
+      - name: Commit validated cache only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/api/v2/weather.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: refresh validated weather cache'
+            git push
+          fi

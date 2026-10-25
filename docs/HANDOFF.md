@@ -1,3 +1,5 @@
+> Historical project record. Current launch status and owner blockers are in IMPLEMENTATION_STATUS.md and LAUNCH_CHECKLIST.md. Older check counts, deployed states and instructions below are not current verification.
+
 # Handoff
 Current branch: feat/manila-evidence. Earlier entries below are historical.
 Current specification: FINAL_REQUIREMENTS.md plus ENVIRONMENT_REQUIREMENTS.md (weather/factors replacement). Current evidence and release gates: IMPLEMENTATION_STATUS.md.

@@ -14,6 +14,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { LayoutShell, Button, Card } from "./components/ui";
+import { ReportingStatus } from "./components/ReportingStatus";
 import { Loading } from "./components/PageState";
 import { AppDataProvider } from "./lib/resources";
 const Home = lazy(() =>
@@ -152,7 +153,7 @@ function PublicRoutes() {
       ]}
       action={
         <Link className="community-link" to="/report">
-          Community reports: opening soon
+          {["/", "/report", "/community"].includes(location.pathname) ? <ReportingStatus compact /> : "Community reports"}
         </Link>
       }
     >

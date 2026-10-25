@@ -1,6 +1,7 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { parse } from "csv-parse/browser/esm/sync";
 import { Button, Card, Input } from "../components/ui";
+import { StaffMfa } from "../components/StaffMfa";
 import { getSupabase } from "../lib/supabase";
 type Signal = {
   id: string;
@@ -13,6 +14,7 @@ type Signal = {
 };
 type Upload = { id: string; citation: string; status: string; rows: unknown[] };
 export function Admin() {
+  const [mfaRequired,setMfaRequired]=useState(false);
   const [role, setRole] = useState<string | null>(null),
     [email, setEmail] = useState(""),
     [password, setPassword] = useState(""),
@@ -58,7 +60,7 @@ export function Admin() {
     void (async () => {
       try {
         const { data } = await getSupabase().auth.getSession();
-        if (data.session) await load();
+        if (data.session) setMfaRequired(true);
       } catch {
         setRole(null);
       }
@@ -85,15 +87,7 @@ export function Admin() {
       });
       setPassword("");
       if (error) throw Error("Sign-in failed. Check your credentials.");
-      try {
-        await load();
-      } catch {
-        await getSupabase().auth.signOut();
-        setRole(null);
-        throw Error(
-          "Access denied: an appointed moderator or admin role is required.",
-        );
-      }
+      setMfaRequired(true);
     });
   }
   async function moderate(id: string, status: string) {
@@ -212,13 +206,13 @@ export function Admin() {
         )}
       </header>
       <main id="admin-main" className="ui-container app-content evidence-page">
+        {import.meta.env.DEV && import.meta.env.VITE_TEST_FIXTURES === "true" && <p className="data-notice">LOCAL TEST DATA ONLY: isolated development dataset. No hosted reports.</p>}
         <h1>{role ? "Staff review workspace" : "Staff sign in"}</h1>
         <p>
-          Separate from public pages. Collection remains closed until the owner
-          separately authorizes launch.
+          Separate from public pages. Reporting status is controlled by the server policy; staff appointment and MFA are required.
         </p>
         {error && <p role="alert">{error}</p>}
-        {!role ? (
+        {mfaRequired ? <StaffMfa onVerified={async()=>{await load();setMfaRequired(false);}} onCancel={()=>{void getSupabase().auth.signOut();setMfaRequired(false);setRole(null);}} /> : !role ? (
           <Card>
             <form onSubmit={login}>
               <Input

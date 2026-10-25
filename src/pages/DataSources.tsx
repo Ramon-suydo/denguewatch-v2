@@ -53,9 +53,9 @@ export function DataSources() {
                       detail="Weekly, derived monthly and separate daily records; case totals are never added across sources."
                     />
                     <StatCard
-                      label="Full-row verification"
-                      value={audit.verification ? "Matched" : "Not established"}
-                      detail="Snapshot verification compares every official row with audited source files."
+                      label="Saved checksum metadata"
+                      value={audit.verification ? "Consistent" : "Inconsistent"}
+                      detail="Saved row/source checksum labels agree. This is not a fresh full-row comparison or a hosted database check."
                     />
                     <StatCard
                       label="Years represented"
@@ -215,7 +215,7 @@ export function DataSources() {
                       <li>
                         <strong>Community reports are unverified.</strong> They
                         stay separate from official data and forecasts, with
-                        submissions closed. V2 groups below three are hidden and
+                        submission availability controlled by server policy. V2 groups below three are hidden and
                         approved reports are delayed at least 72 hours; any
                         displayed counts are lower bounds.
                       </li>

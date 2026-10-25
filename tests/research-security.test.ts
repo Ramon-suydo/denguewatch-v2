@@ -68,4 +68,6 @@ test("PWA allowlist contains public assets only and security headers prohibit fr
   assert.ok(csp.includes("script-src 'self'"));
   assert.ok(csp.includes("frame-ancestors 'none'"));
   assert.ok(!csp.includes("unsafe-eval"));
+  assert.ok(!csp.includes("unsafe-inline"));
+  assert.ok(csp.includes("style-src-attr 'none'"));
 });

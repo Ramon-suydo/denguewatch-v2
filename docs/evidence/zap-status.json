@@ -1,1 +1,14 @@
-﻿{"status":"not_run","reasons":["No deployed URL confirmed for the current revision","Docker executable unavailable in this environment"],"not_a_scan_report":true,"next_command":"npm run security:zap -- https://your-deployed-preview.example"}
+{
+  "local": {
+    "target": "http://127.0.0.1:43142",
+    "utc": "2026-10-25T07:12:50.741Z",
+    "mode": "passive baseline; no active scan or authenticated coverage",
+    "runtime_exit_code": 0,
+    "high_or_medium_alerts": 0,
+    "low_or_info_alerts": 2,
+    "passed": true
+  },
+  "hosted": "NEEDS OWNER: configure DEPLOYED_URL and run weekly/manual deployed workflow",
+  "runtime": "Official-checksum-verified portable Java 17 and ZAP 2.17; Docker absent",
+  "scope": "Passive public baseline only, no active or authenticated coverage"
+}

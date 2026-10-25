@@ -1,5 +1,5 @@
-export const PENDING = "[pending]";
-export const CITATION_PENDING = "[exact citation pending]";
+export const PENDING = "unknown";
+export const CITATION_PENDING = "Formal citation details unknown; data-owner confirmation required.";
 export const citationFields = {
   title: "Title",
   issuingOffice: "Issuing office",
@@ -25,12 +25,12 @@ export const sourceMetadata: Record<string, SourceMetadata> = {
   },
   "doh-epi-dengue-data-2016-2021.csv": {
     title: "DOH EPI Dengue Data 2016-2021 (doh-epi-dengue-data-2016-2021.csv), filtered to National Capital Region",
-    issuingOffice: "Department of Health (specific office not confirmed)",
+    issuingOffice: "Department of Health Epidemiology Bureau weekly surveillance data (EPI)",
     dateObtained: "Not available", foiRequestId: "Not available", url: "not public", usageTerms: "Not stated",
   },
   "Daily_Reported_Cases_of_Dengue_in_the_City_of_Manila_from_2018_to_2023.xlsx": {
     title: "Daily Reported Cases of Dengue in the City of Manila, 2018 to 2023 (workbook)",
-    issuingOffice: "City of Manila (specific office not confirmed)",
+    issuingOffice: "Provided by the City of Manila health department to the project team; formal citation pending data owner",
     dateObtained: "Not available", foiRequestId: "Not available", url: "not public", usageTerms: "Not stated",
   },
 };
@@ -46,7 +46,7 @@ export function pendingCitationFields(): string[] {
 }
 export function sourceAttribution(): string {
   return pendingCitationFields().length
-    ? `DOH/FOI ${CITATION_PENDING}`
+    ? `Source details: ${CITATION_PENDING}`
     : [...new Set(Object.values(sourceMetadata).map(source => source.issuingOffice))].join("; ");
 }
 

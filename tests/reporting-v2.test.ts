@@ -14,6 +14,7 @@ async function role(
 ) {
   await db.exec("set role " + name);
   await db.query("select set_config('request.jwt.claim.sub',$1,false)", [id]);
+  await db.query("select set_config('request.jwt.claims',$1,false)", [JSON.stringify({sub:id,aal:name==='authenticated'?'aal2':'aal1'})]);
   try {
     await fn();
   } finally {
@@ -302,3 +303,28 @@ test("retention removes sensitive signals; all new tables have RLS; purge is not
     );
   });
 });
+
+test("appointed staff cannot review reports with an AAL1 session",async()=>{
+ await role("authenticated",moderator,async()=>{
+  await db.query("select set_config('request.jwt.claims',$1,false)",[JSON.stringify({sub:moderator,aal:'aal1'})]);
+  assert.equal((await db.query<{role:string|null}>('select public.staff_role() role')).rows[0].role,null);
+  await assert.rejects(db.query('select * from public.staff_signal_queue()'));
+ });
+});
+
+test("v2 global submission and challenge issuance limits reject bursts without bypassing proof",async()=>{
+ await db.exec("update public.reporting_v2_policy set enabled=true");
+ await db.exec("insert into public.community_signals(code_hash,onset_date,consent_version,duplicate_hash) select encode(sha256(convert_to('local-limit-test-'||g,'UTF8')),'hex'),current_date,'community-v2',repeat('x',64) from generate_series(1,30) g");
+ await role("anon","",async()=>{await assert.rejects(submit(),/Please try later/);});
+ await db.exec("insert into private.report_challenges(salt) select 'local-test-only' from generate_series(1,200)");
+ await role("anon","",async()=>{await assert.rejects(challenge(),/Please try later/);});
+});
+
+ test("legacy admin RLS requires AAL2 and recognizes current admin appointments", async()=>{
+ await role("authenticated",admin,async()=>{
+ await db.query("select set_config('request.jwt.claims',$1,false)",[JSON.stringify({sub:admin,aal:'aal1'})]);
+ assert.equal((await db.query<{allowed:boolean}>('select private.is_admin() allowed')).rows[0].allowed,false);
+ await assert.rejects(db.query("insert into public.lgus(name) values('LOCAL MFA DENIAL TEST')"));
+ });
+ await role("authenticated",admin,async()=>{assert.equal((await db.query<{allowed:boolean}>('select private.is_admin() allowed')).rows[0].allowed,true);});
+ });

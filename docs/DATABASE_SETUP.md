@@ -1,3 +1,5 @@
+> Historical project record. Current launch status and owner blockers are in IMPLEMENTATION_STATUS.md and LAUNCH_CHECKLIST.md. Older check counts, deployed states and instructions below are not current verification.
+
 > This document describes the completed initial data milestone. For the new public app, forecast cache, and reporting lifecycle migrations, see [PUBLIC_APP.md](PUBLIC_APP.md). Do not repeat initial migration setup on an existing project.
 
 # Database setup and verification
@@ -14,7 +16,7 @@ Use a dedicated DengueWatch Supabase project. Do not point these initial migrati
 at the old Sequelize schema or an unrelated project.
 
 ```powershell
-Set-Location 'D:\Project\denguewatch-v2'
+Set-Location 'D:\Project\denguewatch'
 node --version
 npm ci
 Copy-Item .env.example .env.local

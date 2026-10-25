@@ -39,3 +39,6 @@ data/external/weather-refresh.lock
 # Python analysis bytecode
 __pycache__/
 *.py[cod]
+
+# Expanded audit payload stays local; publish its sanitized ZIP only.
+review_bundle/

@@ -1,3 +1,5 @@
+> Historical project record. Current launch status and owner blockers are in IMPLEMENTATION_STATUS.md and LAUNCH_CHECKLIST.md. Older check counts, deployed states and instructions below are not current verification.
+
 # Defense day — frozen laptop runbook
 
 Prepared 2026-10-03 (Asia/Manila). Features are frozen. Submissions remain closed.
@@ -14,7 +16,7 @@ left unchanged during the freeze.
 From PowerShell:
 
 ```powershell
-Set-Location 'D:\Project\denguewatch-v2'
+Set-Location 'D:\Project\denguewatch'
 git status --short
 node --version
 npm --version
@@ -40,7 +42,7 @@ needed for forced snapshot reads. Never print or project .env/certificate conten
 With the already prepared dist/ and node_modules/ intact:
 
 ```powershell
-Set-Location 'D:\Project\denguewatch-v2'
+Set-Location 'D:\Project\denguewatch'
 npm run preview -- --host 127.0.0.1 --port 4173 --strictPort
 ```
 

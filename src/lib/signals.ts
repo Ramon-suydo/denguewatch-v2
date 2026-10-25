@@ -125,7 +125,7 @@ export async function signalAggregates(
     .abortSignal(signal);
   if (error)
     throw Error(
-      "Community aggregates are unavailable. Collection remains closed; no counts are inferred.",
+      "Community aggregates are unavailable; no counts are inferred. Check reporting status separately.",
     );
   return (data ?? []).map((r: SignalAggregate) => {
     if (

@@ -1,3 +1,4 @@
+import { ReportingStatus } from "./ReportingStatus";
 import { Link } from "react-router-dom";
 import {
   LEGAL_VERSION,
@@ -22,8 +23,7 @@ export function PrivacyDraft() {
       <h2>Privacy Notice</h2>
       <h3>What happens today</h3>
       <p>
-        Public browsing does not require an account. Community submissions are
-        closed. No analytics or advertising SDKs are installed. The app sets no
+        Public browsing does not require an account. <ReportingStatus /> No analytics or advertising SDKs are installed. The app sets no
         cookies. Only a language preference is stored in localStorage; reports
         and withdrawal codes are never stored in browser storage. Fonts and app
         code are served with the app; the dated official-data snapshot is
@@ -44,7 +44,7 @@ export function PrivacyDraft() {
         research files can remain available.
       </p>
       <p>
-        Supabase access uses a public anonymous API key, not a user account.
+        Public reporting uses a public anonymous API key. Staff sign-in uses an appointed Supabase Auth account and MFA.
         Session persistence and automatic auth refresh are disabled. The
         withdrawal form can send a private code to Supabase when online; it is
         not a public lookup and returns the same result regardless of a matching
@@ -83,14 +83,13 @@ export function PrivacyDraft() {
         is intended for sale, advertising or third parties' own use. The v2
         public area/week counts require at least three approved reports and a
         minimum 72-hour publication delay. Legacy submission entrypoints are
-        closed by the pending v2 migration. Suppression reduces exposure but
+        permanently closed; v2 submission follows its server policy. Suppression reduces exposure but
         does not guarantee anonymity. Community reports are excluded from
         official series, forecasts and the public demo snapshot.
       </p>
       <p>
         Community-report launch retention: {LAUNCH_RETENTION}. The existing
-        database is configured for 90 days, with an hourly expiry purge; that
-        earlier setting must be reconfirmed in the launch review. V2 withdrawal
+        database is configured for 90 days, with an hourly expiry-purge definition. Hosted scheduling and execution must be verified in the launch review. V2 withdrawal
         immediately removes a matching active report from aggregates and clears
         note, symptoms and area; legacy DW- withdrawal clears optional contact
         and barangay text. Remaining structured fields persist until
@@ -139,7 +138,7 @@ export function TermsDraft() {
       <p>
         Do not rely on the app for diagnosis, treatment, emergency decisions or
         outbreak declarations. Follow DOH/local health-office guidance and
-        qualified clinical advice. Community reports, if collection later opens,
+        qualified clinical advice. Community reports, when server policy permits submission,
         remain unverified and separate from official records.
       </p>
       <h3>Acceptable use</h3>
@@ -162,8 +161,8 @@ export function TermsDraft() {
       </p>
       <p>
         Respect source usage terms and attribution; permission to redistribute
-        or reuse supplied files has not been established by a placeholder
-        citation. <Link to="/legal#sources">Data Sources & Attribution</Link> ·{" "}
+        or reuse supplied files has not been established by a descriptive
+        attribution. <Link to="/legal#sources">Data Sources & Attribution</Link> ·{" "}
         <Link to="/legal#privacy">Privacy Notice</Link>.
       </p>
     </div>

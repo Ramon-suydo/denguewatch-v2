@@ -204,7 +204,7 @@ export function riskInputs(
     weather: {
       weight: 0,
       contribution: 0,
-      status: "placeholder; historical weather not imported or validated",
+      status: "unvalidated for this legacy risk score; weather contribution excluded",
     },
     latest: rows
       .filter((r) => r.source === MONTHLY_SOURCE && r.period_start <= today)

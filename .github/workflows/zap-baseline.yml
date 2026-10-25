@@ -1,0 +1,23 @@
+name: ZAP deployed baseline
+on:
+  schedule:
+    - cron: '43 3 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/scan-zap.mjs
+        env:
+          ZAP_TARGET_URL: ${{ vars.DEPLOYED_URL }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: zap-baseline
+          path: docs/evidence/zap-*

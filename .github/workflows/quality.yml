@@ -18,7 +18,13 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install -r requirements-environment.txt
       - run: npm ci
+      - run: npx playwright install --with-deps chromium
       - run: npm run security:secrets
+        env:
+          EXPOSED_CREDENTIAL_SHA256: ${{ secrets.EXPOSED_CREDENTIAL_SHA256 }}
+          CREDENTIALS_ROTATED: ${{ vars.CREDENTIALS_ROTATED }}
+      - run: npm run data:validate
+      - run: npm run db:verify
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
@@ -26,8 +32,10 @@ jobs:
       - run: npm run build
       - run: npm run test:contrast
       - run: npm audit --audit-level=high
-      - run: npx playwright install --with-deps chromium
       - run: npm run test:ui
+      - run: npm run test:ui
+      - run: npm run test:ui
+      - run: npm run test:production
       - run: npm run test:pwa
       - uses: actions/upload-artifact@v4
         if: always()

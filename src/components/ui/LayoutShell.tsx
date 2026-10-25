@@ -166,7 +166,7 @@ export function LayoutShell({
         </div>
       </div>
       <main id="main" tabIndex={-1}>
-        {research && <ConnectionNotice />}
+        {research && <><ConnectionNotice /><p className="evidence-banner">Data as of {latest?.date ?? "unknown"}. Historical Manila case data ends 2023-12-02 and is not live. NCR weekly data ends 2021-01-10; weather has its own date and cannot update case counts.</p></>}
         {children}
       </main>
       <footer className="site-footer" lang="en">
