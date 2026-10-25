@@ -27,6 +27,7 @@ test("production serves security headers and rejects fixture pages and legacy re
     "frame-ancestors 'none'",
   );
   expect(response.headers()["x-content-type-options"]).toBe("nosniff");
+  const manifest=JSON.parse(await readFile('docs/evidence/ml-pwa-assets.json','utf8'));const worker=manifest.map_only_assets.find((path:string)=>path.includes('/maplibre-gl-worker-'));expect(worker).toBeTruthy();const workerResponse=await request.get(worker);expect(workerResponse.headers()['content-security-policy']).toContain('https://tiles.openfreemap.org');expect(workerResponse.headers()['content-security-policy']).toContain("style-src-attr 'none'");const report=await request.get('/report');expect(report.headers()['content-security-policy']).not.toContain('tiles.openfreemap.org');
   for (const route of ["/dev", "/design-preview", "/dev/legacy-report"]) {
     await goto(page, route);
     await expect(

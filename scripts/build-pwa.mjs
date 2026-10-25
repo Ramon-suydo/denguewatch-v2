@@ -8,7 +8,7 @@ const all=await files('dist');for(const path of all){const name='/'+path.slice(5
 const mapAssets=all.filter(p=>(p.startsWith('dist/assets/')&&!core.has('/'+p.slice(5))&&!/Admin-|NcrModelUpload/.test(p))||p.startsWith('dist/basemap/')||p==='dist/geo/ncr-cities.geojson').map(p=>encodeURI('/'+p.slice(5)));
 // Admin code is excluded. Risk-only chunks and basemap files are never precached on other pages.
 const coreAssets=[...core].map(encodeURI).sort(),hash=createHash('sha256');for(const path of [...coreAssets,...mapAssets])hash.update(await readFile('dist'+decodeURI(path)));const version='dw-research-'+hash.digest('hex').slice(0,16);
-const policies=JSON.parse(await readFile('vercel.json','utf8')).headers;const riskPolicy=policies.find(r=>r.source==='/risk-map/:path*').headers[0].value,defaultPolicy=policies.find(r=>r.source==='/((?!risk-map(?:/|$)).*)').headers[0].value;
+const policies=JSON.parse(await readFile('vercel.json','utf8')).headers;const riskPolicy=policies.find(r=>r.source==='/risk-map/:path*').headers[0].value,defaultPolicy=policies.find(r=>r.source.startsWith('/((?!risk-map')).headers[0].value;
 const worker=`const RISK_POLICY=${JSON.stringify(riskPolicy)},DEFAULT_POLICY=${JSON.stringify(defaultPolicy)};const CACHE=${JSON.stringify(version)},CORE=${JSON.stringify(coreAssets)},MAP=${JSON.stringify(mapAssets)},active=new Map();
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('dw-research-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

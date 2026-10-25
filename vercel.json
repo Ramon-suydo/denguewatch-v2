@@ -35,7 +35,16 @@
       ]
     },
     {
-      "source": "/((?!risk-map(?:/|$)).*)",
+      "source": "/assets/maplibre-gl-worker-:hash.js",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self'; style-src-attr 'none'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://tiles.openfreemap.org; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; worker-src 'self'; manifest-src 'self'"
+        }
+      ]
+    },
+    {
+      "source": "/((?!risk-map(?:/|$)|assets/maplibre-gl-worker-[^/]+[.]js$).*)",
       "headers": [
         {
           "key": "Content-Security-Policy",

@@ -18,7 +18,7 @@ Replay includes every calendar week in the evaluation range. Unscorable lag/targ
 
 ## CSP, privacy and loading
 
-The Risk Map document alone permits tile connections to tiles.openfreemap.org and inline style attributes required by MapLibre positioning. Other documents retain style-src-attr none and no tile host permission. Primary navigation uses full document loads, so moving to/from Risk Map receives the right policy. The local worker is bundled and served from self; blob worker exceptions are unnecessary. Preview middleware mirrors Vercel route headers.
+The Risk Map document permits tile connections to tiles.openfreemap.org and inline style attributes required by MapLibre positioning. Its dedicated /assets/maplibre-gl-worker-*.js resource also permits tile connections, with strict style attributes and no Supabase connection permission. Other documents retain style-src-attr none and no tile host permission. Primary navigation uses full document loads, so moving to/from Risk Map receives the right policy. The local worker is bundled and served from self; blob worker exceptions are unnecessary. Preview middleware mirrors Vercel route headers.
 
 MapLibre code/CSS/worker and PMTiles/glyph/sprite/boundary requests are lazy and only warmed by a Risk Map client. Dashboard uses a small neutral SVG thumbnail with no encoded risk values. Community Report imports no map engine and sends no map requests. Map requests use same-origin credentials mode, which omits cross-origin cookies. The privacy drawer discloses provider IP/browser-header/viewed-area visibility. No claim is made that third-party maps are anonymous.
 
@@ -34,3 +34,5 @@ PWA core assets and map-only assets are separately enumerated in docs/evidence/m
 - scripts/build-basemap.md and data/external/ml-basemap.provenance.json
 
 Glyph paths are canonical URL paths in the cache manifest, including encoded spaces. Offline checks wait for all optional map assets, require visible city labels and verify an actual PMTiles 206 response.
+
+The dedicated worker needs its own connect policy: workers inherit the policy on their script response. Restricting only the Risk Map document blocked primary vector tiles while the local fallback still worked. The production header test checks the worker policy and confirms Report has no tile-host permission.

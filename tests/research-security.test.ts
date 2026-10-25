@@ -62,7 +62,7 @@ test("PWA allowlist contains public assets only and security headers prohibit fr
   assert.ok(!worker.includes("supabase.co"));
   const configuration = JSON.parse(await readFile("vercel.json", "utf8"));
   const policies=configuration.headers.flatMap((rule:any)=>rule.headers.filter((h:any)=>h.key==='Content-Security-Policy').map((h:any)=>({source:rule.source,csp:h.value as string})));
-  assert.equal(policies.length,2);
+  assert.equal(policies.length,3);
   for(const {source,csp} of policies){
     assert.ok(csp.includes("script-src 'self'"));
     assert.ok(csp.includes("frame-ancestors 'none'"));
@@ -72,8 +72,13 @@ test("PWA allowlist contains public assets only and security headers prohibit fr
       assert.ok(csp.includes("style-src-attr 'unsafe-inline'"));
       assert.ok(csp.includes('https://tiles.openfreemap.org'));
       assert.equal(csp.match(/unsafe-inline/g)?.length,1);
+    }else if(source==='/assets/maplibre-gl-worker-:hash.js'){
+      assert.ok(csp.includes('https://tiles.openfreemap.org'));
+      assert.ok(!csp.includes('supabase.co'));
+      assert.ok(!csp.includes('unsafe-inline'));
+      assert.ok(csp.includes("style-src-attr 'none'"));
     }else{
-      assert.equal(source,'/((?!risk-map(?:/|$)).*)');
+      assert.equal(source,'/((?!risk-map(?:/|$)|assets/maplibre-gl-worker-[^/]+[.]js$).*)');
       assert.ok(!csp.includes('unsafe-inline'));
       assert.ok(csp.includes("style-src-attr 'none'"));
       assert.ok(!csp.includes('tiles.openfreemap.org'));
