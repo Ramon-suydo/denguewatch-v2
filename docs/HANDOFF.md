@@ -1,3 +1,11 @@
+# Main publication handoff
+
+The owner explicitly authorizes publishing the completed redesign to main on 2026-10-25 for Claude review. Read [CLAUDE_HANDOFF.md](CLAUDE_HANDOFF.md) for the source map, calculation entry points, verified results and remaining owner steps. Every main push triggers a Vercel deployment; successful hosted operation is not verified by publication. Reporting stays closed and credential rotation remains deferred.
+
+The following feature-branch handoff and local-only statements record the pre-publication checkpoint. They do not override this later publication authorization.
+
+---
+
 # Active redesign handoff
 
 Current branch: `feat/redesign`, created from main e9a3047. The active specification is the owner's three-page redesign prompt. Current behavior/methods: MAP_METHOD.md and DESIGN.md. Current verification: [evidence/redesign-checks.md](evidence/redesign-checks.md). Application source c2a6751 passed all required local gates; credential rotation and hosted/human gates remain pending. Push the review branch with `git push -u origin feat/redesign`. The separate footer About page is not in main navigation. Old public research routes redirect to real methods/privacy drawers. Current risk remains unavailable; weather is excluded from the national index. Anonymous reporting adds coarse national units and a shared old/new RPC rate guard in one forward migration; collection stays closed.
