@@ -7,3 +7,5 @@ Deep bay teal anchors navigation and footer. Warm sand gives content breathing r
 Short sentences answer a visitor's question. Say ?Check your city.? Keep research limitations visible and move full explanations into About. Preserve ?Background photograph by Sumarie Slabber.? The photo is the existing twilight skyline. No stock illustrations, emoji icons or generated imagery.
 
 NEEDS OWNER: reference screenshot; iACADEMY exclusion colors; approved contact email; photo permission; team fields; review of all new Filipino translations (machine-assisted drafts). No personal contact address is approved by this task.
+
+Owner clarification: iACADEMY is not a design reference. DengueWatch must have its own personality.

@@ -322,13 +322,12 @@
       "credit": "geoboundaries"
     }
   ],
-  "dependency_count": 438,
+  "dependency_count": 439,
   "fonts": [
-    "Montserrat",
-    "Roboto",
     "Fraunces",
     "DejaVu Sans (evaluation figures)",
-    "Noto Sans Regular (local map glyphs)"
+    "Noto Sans Regular (local map glyphs)",
+    "Figtree"
   ],
   "passed": true
 }

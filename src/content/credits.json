@@ -84,7 +84,7 @@
     {
       "id": "nasa-power",
       "name": "NASA POWER / NASA Langley Research Center",
-      "purpose": "Historical weather cross-check for four polygon centroids, 2018\u20132020. NASA POWER is funded by the NASA Applied Sciences Program within the Earth Science Division of the Science Mission Directorate; web services collaborate with the NASA Langley Research Center Atmospheric Science Data Center (ASDC).",
+      "purpose": "Historical weather cross-check for four polygon centroids, 2018–2020. NASA POWER is funded by the NASA Applied Sciences Program within the Earth Science Division of the Science Mission Directorate; web services collaborate with the NASA Langley Research Center Atmospheric Science Data Center (ASDC).",
       "range": "See cached provenance; existing Manila historical cross-check",
       "source_url": "https://power.larc.nasa.gov/docs/",
       "licence": "NASA POWER data access/acknowledgement terms; see original receipts",
@@ -215,22 +215,6 @@
   ],
   "fonts": [
     {
-      "name": "Montserrat",
-      "source_url": "https://fonts.google.com/specimen/Montserrat",
-      "licence": "OFL-1.1",
-      "files": [
-        "@fontsource/montserrat"
-      ]
-    },
-    {
-      "name": "Roboto",
-      "source_url": "https://fonts.google.com/specimen/Roboto",
-      "licence": "OFL-1.1",
-      "files": [
-        "@fontsource/roboto"
-      ]
-    },
-    {
       "name": "Fraunces",
       "source_url": "https://fonts.google.com/specimen/Fraunces",
       "licence": "OFL-1.1",
@@ -255,18 +239,20 @@
       "licence": "OFL-1.1",
       "source_url": "https://github.com/protomaps/basemaps-assets/tree/main/fonts",
       "evidence_file": "docs/evidence/noto-map-glyphs-OFL.txt"
+    },
+    {
+      "name": "Figtree",
+      "licence": "OFL-1.1",
+      "files": [
+        "@fontsource/figtree"
+      ],
+      "source_url": "https://github.com/erikdkennedy/figtree"
     }
   ],
   "icons": [
     {
-      "name": "Project SVG line symbols and text glyphs",
-      "licence": "MIT project code; no third-party icon library"
-    },
-    {
-      "name": "Protomaps sprites derived from tangrams/icons",
-      "licence": "MIT",
-      "source_url": "https://github.com/tangrams/icons",
-      "evidence_file": "docs/evidence/map-sprites-MIT.txt"
+      "name": "Original DengueWatch water-drop, Bay wave and care illustrations",
+      "licence": "Original project artwork; hand-authored inline SVG"
     }
   ],
   "covered_hosts": [

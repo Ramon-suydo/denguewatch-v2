@@ -1,19 +1,18 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "@fontsource/montserrat/latin-500.css";
-import "@fontsource/montserrat/latin-600.css";
-import "@fontsource/montserrat/latin-700.css";
-import "@fontsource/montserrat/latin-800.css";
-import "@fontsource/roboto/latin-400.css";
-import "@fontsource/roboto/latin-500.css";
-import "@fontsource/roboto/latin-700.css";
 import "@fontsource/fraunces/latin-600.css";
+import "@fontsource/figtree/latin-400.css";
+import "@fontsource/figtree/latin-500.css";
+import "@fontsource/figtree/latin-600.css";
+import "@fontsource/figtree/latin-700.css";
 import "./index.css";
 import { App } from "./App";
 import "./app.css";
 import "./evidence.css";
 import "./redesign.css";
 import "./ml-map.css";
+import "./overhaul/tokens.css";
+import "./overhaul/overhaul.css";
 import { ToastProvider } from "./components/ui/Toast";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
