@@ -1,3 +1,9 @@
+## Street background reliability correction
+
+The bundled Protomaps street/coastline basemap now loads first, including when the browser is online. It gets a 15-second loading budget rather than the former three seconds. Rendered local vector tiles cancel that deadline; a missing label glyph does not discard a working street map. OpenFreeMap is attempted only if the local basemap fails, then the labelled city polygons remain the final resilience fallback. All 17 cities still fit the opening view. A browser regression delays every PMTiles range by 3.5 seconds and requires rendered street lines, all 17 cities, and no external tile request.
+
+The entries below describe the original implementation checkpoint; the loading order above supersedes the original online-first order.
+
 # Metro Manila map design
 
 ## Engine and source choice
