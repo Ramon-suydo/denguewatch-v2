@@ -9,7 +9,8 @@ for point in points:
   for dx in range(-1,2):
    assert 0<=x+dx<image.width and 0<=y+dy<image.height
    r,g,b=image.getpixel((x+dx,y+dy))
-   correct=(g>r*1.12 and g>b*1.08) if level==0 else (r>g*1.12 and r>b*1.12) if level==3 else (r>g*1.12 and g>b*1.12) if level==2 else (r>=g and g>.83*r and b<.8*g)
+   expected=[(237,243,220),(184,211,205),(66,110,136),(69,53,94)][level]
+   correct=max(abs(actual-target) for actual,target in zip((r,g,b),expected))<=12
    matched+=int(correct)
  patches.append(matched)
 passed=sum(n>=6 for n in patches)>=3

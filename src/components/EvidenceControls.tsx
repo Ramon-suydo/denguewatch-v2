@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Select } from "./ui/Select";
 import type { Scenario } from "../lib/evidence";
 export function ScenarioControl({
@@ -49,13 +49,17 @@ export function ScenarioControl({
 export function useLanguage() {
   const [language, setLanguage] = useState<"en" | "fil">(() => {
     try {
+      if(document.getElementById("root")?.hasAttribute("data-prerendered"))return "en";
       return localStorage.getItem("dw-language") === "fil" ? "fil" : "en";
     } catch {
       return "en";
     }
   });
+  const restore=useRef(typeof document!=='undefined'&&Boolean(document.getElementById('root')?.hasAttribute('data-prerendered')));
+  useEffect(()=>{if(restore.current){try{setLanguage(localStorage.getItem('dw-language')==='fil'?'fil':'en');}catch{}}},[]);
   useEffect(()=>{const receive=(event:Event)=>{const next=(event as CustomEvent).detail;if(next==='en'||next==='fil')setLanguage(next);};window.addEventListener('dw-language-change',receive);return()=>window.removeEventListener('dw-language-change',receive);},[]);
   useEffect(() => {
+    if(restore.current){restore.current=false;return;}
     document.documentElement.lang = language;
     try {
       localStorage.setItem("dw-language", language);

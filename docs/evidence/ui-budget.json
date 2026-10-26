@@ -1,0 +1,149 @@
+{
+  "initial_gzip_bytes": 103468,
+  "total_gzip_bytes": 699729,
+  "limits": {
+    "initial": 225280,
+    "total": 870400
+  },
+  "assets": [
+    {
+      "name": "About-Cu-mfDBF.js",
+      "bytes": 78539,
+      "gzip": 10033,
+      "initial": false
+    },
+    {
+      "name": "about-DpSzxrfG.js",
+      "bytes": 126,
+      "gzip": 118,
+      "initial": false
+    },
+    {
+      "name": "Admin-cIt4CCwM.js",
+      "bytes": 65764,
+      "gzip": 18375,
+      "initial": false
+    },
+    {
+      "name": "ClassificationEvidence-Bf7CBYPL.js",
+      "bytes": 3301,
+      "gzip": 1478,
+      "initial": false
+    },
+    {
+      "name": "EvidenceTrends-IF17e5JI.js",
+      "bytes": 11170,
+      "gzip": 3913,
+      "initial": false
+    },
+    {
+      "name": "Guidance-DbQQHDNw.js",
+      "bytes": 2426,
+      "gzip": 1227,
+      "initial": false
+    },
+    {
+      "name": "index-B1bQuqeC.js",
+      "bytes": 307202,
+      "gzip": 97741,
+      "initial": true
+    },
+    {
+      "name": "Language-yQzQ61BC.js",
+      "bytes": 11976,
+      "gzip": 4586,
+      "initial": true
+    },
+    {
+      "name": "live-scorer-BBV1qrne.js",
+      "bytes": 1584,
+      "gzip": 847,
+      "initial": false
+    },
+    {
+      "name": "maplibre-gl-worker-Br3j0JGE.js",
+      "bytes": 518989,
+      "gzip": 148199,
+      "initial": false
+    },
+    {
+      "name": "MapProvider-Djq1TUfU.js",
+      "bytes": 1131835,
+      "gzip": 304025,
+      "initial": false
+    },
+    {
+      "name": "Methods-BnPmIgkx.js",
+      "bytes": 82109,
+      "gzip": 25072,
+      "initial": false
+    },
+    {
+      "name": "MlMethods-ylXqYjLE.js",
+      "bytes": 11328,
+      "gzip": 4453,
+      "initial": false
+    },
+    {
+      "name": "outlook-BCFx3q3X.js",
+      "bytes": 20852,
+      "gzip": 7965,
+      "initial": false
+    },
+    {
+      "name": "preload-helper-DjzSQ1t3.js",
+      "bytes": 1383,
+      "gzip": 749,
+      "initial": true
+    },
+    {
+      "name": "PreviewMap-D2AmyvYx.js",
+      "bytes": 2287,
+      "gzip": 1243,
+      "initial": false
+    },
+    {
+      "name": "PrivacyNotice-BcO0_1Rv.js",
+      "bytes": 8236,
+      "gzip": 3657,
+      "initial": false
+    },
+    {
+      "name": "ReportV2-DQsnnFWu.js",
+      "bytes": 16538,
+      "gzip": 6885,
+      "initial": false
+    },
+    {
+      "name": "RiskMap-DQ0hlqPD.js",
+      "bytes": 12404,
+      "gzip": 4543,
+      "initial": false
+    },
+    {
+      "name": "signals-CqqLm3go.js",
+      "bytes": 2982,
+      "gzip": 1491,
+      "initial": false
+    },
+    {
+      "name": "supabase-dnyNgBoS.js",
+      "bytes": 203746,
+      "gzip": 52038,
+      "initial": false
+    },
+    {
+      "name": "ui-DDtOBO0g.js",
+      "bytes": 1555,
+      "gzip": 699,
+      "initial": false
+    },
+    {
+      "name": "hero-preload.js",
+      "bytes": 662,
+      "gzip": 392,
+      "initial": true
+    }
+  ],
+  "passed": true
+}

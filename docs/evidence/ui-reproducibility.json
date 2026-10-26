@@ -1,0 +1,78 @@
+{
+  "scope": "Unchanged pipeline imported with output paths redirected into ignored scratch; original source-data loader retained. Full training/evaluation/export. No committed data or model writes.",
+  "results": [
+    {
+      "path": "data/processed/ml/training.json",
+      "expected": "8ff6e1e765353e04564d887cb5186fd191563860a324ba02a60b631cca25fbbb",
+      "actual": "8ff6e1e765353e04564d887cb5186fd191563860a324ba02a60b631cca25fbbb",
+      "identical": true
+    },
+    {
+      "path": "data/processed/ml/evaluation.json",
+      "expected": "67ab014beb2c2695e9e8596942054de813d81b3c44909df428416a90e9182648",
+      "actual": "67ab014beb2c2695e9e8596942054de813d81b3c44909df428416a90e9182648",
+      "identical": true
+    },
+    {
+      "path": "data/processed/ml/test-predictions.json",
+      "expected": "6ed9233fe676b6fafaf280d9ae58f83955a9b1d5ebdebae79dcd2d1874886d8c",
+      "actual": "6ed9233fe676b6fafaf280d9ae58f83955a9b1d5ebdebae79dcd2d1874886d8c",
+      "identical": true
+    },
+    {
+      "path": "public/ml/models.json",
+      "expected": "a869dccb402c4f2928b759405f56ca7138dc20c1ff86c82c8d03fdb67e2d9444",
+      "actual": "a869dccb402c4f2928b759405f56ca7138dc20c1ff86c82c8d03fdb67e2d9444",
+      "identical": true
+    },
+    {
+      "path": "public/ml/evaluation.json",
+      "expected": "67ab014beb2c2695e9e8596942054de813d81b3c44909df428416a90e9182648",
+      "actual": "67ab014beb2c2695e9e8596942054de813d81b3c44909df428416a90e9182648",
+      "identical": true
+    },
+    {
+      "path": "public/ml/history.json",
+      "expected": "a11f5138279b934e04c042854d68bfb299db56e59a64718cc581aa6e85ab3f6f",
+      "actual": "a11f5138279b934e04c042854d68bfb299db56e59a64718cc581aa6e85ab3f6f",
+      "identical": true
+    },
+    {
+      "path": "public/ml/replay.json",
+      "expected": "34f24c10ce5dbeed1678c50634d6c9516a164d83356446cc24b41273037fbd40",
+      "actual": "34f24c10ce5dbeed1678c50634d6c9516a164d83356446cc24b41273037fbd40",
+      "identical": true
+    },
+    {
+      "path": "public/ml/summary.json",
+      "expected": "779dac81e0c0b249620b68eff5e36b33e4ed9a698f9b5d10982f23c348aa8c3d",
+      "actual": "779dac81e0c0b249620b68eff5e36b33e4ed9a698f9b5d10982f23c348aa8c3d",
+      "identical": true
+    },
+    {
+      "path": "tests/fixtures/ml-parity.json",
+      "expected": "5a45c33446244070485aa2a5b6af3c2e1879ca397f71b68d48b648c8bddaf500",
+      "actual": "5a45c33446244070485aa2a5b6af3c2e1879ca397f71b68d48b648c8bddaf500",
+      "identical": true
+    },
+    {
+      "path": "docs/ML_EVALUATION.md",
+      "expected": "72b5c71881b742623953a1ce19e2a1e58c6a6bde441c524394ba6c9252c06e9a",
+      "actual": "72b5c71881b742623953a1ce19e2a1e58c6a6bde441c524394ba6c9252c06e9a",
+      "identical": true
+    },
+    {
+      "path": "docs/evidence/ml/confusion.png",
+      "expected": "72695a6bf1c4e3430314949753c212e812e3e7ad6954afbac6ced44bf078adb8",
+      "actual": "72695a6bf1c4e3430314949753c212e812e3e7ad6954afbac6ced44bf078adb8",
+      "identical": true
+    },
+    {
+      "path": "docs/evidence/ml/calibration.png",
+      "expected": "55f9a34bfdcc10e117f289d16a3c8c0dfff3b9cbaf91e4b31b7baea7c92a0830",
+      "actual": "55f9a34bfdcc10e117f289d16a3c8c0dfff3b9cbaf91e4b31b7baea7c92a0830",
+      "identical": true
+    }
+  ],
+  "passed": true
+}

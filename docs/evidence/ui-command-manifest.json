@@ -1,0 +1,173 @@
+{
+  "source": "Three frozen functional-source stability runs, followed by final icon/footer presentation and rendered-font capture follow-up; see ui-overhaul-checks.md. Protected data/model/API/geography/schema files unchanged.",
+  "results": [
+    {
+      "name": "unit",
+      "command": "npm test",
+      "log": ".artifacts/ui-overhaul/final-unit.log",
+      "exit_code": 0,
+      "duration_seconds": 61.764,
+      "owner_blocked": false
+    },
+    {
+      "name": "contrast",
+      "command": "npm run test:contrast",
+      "log": ".artifacts/ui-overhaul/final-contrast.log",
+      "exit_code": 0,
+      "duration_seconds": 0.612,
+      "owner_blocked": false
+    },
+    {
+      "name": "database",
+      "command": "npm run db:verify",
+      "log": ".artifacts/ui-overhaul/final-database.log",
+      "exit_code": 0,
+      "duration_seconds": 39.888,
+      "owner_blocked": false
+    },
+    {
+      "name": "browser-1",
+      "command": "npm run test:ui",
+      "log": ".artifacts/ui-overhaul/final-browser-1.log",
+      "exit_code": 0,
+      "duration_seconds": 252.401,
+      "owner_blocked": false
+    },
+    {
+      "name": "browser-2",
+      "command": "npm run test:ui",
+      "log": ".artifacts/ui-overhaul/final-browser-2.log",
+      "exit_code": 0,
+      "duration_seconds": 254.13,
+      "owner_blocked": false
+    },
+    {
+      "name": "browser-3",
+      "command": "npm run test:ui",
+      "log": ".artifacts/ui-overhaul/final-browser-3.log",
+      "exit_code": 0,
+      "duration_seconds": 251.228,
+      "owner_blocked": false
+    },
+    {
+      "name": "build",
+      "command": "npm run build",
+      "log": ".artifacts/ui-overhaul/final-build.log",
+      "exit_code": 0,
+      "duration_seconds": 23.292,
+      "owner_blocked": false
+    },
+    {
+      "name": "budget",
+      "command": "npm run test:ui-budget",
+      "log": ".artifacts/ui-overhaul/final-budget.log",
+      "exit_code": 0,
+      "duration_seconds": 0.596,
+      "owner_blocked": false
+    },
+    {
+      "name": "lint",
+      "command": "npm run lint",
+      "log": ".artifacts/ui-overhaul/final-lint.log",
+      "exit_code": 0,
+      "duration_seconds": 5.338,
+      "owner_blocked": false
+    },
+    {
+      "name": "typecheck",
+      "command": "npm run typecheck",
+      "log": ".artifacts/ui-overhaul/final-typecheck.log",
+      "exit_code": 0,
+      "duration_seconds": 1.446,
+      "owner_blocked": false
+    },
+    {
+      "name": "focused-ui",
+      "command": "npx playwright test tests/ui/overhaul.spec.ts",
+      "log": ".artifacts/ui-overhaul/final-focused-ui.log",
+      "exit_code": 0,
+      "duration_seconds": 75.446,
+      "owner_blocked": false
+    },
+    {
+      "name": "production",
+      "command": "npm run test:production",
+      "log": ".artifacts/ui-overhaul/final-production.log",
+      "exit_code": 0,
+      "duration_seconds": 65.161,
+      "owner_blocked": false
+    },
+    {
+      "name": "pwa",
+      "command": "npm run test:pwa",
+      "log": ".artifacts/ui-overhaul/final-pwa.log",
+      "exit_code": 0,
+      "duration_seconds": 20.155,
+      "owner_blocked": false
+    },
+    {
+      "name": "visual-baselines",
+      "command": "npm run test:visual -- --update-snapshots",
+      "log": ".artifacts/ui-overhaul/final-visual-baselines.log",
+      "exit_code": 0,
+      "duration_seconds": 131.107,
+      "owner_blocked": false
+    },
+    {
+      "name": "visual-compare",
+      "command": "npm run test:visual",
+      "log": ".artifacts/ui-overhaul/final-visual-compare.log",
+      "exit_code": 0,
+      "duration_seconds": 132.591,
+      "owner_blocked": false
+    },
+    {
+      "name": "compat",
+      "command": "node scripts/check-ui-browsers.mjs",
+      "log": ".artifacts/ui-overhaul/final-compat.log",
+      "exit_code": 0,
+      "duration_seconds": 81.019,
+      "owner_blocked": false
+    },
+    {
+      "name": "audit",
+      "command": "npm audit --audit-level=high",
+      "log": ".artifacts/ui-overhaul/final-audit.log",
+      "exit_code": 0,
+      "duration_seconds": 1.51,
+      "owner_blocked": false
+    },
+    {
+      "name": "zap",
+      "command": "npm run security:zap -- http://127.0.0.1:43274/",
+      "log": ".artifacts/ui-overhaul/final-zap.log",
+      "exit_code": 0,
+      "duration_seconds": 53.249,
+      "owner_blocked": false
+    },
+    {
+      "name": "secrets",
+      "command": "npm run security:secrets",
+      "log": ".artifacts/ui-overhaul/final-secrets.log",
+      "exit_code": 1,
+      "duration_seconds": 47.751,
+      "owner_blocked": true
+    },
+    {
+      "name": "geography",
+      "command": "npm run test:geography",
+      "log": ".artifacts/ui-overhaul/final-geography.log",
+      "exit_code": 0,
+      "duration_seconds": 2.442,
+      "owner_blocked": false
+    },
+    {
+      "name": "fonts",
+      "command": "python scripts/check-ui-fonts.py",
+      "log": ".artifacts/ui-overhaul/final-fonts.log",
+      "exit_code": 0,
+      "duration_seconds": 0.232,
+      "owner_blocked": false
+    }
+  ]
+}

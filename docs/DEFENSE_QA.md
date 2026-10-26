@@ -74,3 +74,7 @@ Current source of release truth: [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATU
 6. Test locally and self-review the auth/schema changes before merging near the defense. Re-run required release gates in the intended environment. Only after every gate passes, set `$env:LAUNCH_GATES_PASSED = '1'` and run `npm run hosted:bootstrap -- --enable-reporting`. Emergency closure: `npm run reports:off`. Do not enable collection merely to demonstrate a test.
 
 Full numbered dashboard and command instructions: [ROTATE_CREDENTIALS.md](ROTATE_CREDENTIALS.md). All private configuration stays out of Git.
+
+## Why this design?
+
+DengueWatch puts a person’s next task first: choose a city, understand a dated estimate, learn a practical action, or preview a private report. The Bay wave and original drop mark root the identity in Manila without borrowing the owner’s other site. Light surfaces, readable type and a separate labeled risk scale reduce alarm and make comparisons easier. The map’s default example is calculated from the real saved data to show variety; it is not selected to suggest current conditions. Night mode, reduced motion, touch alternatives and bilingual controls support different needs. The full model limitations and negative comparisons remain available in the evidence and About page. See BRAND.md, DESIGN_SYSTEM.md, MOTION.md and the current verification record; human usability and Filipino review are still owner work.

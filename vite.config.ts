@@ -89,7 +89,7 @@ export default defineConfig(({ command, mode }) => {
   return {
     define:{__APP_META__:JSON.stringify({version,commit,evaluationDate,dataAsOf,nationalAsOf})},
     build:{manifest:true},
-    server:{watch:{ignored:["**/.artifacts/**","**/review_bundle/**"]}},
+    server:{watch:{ignored:["**/.artifacts/**","**/review_bundle/**","**/docs/evidence/**"]}},
     plugins: [react(), tailwindcss(), {name:'route-csp-preview',configurePreviewServer(server){server.middlewares.use((request,response,next)=>{const path=new URL(request.url??'/', 'http://localhost').pathname;const policies=JSON.parse(readFileSync('vercel.json','utf8')).headers;const source=/^\/risk-map(?:\/|$)/.test(path)?'/risk-map/:path*':/^\/assets\/maplibre-gl-worker-[^/]+[.]js$/.test(path)?'/assets/maplibre-gl-worker-:hash.js':policies.find((rule:{source:string})=>rule.source.startsWith('/((?!risk-map')).source;const policy=policies.find((rule:{source:string})=>rule.source===source);response.setHeader('Content-Security-Policy',policy.headers[0].value);next();});}}],
     preview: {
       headers: Object.fromEntries(

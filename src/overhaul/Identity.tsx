@@ -1,5 +1,5 @@
 import type {ReactNode} from 'react';
-export function Mark(){return <svg viewBox="0 0 48 48" aria-hidden="true" className="bay-mark"><path d="M24 3C19 12 8 21 8 31a16 16 0 0 0 32 0C40 21 29 12 24 3Z" fill="currentColor"/><path d="M9 30c10-10 19 10 30 0M13 37c8-7 15 7 23 0" fill="none" stroke="var(--sand)" strokeWidth="3" strokeLinecap="round"/></svg>}
+export function Mark(){return <svg viewBox="0 0 48 48" aria-hidden="true" className="bay-mark"><path d="M24 3C19 12 8 21 8 31a16 16 0 0 0 32 0C40 21 29 12 24 3Z" fill="currentColor"/><path d="M9 30c10-10 19 10 30 0M13 37c8-7 15 7 23 0" fill="none" stroke="var(--mark-wave,var(--sand))" strokeWidth="3" strokeLinecap="round"/></svg>}
 export function Wordmark(){return <span className="bay-wordmark"><Mark/><svg viewBox="0 0 200 36" role="img" aria-label="DengueWatch"><text x="0" y="27" fill="currentColor" fontSize="28" fontFamily="Fraunces" fontWeight="600">DengueWatch</text></svg></span>}
 export function Wave(){return <svg className="bay-wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48C240 130 350-22 650 42s510 48 790-12v66H0Z" fill="currentColor"/></svg>}
 export type IconName='water'|'protect'|'care'|'warning'|'map'|'report'|'data'|'closed'|'done';

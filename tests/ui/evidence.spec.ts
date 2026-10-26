@@ -21,7 +21,7 @@ test("research pages: mobile/desktop, no overflow, no critical or serious axe is
       await expect(activeView(page).locator("h1")).toBeVisible();
       if (route === "/")
         await expect(
-          activeView(page).getByRole("heading", { name: "Cities to watch" }),
+          activeView(page).getByRole("heading", { name: "This week in Metro Manila" }),
         ).toBeVisible();
       if (route === "/metro-manila")
         await expect(page.locator(".ncr-city-map path")).toHaveCount(17);
@@ -46,7 +46,7 @@ test("research pages: mobile/desktop, no overflow, no critical or serious axe is
   await mkdir(".artifacts/evidence-ui", { recursive: true });
   await goto(page, "/");
   await expect(
-    activeView(page).getByRole("heading", { name: "Cities to watch" }),
+    activeView(page).getByRole("heading", { name: "This week in Metro Manila" }),
   ).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({
@@ -89,14 +89,14 @@ test("Filipino home/prevention, missing API retry, and legacy forecasts isolated
   await goto(page, "/");
   await activeView(page).getByRole("button", { name: "Filipino", exact: true }).click();
   await expect(
-    activeView(page).getByRole("heading", { name: "Mga dapat bantayan" }),
+    activeView(page).getByRole("heading", { name: "Ang linggong ito sa Metro Manila" }),
   ).toBeVisible();
   await goto(page, "/prevention");
   await expect(activeView(page).getByRole("heading", { name: "4S ng DOH" })).toBeVisible();
   await goto(page, "/city/old-id");
   await expect(page).toHaveURL(/\/\?drawer=methods&section=trends$/);
   let failedRequests = 0;
-  await page.route("**/ml/summary.json", (route) => {
+  await page.route("**/ml/replay.json", (route) => {
     failedRequests++;
     return route.fulfill({ status: 503, body: "Unavailable" });
   });
@@ -104,9 +104,9 @@ test("Filipino home/prevention, missing API retry, and legacy forecasts isolated
   await expect(activeView(page).getByRole("alert")).toContainText("Hindi ma-load");
   expect(failedRequests).toBeGreaterThan(0);
   await expect(activeView(page).getByRole("button", { name: "Subukan muli" })).toBeVisible();
-  await page.unroute("**/ml/summary.json");
+  await page.unroute("**/ml/replay.json");
   await activeView(page).getByRole("button", { name: "Subukan muli" }).click();
   await expect(
-    activeView(page).getByRole("heading", { name: "Mga dapat bantayan" }),
+    activeView(page).getByRole("heading", { name: "Ang linggong ito sa Metro Manila" }),
   ).toBeVisible();
 });

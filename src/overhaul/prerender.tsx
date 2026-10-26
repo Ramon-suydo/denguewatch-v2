@@ -1,0 +1,1 @@
+import {StrictMode} from 'react';import {renderToString} from 'react-dom/server';import {App} from '../App';import {ToastProvider} from '../components/ui/Toast';export function renderShell(){return renderToString(<StrictMode><ToastProvider><App server/></ToastProvider></StrictMode>);}

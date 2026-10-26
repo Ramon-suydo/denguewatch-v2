@@ -1,3 +1,4 @@
+import {exampleWeeks} from '../../src/overhaul/examples';
 import {test,expect,type Page} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
@@ -11,8 +12,8 @@ test('three navigation destinations, footer attribution, empty owner fields and 
  test.setTimeout(120000);
  for(const width of [360,1280])for(const path of ['/','/risk-map','/report','/about']){
   await page.setViewportSize({width,height:1000});await goto(page,path);
-  if(width===360)await page.getByRole('button',{name:'Menu',exact:true}).click();
-  const nav=page.getByRole('navigation',{name:'Main navigation'});
+
+  const nav=page.getByRole('navigation',{name:width===360?'Mobile navigation':'Main navigation'});await expect(nav).toBeVisible();
   await expect(nav.getByRole('link')).toHaveText(['Dashboard','Risk Map','Community Report']);
   await expect(nav.getByRole('link',{name:'About & Credits'})).toHaveCount(0);
   await expect(page.getByRole('contentinfo').getByRole('link',{name:'About & Credits'})).toHaveAttribute('href','/about');
@@ -42,7 +43,7 @@ test('city map uses all 17 explicit matches and exact saved probabilities, witho
  await expect(page.locator('.city-picker button')).toHaveCount(17);await expect(page.locator('.forecast-mode')).toContainText('Replay');await expect(page.getByRole('button',{name:'Live',exact:true})).toBeDisabled();
  await page.waitForFunction(()=>{const host=document.querySelector('.city-map-canvas') as HTMLElement&{cityMap?:{getSource:(id:string)=>{serialize:()=>{data:{features:unknown[]}}}|undefined;getLayer:(id:string)=>unknown;queryRenderedFeatures:(query:unknown)=>unknown[]}}|null;const map=host?.cityMap;return map?.getSource('ncr-risk')?.serialize().data.features.length===17&&map.getLayer('ncr-fill')&&map.queryRenderedFeatures({layers:['ncr-fill']}).length>0;});
  await page.getByRole('button',{name:'Show data table',exact:true}).click();const table=page.getByRole('region',{name:'City prediction data'});await expect(table.locator('tbody tr')).toHaveCount(17);
- const expected=saved.rows.filter((r:any)=>r.target===saved.weeks[0]);for(const r of expected)await expect(table.locator(`tr[data-city-row="${r.city}"]`)).toHaveAttribute('data-probability',String(r.probability));
+ const expected=saved.rows.filter((r:any)=>r.target===exampleWeeks(saved).find(e=>e.key==='mixed')!.week);for(const r of expected)await expect(table.locator(`tr[data-city-row="${r.city}"]`)).toHaveAttribute('data-probability',String(r.probability));
  await page.getByLabel('Find a city',{exact:true}).fill('Manila');await expect(table.locator('tbody tr')).toHaveCount(1);await expect(table).toContainText('Manila');await expect(page.locator('.traffic-legend')).toContainText('Resolution: city.');expect(forbidden).toEqual([]);
 });
 
@@ -52,7 +53,7 @@ test('Dashboard and Manila map panel expose saved MAEs and backtest values, with
   await openArchive(page,path);await expect(activeView(page).getByRole('heading',{name:'Current risk unavailable'})).toBeVisible();
   for(const h of [1,2]){const expected=data.summaries.find((r:any)=>r.scenario==='M'&&r.fold==='test-2018-2023'&&r.model==='naive'&&r.horizon===h).mae;await expect(page.locator(`[data-panel-horizon="${h}"]`)).toHaveAttribute('data-panel-mae',String(expected));}
  }
- for(const [path,heading] of [['/','Mga dapat bantayan'],['/risk-map','Mapa ng Panganib'],['/report','Unawain at pumayag']]){
+ for(const [path,heading] of [['/','Ang linggong ito sa Metro Manila'],['/risk-map','Mapa ng Panganib'],['/report','Ano ang iyong iuulat?']]){
   await goto(page,path);await page.getByRole('button',{name:'Filipino',exact:true}).click();await expect(page.getByRole('heading',{name:heading,exact:true})).toBeVisible();await expect(page.locator('html')).toHaveAttribute('lang','fil');
   await page.getByRole('button',{name:'English',exact:true}).click();
  }
@@ -81,7 +82,7 @@ test('Dashboard numeric analytics reproduce published series, exact backtest row
 
 
 test('every Replay calendar week and all 17 table rows match saved predictions and missing-data flags',async({page})=>{
- test.setTimeout(120000);await mockPublicApi(page,{open:false});await page.route('https://tiles.openfreemap.org/**',r=>r.abort());await goto(page,'/risk-map');const data=await read('public/ml/replay.json');await page.getByRole('button',{name:'Show data table',exact:true}).click();const slider=page.getByLabel('Choose an example week',{exact:true});await slider.focus();const table=page.getByRole('region',{name:'City prediction data'});let unavailable=0;
+ test.setTimeout(120000);await mockPublicApi(page,{open:false});await page.route('https://tiles.openfreemap.org/**',r=>r.abort());await goto(page,'/risk-map');const data=await read('public/ml/replay.json');await page.getByRole('button',{name:'Show data table',exact:true}).click();const slider=page.getByLabel('Choose an example week',{exact:true});await slider.focus();await slider.press('Home');const table=page.getByRole('region',{name:'City prediction data'});let unavailable=0;
  for(let i=0;i<data.weeks.length;i++){
   if(i)await slider.press('ArrowRight');await expect(page.locator('.replay-controls output')).toHaveText(data.weeks[i]);
   const expected=data.rows.filter((r:any)=>r.target===data.weeks[i]);expect(expected).toHaveLength(17);

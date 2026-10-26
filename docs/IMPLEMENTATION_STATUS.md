@@ -1,3 +1,27 @@
+# Bay & care UI overhaul checkpoint (2026-10-27)
+
+Active branch: `feat/ui-overhaul`. The owner wants DengueWatch to have its own personality; iACADEMY is not a reference. The branch starts from fetched main `de0d22c` and retains the reviewed ML/map prerequisite `5d9bdb4`. No new model, data, schema, submission-security, moderation or retention changes are included.
+
+The four public pages now use an original drop/wave identity, Fraunces and Figtree, day/night/automatic appearance, readable surfaces, a local boundary preview, source-derived example weeks, a city sheet, a gated reporting stepper and editorial credits. Verified: 86 unit/integration tests, three consecutive 51-test UI runs, a final 7-test presentation/a11y follow-up, 18 production tests, 4 PWA tests and 64 independent visual comparisons. Mobile Lighthouse measured 97 performance / 100 accessibility, LCP 2.446 s and CLS 0. Technical evidence and final gate results: [UI overhaul checks](evidence/ui-overhaul-checks.md). Brand, components and motion: [BRAND](BRAND.md), [DESIGN_SYSTEM](DESIGN_SYSTEM.md), [MOTION](MOTION.md). Decisions and evidence limits: [UX_DECISIONS](UX_DECISIONS.md).
+
+| Numbered step | Reviewable change | Status / commit |
+|---|---|---|
+| 1 | Original brand, source audit and shared tokens | DONE - `cffff93` |
+| 2 | Shell, nav/footer, typography, themes and components | DONE - `b8f7d6a` |
+| 3 | City search, shared-week preview, care and evidence Dashboard | DONE - `9afaade` |
+| 4 | Mixed default, floating map controls, sheet and scrubber | DONE - `6b212e3` |
+| 5 | Coarse reporting stepper, separate gated states and receipt | DONE - `352f420` |
+| 6 | About, methods and attribution | DONE - `865aba3` |
+| 7 | Motion, rendered accessibility, performance, snapshots and review bundle | DONE locally - final source commit recorded in the review archive |
+
+NEEDS OWNER: approved controller/contact (personal Gmail remains unpublished), photo source/licence/permission, team fields, native Filipino review, known historical credential rotation, hosted Auth/MFA/purge/schedules/log retention, DPO approval before any collection, and real bilingual/screen-reader usability. The absent reference screenshot is recorded; it does not authorize borrowing another site's identity. Collection stays closed.
+
+NOT VERIFIED: real iOS Safari/device checks and field INP under 200 ms. Local WebKit is engine compatibility evidence. Lighthouse TBT does not establish INP. Lab screenshots and axe assertions do not replace human review.
+
+No push, main merge, hosted write, migration or collection activation occurs in this task. Exact push command: `git push -u origin feat/ui-overhaul`. Test locally and self-review before merging near the defense; every main push automatically deploys Vercel.
+
+---
+
 # Current NCR ML/map checkpoint (2026-10-26)
 
 Local verification is complete for application source `a0e4240`: 85 unit/integration tests, four ML leakage tests, 600-row parity, three consecutive 44-test UI runs, 18 production and three PWA tests. Full evidence, retained diagnostics and owner-blocked gates: [mlux-checks.md](evidence/mlux-checks.md). The secret audit remains NEEDS OWNER (0 current / 44 known historical / 0 unexpected); hosted and human checks are not certified. Exact push: `git push -u origin feat/ml-map-ux`. Main was not pushed. Test locally, self-review and inspect the preview before merging; main merge deploys Vercel.

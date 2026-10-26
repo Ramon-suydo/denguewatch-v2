@@ -29,11 +29,9 @@ test("legal notices, closed consent, no sensitive browser storage and print-frie
       activeView(page).getByRole("heading", { name, exact: true }),
     ).toBeVisible();
   await goto(page, "/report");
-  await expect(activeView(page).getByRole("checkbox")).not.toBeChecked();
-  await activeView(page).getByRole("checkbox").check();
-  await expect(
-    activeView(page).getByRole("button", { name: "Continue to report" }),
-  ).toBeDisabled();
+  await expect(activeView(page)).toContainText('We cannot confirm collection status.');
+  await expect(activeView(page).getByRole('button',{name:'Submit community report'})).toHaveCount(0);
+  await expect(activeView(page).getByRole('button',{name:'Retry status'})).toBeVisible();
   await goto(page, "/methodology");
   await expect(
     activeView(page).getByRole("heading", { name: "Forecast comparison" }),

@@ -95,6 +95,11 @@
       "credit": "doh-safety"
     },
     {
+      "path": "src/redesign/Dashboard.tsx",
+      "host": "www.cdc.gov",
+      "credit": "doh-safety"
+    },
+    {
       "path": "src/redesign/Guidance.tsx",
       "host": "www.cdc.gov",
       "credit": "doh-safety"
@@ -138,6 +143,11 @@
       "path": "scripts/build-basemap.py",
       "host": "protomaps.github.io",
       "credit": "protomaps"
+    },
+    {
+      "path": "scripts/build-locator.mjs",
+      "host": "www.w3.org",
+      "credit": "svg-standard"
     },
     {
       "path": "scripts/crosscheck-map-weather.py",

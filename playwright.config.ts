@@ -2,7 +2,7 @@ import { defineConfig } from "@playwright/test";
 const port = process.env.PLAYWRIGHT_PORT || "4173";
 export default defineConfig({
   testDir: "./tests/ui",
-  outputDir: ".artifacts/playwright",
+  outputDir: process.env.PLAYWRIGHT_OUTPUT_DIR || ".artifacts/playwright",
   reporter: "list",
   use: {
     baseURL: `http://127.0.0.1:${port}`,

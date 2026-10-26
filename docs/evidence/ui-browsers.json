@@ -1,0 +1,33 @@
+{
+  "scope": "Local installed Chrome/Edge and Playwright Firefox/WebKit engines. WebKit is not a real iOS Safari/device check.",
+  "results": [
+    {
+      "browser": "Chrome",
+      "status": "PASS",
+      "cases": 16,
+      "version": "155.0.8059.85",
+      "error": null
+    },
+    {
+      "browser": "Edge",
+      "status": "PASS",
+      "cases": 16,
+      "version": "156.0.4314.42",
+      "error": null
+    },
+    {
+      "browser": "Firefox",
+      "status": "PASS",
+      "cases": 16,
+      "version": "155.0",
+      "error": null
+    },
+    {
+      "browser": "WebKit",
+      "status": "PASS",
+      "cases": 16,
+      "version": "26.6",
+      "error": null
+    }
+  ]
+}

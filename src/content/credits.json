@@ -220,7 +220,8 @@
       "licence": "OFL-1.1",
       "files": [
         "@fontsource/fraunces"
-      ]
+      ],
+      "evidence_file": "docs/evidence/fraunces-OFL.txt"
     },
     {
       "name": "DejaVu Sans (evaluation figures)",
@@ -246,13 +247,20 @@
       "files": [
         "@fontsource/figtree"
       ],
-      "source_url": "https://github.com/erikdkennedy/figtree"
+      "source_url": "https://github.com/erikdkennedy/figtree",
+      "evidence_file": "docs/evidence/figtree-OFL.txt"
     }
   ],
   "icons": [
     {
       "name": "Original DengueWatch water-drop, Bay wave and care illustrations",
       "licence": "Original project artwork; hand-authored inline SVG"
+    },
+    {
+      "name": "Protomaps sprites derived from tangrams/icons",
+      "licence": "MIT",
+      "source_url": "https://github.com/tangrams/icons",
+      "evidence_file": "docs/evidence/map-sprites-MIT.txt"
     }
   ],
   "covered_hosts": [

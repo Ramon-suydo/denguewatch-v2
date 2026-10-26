@@ -9,11 +9,11 @@ test('local seeded MFA staff reviews real SQL reports; threshold, delay, PII, ra
  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Manila',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
  const codes:string[]=[];
  for(const symptom of ['Fever','Headache','Nausea']){
-  await goto(page, '/report');await activeView(page).getByRole('checkbox').check();await expect(activeView(page).getByRole('button',{name:'Continue to report'})).toBeEnabled();await activeView(page).getByRole('button',{name:'Continue to report'}).click();
-  await activeView(page).getByLabel('Report type',{exact:true}).selectOption('cluster');await activeView(page).getByLabel('People affected (approximate range)',{exact:true}).selectOption('2-4');
-  await activeView(page).getByLabel('Symptom-onset date (required)').fill(today);await activeView(page).getByRole('checkbox',{name:symptom,exact:true}).check();
+  await goto(page, '/report');await activeView(page).getByRole('radio',{name:'A cluster in my area'}).check();await expect(activeView(page).getByRole('button',{name:/^Continue/})).toBeEnabled();await activeView(page).getByRole('button',{name:/^Continue/}).click();
+
+  await activeView(page).getByLabel('Symptom-onset date (required)').fill(today);await activeView(page).getByRole('button',{name:/^Continue/}).click();await activeView(page).getByLabel('People affected (approximate range)',{exact:true}).selectOption('2-4');await activeView(page).getByRole('checkbox',{name:symptom,exact:true}).check();
   await activeView(page).getByLabel('Short note (optional, 250 characters)').fill('LOCAL TEST DATA ONLY <img src=x onerror="window.__xss=1"> contact test@local.invalid +63 912 345 6789');
-  await activeView(page).getByRole('button',{name:'Submit community report'}).click();await expect(activeView(page).getByRole('heading',{name:'Report received for review'})).toBeVisible({timeout:90000});
+  await activeView(page).getByRole('button',{name:/^Continue/}).click();await expect(activeView(page).getByRole('checkbox')).not.toBeChecked();await expect(activeView(page).getByRole('button',{name:'Submit community report'})).toBeDisabled();await activeView(page).getByRole('checkbox').check();await activeView(page).getByRole('button',{name:'Submit community report'}).click();await expect(activeView(page).getByRole('heading',{name:'Report received for review'})).toBeVisible({timeout:90000});
   const code=await page.locator('.tracking-code code').innerText();expect(code).toMatch(/^DW2-[A-F0-9]{32}$/);codes.push(code);
  }
  const stored=(await local.db.query<{note_text:string}>('select note_text from public.community_signals')).rows;

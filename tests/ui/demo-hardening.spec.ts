@@ -94,7 +94,7 @@ test("blocked external services leave static historical pages and closed reporti
     ).toBeVisible();
   }
   await expect(
-    activeView(page).getByText("New submissions are closed.", { exact: false }),
+    activeView(page).getByText("We cannot confirm collection status.", { exact: false }),
   ).toBeVisible();
   expect(external).toEqual([]);
 });
@@ -106,7 +106,7 @@ test("warmed routes and validated datasets remain available with the browser ful
   page.on("pageerror", (e) => errors.push(e.message));
   await goto(page, "/");
   await expect(
-    activeView(page).getByRole("heading", { name: "Cities to watch" }),
+    activeView(page).getByRole("heading", { name: "This week in Metro Manila" }),
   ).toBeVisible();
   for (const route of [
     "/trends",
