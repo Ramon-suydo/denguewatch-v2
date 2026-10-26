@@ -1,5 +1,7 @@
 # Current feature handoff for Claude
 
+Local verification is complete for application source `a0e4240`: 85 unit/integration tests, four ML leakage tests, 600-row parity, three consecutive 44-test UI runs, 18 production and three PWA tests. Full evidence, retained diagnostics and owner-blocked gates: [mlux-checks.md](evidence/mlux-checks.md). The secret audit remains NEEDS OWNER (0 current / 44 known historical / 0 unexpected); hosted and human checks are not certified. Exact push: `git push -u origin feat/ml-map-ux`. Main was not pushed. Test locally, self-review and inspect the preview before merging; main merge deploys Vercel.
+
 Use branch `feat/ml-map-ux`. Earlier main/redesign publication entries below describe older source. Current intent and limitations are in HANDOFF.md, ML_METHOD.md, ML_EVALUATION.md, MAP_DESIGN.md and UX_DECISIONS.md. See evidence/mlux-checks.md for completed verification, including any owner-blocked gates.
 
 Calculation entry points: `ml/data.py` constructs past-only targets/features and explicit calendar gaps; `ml/pipeline.py` tunes within chronological training, calibrates, evaluates five methods, yearly folds, onset and label sensitivities, then exports trees. `src/ml/scorer.ts` matches scikit-learn; `src/ml/live.ts` constructs the same feature vector. `public/ml/replay.json` supplies all 70 held-out calendar weeks. RF was selected on validation; persistence wins test F1. Do not promote a model using test results or claim clinical accuracy.

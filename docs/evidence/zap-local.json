@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Sun, 25 Oct 2026 22:00:08",
-	"created": "2026-10-25T14:00:08.423086300Z",
+	"@generated": "Mon, 26 Oct 2026 08:14:53",
+	"created": "2026-10-26T00:14:53.409737900Z",
 	"insights":[
 		{
 			"level": "Low",
@@ -10,7 +10,7 @@
 			"site": "",
 			"key": "insight.log.warn",
 			"description": "ZAP warnings logged - see the zap.log file for details",
-			"statistic": "8"
+			"statistic": "3"
 		},
 		{
 			"level": "Info",
@@ -34,7 +34,7 @@
 			"site": "http://127.0.0.1:43142",
 			"key": "insight.endpoint.ctype.application/json",
 			"description": "Percentage of endpoints with content type application/json",
-			"statistic": "19"
+			"statistic": "20"
 		},
 		{
 			"level": "Info",
@@ -42,6 +42,14 @@
 			"site": "http://127.0.0.1:43142",
 			"key": "insight.endpoint.ctype.application/manifest+json",
 			"description": "Percentage of endpoints with content type application/manifest+json",
+			"statistic": "2"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://127.0.0.1:43142",
+			"key": "insight.endpoint.ctype.image/avif",
+			"description": "Percentage of endpoints with content type image/avif",
 			"statistic": "2"
 		},
 		{
@@ -66,7 +74,7 @@
 			"site": "http://127.0.0.1:43142",
 			"key": "insight.endpoint.ctype.text/html",
 			"description": "Percentage of endpoints with content type text/html",
-			"statistic": "52"
+			"statistic": "54"
 		},
 		{
 			"level": "Info",
@@ -74,7 +82,7 @@
 			"site": "http://127.0.0.1:43142",
 			"key": "insight.endpoint.ctype.text/javascript",
 			"description": "Percentage of endpoints with content type text/javascript",
-			"statistic": "13"
+			"statistic": "8"
 		},
 		{
 			"level": "Info",
@@ -98,7 +106,7 @@
 			"site": "http://127.0.0.1:43142",
 			"key": "insight.endpoint.total",
 			"description": "Count of total endpoints",
-			"statistic": "36"
+			"statistic": "35"
 		}
 	],
 	"site":[ 
@@ -119,34 +127,24 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
 					"instances":[ 
 						{
-							"id": "36",
-							"uri": "http://127.0.0.1:43142/assets/index-10X-3qxX.js",
-							"nodeName": "http:\/\/127.0.0.1:43142\/assets\/index-10X-3qxX.js",
+							"id": "35",
+							"uri": "http://127.0.0.1:43142/assets/index-79zyEX2i.js",
+							"nodeName": "http:\/\/127.0.0.1:43142\/assets\/index-79zyEX2i.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "select",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"//www.w3.org/2000/svg`,a);break;case 2:o=s.createElementNS(`http://www.w3.org/1998/Math/MathML`,a);break;default:switch(a){case`\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"id": "35",
-							"uri": "http://127.0.0.1:43142/assets/supabase-ZKJXSr7I.js",
-							"nodeName": "http:\/\/127.0.0.1:43142\/assets\/supabase-ZKJXSr7I.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"//${location.host}${e}`:e}disconnect(e,t,n){this.connectClock++,this.disconnecting=!0,this.closeWasClean=!0,clearTimeout(this.fa\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"//www.w3.org/2000/svg`,i);break;case 2:o=s.createElementNS(`http://www.w3.org/1998/Math/MathML`,i);break;default:switch(i){case`\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"systemic": false,
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"//www.w3.org/2000/svg`,a);break;case 2:o=s.createElementNS(`http://www.w3.org/1998/Math/MathML`,a);break;default:switch(a){case`\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"//www.w3.org/2000/svg`,i);break;case 2:o=s.createElementNS(`http://www.w3.org/1998/Math/MathML`,i);break;default:switch(i){case`\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "615",
 					"wascid": "13",
-					"sourceid": "102"
+					"sourceid": "97"
 				},
 				{
 					"pluginid": "10109",
@@ -165,37 +163,37 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"module\" crossorigin src=\"/assets/index-10X-3qxX.js\"></script>",
+							"evidence": "<script type=\"module\" crossorigin src=\"/assets/index-79zyEX2i.js\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "0",
+							"id": "1",
 							"uri": "http://127.0.0.1:43142/about",
 							"nodeName": "http:\/\/127.0.0.1:43142\/about",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"module\" crossorigin src=\"/assets/index-10X-3qxX.js\"></script>",
+							"evidence": "<script type=\"module\" crossorigin src=\"/assets/index-79zyEX2i.js\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "3",
+							"id": "4",
 							"uri": "http://127.0.0.1:43142/metro-manila",
 							"nodeName": "http:\/\/127.0.0.1:43142\/metro-manila",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"module\" crossorigin src=\"/assets/index-10X-3qxX.js\"></script>",
+							"evidence": "<script type=\"module\" crossorigin src=\"/assets/index-79zyEX2i.js\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"id": "4",
+							"id": "3",
 							"uri": "http://127.0.0.1:43142/trends",
 							"nodeName": "http:\/\/127.0.0.1:43142\/trends",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"module\" crossorigin src=\"/assets/index-10X-3qxX.js\"></script>",
+							"evidence": "<script type=\"module\" crossorigin src=\"/assets/index-79zyEX2i.js\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						}
 					],

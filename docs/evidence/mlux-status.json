@@ -1,0 +1,105 @@
+{
+  "utc": "2026-10-26T01:00:56.466416+00:00",
+  "source_commit": "bbc3e63085aead689b2de2abb9b90fe3c2a050b3",
+  "test_source_commit": "a0e4240d931b21e9190018f4ad690291bb86221a",
+  "branch": "feat/ml-map-ux",
+  "main_pushed": false,
+  "local_checks_complete": true,
+  "release_status": "NEEDS OWNER: credential rotation, hosted and human verification",
+  "checks": {
+    "unit_integration": 85,
+    "ml_leakage_tests": 4,
+    "parity_rows": 600,
+    "parity_methods": 5,
+    "parity_probability_tolerance": 1e-09,
+    "clean_checkout": "419ce9366a44a0c9a36c712fb7e442ccb2a0dda4",
+    "repeat_export_byte_identical_artifacts": 12,
+    "ui_runs": [
+      {
+        "tests": 44,
+        "command": "npm run test:ui -- --workers=1",
+        "started_utc": "2026-10-26T00:41:27.788619+00:00",
+        "duration_seconds": 397.391,
+        "exit_code": 0
+      },
+      {
+        "tests": 44,
+        "command": "npm run test:ui -- --workers=1",
+        "started_utc": "2026-10-26T00:48:05.344150+00:00",
+        "duration_seconds": 364.515,
+        "exit_code": 0
+      },
+      {
+        "tests": 44,
+        "command": "npm run test:ui -- --workers=1",
+        "started_utc": "2026-10-26T00:54:09.969740+00:00",
+        "duration_seconds": 332.328,
+        "exit_code": 0
+      }
+    ],
+    "production": {
+      "tests": 18,
+      "command": "npm run test:production -- --workers=1",
+      "started_utc": "2026-10-26T00:39:49.623720+00:00",
+      "duration_seconds": 97.954,
+      "exit_code": 0
+    },
+    "pwa": {
+      "tests": 3,
+      "command": "npm run test:pwa -- --workers=1",
+      "started_utc": "2026-10-26T00:15:09.887240+00:00",
+      "duration_seconds": 16.313,
+      "exit_code": 0
+    },
+    "database": "25 SQL checks + one local MFA browser flow; all 13 migrations applied locally",
+    "geography_tests": 3,
+    "hero_pixel_contrast_targets": 30,
+    "credited_dependencies": 438,
+    "credited_boundary_inputs": 13,
+    "npm_audit_vulnerabilities": 0,
+    "lighthouse": {
+      "performance": 93.0,
+      "accessibility": 100,
+      "best-practices": 96.0,
+      "seo": 100
+    },
+    "zap": {
+      "target": "http://127.0.0.1:43142",
+      "utc": "2026-10-26T00:15:00.264Z",
+      "mode": "passive baseline; no active scan or authenticated coverage",
+      "runtime_exit_code": 0,
+      "high_or_medium_alerts": 0,
+      "low_or_info_alerts": 2,
+      "passed": true
+    },
+    "secrets": {
+      "private_guard_configured": true,
+      "current_findings": 0,
+      "historical_findings": 44,
+      "unexpected_historical_findings": 0,
+      "rotation_status": "NEEDS OWNER",
+      "passed": false
+    },
+    "screenshots": 8,
+    "map_provider_probe": "online",
+    "map_provider_requests": 12
+  },
+  "model": {
+    "version": "d783ae4e1a32081b",
+    "source_sha256": "4e993553f10081b4e6b35a0d4b3c9bd0cc271765645a123fcb2e0c5d7084633c",
+    "chosen_by_validation": "RF",
+    "headline_rows": 1071,
+    "headline_positives": 225,
+    "onset_positives": 20,
+    "replay_calendar_weeks": 70,
+    "replay_rows": 1190,
+    "unavailable_predictions": 119,
+    "conclusion": "Persistence clearly improves F1 over RF in this comparison."
+  },
+  "limits": [
+    "No successful hosted deployment, hosted Auth certification, hosted migration, report activation or human usability result claimed.",
+    "An earlier production-isolation diagnostic sent synthetic local-test sign-in credentials to the configured Auth origin and received HTTP 400. The adapter now intercepts production Supabase origins; all successful admin/SQL verification is local.",
+    "IEEE metadata verified; publisher full-text protocol fidelity not independently verified.",
+    "Photo permission/source/licence, owner contacts, credential rotation, newer reviewed counts and DPO/hosted/human checks remain owner actions."
+  ]
+}

@@ -33,7 +33,7 @@
       "language": "en",
       "text": "DENGUE WATCHMANILA",
       "minimum_required": 3,
-      "worst_measured_ratio": 10.090362117512957,
+      "worst_measured_ratio": 10.061660770221138,
       "pixels_sampled": 19530,
       "passed": true
     },
@@ -42,7 +42,7 @@
       "language": "en",
       "text": "Explore next-week city estimates through historical examples.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 9.630252091182292,
+      "worst_measured_ratio": 9.573993288062484,
       "pixels_sampled": 5700,
       "passed": true
     },

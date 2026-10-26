@@ -1,5 +1,7 @@
 # Current NCR classification feature
 
+Local verification is complete for application source `a0e4240`: 85 unit/integration tests, four ML leakage tests, 600-row parity, three consecutive 44-test UI runs, 18 production and three PWA tests. Full evidence, retained diagnostics and owner-blocked gates: [mlux-checks.md](docs/evidence/mlux-checks.md). The secret audit remains NEEDS OWNER (0 current / 44 known historical / 0 unexpected); hosted and human checks are not certified. Exact push: `git push -u origin feat/ml-map-ux`. Main was not pushed. Test locally, self-review and inspect the preview before merging; main merge deploys Vercel.
+
 The active work is on `feat/ml-map-ux`, from main `de0d22c`. Dashboard and Risk Map now explain dated next-week outbreak research for all 17 NCR cities/municipality. Replay is the default; Live requires reviewed complete recent counts. Community reporting remains closed. About contains the technical methods and clearly labelled historical archives.
 
 Read [ML method](docs/ML_METHOD.md), [actual evaluation](docs/ML_EVALUATION.md), [map design](docs/MAP_DESIGN.md), and [current handoff](docs/HANDOFF.md). The simple persistence rule wins held-out F1; RF is retained as the training-validation selection. The source contains calendar gaps; they are never zero-filled. A real 6.7 MB local PMTiles basemap is bundled. No Google key or billing account is needed.

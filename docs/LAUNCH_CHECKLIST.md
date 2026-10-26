@@ -1,5 +1,7 @@
 # Current NCR ML/map checkpoint (2026-10-26)
 
+Local verification is complete for application source `a0e4240`: 85 unit/integration tests, four ML leakage tests, 600-row parity, three consecutive 44-test UI runs, 18 production and three PWA tests. Full evidence, retained diagnostics and owner-blocked gates: [mlux-checks.md](evidence/mlux-checks.md). The secret audit remains NEEDS OWNER (0 current / 44 known historical / 0 unexpected); hosted and human checks are not certified. Exact push: `git push -u origin feat/ml-map-ux`. Main was not pushed. Test locally, self-review and inspect the preview before merging; main merge deploys Vercel.
+
 Active branch: `feat/ml-map-ux`, based on main `de0d22c`. Current scientific method and results: [ML_METHOD.md](ML_METHOD.md) and [ML_EVALUATION.md](ML_EVALUATION.md). Map and UX: [MAP_DESIGN.md](MAP_DESIGN.md), [UX_DECISIONS.md](UX_DECISIONS.md). Final verification is recorded in [evidence/mlux-checks.md](evidence/mlux-checks.md); previous redesign passes below do not certify this feature.
 
 Implemented: 17-area chronological DT/RF research, calibration and all three baselines, onset and robustness analyses, Python/TypeScript parity, dated Replay/guarded Live, AAL2 reviewed CSV versioning with audit/rollback, a lazy MapLibre map with a real local PMTiles extract and polygon/SVG fallbacks, and a simpler bilingual Dashboard. Persistence wins held-out F1. Missing calendar weeks remain missing. No current outbreak forecast is inferred from old data.
