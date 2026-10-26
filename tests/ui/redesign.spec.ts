@@ -1,9 +1,11 @@
-import {test,expect} from '@playwright/test';
+import {test,expect,type Page} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
 import AxeBuilder from '@axe-core/playwright';
 import {goto,activeView} from '../support/active-view';
 import {mockPublicApi} from '../fixtures/public-fixtures';
 const read=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
+async function openArchive(page:Page,path='/about?drawer=methods&section=dashboard'){await mockPublicApi(page,{open:false});const loaded=page.waitForResponse(async response=>new URL(response.url()).pathname==='/api/v2/manila.json'&&response.status()===200&&(await response.finished())===null);await goto(page,path);await loaded;}
+
 
 test('three navigation destinations, footer attribution, empty owner fields and old-route drawers',async({page})=>{
  test.setTimeout(120000);
@@ -47,7 +49,7 @@ test('city map uses all 17 explicit matches and exact saved probabilities, witho
 test('Dashboard and Manila map panel expose saved MAEs and backtest values, with bilingual core pages and privacy',async({page})=>{
  const data=await read('public/api/v2/manila.json');
  for(const path of ['/about?drawer=methods&section=dashboard']){
-  await goto(page,path);await expect(activeView(page).getByRole('heading',{name:'Current risk unavailable'})).toBeVisible();
+  await openArchive(page,path);await expect(activeView(page).getByRole('heading',{name:'Current risk unavailable'})).toBeVisible();
   for(const h of [1,2]){const expected=data.summaries.find((r:any)=>r.scenario==='M'&&r.fold==='test-2018-2023'&&r.model==='naive'&&r.horizon===h).mae;await expect(page.locator(`[data-panel-horizon="${h}"]`)).toHaveAttribute('data-panel-mae',String(expected));}
  }
  for(const [path,heading] of [['/','Mga dapat bantayan'],['/risk-map','Mapa ng Panganib'],['/report','Unawain at pumayag']]){
@@ -60,7 +62,7 @@ test('Dashboard and Manila map panel expose saved MAEs and backtest values, with
 
 
 test('Dashboard numeric analytics reproduce published series, exact backtest rows and forecast values',async({page})=>{
- await goto(page,'/about?drawer=methods&section=dashboard');const data=await read('public/api/v2/manila.json'),backtest=await read('public/api/v2/dashboard.json');
+ await openArchive(page);const data=await read('public/api/v2/manila.json'),backtest=await read('public/api/v2/dashboard.json');
  const format=(v:number,digits=1)=>v.toLocaleString('en-PH',{maximumFractionDigits:digits});
  for(const scenario of ['M','Z']){
   await page.getByLabel('Absent-day scenario',{exact:true}).selectOption(scenario);
