@@ -36,3 +36,5 @@ PWA core assets and map-only assets are separately enumerated in docs/evidence/m
 Glyph paths are canonical URL paths in the cache manifest, including encoded spaces. Offline checks wait for all optional map assets, require visible city labels and verify an actual PMTiles 206 response.
 
 The dedicated worker needs its own connect policy: workers inherit the policy on their script response. Restricting only the Risk Map document blocked primary vector tiles while the local fallback still worked. The production header test checks the worker policy and confirms Report has no tile-host permission.
+
+City risk GeoJSON promotes its stable boundary id property for vector-tile feature state. String GeoJSON top-level ids alone were converted to tile id 0, so states could exist in the source cache without reaching rendered fills. The regression check inspects all 17 rendered feature ids/states and samples five interior pixel patches away from borders and city labels. Mobile details sit below the map as a docked sheet in normal flow, avoiding sticky-card overlap and empty space.

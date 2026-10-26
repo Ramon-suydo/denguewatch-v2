@@ -51,4 +51,4 @@ In the onset subset, the fixed persistence rule cannot alert because currently-a
 
 ### Deterministic forest scoring
 
-Forest fitting may use two workers. Probability prediction uses one worker so tree probabilities are accumulated in a fixed order. Reproduction exposed sub-ULP differences in parallel prediction (unchanged model version and labels); serial scoring removes that execution-order variability. This changes no data split, target, hyperparameter search or validation criterion. Fresh exports and evaluation are regenerated after this correction.
+Forest fitting may use two workers. Probability prediction uses one worker so tree probabilities are accumulated in a fixed order. Reproduction exposed differences up to 4.44e-16 in parallel prediction (unchanged model version and labels); serial scoring removes that execution-order variability. This changes no data split, target, hyperparameter search or validation criterion. Fresh exports and evaluation are regenerated after this correction.
