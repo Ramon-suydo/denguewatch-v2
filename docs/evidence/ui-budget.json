@@ -1,15 +1,15 @@
 {
-  "initial_gzip_bytes": 103468,
-  "total_gzip_bytes": 699729,
+  "initial_gzip_bytes": 105850,
+  "total_gzip_bytes": 705217,
   "limits": {
     "initial": 225280,
     "total": 870400
   },
   "assets": [
     {
-      "name": "About-Cu-mfDBF.js",
+      "name": "About-7Dht8uIt.js",
       "bytes": 78539,
-      "gzip": 10033,
+      "gzip": 10036,
       "initial": false
     },
     {
@@ -19,21 +19,27 @@
       "initial": false
     },
     {
-      "name": "Admin-cIt4CCwM.js",
-      "bytes": 65764,
-      "gzip": 18375,
+      "name": "Admin-2maK1fuh.js",
+      "bytes": 65796,
+      "gzip": 18390,
       "initial": false
     },
     {
-      "name": "ClassificationEvidence-Bf7CBYPL.js",
+      "name": "ClassificationEvidence-DFGWxIbs.js",
       "bytes": 3301,
-      "gzip": 1478,
+      "gzip": 1485,
       "initial": false
     },
     {
-      "name": "EvidenceTrends-IF17e5JI.js",
-      "bytes": 11170,
-      "gzip": 3913,
+      "name": "Components-vHbwZuPc.js",
+      "bytes": 3540,
+      "gzip": 1472,
+      "initial": true
+    },
+    {
+      "name": "EvidenceTrends-DwKJWj5l.js",
+      "bytes": 10186,
+      "gzip": 3502,
       "initial": false
     },
     {
@@ -43,9 +49,9 @@
       "initial": false
     },
     {
-      "name": "index-B1bQuqeC.js",
-      "bytes": 307202,
-      "gzip": 97741,
+      "name": "index-D6VYRU6-.js",
+      "bytes": 308202,
+      "gzip": 97801,
       "initial": true
     },
     {
@@ -55,9 +61,15 @@
       "initial": true
     },
     {
-      "name": "live-scorer-BBV1qrne.js",
-      "bytes": 1584,
-      "gzip": 847,
+      "name": "live-CUp2fOYR.js",
+      "bytes": 3406,
+      "gzip": 1599,
+      "initial": true
+    },
+    {
+      "name": "live-scorer-YrUq6oJW.js",
+      "bytes": 1573,
+      "gzip": 839,
       "initial": false
     },
     {
@@ -67,15 +79,15 @@
       "initial": false
     },
     {
-      "name": "MapProvider-Djq1TUfU.js",
-      "bytes": 1131835,
-      "gzip": 304025,
+      "name": "MapProvider-D9_O_sOL.js",
+      "bytes": 1152977,
+      "gzip": 312139,
       "initial": false
     },
     {
-      "name": "Methods-BnPmIgkx.js",
-      "bytes": 82109,
-      "gzip": 25072,
+      "name": "Methods-2eZ5rRWO.js",
+      "bytes": 82086,
+      "gzip": 25088,
       "initial": false
     },
     {
@@ -85,45 +97,33 @@
       "initial": false
     },
     {
-      "name": "outlook-BCFx3q3X.js",
-      "bytes": 20852,
-      "gzip": 7965,
+      "name": "OurModel-DVlRS7M4.js",
+      "bytes": 12264,
+      "gzip": 4541,
       "initial": false
     },
     {
-      "name": "preload-helper-DjzSQ1t3.js",
-      "bytes": 1383,
-      "gzip": 749,
-      "initial": true
-    },
-    {
-      "name": "PreviewMap-D2AmyvYx.js",
-      "bytes": 2287,
-      "gzip": 1243,
-      "initial": false
-    },
-    {
-      "name": "PrivacyNotice-BcO0_1Rv.js",
+      "name": "PrivacyNotice-Cg1rswL9.js",
       "bytes": 8236,
-      "gzip": 3657,
+      "gzip": 3662,
       "initial": false
     },
     {
-      "name": "ReportV2-DQsnnFWu.js",
-      "bytes": 16538,
-      "gzip": 6885,
+      "name": "ReportV2-BKQhny4z.js",
+      "bytes": 16576,
+      "gzip": 6907,
       "initial": false
     },
     {
-      "name": "RiskMap-DQ0hlqPD.js",
-      "bytes": 12404,
-      "gzip": 4543,
+      "name": "RiskMap-6dCM1BA1.js",
+      "bytes": 12425,
+      "gzip": 4548,
       "initial": false
     },
     {
-      "name": "signals-CqqLm3go.js",
+      "name": "signals-Bp2rtk3L.js",
       "bytes": 2982,
-      "gzip": 1491,
+      "gzip": 1493,
       "initial": false
     },
     {
@@ -133,9 +133,9 @@
       "initial": false
     },
     {
-      "name": "ui-DDtOBO0g.js",
+      "name": "ui-AOKHUdT_.js",
       "bytes": 1555,
-      "gzip": 699,
+      "gzip": 702,
       "initial": false
     },
     {

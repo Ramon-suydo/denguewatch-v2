@@ -8,13 +8,13 @@ const read=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
 async function openArchive(page:Page,path='/about?drawer=methods&section=dashboard'){await mockPublicApi(page,{open:false});const loaded=page.waitForResponse(async response=>new URL(response.url()).pathname==='/api/v2/manila.json'&&response.status()===200&&(await response.finished())===null);await goto(page,path);await loaded;}
 
 
-test('three navigation destinations, footer attribution, empty owner fields and old-route drawers',async({page})=>{
+test('four navigation destinations, footer attribution, empty owner fields and old-route drawers',async({page})=>{
  test.setTimeout(120000);
  for(const width of [360,1280])for(const path of ['/','/risk-map','/report','/about']){
   await page.setViewportSize({width,height:1000});await goto(page,path);
 
   const nav=page.getByRole('navigation',{name:width===360?'Mobile navigation':'Main navigation'});await expect(nav).toBeVisible();
-  await expect(nav.getByRole('link')).toHaveText(['Dashboard','Risk Map','Community Report']);
+  await expect(nav.getByRole('link')).toHaveText(['Manila','NCR Map','Our Model','Report']);
   await expect(nav.getByRole('link',{name:'About & Credits'})).toHaveCount(0);
   await expect(page.getByRole('contentinfo').getByRole('link',{name:'About & Credits'})).toHaveAttribute('href','/about');
   await expect(page.getByRole('contentinfo')).toContainText('Background photograph by Sumarie Slabber');
@@ -53,7 +53,7 @@ test('Dashboard and Manila map panel expose saved MAEs and backtest values, with
   await openArchive(page,path);await expect(activeView(page).getByRole('heading',{name:'Current risk unavailable'})).toBeVisible();
   for(const h of [1,2]){const expected=data.summaries.find((r:any)=>r.scenario==='M'&&r.fold==='test-2018-2023'&&r.model==='naive'&&r.horizon===h).mae;await expect(page.locator(`[data-panel-horizon="${h}"]`)).toHaveAttribute('data-panel-mae',String(expected));}
  }
- for(const [path,heading] of [['/','Ang linggong ito sa Metro Manila'],['/risk-map','Mapa ng Panganib'],['/report','Ano ang iyong iuulat?']]){
+ for(const [path,heading] of [['/','Maynila, bawat linggo'],['/risk-map','Mapa ng Panganib'],['/report','Ano ang iyong iuulat?']]){
   await goto(page,path);await page.getByRole('button',{name:'Filipino',exact:true}).click();await expect(page.getByRole('heading',{name:heading,exact:true})).toBeVisible();await expect(page.locator('html')).toHaveAttribute('lang','fil');
   await page.getByRole('button',{name:'English',exact:true}).click();
  }

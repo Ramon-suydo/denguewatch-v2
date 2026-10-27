@@ -1,3 +1,17 @@
+# Manila-first landing and model demo - 2026-10-27
+
+Branch: `feat/ui-overhaul`, continuing from `1ed560a`. Implemented: Manila-led hero and weekly history/dated-estimate chart; a separate district-grouped section for the other 16 NCR areas; a dedicated `/our-model` past-week prediction/outcome comparison; four visible navigation destinations; retained original identity, care guidance and gated reporting.
+
+Three consecutive full browser runs passed 54 tests each before an unexpected PC restart interrupted production verification. Build, lint/types, 87 unit/integration tests, contrast and fresh database verification passed. The resumed production suite passed 18 tests, PWA passed 5, and all 80 independent visual comparisons passed. Four browser engines passed 20 cases each. Mobile Lighthouse measured 96 performance / 100 accessibility, LCP 2.415 s and CLS 0. Dependency audit found 0 vulnerabilities; local passive ZAP found 0 high/medium alerts. Full secret audit remains NEEDS OWNER (0 current / 44 known historical / 0 unexpected). The current [check report](evidence/manila-focus-checks.md) and [manifest](evidence/ui-command-manifest.json) record actual commands and limitations. Prior checkpoints below are historical.
+
+No data, model, schema, submission/security, moderation, retention or map fallback behavior changed. Manila's dated count estimate remains historical; the RF demo estimates a high-case event, not a case count. Approved recent data is still needed for a current forecast.
+
+Owner gates remain: known historical credential rotation; approved controller/contact; photo permission; native Filipino review; hosted Auth/MFA/purge/schedules/log verification; DPO approval; real iOS/device, screen-reader and usability review; field INP. Reports remain closed. No hosted write, push or main merge is included.
+
+Test locally and self-review before merging; every main push deploys Vercel. User push command: `git push -u origin feat/ui-overhaul`.
+
+---
+
 # Bay & care UI overhaul checkpoint (2026-10-27)
 
 Active branch: `feat/ui-overhaul`. The owner wants DengueWatch to have its own personality; iACADEMY is not a reference. The branch starts from fetched main `de0d22c` and retains the reviewed ML/map prerequisite `5d9bdb4`. No new model, data, schema, submission-security, moderation or retention changes are included.

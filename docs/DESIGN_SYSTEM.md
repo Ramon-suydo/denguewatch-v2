@@ -11,3 +11,5 @@ Verification must distinguish token contrast checks from rendered contrast over 
 CI budgets: initial JavaScript ≤220 KiB gzip; all JavaScript including the lazy map worker, staff and archived research routes ≤850 KiB gzip. scripts/check-ui-budget.mjs measures the built manifest graph and rejects map-engine entry into the initial graph. Screenshot CI uses Windows/Edge to match the baseline platform. Existing Linux quality gates remain.
 
 The installed-app icon uses the same original drop/wave geometry with a maskable safe area; browser and manifest colors use bay teal and warm sand. Footer waves use the footer background color so the monochrome mark remains legible.
+
+Manila-first revision: primary destinations are Manila, NCR Map, Our Model and Report. The landing page has section shortcuts, paired source/estimate cards, a responsive observed/forecast chart and district cards. Our Model uses explicitly labelled selectors, prediction/outcome cards and expandable exact values. Both charts retain a text alternative and source labels; no new UI or plotting runtime is added.

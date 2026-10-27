@@ -4,187 +4,187 @@
     {
       "width": 360,
       "language": "en",
-      "text": "Replay \u00b7 historical example",
+      "text": "MANILA / HISTORICAL RECORDS",
       "minimum_required": 4.5,
       "worst_measured_ratio": 12.141024905748704,
-      "pixels_sampled": 3009,
+      "pixels_sampled": 3842,
       "passed": true
     },
     {
       "width": 360,
       "language": "en",
-      "text": "Which cities need a little extra care?",
+      "text": "A closer look at dengue in Manila.",
       "minimum_required": 3,
-      "worst_measured_ratio": 7.000487912838971,
-      "pixels_sampled": 33974,
+      "worst_measured_ratio": 4.549423432193066,
+      "pixels_sampled": 31672,
       "passed": true
     },
     {
       "width": 360,
       "language": "en",
-      "text": "Check next-week dengue estimates for Metro Manila. Start with a historical example, then see what you can do.",
+      "text": "See the recorded weekly cases, explore a historical forecast, and find small ways to take care.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 6.69537574391823,
-      "pixels_sampled": 16529,
+      "worst_measured_ratio": 7.665368092505764,
+      "pixels_sampled": 13965,
       "passed": true
     },
     {
       "width": 360,
       "language": "en",
-      "text": "Estimates, not alerts. Historical data through 2020-12-27.",
+      "text": "Records through 2023-12-02. Historical research, not a live health alert.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 5.966800612354584,
-      "pixels_sampled": 8740,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "fil",
-      "text": "Replay \u00b7 lumang halimbawa",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 12.141024905748704,
-      "pixels_sampled": 3043,
+      "worst_measured_ratio": 5.342816219470576,
+      "pixels_sampled": 10880,
       "passed": true
     },
     {
       "width": 360,
       "language": "fil",
-      "text": "Aling mga lungsod ang dapat mas pag-ingatan?",
-      "minimum_required": 3,
-      "worst_measured_ratio": 6.124599962344001,
-      "pixels_sampled": 45089,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "fil",
-      "text": "Tingnan ang pagtataya ng dengue sa Metro Manila. Magsimula sa lumang halimbawa at alamin ang dapat gawin.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 6.594134928549763,
-      "pixels_sampled": 16720,
-      "passed": true
-    },
-    {
-      "width": 360,
-      "language": "fil",
-      "text": "Pagtataya, hindi babala. Lumang datos hanggang 2020-12-27.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 5.400574892618076,
-      "pixels_sampled": 9360,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "en",
-      "text": "Replay \u00b7 historical example",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 12.141024905748704,
-      "pixels_sampled": 3009,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "en",
-      "text": "Which cities need a little extra care?",
-      "minimum_required": 3,
-      "worst_measured_ratio": 7.7786749117880545,
-      "pixels_sampled": 34450,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "en",
-      "text": "Check next-week dengue estimates for Metro Manila. Start with a historical example, then see what you can do.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 6.260399833818244,
-      "pixels_sampled": 18543,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "en",
-      "text": "Estimates, not alerts. Historical data through 2020-12-27.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 6.830757379834952,
-      "pixels_sampled": 9681,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "fil",
-      "text": "Replay \u00b7 lumang halimbawa",
+      "text": "MAYNILA / LUMANG TALA",
       "minimum_required": 4.5,
       "worst_measured_ratio": 12.141024905748704,
       "pixels_sampled": 3043,
       "passed": true
     },
     {
-      "width": 768,
+      "width": 360,
       "language": "fil",
-      "text": "Aling mga lungsod ang dapat mas pag-ingatan?",
+      "text": "Mas malinaw na pagtingin sa dengue sa Maynila.",
       "minimum_required": 3,
-      "worst_measured_ratio": 5.257230232350644,
-      "pixels_sampled": 45951,
+      "worst_measured_ratio": 4.455584640574687,
+      "pixels_sampled": 46036,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "Tingnan ang lingguhang tala, makasaysayang pagtataya, at mga paraan ng pag-iingat.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 5.525784071224609,
+      "pixels_sampled": 12780,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "language": "fil",
+      "text": "Tala hanggang 2023-12-02. Lumang pananaliksik, hindi kasalukuyang babala.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 5.2801896761705605,
+      "pixels_sampled": 11540,
       "passed": true
     },
     {
       "width": 768,
-      "language": "fil",
-      "text": "Tingnan ang pagtataya ng dengue sa Metro Manila. Magsimula sa lumang halimbawa at alamin ang dapat gawin.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 6.105562333574591,
-      "pixels_sampled": 18438,
-      "passed": true
-    },
-    {
-      "width": 768,
-      "language": "fil",
-      "text": "Pagtataya, hindi babala. Lumang datos hanggang 2020-12-27.",
-      "minimum_required": 4.5,
-      "worst_measured_ratio": 8.589549030765001,
-      "pixels_sampled": 10374,
-      "passed": true
-    },
-    {
-      "width": 1440,
       "language": "en",
-      "text": "Replay \u00b7 historical example",
+      "text": "MANILA / HISTORICAL RECORDS",
       "minimum_required": 4.5,
       "worst_measured_ratio": 12.141024905748704,
-      "pixels_sampled": 3009,
+      "pixels_sampled": 3842,
       "passed": true
     },
     {
-      "width": 1440,
+      "width": 768,
       "language": "en",
-      "text": "Which cities need a little extra care?",
+      "text": "A closer look at dengue in Manila.",
       "minimum_required": 3,
-      "worst_measured_ratio": 5.911616612652857,
-      "pixels_sampled": 118243,
+      "worst_measured_ratio": 6.659713339630301,
+      "pixels_sampled": 32171,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "See the recorded weekly cases, explore a historical forecast, and find small ways to take care.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 5.249114855084329,
+      "pixels_sampled": 15519,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "text": "Records through 2023-12-02. Historical research, not a live health alert.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 8.046381261451685,
+      "pixels_sampled": 11949,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "MAYNILA / LUMANG TALA",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 12.141024905748704,
+      "pixels_sampled": 3043,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "Mas malinaw na pagtingin sa dengue sa Maynila.",
+      "minimum_required": 3,
+      "worst_measured_ratio": 6.194911969117693,
+      "pixels_sampled": 46534,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "Tingnan ang lingguhang tala, makasaysayang pagtataya, at mga paraan ng pag-iingat.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 5.715213830173372,
+      "pixels_sampled": 14112,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "language": "fil",
+      "text": "Tala hanggang 2023-12-02. Lumang pananaliksik, hindi kasalukuyang babala.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 6.809580751316321,
+      "pixels_sampled": 12684,
       "passed": true
     },
     {
       "width": 1440,
       "language": "en",
-      "text": "Check next-week dengue estimates for Metro Manila. Start with a historical example, then see what you can do.",
+      "text": "MANILA / HISTORICAL RECORDS",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 7.148559118532038,
-      "pixels_sampled": 21827,
+      "worst_measured_ratio": 12.141024905748704,
+      "pixels_sampled": 3842,
       "passed": true
     },
     {
       "width": 1440,
       "language": "en",
-      "text": "Estimates, not alerts. Historical data through 2020-12-27.",
+      "text": "A closer look at dengue in Manila.",
+      "minimum_required": 3,
+      "worst_measured_ratio": 5.900492841455601,
+      "pixels_sampled": 110192,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "text": "See the recorded weekly cases, explore a historical forecast, and find small ways to take care.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 6.648732247162226,
-      "pixels_sampled": 11362,
+      "worst_measured_ratio": 9.367538528704081,
+      "pixels_sampled": 18285,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "text": "Records through 2023-12-02. Historical research, not a live health alert.",
+      "minimum_required": 4.5,
+      "worst_measured_ratio": 6.532133014524353,
+      "pixels_sampled": 14053,
       "passed": true
     },
     {
       "width": 1440,
       "language": "fil",
-      "text": "Replay \u00b7 lumang halimbawa",
+      "text": "MAYNILA / LUMANG TALA",
       "minimum_required": 4.5,
       "worst_measured_ratio": 12.141024905748704,
       "pixels_sampled": 3043,
@@ -193,28 +193,28 @@
     {
       "width": 1440,
       "language": "fil",
-      "text": "Aling mga lungsod ang dapat mas pag-ingatan?",
+      "text": "Mas malinaw na pagtingin sa dengue sa Maynila.",
       "minimum_required": 3,
-      "worst_measured_ratio": 5.080347116313889,
-      "pixels_sampled": 157528,
+      "worst_measured_ratio": 5.364686206631299,
+      "pixels_sampled": 159468,
       "passed": true
     },
     {
       "width": 1440,
       "language": "fil",
-      "text": "Tingnan ang pagtataya ng dengue sa Metro Manila. Magsimula sa lumang halimbawa at alamin ang dapat gawin.",
+      "text": "Tingnan ang lingguhang tala, makasaysayang pagtataya, at mga paraan ng pag-iingat.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 6.394597450465864,
-      "pixels_sampled": 21735,
+      "worst_measured_ratio": 7.255021523827717,
+      "pixels_sampled": 16652,
       "passed": true
     },
     {
       "width": 1440,
       "language": "fil",
-      "text": "Pagtataya, hindi babala. Lumang datos hanggang 2020-12-27.",
+      "text": "Tala hanggang 2023-12-02. Lumang pananaliksik, hindi kasalukuyang babala.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 6.709065412552185,
-      "pixels_sampled": 12213,
+      "worst_measured_ratio": 6.928024535653334,
+      "pixels_sampled": 14904,
       "passed": true
     }
   ],

@@ -78,3 +78,10 @@ Full numbered dashboard and command instructions: [ROTATE_CREDENTIALS.md](ROTATE
 ## Why this design?
 
 DengueWatch puts a person’s next task first: choose a city, understand a dated estimate, learn a practical action, or preview a private report. The Bay wave and original drop mark root the identity in Manila without borrowing the owner’s other site. Light surfaces, readable type and a separate labeled risk scale reduce alarm and make comparisons easier. The map’s default example is calculated from the real saved data to show variety; it is not selected to suggest current conditions. Night mode, reduced motion, touch alternatives and bilingual controls support different needs. The full model limitations and negative comparisons remain available in the evidence and About page. See BRAND.md, DESIGN_SYSTEM.md, MOTION.md and the current verification record; human usability and Filipino review are still owner work.
+
+
+## Why does the landing page focus on Manila now?
+
+The revised hierarchy answers one local question first: what does the recorded Manila history show, and what was the next-week estimate from that historical record? Other NCR areas have a separate section and map. The model demonstration has its own visible destination so first-time visitors can compare a past prediction with the actual outcome before opening technical tables.
+
+The Manila number is a historical case-count baseline, not an RF count prediction. RF predicts a high-case event for an NCR area. Source dates, unavailable weeks, misses and the stronger simple-rule comparison remain visible. A seasonal average from the reference PDF is not substituted for a current forecast. New reviewed source data is still necessary for a current estimate.

@@ -9,3 +9,5 @@ Performance targets, not unmeasured claims: mobile Lighthouse >=90 performance /
 Implementation: CSS linear() spring with ease fallback; native Web Animations for finger-following sheet transforms and release; native document.startViewTransition with ordinary-link fallback. No motion library is added. Reveals never hide content before JavaScript, and staggered steps animate transform/opacity only. Keyboard and reduced-motion tests remain mandatory.
 
 Local evidence: three 51-test browser runs, a final 7-test focused follow-up, 64 visual comparisons across both motion preferences, and native-transition supported/unavailable paths pass. Lighthouse measured 97 performance / 100 accessibility, LCP 2.446 s and CLS 0. Field INP and real iOS Safari remain NOT VERIFIED. See [checks](evidence/ui-overhaul-checks.md).
+
+The Manila-first revision extends visual coverage to five pages: 80 passing captures and 80 independent comparisons across four widths, two themes and both motion settings. New charts are static SVG; selecting a saved model example changes source-based data without autoplay.

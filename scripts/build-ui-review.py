@@ -54,15 +54,18 @@ for row in manifest['results']:
 for name in ['repro.log','leakage.log','lighthouse-final.log','browser-first.log','browser-second.log','overhaul-first.log','overhaul-second.log','pixels.log','transitions.log','geography.log','diagnostic-skiplink.log','diagnostic-pre-anchor.json','diagnostic-visual-fonts.log','diagnostic-night-contrast.json','diagnostic-document-reload.log','diagnostic-visual-readiness.log','night-state-audit.json']:
  path=root/'.artifacts/ui-overhaul'/name
  if path.exists():entries[('logs/' if name in ['repro.log','leakage.log','lighthouse-final.log'] else 'diagnostics/')+name]=sanitize(text_bytes(path)).encode('utf8')
+for name in ['diagnostic-old-headings.log','diagnostic-restart-production.log','diagnostic-worker-restart.json','diagnostic-visual-selection.json','diagnostic-pre-refresh-compare.log']:
+ path=root/'.artifacts/manila-focus'/name
+ if path.exists():entries['diagnostics/manila-focus/'+name]=sanitize(text_bytes(path)).encode('utf8')
 baselines=[]
 for path in sorted((root/'tests/visual/baselines').glob('*.png')):baselines.append({'path':path.relative_to(root).as_posix(),'sha256':sha(path.read_bytes()),'bytes':path.stat().st_size})
-assert len(baselines)==64,'Expected 64 visual baselines'
-assert sum(name.startswith('docs/evidence/ui-overhaul/') and name.endswith('.png') for name in entries)==16,'Expected 16 review screenshots'
+assert len(baselines)==80,'Expected 80 visual baselines'
+assert sum(name.startswith('docs/evidence/ui-overhaul/') and name.endswith('.png') for name in entries)==20,'Expected 20 review screenshots'
 entries['VISUAL_BASELINES.json']=(json.dumps(baselines,indent=2)+'\n').encode()
 entries['COPY_INTEGRITY.json']=(json.dumps(integrity,indent=2)+'\n').encode()
 entries['COMMAND_MANIFEST.json']=(json.dumps(manifest,indent=2)+'\n').encode()
-entries['BUNDLE_SOURCE.json']=(json.dumps({'source_commit':source_commit,'ui_baseline':'5d9bdb4','branch':'feat/ui-overhaul','not_pushed':True,'protected_files':'ML pipeline, generated data/models, schema and submission/security APIs unchanged relative to UI baseline.','scope':'Source/review evidence, not a complete runnable clone. Raw inputs and large basemap tiles stay in the repository. Log paths/contact/test codes are sanitized; complete failure diagnostics retained.'},indent=2)+'\n').encode()
-entries['00_INDEX.md']=b'# DengueWatch UI review\n\nStart with docs/evidence/ui-overhaul-checks.md, docs/BRAND.md, docs/DESIGN_SYSTEM.md, docs/MOTION.md and docs/UX_DECISIONS.md. Screenshots at 360/1280 px in both themes are under docs/evidence/ui-overhaul/. All 64 baseline hashes are in VISUAL_BASELINES.json; the actual baselines are committed in the repository.\n\nCOMMAND_MANIFEST.json contains real final command results. Historical secret rotation, approved contact, photo permission, Filipino review, DPO/hosted/human checks remain owner work. This is not deployment clearance. No push or hosted write occurred.\n'
+entries['BUNDLE_SOURCE.json']=(json.dumps({'source_commit':source_commit,'ui_baseline':'5d9bdb4','presentation_baseline':'1ed560a','branch':'feat/ui-overhaul','not_pushed':True,'protected_files':'ML pipeline, generated data/models, schema and submission/security APIs unchanged relative to UI baseline.','scope':'Source/review evidence, not a complete runnable clone. Raw inputs and large basemap tiles stay in the repository. Log paths/contact/test codes are sanitized; final logs and retained attempt diagnostics are included.'},indent=2)+'\n').encode()
+entries['00_INDEX.md']=b'# DengueWatch UI review\n\nStart with docs/evidence/manila-focus-checks.md and docs/evidence/ui-overhaul-checks.md, docs/BRAND.md, docs/DESIGN_SYSTEM.md, docs/MOTION.md and docs/UX_DECISIONS.md. Screenshots at 360/1280 px in both themes are under docs/evidence/ui-overhaul/. All 80 baseline hashes are in VISUAL_BASELINES.json; the actual baselines are committed in the repository.\n\nCOMMAND_MANIFEST.json contains real final command results. Historical secret rotation, approved contact, photo permission, Filipino review, DPO/hosted/human checks remain owner work. This is not deployment clearance. No push or hosted write occurred.\n'
 for name in entries:
  assert not name.startswith('/') and '..' not in Path(name).parts
  assert not any(part in {'.git','.env','node_modules','certs'} for part in Path(name).parts)

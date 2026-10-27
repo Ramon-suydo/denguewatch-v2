@@ -1,3 +1,5 @@
+> Historical checkpoint for the original overhaul at `1ed560a`. The Manila-first revision and current command results are documented in [manila-focus-checks.md](manila-focus-checks.md). Shared machine-readable evidence paths are refreshed by the newer revision.
+
 # UI overhaul verification - 2026-10-27
 
 Branch `feat/ui-overhaul`; reviewed scientific/map baseline `5d9bdb4`. No push or hosted mutation. The owner explicitly rejects iACADEMY as a reference. DengueWatch has an original water-drop/wave mark and care illustrations, self-hosted Fraunces/Figtree, a bay/sand/coral palette, and day/night/automatic appearance. Existing basemap licences are retained, including the Protomaps sprite MIT notice.

@@ -1,3 +1,19 @@
+# Manila-first revision - 2026-10-27
+
+The owner approved adapting a groupmate's PDF structure while retaining DengueWatch's own brand. The reference is a hierarchy guide, not approval to reuse its sample counts, current-week labels, seasonal cutoffs or styling.
+
+The landing page now starts with Manila. Its weekly recorded-count chart and saved one-week estimate are together, with the source dates, uncertainty range and an exact-value table. Missing/incomplete weeks remain gaps. The default complete-row snapshot originates 2023-11-26 and estimates 2023-12-03; it is not a forecast for the coming week today.
+
+Other NCR areas have their own section: 15 cities plus Pateros in three district cards. The full map remains a separate destination. The primary navigation exposes Manila, NCR Map, Our Model and Report; page shortcuts jump directly to the main sections. Original typography, palette, photo, mark, themes and care guidance remain.
+
+Our Model now owns the interactive historical demonstration and detailed model comparisons. City/week selectors compare the saved predicted class and probability with the recorded count and outcome. Random Forest estimates a high-case event, whereas the Manila chart uses a separate count baseline. Missing inputs receive no prediction or match verdict. The default historical Manila example is a miss; the simpler rule's better saved F1 remains visible. No model is retrained or changed for the presentation.
+
+Before captures are the actual committed Dashboard images from `1ed560a`: [mobile](evidence/manila-focus-before/dashboard-360-light.png), [desktop](evidence/manila-focus-before/dashboard-1280-light.png), with provenance in that folder. After captures are [mobile](evidence/ui-overhaul/dashboard-360-light.png), [desktop](evidence/ui-overhaul/dashboard-1280-light.png) and the new [model page](evidence/ui-overhaul/model-1280-light.png). The model page is new and has no prior equivalent screenshot.
+
+Verification, source boundaries and remaining owner work: [Manila-first checks](evidence/manila-focus-checks.md). The restart interrupted production verification after all three 54-test stability runs had completed; remaining browser checks resume with one worker. Completed checks are retained, and an interrupted log is not presented as a pass.
+
+---
+
 # Bay & care UI overhaul — 2026-10-27
 
 The owner explicitly rejects iACADEMY as a reference. DengueWatch uses its own water-drop / Manila Bay wave mark, Fraunces + Figtree type, warm sand, deep teal and coral actions. No reference screenshot was available in this session; the supplied layout principles guided the work.

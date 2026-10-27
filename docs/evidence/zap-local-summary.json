@@ -1,6 +1,6 @@
 {
-  "target": "http://127.0.0.1:43274",
-  "utc": "2026-10-26T19:58:34.902Z",
+  "target": "http://127.0.0.1:43288",
+  "utc": "2026-10-27T11:18:56.803Z",
   "mode": "passive baseline; no active scan or authenticated coverage",
   "runtime_exit_code": 0,
   "high_or_medium_alerts": 0,
