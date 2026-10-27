@@ -1,0 +1,489 @@
+{
+  "baseline_commit": "11daef80725e0d024daf48b18d519ca1dc0b0995",
+  "files": {
+    "data/README.md": {
+      "sha256": "c58b3ebcd83360a59e28a36661c2680c12936ce798a8424845135af145bf08d9",
+      "git_text_eol": true
+    },
+    "data/external/POWER.md": {
+      "sha256": "0433ffacaa7a74d2f29acee4ff03fa5d08700629e1c4b94e5bfcfa69af9be65f",
+      "git_text_eol": true
+    },
+    "data/external/SOURCES.md": {
+      "sha256": "b715db6c9d5d19463f7d6b641cf3c28320a11e6f3b69453510c1c9035137a6d1",
+      "git_text_eol": true
+    },
+    "data/external/map-weather-fetch.json": {
+      "sha256": "2bb059a59ce59a5e2beb5c2f357436818556bce41e8dd845a0b8b3a94fff946c",
+      "git_text_eol": true
+    },
+    "data/external/map-weather/forecast-00.json": {
+      "sha256": "17182ab91c7f33b90c948ae3ecb8277b255e31da647de2d7d27b0bcbf9818d86",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-00.provenance.json": {
+      "sha256": "4912db4c0a420c926d86dde22e84dead0e5c538789588933b3120a0f334c61ed",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-01.json": {
+      "sha256": "bfad9a552cb1f3bda2ddaedc4ef75048fc40af4e0ab8795ee2a062331623947b",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-01.provenance.json": {
+      "sha256": "7c4a86b34f669ed35bf18bef237cd9b4485116b7816124f32fdab232bc6e9f05",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-02.json": {
+      "sha256": "b9e92400c25cf8a957520d23df5b5dfd9b5accc17d135785dc6990ff08f93976",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-02.provenance.json": {
+      "sha256": "7c674bf8adc8cec6b4abe02741124f909b9e12bcdb07ca1bf9fd351e0e6ac2f3",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-03.json": {
+      "sha256": "49f43360d09cefd7e5144e1e85af9add67cb7038feb75ec54643c9899946885b",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-03.provenance.json": {
+      "sha256": "c76256202791d1604164971bf84080a354b67268e5cb4b080ee9d61789c661c8",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-04.json": {
+      "sha256": "3dc518506977ad1dd407d942633bfe80d9c8ee262dfc37bfe34c52347d6606ec",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-04.provenance.json": {
+      "sha256": "04d54c5c5537687a37cbaacac5ed7c5b6eb0d48cb799d621319e1bb3afea6098",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-05.json": {
+      "sha256": "520262a46573e0ce336f6b6ad20d8b462c4a0b7207a5faa331e1a839ad09d264",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-05.provenance.json": {
+      "sha256": "90449c7af090e7bac721e0b3697e089f33c6002877d29758df7cfa2dd4b65fd9",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-06.json": {
+      "sha256": "471c2f44ff664c249825c2c402f58d1915a3b9f6d1bb2fbee194ea585935ae27",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-06.provenance.json": {
+      "sha256": "d91928a998decea7305ba69029e3e84e64e956039297755eb5ca83afffa1fd7c",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-07.json": {
+      "sha256": "fb616f6c6c2f35b2c30ce724d190767bb71acf1200893ef4cd510de8bca4ba11",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-07.provenance.json": {
+      "sha256": "e101f546c32da898141aa47eebf72f30d99afb7d57f143ab01a72d143d8d0768",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-08.json": {
+      "sha256": "6b43fb5daae01c8b1f34e5dc4734b6e4eb8b3fcbda471028b983a134b81ed20f",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-08.provenance.json": {
+      "sha256": "3fed6cf11b1c9a23308cfe7b981721cd48186a9f2a9c20253da29e706d14177f",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-09.json": {
+      "sha256": "ddf32d449961c3e1ffdc81a7ae0ed0b5275eff8137e37bd588b5d9b3ab83aa50",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-09.provenance.json": {
+      "sha256": "70a34208e64ec104afef529a5a28de6397a5eceeacc56d8f9ceee9540cf92423",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-10.json": {
+      "sha256": "f5d7b6e711d7bde683e5a9d66e700c2c8d59dac7fd38bfb0438adeb048efd8a0",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-10.provenance.json": {
+      "sha256": "f4649c6205b3ad4e54ec1e071b2df84ad0da1b05e04e8914265564177771d999",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-11.json": {
+      "sha256": "7cf34d14e88222a92e65dfa8fe331c7f9801f076ca7ed4b285cfdf5fc2dbba7d",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/forecast-11.provenance.json": {
+      "sha256": "211ed10b9090ea73d61cf9e596410b4057026405602ba453b39815e8409471bf",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-00.json": {
+      "sha256": "c56dac1ebc7b1c78bf577fc9daef8dc55fe3b45f3a3bd5e9901b6c3d64d9c65a",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-00.provenance.json": {
+      "sha256": "2adfdc8c35de7225ab3b0d4be10c0c99c0b2c40ebe55950fe4d8fb54f3223fe2",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-01.json": {
+      "sha256": "c0ab000c5b7522f38c7c2f0fc9effa583e46e214444110155b7f82ccfe7c22d2",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-01.provenance.json": {
+      "sha256": "2f379d0bb75e9c25996f2b5279fbd1914e95809f6c463272d977fa8d29277081",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-02.json": {
+      "sha256": "f24b8f07b9a3a1db2887a3ec4e74878d58c211398ca5cc5b62499375fa647928",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-02.provenance.json": {
+      "sha256": "8c5a5464accab4b47526acde670948214bfd82c1e40d7cb439806a99ead5d2e5",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-03.json": {
+      "sha256": "540e0cda6c9fddb1d26e4911cfb279ee747fcd47a3c0b0b953294172c92dc4c9",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-03.provenance.json": {
+      "sha256": "1090210b9e7e15e8eca89e9310655d40b7a43ec228a12dba455dcab21cbd71bf",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-04.json": {
+      "sha256": "0009f0893a98b80f2f6775c25e8bf940b3ffa565543eda23d5fe26bc528f5285",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-04.provenance.json": {
+      "sha256": "e1022b08603a880a93c9799a3b808bfb56d71b3020e90898f446b75925dc2603",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-05.json": {
+      "sha256": "571b1d0a8d564b62768e7441c3c8b96e9b2e6f75ce286d94886d9404170d09c6",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-05.provenance.json": {
+      "sha256": "506f95258f042b8e6291199ae59c8e0c226ea187392bdb9f2bab500a8f8beac2",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-06.json": {
+      "sha256": "8fcee016a67024a8b2e88c07ab369822bd5a83613c3adb3871107c7f79f2a995",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-06.provenance.json": {
+      "sha256": "c617a17273eb657e40f4d61074b3bf9cb80d8c9b77c5bd81d3a7f56817d2a4dd",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-07.json": {
+      "sha256": "4a3bf2ad3f2871a6dc88719c6e545a4e2c2108e1e00953ce97709f6678fb0c78",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-07.provenance.json": {
+      "sha256": "d090674acf5ac33d41c8cc9beb6541fccdaca6eece48bfa383cabed73f9d7a6a",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-08.json": {
+      "sha256": "20238b6d010020aeae3386e918e5d31ff3261ffd224824918d989cd032e855db",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-08.provenance.json": {
+      "sha256": "e0c1262a857c57a5e2071a8d94c42415c631f913d6ca48f45370c6e02e528e74",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-09.json": {
+      "sha256": "a4fde2512f7b5e75b3a47c7e8321afe6993ece105a61f8112e14e05510e43d49",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-09.provenance.json": {
+      "sha256": "06cfe45a47f06758777cd24d19f214dcf4a2639029fbc011c3d1cfe5ac509a4b",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-10.json": {
+      "sha256": "5cded9d494a852565757d7736a65f57472074c4eeba6a1302ad878b5cca01a70",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-10.provenance.json": {
+      "sha256": "68aabdbe2bc437ce0cd17de8efa269995148f740242a1487047052949354a113",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-11.json": {
+      "sha256": "89ec63ade86deba9665e6bebda0f917dd63beff949781492d973cc16c736afc8",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/history-11.provenance.json": {
+      "sha256": "a26a9ffa1a4d614c980b7871682181f818de14790043dc31876ccc2d829d54b0",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/nasa-albay.json": {
+      "sha256": "92dc69232f55710909c3efe3f95c3897d345c4873c6c91a74870a764e1cbac25",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/nasa-albay.receipt.json": {
+      "sha256": "6b1f3e9ff0e16a1d5ffa90c034ffce4a8259cb03207b9b09605e0ab055a5ac6e",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/nasa-cebu.json": {
+      "sha256": "51ff273d3b4750c5e3a15b74ea1e8655d7831bdff2a3b7fd7fc9a657507f61bc",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/nasa-cebu.receipt.json": {
+      "sha256": "1840f1851de08e5f21dcfd3952ee3b04b7bf91b02d59ca25cfd8d450ad0ed933",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/nasa-davao-del-sur.json": {
+      "sha256": "0c203c77975bf633c16d9d32dcee539c7ce75b0e67d67650c82f2bafa4f09819",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/nasa-davao-del-sur.receipt.json": {
+      "sha256": "b28621b6f86b8d00866bec749993714720baa5964ff4093ed357595c72d3518c",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/nasa-manila-city.json": {
+      "sha256": "5de64d91e20a35e78b9bbe763f72809fce4f7abd7ecaac1628d890eaea594bdf",
+      "git_text_eol": false
+    },
+    "data/external/map-weather/nasa-manila-city.receipt.json": {
+      "sha256": "d5ceca77c897884339ffc47b168cce87b13cc7cdbaa366e1b6298d9d3d6420de",
+      "git_text_eol": false
+    },
+    "data/external/ml-basemap.provenance.json": {
+      "sha256": "b7fbf03688e9ef0d92f034856feb85609de294bbc802ec65a2c56e59cca48186",
+      "git_text_eol": true
+    },
+    "data/external/ml-openfreemap.provenance.json": {
+      "sha256": "fe87fd265d3ca189a6d1ca49334de7484ab478a7e834eab3cf3d30506c87ff5b",
+      "git_text_eol": true
+    },
+    "data/external/ml-study-citation.provenance.json": {
+      "sha256": "04c3dde03de7b8814f92a496a61c375a2b7c6c27a20b3c1e533b0d3fb0b79581",
+      "git_text_eol": true
+    },
+    "data/external/redesign-phl-adm2.json": {
+      "sha256": "fa77b9f17db2e419acaae714a935f7812be4409e2983675d34020e8426a3e189",
+      "git_text_eol": false
+    },
+    "data/external/redesign-phl-adm2.provenance.json": {
+      "sha256": "f40720a9723f4085894ccf6aabf9bfcc06f10c8da2324fa8598f2b9f7d1c63f8",
+      "git_text_eol": true
+    },
+    "data/geo/LICENSE-boundaries.txt": {
+      "sha256": "4382ddd5f6cf65fcbc9bce08896978c2c3cb4c36288d6c20c95eed88975f892c",
+      "git_text_eol": true
+    },
+    "data/geo/boundary-source.json": {
+      "sha256": "6c9adbacfe2bf9095f17be2116c261f5012fb67014b2571f41e54f105911c146",
+      "git_text_eol": true
+    },
+    "data/geo/manila-barangays.json": {
+      "sha256": "8371641585842162387b9e40b40eb9fb5144958e71a45954d0514e41bd86f8e2",
+      "git_text_eol": true
+    },
+    "data/geo/manila-boundary.geojson": {
+      "sha256": "57450ffc99925a02150893e57150f1e531c56afa4fd95f5a6bbb50d62aaa05e5",
+      "git_text_eol": true
+    },
+    "data/geo/national-crosswalk.json": {
+      "sha256": "5685905e51ff1690be15970d158cf3176ccddad7375ff7d96ce3c8ba5ddb449d",
+      "git_text_eol": true
+    },
+    "data/geo/ncr-boundaries.geojson": {
+      "sha256": "7f7728a80dc035977e1b00e9264e09e99e7b4984aedcdf3ad90f47c1a2b92ffa",
+      "git_text_eol": true
+    },
+    "data/geo/ncr-ml-crosswalk.json": {
+      "sha256": "8c10a74c9aee9dd60c17c1834a8bcee341e64aeab3ae21443fc729a8e721fc5d",
+      "git_text_eol": true
+    },
+    "data/geo/ncr-source.json": {
+      "sha256": "0dfd30469971e567b32f167706c4bb8bc4daaaa3b1ff7096f9448bc39305a414",
+      "git_text_eol": true
+    },
+    "data/geo/psa-2020-tondo.json": {
+      "sha256": "96cb6124ad35af2cbbce61d5088b3f19abe0c239aa83ee03b1401714effee095",
+      "git_text_eol": true
+    },
+    "data/geo/tondo-boundaries.geojson": {
+      "sha256": "c5cecd61991da372429b462f62e8d5c673f901fc59fa2fad7a083cf08f55984c",
+      "git_text_eol": true
+    },
+    "data/processed/audit.json": {
+      "sha256": "8b424309f5ed47768cc6296a7f3920e6a61d0e868d393ef3f4c6d71c35689ea5",
+      "git_text_eol": true
+    },
+    "data/processed/elevation_samples.json": {
+      "sha256": "c9f40e3ed5c77faf48061a4573361f4ab84a65848c892681dbd79ceb0ea559f8",
+      "git_text_eol": true
+    },
+    "data/processed/elevation_sources.json": {
+      "sha256": "61fd3de2eed4a985d5a21ab713c8d8d013595688df718871de5587ce21213798",
+      "git_text_eol": true
+    },
+    "data/processed/environment_design.json": {
+      "sha256": "1efc4ce1cde0f062e6f05d71162c73f6e98d7bad26f78446aaf120109190d609",
+      "git_text_eol": true
+    },
+    "data/processed/environment_evaluation.json": {
+      "sha256": "82202a50bf10837b23c4c8ae0123113ff5d29b58935023f0c3703db10772a95b",
+      "git_text_eol": true
+    },
+    "data/processed/environment_weekly.json": {
+      "sha256": "e2c804e828ada42c3c7ce0fcb43f376ea828f721d771626e59cf3071982ccb0c",
+      "git_text_eol": true
+    },
+    "data/processed/evaluation.json": {
+      "sha256": "3f18ac075ea62d1ee3b46632655882eb0253a09ce21374049a0c573cd1dffb46",
+      "git_text_eol": true
+    },
+    "data/processed/geographic_context.json": {
+      "sha256": "563d88f1eb25ae44c3bd0429b5b4b093ddc7f0c557cf0c2bbdfd27e0e81cedcd",
+      "git_text_eol": true
+    },
+    "data/processed/manila_weekly.json": {
+      "sha256": "02ac83dc7afc39c2886dc343a504eef60dec1ec31b864e90b1bf04f745c99b8a",
+      "git_text_eol": true
+    },
+    "data/processed/map_evaluation.json": {
+      "sha256": "f1a4310139c6f9cdccafefc3fb97057e1bc5864e284d196c5b28a3bda60bc1dd",
+      "git_text_eol": true
+    },
+    "data/processed/map_validation_weeks.json": {
+      "sha256": "3dae317ab18a1035e32e47defb7e15f6a6d75cd72144603bc75fe1945e53a38f",
+      "git_text_eol": true
+    },
+    "data/processed/map_weather_crosscheck.json": {
+      "sha256": "b7d5a9f0f3708a317644a2b1b27d2c9713acb0fd8f3f3f08cf56d417ade8a936",
+      "git_text_eol": true
+    },
+    "data/processed/measurements.json": {
+      "sha256": "d90477e8197dc73b8b5b74b7693f7f5bed02c6b14d2aaf358269dcdbe8aecfb8",
+      "git_text_eol": true
+    },
+    "data/processed/ml/evaluation.json": {
+      "sha256": "a5f7a808449cdfa2c8ae2de40bc3d1c6d772e9f899ddf3711796980271238016",
+      "git_text_eol": true
+    },
+    "data/processed/ml/test-predictions.json": {
+      "sha256": "3216a21ab0f69e61026520ec00ea1de374386a361fec578d4afe8b2e156b9f9b",
+      "git_text_eol": true
+    },
+    "data/processed/ml/training.json": {
+      "sha256": "fad7c761b37be7718369e5bf538a0a379e648fd1c8c2861145403bc94b4dcaa9",
+      "git_text_eol": true
+    },
+    "data/processed/ncr_population.json": {
+      "sha256": "7fe4e22f25973960dcb4f5fc0a7518fa9357465ced5f2696e7e173eaad38a39b",
+      "git_text_eol": true
+    },
+    "data/processed/ncr_weekly.json": {
+      "sha256": "31d4b420f1c28e12a23c1d1fc277921d8a293d6103605297e124a7e2be2293a7",
+      "git_text_eol": true
+    },
+    "data/processed/osm-water-source.json": {
+      "sha256": "e9af86c0236e0ad918f05fa7cbd5304a763da13497f6685f16d4b10f81c7aa09",
+      "git_text_eol": true
+    },
+    "data/processed/power_daily.json": {
+      "sha256": "6256de00076f0e0ac719b2ce604c62c656abb9c6335399d8f5a960885a66ec0f",
+      "git_text_eol": true
+    },
+    "data/processed/weather_weekly.json": {
+      "sha256": "42485431afd7f1649ae877efd3b77fda12fa7e5ec41d5b617da49b9a66d38557",
+      "git_text_eol": true
+    },
+    "data/raw/Daily_Reported_Cases_of_Dengue_in_the_City_of_Manila_from_2018_to_2023.xlsx": {
+      "sha256": "f066701654e86b9b49305a84bc08a0823613eb83cde3df067f338fbae145849d",
+      "git_text_eol": false
+    },
+    "data/raw/doh-epi-dengue-data-2016-2021.csv": {
+      "sha256": "4e993553f10081b4e6b35a0d4b3c9bd0cc271765645a123fcb2e0c5d7084633c",
+      "git_text_eol": false
+    },
+    "data/raw/ncr_dengue_monthly_with_rates.csv": {
+      "sha256": "66ea1f9f5fff0a049b547d08e802f47d015cb5c8a979acfb10606fe4a1e953e6",
+      "git_text_eol": false
+    },
+    "data/validation_report.md": {
+      "sha256": "3b9023ca71352e2ae1033c19deb8e177960ce179fc3f28da5271161c3ed9743a",
+      "git_text_eol": true
+    },
+    "ml/README.md": {
+      "sha256": "351a7b75c14a62c0f47c142cb9c3e17b3ac4c4d31b0436a65f9702d5ae576fc4",
+      "git_text_eol": true
+    },
+    "ml/data.py": {
+      "sha256": "bbfdcf438c5659bbf75b2829829a1ac80ed9b549bb5701287bbdb01eec4bbef2",
+      "git_text_eol": true
+    },
+    "ml/pipeline.py": {
+      "sha256": "50302c3ef9dccc3efe09155de14835562449c51121f49d32b259f36b6f8c1318",
+      "git_text_eol": true
+    },
+    "ml/requirements.txt": {
+      "sha256": "3e59f595a4cdc118fd1eb9376787309ff12c29858c792c3a878f0be21b9cd4b1",
+      "git_text_eol": true
+    },
+    "public/api/v2/backtest.json": {
+      "sha256": "45813731301caa25c2c33235670c48f3ad39959cc22211c58b31c9d1b45b2810",
+      "git_text_eol": true
+    },
+    "public/api/v2/barangays.json": {
+      "sha256": "f80d5b6e264c161357d46cbfcbf4726619333a1db80221f69772b3bb996bc9ab",
+      "git_text_eol": true
+    },
+    "public/api/v2/dashboard.json": {
+      "sha256": "3ee1de68ead8af2889678e8814c8e4355644729b2b5d489a6713faf91bbfa735",
+      "git_text_eol": true
+    },
+    "public/api/v2/environment.json": {
+      "sha256": "c74597879ec44cd837df4d175f7418ab4212854c7d9fde83b53ea0ec5a25543b",
+      "git_text_eol": true
+    },
+    "public/api/v2/geography.json": {
+      "sha256": "563d88f1eb25ae44c3bd0429b5b4b093ddc7f0c557cf0c2bbdfd27e0e81cedcd",
+      "git_text_eol": true
+    },
+    "public/api/v2/manila.json": {
+      "sha256": "e2b1a3223ba90ebf0efec2c2340a176d8c397559d6cd5963a7584d6d1b967b4e",
+      "git_text_eol": true
+    },
+    "public/api/v2/ncr.json": {
+      "sha256": "16608029e7440e46dd97d1f00bae581098530d7de35b2e42b84c309532c1aee7",
+      "git_text_eol": true
+    },
+    "public/api/v2/outlook-weather.json": {
+      "sha256": "a2dcb7a9823bfb54a9e741646e47c53334efbdf75c4b087d58f101d32b206c74",
+      "git_text_eol": true
+    },
+    "public/api/v2/outlook.json": {
+      "sha256": "cdc9a130bd7c97e3434f467e5e0c960adbadfb1fb3cf9cb5e4f8092a08dcce7f",
+      "git_text_eol": true
+    },
+    "public/api/v2/reporting-areas.json": {
+      "sha256": "232d559938bb4c1b2592722382ceea00b2d6a3f6b176cf262d1b081582ca0af2",
+      "git_text_eol": true
+    },
+    "public/api/v2/weather.json": {
+      "sha256": "ef5c64de6ef0fa792f93e4fd4e05081ea490c3609a57aa24c8f2587f00dbbb70",
+      "git_text_eol": true
+    },
+    "public/evidence/manila.json": {
+      "sha256": "e8562d09a7dc9698da40490745e1d26e022e8036c3053cdd78ab72aa98746699",
+      "git_text_eol": true
+    },
+    "public/ml/evaluation.json": {
+      "sha256": "a5f7a808449cdfa2c8ae2de40bc3d1c6d772e9f899ddf3711796980271238016",
+      "git_text_eol": true
+    },
+    "public/ml/history.json": {
+      "sha256": "7b934a3b1a77e227764cd7a69bd7c61407eee71f2df1a600dac89298383c6acb",
+      "git_text_eol": true
+    },
+    "public/ml/models.json": {
+      "sha256": "a8df8782659168899418fae8449c776e437d1b231081c4f049b883802c524b45",
+      "git_text_eol": true
+    },
+    "public/ml/replay.json": {
+      "sha256": "d69e7c5b6c193350783e26601ee2cd382ce86d2f6511162852cb98ef70226a98",
+      "git_text_eol": true
+    },
+    "public/ml/summary.json": {
+      "sha256": "b15020a3d40e62c139ed55835425de6d2189308a157bb5972e6309ea457def42",
+      "git_text_eol": true
+    }
+  }
+}

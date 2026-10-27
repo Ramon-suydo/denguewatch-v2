@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {createHash} from 'node:crypto';
+import {artifactDigest,verifyProtectedArtifacts,type ProtectedFingerprint} from '../scripts/lib/protected-artifacts';
 import {validateLiveRows,quantile,intervalStats,ratioPairs,buildLive,appendWeek,freshLive,type LiveData,type HistoricalWeek} from '../src/live-manila/model';
 import {reportingHarness} from './support/reporting-harness';
 const saved=JSON.parse(readFileSync('data/processed/manila_live_weekly.json','utf8')) as LiveData;
@@ -45,10 +45,17 @@ test('append computes a single calendar difference, requires source, carries est
  const changed=appendWeek(estimated,{total:3822,report:'2026-10-12',url:next.source_url!,estimated:true,note:'LOCAL TEST ONLY: interpolation fixture'}).at(-1)!;assert.equal(changed.weekly_new_cases,267);assert.equal(changed.observed,false);
 });
 test('2026 cannot leak into byte-identical historical, training, evaluation and exported model artifacts',()=>{
- const hashes=JSON.parse(readFileSync('data/live-manila/protected-hashes.json','utf8')) as Record<string,string>;
- for(const [name,digest] of Object.entries(hashes))assert.equal(createHash('sha256').update(readFileSync(name)).digest('hex'),digest,name+' changed');
+ const hashes=JSON.parse(readFileSync('data/live-manila/protected-canonical.json','utf8')).files as Record<string,ProtectedFingerprint>;
+ assert.equal(verifyProtectedArtifacts(hashes),121);
  for(const name of ['data/processed/manila_weekly.json','data/processed/ml/training.json','data/processed/ml/evaluation.json','public/ml/history.json','public/ml/replay.json'])assert.ok(!readFileSync(name,'utf8').includes('2026-10-25'),name+' contains live rows');
  const publicData=JSON.parse(readFileSync('public/live-manila/weekly.json','utf8'));assert.deepEqual(publicData.method,saved.method);assert.ok(publicData.rows.every((r:any)=>!('evidence_file' in r)));
+});
+test('portable fingerprints allow only existing Git text checkout EOL conversion and preserve raw source bytes',()=>{
+ const files=JSON.parse(readFileSync('data/live-manila/protected-canonical.json','utf8')).files as Record<string,ProtectedFingerprint>;
+ const path='public/ml/replay.json',record=files[path],lf=Buffer.from(readFileSync(path).toString('latin1').replace(/\r\n/g,'\n'),'latin1'),crlf=Buffer.from(lf.toString('latin1').replace(/\n/g,'\r\n'),'latin1');
+ assert.equal(record.git_text_eol,true);assert.equal(artifactDigest(lf,true),record.sha256);assert.equal(artifactDigest(crlf,true),record.sha256);
+ const raw='data/raw/doh-epi-dengue-data-2016-2021.csv',rawRecord=files[raw],bytes=readFileSync(raw);assert.equal(rawRecord.git_text_eol,false);assert.equal(artifactDigest(bytes,false),rawRecord.sha256);
+ assert.notEqual(artifactDigest(Buffer.from(bytes.toString('latin1').replace(/\r\n/g,'\n'),'latin1'),false),rawRecord.sha256);
 });
 test('real SQL enforces AAL2, legacy immutability, append validation, optimistic parent, audit and rollback without public evidence paths',async()=>{
  const local=await reportingHarness('admin');try{const db=local.db;

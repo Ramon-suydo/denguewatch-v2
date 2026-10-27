@@ -11,6 +11,7 @@ function run(name,program,args,extra={}){
 try{
  let ready=false;for(let i=0;i<120;i++){try{if((await fetch(`http://127.0.0.1:${port}/healthz.txt`)).ok){ready=true;break;}}catch{}await new Promise(r=>setTimeout(r,250));}if(!ready)throw Error('Production preview readiness failed');
  run('lighthouse',process.platform==='win32'?'npm.cmd':'npm',['exec','--yes','--package=node@22','--package=lighthouse@13','--','node','scripts/audit-lighthouse.mjs',`http://127.0.0.1:${port}/`]);
+ if(!process.argv.includes('--lighthouse-only')){
  const java=resolve('.artifacts/launch/tools/jdk-17.0.20.1+1-jre/bin/java.exe'),jar=resolve('.artifacts/launch/tools/ZAP_2.17.0/zap-2.17.0.jar');if(!existsSync(java)||!existsSync(jar))throw Error('Local Java17/ZAP prerequisite unavailable; no scan success claimed');
- run('zap',process.execPath,['scripts/scan-zap.mjs',`http://127.0.0.1:${port}/`],{JAVA_BIN:java,ZAP_JAR:jar});
+ run('zap',process.execPath,['scripts/scan-zap.mjs',`http://127.0.0.1:${port}/`],{JAVA_BIN:java,ZAP_JAR:jar});}
 }finally{server.kill();}

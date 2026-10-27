@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {createHash} from 'node:crypto';
+import {verifyProtectedArtifacts,type ProtectedFingerprint} from './lib/protected-artifacts.ts';
 import {buildLive,completeWeeks,validateLiveRows,type LiveData,type HistoricalWeek} from '../src/live-manila/model.ts';
 const read=(path:string)=>JSON.parse(readFileSync(path,'utf8'));
 const saved=read('data/processed/manila_live_weekly.json') as LiveData;
@@ -15,6 +15,6 @@ const literal=(value:unknown)=>"'"+JSON.stringify(value).replaceAll("'","''")+"'
 const expected='insert into private.manila_live_seed(rows,payload,complete_counts) values ('+[saved.rows,saved,completeWeeks(history).map(r=>r.cases)].map(literal).join(',')+');';
 const sql=readFileSync('supabase/migrations/20261028000100_live_manila.sql','utf8');
 assert.equal(sql.split(/\r?\n/).find(line=>line.startsWith('insert into private.manila_live_seed')),expected,'Frozen SQL provenance/method must match the generated artifact.');
-const protectedFiles=read('data/live-manila/protected-hashes.json') as Record<string,string>;
-for(const [path,hash] of Object.entries(protectedFiles))assert.equal(createHash('sha256').update(readFileSync(path)).digest('hex'),hash,path+' changed');
-console.log(JSON.stringify({passed:true,rows:rows.length,protected_artifacts_unchanged:Object.keys(protectedFiles).length,ranges:generated.method.ranges}));
+const protectedFiles=read('data/live-manila/protected-canonical.json').files as Record<string,ProtectedFingerprint>;
+const unchanged=verifyProtectedArtifacts(protectedFiles);
+console.log(JSON.stringify({passed:true,rows:rows.length,protected_artifacts_unchanged:unchanged,ranges:generated.method.ranges}));

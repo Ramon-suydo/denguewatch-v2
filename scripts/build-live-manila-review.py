@@ -4,12 +4,18 @@ import hashlib, json, re, subprocess, zipfile
 
 root = Path.cwd().resolve()
 def sha(data): return hashlib.sha256(data).hexdigest()
-protected = json.loads((root/'data/live-manila/protected-hashes.json').read_text(encoding='utf8'))
-for name, expected in protected.items():
-    assert sha((root/name).read_bytes()) == expected, 'Protected artifact changed: '+name
+protected = json.loads((root/'data/live-manila/protected-canonical.json').read_text(encoding='utf8'))['files']
+for name, record in protected.items():
+    data=(root/name).read_bytes()
+    if record['git_text_eol']: data=data.replace(b'\r\n',b'\n')
+    assert sha(data) == record['sha256'], 'Protected tracked artifact changed: '+name
+local_before=root/'.artifacts/live-manila/protected-before.json'
+if local_before.is_file():
+    for name,expected in json.loads(local_before.read_text(encoding='utf8')).items():
+        assert sha((root/name).read_bytes())==expected, 'Original local worktree bytes changed: '+name
 manifest = json.loads((root/'.artifacts/live-manila/checks.json').read_text(encoding='utf8'))
 latest = {r['name']:r for r in manifest['results']}
-required = ['ingestion','typecheck','lint','unit','live-data-validation','data-validation','credits','contrast','hero-contrast','build','prerender','pwa-build','budget','browser','production','pwa','visual','compat','lighthouse','zap','npm-audit','secrets']
+required = ['ingestion','typecheck','lint','unit','portability','live-data-validation','data-validation','credits','contrast','hero-contrast','build','prerender','pwa-build','budget','browser','production','pwa','visual','compat','lighthouse','zap','npm-audit','secrets']
 for name in required:
     assert name in latest, 'Missing current check: '+name
     if name != 'secrets': assert latest[name]['exit_code'] == 0, 'Check failed: '+name

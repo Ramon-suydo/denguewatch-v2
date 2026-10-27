@@ -14,6 +14,7 @@ const groups={
 };
 // npm's tsc shim points at the aliased TypeScript 7 package in this project.
 groups.core.find(([name])=>name==='typecheck')[1][0]='node_modules/@typescript/native/bin/tsc';
+groups.pwa_only=[groups.production[1]];
 const selected=groups[process.argv[2]];if(!selected)throw Error('Use focused, core, browser, production, visual or security.');
 const manifest=existsSync(folder+'/checks.json')?JSON.parse(readFileSync(folder+'/checks.json')):{node:process.version,platform:process.platform,results:[]};
 for(const [name,args] of selected){

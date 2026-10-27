@@ -21,16 +21,17 @@ Actual commands and exit codes are in [live-manila-command-manifest.json](live-m
 
 | Gate | Actual outcome |
 | --- | --- |
-| Full unit/integration | **97 passed**, zero failed/skipped; includes mathematical fixtures, LOYO coverage, CSV rules, byte identity and two new real-SQL security/publication/rollback cases |
+| Full unit/integration | **98 passed**, zero failed/skipped; includes mathematical fixtures, LOYO coverage, CSV rules, byte identity and two new real-SQL security/publication/rollback cases |
 | Full browser regression | **60 passed** on the final application; includes shared controls, exclusive modes, staleness, live 360/1280 accessibility, 13 bars/9 hatches/4 non-estimated values and real SQL admin flow |
 | Production CSP/browser | **18 passed** |
 | PWA/offline | **5 passed**; public charts/preferences/model demo work offline, no admin/hosted live inputs cached |
 | Visual capture and independent comparison | **80 passed each**: five pages, four widths, two themes and two motion settings; pixel ratio remains 0.005 |
 | Compatibility | **28 cases each** in Chrome 156.0.8078.48, Edge 156.0.4314.42, Firefox 155.0 and WebKit 26.6; 20 existing public-page cases plus 8 Live cases per engine, no page errors |
+| Portable source guard | Pass against a separate copy with Linux-style tracked text and no Git on PATH; raw source EOL mutations are rejected. All 121 original local worktree SHA-256 values still match before the task. |
 | Types/lint/build | Pass, including final full lint/typecheck after tool additions |
 | Data/credits/contrast | Pass; existing shipped-data/credits/token/rendered-image contrast gates retained; new `live:check` verifies generated JSON, frozen SQL seed and all 121 protected fingerprints |
-| JS budget | Initial **109,388 bytes gzip** / total **711,373 bytes gzip**; unchanged limits 225,280 / 870,400 |
-| Mobile Lighthouse 13.5.0 | Performance **96**, accessibility **100**, best practices **96**, SEO **100**; LCP **2411.46 ms**, CLS **0**, TBT **8.5 ms** |
+| JS budget | Initial **109,387 bytes gzip** / total **711,385 bytes gzip**; unchanged limits 225,280 / 870,400 |
+| Mobile Lighthouse 13.5.0 | Performance **96**, accessibility **100**, best practices **96**, SEO **100**; LCP **2412.08 ms**, CLS **0**, TBT **7.5 ms** |
 | Dependency audit | **0 vulnerabilities**, full `npm audit --json` |
 | Local passive ZAP | **0 high/medium**, 1 low/informational alert; ZAP 2.17.0 with Java 17, production preview, no active/authenticated scan |
 | Full-history secret audit | **NEEDS OWNER / exit 1**: guard configured, 0 current, 44 known historical, 0 unexpected historical; rotation is pending, not an all-green release claim |
@@ -64,6 +65,7 @@ The latest supplied week is 226 cases, below the historical maximum 257; the sup
 - Two early focused runs caught unchanged mode copy and Windows encoding in task-added map labels. Exact byte replacements and corrected copy passed the focused suite.
 - Automatic review rejected a broad encoding rewrite because it could touch unrelated work; read-only inspection isolated two files, and approved repairs changed only four confirmed malformed labels.
 - One early full browser run exposed unnecessary offline hosted requests and a Replay label reload that contaminated pixel samples. Offline requests now stop, the local fixture models an empty published feed, and Live has a separate label layer. The unchanged console/offline/pixel assertions pass on the final full run. Shared Dashboard mode and server-generated publication JSON were then verified in the final 60-case run.
+- Final review caught that literal Windows checkout hashes would fail on Linux for Git-normalized text. The guard now checks SHA-256 of canonical tracked bytes using the existing Git policy, without rewriting science files or normalizing raw sources. New portability/raw-byte regression and full 98-test suite pass. Application source is unchanged by this build-only correction. The rebuild embeds the newer Git commit metadata, so asset hashes change; the PWA gate is rerun for that cache revision.
 - Initial Node-22 check runner pointed at a nonexistent TypeScript entry point. It now follows the project's actual `tsc` shim target (`@typescript/native`); typecheck passes.
 - Early runner attempts reused a log filename. Their exit codes remain recorded and the overwritten attempt logs are explicitly marked unavailable; they are not represented by later passing log content. Subsequent logs have unique names.
 
