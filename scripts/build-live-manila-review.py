@@ -19,7 +19,7 @@ required = ['ingestion','typecheck','lint','unit','portability','live-data-valid
 for name in required:
     assert name in latest, 'Missing current check: '+name
     if name != 'secrets': assert latest[name]['exit_code'] == 0, 'Check failed: '+name
-secret_log = (root/latest['secrets']['log']).read_text(encoding='utf8-sig')
+secret_log = (root/latest['secrets']['log']).read_text(encoding='utf-8-sig')
 summaries=[]
 for line in secret_log.splitlines():
     try:
@@ -34,7 +34,8 @@ if latest['secrets']['exit_code'] != 0:
 
 def sanitize(text):
     text=re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]','',text)
-    for value,label in [(str(root),'<REPOSITORY>'),(str(root).replace('\\','/'),'<REPOSITORY>'),(str(Path.home()),'<USER>'),(str(Path.home()).replace('\\','/'),'<USER>')]: text=text.replace(value,label)
+    for value,label in [(str(root),'<REPOSITORY>'),(str(root).replace('\\','/'),'<REPOSITORY>'),(str(Path.home()),'<USER>'),(str(Path.home()).replace('\\','/'),'<USER>')]:
+        text=text.replace(value.replace(chr(92),chr(92)*2),label).replace(value,label)
     text=re.sub(r'\b[A-Za-z0-9._%+-]+@gmail[.]com\b','[personal contact withheld]',text,flags=re.I)
     return re.sub(r'DW2-[A-F0-9]{32}','[local test withdrawal code]',text)
 
@@ -57,11 +58,11 @@ for name in sorted(set(names)):
     elif name.startswith('public/img/') and '/source/' not in name and path.suffix in {'.avif','.webp','.svg'}: dest=name
     if not dest: continue
     data=path.read_bytes(); original=sha(data)
-    if name.startswith('docs/') and path.suffix in {'.md','.json','.txt','.html'}: data=sanitize(data.decode('utf8-sig')).encode('utf8')
+    if name.startswith('docs/') and path.suffix in {'.md','.json','.txt','.html'}: data=sanitize(data.decode('utf-8-sig')).encode('utf8')
     entries[dest]=data;integrity.append({'source':name,'copy':dest,'source_sha256':original,'copy_sha256':sha(data),'sanitized':original!=sha(data)})
 for row in manifest['results']:
     if row.get('log') and (root/row['log']).is_file():
-        text=(root/row['log']).read_text(encoding='utf8-sig',errors='replace')
+        text=(root/row['log']).read_text(encoding='utf-8-sig',errors='replace')
         entries['logs/'+Path(row['log']).name]=sanitize(text).encode('utf8')
 manifest_copy=json.loads(sanitize(json.dumps(manifest,indent=2)))
 entries['COMMAND_MANIFEST.json']=(json.dumps(manifest_copy,indent=2)+'\n').encode()
