@@ -1,0 +1,567 @@
+{
+  "version": "manila-live-v1",
+  "metadata": {
+    "source": "Manila Information Office Facebook posts, manually transcribed; unofficial",
+    "verified": false,
+    "date_range": [
+      "2026-07-27",
+      "2026-10-25"
+    ],
+    "last_week_end": "2026-10-25",
+    "row_count": 13,
+    "total_estimate_count": 6,
+    "weekly_estimate_count": 9,
+    "observed_weekly_count": 4,
+    "missing_source_count": 13,
+    "first_week_prior_total_available": false,
+    "translation_review": "NEEDS OWNER"
+  },
+  "rows": [
+    {
+      "week_start": "2026-07-27",
+      "week_end": "2026-08-02",
+      "report_monday": "2026-08-03",
+      "total_since_jan1": 2105,
+      "weekly_new_cases": 54,
+      "total_is_estimate": false,
+      "weekly_is_estimate": false,
+      "note": "",
+      "raw_note": "",
+      "source_url": null,
+      "observed": true
+    },
+    {
+      "week_start": "2026-08-03",
+      "week_end": "2026-08-09",
+      "report_monday": "2026-08-10",
+      "total_since_jan1": 2186,
+      "weekly_new_cases": 81,
+      "total_is_estimate": true,
+      "weekly_is_estimate": true,
+      "note": "Straight-line estimate between Aug 03 (2,105) and Aug 14 (2,233)",
+      "raw_note": "Straight-line estimate between Aug 03 (2,105) and Aug 14 (2,233)",
+      "source_url": null,
+      "observed": false
+    },
+    {
+      "week_start": "2026-08-10",
+      "week_end": "2026-08-16",
+      "report_monday": "2026-08-17",
+      "total_since_jan1": 2273,
+      "weekly_new_cases": 87,
+      "total_is_estimate": true,
+      "weekly_is_estimate": true,
+      "note": "Straight-line estimate between Aug 14 (2,233) and Aug 24 (2,367)",
+      "raw_note": "Straight-line estimate between Aug 14 (2,233) and Aug 24 (2,367)",
+      "source_url": null,
+      "observed": false
+    },
+    {
+      "week_start": "2026-08-17",
+      "week_end": "2026-08-23",
+      "report_monday": "2026-08-24",
+      "total_since_jan1": 2367,
+      "weekly_new_cases": 94,
+      "total_is_estimate": false,
+      "weekly_is_estimate": true,
+      "note": "Weekly value is flagged estimated in the supplied CSV; the preceding cumulative total is estimated. Original note is blank; post evidence and interpolation method need owner verification.",
+      "raw_note": "",
+      "source_url": null,
+      "observed": false
+    },
+    {
+      "week_start": "2026-08-24",
+      "week_end": "2026-08-30",
+      "report_monday": "2026-08-31",
+      "total_since_jan1": 2540,
+      "weekly_new_cases": 173,
+      "total_is_estimate": true,
+      "weekly_is_estimate": true,
+      "note": "Straight-line estimate between Aug 27 (2,447) and Sep 02 (2,586)",
+      "raw_note": "Straight-line estimate between Aug 27 (2,447) and Sep 02 (2,586)",
+      "source_url": null,
+      "observed": false
+    },
+    {
+      "week_start": "2026-08-31",
+      "week_end": "2026-09-06",
+      "report_monday": "2026-09-07",
+      "total_since_jan1": 2765,
+      "weekly_new_cases": 225,
+      "total_is_estimate": true,
+      "weekly_is_estimate": true,
+      "note": "Straight-line estimate between Sep 04 (2,676) and Sep 15 (3,001)",
+      "raw_note": "Straight-line estimate between Sep 04 (2,676) and Sep 15 (3,001)",
+      "source_url": null,
+      "observed": false
+    },
+    {
+      "week_start": "2026-09-07",
+      "week_end": "2026-09-13",
+      "report_monday": "2026-09-14",
+      "total_since_jan1": 2971,
+      "weekly_new_cases": 206,
+      "total_is_estimate": true,
+      "weekly_is_estimate": true,
+      "note": "Straight-line estimate between Sep 04 (2,676) and Sep 15 (3,001)",
+      "raw_note": "Straight-line estimate between Sep 04 (2,676) and Sep 15 (3,001)",
+      "source_url": null,
+      "observed": false
+    },
+    {
+      "week_start": "2026-09-14",
+      "week_end": "2026-09-20",
+      "report_monday": "2026-09-21",
+      "total_since_jan1": 3155,
+      "weekly_new_cases": 184,
+      "total_is_estimate": false,
+      "weekly_is_estimate": true,
+      "note": "Weekly value is flagged estimated in the supplied CSV; the preceding cumulative total is estimated. Original note is blank; post evidence and interpolation method need owner verification.",
+      "raw_note": "",
+      "source_url": null,
+      "observed": false
+    },
+    {
+      "week_start": "2026-09-21",
+      "week_end": "2026-09-27",
+      "report_monday": "2026-09-28",
+      "total_since_jan1": 3353,
+      "weekly_new_cases": 198,
+      "total_is_estimate": true,
+      "weekly_is_estimate": true,
+      "note": "Straight-line estimate between Sep 21 (3,155) and Sep 29 (3,381)",
+      "raw_note": "Straight-line estimate between Sep 21 (3,155) and Sep 29 (3,381)",
+      "source_url": null,
+      "observed": false
+    },
+    {
+      "week_start": "2026-09-28",
+      "week_end": "2026-10-04",
+      "report_monday": "2026-10-05",
+      "total_since_jan1": 3555,
+      "weekly_new_cases": 202,
+      "total_is_estimate": false,
+      "weekly_is_estimate": true,
+      "note": "Weekly value is flagged estimated in the supplied CSV; the preceding cumulative total is estimated. Original note is blank; post evidence and interpolation method need owner verification.",
+      "raw_note": "",
+      "source_url": null,
+      "observed": false
+    },
+    {
+      "week_start": "2026-10-05",
+      "week_end": "2026-10-11",
+      "report_monday": "2026-10-12",
+      "total_since_jan1": 3822,
+      "weekly_new_cases": 267,
+      "total_is_estimate": false,
+      "weekly_is_estimate": false,
+      "note": "",
+      "raw_note": "",
+      "source_url": null,
+      "observed": true
+    },
+    {
+      "week_start": "2026-10-12",
+      "week_end": "2026-10-18",
+      "report_monday": "2026-10-19",
+      "total_since_jan1": 4048,
+      "weekly_new_cases": 226,
+      "total_is_estimate": false,
+      "weekly_is_estimate": false,
+      "note": "",
+      "raw_note": "",
+      "source_url": null,
+      "observed": true
+    },
+    {
+      "week_start": "2026-10-19",
+      "week_end": "2026-10-25",
+      "report_monday": "2026-10-26",
+      "total_since_jan1": 4274,
+      "weekly_new_cases": 226,
+      "total_is_estimate": false,
+      "weekly_is_estimate": false,
+      "note": "",
+      "raw_note": "",
+      "source_url": null,
+      "observed": true
+    }
+  ],
+  "method": {
+    "historical_scenario": "M",
+    "complete_weeks": 312,
+    "historical_max": 257,
+    "high_count_origins": 42,
+    "sensitivity": [
+      {
+        "horizon": 1,
+        "threshold": 80,
+        "n": 67,
+        "quantiles": [
+          0.7053066332916145,
+          0.9432624113475178,
+          1.2621546369672305
+        ],
+        "loyo": {
+          "n": 67,
+          "covered": 52,
+          "coverage": 0.7761194029850746,
+          "folds": [
+            {
+              "year": "2016",
+              "train_n": 65,
+              "n": 2,
+              "covered": 0,
+              "coverage": 0,
+              "persistence_mae": 29.5
+            },
+            {
+              "year": "2017",
+              "train_n": 55,
+              "n": 12,
+              "covered": 10,
+              "coverage": 0.8333333333333334,
+              "persistence_mae": 16.666666666666668
+            },
+            {
+              "year": "2018",
+              "train_n": 49,
+              "n": 18,
+              "covered": 14,
+              "coverage": 0.7777777777777778,
+              "persistence_mae": 24.666666666666668
+            },
+            {
+              "year": "2019",
+              "train_n": 48,
+              "n": 19,
+              "covered": 14,
+              "coverage": 0.7368421052631579,
+              "persistence_mae": 28
+            },
+            {
+              "year": "2020",
+              "train_n": 66,
+              "n": 1,
+              "covered": 0,
+              "coverage": 0,
+              "persistence_mae": 26
+            },
+            {
+              "year": "2022",
+              "train_n": 55,
+              "n": 12,
+              "covered": 11,
+              "coverage": 0.9166666666666666,
+              "persistence_mae": 19.833333333333332
+            },
+            {
+              "year": "2023",
+              "train_n": 64,
+              "n": 3,
+              "covered": 3,
+              "coverage": 1,
+              "persistence_mae": 11
+            }
+          ]
+        }
+      },
+      {
+        "horizon": 2,
+        "threshold": 80,
+        "n": 72,
+        "quantiles": [
+          0.6407880560258581,
+          0.9061012167166285,
+          1.3468744845785914
+        ],
+        "loyo": {
+          "n": 72,
+          "covered": 55,
+          "coverage": 0.7638888888888888,
+          "folds": [
+            {
+              "year": "2016",
+              "train_n": 65,
+              "n": 7,
+              "covered": 6,
+              "coverage": 0.8571428571428571,
+              "persistence_mae": 18.571428571428573
+            },
+            {
+              "year": "2017",
+              "train_n": 60,
+              "n": 12,
+              "covered": 10,
+              "coverage": 0.8333333333333334,
+              "persistence_mae": 19.416666666666668
+            },
+            {
+              "year": "2018",
+              "train_n": 54,
+              "n": 18,
+              "covered": 12,
+              "coverage": 0.6666666666666666,
+              "persistence_mae": 31.27777777777778
+            },
+            {
+              "year": "2019",
+              "train_n": 53,
+              "n": 19,
+              "covered": 16,
+              "coverage": 0.8421052631578947,
+              "persistence_mae": 35.73684210526316
+            },
+            {
+              "year": "2020",
+              "train_n": 71,
+              "n": 1,
+              "covered": 0,
+              "coverage": 0,
+              "persistence_mae": 44
+            },
+            {
+              "year": "2022",
+              "train_n": 60,
+              "n": 12,
+              "covered": 8,
+              "coverage": 0.6666666666666666,
+              "persistence_mae": 34.5
+            },
+            {
+              "year": "2023",
+              "train_n": 69,
+              "n": 3,
+              "covered": 3,
+              "coverage": 1,
+              "persistence_mae": 18.333333333333332
+            }
+          ]
+        }
+      },
+      {
+        "horizon": 1,
+        "threshold": 100,
+        "n": 40,
+        "quantiles": [
+          0.7179232693911592,
+          0.956779720525244,
+          1.210372376438727
+        ],
+        "loyo": {
+          "n": 40,
+          "covered": 29,
+          "coverage": 0.725,
+          "folds": [
+            {
+              "year": "2017",
+              "train_n": 35,
+              "n": 5,
+              "covered": 5,
+              "coverage": 1,
+              "persistence_mae": 18
+            },
+            {
+              "year": "2018",
+              "train_n": 28,
+              "n": 12,
+              "covered": 8,
+              "coverage": 0.6666666666666666,
+              "persistence_mae": 24
+            },
+            {
+              "year": "2019",
+              "train_n": 26,
+              "n": 14,
+              "covered": 9,
+              "coverage": 0.6428571428571429,
+              "persistence_mae": 29.642857142857142
+            },
+            {
+              "year": "2022",
+              "train_n": 31,
+              "n": 9,
+              "covered": 7,
+              "coverage": 0.7777777777777778,
+              "persistence_mae": 22.22222222222222
+            }
+          ]
+        }
+      },
+      {
+        "horizon": 2,
+        "threshold": 100,
+        "n": 42,
+        "quantiles": [
+          0.6651832717522806,
+          0.8997795622736577,
+          1.3468744845785914
+        ],
+        "loyo": {
+          "n": 42,
+          "covered": 32,
+          "coverage": 0.7619047619047619,
+          "folds": [
+            {
+              "year": "2016",
+              "train_n": 40,
+              "n": 2,
+              "covered": 1,
+              "coverage": 0.5,
+              "persistence_mae": 25
+            },
+            {
+              "year": "2017",
+              "train_n": 37,
+              "n": 5,
+              "covered": 5,
+              "coverage": 1,
+              "persistence_mae": 22.8
+            },
+            {
+              "year": "2018",
+              "train_n": 30,
+              "n": 12,
+              "covered": 10,
+              "coverage": 0.8333333333333334,
+              "persistence_mae": 35
+            },
+            {
+              "year": "2019",
+              "train_n": 28,
+              "n": 14,
+              "covered": 11,
+              "coverage": 0.7857142857142857,
+              "persistence_mae": 37.857142857142854
+            },
+            {
+              "year": "2022",
+              "train_n": 33,
+              "n": 9,
+              "covered": 5,
+              "coverage": 0.5555555555555556,
+              "persistence_mae": 35.55555555555556
+            }
+          ]
+        }
+      },
+      {
+        "horizon": 1,
+        "threshold": 150,
+        "n": 12,
+        "quantiles": [
+          0.7340502429197772,
+          0.9620945896478512,
+          1.2004001475721544
+        ],
+        "loyo": {
+          "n": 12,
+          "covered": 7,
+          "coverage": 0.5833333333333334,
+          "folds": [
+            {
+              "year": "2018",
+              "train_n": 10,
+              "n": 2,
+              "covered": 1,
+              "coverage": 0.5,
+              "persistence_mae": 28
+            },
+            {
+              "year": "2019",
+              "train_n": 4,
+              "n": 8,
+              "covered": 4,
+              "coverage": 0.5,
+              "persistence_mae": 33
+            },
+            {
+              "year": "2022",
+              "train_n": 10,
+              "n": 2,
+              "covered": 2,
+              "coverage": 1,
+              "persistence_mae": 18.5
+            }
+          ]
+        }
+      },
+      {
+        "horizon": 2,
+        "threshold": 150,
+        "n": 12,
+        "quantiles": [
+          0.6334185658699277,
+          0.8003588746130454,
+          1.1010450436706205
+        ],
+        "loyo": {
+          "n": 12,
+          "covered": 4,
+          "coverage": 0.3333333333333333,
+          "folds": [
+            {
+              "year": "2018",
+              "train_n": 10,
+              "n": 2,
+              "covered": 1,
+              "coverage": 0.5,
+              "persistence_mae": 80.5
+            },
+            {
+              "year": "2019",
+              "train_n": 4,
+              "n": 8,
+              "covered": 2,
+              "coverage": 0.25,
+              "persistence_mae": 41.375
+            },
+            {
+              "year": "2022",
+              "train_n": 10,
+              "n": 2,
+              "covered": 1,
+              "coverage": 0.5,
+              "persistence_mae": 49
+            }
+          ]
+        }
+      }
+    ],
+    "direction_tolerance": 0.17853503905807772,
+    "direction_observed_weeks": [
+      "2026-10-11",
+      "2026-10-18",
+      "2026-10-25"
+    ],
+    "direction_weekly_change": -0.07997720269248598,
+    "direction": "Steady",
+    "percentile": 99.67948717948718,
+    "exceeds_historical_max": false,
+    "recent_peak": 267,
+    "context_extrapolation": true,
+    "ranges": [
+      {
+        "horizon": 1,
+        "target_week_start": "2026-10-26",
+        "target_week_end": "2026-11-01",
+        "n": 40,
+        "low": 162,
+        "median": 216,
+        "high": 274,
+        "persistence": 226
+      },
+      {
+        "horizon": 2,
+        "target_week_start": "2026-11-02",
+        "target_week_end": "2026-11-08",
+        "n": 42,
+        "low": 150,
+        "median": 203,
+        "high": 305,
+        "persistence": 226
+      }
+    ]
+  },
+  "input_sha256": "f309b602dabffe2a8928a48004edb31f5adc1ef73090472eddbf8e28a6c19dd4"
+}

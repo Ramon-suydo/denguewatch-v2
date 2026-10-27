@@ -1,3 +1,4 @@
+import {LiveManilaUpload} from '../components/LiveManilaUpload';
 import {NcrModelUpload} from '../components/NcrModelUpload';
 import { useEffect, useState } from "react";
 import { parse } from "csv-parse/browser/esm/sync";
@@ -302,7 +303,7 @@ export function Admin() {
             </Card>
             {role === "admin" && (
               <>
-                <NcrModelUpload/>
+                <LiveManilaUpload/><NcrModelUpload/>
                 <Card>
                   <h2>CSV preview and versioned publication</h2>
                   <p>

@@ -70,6 +70,11 @@
       "credit": "population"
     },
     {
+      "path": "src/live-manila/LiveManilaCard.tsx",
+      "host": "www.who.int",
+      "credit": "doh-safety"
+    },
+    {
       "path": "src/ml/MapProvider.tsx",
       "host": "tiles.openfreemap.org",
       "credit": "openfreemap"

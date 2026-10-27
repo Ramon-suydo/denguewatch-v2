@@ -1,3 +1,13 @@
+# Active Live Manila feature
+
+Current work is `feat/live-manila` (latest remote main `a683b3b` plus the completed local UI prerequisite). Start with [LIVE_MANILA.md](LIVE_MANILA.md) and [current check report](evidence/live-manila-checks.md). Source ingestion, frozen quantiles, generated publication JSON, shared dashboard mode, gray non-Manila Live states, AAL2 append/CSV/audit/rollback and the 14-day fallback are implemented locally. The original 121 historical/ML/source/export artifacts are unchanged; 2026 never enters training or evaluation. This feature adds a separate forward migration, not a modification of the scientific pipeline or report gates.
+
+No hosted install, write, report activation, push or deployment is included. Owner source/adviser/permission/language and existing credential/contact/photo/DPO gates remain. Read the current report for actual completed checks; older entries below do not certify this feature. The user pushes with `git push -u origin feat/live-manila`. Test locally and self-review before main merge, which deploys Vercel.
+
+---
+
+Earlier checkpoints below are historical.
+
 # Active NCR ML / map / UX task
 
 Local verification is complete for application source `a0e4240`: 85 unit/integration tests, four ML leakage tests, 600-row parity, three consecutive 44-test UI runs, 18 production and three PWA tests. Full evidence, retained diagnostics and owner-blocked gates: [mlux-checks.md](evidence/mlux-checks.md). The secret audit remains NEEDS OWNER (0 current / 44 known historical / 0 unexpected); hosted and human checks are not certified. Exact push: `git push -u origin feat/ml-map-ux`. Main was not pushed. Test locally, self-review and inspect the preview before merging; main merge deploys Vercel.

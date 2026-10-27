@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Tue, 27 Oct 2026 19:18:50",
-	"created": "2026-10-27T11:18:50.054084300Z",
+	"@generated": "Wed, 28 Oct 2026 02:54:03",
+	"created": "2026-10-27T18:54:03.415010Z",
 	"insights":[
 		{
 			"level": "Low",
@@ -15,7 +15,7 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.code.2xx",
 			"description": "Percentage of responses with status code 2xx",
 			"statistic": "100"
@@ -23,7 +23,7 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.application/geo+json",
 			"description": "Percentage of endpoints with content type application/geo+json",
 			"statistic": "2"
@@ -31,15 +31,15 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.application/json",
 			"description": "Percentage of endpoints with content type application/json",
-			"statistic": "15"
+			"statistic": "18"
 		},
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.application/manifest+json",
 			"description": "Percentage of endpoints with content type application/manifest+json",
 			"statistic": "2"
@@ -47,7 +47,7 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.font/woff2",
 			"description": "Percentage of endpoints with content type font/woff2",
 			"statistic": "6"
@@ -55,7 +55,7 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.image/svg+xml",
 			"description": "Percentage of endpoints with content type image/svg+xml",
 			"statistic": "4"
@@ -63,7 +63,7 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.image/webp",
 			"description": "Percentage of endpoints with content type image/webp",
 			"statistic": "8"
@@ -71,7 +71,7 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.text/css",
 			"description": "Percentage of endpoints with content type text/css",
 			"statistic": "2"
@@ -79,15 +79,15 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.text/html",
 			"description": "Percentage of endpoints with content type text/html",
-			"statistic": "45"
+			"statistic": "44"
 		},
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.text/javascript",
 			"description": "Percentage of endpoints with content type text/javascript",
 			"statistic": "10"
@@ -95,7 +95,7 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.ctype.text/plain",
 			"description": "Percentage of endpoints with content type text/plain",
 			"statistic": "2"
@@ -103,7 +103,7 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.method.GET",
 			"description": "Percentage of endpoints with method GET",
 			"statistic": "100"
@@ -111,15 +111,15 @@
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.endpoint.total",
 			"description": "Count of total endpoints",
-			"statistic": "46"
+			"statistic": "49"
 		},
 		{
 			"level": "Info",
 			"reason": "Informational",
-			"site": "http://127.0.0.1:43288",
+			"site": "http://127.0.0.1:43328",
 			"key": "insight.response.slow",
 			"description": "Percentage of slow responses",
 			"statistic": "1"
@@ -127,9 +127,9 @@
 	],
 	"site":[ 
 		{
-			"@name": "http://127.0.0.1:43288",
+			"@name": "http://127.0.0.1:43328",
 			"@host": "127.0.0.1",
-			"@port": "43288",
+			"@port": "43328",
 			"@ssl": "false",
 			"alerts": [ 
 				{
@@ -144,8 +144,8 @@
 					"instances":[ 
 						{
 							"id": "0",
-							"uri": "http://127.0.0.1:43288/assets/index-D6VYRU6-.js",
-							"nodeName": "http:\/\/127.0.0.1:43288\/assets\/index-D6VYRU6-.js",
+							"uri": "http://127.0.0.1:43328/assets/index-BWa1OE_N.js",
+							"nodeName": "http:\/\/127.0.0.1:43328\/assets\/index-BWa1OE_N.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -160,7 +160,7 @@
 					"reference": "",
 					"cweid": "615",
 					"wascid": "13",
-					"sourceid": "118"
+					"sourceid": "132"
 				}
 			]
 		}

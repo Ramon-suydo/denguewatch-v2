@@ -1,3 +1,5 @@
+> Historical UI-overhaul checkpoint. The later Live Manila feature and current verification are in [live-manila-checks.md](live-manila-checks.md). Shared gallery paths now show the current UI; the original captures remain in this checkpoint's Git history.
+
 # Manila-first landing and model demonstration
 
 Requested change: adapt the groupmate's PDF structure, retain DengueWatch's own identity, put Manila first, give other NCR areas their own section, and make the model explanation easy to find. The PDF is a structural reference. Its sample figures, current-week claims and seasonal status cutoffs were not copied.

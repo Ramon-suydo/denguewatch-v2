@@ -1,0 +1,34 @@
+{
+  "node": "v22.23.2",
+  "scope": "Local installed Chrome/Edge and Playwright Firefox/WebKit; 20 unchanged public-page cases plus 8 Manila Live cases per engine. WebKit is not real iOS Safari/device verification.",
+  "results": [
+    {
+      "browser": "Chrome",
+      "status": "PASS",
+      "cases": 28,
+      "version": "156.0.8078.48",
+      "error": null
+    },
+    {
+      "browser": "Edge",
+      "status": "PASS",
+      "cases": 28,
+      "version": "156.0.4314.42",
+      "error": null
+    },
+    {
+      "browser": "Firefox",
+      "status": "PASS",
+      "cases": 28,
+      "version": "155.0",
+      "error": null
+    },
+    {
+      "browser": "WebKit",
+      "status": "PASS",
+      "cases": 28,
+      "version": "26.6",
+      "error": null
+    }
+  ]
+}

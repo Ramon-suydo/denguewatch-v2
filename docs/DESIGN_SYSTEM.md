@@ -13,3 +13,7 @@ CI budgets: initial JavaScript ≤220 KiB gzip; all JavaScript including the laz
 The installed-app icon uses the same original drop/wave geometry with a maskable safe area; browser and manifest colors use bay teal and warm sand. Footer waves use the footer background color so the monochrome mark remains legible.
 
 Manila-first revision: primary destinations are Manila, NCR Map, Our Model and Report. The landing page has section shortcuts, paired source/estimate cards, a responsive observed/forecast chart and district cards. Our Model uses explicitly labelled selectors, prediction/outcome cards and expandable exact values. Both charts retain a text alternative and source labels; no new UI or plotting runtime is added.
+
+## Provisional Manila source
+
+The Live card uses shared surface, ink, line and bay tokens. Estimated bars are hatched and other weekly values solid, with a text legend and exact-value table. The verification badge precedes values. Shared dashboard controls change both Manila and NCR context; Live never uses Replay probabilities. The map uses a static Manila ring/Live label, neutral gray elsewhere and an unchanged keyboard-accessible city sheet. This is source context, not a new risk-color scale. Public bilingual copy is machine-assisted pending owner review.

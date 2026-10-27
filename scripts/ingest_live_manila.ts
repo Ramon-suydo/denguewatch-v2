@@ -1,0 +1,23 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {parse} from 'csv-parse/sync';
+import {validateLiveRows,buildLive,type LiveRow,type HistoricalWeek} from '../src/live-manila/model.ts';
+const path='data/raw/Manila_Dengue_Weekly_Clean_2026.csv';
+const raw=await readFile(path,'utf8'),digest=createHash('sha256').update(raw).digest('hex');
+const original=await readFile('data/live-manila/legacy-manifest.json','utf8').then(JSON.parse) as {sha256:string;weeks:string[];notes:Record<string,string>};
+const legacy=digest===original.sha256;
+const input=parse(raw,{columns:true,bom:true,skip_empty_lines:true,trim:true}) as Record<string,string>[];
+const rows=validateLiveRows(input.map(r=>{
+ const bool=(s:string)=>{if(s==='True'||s==='true')return true;if(s==='False'||s==='false')return false;throw Error('Both estimate flags must be explicit True/False.');};
+ const num=(s:string)=>{if(!/^\d+$/.test(s))throw Error('Counts must be whole numbers.');return Number(s);};
+ const raw_note=r.note;
+ return {...r,total_since_jan1:num(r.total_since_jan1),weekly_new_cases:num(r.weekly_new_cases),total_is_estimate:bool(r.total_is_estimate),weekly_is_estimate:bool(r.weekly_is_estimate),raw_note,note:r.note||(legacy?original.notes[r.week_end]??'':''),source_url:r.source_url||null,evidence_file:r.evidence_file||null} as unknown as LiveRow;
+}),legacy?original.weeks:[]);
+const historical=JSON.parse(await readFile('data/processed/manila_weekly.json','utf8')) as {scenarios:{M:HistoricalWeek[]}};
+const output={...buildLive(rows,historical.scenarios.M),input_sha256:digest};
+await mkdir('data/processed',{recursive:true});await mkdir('public/live-manila',{recursive:true});
+const serialized=JSON.stringify(output,null,2)+'\n';
+await writeFile('data/processed/manila_live_weekly.json',serialized);
+await writeFile('public/live-manila/weekly.json',JSON.stringify({...output,rows:output.rows.map(({evidence_file: _private,...row})=>row)},null,2)+'\n');
+await writeFile('public/live-manila/reference.json',JSON.stringify(historical.scenarios.M)+'\n');
+console.log(JSON.stringify({rows:rows.length,metadata:output.metadata,method:output.method},null,2));

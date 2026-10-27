@@ -64,6 +64,7 @@ export async function mockPublicApi(
     if (resource === "city_forecasts") return respond(fixture.forecasts);
     if (resource === "reporting_v2_policy")
       return respond({ enabled: open, consent_version: "community-v2" });
+    if (resource === "published_manila_live_input") return respond(null);
     if (resource === "community_signal_aggregates") return respond([]);
     if (resource === "community_policy")
       return respond({

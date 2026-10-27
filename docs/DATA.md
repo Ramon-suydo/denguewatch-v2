@@ -1,5 +1,9 @@
 # Data assumptions and dictionary
 
+## Separate provisional Manila source (2026)
+
+`data/raw/Manila_Dengue_Weekly_Clean_2026.csv` is a local, unofficial team transcription of Manila Information Office public posts. It has 13 weeks, four weekly values not flagged estimated and nine estimated values. Post links, source definitions and redistribution permission remain **NEEDS OWNER**. `npm run live:ingest` produces only the independent `manila_live_weekly.json`/`public/live-manila/` path. It does not join the historical gap, train ML or change evaluation. See [LIVE_MANILA.md](LIVE_MANILA.md) for the dictionary, fingerprinted legacy exceptions, reproducible ranges, coverage and update procedure. `observed` means “not flagged estimated,” not “source verified.”
+
 Run `npm run data:prepare` to regenerate `data/processed/*.json` and
 `data/validation_report.md`. Raw bytes are never changed and no database is used.
 Source hashes, individual gaps and anomalies are in `data/processed/audit.json`.

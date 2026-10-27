@@ -1,19 +1,13 @@
-import {useEffect,useState} from 'react';
+import {useEffect,useMemo,useState} from 'react';
 import type {ForecastData,CityPrediction} from './types';
-import {validateNcrRows,liveIsFresh,manilaToday,type WeeklyRow} from './live';
-import type {ModelBundle} from './scorer';
+import cities from '../content/ncr-cities.json';
+import {useLiveManila} from '../live-manila/useLiveManila';
+import {shift} from '../live-manila/model';
 export function useForecast(full=false){
- const [data,setData]=useState<ForecastData|null>(null),[error,setError]=useState(false),[retry,setRetry]=useState(0),[requestedMode,setMode]=useState<'Replay'|'Live'>('Replay'),[live,setLive]=useState<CityPrediction[]|null>(null),[checking,setChecking]=useState(true),[clock,setClock]=useState(Date.now());
- useEffect(()=>{const controller=new AbortController();let cancelled=false;let liveAssets:Promise<[ModelBundle,WeeklyRow[]]>|null=null;
- async function read<T>(path:string):Promise<T>{const response=await fetch(path,{signal:controller.signal});if(!response.ok)throw Error('Data unavailable');return response.json() as Promise<T>;}
- async function start(){try{const saved=await read<ForecastData>(full?'/ml/replay.json':'/ml/summary.json');if(cancelled)return;setData(saved);setError(false);
- async function refresh(){setChecking(true);try{if(!navigator.onLine)throw Error('Offline');const {getSupabase}=await import('../lib/supabase');const request=new AbortController();const abort=()=>request.abort();controller.signal.addEventListener('abort',abort,{once:true});const timeout=setTimeout(abort,5000);let uploaded;try{const response=await getSupabase().rpc('published_ncr_model_input').abortSignal(request.signal);if(response.error)throw Error('Hosted input unavailable');uploaded=response.data;}finally{clearTimeout(timeout);controller.signal.removeEventListener('abort',abort);}
- if(!uploaded?.rows)throw Error('No published input');const rows=validateNcrRows(uploaded.rows);if(!liveIsFresh(rows.at(-1)!.week_ending))throw Error('Stale input');
- liveAssets??=Promise.all([read<ModelBundle>('/ml/models.json'),read<WeeklyRow[]>('/ml/history.json')]);const [model,history]=await liveAssets;if(model.version!==saved.version)throw Error('Model version differs');const {liveForecast}=await import('./live-scorer');const result=liveForecast(model,history,rows);if(!cancelled)setLive(result);
- }catch{if(!cancelled)setLive(null);}finally{if(!cancelled){setChecking(false);setClock(Date.now());}}}
- await refresh();if(!cancelled)timer=setInterval(()=>void refresh(),60000);
- }catch{if(!cancelled){setError(true);setChecking(false);}}}
- let timer:ReturnType<typeof setInterval>|undefined;void start();return()=>{cancelled=true;controller.abort();clearInterval(timer);};},[full,retry]);
- const fresh=Boolean(live?.length&&liveIsFresh(live[0].origin,manilaToday(new Date(clock))));
- return {data,error,checking,live:fresh?live:null,mode:requestedMode==='Live'&&fresh?'Live' as const:'Replay' as const,setMode,retry:()=>setRetry(n=>n+1)};
+ const [data,setData]=useState<ForecastData|null>(null),[error,setError]=useState(false),[retry,setRetry]=useState(0),[requestedMode,setMode]=useState<'Replay'|'Live'>('Replay');
+ const manila=useLiveManila();
+ useEffect(()=>{const controller=new AbortController();void fetch(full?'/ml/replay.json':'/ml/summary.json',{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('Data unavailable');return r.json();}).then(saved=>{setData(saved);setError(false);}).catch(()=>{if(!controller.signal.aborted)setError(true);});return()=>controller.abort();},[full,retry]);
+ // Map geometry adapter only: null probabilities for every city. No 2026 ML scoring.
+ const live=useMemo<CityPrediction[]|null>(()=>{if(!manila.data||!manila.fresh)return null;const source=manila.data,latest=source.rows.at(-1)!;return cities.map((city,i)=>({city,city_id:i,origin:latest.week_end,target:shift(latest.week_end,7),cases:city==='MANILA CITY'?latest.weekly_new_cases:null,actual_cases:null,threshold:0,currently_above:null,label:null,history:city==='MANILA CITY'?source.rows.slice(-8).map(r=>r.weekly_new_cases):Array(8).fill(null),probability:null,predicted_class:null,reason:city==='MANILA CITY'?'provisional_manila':'no_recent_data'}));},[manila.data,manila.fresh]);
+ return {data,error,liveError:manila.error,checking:!manila.data&&!manila.error,live,liveManila:manila.data,stale:Boolean(manila.data&&!manila.fresh),mode:requestedMode==='Live'&&live?'Live' as const:'Replay' as const,setMode,retry:()=>{setRetry(n=>n+1);manila.retry();}};
 }

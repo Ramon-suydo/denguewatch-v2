@@ -1,3 +1,15 @@
+# Live Manila provisional panel - 2026-10-28
+
+Current branch: `feat/live-manila`, from remote main `a683b3b` with the completed UI prerequisite merged locally at `11daef8`. The 2026 source has its own generated JSON and append-only aggregate version table. Frozen historical ratio quantiles generate provisional one-/two-week ranges; this is not the 17-city classifier. Dashboard mode controls share state. Live shows Manila only, neutral other areas, dated values, estimated hatches, source limitations and care guidance. Stale data returns to Replay after 14 days.
+
+Local checks completed so far: 97 unit/integration tests, 60 full browser cases, 18 production cases, 5 PWA cases, all 80 independent visual comparisons and 28 cases each in Chrome/Edge/Firefox/WebKit. Current release measurements, evidence and owner gates are in [live-manila-checks.md](evidence/live-manila-checks.md). All 121 pre-existing historical/model/source/export artifacts remain byte-identical. The new schema is locally tested; no hosted migration, write, push or deployment is claimed.
+
+NEEDS OWNER: all 13 source links/screenshots, first prior total and missing interpolation explanations, counting-definition/scale verification, republication permission, weekly update ownership, adviser wording and native Filipino review. Existing credential/contact/photo/DPO/collection gates remain. Reporting is closed. Main automatically deploys; test locally and self-review before merging. Push only when ready: `git push -u origin feat/live-manila`.
+
+---
+
+Earlier checkpoints below are historical.
+
 # Manila-first landing and model demo - 2026-10-27
 
 Branch: `feat/ui-overhaul`, continuing from `1ed560a`. Implemented: Manila-led hero and weekly history/dated-estimate chart; a separate district-grouped section for the other 16 NCR areas; a dedicated `/our-model` past-week prediction/outcome comparison; four visible navigation destinations; retained original identity, care guidance and gated reporting.

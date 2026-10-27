@@ -11,7 +11,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test --test-concurrency=1 tests/data-and-security.test.ts tests/database-tls.test.ts tests/forecast.test.ts tests/composite.test.ts tests/weekly-forecast.test.ts tests/source-metadata.test.ts tests/demo-snapshot.test.ts tests/fixture-build-guard.test.ts tests/data-confidence.test.ts tests/tondo-map.test.ts tests/manila-data.test.ts tests/manila-model.test.ts tests/research-security.test.ts tests/reporting-v2.test.ts tests/launch-gate.test.ts tests/local-setup.test.ts tests/ncr-colors.test.ts tests/measurements.test.ts tests/environment.test.ts tests/retention-launch.test.ts tests/secret-audit.test.mjs tests/reporting-scope.test.ts tests/redesign-data.test.ts tests/ml-scorer.test.ts tests/ncr-upload.test.ts tests/ml-colors.test.ts tests/ui-examples.test.ts",
+    "test": "tsx --test --test-concurrency=1 tests/data-and-security.test.ts tests/database-tls.test.ts tests/forecast.test.ts tests/composite.test.ts tests/weekly-forecast.test.ts tests/source-metadata.test.ts tests/demo-snapshot.test.ts tests/fixture-build-guard.test.ts tests/data-confidence.test.ts tests/tondo-map.test.ts tests/manila-data.test.ts tests/manila-model.test.ts tests/research-security.test.ts tests/reporting-v2.test.ts tests/launch-gate.test.ts tests/local-setup.test.ts tests/ncr-colors.test.ts tests/measurements.test.ts tests/environment.test.ts tests/retention-launch.test.ts tests/secret-audit.test.mjs tests/reporting-scope.test.ts tests/redesign-data.test.ts tests/ml-scorer.test.ts tests/ncr-upload.test.ts tests/ml-colors.test.ts tests/ui-examples.test.ts tests/live-manila.test.ts",
     "data:audit": "tsx scripts/ingest-historical.ts --dry-run",
     "ingest": "tsx scripts/ingest-historical.ts",
     "db:verify": "node scripts/db-verify.mjs",
@@ -50,7 +50,7 @@
     "reports:off": "node scripts/bootstrap-hosted.mjs --reporting-off",
     "test:production": "playwright test --config playwright.research.config.ts",
     "data:validate": "node scripts/validate-shipped-data.mjs",
-    "prebuild": "npm run data:validate && npm run credits:check && npm run test:hero-contrast",
+    "prebuild": "npm run live:check && npm run data:validate && npm run credits:check && npm run test:hero-contrast",
     "data:inventory": "node scripts/inventory-markers.mjs",
     "evaluate:map": "python scripts/evaluate-map.py",
     "map:prepare": "python scripts/prepare-map.py",
@@ -63,7 +63,9 @@
     "ml:export": "node scripts/ml-run.mjs export",
     "ml:test": "node scripts/ml-run.mjs test",
     "test:ui-budget": "node scripts/check-ui-budget.mjs",
-    "test:visual": "playwright test --config playwright.visual.config.ts"
+    "test:visual": "playwright test --config playwright.visual.config.ts",
+    "live:ingest": "tsx scripts/ingest_live_manila.ts",
+    "live:check": "tsx scripts/check-live-manila-data.ts"
   },
   "dependencies": {
     "@fontsource/figtree": "^5.3.0",

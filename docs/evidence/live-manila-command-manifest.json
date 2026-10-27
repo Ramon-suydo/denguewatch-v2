@@ -1,0 +1,1204 @@
+{
+  "node": "v20.19.4",
+  "platform": "win32",
+  "results": [
+    {
+      "name": "focused-unit",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "--test",
+        "tests/live-manila.test.ts"
+      ],
+      "start": "2026-10-27T17:46:14.491Z",
+      "end": "2026-10-27T17:46:17.731Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": null,
+      "diagnostic": "Earlier runner reused this log filename; that attempt log was overwritten. Exit code is retained; do not treat the later log as this attempt."
+    },
+    {
+      "name": "focused-browser",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/ui/live-manila.spec.ts",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T17:46:17.748Z",
+      "end": "2026-10-27T17:46:58.055Z",
+      "exit_code": 1,
+      "signal": null,
+      "log": null,
+      "diagnostic": "Earlier runner reused this log filename; that attempt log was overwritten. Exit code is retained; do not treat the later log as this attempt."
+    },
+    {
+      "name": "focused-unit",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "--test",
+        "tests/live-manila.test.ts"
+      ],
+      "start": "2026-10-27T17:47:37.576Z",
+      "end": "2026-10-27T17:47:40.763Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": null,
+      "diagnostic": "Earlier runner reused this log filename; that attempt log was overwritten. Exit code is retained; do not treat the later log as this attempt."
+    },
+    {
+      "name": "focused-browser",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/ui/live-manila.spec.ts",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T17:47:40.764Z",
+      "end": "2026-10-27T17:48:15.879Z",
+      "exit_code": 1,
+      "signal": null,
+      "log": null,
+      "diagnostic": "Earlier runner reused this log filename; that attempt log was overwritten. Exit code is retained; do not treat the later log as this attempt."
+    },
+    {
+      "name": "focused-unit",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "--test",
+        "tests/live-manila.test.ts"
+      ],
+      "start": "2026-10-27T17:50:52.238Z",
+      "end": "2026-10-27T17:50:55.539Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/focused-unit.log"
+    },
+    {
+      "name": "focused-browser",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/ui/live-manila.spec.ts",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T17:50:55.540Z",
+      "end": "2026-10-27T17:51:23.943Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/focused-browser.log"
+    },
+    {
+      "name": "ingestion",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "scripts/ingest_live_manila.ts"
+      ],
+      "start": "2026-10-27T17:52:51.827Z",
+      "end": "2026-10-27T17:52:52.421Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/ingestion-007.log"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "start": "2026-10-27T17:52:52.422Z",
+      "end": "2026-10-27T17:52:52.476Z",
+      "exit_code": 1,
+      "signal": null,
+      "log": ".artifacts/live-manila/typecheck-008.log"
+    },
+    {
+      "name": "ingestion",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "scripts/ingest_live_manila.ts"
+      ],
+      "start": "2026-10-27T17:53:59.376Z",
+      "end": "2026-10-27T17:53:59.780Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/ingestion-009.log"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@typescript/native/bin/tsc",
+        "--noEmit"
+      ],
+      "start": "2026-10-27T17:53:59.781Z",
+      "end": "2026-10-27T17:54:01.104Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/typecheck-010.log"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "scripts",
+        "tests",
+        "vite.config.ts",
+        "playwright.config.ts",
+        "--max-warnings",
+        "0"
+      ],
+      "start": "2026-10-27T17:54:01.105Z",
+      "end": "2026-10-27T17:54:15.534Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/lint-011.log"
+    },
+    {
+      "name": "unit",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "--test",
+        "--test-concurrency=1",
+        "tests/data-and-security.test.ts",
+        "tests/database-tls.test.ts",
+        "tests/forecast.test.ts",
+        "tests/composite.test.ts",
+        "tests/weekly-forecast.test.ts",
+        "tests/source-metadata.test.ts",
+        "tests/demo-snapshot.test.ts",
+        "tests/fixture-build-guard.test.ts",
+        "tests/data-confidence.test.ts",
+        "tests/tondo-map.test.ts",
+        "tests/manila-data.test.ts",
+        "tests/manila-model.test.ts",
+        "tests/research-security.test.ts",
+        "tests/reporting-v2.test.ts",
+        "tests/launch-gate.test.ts",
+        "tests/local-setup.test.ts",
+        "tests/ncr-colors.test.ts",
+        "tests/measurements.test.ts",
+        "tests/environment.test.ts",
+        "tests/retention-launch.test.ts",
+        "tests/secret-audit.test.mjs",
+        "tests/reporting-scope.test.ts",
+        "tests/redesign-data.test.ts",
+        "tests/ml-scorer.test.ts",
+        "tests/ncr-upload.test.ts",
+        "tests/ml-colors.test.ts",
+        "tests/ui-examples.test.ts",
+        "tests/live-manila.test.ts"
+      ],
+      "start": "2026-10-27T17:54:15.535Z",
+      "end": "2026-10-27T17:54:59.228Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/unit-012.log"
+    },
+    {
+      "name": "data-validation",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/validate-shipped-data.mjs"
+      ],
+      "start": "2026-10-27T17:54:59.229Z",
+      "end": "2026-10-27T17:54:59.436Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/data-validation-013.log"
+    },
+    {
+      "name": "credits",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-credits.mjs"
+      ],
+      "start": "2026-10-27T17:54:59.437Z",
+      "end": "2026-10-27T17:54:59.619Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/credits-014.log"
+    },
+    {
+      "name": "contrast",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-contrast.mjs"
+      ],
+      "start": "2026-10-27T17:54:59.620Z",
+      "end": "2026-10-27T17:54:59.699Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/contrast-015.log"
+    },
+    {
+      "name": "hero-contrast",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-hero-contrast.mjs"
+      ],
+      "start": "2026-10-27T17:54:59.700Z",
+      "end": "2026-10-27T17:55:14.975Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/hero-contrast-016.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "start": "2026-10-27T17:55:14.975Z",
+      "end": "2026-10-27T17:55:22.568Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/build-017.log"
+    },
+    {
+      "name": "prerender",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/prerender-shell.mjs"
+      ],
+      "start": "2026-10-27T17:55:22.568Z",
+      "end": "2026-10-27T17:55:24.729Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/prerender-018.log"
+    },
+    {
+      "name": "pwa-build",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/build-pwa.mjs"
+      ],
+      "start": "2026-10-27T17:55:24.731Z",
+      "end": "2026-10-27T17:55:25.065Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/pwa-build-019.log"
+    },
+    {
+      "name": "budget",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-ui-budget.mjs"
+      ],
+      "start": "2026-10-27T17:55:25.067Z",
+      "end": "2026-10-27T17:55:25.197Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/budget-020.log"
+    },
+    {
+      "name": "ingestion",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "scripts/ingest_live_manila.ts"
+      ],
+      "start": "2026-10-27T17:56:29.646Z",
+      "end": "2026-10-27T17:56:29.957Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/ingestion-021.log"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@typescript/native/bin/tsc",
+        "--noEmit"
+      ],
+      "start": "2026-10-27T17:56:29.958Z",
+      "end": "2026-10-27T17:56:31.063Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/typecheck-022.log"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "scripts",
+        "tests",
+        "vite.config.ts",
+        "playwright.config.ts",
+        "--max-warnings",
+        "0"
+      ],
+      "start": "2026-10-27T17:56:31.064Z",
+      "end": "2026-10-27T17:56:36.451Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/lint-023.log"
+    },
+    {
+      "name": "unit",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "--test",
+        "--test-concurrency=1",
+        "tests/data-and-security.test.ts",
+        "tests/database-tls.test.ts",
+        "tests/forecast.test.ts",
+        "tests/composite.test.ts",
+        "tests/weekly-forecast.test.ts",
+        "tests/source-metadata.test.ts",
+        "tests/demo-snapshot.test.ts",
+        "tests/fixture-build-guard.test.ts",
+        "tests/data-confidence.test.ts",
+        "tests/tondo-map.test.ts",
+        "tests/manila-data.test.ts",
+        "tests/manila-model.test.ts",
+        "tests/research-security.test.ts",
+        "tests/reporting-v2.test.ts",
+        "tests/launch-gate.test.ts",
+        "tests/local-setup.test.ts",
+        "tests/ncr-colors.test.ts",
+        "tests/measurements.test.ts",
+        "tests/environment.test.ts",
+        "tests/retention-launch.test.ts",
+        "tests/secret-audit.test.mjs",
+        "tests/reporting-scope.test.ts",
+        "tests/redesign-data.test.ts",
+        "tests/ml-scorer.test.ts",
+        "tests/ncr-upload.test.ts",
+        "tests/ml-colors.test.ts",
+        "tests/ui-examples.test.ts",
+        "tests/live-manila.test.ts"
+      ],
+      "start": "2026-10-27T17:56:36.452Z",
+      "end": "2026-10-27T17:57:14.374Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/unit-024.log"
+    },
+    {
+      "name": "data-validation",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/validate-shipped-data.mjs"
+      ],
+      "start": "2026-10-27T17:57:14.375Z",
+      "end": "2026-10-27T17:57:14.594Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/data-validation-025.log"
+    },
+    {
+      "name": "credits",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-credits.mjs"
+      ],
+      "start": "2026-10-27T17:57:14.595Z",
+      "end": "2026-10-27T17:57:14.761Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/credits-026.log"
+    },
+    {
+      "name": "contrast",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-contrast.mjs"
+      ],
+      "start": "2026-10-27T17:57:14.762Z",
+      "end": "2026-10-27T17:57:14.837Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/contrast-027.log"
+    },
+    {
+      "name": "hero-contrast",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-hero-contrast.mjs"
+      ],
+      "start": "2026-10-27T17:57:14.839Z",
+      "end": "2026-10-27T17:57:28.437Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/hero-contrast-028.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "start": "2026-10-27T17:57:28.438Z",
+      "end": "2026-10-27T17:57:32.578Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/build-029.log"
+    },
+    {
+      "name": "prerender",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/prerender-shell.mjs"
+      ],
+      "start": "2026-10-27T17:57:32.579Z",
+      "end": "2026-10-27T17:57:34.065Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/prerender-030.log"
+    },
+    {
+      "name": "pwa-build",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/build-pwa.mjs"
+      ],
+      "start": "2026-10-27T17:57:34.066Z",
+      "end": "2026-10-27T17:57:34.372Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/pwa-build-031.log"
+    },
+    {
+      "name": "budget",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-ui-budget.mjs"
+      ],
+      "start": "2026-10-27T17:57:34.373Z",
+      "end": "2026-10-27T17:57:34.514Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/budget-032.log"
+    },
+    {
+      "name": "browser",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T17:57:51.562Z",
+      "end": "2026-10-27T18:06:15.733Z",
+      "exit_code": 1,
+      "signal": null,
+      "log": ".artifacts/live-manila/browser-033.log"
+    },
+    {
+      "name": "ingestion",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "scripts/ingest_live_manila.ts"
+      ],
+      "start": "2026-10-27T18:06:57.695Z",
+      "end": "2026-10-27T18:06:58.015Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/ingestion-034.log"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@typescript/native/bin/tsc",
+        "--noEmit"
+      ],
+      "start": "2026-10-27T18:06:58.016Z",
+      "end": "2026-10-27T18:06:59.495Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/typecheck-035.log"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "scripts",
+        "tests",
+        "vite.config.ts",
+        "playwright.config.ts",
+        "--max-warnings",
+        "0"
+      ],
+      "start": "2026-10-27T18:06:59.497Z",
+      "end": "2026-10-27T18:07:04.885Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/lint-036.log"
+    },
+    {
+      "name": "unit",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "--test",
+        "--test-concurrency=1",
+        "tests/data-and-security.test.ts",
+        "tests/database-tls.test.ts",
+        "tests/forecast.test.ts",
+        "tests/composite.test.ts",
+        "tests/weekly-forecast.test.ts",
+        "tests/source-metadata.test.ts",
+        "tests/demo-snapshot.test.ts",
+        "tests/fixture-build-guard.test.ts",
+        "tests/data-confidence.test.ts",
+        "tests/tondo-map.test.ts",
+        "tests/manila-data.test.ts",
+        "tests/manila-model.test.ts",
+        "tests/research-security.test.ts",
+        "tests/reporting-v2.test.ts",
+        "tests/launch-gate.test.ts",
+        "tests/local-setup.test.ts",
+        "tests/ncr-colors.test.ts",
+        "tests/measurements.test.ts",
+        "tests/environment.test.ts",
+        "tests/retention-launch.test.ts",
+        "tests/secret-audit.test.mjs",
+        "tests/reporting-scope.test.ts",
+        "tests/redesign-data.test.ts",
+        "tests/ml-scorer.test.ts",
+        "tests/ncr-upload.test.ts",
+        "tests/ml-colors.test.ts",
+        "tests/ui-examples.test.ts",
+        "tests/live-manila.test.ts"
+      ],
+      "start": "2026-10-27T18:07:04.886Z",
+      "end": "2026-10-27T18:07:42.935Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/unit-037.log"
+    },
+    {
+      "name": "data-validation",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/validate-shipped-data.mjs"
+      ],
+      "start": "2026-10-27T18:07:42.936Z",
+      "end": "2026-10-27T18:07:43.136Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/data-validation-038.log"
+    },
+    {
+      "name": "credits",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-credits.mjs"
+      ],
+      "start": "2026-10-27T18:07:43.136Z",
+      "end": "2026-10-27T18:07:43.319Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/credits-039.log"
+    },
+    {
+      "name": "contrast",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-contrast.mjs"
+      ],
+      "start": "2026-10-27T18:07:43.319Z",
+      "end": "2026-10-27T18:07:43.436Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/contrast-040.log"
+    },
+    {
+      "name": "hero-contrast",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-hero-contrast.mjs"
+      ],
+      "start": "2026-10-27T18:07:43.436Z",
+      "end": "2026-10-27T18:07:57.100Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/hero-contrast-041.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "start": "2026-10-27T18:07:57.101Z",
+      "end": "2026-10-27T18:08:01.396Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/build-042.log"
+    },
+    {
+      "name": "prerender",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/prerender-shell.mjs"
+      ],
+      "start": "2026-10-27T18:08:01.398Z",
+      "end": "2026-10-27T18:08:02.906Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/prerender-043.log"
+    },
+    {
+      "name": "pwa-build",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/build-pwa.mjs"
+      ],
+      "start": "2026-10-27T18:08:02.907Z",
+      "end": "2026-10-27T18:08:03.236Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/pwa-build-044.log"
+    },
+    {
+      "name": "budget",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-ui-budget.mjs"
+      ],
+      "start": "2026-10-27T18:08:03.237Z",
+      "end": "2026-10-27T18:08:03.366Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/budget-045.log"
+    },
+    {
+      "name": "focused-unit",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "--test",
+        "tests/live-manila.test.ts"
+      ],
+      "start": "2026-10-27T18:08:43.143Z",
+      "end": "2026-10-27T18:08:46.045Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/focused-unit-046.log"
+    },
+    {
+      "name": "focused-browser",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/ui/live-manila.spec.ts",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T18:08:46.046Z",
+      "end": "2026-10-27T18:09:18.577Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/focused-browser-047.log"
+    },
+    {
+      "name": "focused-pixels",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/ui/ml-map.spec.ts",
+        "--grep",
+        "rendered map pixels",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T18:09:18.578Z",
+      "end": "2026-10-27T18:09:29.979Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/focused-pixels-048.log"
+    },
+    {
+      "name": "browser",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T18:10:06.056Z",
+      "end": "2026-10-27T18:18:06.798Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/browser-049.log"
+    },
+    {
+      "name": "focused-unit",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "--test",
+        "tests/live-manila.test.ts"
+      ],
+      "start": "2026-10-27T18:21:28.455Z",
+      "end": "2026-10-27T18:21:31.583Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/focused-unit-050.log"
+    },
+    {
+      "name": "focused-browser",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/ui/live-manila.spec.ts",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T18:21:31.584Z",
+      "end": "2026-10-27T18:22:03.613Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/focused-browser-051.log"
+    },
+    {
+      "name": "focused-pixels",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/ui/ml-map.spec.ts",
+        "--grep",
+        "rendered map pixels",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T18:22:03.616Z",
+      "end": "2026-10-27T18:22:15.056Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/focused-pixels-052.log"
+    },
+    {
+      "name": "ingestion",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "scripts/ingest_live_manila.ts"
+      ],
+      "start": "2026-10-27T18:23:55.799Z",
+      "end": "2026-10-27T18:23:56.113Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/ingestion-053.log"
+    },
+    {
+      "name": "typecheck",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@typescript/native/bin/tsc",
+        "--noEmit"
+      ],
+      "start": "2026-10-27T18:23:56.114Z",
+      "end": "2026-10-27T18:23:57.854Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/typecheck-054.log"
+    },
+    {
+      "name": "lint",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "scripts",
+        "tests",
+        "vite.config.ts",
+        "playwright.config.ts",
+        "--max-warnings",
+        "0"
+      ],
+      "start": "2026-10-27T18:23:57.855Z",
+      "end": "2026-10-27T18:24:03.225Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/lint-055.log"
+    },
+    {
+      "name": "unit",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "--test",
+        "--test-concurrency=1",
+        "tests/data-and-security.test.ts",
+        "tests/database-tls.test.ts",
+        "tests/forecast.test.ts",
+        "tests/composite.test.ts",
+        "tests/weekly-forecast.test.ts",
+        "tests/source-metadata.test.ts",
+        "tests/demo-snapshot.test.ts",
+        "tests/fixture-build-guard.test.ts",
+        "tests/data-confidence.test.ts",
+        "tests/tondo-map.test.ts",
+        "tests/manila-data.test.ts",
+        "tests/manila-model.test.ts",
+        "tests/research-security.test.ts",
+        "tests/reporting-v2.test.ts",
+        "tests/launch-gate.test.ts",
+        "tests/local-setup.test.ts",
+        "tests/ncr-colors.test.ts",
+        "tests/measurements.test.ts",
+        "tests/environment.test.ts",
+        "tests/retention-launch.test.ts",
+        "tests/secret-audit.test.mjs",
+        "tests/reporting-scope.test.ts",
+        "tests/redesign-data.test.ts",
+        "tests/ml-scorer.test.ts",
+        "tests/ncr-upload.test.ts",
+        "tests/ml-colors.test.ts",
+        "tests/ui-examples.test.ts",
+        "tests/live-manila.test.ts"
+      ],
+      "start": "2026-10-27T18:24:03.227Z",
+      "end": "2026-10-27T18:24:43.601Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/unit-056.log"
+    },
+    {
+      "name": "live-data-validation",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "scripts/check-live-manila-data.ts"
+      ],
+      "start": "2026-10-27T18:24:43.602Z",
+      "end": "2026-10-27T18:24:44.007Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/live-data-validation-057.log"
+    },
+    {
+      "name": "data-validation",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/validate-shipped-data.mjs"
+      ],
+      "start": "2026-10-27T18:24:44.009Z",
+      "end": "2026-10-27T18:24:44.208Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/data-validation-058.log"
+    },
+    {
+      "name": "credits",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-credits.mjs"
+      ],
+      "start": "2026-10-27T18:24:44.209Z",
+      "end": "2026-10-27T18:24:44.380Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/credits-059.log"
+    },
+    {
+      "name": "contrast",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-contrast.mjs"
+      ],
+      "start": "2026-10-27T18:24:44.381Z",
+      "end": "2026-10-27T18:24:44.457Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/contrast-060.log"
+    },
+    {
+      "name": "hero-contrast",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-hero-contrast.mjs"
+      ],
+      "start": "2026-10-27T18:24:44.458Z",
+      "end": "2026-10-27T18:24:57.713Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/hero-contrast-061.log"
+    },
+    {
+      "name": "build",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "start": "2026-10-27T18:24:57.713Z",
+      "end": "2026-10-27T18:25:01.901Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/build-062.log"
+    },
+    {
+      "name": "prerender",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/prerender-shell.mjs"
+      ],
+      "start": "2026-10-27T18:25:01.902Z",
+      "end": "2026-10-27T18:25:03.389Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/prerender-063.log"
+    },
+    {
+      "name": "pwa-build",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/build-pwa.mjs"
+      ],
+      "start": "2026-10-27T18:25:03.390Z",
+      "end": "2026-10-27T18:25:03.717Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/pwa-build-064.log"
+    },
+    {
+      "name": "budget",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-ui-budget.mjs"
+      ],
+      "start": "2026-10-27T18:25:03.718Z",
+      "end": "2026-10-27T18:25:03.846Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/budget-065.log"
+    },
+    {
+      "name": "browser",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T18:26:14.231Z",
+      "end": "2026-10-27T18:34:16.764Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/browser-066.log"
+    },
+    {
+      "name": "production",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.research.config.ts",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T18:34:44.882Z",
+      "end": "2026-10-27T18:36:23.668Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/production-067.log"
+    },
+    {
+      "name": "pwa",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.production.config.ts",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T18:36:23.669Z",
+      "end": "2026-10-27T18:36:47.804Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/pwa-068.log"
+    },
+    {
+      "name": "visual-baselines",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.visual.config.ts",
+        "--workers=1",
+        "--update-snapshots"
+      ],
+      "start": "2026-10-27T18:38:16.785Z",
+      "end": "2026-10-27T18:42:21.440Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/visual-baselines-069.log"
+    },
+    {
+      "name": "visual",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.visual.config.ts",
+        "--workers=1"
+      ],
+      "start": "2026-10-27T18:43:28.285Z",
+      "end": "2026-10-27T18:47:10.118Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/visual-070.log"
+    },
+    {
+      "name": "compat",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/check-live-manila-browsers.mjs"
+      ],
+      "start": "2026-10-27T18:47:30.921Z",
+      "end": "2026-10-27T18:49:39.905Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/compat-071.log"
+    },
+    {
+      "name": "lighthouse",
+      "node": "v22.23.2",
+      "command": [
+        "npm.cmd",
+        "exec",
+        "--yes",
+        "--package=node@22",
+        "--package=lighthouse@13",
+        "--",
+        "node",
+        "scripts/audit-lighthouse.mjs",
+        "http://127.0.0.1:43328/"
+      ],
+      "start": "2026-10-27T18:52:29.887Z",
+      "end": "2026-10-27T18:53:15.529Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/lighthouse-072.log"
+    },
+    {
+      "name": "zap",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/scan-zap.mjs",
+        "http://127.0.0.1:43328/"
+      ],
+      "start": "2026-10-27T18:53:15.538Z",
+      "end": "2026-10-27T18:54:10.208Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/zap-073.log"
+    },
+    {
+      "name": "lint-final",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/eslint/bin/eslint.js",
+        "src",
+        "scripts",
+        "tests",
+        "vite.config.ts",
+        "playwright.config.ts",
+        "--max-warnings",
+        "0"
+      ],
+      "start": "2026-10-27T18:55:51.580Z",
+      "end": "2026-10-27T18:55:57.561Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/lint-final-074.log"
+    },
+    {
+      "name": "typecheck-final",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "node_modules/@typescript/native/bin/tsc",
+        "--noEmit"
+      ],
+      "start": "2026-10-27T18:55:57.562Z",
+      "end": "2026-10-27T18:55:59.477Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/typecheck-final-075.log"
+    },
+    {
+      "name": "npm-audit",
+      "node": "v22.23.2",
+      "command": [
+        "npm",
+        "audit",
+        "--json"
+      ],
+      "start": "2026-10-27T18:56:00.717Z",
+      "end": "2026-10-27T18:56:02.226Z",
+      "exit_code": 0,
+      "signal": null,
+      "log": ".artifacts/live-manila/npm-audit-076.log"
+    },
+    {
+      "name": "secrets",
+      "node": "v22.23.2",
+      "command": [
+        "<USER>\\AppData\\Local\\npm-cache\\_npx\\52027bd8fc0022aa\\node_modules\\node\\bin\\node.exe",
+        "scripts/audit-secrets.mjs"
+      ],
+      "start": "2026-10-27T18:56:02.227Z",
+      "end": "2026-10-27T18:57:09.473Z",
+      "exit_code": 1,
+      "signal": null,
+      "log": ".artifacts/live-manila/secrets-077.log"
+    }
+  ]
+}
