@@ -20,7 +20,8 @@ export async function reportingHarness(staffRole:'moderator'|'admin'='moderator'
   if(bearer!==token)return false;const parts=bearer.split('.'),signed=createHmac('sha256',secret).update(parts[0]+'.'+parts[1]).digest();const received=Buffer.from(parts[2],'base64url');return signed.length===received.length&&timingSafeEqual(signed,received);
  }
  async function attach(page:Page){
-  await page.route('https://denguewatch-tests.invalid/**',async route=>{
+  // Capture production-contract URLs too; never forward a test Auth or data request.
+  await page.route(/^https:\/\/(?:denguewatch-tests\.invalid|[a-z0-9-]+\.supabase\.co)(?:\/|$)/i,async route=>{
    const request=route.request(),url=new URL(request.url()),path=url.pathname;
    const data=request.postDataJSON()??{},bearer=request.headers().authorization?.replace(/^Bearer /,'')??'';
    if(path==='/auth/v1/token'){
@@ -37,14 +38,14 @@ export async function reportingHarness(staffRole:'moderator'|'admin'='moderator'
     await db.query("select set_config('request.jwt.claims',$1,false)",[JSON.stringify(authenticated?claims:{role:'anon',aal:'aal1'})]);
     const resource=path.split('/').at(-1)!;let rows:any[];
     if(path.includes('/rpc/')){
-     const signatures:Record<string,string[]>={report_challenge:[],submit_signal_v3:['p_challenge','p_nonce','p_barangay','p_onset','p_symptoms','p_note','p_consent','p_version','p_honeypot','p_report_type','p_area_unit','p_affected_range'],submit_signal:['p_challenge','p_nonce','p_barangay','p_onset','p_symptoms','p_note','p_consent','p_version','p_honeypot'],withdraw_signal:['p_code'],community_signal_aggregates:[],staff_signal_queue:[],staff_role:[],moderate_signal:['p_id','p_action','p_merge_into'],purge_community_retention:[]};
+     const signatures:Record<string,string[]>={report_challenge:[],submit_signal_v3:['p_challenge','p_nonce','p_barangay','p_onset','p_symptoms','p_note','p_consent','p_version','p_honeypot','p_report_type','p_area_unit','p_affected_range'],submit_signal:['p_challenge','p_nonce','p_barangay','p_onset','p_symptoms','p_note','p_consent','p_version','p_honeypot'],withdraw_signal:['p_code'],community_signal_aggregates:[],staff_signal_queue:[],staff_role:[],moderate_signal:['p_id','p_action','p_merge_into'],purge_community_retention:[],stage_ncr_model_upload:['p_rows','p_citation'],set_ncr_model_upload_status:['p_id','p_status'],published_ncr_model_input:[]};
      if(!(resource in signatures))return await route.fulfill({status:404,json:{message:'Unknown local RPC'}});
      const names=signatures[resource],args=names.map(n=>data[n]??null),sql=names.map((n,i)=>`${n} => $${i+1}`).join(',');
      rows=(await db.query(`select * from public.${resource}(${sql})`,args)).rows;
-     const scalar=['submit_signal_v3','submit_signal','withdraw_signal','staff_role','moderate_signal','purge_community_retention'].includes(resource);
+     const scalar=['submit_signal_v3','submit_signal','withdraw_signal','staff_role','moderate_signal','purge_community_retention','stage_ncr_model_upload','set_ncr_model_upload_status','published_ncr_model_input'].includes(resource);
      return await route.fulfill({status:200,json:scalar?(rows[0]?.[resource]??null):rows});
     }
-    const resources=['reporting_v2_policy','manila_barangay_catalog','community_signals','community_reports','staff_audit','surveillance_uploads'];
+    const resources=['reporting_v2_policy','manila_barangay_catalog','community_signals','community_reports','staff_audit','surveillance_uploads','ncr_model_uploads'];
     if(!resources.includes(resource))return await route.fulfill({status:403,json:{message:'Denied local test resource'}});
     // Actual RLS/grants apply; the adapter does not substitute expected report rows.
     rows=(await db.query('select * from public.'+resource)).rows;

@@ -1,3 +1,4 @@
+import {NcrModelUpload} from '../components/NcrModelUpload';
 import { useEffect, useState } from "react";
 import { parse } from "csv-parse/browser/esm/sync";
 import { Button, Card, Input } from "../components/ui";
@@ -301,6 +302,7 @@ export function Admin() {
             </Card>
             {role === "admin" && (
               <>
+                <NcrModelUpload/>
                 <Card>
                   <h2>CSV preview and versioned publication</h2>
                   <p>

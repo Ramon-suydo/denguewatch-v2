@@ -1,0 +1,515 @@
+{
+  "version": 1,
+  "evaluation_date": "2026-10-25",
+  "case_data_as_of": "2021-01-10",
+  "train_end": "2020-12-31",
+  "source_sha256": "4e993553f10081b4e6b35a0d4b3c9bd0cc271765645a123fcb2e0c5d7084633c",
+  "evaluation_scope": "Retrospective count-based province/city ranking, not population risk, not a next-week case forecast. Held-out years train on strictly earlier years; missing units are excluded, never zero-filled.",
+  "population_status": "Unit-aligned PSA denominators unverified. Count rankings are confounded by population size; no per-100,000 or individual-risk claim.",
+  "boundary_scope": "Exact crosswalk name matches do not establish administrative/reporting catchment equivalence. Independently reported cities may have unmatched polygons.",
+  "models": [
+    {
+      "test_year": 2018,
+      "train_years": [
+        2016,
+        2017
+      ],
+      "model": "burden-only",
+      "weeks": 52,
+      "min_units": 126,
+      "spearman": 0.7481995716488739,
+      "top10_hit_rate": 0.5288461538461539,
+      "normalized_rank_error": 0.15618681318681318
+    },
+    {
+      "test_year": 2018,
+      "train_years": [
+        2016,
+        2017
+      ],
+      "model": "lagged-weather-weather-cohort",
+      "weeks": 52,
+      "min_units": 96,
+      "spearman": 0.7507959499468106,
+      "top10_hit_rate": 0.575,
+      "normalized_rank_error": 0.15248397435897434
+    },
+    {
+      "test_year": 2018,
+      "train_years": [
+        2016,
+        2017
+      ],
+      "model": "season-burden",
+      "weeks": 52,
+      "min_units": 126,
+      "spearman": 0.7413193555284425,
+      "top10_hit_rate": 0.4923076923076923,
+      "normalized_rank_error": 0.157996336996337
+    },
+    {
+      "test_year": 2018,
+      "train_years": [
+        2016,
+        2017
+      ],
+      "model": "season-burden-weather-cohort",
+      "weeks": 52,
+      "min_units": 96,
+      "spearman": 0.7594055744972698,
+      "top10_hit_rate": 0.5423076923076923,
+      "normalized_rank_error": 0.15190199055330636
+    },
+    {
+      "test_year": 2018,
+      "train_years": [
+        2016,
+        2017
+      ],
+      "model": "season-ridge-weather-cohort",
+      "weeks": 52,
+      "min_units": 96,
+      "spearman": 0.7765125128010397,
+      "top10_hit_rate": 0.5596153846153845,
+      "normalized_rank_error": 0.14602943657219974
+    },
+    {
+      "test_year": 2019,
+      "train_years": [
+        2016,
+        2017,
+        2018
+      ],
+      "model": "burden-only",
+      "weeks": 51,
+      "min_units": 126,
+      "spearman": 0.7377506314143891,
+      "top10_hit_rate": 0.515686274509804,
+      "normalized_rank_error": 0.15986056644880173
+    },
+    {
+      "test_year": 2019,
+      "train_years": [
+        2016,
+        2017,
+        2018
+      ],
+      "model": "lagged-weather-weather-cohort",
+      "weeks": 51,
+      "min_units": 96,
+      "spearman": 0.7686017369103448,
+      "top10_hit_rate": 0.5882352941176471,
+      "normalized_rank_error": 0.14994410044719644
+    },
+    {
+      "test_year": 2019,
+      "train_years": [
+        2016,
+        2017,
+        2018
+      ],
+      "model": "season-burden",
+      "weeks": 51,
+      "min_units": 126,
+      "spearman": 0.7666624718898927,
+      "top10_hit_rate": 0.5686274509803922,
+      "normalized_rank_error": 0.14921381886087767
+    },
+    {
+      "test_year": 2019,
+      "train_years": [
+        2016,
+        2017,
+        2018
+      ],
+      "model": "season-burden-weather-cohort",
+      "weeks": 51,
+      "min_units": 96,
+      "spearman": 0.7716783596344803,
+      "top10_hit_rate": 0.5627450980392158,
+      "normalized_rank_error": 0.1469749742002064
+    },
+    {
+      "test_year": 2019,
+      "train_years": [
+        2016,
+        2017,
+        2018
+      ],
+      "model": "season-ridge-weather-cohort",
+      "weeks": 51,
+      "min_units": 96,
+      "spearman": 0.7753324845771974,
+      "top10_hit_rate": 0.5843137254901961,
+      "normalized_rank_error": 0.14593438252493982
+    },
+    {
+      "test_year": 2020,
+      "train_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "model": "burden-only",
+      "weeks": 52,
+      "min_units": 80,
+      "spearman": 0.6223875089953961,
+      "top10_hit_rate": 0.3211538461538461,
+      "normalized_rank_error": 0.19388644881841086
+    },
+    {
+      "test_year": 2020,
+      "train_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "model": "lagged-weather-weather-cohort",
+      "weeks": 52,
+      "min_units": 59,
+      "spearman": 0.6703571022108137,
+      "top10_hit_rate": 0.42307692307692313,
+      "normalized_rank_error": 0.18078586201178215
+    },
+    {
+      "test_year": 2020,
+      "train_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "model": "season-burden",
+      "weeks": 52,
+      "min_units": 80,
+      "spearman": 0.6496341263419119,
+      "top10_hit_rate": 0.41153846153846163,
+      "normalized_rank_error": 0.1854073526684286
+    },
+    {
+      "test_year": 2020,
+      "train_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "model": "season-burden-weather-cohort",
+      "weeks": 52,
+      "min_units": 59,
+      "spearman": 0.6746821147842184,
+      "top10_hit_rate": 0.4307692307692309,
+      "normalized_rank_error": 0.1792978606121697
+    },
+    {
+      "test_year": 2020,
+      "train_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "model": "season-ridge-weather-cohort",
+      "weeks": 52,
+      "min_units": 59,
+      "spearman": 0.6778535807841841,
+      "top10_hit_rate": 0.42115384615384627,
+      "normalized_rank_error": 0.17868921998720672
+    }
+  ],
+  "weather_evaluated": true,
+  "lagged_weather_improved_all_folds_and_metrics": false,
+  "weather_used_in_index": false,
+  "weather_reason": "Lagged weather did not consistently beat both seasonal-only baselines across held-out years and all three metrics.",
+  "weather_receipts": [
+    {
+      "file": "data/external/map-weather/forecast-00.provenance.json",
+      "sha256": "17182ab91c7f33b90c948ae3ecb8277b255e31da647de2d7d27b0bcbf9818d86",
+      "retrieved_utc": "2026-10-25T08:45:19.618715+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-01.provenance.json",
+      "sha256": "bfad9a552cb1f3bda2ddaedc4ef75048fc40af4e0ab8795ee2a062331623947b",
+      "retrieved_utc": "2026-10-25T08:45:20.659948+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-02.provenance.json",
+      "sha256": "b9e92400c25cf8a957520d23df5b5dfd9b5accc17d135785dc6990ff08f93976",
+      "retrieved_utc": "2026-10-25T08:45:21.696977+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-03.provenance.json",
+      "sha256": "49f43360d09cefd7e5144e1e85af9add67cb7038feb75ec54643c9899946885b",
+      "retrieved_utc": "2026-10-25T08:45:22.709486+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-04.provenance.json",
+      "sha256": "3dc518506977ad1dd407d942633bfe80d9c8ee262dfc37bfe34c52347d6606ec",
+      "retrieved_utc": "2026-10-25T08:45:23.741910+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-05.provenance.json",
+      "sha256": "520262a46573e0ce336f6b6ad20d8b462c4a0b7207a5faa331e1a839ad09d264",
+      "retrieved_utc": "2026-10-25T08:45:24.803500+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-06.provenance.json",
+      "sha256": "471c2f44ff664c249825c2c402f58d1915a3b9f6d1bb2fbee194ea585935ae27",
+      "retrieved_utc": "2026-10-25T08:45:25.812675+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-07.provenance.json",
+      "sha256": "fb616f6c6c2f35b2c30ce724d190767bb71acf1200893ef4cd510de8bca4ba11",
+      "retrieved_utc": "2026-10-25T08:45:26.852833+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-08.provenance.json",
+      "sha256": "6b43fb5daae01c8b1f34e5dc4734b6e4eb8b3fcbda471028b983a134b81ed20f",
+      "retrieved_utc": "2026-10-25T08:45:27.859585+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-09.provenance.json",
+      "sha256": "ddf32d449961c3e1ffdc81a7ae0ed0b5275eff8137e37bd588b5d9b3ab83aa50",
+      "retrieved_utc": "2026-10-25T08:45:28.909938+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-10.provenance.json",
+      "sha256": "f5d7b6e711d7bde683e5a9d66e700c2c8d59dac7fd38bfb0438adeb048efd8a0",
+      "retrieved_utc": "2026-10-25T08:45:29.973248+00:00"
+    },
+    {
+      "file": "data/external/map-weather/forecast-11.provenance.json",
+      "sha256": "7cf34d14e88222a92e65dfa8fe331c7f9801f076ca7ed4b285cfdf5fc2dbba7d",
+      "retrieved_utc": "2026-10-25T08:45:31.005643+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-00.provenance.json",
+      "sha256": "c56dac1ebc7b1c78bf577fc9daef8dc55fe3b45f3a3bd5e9901b6c3d64d9c65a",
+      "retrieved_utc": "2026-10-25T08:42:55.904673+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-01.provenance.json",
+      "sha256": "c0ab000c5b7522f38c7c2f0fc9effa583e46e214444110155b7f82ccfe7c22d2",
+      "retrieved_utc": "2026-10-25T08:42:57.453066+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-02.provenance.json",
+      "sha256": "f24b8f07b9a3a1db2887a3ec4e74878d58c211398ca5cc5b62499375fa647928",
+      "retrieved_utc": "2026-10-25T08:42:59.007065+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-03.provenance.json",
+      "sha256": "540e0cda6c9fddb1d26e4911cfb279ee747fcd47a3c0b0b953294172c92dc4c9",
+      "retrieved_utc": "2026-10-25T08:43:16.605493+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-04.provenance.json",
+      "sha256": "0009f0893a98b80f2f6775c25e8bf940b3ffa565543eda23d5fe26bc528f5285",
+      "retrieved_utc": "2026-10-25T08:43:18.170868+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-05.provenance.json",
+      "sha256": "571b1d0a8d564b62768e7441c3c8b96e9b2e6f75ce286d94886d9404170d09c6",
+      "retrieved_utc": "2026-10-25T08:43:19.686863+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-06.provenance.json",
+      "sha256": "8fcee016a67024a8b2e88c07ab369822bd5a83613c3adb3871107c7f79f2a995",
+      "retrieved_utc": "2026-10-25T08:44:08.275786+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-07.provenance.json",
+      "sha256": "4a3bf2ad3f2871a6dc88719c6e545a4e2c2108e1e00953ce97709f6678fb0c78",
+      "retrieved_utc": "2026-10-25T08:44:09.871630+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-08.provenance.json",
+      "sha256": "20238b6d010020aeae3386e918e5d31ff3261ffd224824918d989cd032e855db",
+      "retrieved_utc": "2026-10-25T08:44:11.439587+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-09.provenance.json",
+      "sha256": "a4fde2512f7b5e75b3a47c7e8321afe6993ece105a61f8112e14e05510e43d49",
+      "retrieved_utc": "2026-10-25T08:46:16.202433+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-10.provenance.json",
+      "sha256": "5cded9d494a852565757d7736a65f57472074c4eeba6a1302ad878b5cca01a70",
+      "retrieved_utc": "2026-10-25T08:45:17.135128+00:00"
+    },
+    {
+      "file": "data/external/map-weather/history-11.provenance.json",
+      "sha256": "89ec63ade86deba9665e6bebda0f917dd63beff949781492d973cc16c736afc8",
+      "retrieved_utc": "2026-10-25T08:45:18.597665+00:00"
+    }
+  ],
+  "metric_definitions": {
+    "spearman": "Mean per-week Spearman correlation; tied average ranks.",
+    "top10_hit_rate": "Intersection of actual/predicted top ten divided by ten; alphabetical unit order resolves boundary ties.",
+    "normalized_rank_error": "Mean absolute rank difference divided by number of units minus one; lower is better."
+  },
+  "hyperparameters": "Fixed ridge penalty 10; log1p counts/features; training-only standardization. Seasonal mean uses circular 53-slot ISO week-of-year +/-2, training years only. Weather is observed ERA5 mean temperature and total precipitation at source polygon geometric centroid, lagged 14-27 days before target source-date label (availability buffer). No future weather or case target enters features.",
+  "unmatched_case_units": [
+    "ANGELES CITY",
+    "BACOLOD CITY",
+    "BAGUIO CITY",
+    "BASILIG CITY",
+    "BAYUGAN CITY",
+    "BUTUAN CITY",
+    "CABADBARAN CITY",
+    "CAGAYAN DE ORO CITY",
+    "CEBU CITY",
+    "DAGUPAN CITY",
+    "DAVAO CITY",
+    "DAVAO DE ORO",
+    "GENERAL SANTOS CITY",
+    "ILIGAN CITY",
+    "ILOILO CITY",
+    "LAPU-LAPU CITY",
+    "LUCENA CITY",
+    "MANDAUE CITY",
+    "NAGA CITY",
+    "NORTH COTABATO",
+    "NUEVA VISCAYA",
+    "OLONGAPO CITY",
+    "ORMOC CITY",
+    "PUERTO PRINCESA CITY",
+    "SANTIAGO CITY",
+    "SISQUIJOR",
+    "SURIGAO CITY",
+    "TACLOBAN",
+    "TANDAG CITY",
+    "ZAMBOANGA CITY"
+  ],
+  "community_included": false,
+  "last_case_date": {
+    "ABRA": "2021-01-10",
+    "AGUSAN DEL NORTE": "2021-01-10",
+    "AGUSAN DEL SUR": "2021-01-10",
+    "AKLAN": "2021-01-10",
+    "ALBAY": "2021-01-10",
+    "ANGELES CITY": "2021-01-10",
+    "ANTIQUE": "2021-01-10",
+    "APAYAO": "2021-01-10",
+    "AURORA": "2021-01-10",
+    "BACOLOD CITY": "2021-01-10",
+    "BAGUIO CITY": "2021-01-10",
+    "BASILAN": "2021-01-10",
+    "BASILIG CITY": "2021-01-10",
+    "BATAAN": "2021-01-10",
+    "BATANES": "2021-01-10",
+    "BATANGAS": "2021-01-10",
+    "BAYUGAN CITY": "2021-01-10",
+    "BENGUET": "2021-01-10",
+    "BILIRAN": "2021-01-10",
+    "BOHOL": "2021-01-10",
+    "BUKIDNON": "2021-01-10",
+    "BULACAN": "2021-01-10",
+    "BUTUAN CITY": "2021-01-10",
+    "CABADBARAN CITY": "2021-01-10",
+    "CAGAYAN": "2021-01-10",
+    "CAGAYAN DE ORO CITY": "2021-01-10",
+    "CALOOCAN CITY": "2021-01-10",
+    "CAMARINES NORTE": "2021-01-10",
+    "CAMARINES SUR": "2021-01-10",
+    "CAMIGUIN": "2021-01-10",
+    "CAPIZ": "2021-01-10",
+    "CATANDUANES": "2021-01-10",
+    "CAVITE": "2021-01-10",
+    "CEBU": "2021-01-10",
+    "CEBU CITY": "2021-01-10",
+    "COTABATO CITY": "2021-01-10",
+    "DAGUPAN CITY": "2021-01-10",
+    "DAVAO CITY": "2021-01-10",
+    "DAVAO DE ORO": "2021-01-10",
+    "DAVAO DEL NORTE": "2021-01-10",
+    "DAVAO DEL SUR": "2021-01-10",
+    "DAVAO OCCIDENTAL": "2021-01-10",
+    "DAVAO ORIENTAL": "2021-01-10",
+    "DINAGAT ISLANDS": "2021-01-10",
+    "EASTERN SAMAR": "2021-01-10",
+    "GENERAL SANTOS CITY": "2021-01-10",
+    "GUIMARAS": "2021-01-10",
+    "IFUGAO": "2021-01-10",
+    "ILIGAN CITY": "2021-01-10",
+    "ILOCOS NORTE": "2021-01-10",
+    "ILOCOS SUR": "2021-01-10",
+    "ILOILO": "2021-01-10",
+    "ILOILO CITY": "2021-01-10",
+    "ISABELA": "2021-01-10",
+    "ISABELA CITY": "2021-01-10",
+    "KALINGA": "2021-01-10",
+    "LA UNION": "2021-01-10",
+    "LAGUNA": "2021-01-10",
+    "LANAO DEL NORTE": "2021-01-10",
+    "LANAO DEL SUR": "2021-01-10",
+    "LAPU-LAPU CITY": "2021-01-10",
+    "LAS PINAS CITY": "2021-01-10",
+    "LEYTE": "2021-01-10",
+    "LUCENA CITY": "2021-01-10",
+    "MAGUINDANAO": "2021-01-10",
+    "MAKATI CITY": "2021-01-10",
+    "MALABON CITY": "2021-01-10",
+    "MANDALUYONG CITY": "2021-01-10",
+    "MANDAUE CITY": "2021-01-10",
+    "MANILA CITY": "2021-01-10",
+    "MARIKINA CITY": "2021-01-10",
+    "MARINDUQUE": "2021-01-10",
+    "MASBATE": "2021-01-10",
+    "MISAMIS OCCIDENTAL": "2021-01-10",
+    "MISAMIS ORIENTAL": "2021-01-10",
+    "MOUNTAIN PROVINCE": "2021-01-10",
+    "MUNTINLUPA CITY": "2021-01-10",
+    "NAGA CITY": "2021-01-10",
+    "NAVOTAS CITY": "2021-01-10",
+    "NEGROS OCCIDENTAL": "2021-01-10",
+    "NEGROS ORIENTAL": "2021-01-10",
+    "NORTH COTABATO": "2021-01-10",
+    "NORTHERN SAMAR": "2021-01-10",
+    "NUEVA ECIJA": "2021-01-10",
+    "NUEVA VISCAYA": "2021-01-10",
+    "OCCIDENTAL MINDORO": "2021-01-10",
+    "OLONGAPO CITY": "2021-01-10",
+    "ORIENTAL MINDORO": "2021-01-10",
+    "ORMOC CITY": "2021-01-10",
+    "PALAWAN": "2021-01-10",
+    "PAMPANGA": "2021-01-10",
+    "PANGASINAN": "2021-01-10",
+    "PARANAQUE CITY": "2021-01-10",
+    "PASAY CITY": "2021-01-10",
+    "PASIG CITY": "2021-01-10",
+    "PATEROS": "2021-01-10",
+    "PUERTO PRINCESA CITY": "2021-01-10",
+    "QUEZON": "2021-01-10",
+    "QUEZON CITY": "2021-01-10",
+    "QUIRINO": "2021-01-10",
+    "RIZAL": "2021-01-10",
+    "ROMBLON": "2021-01-10",
+    "SAMAR": "2021-01-10",
+    "SAN JUAN CITY": "2021-01-10",
+    "SANTIAGO CITY": "2021-01-10",
+    "SARANGANI": "2021-01-10",
+    "SISQUIJOR": "2021-01-10",
+    "SORSOGON": "2021-01-10",
+    "SOUTH COTABATO": "2021-01-10",
+    "SOUTHERN LEYTE": "2021-01-10",
+    "SULTAN KUDARAT": "2021-01-10",
+    "SULU": "2021-01-10",
+    "SURIGAO CITY": "2021-01-10",
+    "SURIGAO DEL NORTE": "2021-01-10",
+    "SURIGAO DEL SUR": "2021-01-10",
+    "TACLOBAN": "2021-01-10",
+    "TAGUIG CITY": "2021-01-10",
+    "TANDAG CITY": "2021-01-10",
+    "TARLAC": "2021-01-10",
+    "TAWI-TAWI": "2021-01-10",
+    "VALENZUELA CITY": "2021-01-10",
+    "ZAMBALES": "2021-01-10",
+    "ZAMBOANGA CITY": "2021-01-10",
+    "ZAMBOANGA DEL NORTE": "2021-01-10",
+    "ZAMBOANGA DEL SUR": "2021-01-10",
+    "ZAMBOANGA SIBUGAY": "2021-01-10"
+  }
+}

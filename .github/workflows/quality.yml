@@ -30,6 +30,7 @@ jobs:
       - run: npm test
       - run: npm run test:geography
       - run: npm run build
+      - run: npm run test:ui-budget
       - run: npm run test:contrast
       - run: npm audit --audit-level=high
       - run: npm run test:ui
@@ -42,3 +43,21 @@ jobs:
         with:
           name: browser-evidence
           path: .artifacts/
+
+  visual-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:visual
+        env:
+          PLAYWRIGHT_CHANNEL: msedge
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: visual-evidence
+          path: .artifacts/ui-visual/

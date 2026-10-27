@@ -10,7 +10,7 @@
     {
       "id": "doh-epi",
       "name": "DOH Epidemiology Bureau weekly surveillance (EPI)",
-      "purpose": "Historical province/city counts and seasonal ranking validation",
+      "purpose": "NCR city-week classification, plus archived historical analyses; raw input remains unchanged.",
       "file": "doh-epi-dengue-data-2016-2021.csv",
       "range": "2016-01-10 to 2021-01-10",
       "source_url": "",
@@ -84,7 +84,7 @@
     {
       "id": "nasa-power",
       "name": "NASA POWER / NASA Langley Research Center",
-      "purpose": "Historical weather cross-check for four polygon centroids, 2018\u20132020. NASA POWER is funded by the NASA Applied Sciences Program within the Earth Science Division of the Science Mission Directorate; web services collaborate with the NASA Langley Research Center Atmospheric Science Data Center (ASDC).",
+      "purpose": "Historical weather cross-check for four polygon centroids, 2018–2020. NASA POWER is funded by the NASA Applied Sciences Program within the Earth Science Division of the Science Mission Directorate; web services collaborate with the NASA Langley Research Center Atmospheric Science Data Center (ASDC).",
       "range": "See cached provenance; existing Manila historical cross-check",
       "source_url": "https://power.larc.nasa.gov/docs/",
       "licence": "NASA POWER data access/acknowledgement terms; see original receipts",
@@ -175,32 +175,53 @@
         "LiPAD",
         "MGB"
       ]
+    },
+    {
+      "id": "openfreemap",
+      "name": "OpenFreeMap / OpenMapTiles / OpenStreetMap contributors",
+      "purpose": "Online Risk Map basemap only; no API key; third-party server sees IP and viewed map area",
+      "range": "Current basemap service; model case data are separate",
+      "source_url": "https://openfreemap.org/quick_start/",
+      "licence": "OpenFreeMap service as-is; map data OpenStreetMap contributors, ODbL; preserve provider attribution",
+      "retrieved": "2026-10-26"
+    },
+    {
+      "id": "protomaps",
+      "name": "Protomaps / OpenStreetMap contributors",
+      "purpose": "Self-hosted Metro Manila PMTiles and styles; local glyphs/sprites",
+      "range": "2026-10-25 planet extract; max zoom 13",
+      "source_url": "https://docs.protomaps.com/basemaps/downloads",
+      "licence": "OSM ODbL produced work; styles BSD-3-Clause; Noto glyphs OFL-1.1; tangrams/icons sprites MIT",
+      "retrieved": "2026-10-26"
+    },
+    {
+      "id": "study",
+      "name": "Sarma et al. (2020), Dengue Prediction using Machine Learning Algorithms",
+      "purpose": "Owner-requested protocol context only; patient-level study accuracy does not transfer to city-week labels",
+      "range": "IEEE R10-HTC 2020; document 9357035",
+      "source_url": "https://ieeexplore.ieee.org/document/9357035",
+      "licence": "Bibliographic citation only; publisher full text access-blocked; metadata verified with Crossref",
+      "retrieved": "2026-10-26"
+    },
+    {
+      "id": "svg-standard",
+      "name": "W3C SVG / XML namespace specification",
+      "purpose": "Inline city-thumbnail SVG syntax; namespace identifiers cause no network requests",
+      "range": "SVG namespace",
+      "source_url": "https://www.w3.org/TR/SVG2/",
+      "licence": "Specification reference only; no copied specification text",
+      "retrieved": "2026-10-26"
     }
   ],
   "fonts": [
-    {
-      "name": "Montserrat",
-      "source_url": "https://fonts.google.com/specimen/Montserrat",
-      "licence": "OFL-1.1",
-      "files": [
-        "@fontsource/montserrat"
-      ]
-    },
-    {
-      "name": "Roboto",
-      "source_url": "https://fonts.google.com/specimen/Roboto",
-      "licence": "OFL-1.1",
-      "files": [
-        "@fontsource/roboto"
-      ]
-    },
     {
       "name": "Fraunces",
       "source_url": "https://fonts.google.com/specimen/Fraunces",
       "licence": "OFL-1.1",
       "files": [
         "@fontsource/fraunces"
-      ]
+      ],
+      "evidence_file": "docs/evidence/fraunces-OFL.txt"
     },
     {
       "name": "DejaVu Sans (evaluation figures)",
@@ -210,12 +231,36 @@
       "licence": "Bitstream Vera / DejaVu font licence",
       "source_url": "/THIRD_PARTY_LICENSES.md",
       "evidence_file": "docs/evidence/dejavu-font-license.txt"
+    },
+    {
+      "name": "Noto Sans Regular (local map glyphs)",
+      "files": [
+        "public/basemap/glyphs/Noto Sans Regular/0-255.pbf"
+      ],
+      "licence": "OFL-1.1",
+      "source_url": "https://github.com/protomaps/basemaps-assets/tree/main/fonts",
+      "evidence_file": "docs/evidence/noto-map-glyphs-OFL.txt"
+    },
+    {
+      "name": "Figtree",
+      "licence": "OFL-1.1",
+      "files": [
+        "@fontsource/figtree"
+      ],
+      "source_url": "https://github.com/erikdkennedy/figtree",
+      "evidence_file": "docs/evidence/figtree-OFL.txt"
     }
   ],
   "icons": [
     {
-      "name": "Project SVG line symbols and text glyphs",
-      "licence": "MIT project code; no third-party icon library"
+      "name": "Original DengueWatch water-drop, Bay wave and care illustrations",
+      "licence": "Original project artwork; hand-authored inline SVG"
+    },
+    {
+      "name": "Protomaps sprites derived from tangrams/icons",
+      "licence": "MIT",
+      "source_url": "https://github.com/tangrams/icons",
+      "evidence_file": "docs/evidence/map-sprites-MIT.txt"
     }
   ],
   "covered_hosts": [
@@ -259,7 +304,7 @@
     "rssoncr.psa.gov.ph": "population",
     "www.geoboundaries.org": "geoboundaries",
     "data.humdata.org": "geoboundaries",
-    "github.com": "geoboundaries",
+    "github.com": "protomaps",
     "privacy.gov.ph": "doh-safety",
     "www.who.int": "doh-safety",
     "www.cdc.gov": "doh-safety",
@@ -268,6 +313,19 @@
     "dream.upd.edu.ph": "flood-portals",
     "lipad-fmc.dream.upd.edu.ph": "flood-portals",
     "noah.up.edu.ph": "flood-portals",
-    "region11.mgb.gov.ph": "flood-portals"
+    "region11.mgb.gov.ph": "flood-portals",
+    "tiles.openfreemap.org": "openfreemap",
+    "openfreemap.org": "openfreemap",
+    "docs.protomaps.com": "protomaps",
+    "maps.protomaps.com": "protomaps",
+    "build.protomaps.com": "protomaps",
+    "build-metadata.protomaps.dev": "protomaps",
+    "protomaps.github.io": "protomaps",
+    "raw.githubusercontent.com": "protomaps",
+    "maplibre.org": "protomaps",
+    "api.crossref.org": "study",
+    "doi.org": "study",
+    "ieeexplore.ieee.org": "study",
+    "www.w3.org": "svg-standard"
   }
 }

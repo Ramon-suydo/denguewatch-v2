@@ -95,10 +95,11 @@ test("closed collection, legacy redirect, service errors and retry have usable s
   await expect(
     activeView(page).getByText("New submissions are closed.", { exact: false }),
   ).toBeVisible();
-  await activeView(page).getByRole("checkbox").check();
-  await expect(
-    activeView(page).getByRole("button", { name: "Continue to report" }),
-  ).toBeDisabled();
+  await expect(activeView(page).getByRole('radio').first()).toBeDisabled();
+  for(let i=0;i<3;i++)await activeView(page).getByRole('button',{name:/^Continue/}).click();
+  await expect(activeView(page).getByRole('checkbox')).not.toBeChecked();
+  await expect(activeView(page).getByRole('checkbox')).toBeDisabled();
+  await expect(activeView(page).getByRole('button',{name:'Submit community report'})).toBeDisabled();
   await goto(page, "/city/not-a-city");
   await expect(page).toHaveURL(/\/\?drawer=methods&section=trends$/);
   await page.route("**/api/v2/manila.json", (r) =>
@@ -153,8 +154,8 @@ test("public routes retain disclaimers and legal access on phones", async ({
       await goto(page, route);
       await expect(activeView(page).getByRole("heading", { level: 1 })).toBeVisible();
       await expect(
-        page.locator('aside[aria-labelledby="shared-disclaimer-title"]'),
-      ).toHaveCount(1);
+        page.locator("footer.photo-footer, footer.site-footer"),
+      ).toContainText(/Estimates, not alerts|Historical/);
       await expect(page.locator("footer.photo-footer, footer.site-footer")).toContainText("Dec 2, 2023");
       expect(
         await page.evaluate(
@@ -209,7 +210,7 @@ test("loading resolves to an explicit empty snapshot without fabricated values",
       }),
     });
   });
-  await goto(page, "/");
+  await goto(page, "/about?drawer=methods&section=dashboard");
   await expect(activeView(page).getByText("Loading data…", { exact: true })).toBeVisible();
   release();
   await expect(
@@ -279,7 +280,7 @@ test("bundled footer dates never become a false live DB coverage claim", async (
   await goto(page, "/");
   const footer = page.locator("footer.photo-footer, footer.site-footer");
   await expect(footer).toContainText("Dec 2, 2023");
-  await expect(footer).toContainText("Jan 10, 2021");
+  await expect(footer).toContainText("Dec 27, 2020");
   await expect(footer).not.toContainText("2031");
   await expect(
     activeView(page).getByText("Bundled source periods.", { exact: false }),

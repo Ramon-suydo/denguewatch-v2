@@ -1,0 +1,6977 @@
+[
+  {
+    "year": 2018,
+    "week": "2018-01-07",
+    "model": "burden-only",
+    "spearman": 0.7672729857152925,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1549206349206349,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-07",
+    "model": "season-burden",
+    "spearman": 0.7471808640796763,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16133333333333336,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-07",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.791321865065517,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14407894736842106,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-07",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8086106017617881,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13914473684210527,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-07",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8174261356875215,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13410087719298247,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-14",
+    "model": "burden-only",
+    "spearman": 0.8025138622117217,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1394920634920635,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-14",
+    "model": "season-burden",
+    "spearman": 0.7528496544174351,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15657142857142858,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-14",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7936189692447233,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1417763157894737,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-14",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8195760175507157,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13201754385964912,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-14",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.815903236075361,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.131359649122807,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-21",
+    "model": "burden-only",
+    "spearman": 0.7734529747772964,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15346031746031746,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-21",
+    "model": "season-burden",
+    "spearman": 0.7147293734667252,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.17333333333333334,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-21",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7379061373568151,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.16546052631578947,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-21",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7678681987065358,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15526315789473685,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-21",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7772791207257328,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15350877192982457,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-28",
+    "model": "burden-only",
+    "spearman": 0.8019556134940599,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14146031746031748,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-28",
+    "model": "season-burden",
+    "spearman": 0.7599735219586311,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15682539682539684,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-28",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7931904527679183,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14725877192982456,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-28",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8168762939222596,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1401315789473684,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-01-28",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8202273170090907,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13662280701754384,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-04",
+    "model": "burden-only",
+    "spearman": 0.8015227391706904,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.138984126984127,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-04",
+    "model": "season-burden",
+    "spearman": 0.7582576971083846,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1506031746031746,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-04",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7682243459183431,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14627192982456141,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-04",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8031764488161247,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13464912280701755,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-04",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8086916022998384,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13530701754385965,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-11",
+    "model": "burden-only",
+    "spearman": 0.7830903617048657,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14323809523809525,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-11",
+    "model": "season-burden",
+    "spearman": 0.7538997747410475,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15485714285714286,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-11",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7797792560963744,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14703947368421053,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-11",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.801779926008384,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14210526315789473,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-11",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8102210598239468,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13717105263157894,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-18",
+    "model": "burden-only",
+    "spearman": 0.7331014389870785,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15923809523809523,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-18",
+    "model": "season-burden",
+    "spearman": 0.6796017622619095,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.17485714285714285,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-18",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7010580104463109,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16918859649122808,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-18",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7271417088330768,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1618421052631579,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-18",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7500751568010721,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15592105263157896,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-25",
+    "model": "burden-only",
+    "spearman": 0.768559790595382,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.146031746031746,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-25",
+    "model": "season-burden",
+    "spearman": 0.7276355348068181,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16019047619047622,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-25",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7314652036254178,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15932017543859647,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-25",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7626244987344226,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15032894736842106,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-02-25",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7457157786409663,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15515350877192982,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-04",
+    "model": "burden-only",
+    "spearman": 0.7744570566545274,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14692063492063492,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-04",
+    "model": "season-burden",
+    "spearman": 0.7171162745983709,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1718095238095238,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-04",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.75169701959151,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1611842105263158,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-04",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.78748852028249,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1457236842105263,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-04",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7627031351971489,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.150109649122807,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-11",
+    "model": "burden-only",
+    "spearman": 0.800169186076143,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14012698412698413,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-11",
+    "model": "season-burden",
+    "spearman": 0.7202986890027752,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.16698412698412698,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-11",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7445173700680523,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.16480263157894737,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-11",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7858280505686852,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14638157894736842,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-11",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.76455119328987,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1512061403508772,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-18",
+    "model": "burden-only",
+    "spearman": 0.7780365149443192,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14577777777777778,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-18",
+    "model": "season-burden",
+    "spearman": 0.689892014186229,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17415873015873015,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-18",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7305982901589256,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1680921052631579,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-18",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7824932915191182,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14692982456140352,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-18",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7757523980102831,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1442982456140351,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-25",
+    "model": "burden-only",
+    "spearman": 0.8007672932979716,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13466666666666666,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-25",
+    "model": "season-burden",
+    "spearman": 0.727339628034602,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1627936507936508,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-25",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7530576620249926,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15723684210526315,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-25",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8064427511918701,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13826754385964912,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-03-25",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7911177993728958,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13782894736842105,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-01",
+    "model": "burden-only",
+    "spearman": 0.7582282418611686,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15536507936507937,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-01",
+    "model": "season-burden",
+    "spearman": 0.7075743117741407,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1655873015873016,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-01",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7264513558447778,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.16304824561403508,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-01",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7605871674107273,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1474780701754386,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-01",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7508075590078579,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14890350877192984,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-08",
+    "model": "burden-only",
+    "spearman": 0.720768153302994,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16584126984126984,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-08",
+    "model": "season-burden",
+    "spearman": 0.6906876174933695,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17384126984126985,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-08",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6940648489705548,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.17028508771929823,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-08",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.724249620084873,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.16326754385964912,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-08",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7058039920913769,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.16765350877192983,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-15",
+    "model": "burden-only",
+    "spearman": 0.7478804702428958,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15904761904761905,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-15",
+    "model": "season-burden",
+    "spearman": 0.6906569303058402,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1761904761904762,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-15",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7043912726858734,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.17017543859649123,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-15",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7396613614810001,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15712719298245614,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-15",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7490089286366498,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14945175438596492,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-22",
+    "model": "burden-only",
+    "spearman": 0.7353149910018958,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16952380952380952,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-22",
+    "model": "season-burden",
+    "spearman": 0.7414377044315078,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16158730158730158,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-22",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7642089075457575,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1544956140350877,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-22",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7667434058630146,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1537280701754386,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-22",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7652950583646874,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15087719298245614,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-29",
+    "model": "burden-only",
+    "spearman": 0.7740785581238228,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15212698412698414,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-29",
+    "model": "season-burden",
+    "spearman": 0.7716539820807152,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15682539682539684,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-29",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7719668360844126,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15778508771929825,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-29",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8040126827393956,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14418859649122806,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-04-29",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.792869766530406,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14057017543859648,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-06",
+    "model": "burden-only",
+    "spearman": 0.750643474460011,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15415873015873016,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-06",
+    "model": "season-burden",
+    "spearman": 0.7687464632786373,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14984126984126986,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-06",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7662735248747298,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14780701754385964,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-06",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7922786445080194,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13837719298245615,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-06",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7635092618142988,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1442982456140351,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-13",
+    "model": "burden-only",
+    "spearman": 0.7738630687771013,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1525079365079365,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-13",
+    "model": "season-burden",
+    "spearman": 0.7718976935209525,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15314285714285714,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-13",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7650734150682382,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15712719298245614,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-13",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7973840948101049,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14265350877192984,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-13",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7759079085545689,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14945175438596492,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-20",
+    "model": "burden-only",
+    "spearman": 0.7017025532983933,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17092063492063492,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-20",
+    "model": "season-burden",
+    "spearman": 0.6801052423922104,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1740952380952381,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-20",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6688784004812326,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17971491228070177,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-20",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7159118387368137,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16414473684210526,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-20",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6547825088543469,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17850877192982456,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-27",
+    "model": "burden-only",
+    "spearman": 0.7238373394963525,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16653968253968254,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-27",
+    "model": "season-burden",
+    "spearman": 0.7199459018155107,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16374603174603175,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-27",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.720905479622663,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16074561403508772,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-27",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7599927751101542,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1493421052631579,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-05-27",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7106113003599991,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16524122807017544,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-03",
+    "model": "burden-only",
+    "spearman": 0.7263944777494183,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16571428571428573,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-03",
+    "model": "season-burden",
+    "spearman": 0.7335293295080908,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1549206349206349,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-03",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7214006946008698,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15822368421052632,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-03",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7527563222427193,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14791666666666667,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-03",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6928040205568748,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16611842105263158,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-10",
+    "model": "burden-only",
+    "spearman": 0.722500145224609,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1685079365079365,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-10",
+    "model": "season-burden",
+    "spearman": 0.7057511160039323,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16787301587301587,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-10",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6964723142870566,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16962719298245613,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-10",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7415067552137364,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15493421052631579,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-10",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6834341281614128,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17247807017543862,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-17",
+    "model": "burden-only",
+    "spearman": 0.6960631131527619,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17917460317460315,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-17",
+    "model": "season-burden",
+    "spearman": 0.7079928363858033,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16647619047619047,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-17",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6985559864971697,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1674342105263158,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-17",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7353060894672568,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15964912280701754,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-17",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6535156882384703,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1836622807017544,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-24",
+    "model": "burden-only",
+    "spearman": 0.7337295850076233,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.161015873015873,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-24",
+    "model": "season-burden",
+    "spearman": 0.7557841653433579,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14882539682539683,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-24",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7505793655516854,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14868421052631578,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-24",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7750792004643002,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1449561403508772,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-06-24",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7404608508121172,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15526315789473685,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-01",
+    "model": "burden-only",
+    "spearman": 0.7502611773175633,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15314285714285714,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-01",
+    "model": "season-burden",
+    "spearman": 0.7747338794597631,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14425396825396825,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-01",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7502409753288383,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15317982456140353,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-01",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7696938512463636,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14638157894736842,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-01",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7440303776601224,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15328947368421053,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-08",
+    "model": "burden-only",
+    "spearman": 0.7333332568893615,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15765079365079365,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-08",
+    "model": "season-burden",
+    "spearman": 0.7577081615555152,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14736507936507937,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-08",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7281824274056552,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15668859649122807,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-08",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7330366665830537,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1557017543859649,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-08",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6981127141188269,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16831140350877194,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-15",
+    "model": "burden-only",
+    "spearman": 0.7285927484842805,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15815873015873014,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-15",
+    "model": "season-burden",
+    "spearman": 0.7564502800733401,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14946031746031746,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-15",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7315019837788954,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15219298245614035,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-15",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7373616713045373,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15361842105263157,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-15",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7068593244136295,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15811403508771932,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-22",
+    "model": "burden-only",
+    "spearman": 0.7442769798859217,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15371428571428572,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-22",
+    "model": "season-burden",
+    "spearman": 0.7801995681788199,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.13923809523809524,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-22",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7577446452733374,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14901315789473685,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-22",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.757434957901537,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1507675438596491,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-22",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7273085090363656,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1567982456140351,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-29",
+    "model": "burden-only",
+    "spearman": 0.747825288968441,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.152,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-29",
+    "model": "season-burden",
+    "spearman": 0.7883323682457172,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.13834920634920636,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-29",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7843779155352539,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14528508771929824,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-29",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7771853540503548,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14780701754385964,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-07-29",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7556948575624041,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1518640350877193,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-05",
+    "model": "burden-only",
+    "spearman": 0.7837557019393766,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14279365079365078,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-05",
+    "model": "season-burden",
+    "spearman": 0.788077089388638,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1405714285714286,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-05",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8021104844250098,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13651315789473684,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-05",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8064405790982453,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13640350877192983,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-05",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.772535029544227,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14353070175438595,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-12",
+    "model": "burden-only",
+    "spearman": 0.7872199744485745,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14076190476190475,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-12",
+    "model": "season-burden",
+    "spearman": 0.7901295920379707,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13885714285714287,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-12",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8187294220003161,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.12894736842105264,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-12",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8179579770919043,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.12949561403508772,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-12",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7954647262560892,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13388157894736843,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-19",
+    "model": "burden-only",
+    "spearman": 0.764284274355076,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1544126984126984,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-19",
+    "model": "season-burden",
+    "spearman": 0.7786120446185789,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14393650793650792,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-19",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7984688992828364,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13958333333333334,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-19",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8000624260213487,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14024122807017544,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-19",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7689046420779543,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.150109649122807,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-26",
+    "model": "burden-only",
+    "spearman": 0.7698852709545481,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14844444444444446,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-26",
+    "model": "season-burden",
+    "spearman": 0.7910630776951215,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14273015873015873,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-26",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.833890795589811,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.12905701754385965,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-26",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.82806322697166,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13026315789473683,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-08-26",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8048140386378879,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1355263157894737,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-02",
+    "model": "burden-only",
+    "spearman": 0.7704705175196366,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14425396825396825,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-02",
+    "model": "season-burden",
+    "spearman": 0.7866026699954216,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14463492063492064,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-02",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8276677331947886,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13333333333333333,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-02",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8306109251483744,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13201754385964912,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-02",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8085105029727933,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13366228070175437,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-09",
+    "model": "burden-only",
+    "spearman": 0.7654054403112677,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14457142857142857,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-09",
+    "model": "season-burden",
+    "spearman": 0.7774431074599395,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14857142857142858,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-09",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8020351516197306,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13728070175438595,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-09",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8011328893748546,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13607456140350876,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-09",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7895056526763059,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1412280701754386,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-16",
+    "model": "burden-only",
+    "spearman": 0.7744217675861874,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14514285714285713,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-16",
+    "model": "season-burden",
+    "spearman": 0.8041922169797053,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13568253968253968,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-16",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.849944555530697,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1194078947368421,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-16",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8456675152573461,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1231359649122807,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-16",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8210082333927358,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.12894736842105264,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-23",
+    "model": "burden-only",
+    "spearman": 0.7936511848397512,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14006349206349208,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-23",
+    "model": "season-burden",
+    "spearman": 0.8069210478501504,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13663492063492064,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-23",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8384570579545909,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.12171052631578948,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-23",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8506512084795231,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.11776315789473685,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-23",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8144824386445685,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.12960526315789472,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-30",
+    "model": "burden-only",
+    "spearman": 0.7924562980931095,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14082539682539683,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-30",
+    "model": "season-burden",
+    "spearman": 0.8064656571492158,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13568253968253968,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-30",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8414504752601979,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.11688596491228069,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-30",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8478979867104889,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.11589912280701754,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-09-30",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8311767695638721,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.11853070175438596,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-07",
+    "model": "burden-only",
+    "spearman": 0.7658939442483629,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14717460317460315,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-07",
+    "model": "season-burden",
+    "spearman": 0.7705225998637076,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14565079365079364,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-07",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8072104088626749,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1281798245614035,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-07",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8148082920893138,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12719298245614036,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-07",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7939288168855466,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13157894736842105,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-14",
+    "model": "burden-only",
+    "spearman": 0.75439683826191,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.16082539682539684,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-14",
+    "model": "season-burden",
+    "spearman": 0.7501833801244767,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1514285714285714,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-14",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.801065006334038,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13037280701754386,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-14",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8067751375239995,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13267543859649122,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-14",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7812293383722256,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13508771929824562,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-21",
+    "model": "burden-only",
+    "spearman": 0.7246968176324852,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.16082539682539684,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-21",
+    "model": "season-burden",
+    "spearman": 0.7414194275613288,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1579047619047619,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-21",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7725359500080538,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14912280701754385,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-21",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7657994159527614,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14890350877192984,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-21",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7407957696044326,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15153508771929824,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-28",
+    "model": "burden-only",
+    "spearman": 0.7213439457728033,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16876190476190475,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-28",
+    "model": "season-burden",
+    "spearman": 0.7233072991668769,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1678095238095238,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-28",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7567116607318566,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15537280701754386,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-28",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7590763654079157,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15471491228070175,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-10-28",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7307551515957795,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15921052631578947,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-04",
+    "model": "burden-only",
+    "spearman": 0.7352569356442075,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1613968253968254,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-04",
+    "model": "season-burden",
+    "spearman": 0.7345655211321178,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15968253968253968,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-04",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7691467624869458,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14824561403508774,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-04",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7784463313699153,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1457236842105263,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-04",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7370809616870746,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15855263157894736,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-11",
+    "model": "burden-only",
+    "spearman": 0.7055694576257192,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16622222222222222,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-11",
+    "model": "season-burden",
+    "spearman": 0.7052755059685363,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16247619047619047,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-11",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7460109287885844,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15328947368421053,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-11",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7594773774030862,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14780701754385964,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-11",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7325378091523702,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15899122807017543,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-18",
+    "model": "burden-only",
+    "spearman": 0.7013769079143739,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17104761904761903,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-18",
+    "model": "season-burden",
+    "spearman": 0.7091691933564441,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17053968253968252,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-18",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7179410720265957,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16611842105263158,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-18",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7169026827273995,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16392543859649122,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-18",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6957586527695885,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17083333333333334,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-25",
+    "model": "burden-only",
+    "spearman": 0.7134501662361901,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1641904761904762,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-25",
+    "model": "season-burden",
+    "spearman": 0.7274680297714694,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16926984126984126,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-25",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7682353259308353,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15537280701754386,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-25",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7647809308591927,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15274122807017543,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-11-25",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7350393371459578,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16546052631578947,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-02",
+    "model": "burden-only",
+    "spearman": 0.7138097747894012,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16304761904761902,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-02",
+    "model": "season-burden",
+    "spearman": 0.7289320248591409,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16393650793650794,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-02",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7632264483966561,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1554824561403509,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-02",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7647605551317747,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14824561403508774,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-02",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7304436371657139,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.162609649122807,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-09",
+    "model": "burden-only",
+    "spearman": 0.7029426788402435,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17384126984126985,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-09",
+    "model": "season-burden",
+    "spearman": 0.7016708624353329,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17695238095238097,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-09",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7337813733742267,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16776315789473684,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-09",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.738048345830222,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16403508771929826,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-09",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6958286017836947,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17763157894736842,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-16",
+    "model": "burden-only",
+    "spearman": 0.6975548421021371,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.17231746031746034,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-16",
+    "model": "season-burden",
+    "spearman": 0.6881658901177252,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.18406349206349207,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-16",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7139155132382362,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17620614035087717,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-16",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7314119924033696,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16864035087719298,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-16",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6583521968349751,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18870614035087718,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-23",
+    "model": "burden-only",
+    "spearman": 0.6569048658360561,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18628571428571428,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-23",
+    "model": "season-burden",
+    "spearman": 0.6543432564732733,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18584126984126986,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-23",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6922241989278884,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17423245614035088,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-23",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7000939794427099,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17017543859649123,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-23",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.624350020989675,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1933114035087719,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-30",
+    "model": "burden-only",
+    "spearman": 0.6574366799160647,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1850793650793651,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-30",
+    "model": "season-burden",
+    "spearman": 0.7321146529640082,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.15701587301587303,
+    "units": 126
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-30",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7566257180915524,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1432017543859649,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-30",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7396957582452344,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.15263157894736842,
+    "units": 96
+  },
+  {
+    "year": 2018,
+    "week": "2018-12-30",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6684063817725471,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17719298245614035,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-13",
+    "model": "burden-only",
+    "spearman": 0.7971650601054061,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1415873015873016,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-13",
+    "model": "season-burden",
+    "spearman": 0.7947350656313386,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.13873015873015873,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-13",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8211979287342167,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1324561403508772,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-13",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8259616207952067,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.12807017543859647,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-13",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8117563427044084,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.13333333333333333,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-20",
+    "model": "burden-only",
+    "spearman": 0.8160287033774175,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.12984126984126984,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-20",
+    "model": "season-burden",
+    "spearman": 0.8218248131873612,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13130158730158728,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-20",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8554997513931142,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.12050438596491228,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-20",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8616820788779788,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.11710526315789474,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-20",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8487660734129981,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1199561403508772,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-27",
+    "model": "burden-only",
+    "spearman": 0.8074978304532179,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1309206349206349,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-27",
+    "model": "season-burden",
+    "spearman": 0.7986703504303346,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1419047619047619,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-27",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8381817380397983,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.12839912280701754,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-27",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8481066125228778,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.12357456140350878,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-01-27",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8381205872650415,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1331140350877193,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-03",
+    "model": "burden-only",
+    "spearman": 0.7931838381661233,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13504761904761903,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-03",
+    "model": "season-burden",
+    "spearman": 0.787199994858155,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13784126984126985,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-03",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.815328007549925,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.12730263157894736,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-03",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8238079547732191,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12653508771929825,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-03",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8005264256165846,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1401315789473684,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-10",
+    "model": "burden-only",
+    "spearman": 0.7942601219538569,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13276190476190475,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-10",
+    "model": "season-burden",
+    "spearman": 0.7686683441291331,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.148,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-10",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7938444060946709,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13903508771929826,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-10",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8123649762518863,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13103070175438597,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-10",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7833248073807287,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1432017543859649,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-17",
+    "model": "burden-only",
+    "spearman": 0.7835041627535774,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1394920634920635,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-17",
+    "model": "season-burden",
+    "spearman": 0.7609347511088393,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15593650793650793,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-17",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7753636633804711,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15021929824561403,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-17",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.802137031775416,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13969298245614037,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-17",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7501365552024433,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15756578947368421,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-24",
+    "model": "burden-only",
+    "spearman": 0.7797223354808492,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1466031746031746,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-24",
+    "model": "season-burden",
+    "spearman": 0.7595400969389136,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15238095238095237,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-24",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7716729340005078,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14956140350877192,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-24",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7948833067564322,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1412280701754386,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-02-24",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7515587235025033,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15296052631578946,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-03",
+    "model": "burden-only",
+    "spearman": 0.780141033329491,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14768253968253967,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-03",
+    "model": "season-burden",
+    "spearman": 0.747681440241486,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16571428571428573,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-03",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7575018596443504,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1574561403508772,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-03",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7832110163160416,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1493421052631579,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-03",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7553763277067326,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1619517543859649,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-10",
+    "model": "burden-only",
+    "spearman": 0.7487892660382476,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15644444444444447,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-10",
+    "model": "season-burden",
+    "spearman": 0.7213347826369843,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17085714285714287,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-10",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7489652440542214,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16337719298245615,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-10",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7636160871545913,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15789473684210525,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-10",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7578280324668213,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16217105263157894,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-17",
+    "model": "burden-only",
+    "spearman": 0.7711614298139668,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15009523809523811,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-17",
+    "model": "season-burden",
+    "spearman": 0.7372555119255093,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16336507936507938,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-17",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7610610471369678,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1544956140350877,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-17",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7747477377059819,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15087719298245614,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-17",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7532880286688863,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16019736842105264,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-24",
+    "model": "burden-only",
+    "spearman": 0.7352620895750708,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1634920634920635,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-24",
+    "model": "season-burden",
+    "spearman": 0.7413395703721363,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16114285714285714,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-24",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7592873269965129,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15515350877192982,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-24",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7675011674430209,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1524122807017544,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-24",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7371721256679534,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1610745614035088,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-31",
+    "model": "burden-only",
+    "spearman": 0.7111818492305177,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17263492063492064,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-31",
+    "model": "season-burden",
+    "spearman": 0.7156926069728149,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.17053968253968252,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-31",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7280865397342349,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16885964912280704,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-31",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7329156443294896,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16907894736842105,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-03-31",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7113295634571956,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1754385964912281,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-07",
+    "model": "burden-only",
+    "spearman": 0.7227179853969842,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.17003174603174603,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-07",
+    "model": "season-burden",
+    "spearman": 0.7509893523934223,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1572063492063492,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-07",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.754449140048456,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15603070175438596,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-07",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7582248726773395,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15427631578947368,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-07",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7453232204995069,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.16348684210526315,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-14",
+    "model": "burden-only",
+    "spearman": 0.7077420363594569,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16863492063492064,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-14",
+    "model": "season-burden",
+    "spearman": 0.7404383861650538,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15904761904761905,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-14",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7177003486149913,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16885964912280704,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-14",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7238827930805145,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16557017543859648,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-14",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7013136363658444,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17686403508771928,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-21",
+    "model": "burden-only",
+    "spearman": 0.7031235263833719,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17238095238095238,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-21",
+    "model": "season-burden",
+    "spearman": 0.7848592514012835,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14374603174603176,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-21",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7837290898685125,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14627192982456141,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-21",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.775003210604601,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14802631578947367,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-21",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7544109606701842,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16096491228070176,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-28",
+    "model": "burden-only",
+    "spearman": 0.6639870791081862,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18076190476190476,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-28",
+    "model": "season-burden",
+    "spearman": 0.7495241342606822,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15314285714285714,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-28",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7282975723797619,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16030701754385965,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-28",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7246504489871913,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1617324561403509,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-04-28",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7038186504058729,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.17094298245614034,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-05",
+    "model": "burden-only",
+    "spearman": 0.6891622824215917,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17873015873015874,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-05",
+    "model": "season-burden",
+    "spearman": 0.7710998259902884,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15053968253968253,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-05",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7633712823327307,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15219298245614035,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-05",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7615563327766653,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15263157894736842,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-05",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7594990816837991,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15734649122807018,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-12",
+    "model": "burden-only",
+    "spearman": 0.7093008117077209,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17676190476190476,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-12",
+    "model": "season-burden",
+    "spearman": 0.795924614807812,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.142984126984127,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-12",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7843002734580009,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1468201754385965,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-12",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7770441794362352,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14901315789473685,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-12",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.766554592217109,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1550438596491228,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-19",
+    "model": "burden-only",
+    "spearman": 0.6735874709878962,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.18501587301587302,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-19",
+    "model": "season-burden",
+    "spearman": 0.7390200845689812,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15961904761904763,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-19",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7240388738609529,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16162280701754386,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-19",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7278560367127294,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16326754385964912,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-19",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7088646515239176,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1739035087719298,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-26",
+    "model": "burden-only",
+    "spearman": 0.6751274589017858,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.182984126984127,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-26",
+    "model": "season-burden",
+    "spearman": 0.7785757892189543,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1499047619047619,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-26",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7605744564224218,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1580043859649123,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-26",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7488360800676316,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16096491228070176,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-05-26",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7385244882443072,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16480263157894737,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-02",
+    "model": "burden-only",
+    "spearman": 0.6529300927768317,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1899047619047619,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-02",
+    "model": "season-burden",
+    "spearman": 0.756046890211981,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15765079365079365,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-02",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7469408073458195,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1580043859649123,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-02",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7354945089958874,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16162280701754386,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-02",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7289042631808791,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1637061403508772,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-09",
+    "model": "burden-only",
+    "spearman": 0.6782163757332251,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.1864126984126984,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-09",
+    "model": "season-burden",
+    "spearman": 0.7591361189759713,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15498412698412697,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-09",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.732604520593192,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.16403508771929826,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-09",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7274833218381767,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.16469298245614036,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-09",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.715388350811842,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1744517543859649,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-16",
+    "model": "burden-only",
+    "spearman": 0.6369329923195306,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.19314285714285714,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-16",
+    "model": "season-burden",
+    "spearman": 0.7062787822953673,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17123809523809524,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-16",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.698243635504351,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17083333333333334,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-16",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7013129368459529,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16896929824561402,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-16",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6854497203531476,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17708333333333334,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-23",
+    "model": "burden-only",
+    "spearman": 0.7034792664586206,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17295238095238097,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-23",
+    "model": "season-burden",
+    "spearman": 0.7698303177048672,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15003174603174602,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-23",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7309142854886777,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16271929824561404,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-23",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7368639726119793,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1594298245614035,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-23",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7115061132332868,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17247807017543862,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-30",
+    "model": "burden-only",
+    "spearman": 0.6825888125097891,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17428571428571427,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-30",
+    "model": "season-burden",
+    "spearman": 0.7493936008209935,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15276190476190477,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-30",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7367887357024943,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15657894736842104,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-30",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7323755500692193,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1570175438596491,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-06-30",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7269625547746881,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16611842105263158,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-07",
+    "model": "burden-only",
+    "spearman": 0.7143999394756679,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1699047619047619,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-07",
+    "model": "season-burden",
+    "spearman": 0.759919903721196,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.14704761904761904,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-07",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7343330355376246,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15438596491228068,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-07",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.73876973485488,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15153508771929824,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-07",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7321285744818674,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1567982456140351,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-14",
+    "model": "burden-only",
+    "spearman": 0.6808301351054479,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.182984126984127,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-14",
+    "model": "season-burden",
+    "spearman": 0.738540195502304,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1613968253968254,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-14",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7070459073383293,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16864035087719298,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-14",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7079360935939684,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16787280701754384,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-14",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7026180090121864,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17346491228070177,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-21",
+    "model": "burden-only",
+    "spearman": 0.6942832046428075,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17117460317460317,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-21",
+    "model": "season-burden",
+    "spearman": 0.7245334483656959,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1645714285714286,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-21",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7013189644640659,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1711622807017544,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-21",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7110071077429784,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16896929824561402,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-21",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7011242839466235,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17291666666666666,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-28",
+    "model": "burden-only",
+    "spearman": 0.6879830006064729,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17669841269841272,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-28",
+    "model": "season-burden",
+    "spearman": 0.6971264730893998,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17644444444444446,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-28",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6893920403771591,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18157894736842106,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-28",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.701687272536258,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17521929824561402,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-07-28",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6765291438741572,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18530701754385967,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-04",
+    "model": "burden-only",
+    "spearman": 0.7016994168478716,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17263492063492064,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-04",
+    "model": "season-burden",
+    "spearman": 0.7072679425835834,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.16768253968253968,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-04",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7158002194182266,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1675438596491228,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-04",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7173674918033415,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16864035087719298,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-04",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7191242160230862,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16940789473684212,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-11",
+    "model": "burden-only",
+    "spearman": 0.7212167858573866,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16615873015873014,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-11",
+    "model": "season-burden",
+    "spearman": 0.72475176324671,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1659047619047619,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-11",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7541893198660844,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1612938596491228,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-11",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7603718377997218,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15964912280701754,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-11",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7563089064439741,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16206140350877193,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-18",
+    "model": "burden-only",
+    "spearman": 0.7591004631500485,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1544761904761905,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-18",
+    "model": "season-burden",
+    "spearman": 0.7455402624318627,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16374603174603175,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-18",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7673057304543172,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1606359649122807,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-18",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7772136717835643,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15712719298245614,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-18",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7831825859622923,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15438596491228068,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-25",
+    "model": "burden-only",
+    "spearman": 0.770161043086729,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15149206349206348,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-25",
+    "model": "season-burden",
+    "spearman": 0.7466154907839267,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15936507936507938,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-25",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7786663143279847,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.150109649122807,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-25",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7888180858681192,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14638157894736842,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-08-25",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8052525025188079,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14232456140350877,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-01",
+    "model": "burden-only",
+    "spearman": 0.7800416077018771,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14679365079365078,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-01",
+    "model": "season-burden",
+    "spearman": 0.7758859127844749,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15022222222222223,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-01",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8003567728915171,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14057017543859648,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-01",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8061397180119017,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13760964912280702,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-01",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8208514355123879,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13355263157894737,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-08",
+    "model": "burden-only",
+    "spearman": 0.7759163782789223,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1506031746031746,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-08",
+    "model": "season-burden",
+    "spearman": 0.7846239473705894,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14869841269841272,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-08",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.80192301393313,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13793859649122805,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-08",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.803380659312539,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13640350877192983,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-08",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8171637520153683,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13212719298245615,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-15",
+    "model": "burden-only",
+    "spearman": 0.7884425598670918,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14253968253968252,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-15",
+    "model": "season-burden",
+    "spearman": 0.7947903015795084,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1366984126984127,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-15",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.815206590835845,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.12828947368421054,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-15",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8188927788929136,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.12839912280701754,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-15",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8278731902143986,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1288377192982456,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-22",
+    "model": "burden-only",
+    "spearman": 0.782079224863384,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1471111111111111,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-22",
+    "model": "season-burden",
+    "spearman": 0.7933834727056507,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1366984126984127,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-22",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8027790222444473,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.131359649122807,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-22",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8076402640040343,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1305921052631579,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-22",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8147555292844595,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12467105263157895,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-29",
+    "model": "burden-only",
+    "spearman": 0.7774901224931264,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15085714285714286,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-29",
+    "model": "season-burden",
+    "spearman": 0.8029921475802522,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13739682539682538,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-29",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8092004875256302,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13421052631578947,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-29",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8034538800867345,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1387061403508772,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-09-29",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8154936146387383,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13234649122807016,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-06",
+    "model": "burden-only",
+    "spearman": 0.8079298775253269,
+    "top10_hit_rate": 0.9,
+    "normalized_rank_error": 0.13625396825396827,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-06",
+    "model": "season-burden",
+    "spearman": 0.8229941975176771,
+    "top10_hit_rate": 0.9,
+    "normalized_rank_error": 0.1304126984126984,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-06",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8282765613928637,
+    "top10_hit_rate": 1.0,
+    "normalized_rank_error": 0.12609649122807018,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-06",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8337386202832986,
+    "top10_hit_rate": 1.0,
+    "normalized_rank_error": 0.12269736842105264,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-06",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8291872306008318,
+    "top10_hit_rate": 1.0,
+    "normalized_rank_error": 0.1275219298245614,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-13",
+    "model": "burden-only",
+    "spearman": 0.7819845181881088,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1440634920634921,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-13",
+    "model": "season-burden",
+    "spearman": 0.8172546906257128,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12863492063492063,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-13",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8232131924410722,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12423245614035089,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-13",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8261409317159478,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12445175438596491,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-13",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8379775391223202,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12149122807017543,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-20",
+    "model": "burden-only",
+    "spearman": 0.8057413943185379,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1366984126984127,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-20",
+    "model": "season-burden",
+    "spearman": 0.8309833220025626,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.12311111111111112,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-20",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8416864856702257,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.11535087719298247,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-20",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.84555118358497,
+    "top10_hit_rate": 0.9,
+    "normalized_rank_error": 0.11776315789473685,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-20",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8555090594112922,
+    "top10_hit_rate": 0.9,
+    "normalized_rank_error": 0.11458333333333333,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-27",
+    "model": "burden-only",
+    "spearman": 0.7767999802426057,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14831746031746032,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-27",
+    "model": "season-burden",
+    "spearman": 0.8140510583215113,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12831746031746033,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-27",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8211756593299036,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12587719298245614,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-27",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8197332936178812,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.12839912280701754,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-10-27",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8396008882972917,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.12149122807017543,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-03",
+    "model": "burden-only",
+    "spearman": 0.7870429075423631,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14196825396825397,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-03",
+    "model": "season-burden",
+    "spearman": 0.8091344467171452,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13365079365079363,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-03",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8080419322988347,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12763157894736843,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-03",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8050143917398407,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13015350877192983,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-03",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8135819828882787,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.12949561403508772,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-10",
+    "model": "burden-only",
+    "spearman": 0.7634106795208085,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14965079365079365,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-10",
+    "model": "season-burden",
+    "spearman": 0.7825236611572656,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.138984126984127,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-10",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7776926191765757,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13607456140350876,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-10",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7729786004900009,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1388157894736842,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-10",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7902774089507316,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1375,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-17",
+    "model": "burden-only",
+    "spearman": 0.7664327178679825,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1466031746031746,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-17",
+    "model": "season-burden",
+    "spearman": 0.7852922431242823,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13276190476190475,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-17",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7714630798840802,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13486842105263158,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-17",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7763513680909484,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13432017543859648,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-17",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7782439649409958,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13662280701754384,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-24",
+    "model": "burden-only",
+    "spearman": 0.766884830904011,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.15346031746031746,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-24",
+    "model": "season-burden",
+    "spearman": 0.8153202833822876,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1288888888888889,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-24",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.832765230869894,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.11732456140350878,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-24",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8317245486948148,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.12017543859649123,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-11-24",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8368188717306498,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.11907894736842105,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-01",
+    "model": "burden-only",
+    "spearman": 0.7492416471379223,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15657142857142858,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-01",
+    "model": "season-burden",
+    "spearman": 0.7888819706079124,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13422222222222221,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-01",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7816479815629216,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1369517543859649,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-01",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7799386338220978,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14089912280701752,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-01",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7832561936201078,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14024122807017544,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-08",
+    "model": "burden-only",
+    "spearman": 0.7518210852249054,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.15028571428571427,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-08",
+    "model": "season-burden",
+    "spearman": 0.7818082706760685,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1365714285714286,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-08",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7709928536197999,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1401315789473684,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-08",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7707822642149609,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14024122807017544,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-08",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7798526054279538,
+    "top10_hit_rate": 0.9,
+    "normalized_rank_error": 0.1368421052631579,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-15",
+    "model": "burden-only",
+    "spearman": 0.7355584625123516,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15828571428571428,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-15",
+    "model": "season-burden",
+    "spearman": 0.7793177654250105,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13866666666666666,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-15",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8003616045935509,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13092105263157894,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-15",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7990597661685707,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13366228070175437,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-15",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8116100524260681,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1281798245614035,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-22",
+    "model": "burden-only",
+    "spearman": 0.7011268302320585,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.16996825396825396,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-22",
+    "model": "season-burden",
+    "spearman": 0.7809465006012776,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13974603174603176,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-22",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7947888435907282,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13421052631578947,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-22",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7919537634791027,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13530701754385965,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-22",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7988466893579943,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13432017543859648,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-29",
+    "model": "burden-only",
+    "spearman": 0.5808694775972999,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.19873015873015873,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-29",
+    "model": "season-burden",
+    "spearman": 0.6893119172319943,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1594920634920635,
+    "units": 126
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-29",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7380294093343228,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14923245614035088,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-29",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7247912718374165,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15460526315789475,
+    "units": 96
+  },
+  {
+    "year": 2019,
+    "week": "2019-12-29",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7258164747080379,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15328947368421053,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-05",
+    "model": "burden-only",
+    "spearman": 0.34003893965206194,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.2661587301587302,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-05",
+    "model": "season-burden",
+    "spearman": 0.4668485262160201,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.2361904761904762,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-05",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.534315681071463,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.22017543859649125,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-05",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.5231146772612272,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.22576754385964914,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-05",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.5232652966060568,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.22467105263157894,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-12",
+    "model": "burden-only",
+    "spearman": 0.6951648902738751,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17726984126984127,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-12",
+    "model": "season-burden",
+    "spearman": 0.7014372493384429,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.16253968253968254,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-12",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7395847100483873,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15197368421052632,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-12",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7418416068397341,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1507675438596491,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-12",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7648148275772213,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14144736842105263,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-19",
+    "model": "burden-only",
+    "spearman": 0.7384991898674774,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15688888888888888,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-19",
+    "model": "season-burden",
+    "spearman": 0.7483516221506262,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14984126984126986,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-19",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7609094752333689,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14331140350877195,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-19",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7637399910879266,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14331140350877195,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-19",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7775995304577369,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.14024122807017544,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-26",
+    "model": "burden-only",
+    "spearman": 0.726725837481056,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16711111111111113,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-26",
+    "model": "season-burden",
+    "spearman": 0.7616920398940734,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1474285714285714,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-26",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7698113867994044,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14342105263157895,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-26",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7770228634585068,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14364035087719298,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-01-26",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7972265976758386,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.1368421052631579,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-02",
+    "model": "burden-only",
+    "spearman": 0.6915370961408361,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.176,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-02",
+    "model": "season-burden",
+    "spearman": 0.7356591161077081,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.15263492063492062,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-02",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7697704092781356,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14166666666666666,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-02",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7673312102817926,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.14331140350877195,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-02",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.791306706476796,
+    "top10_hit_rate": 0.8,
+    "normalized_rank_error": 0.13760964912280702,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-09",
+    "model": "burden-only",
+    "spearman": 0.7455893309673686,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16336507936507938,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-09",
+    "model": "season-burden",
+    "spearman": 0.7876393263860267,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14431746031746034,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-09",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8004939863931364,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13980263157894737,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-09",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8017071088155973,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.13969298245614037,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-09",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8169457994809537,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1331140350877193,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-16",
+    "model": "burden-only",
+    "spearman": 0.7122168759536257,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17485714285714285,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-16",
+    "model": "season-burden",
+    "spearman": 0.7550387544544999,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1634920634920635,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-16",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.765505718809494,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1610745614035088,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-16",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7719456953941514,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15888157894736843,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-16",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7928151437021203,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.14824561403508774,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-23",
+    "model": "burden-only",
+    "spearman": 0.7661373236313171,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15568253968253967,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-23",
+    "model": "season-burden",
+    "spearman": 0.793390426977827,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.14539682539682539,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-23",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.818354295345458,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13366228070175437,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-23",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.8242044163564609,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1324561403508772,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-02-23",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8328963226489827,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.13157894736842105,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-01",
+    "model": "burden-only",
+    "spearman": 0.7195733334640261,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1685079365079365,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-01",
+    "model": "season-burden",
+    "spearman": 0.7628425874935945,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.15041269841269841,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-01",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7782456837628348,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1432017543859649,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-01",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7840405239777883,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.1425438596491228,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-01",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.788118625815244,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1418859649122807,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-08",
+    "model": "burden-only",
+    "spearman": 0.747090363967267,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15923809523809523,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-08",
+    "model": "season-burden",
+    "spearman": 0.7877289304693526,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1365079365079365,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-08",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.8008781626681801,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.13103070175438597,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-08",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.807878221013994,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1299342105263158,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-08",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.8214087918557076,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.12368421052631579,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-15",
+    "model": "burden-only",
+    "spearman": 0.662636070910977,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17346031746031748,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-15",
+    "model": "season-burden",
+    "spearman": 0.7129150367973602,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15961904761904763,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-15",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7207427725547122,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15657894736842104,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-15",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7262294553549147,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15526315789473685,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-15",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7165901124069324,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.15526315789473685,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-22",
+    "model": "burden-only",
+    "spearman": 0.6218601319223668,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.18946031746031747,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-22",
+    "model": "season-burden",
+    "spearman": 0.7065055640442268,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16907936507936508,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-22",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7036807667102979,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16973684210526316,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-22",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7041291139771612,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16853070175438598,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-22",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7108027766010782,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16962719298245613,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-29",
+    "model": "burden-only",
+    "spearman": 0.6017226042983304,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.19473015873015873,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-29",
+    "model": "season-burden",
+    "spearman": 0.7004192452988456,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1695873015873016,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-29",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7191283489867994,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1611842105263158,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-29",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7214886773430588,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16206140350877193,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-03-29",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7113080787644396,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16458333333333333,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-05",
+    "model": "burden-only",
+    "spearman": 0.5421220834932434,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.21288888888888888,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-05",
+    "model": "season-burden",
+    "spearman": 0.6332474869628913,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.19295238095238096,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-05",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7027474085812626,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17905701754385966,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-05",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.704937789111207,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17861842105263157,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-05",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6935594578649747,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.18662280701754388,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-12",
+    "model": "burden-only",
+    "spearman": 0.4776301210087835,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.23123809523809524,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-12",
+    "model": "season-burden",
+    "spearman": 0.5980626800454311,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.201015873015873,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-12",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6284474156381042,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.19638157894736843,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-12",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6143939402908009,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.19967105263157894,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-12",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6039995172544297,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.20208333333333334,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-19",
+    "model": "burden-only",
+    "spearman": 0.5113972597515019,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.22476190476190475,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-19",
+    "model": "season-burden",
+    "spearman": 0.6559140690323302,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1874920634920635,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-19",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6638310355033523,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18475877192982454,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-19",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.650466826017273,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18859649122807018,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-19",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6306607468563454,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.19506578947368422,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-26",
+    "model": "burden-only",
+    "spearman": 0.5145028435760747,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.221015873015873,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-26",
+    "model": "season-burden",
+    "spearman": 0.6161227367011068,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.18965079365079365,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-26",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5925156409615503,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.19967105263157894,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-26",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.5822489805097687,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.20065789473684212,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-04-26",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.5779802527177238,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.20065789473684212,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-03",
+    "model": "burden-only",
+    "spearman": 0.551317799346167,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.22076190476190477,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-03",
+    "model": "season-burden",
+    "spearman": 0.6431678303896765,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1907936507936508,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-03",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6563771486576931,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.18618421052631579,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-03",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6520139724716923,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.18848684210526315,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-03",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6588386784606547,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.18662280701754388,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-10",
+    "model": "burden-only",
+    "spearman": 0.43830982336279345,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.24234920634920634,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-10",
+    "model": "season-burden",
+    "spearman": 0.5446217462815038,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.2133968253968254,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-10",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5657189915319784,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.21030701754385966,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-10",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.5607579041836385,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.20899122807017545,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-10",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.5485956969796953,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.2125,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-17",
+    "model": "burden-only",
+    "spearman": 0.5609026707242722,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.21676190476190477,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-17",
+    "model": "season-burden",
+    "spearman": 0.6433108028526694,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.18425396825396825,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-17",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6560353766365846,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.18629385964912282,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-17",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6533658569661769,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.18552631578947368,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-17",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6300227598129,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.19572368421052633,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-24",
+    "model": "burden-only",
+    "spearman": 0.5737047561729093,
+    "top10_hit_rate": 0.1,
+    "normalized_rank_error": 0.2187936507936508,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-24",
+    "model": "season-burden",
+    "spearman": 0.6206140417669448,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1999365079365079,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-24",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.643767555236506,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1944078947368421,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-24",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6469137017505239,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.193969298245614,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-24",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6294916563272344,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.20032894736842105,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-31",
+    "model": "burden-only",
+    "spearman": 0.5067585956765078,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.21974603174603174,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-31",
+    "model": "season-burden",
+    "spearman": 0.5716662011097153,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.2093968253968254,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-31",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5755384566523155,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.21019736842105263,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-31",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.573963233789801,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.20953947368421053,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-05-31",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.5602615786084414,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.21425438596491228,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-07",
+    "model": "burden-only",
+    "spearman": 0.7206632513574474,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1650793650793651,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-07",
+    "model": "season-burden",
+    "spearman": 0.7143349810478604,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16603174603174603,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-07",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7018243241133408,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1705043859649123,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-07",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7066068525693752,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17039473684210527,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-07",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7038734570002317,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17280701754385966,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-14",
+    "model": "burden-only",
+    "spearman": 0.5716335378782725,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.21231746031746032,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-14",
+    "model": "season-burden",
+    "spearman": 0.5860375607975137,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.20863492063492065,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-14",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6070823850836303,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.20592105263157895,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-14",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6113164071944067,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.2036184210526316,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-14",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6085528514373962,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.20339912280701755,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-21",
+    "model": "burden-only",
+    "spearman": 0.6096907519250625,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.20253968253968252,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-21",
+    "model": "season-burden",
+    "spearman": 0.6576168719308708,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18755555555555553,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-21",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7014540035698521,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.175,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-21",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7044363229259011,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17346491228070177,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-21",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6955161987056588,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17412280701754387,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-28",
+    "model": "burden-only",
+    "spearman": 0.6361389297943767,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1973968253968254,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-28",
+    "model": "season-burden",
+    "spearman": 0.676399137312958,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1833015873015873,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-28",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6595373454312007,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.19024122807017546,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-28",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6616849641107956,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.19013157894736843,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-06-28",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.651186708431248,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.19353070175438597,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-05",
+    "model": "burden-only",
+    "spearman": 0.6811229398675006,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18133333333333335,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-05",
+    "model": "season-burden",
+    "spearman": 0.73673607172434,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16622222222222222,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-05",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7407537181297472,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16293859649122808,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-05",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7406761269407015,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16447368421052633,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-05",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7270526769197497,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16666666666666669,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-12",
+    "model": "burden-only",
+    "spearman": 0.7003971362301815,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.176,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-12",
+    "model": "season-burden",
+    "spearman": 0.7633245715694241,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.15612698412698411,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-12",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7549682988384668,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16019736842105264,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-12",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7480360331090206,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.16271929824561404,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-12",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7343148600142748,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1675438596491228,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-19",
+    "model": "burden-only",
+    "spearman": 0.7001995699568634,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1789206349206349,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-19",
+    "model": "season-burden",
+    "spearman": 0.7319125433025551,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17142857142857143,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-19",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7466425953337422,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16973684210526316,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-19",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.746362902812877,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.16875,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-19",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7265865950570751,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17456140350877192,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-26",
+    "model": "burden-only",
+    "spearman": 0.6947025303748443,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.18076190476190476,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-26",
+    "model": "season-burden",
+    "spearman": 0.7047095112166406,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.18196825396825397,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-26",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7397490003939293,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17401315789473684,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-26",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.73554635276906,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17642543859649124,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-07-26",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7249282922535281,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17850877192982456,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-02",
+    "model": "burden-only",
+    "spearman": 0.6818547222172172,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18412698412698414,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-02",
+    "model": "season-burden",
+    "spearman": 0.7128962939781384,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1793015873015873,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-02",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.740845131674132,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17346491228070177,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-02",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7374182558363152,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.1754385964912281,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-02",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7130520679428496,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.18464912280701756,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-09",
+    "model": "burden-only",
+    "spearman": 0.6916636970491574,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17333333333333334,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-09",
+    "model": "season-burden",
+    "spearman": 0.7148511180627573,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1713015873015873,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-09",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7575743196182643,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16271929824561404,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-09",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7559672029968357,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.16337719298245615,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-09",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7382966966531895,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.16918859649122808,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-16",
+    "model": "burden-only",
+    "spearman": 0.6651845957044368,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.18184126984126986,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-16",
+    "model": "season-burden",
+    "spearman": 0.680239041712029,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.18406349206349207,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-16",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7213801114043326,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1754385964912281,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-16",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7250420736918191,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17346491228070177,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-16",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7096011547441601,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1793859649122807,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-23",
+    "model": "burden-only",
+    "spearman": 0.691411701894189,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17326984126984127,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-23",
+    "model": "season-burden",
+    "spearman": 0.696561360351822,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17968253968253967,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-23",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.711042796283874,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17708333333333334,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-23",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7184536110916344,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17401315789473684,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-23",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6956280287766556,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.18201754385964913,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-30",
+    "model": "burden-only",
+    "spearman": 0.6386798784353557,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1900952380952381,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-30",
+    "model": "season-burden",
+    "spearman": 0.628321323161718,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.2001904761904762,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-30",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6333221420204195,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.2,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-30",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.638162510347036,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.19857456140350876,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-08-30",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6250287616560036,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.20285087719298245,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-06",
+    "model": "burden-only",
+    "spearman": 0.5455849936494797,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.21085714285714285,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-06",
+    "model": "season-burden",
+    "spearman": 0.581959945057777,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.20139682539682538,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-06",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6290944559997083,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.19276315789473683,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-06",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6300536831674092,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.19375,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-06",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6166290005888195,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1949561403508772,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-13",
+    "model": "burden-only",
+    "spearman": 0.6265836424416602,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1869206349206349,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-13",
+    "model": "season-burden",
+    "spearman": 0.5983438674612775,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.20234920634920636,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-13",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6388285805800948,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1930921052631579,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-13",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6454849099611574,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1899122807017544,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-13",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6260000893551214,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.19692982456140348,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-20",
+    "model": "burden-only",
+    "spearman": 0.5364998598232263,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.20888888888888887,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-20",
+    "model": "season-burden",
+    "spearman": 0.5390094000595055,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.21193650793650792,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-20",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5805623558617757,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.20230263157894737,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-20",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.5850590459984502,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.20076754385964912,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-20",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.5639921785119938,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.2066885964912281,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-27",
+    "model": "burden-only",
+    "spearman": 0.6540487990915714,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.17784126984126986,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-27",
+    "model": "season-burden",
+    "spearman": 0.6534744338845488,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.18977777777777777,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-27",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.7103990335334682,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.17225877192982456,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-27",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.7135343926052944,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.1707236842105263,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-09-27",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.7089283436198813,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1737938596491228,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-04",
+    "model": "burden-only",
+    "spearman": 0.49674259833555523,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.22374603174603175,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-04",
+    "model": "season-burden",
+    "spearman": 0.46388792979343973,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.23314285714285715,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-04",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5191942642271777,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.2168859649122807,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-04",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.5297728759130648,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.21414473684210528,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-04",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.508886898994775,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.21875,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-11",
+    "model": "burden-only",
+    "spearman": 0.6396657375237955,
+    "top10_hit_rate": 0.2,
+    "normalized_rank_error": 0.18946031746031747,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-11",
+    "model": "season-burden",
+    "spearman": 0.6239844388193856,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.19384126984126984,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-11",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6853716180439602,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17905701754385966,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-11",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6977448943732617,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.17653508771929824,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-11",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6580575422618377,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18662280701754388,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-18",
+    "model": "burden-only",
+    "spearman": 0.5462600255430756,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.20692063492063492,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-18",
+    "model": "season-burden",
+    "spearman": 0.5044330090466342,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.21904761904761905,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-18",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5603050142376306,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.2066885964912281,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-18",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.5723188739371035,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.20405701754385966,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-18",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.5399076552254138,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.21019736842105263,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-25",
+    "model": "burden-only",
+    "spearman": 0.6697760930957626,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18406349206349207,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-25",
+    "model": "season-burden",
+    "spearman": 0.6286879607752058,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.19263492063492063,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-25",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6598505814232417,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.18651315789473685,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-25",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.675718058685177,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.18278508771929824,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-10-25",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6547035250222363,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1875,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-01",
+    "model": "burden-only",
+    "spearman": 0.5470111934383632,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.210984126984127,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-01",
+    "model": "season-burden",
+    "spearman": 0.49641572905834713,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.2226031746031746,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-01",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5340911548972226,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.2149122807017544,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-01",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.5488687273809257,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.21162280701754388,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-01",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.5229522037757933,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.21600877192982454,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-08",
+    "model": "burden-only",
+    "spearman": 0.6437840148338275,
+    "top10_hit_rate": 0.3,
+    "normalized_rank_error": 0.1873015873015873,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-08",
+    "model": "season-burden",
+    "spearman": 0.630207248517316,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18533333333333335,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-08",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6731569408029066,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17478070175438598,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-08",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6837768948972263,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1713815789473684,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-08",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6692969778166931,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1754385964912281,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-15",
+    "model": "burden-only",
+    "spearman": 0.5630192291327757,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.20996835443037973,
+    "units": 80
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-15",
+    "model": "season-burden",
+    "spearman": 0.5464029563782183,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.2175632911392405,
+    "units": 80
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-15",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5921340201530705,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.2092343658679135,
+    "units": 59
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-15",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6060458677641016,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.20455873758036236,
+    "units": 59
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-15",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6005867883217982,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.2086499123319696,
+    "units": 59
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-22",
+    "model": "burden-only",
+    "spearman": 0.6495598261439891,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.182984126984127,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-22",
+    "model": "season-burden",
+    "spearman": 0.6016747697138979,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.19358730158730159,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-22",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6470179186683177,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.17960526315789474,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-22",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6630511344120328,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17730263157894738,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-22",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6629282763825155,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.17554824561403506,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-29",
+    "model": "burden-only",
+    "spearman": 0.6449622049326553,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.19434920634920635,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-29",
+    "model": "season-burden",
+    "spearman": 0.6050269225998819,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.1980952380952381,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-29",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6238315799931425,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.19177631578947368,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-29",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6345991066022104,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.19155701754385965,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-11-29",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6247755910201328,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.19298245614035087,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-06",
+    "model": "burden-only",
+    "spearman": 0.6503983866755174,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18253968253968253,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-06",
+    "model": "season-burden",
+    "spearman": 0.6563705383920244,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.17720634920634923,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-06",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6370316018032297,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.18212719298245614,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-06",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.644388065151263,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.18092105263157895,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-06",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6330881777260605,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.18618421052631579,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-13",
+    "model": "burden-only",
+    "spearman": 0.5721318952036455,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.21149206349206348,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-13",
+    "model": "season-burden",
+    "spearman": 0.5491162223457348,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.20952380952380953,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-13",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5777413890483525,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.2013157894736842,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-13",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.582090397013942,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.20164473684210527,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-13",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.5816807098173669,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.20230263157894737,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-20",
+    "model": "burden-only",
+    "spearman": 0.6343763130201222,
+    "top10_hit_rate": 0.4,
+    "normalized_rank_error": 0.19346031746031747,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-20",
+    "model": "season-burden",
+    "spearman": 0.5993005531856853,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1956190476190476,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-20",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.6329670520403721,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.18596491228070178,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-20",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6427064291076151,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.18333333333333335,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-20",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6522340899097216,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.1819078947368421,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-27",
+    "model": "burden-only",
+    "spearman": 0.6149644705478301,
+    "top10_hit_rate": 0.5,
+    "normalized_rank_error": 0.19225396825396826,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-27",
+    "model": "season-burden",
+    "spearman": 0.5515422377510336,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.20577777777777778,
+    "units": 126
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-27",
+    "model": "season-burden-weather-cohort",
+    "spearman": 0.5993158085097308,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.19287280701754386,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-27",
+    "model": "season-ridge-weather-cohort",
+    "spearman": 0.6097274611583722,
+    "top10_hit_rate": 0.6,
+    "normalized_rank_error": 0.19177631578947368,
+    "units": 96
+  },
+  {
+    "year": 2020,
+    "week": "2020-12-27",
+    "model": "lagged-weather-weather-cohort",
+    "spearman": 0.6017939620686157,
+    "top10_hit_rate": 0.7,
+    "normalized_rank_error": 0.19451754385964914,
+    "units": 96
+  }
+]

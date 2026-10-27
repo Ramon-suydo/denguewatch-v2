@@ -1,43 +1,20 @@
-﻿import { readdir, readFile, writeFile } from "node:fs/promises";
-import { createHash } from "node:crypto";
-async function files(dir) {
-  const entries = await readdir(dir, { withFileTypes: true });
-  return (
-    await Promise.all(
-      entries.map((e) =>
-        e.isDirectory() ? files(dir + "/" + e.name) : [dir + "/" + e.name],
-      ),
-    )
-  ).flat();
-}
-const assets = (await files("dist"))
-  .filter(
-    (p) =>
-      p.startsWith("dist/assets/") || /dist\/img\/manila-\d+\.(avif|webp)$/.test(p) || p === "dist/geo/philippines.geojson" ||
-      [
-        "dist/index.html",
-        "dist/manifest.webmanifest",
-        "dist/icon.svg",
-      ].includes(p) ||
-      (p.startsWith("dist/api/v2/") && !["dist/api/v2/weather.json","dist/api/v2/outlook-weather.json"].includes(p)),
-  )
-  .map((p) => "/" + p.slice(5));
-const hash = createHash("sha256");
-for (const path of assets) hash.update(await readFile("dist" + path));
-const version = "dw-research-" + hash.digest("hex").slice(0, 16);
-const worker = `const CACHE=${JSON.stringify(version)};const ASSETS=${JSON.stringify(assets)};
-self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));});
-self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('dw-research-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
-self.addEventListener('fetch',event=>{
- const request=event.request,url=new URL(request.url);
- if(request.method!=='GET'||url.origin!==self.location.origin||url.pathname.startsWith('/admin'))return;
- if(request.mode==='navigate'){
-  event.respondWith(fetch(request).catch(async()=>await caches.match('/index.html')||new Response('Offline. Open the app online once to cache the public research pages.',{status:503})));return;
- }
- if(ASSETS.includes(url.pathname))event.respondWith(caches.open(CACHE).then(async cache=>await cache.match(url.pathname)||fetch(request)));
-});
-`;
-await writeFile("dist/sw.js", worker);
-console.log(
-  `PWA: ${assets.length} public assets cached under ${version}; no Supabase/admin/report mutations cached.`,
-);
+import {readdir,readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+async function files(dir){return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(e=>e.isDirectory()?files(dir+'/'+e.name):[dir+'/'+e.name]))).flat();}
+const manifest=JSON.parse(await readFile('dist/.vite/manifest.json','utf8')),core=new Set();
+function include(key){const item=manifest[key];if(!item||core.has('/'+item.file))return;core.add('/'+item.file);for(const path of [...item.css??[],...item.assets??[]])core.add('/'+path);for(const dependency of item.imports??[])include(dependency);}
+for(const [key,item] of Object.entries(manifest))if(item.isEntry||['src/redesign/Dashboard.tsx','src/redesign/OurModel.tsx','src/overhaul/PreviewMap.tsx','src/pages/ReportV2.tsx','src/redesign/About.tsx','src/redesign/PrivacyNotice.tsx','src/redesign/Methods.tsx','src/redesign/ClassificationEvidence.tsx'].includes(key))include(key);
+const all=await files('dist');for(const path of all){const name='/'+path.slice(5);if(/\.(?:woff2?|ttf)$/.test(path)&&path.startsWith('dist/assets/'))core.add(name);if(/^dist\/img\/manila-\d+\.(?:avif|webp)$/.test(path)||['dist/img/metro-example.svg','dist/img/locator.svg','dist/geo/ncr-cities.geojson'].includes(path))core.add(name);if(path.startsWith('dist/ml/')||path.startsWith('dist/api/v2/')&&!/\/(?:weather|outlook|outlook-weather)\.json$/.test(path)||['dist/index.html','dist/hero-preload.js','dist/manifest.webmanifest','dist/icon.svg'].includes(path))core.add(name);}
+const mapAssets=all.filter(p=>(p.startsWith('dist/assets/')&&!core.has('/'+p.slice(5))&&!/Admin-|NcrModelUpload/.test(p))||p.startsWith('dist/basemap/')).map(p=>encodeURI('/'+p.slice(5)));
+// Admin code is excluded. Risk-only chunks and basemap files are never precached on other pages.
+const coreAssets=[...core].map(encodeURI).sort(),hash=createHash('sha256');for(const path of [...coreAssets,...mapAssets])hash.update(await readFile('dist'+decodeURI(path)));const version='dw-research-'+hash.digest('hex').slice(0,16);
+const policies=JSON.parse(await readFile('vercel.json','utf8')).headers;const riskPolicy=policies.find(r=>r.source==='/risk-map/:path*').headers[0].value,defaultPolicy=policies.find(r=>r.source.startsWith('/((?!risk-map')).headers[0].value;
+const worker=`const RISK_POLICY=${JSON.stringify(riskPolicy)},DEFAULT_POLICY=${JSON.stringify(defaultPolicy)};const CACHE=${JSON.stringify(version)},CORE=${JSON.stringify(coreAssets)},MAP=${JSON.stringify(mapAssets)},active=new Map();
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE))));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('dw-research-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('message',event=>{const id=event.source?.id;if(!id)return;if(event.data?.type==='CANCEL_CITY_MAP'){active.get(id)?.abort();return;}if(event.data?.type!=='CACHE_CITY_MAP')return;event.waitUntil((async()=>{const client=await self.clients.get(id);if(!client||!/^\\/risk-map(?:\\/|$)/.test(new URL(client.url).pathname))return;active.get(id)?.abort();const controller=new AbortController();active.set(id,controller);try{const cache=await caches.open(CACHE);for(const path of MAP){const current=await self.clients.get(id);if(!current||!/^\\/risk-map(?:\\/|$)/.test(new URL(current.url).pathname))return;if(await cache.match(path))continue;const response=await fetch(path,{signal:controller.signal});if(!response.ok)throw Error('Map asset unavailable');await cache.put(path,response);}client.postMessage({type:'CITY_MAP_CACHED'});}catch{}finally{if(active.get(id)===controller)active.delete(id);}})());});
+async function ranged(response,header){const match=/^bytes=(\\d+)-(\\d*)$/.exec(header);if(!match)return new Response(null,{status:416});const bytes=await response.arrayBuffer(),start=Number(match[1]),end=Math.min(match[2]?Number(match[2]):bytes.byteLength-1,bytes.byteLength-1);if(start>end||start>=bytes.byteLength)return new Response(null,{status:416,headers:{'Content-Range':'bytes */'+bytes.byteLength}});return new Response(bytes.slice(start,end+1),{status:206,headers:{'Content-Type':'application/vnd.pmtiles','Accept-Ranges':'bytes','Content-Range':'bytes '+start+'-'+end+'/'+bytes.byteLength,'Content-Length':String(end-start+1)}});}
+self.addEventListener('fetch',event=>{const request=event.request,url=new URL(request.url);if(request.method!=='GET'||url.origin!==self.location.origin||url.pathname.startsWith('/admin'))return;
+if(request.mode==='navigate'){event.respondWith(fetch(request).catch(async()=>{const saved=await caches.match('/index.html');if(!saved)return new Response('Offline. Open the app online once to cache public pages.',{status:503});const headers=new Headers(saved.headers);headers.set('Content-Security-Policy',/^\\/risk-map(?:\\/|$)/.test(url.pathname)?RISK_POLICY:DEFAULT_POLICY);return new Response(await saved.arrayBuffer(),{status:200,headers});}));return;}
+if(CORE.includes(url.pathname)||MAP.includes(url.pathname))event.respondWith(caches.open(CACHE).then(async cache=>{const cached=await cache.match(url.pathname);if(cached)return url.pathname.endsWith('.pmtiles')&&request.headers.has('Range')?ranged(cached,request.headers.get('Range')):cached;const response=await fetch(request);if(response.ok&&!request.headers.has('Range'))await cache.put(url.pathname,response.clone());return response;}));});`;
+await writeFile('dist/sw.js',worker);await writeFile('docs/evidence/ml-pwa-assets.json',JSON.stringify({version,core_assets:coreAssets,map_only_assets:mapAssets,map_cache_policy:'City boundary geometry and the footer locator are public core assets. Only a Risk Map client can request engine/tile warming; pagehide cancels. PMTiles ranges are served as 206 from a full local cache. No reports, staff responses or hosted live inputs cached.'},null,2)+'\n');console.log(JSON.stringify({core_assets:coreAssets.length,map_only_assets:mapAssets.length,version}));

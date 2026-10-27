@@ -1,3 +1,33 @@
+# Current NCR classification defense questions
+
+## Why is RF not clearly better?
+
+In this run the simple persistence rule actually has higher held-out F1. Many positive weeks are continuations of elevated counts, making “already high this week” a strong one-week baseline. RF was chosen by training validation, not by choosing the best-looking test result. The published report retains both outcomes, paired intervals and the 20-positive onset subset. The onset persistence rule produces no alerts by construction under our current-above-cutoff subset; that must not be sold as strong evidence of operational early warning.
+
+## Why not 79% accuracy?
+
+The owner-supplied IEEE paper (document 9357035, Sarma et al., 2020) is a different, patient-level task. We borrow the DT/RF and 70:30 comparison protocol. Its accuracy is not our accuracy, and majority-class accuracy can look high in an imbalanced city-week task. Report balanced accuracy, precision, recall, F1, AUC, Brier, confusion matrices and uncertainty from our actual data.
+
+## Why city-level only?
+
+The source has 17 NCR reporting units: 16 cities and Pateros municipality. It has no barangay case series for this model. Polygon fills follow those whole units; street detail is basemap context, not a finer prediction grid. Boundary/name agreement is explicit but does not independently certify reporting catchments.
+
+## Why Replay mode?
+
+The model input is limited to 2016-2020. Newer 17-city surveillance is absent. Replay identifies the historical target week and shows recorded outcomes. Unscorable windows remain No data. Live requires a reviewed complete upload and a source week within 21 days. A one-week target can already have passed if reporting is delayed; the UI shows that date and requests newer counts, without rolling a one-step forecast into an invented current estimate.
+
+## Why a chronological split?
+
+All cities share one target-week cut: first 70% of eligible weeks train, last 30% test. Training labels must have matured by each validation/test origin. Random rows mix earlier/later dates and correlated city records, so that comparison is separately labelled rather than used as forecasting evidence.
+
+## What differs from the prototype?
+
+The source contains three absent whole calendar weeks despite complete fields on recorded dates. We preserve the calendar and exclude feature/target windows crossing gaps. Our one-hot city encoding, balanced weights, training-only tuning, sigmoid calibration and validation operating points also differ from a fixed-depth/fixed-cutoff prototype. These are possible contributors; the prototype code was not provided for a controlled attribution. No parameters are tuned to reproduce supplied test numbers.
+
+Current authoritative results: ML_METHOD.md, ML_EVALUATION.md, MAP_DESIGN.md and data/processed/ml/evaluation.json. Citation metadata is verified from the owner-supplied IEEE URL via Crossref; full publisher text remains access-blocked. Older questions below describe the archived Manila/national research.
+
+---
+
 # Three-page redesign: defense questions
 
 **Why is the national map an outlook and not a forecast?** National cases stop in January 2021. The map ranks old seasonal count expectations, not next-week cases or present infection risk. Only Manila has a separate historical case-forecast panel, and its source also ends in December 2023. Current risk is unavailable.
@@ -44,3 +74,14 @@ Current source of release truth: [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATU
 6. Test locally and self-review the auth/schema changes before merging near the defense. Re-run required release gates in the intended environment. Only after every gate passes, set `$env:LAUNCH_GATES_PASSED = '1'` and run `npm run hosted:bootstrap -- --enable-reporting`. Emergency closure: `npm run reports:off`. Do not enable collection merely to demonstrate a test.
 
 Full numbered dashboard and command instructions: [ROTATE_CREDENTIALS.md](ROTATE_CREDENTIALS.md). All private configuration stays out of Git.
+
+## Why this design?
+
+DengueWatch puts a person’s next task first: choose a city, understand a dated estimate, learn a practical action, or preview a private report. The Bay wave and original drop mark root the identity in Manila without borrowing the owner’s other site. Light surfaces, readable type and a separate labeled risk scale reduce alarm and make comparisons easier. The map’s default example is calculated from the real saved data to show variety; it is not selected to suggest current conditions. Night mode, reduced motion, touch alternatives and bilingual controls support different needs. The full model limitations and negative comparisons remain available in the evidence and About page. See BRAND.md, DESIGN_SYSTEM.md, MOTION.md and the current verification record; human usability and Filipino review are still owner work.
+
+
+## Why does the landing page focus on Manila now?
+
+The revised hierarchy answers one local question first: what does the recorded Manila history show, and what was the next-week estimate from that historical record? Other NCR areas have a separate section and map. The model demonstration has its own visible destination so first-time visitors can compare a past prediction with the actual outcome before opening technical tables.
+
+The Manila number is a historical case-count baseline, not an RF count prediction. RF predicts a high-case event for an NCR area. Source dates, unavailable weeks, misses and the stronger simple-rule comparison remain visible. A seasonal average from the reference PDF is not substituted for a current forecast. New reviewed source data is still necessary for a current estimate.

@@ -48,6 +48,7 @@ export async function mockPublicApi(
         contentType: "application/json",
         body: JSON.stringify(value),
       });
+    if (resource === "published_ncr_model_input") return respond(null);
     if (resource === "lgus") return respond(fixture.cities);
     if (resource === "barangay_risk")
       return respond(

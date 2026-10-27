@@ -1,0 +1,61 @@
+{
+  "retrieved_utc": "2026-10-25T17:36:47.590016+00:00",
+  "source_url": "https://build.protomaps.com/20261025.pmtiles",
+  "build_metadata": {
+    "key": "20261025.pmtiles",
+    "size": 139164728182,
+    "md5sum": "lLdZqth2IVGJdr4o7APRxg==",
+    "b3sum": "464ba05825f866aad8139b026bb48e0c57476cbe4667857c5be61a083b19b0f7",
+    "uploaded": "2026-10-25T09:07:03.735Z",
+    "version": "4.15.2"
+  },
+  "bbox": [
+    120.901395,
+    14.34673,
+    121.140036,
+    14.790292
+  ],
+  "maxzoom": 13,
+  "bytes": 6712783,
+  "sha256": "37319fb5a50d25166bdbac686beb047c75dc07be93a01ca388407d5ee008a32c",
+  "whole_planet_digest_verified": false,
+  "digest_note": "Only region ranges extracted; receipt records whole source build digest but does not claim to verify the entire 139 GB planet. Extract SHA is verified locally. CLI release SHA independently verified from GitHub release metadata.",
+  "attribution": "Protomaps styles BSD-3-Clause; basemap OpenStreetMap contributors, ODbL produced work; Noto map glyphs OFL-1.1; sprites derived from tangrams/icons, MIT.",
+  "assets": [
+    {
+      "path": "public/basemap/glyphs/Noto Sans Regular/0-255.pbf",
+      "source_url": "https://protomaps.github.io/basemaps-assets/fonts/Noto%20Sans%20Regular/0-255.pbf",
+      "bytes": 76044,
+      "sha256": "62c6d49b15fa836eb6aa45e259c7ca6762f44b011b09e47776efbe4a6db1b397"
+    },
+    {
+      "path": "public/basemap/sprites/light.json",
+      "source_url": "https://protomaps.github.io/basemaps-assets/sprites/v4/light.json",
+      "bytes": 3549,
+      "sha256": "bfac76cf7ed5c2aa2992695904056a1c6b07785b7fd20e6c640cb44fd6244a2e"
+    },
+    {
+      "path": "public/basemap/sprites/light.png",
+      "source_url": "https://protomaps.github.io/basemaps-assets/sprites/v4/light.png",
+      "bytes": 16174,
+      "sha256": "b6a34640917bdc57d0bd080836db33376371a3312ebe7b849045268015de3481"
+    },
+    {
+      "path": "public/basemap/sprites/light@2x.json",
+      "source_url": "https://protomaps.github.io/basemaps-assets/sprites/v4/light@2x.json",
+      "bytes": 3579,
+      "sha256": "1fb5b123fbe35d2e1f6ac171513ce01df89e671273a417ee89c44886a4c132f0"
+    },
+    {
+      "path": "public/basemap/sprites/light@2x.png",
+      "source_url": "https://protomaps.github.io/basemaps-assets/sprites/v4/light@2x.png",
+      "bytes": 28852,
+      "sha256": "23f6e9df27c2e9a14385763980a24e3608966bfc8192a106058bc2ca959ab563"
+    }
+  ],
+  "asset_licence_sources": [
+    "https://github.com/protomaps/basemaps-assets#license",
+    "https://github.com/protomaps/basemaps-assets/blob/main/fonts/OFL.txt",
+    "https://github.com/tangrams/icons/blob/master/LICENSE.md"
+  ]
+}
