@@ -1,5 +1,7 @@
 # Current NCR classification feature
 
+Expanded Manila count research is on `feat/expanded-forecast`: [method and actual results](docs/EXPANDED_MANILA_MODEL.md). Open **Our Model → Review expanded count models**, or `/expanded-model`. All five raw files are reconciled, delayed weather/seasonal factors are tested, and recent estimates enter a separate weighted experimental refit. Reliable improvement over persistence is not established; the existing public reference remains. Run `npm run count:test`, `npm run count:evaluate` (full inputs required), and `npm run count:check`.
+
 For the group: [Full system guide](docs/GROUP_SYSTEM_GUIDE.md) explains the current frontend, backend, data flow, calculations, models, APIs, privacy controls and local setup, with a presentation script.
 
 Local verification is complete for application source `a0e4240`: 85 unit/integration tests, four ML leakage tests, 600-row parity, three consecutive 44-test UI runs, 18 production and three PWA tests. Full evidence, retained diagnostics and owner-blocked gates: [mlux-checks.md](docs/evidence/mlux-checks.md). The secret audit remains NEEDS OWNER (0 current / 44 known historical / 0 unexpected); hosted and human checks are not certified. Exact push: `git push -u origin feat/ml-map-ux`. Main was not pushed. Test locally, self-review and inspect the preview before merging; main merge deploys Vercel.

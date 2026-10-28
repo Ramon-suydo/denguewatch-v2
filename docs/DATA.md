@@ -1,5 +1,7 @@
 # Data assumptions and dictionary
 
+Owner-authorized expanded count research now reconciles all five raw files and uses recent 2026 rows in a **separate, lower-weight experimental refit**. This does not change historical series, the NCR classifier, their evaluations or the existing provisional ratio reference. See [EXPANDED_MANILA_MODEL.md](EXPANDED_MANILA_MODEL.md); the original pipeline isolation rules below still apply to their named outputs.
+
 ## Separate provisional Manila source (2026)
 
 `data/raw/Manila_Dengue_Weekly_Clean_2026.csv` is a local, unofficial team transcription of Manila Information Office public posts. It has 13 weeks, four weekly values not flagged estimated and nine estimated values. Post links, source definitions and redistribution permission remain **NEEDS OWNER**. `npm run live:ingest` produces only the independent `manila_live_weekly.json`/`public/live-manila/` path. It does not join the historical gap, train ML or change evaluation. See [LIVE_MANILA.md](LIVE_MANILA.md) for the dictionary, fingerprinted legacy exceptions, reproducible ranges, coverage and update procedure. `observed` means “not flagged estimated,” not “source verified.”

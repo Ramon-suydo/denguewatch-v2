@@ -105,6 +105,11 @@
       "credit": "doh-safety"
     },
     {
+      "path": "src/redesign/ExpandedResearch.tsx",
+      "host": "www.who.int",
+      "credit": "doh-safety"
+    },
+    {
       "path": "src/redesign/Guidance.tsx",
       "host": "www.cdc.gov",
       "credit": "doh-safety"
@@ -208,6 +213,11 @@
       "path": "scripts/document-environment.py",
       "host": "region11.mgb.gov.ph",
       "credit": "flood-portals"
+    },
+    {
+      "path": "scripts/fetch-expanded-weather.ts",
+      "host": "archive-api.open-meteo.com",
+      "credit": "open-meteo"
     },
     {
       "path": "scripts/fetch-map-weather.py",

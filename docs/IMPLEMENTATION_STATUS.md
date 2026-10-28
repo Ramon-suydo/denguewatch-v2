@@ -1,3 +1,15 @@
+# Expanded Manila count research - 2026-10-28
+
+Current branch: `feat/expanded-forecast`, continuing from `feat/live-manila` / group-guide commit `ce949e7`. All five raw files are audited/reconciled in a separate count pipeline. Twelve candidates test history/season, delayed ERA5 weather, lagged complete NCR months, daily shape, and pooled-city water/elevation/density context. A separate recent refit explicitly downweights the nine estimated 2026 targets. The old classifier, historical data/evaluation and provisional ratio reference are preserved.
+
+Open **Our Model -> Review expanded count models**, the Live-card comparison link, or `/expanded-model`. Current experimental refits are about 201 / 185 cases for weeks ending 1 / 8 November, from the source through 25 October. Reliable improvement over persistence is not established: selected one-week test MAE 9.989 vs 10.000, two-week 13.241 vs 12.667, both skill intervals crossing zero. Source matching/freshness hides inapplicable counts; no calibrated 2026 interval is claimed.
+
+Verified locally: 98 existing plus 10 new scientific tests, 64 browser, 18 production, 6 PWA, types/lint/build/data/contrast/budget and deterministic numerical reproduction. Visuals: 16 intended model baselines refreshed; 79 independent comparisons passed in the full run and the remaining About capture passed a targeted rerun against its untouched baseline. [Actual checks and retained diagnostics](evidence/expanded-manila-checks.md), [methods/results](EXPANDED_MANILA_MODEL.md).
+
+No push, main merge, hosted write/migration or collection activation. Existing credential rotation, source evidence/definitions/republication, hosted setup, DPO and human/native-language gates remain. Test locally and self-review before merging; main deploys automatically. User push: `git push -u origin feat/expanded-forecast`.
+
+---
+
 # Live Manila provisional panel - 2026-10-28
 
 Current branch: `feat/live-manila`, from remote main `a683b3b` with the completed UI prerequisite merged locally at `11daef8`. The 2026 source has its own generated JSON and append-only aggregate version table. Frozen historical ratio quantiles generate provisional one-/two-week ranges; this is not the 17-city classifier. Dashboard mode controls share state. Live shows Manila only, neutral other areas, dated values, estimated hatches, source limitations and care guidance. Stale data returns to Replay after 14 days.

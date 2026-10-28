@@ -64,7 +64,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!assets/|img/|basemap/|ml/|ncr-upload-template\\.csv|THIRD_PARTY_LICENSES\\.md|SECURITY\\.md|healthz\\.txt|robots\\.txt|api/|geo/|sw.js|manifest.webmanifest|icon.svg|demo-snapshot.json).*)",
+      "source": "/((?!assets/|img/|basemap/|ml/|research/|ncr-upload-template\\.csv|THIRD_PARTY_LICENSES\\.md|SECURITY\\.md|healthz\\.txt|robots\\.txt|api/|geo/|sw.js|manifest.webmanifest|icon.svg|demo-snapshot.json).*)",
       "destination": "/index.html"
     }
   ],

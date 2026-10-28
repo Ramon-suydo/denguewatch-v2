@@ -1,5 +1,7 @@
 # Live Manila provisional estimates
 
+Related but separate: [expanded Manila count research](EXPANDED_MANILA_MODEL.md) tests weather/season and an explicitly weighted recent-source refit at `/expanded-model`. This document describes the unchanged provisional ratio-reference pipeline, which does not train on its 13 inputs. The new experiment does not replace its ranges or the old NCR classifier and has not established reliable improvement.
+
 This feature lives on `feat/live-manila`. It combines the latest remote main with the locally completed UI overhaul; the UI overhaul was not yet merged remotely when work began. No push, hosted migration, report activation or external data verification is implied. Test locally and self-review before merging: main deploys to Vercel.
 
 ## Source and verified file facts

@@ -403,3 +403,14 @@ a:not(.skip-link) { display: inline-flex; align-items: center; padding-block: 0.
 .tondo-map thead { background: var(--color-navy-800); }
 
 @media(max-width:767px) { .map-workspace { grid-template-columns: minmax(0,1fr); } .barangay-info { border-radius: 1.25rem 1.25rem .75rem .75rem; } .barangay-info-empty { min-height: 88px; } }
+/* Expanded research retains readable filenames at narrow widths. */
+.expanded-research code{overflow-wrap:anywhere;white-space:normal}
+.expanded-research section{margin-block:0}
+.expanded-research article{margin-block:2rem}
+.expanded-research details{margin-block:1rem}
+.expanded-research .table-scroll{max-width:100%;min-width:0;overflow-x:auto}
+.photo-content.expanded-research{grid-template-columns:minmax(0,1fr)}
+.expanded-research>section,.expanded-research article,.expanded-research details{min-width:0}
+.expanded-research .historical-tag{white-space:normal;overflow-wrap:anywhere}
+.expanded-research table{width:100%;border-collapse:collapse;text-align:left}
+.expanded-research th,.expanded-research td{padding:.75rem;border-bottom:1px solid var(--line);vertical-align:top}

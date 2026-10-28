@@ -50,7 +50,7 @@
     "reports:off": "node scripts/bootstrap-hosted.mjs --reporting-off",
     "test:production": "playwright test --config playwright.research.config.ts",
     "data:validate": "node scripts/validate-shipped-data.mjs",
-    "prebuild": "npm run live:check && npm run data:validate && npm run credits:check && npm run test:hero-contrast",
+    "prebuild": "npm run count:check && npm run live:check && npm run data:validate && npm run credits:check && npm run test:hero-contrast",
     "data:inventory": "node scripts/inventory-markers.mjs",
     "evaluate:map": "python scripts/evaluate-map.py",
     "map:prepare": "python scripts/prepare-map.py",
@@ -65,7 +65,11 @@
     "test:ui-budget": "node scripts/check-ui-budget.mjs",
     "test:visual": "playwright test --config playwright.visual.config.ts",
     "live:ingest": "tsx scripts/ingest_live_manila.ts",
-    "live:check": "tsx scripts/check-live-manila-data.ts"
+    "live:check": "tsx scripts/check-live-manila-data.ts",
+    "count:evaluate": "node scripts/expanded-count.mjs evaluate",
+    "count:test": "node scripts/expanded-count.mjs test",
+    "count:check": "node scripts/check-expanded-count.mjs",
+    "count:weather": "tsx scripts/fetch-expanded-weather.ts"
   },
   "dependencies": {
     "@fontsource/figtree": "^5.3.0",

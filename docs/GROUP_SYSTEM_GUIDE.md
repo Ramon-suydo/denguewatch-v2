@@ -2,6 +2,8 @@
 
 Reviewed against the current `feat/live-manila` code on **28 October 2026 (Asia/Manila)**. This guide describes the implementation, rather than treating older project proposals as completed features. Numerical examples below belong to the saved datasets and evaluation; they will not automatically describe a later release.
 
+**Expanded-model addendum:** `feat/expanded-forecast` adds `/expanded-model`, linked from Our Model. It tests all raw-source roles, delayed weather and season in a separate Manila count experiment, including an explicitly weighted 2026 refit. It does not replace the NCR classifier or provisional baseline because reliable improvement was not established. Read [Expanded Manila count models](EXPANDED_MANILA_MODEL.md) for the actual results, formulas and update commands. Statements below about the unchanged historical training and provisional ratio method refer to those original pipelines, not this new experiment.
+
 ## 1. What we built
 
 DengueWatch is a web-based dengue research and awareness system. It brings together historical case records, maps, retrospective model comparisons, a separate provisional Manila estimate, prevention information, and a controlled community-reporting workflow.

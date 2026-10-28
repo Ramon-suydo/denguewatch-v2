@@ -1,0 +1,1604 @@
+{
+  "version": "manila-count-expanded-v1",
+  "seed": 20261028,
+  "target": "Manila weekly case count",
+  "runtime": {
+    "python": "3.12.7",
+    "numpy": "2.5.4",
+    "scikit_learn": "1.9.1"
+  },
+  "context_sha256": {
+    "geographic_context.json": "f64acb4af8298407bb4db40785f50b689f9fbf9e2ac234a2a06e3142c11766a8",
+    "manila_weekly.json": "02ac83dc7afc39c2886dc343a504eef60dec1ec31b864e90b1bf04f745c99b8a"
+  },
+  "parameters": {
+    "ridge": {
+      "alpha": 20
+    },
+    "forest": {
+      "trees": 160,
+      "max_depth": 5,
+      "min_samples_leaf": 8,
+      "max_features": 0.8
+    },
+    "boost": {
+      "max_iter": 80,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 15,
+      "l2_regularization": 20,
+      "learning_rate": 0.04
+    }
+  },
+  "source_verified": false,
+  "latest_week_end": "2026-10-25",
+  "source_audit": {
+    "raw_files": [
+      {
+        "file": "Daily_Reported_Cases_of_Dengue_in_the_City_of_Manila_from_2018_to_2023.xlsx",
+        "sha256": "f066701654e86b9b49305a84bc08a0823613eb83cde3df067f338fbae145849d"
+      },
+      {
+        "file": "doh-epi-dengue-data-2016-2021.csv",
+        "sha256": "4e993553f10081b4e6b35a0d4b3c9bd0cc271765645a123fcb2e0c5d7084633c"
+      },
+      {
+        "file": "Manila_Dengue_Weekly_Clean_2026.csv",
+        "sha256": "f309b602dabffe2a8928a48004edb31f5adc1ef73090472eddbf8e28a6c19dd4"
+      },
+      {
+        "file": "Manila_weekly_MHD_2018_2023.csv",
+        "sha256": "33710b2f5812aa8fbd6d9ffc4a760ead1b6765f94f91a5444890e0dc542256ee"
+      },
+      {
+        "file": "ncr_dengue_monthly_with_rates.csv",
+        "sha256": "66ea1f9f5fff0a049b547d08e802f47d015cb5c8a979acfb10606fe4a1e953e6"
+      }
+    ],
+    "daily_rows": 1910,
+    "derived_weekly_rows": 308,
+    "monthly_rows": 1037,
+    "ncr_weekly_rows": 4403,
+    "historical_complete_weeks": 312,
+    "recent_weeks": 13,
+    "recent_estimated_weeks": 9,
+    "roles": {
+      "daily": "primary post-2018 targets and past daily shape",
+      "weekly_manila": "exact duplicate reconciliation; never duplicated training targets",
+      "weekly_doh": "pre-2018 Manila targets and monthly reconciliation",
+      "monthly_ncr": "delayed complete-month predictor; not duplicate targets or current-month totals",
+      "recent_2026": "separate weighted experimental refit and unverified prequential check"
+    },
+    "geography": {
+      "water_share_200m": 0.508352883663803,
+      "water_share_500m": 0.8208168788340954,
+      "centroid_river_distance_m": 366.27375055423704,
+      "sample_mean_elevation_m": 7.511764705882353,
+      "sample_share_below_5m": 0.12352941176470589,
+      "density_per_km2": 43990.34665457331
+    },
+    "geography_in_model": {
+      "single_city": false,
+      "pooled_transfer": true
+    },
+    "geography_reason": "Constant within one city. Separate pooled-city exploratory models test spatial variation; contemporary proxies have unharmonized vintages."
+  },
+  "recent_input": [
+    {
+      "week_end": "2026-08-02",
+      "cases": 54,
+      "estimated": false
+    },
+    {
+      "week_end": "2026-08-09",
+      "cases": 81,
+      "estimated": true
+    },
+    {
+      "week_end": "2026-08-16",
+      "cases": 87,
+      "estimated": true
+    },
+    {
+      "week_end": "2026-08-23",
+      "cases": 94,
+      "estimated": true
+    },
+    {
+      "week_end": "2026-08-30",
+      "cases": 173,
+      "estimated": true
+    },
+    {
+      "week_end": "2026-09-06",
+      "cases": 225,
+      "estimated": true
+    },
+    {
+      "week_end": "2026-09-13",
+      "cases": 206,
+      "estimated": true
+    },
+    {
+      "week_end": "2026-09-20",
+      "cases": 184,
+      "estimated": true
+    },
+    {
+      "week_end": "2026-09-27",
+      "cases": 198,
+      "estimated": true
+    },
+    {
+      "week_end": "2026-10-04",
+      "cases": 202,
+      "estimated": true
+    },
+    {
+      "week_end": "2026-10-11",
+      "cases": 267,
+      "estimated": false
+    },
+    {
+      "week_end": "2026-10-18",
+      "cases": 226,
+      "estimated": false
+    },
+    {
+      "week_end": "2026-10-25",
+      "cases": 226,
+      "estimated": false
+    }
+  ],
+  "weather_sources": [
+    {
+      "file": "era5-manila-2015.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2015-01-01&end_date=2015-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:36.285Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "10a753745704f972fd32deb42bdee88a1e0e8ebbbb49467915a8a39e1f6dea3e"
+    },
+    {
+      "file": "era5-manila-2016.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2016-01-01&end_date=2016-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:37.187Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "c882cc9a8c01121fc8e6f583c9cb43cb5efee8ad84ceb593d2df913620a330c9"
+    },
+    {
+      "file": "era5-manila-2017.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2017-01-01&end_date=2017-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:37.865Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "b68829a417d65ad280af926b9ec5d0fe7e82c9381b4edab735b8bbf5b1e1e6c1"
+    },
+    {
+      "file": "era5-manila-2018.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2018-01-01&end_date=2018-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:38.551Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "ac8e2c4ee124a76f005e1bd945171434d292bccf1b1c2d64f1f1f113b01d29a1"
+    },
+    {
+      "file": "era5-manila-2019.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2019-01-01&end_date=2019-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:39.231Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "0bc27187450e5f98ac0db9dd81adccce6f35b5fd3c1bfe4401b4f9a9eba5c1fb"
+    },
+    {
+      "file": "era5-manila-2020.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2020-01-01&end_date=2020-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:39.704Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "f0e2869349b8eacc77b3bcade7611073e498ddd99861cf60d67f12f8f6e20773"
+    },
+    {
+      "file": "era5-manila-2021.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2021-01-01&end_date=2021-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:40.178Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "f17193219838a04166905e3579fcc71a0449ef71e30afd9a0d5eda8b18f1f94a"
+    },
+    {
+      "file": "era5-manila-2022.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2022-01-01&end_date=2022-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:40.662Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "a0386001ebd4be59969aab5303374863cac4ffafcd29256ab28fba209d3f2324"
+    },
+    {
+      "file": "era5-manila-2023.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2023-01-01&end_date=2023-12-31&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-24T16:53:41.143Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo; ERA5 / Copernicus Climate Change Service (C3S)",
+      "documentation": "https://open-meteo.com/en/docs/historical-weather-api",
+      "sha256": "94f9e9b8eb165311129f894244d8f5e4e9edffda16501fae6e817c3dc573c133"
+    },
+    {
+      "file": "expanded-manila-weather-2026.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2026-01-01&end_date=2026-10-20&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-10-28T11:40:45.940Z",
+      "license": "CC BY 4.0",
+      "attribution": "Open-Meteo / Copernicus C3S / ECMWF ERA5",
+      "sha256": "35e90d43543a6a53c9606accf0505728694427452685d406b2880ca0cdcc2979"
+    }
+  ],
+  "feature_groups": {
+    "case_season": [
+      "log_cases_0",
+      "log_cases_1",
+      "log_cases_2",
+      "log_cases_3",
+      "log_cases_4",
+      "log_cases_7",
+      "log_mean_4",
+      "log_mean_8",
+      "available_history_8",
+      "log_growth_1",
+      "target_annual_sin",
+      "target_annual_cos",
+      "target_rainy_Jun_Nov",
+      "origin_estimated"
+    ],
+    "weather": [
+      "rainfall_mm_lag_1",
+      "temperature_c_lag_1",
+      "humidity_percent_lag_1",
+      "rainfall_mm_lag_2",
+      "temperature_c_lag_2",
+      "humidity_percent_lag_2",
+      "rainfall_mm_lag_4",
+      "temperature_c_lag_4",
+      "humidity_percent_lag_4",
+      "rainfall_mm_lag_8",
+      "temperature_c_lag_8",
+      "humidity_percent_lag_8",
+      "rain_total_4_delayed",
+      "rain_total_8_delayed",
+      "rain_days_lag_1",
+      "temperature_min_lag_1",
+      "temperature_max_lag_1",
+      "rain_x_humidity_delayed"
+    ],
+    "source_context": [
+      "log_own_prior_complete_month",
+      "log_rest_ncr_prior_complete_month",
+      "monthly_context_available",
+      "daily_peak_share_at_origin"
+    ],
+    "pooled_geography": [
+      "water_share_200m",
+      "water_share_500m",
+      "log_river_distance_m",
+      "sample_mean_elevation_m",
+      "sample_share_below_5m",
+      "log_density_per_km2"
+    ]
+  },
+  "protocol": {
+    "selection": "Fixed candidates; training before 2021, validation 2021-2022, untouched 2023 audit. >=5% validation MAE improvement required.",
+    "weather": "ERA5 complete civil weeks at least 7 days before origin; final reanalysis, not operational vintages.",
+    "monthly": "Complete source-label months; assumed available 45 days after month-end, expire 45 days later. No partial/current-month leakage.",
+    "estimates": "No 2026 rows in historical validation/test. Final experimental weights: historical=1, unverified not-estimated=.5, estimated=.15.",
+    "ranges": "Historical validation absolute residuals; nominal 80%, no 2026 calibration guarantee.",
+    "pooled": "Other 16 NCR cities, 2016-2020; exclude death anomalies/missing deaths. Training-only pooled targets; no duplicate Manila outcomes. Shared Manila weather is a regional proxy, not city-specific weather. Geography vintages are contemporary and exploratory.",
+    "scope": "Exploratory expanded count model. Does not alter the historical NCR classifier or official observations."
+  },
+  "horizons": [
+    {
+      "horizon": 1,
+      "split": {
+        "training": 180,
+        "validation_2021_2022": 55,
+        "test_2023": 42,
+        "final_historical_pairs": 277
+      },
+      "selected_by_validation": "rf_weather",
+      "validation": [
+        {
+          "model": "persistence",
+          "n": 55,
+          "mae": 10.690909090909091,
+          "rmse": 15.19090637070864,
+          "skill_percent": 0.0
+        },
+        {
+          "model": "ridge_cases",
+          "n": 55,
+          "mae": 10.223421847961104,
+          "rmse": 15.099435665998193,
+          "skill_percent": 4.372754823493075
+        },
+        {
+          "model": "rf_cases",
+          "n": 55,
+          "mae": 9.814580245243333,
+          "rmse": 14.250505836830953,
+          "skill_percent": 8.196953488370195
+        },
+        {
+          "model": "ridge_weather",
+          "n": 55,
+          "mae": 10.612762877005572,
+          "rmse": 15.258458335366338,
+          "skill_percent": 0.7309594837914157
+        },
+        {
+          "model": "rf_weather",
+          "n": 55,
+          "mae": 9.687345618330799,
+          "rmse": 14.644563796985647,
+          "skill_percent": 9.387073297926207
+        },
+        {
+          "model": "boost_weather",
+          "n": 55,
+          "mae": 10.146092967428483,
+          "rmse": 15.050552162815094,
+          "skill_percent": 5.096069182216567
+        },
+        {
+          "model": "ridge_all",
+          "n": 55,
+          "mae": 12.34523323112122,
+          "rmse": 17.560387309655514,
+          "skill_percent": -15.474120359127053
+        },
+        {
+          "model": "rf_all",
+          "n": 55,
+          "mae": 9.886172354803055,
+          "rmse": 14.750246829492966,
+          "skill_percent": 7.527299402352384
+        },
+        {
+          "model": "boost_all",
+          "n": 55,
+          "mae": 10.124025972036005,
+          "rmse": 15.051872241094236,
+          "skill_percent": 5.302478152724444
+        },
+        {
+          "model": "rf_pooled",
+          "n": 55,
+          "mae": 10.66083414697836,
+          "rmse": 15.29452697280317,
+          "skill_percent": 0.2813132510527616
+        },
+        {
+          "model": "rf_pooled_geo",
+          "n": 55,
+          "mae": 10.67669781530279,
+          "rmse": 15.331676847162202,
+          "skill_percent": 0.13292859835826176
+        },
+        {
+          "model": "rf_pooled_weather_geo",
+          "n": 55,
+          "mae": 11.26166661779427,
+          "rmse": 16.698446998207253,
+          "skill_percent": -5.338718363721906
+        }
+      ],
+      "test": [
+        {
+          "model": "persistence",
+          "n": 42,
+          "mae": 10.0,
+          "rmse": 12.985339719046538,
+          "skill_percent": 0.0,
+          "skill_95": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "model": "ridge_cases",
+          "n": 42,
+          "mae": 10.46164759193796,
+          "rmse": 12.77499605765082,
+          "skill_percent": -4.616475919379592,
+          "skill_95": [
+            -26.223944423059137,
+            10.228802930988142
+          ]
+        },
+        {
+          "model": "rf_cases",
+          "n": 42,
+          "mae": 10.216853322845006,
+          "rmse": 12.539957866118588,
+          "skill_percent": -2.1685332284500536,
+          "skill_95": [
+            -27.444817306650155,
+            13.168828723502953
+          ]
+        },
+        {
+          "model": "ridge_weather",
+          "n": 42,
+          "mae": 10.98722290214654,
+          "rmse": 12.982936843715423,
+          "skill_percent": -9.872229021465406,
+          "skill_95": [
+            -33.538329593643695,
+            6.266113388719095
+          ]
+        },
+        {
+          "model": "rf_weather",
+          "n": 42,
+          "mae": 9.989357798992575,
+          "rmse": 12.189775197081136,
+          "skill_percent": 0.10642201007424745,
+          "skill_95": [
+            -22.248055131815505,
+            13.632638163165794
+          ]
+        },
+        {
+          "model": "boost_weather",
+          "n": 42,
+          "mae": 10.175227719911183,
+          "rmse": 12.412978050533107,
+          "skill_percent": -1.752277199111818,
+          "skill_95": [
+            -25.46747090360345,
+            14.070690196165575
+          ]
+        },
+        {
+          "model": "ridge_all",
+          "n": 42,
+          "mae": 11.140395601098357,
+          "rmse": 13.169728748104154,
+          "skill_percent": -11.403956010983563,
+          "skill_95": [
+            -34.89423412691941,
+            5.6000014918591665
+          ]
+        },
+        {
+          "model": "rf_all",
+          "n": 42,
+          "mae": 9.965608104506822,
+          "rmse": 12.099662055641799,
+          "skill_percent": 0.3439189549317767,
+          "skill_95": [
+            -19.591731627605874,
+            12.864985588531116
+          ]
+        },
+        {
+          "model": "boost_all",
+          "n": 42,
+          "mae": 10.182723242886485,
+          "rmse": 12.494299174969816,
+          "skill_percent": -1.8272324288648445,
+          "skill_95": [
+            -26.179719585934667,
+            14.283231967825522
+          ]
+        },
+        {
+          "model": "rf_pooled",
+          "n": 42,
+          "mae": 11.069338502252283,
+          "rmse": 13.515069931960099,
+          "skill_percent": -10.693385022522817,
+          "skill_95": [
+            -29.801381591297904,
+            2.758947472826122
+          ]
+        },
+        {
+          "model": "rf_pooled_geo",
+          "n": 42,
+          "mae": 10.966371514730882,
+          "rmse": 13.436677173144863,
+          "skill_percent": -9.663715147308816,
+          "skill_95": [
+            -27.849220643578533,
+            3.623403402602752
+          ]
+        },
+        {
+          "model": "rf_pooled_weather_geo",
+          "n": 42,
+          "mae": 10.167365055110315,
+          "rmse": 12.472628664734374,
+          "skill_percent": -1.6736505511031563,
+          "skill_95": [
+            -22.652445681780804,
+            12.562252877323212
+          ]
+        }
+      ],
+      "selected_test_range_coverage": 0.6666666666666666,
+      "calibration_n": 55,
+      "historical_residual_radius": 13.525938430706688,
+      "promotion_eligible": false,
+      "forecast": {
+        "origin": "2026-10-25",
+        "target": "2026-11-01",
+        "persistence": 226,
+        "model": "rf_weather",
+        "predicted": 201.34418761186103,
+        "historical_residual_range": [
+          187.81824918115433,
+          214.87012604256773
+        ],
+        "source_sensitivity": {
+          "historical_only": 200.0514744020875,
+          "recent_not_estimated_refit": 198.99591085298144,
+          "recent_estimate_weighted_refit": 201.34418761186103
+        },
+        "recent_training_pairs": 12,
+        "recent_estimated_training_pairs": 9,
+        "weather_complete": true
+      },
+      "unverified_2026_prequential": [
+        {
+          "origin": "2026-10-04",
+          "target": "2026-10-11",
+          "actual_unverified": 267,
+          "predicted": 185.2029187985399,
+          "persistence": 202
+        },
+        {
+          "origin": "2026-10-11",
+          "target": "2026-10-18",
+          "actual_unverified": 226,
+          "predicted": 229.5777385455497,
+          "persistence": 267
+        },
+        {
+          "origin": "2026-10-18",
+          "target": "2026-10-25",
+          "actual_unverified": 226,
+          "predicted": 211.5610682537768,
+          "persistence": 226
+        }
+      ],
+      "nested_yearly_audit": [
+        {
+          "year": 2018,
+          "training_n": 38,
+          "validation_n": 53,
+          "selected": "ridge_weather",
+          "n": 42,
+          "mae": 19.955987385458673,
+          "rmse": 27.074061558802544,
+          "skill_percent": -20.77110521459138,
+          "skill_95": [
+            -68.04169676751906,
+            11.5464978691253
+          ],
+          "persistence_mae": 16.523809523809526
+        },
+        {
+          "year": 2019,
+          "training_n": 91,
+          "validation_n": 42,
+          "selected": "boost_all",
+          "n": 39,
+          "mae": 18.87652937061009,
+          "rmse": 26.734894308928833,
+          "skill_percent": 0.38096813886421277,
+          "skill_95": [
+            -20.453434986832058,
+            18.68820603630538
+          ],
+          "persistence_mae": 18.94871794871795
+        },
+        {
+          "year": 2020,
+          "skipped": true,
+          "n": 8,
+          "validation_n": 39,
+          "reason": "Fewer than 10 eligible test or preceding validation pairs; no forecast accuracy assigned."
+        },
+        {
+          "year": 2021,
+          "skipped": true,
+          "n": 18,
+          "validation_n": 8,
+          "reason": "Fewer than 10 eligible test or preceding validation pairs; no forecast accuracy assigned."
+        },
+        {
+          "year": 2022,
+          "training_n": 180,
+          "validation_n": 18,
+          "selected": "boost_weather",
+          "n": 37,
+          "mae": 11.557470722421622,
+          "rmse": 17.0801901700874,
+          "skill_percent": 1.6950766138850493,
+          "skill_95": [
+            -9.960793408008008,
+            14.058288599168673
+          ],
+          "persistence_mae": 11.756756756756756
+        },
+        {
+          "year": 2023,
+          "training_n": 198,
+          "validation_n": 37,
+          "selected": "rf_cases",
+          "n": 42,
+          "mae": 10.216853322845006,
+          "rmse": 12.539957866118588,
+          "skill_percent": -2.1685332284500536,
+          "skill_95": [
+            -27.444817306650155,
+            13.168828723502953
+          ],
+          "persistence_mae": 10.0
+        }
+      ],
+      "pooled_other_city_pairs_available": 3756,
+      "test_records": [
+        {
+          "origin": "2023-01-08",
+          "target": "2023-01-15",
+          "actual": 63,
+          "predicted": 41.77493416738681,
+          "persistence": 45
+        },
+        {
+          "origin": "2023-01-15",
+          "target": "2023-01-22",
+          "actual": 66,
+          "predicted": 61.263289514475325,
+          "persistence": 63
+        },
+        {
+          "origin": "2023-01-22",
+          "target": "2023-01-29",
+          "actual": 40,
+          "predicted": 59.494727468107065,
+          "persistence": 66
+        },
+        {
+          "origin": "2023-01-29",
+          "target": "2023-02-05",
+          "actual": 60,
+          "predicted": 43.68304517727861,
+          "persistence": 40
+        },
+        {
+          "origin": "2023-02-05",
+          "target": "2023-02-12",
+          "actual": 71,
+          "predicted": 54.66099839456465,
+          "persistence": 60
+        },
+        {
+          "origin": "2023-02-12",
+          "target": "2023-02-19",
+          "actual": 63,
+          "predicted": 60.47836008785358,
+          "persistence": 71
+        },
+        {
+          "origin": "2023-02-19",
+          "target": "2023-02-26",
+          "actual": 33,
+          "predicted": 60.12234778917703,
+          "persistence": 63
+        },
+        {
+          "origin": "2023-02-26",
+          "target": "2023-03-05",
+          "actual": 55,
+          "predicted": 35.07589643117604,
+          "persistence": 33
+        },
+        {
+          "origin": "2023-03-05",
+          "target": "2023-03-12",
+          "actual": 47,
+          "predicted": 47.43900082162936,
+          "persistence": 55
+        },
+        {
+          "origin": "2023-03-12",
+          "target": "2023-03-19",
+          "actual": 36,
+          "predicted": 44.78264328617927,
+          "persistence": 47
+        },
+        {
+          "origin": "2023-03-19",
+          "target": "2023-03-26",
+          "actual": 32,
+          "predicted": 38.30340886095413,
+          "persistence": 36
+        },
+        {
+          "origin": "2023-03-26",
+          "target": "2023-04-02",
+          "actual": 45,
+          "predicted": 30.10429489220482,
+          "persistence": 32
+        },
+        {
+          "origin": "2023-04-02",
+          "target": "2023-04-09",
+          "actual": 43,
+          "predicted": 37.09717774950946,
+          "persistence": 45
+        },
+        {
+          "origin": "2023-04-09",
+          "target": "2023-04-16",
+          "actual": 27,
+          "predicted": 35.4114910466039,
+          "persistence": 43
+        },
+        {
+          "origin": "2023-04-16",
+          "target": "2023-04-23",
+          "actual": 29,
+          "predicted": 28.882370232515544,
+          "persistence": 27
+        },
+        {
+          "origin": "2023-05-07",
+          "target": "2023-05-14",
+          "actual": 21,
+          "predicted": 22.60107451332406,
+          "persistence": 21
+        },
+        {
+          "origin": "2023-05-14",
+          "target": "2023-05-21",
+          "actual": 27,
+          "predicted": 21.135548925138917,
+          "persistence": 21
+        },
+        {
+          "origin": "2023-05-21",
+          "target": "2023-05-28",
+          "actual": 47,
+          "predicted": 25.954210985098314,
+          "persistence": 27
+        },
+        {
+          "origin": "2023-05-28",
+          "target": "2023-06-04",
+          "actual": 46,
+          "predicted": 51.318243142690854,
+          "persistence": 47
+        },
+        {
+          "origin": "2023-06-04",
+          "target": "2023-06-11",
+          "actual": 47,
+          "predicted": 52.02542157285656,
+          "persistence": 46
+        },
+        {
+          "origin": "2023-06-11",
+          "target": "2023-06-18",
+          "actual": 43,
+          "predicted": 52.986387096664586,
+          "persistence": 47
+        },
+        {
+          "origin": "2023-06-18",
+          "target": "2023-06-25",
+          "actual": 50,
+          "predicted": 51.215033497176314,
+          "persistence": 43
+        },
+        {
+          "origin": "2023-06-25",
+          "target": "2023-07-02",
+          "actual": 41,
+          "predicted": 56.01303339296872,
+          "persistence": 50
+        },
+        {
+          "origin": "2023-07-02",
+          "target": "2023-07-09",
+          "actual": 38,
+          "predicted": 48.56060353593798,
+          "persistence": 41
+        },
+        {
+          "origin": "2023-07-09",
+          "target": "2023-07-16",
+          "actual": 33,
+          "predicted": 44.81116081865437,
+          "persistence": 38
+        },
+        {
+          "origin": "2023-07-16",
+          "target": "2023-07-23",
+          "actual": 33,
+          "predicted": 37.023788725905575,
+          "persistence": 33
+        },
+        {
+          "origin": "2023-07-23",
+          "target": "2023-07-30",
+          "actual": 33,
+          "predicted": 37.71851610603987,
+          "persistence": 33
+        },
+        {
+          "origin": "2023-08-13",
+          "target": "2023-08-20",
+          "actual": 51,
+          "predicted": 72.75490606586762,
+          "persistence": 64
+        },
+        {
+          "origin": "2023-08-20",
+          "target": "2023-08-27",
+          "actual": 72,
+          "predicted": 61.71274856184174,
+          "persistence": 51
+        },
+        {
+          "origin": "2023-08-27",
+          "target": "2023-09-03",
+          "actual": 61,
+          "predicted": 66.98103005346348,
+          "persistence": 72
+        },
+        {
+          "origin": "2023-09-03",
+          "target": "2023-09-10",
+          "actual": 76,
+          "predicted": 70.70137044875504,
+          "persistence": 61
+        },
+        {
+          "origin": "2023-09-10",
+          "target": "2023-09-17",
+          "actual": 69,
+          "predicted": 80.17955842656797,
+          "persistence": 76
+        },
+        {
+          "origin": "2023-09-17",
+          "target": "2023-09-24",
+          "actual": 74,
+          "predicted": 80.53609869988617,
+          "persistence": 69
+        },
+        {
+          "origin": "2023-09-24",
+          "target": "2023-10-01",
+          "actual": 75,
+          "predicted": 76.30600234936664,
+          "persistence": 74
+        },
+        {
+          "origin": "2023-10-01",
+          "target": "2023-10-08",
+          "actual": 56,
+          "predicted": 71.14697789942785,
+          "persistence": 75
+        },
+        {
+          "origin": "2023-10-08",
+          "target": "2023-10-15",
+          "actual": 83,
+          "predicted": 59.96674092934072,
+          "persistence": 56
+        },
+        {
+          "origin": "2023-10-15",
+          "target": "2023-10-22",
+          "actual": 74,
+          "predicted": 77.72513357341823,
+          "persistence": 83
+        },
+        {
+          "origin": "2023-10-22",
+          "target": "2023-10-29",
+          "actual": 71,
+          "predicted": 75.25779471047922,
+          "persistence": 74
+        },
+        {
+          "origin": "2023-10-29",
+          "target": "2023-11-05",
+          "actual": 83,
+          "predicted": 68.48935437952306,
+          "persistence": 71
+        },
+        {
+          "origin": "2023-11-05",
+          "target": "2023-11-12",
+          "actual": 81,
+          "predicted": 71.28672519675197,
+          "persistence": 83
+        },
+        {
+          "origin": "2023-11-12",
+          "target": "2023-11-19",
+          "actual": 59,
+          "predicted": 72.97577457155617,
+          "persistence": 81
+        },
+        {
+          "origin": "2023-11-19",
+          "target": "2023-11-26",
+          "actual": 62,
+          "predicted": 57.8700643938002,
+          "persistence": 59
+        }
+      ]
+    },
+    {
+      "horizon": 2,
+      "split": {
+        "training": 186,
+        "validation_2021_2022": 53,
+        "test_2023": 42,
+        "final_historical_pairs": 281
+      },
+      "selected_by_validation": "rf_cases",
+      "validation": [
+        {
+          "model": "persistence",
+          "n": 53,
+          "mae": 15.962264150943396,
+          "rmse": 23.02664576299248,
+          "skill_percent": 0.0
+        },
+        {
+          "model": "ridge_cases",
+          "n": 53,
+          "mae": 15.516795695502271,
+          "rmse": 21.86861109106069,
+          "skill_percent": 2.790759827231637
+        },
+        {
+          "model": "rf_cases",
+          "n": 53,
+          "mae": 13.141466305301345,
+          "rmse": 19.092495788635652,
+          "skill_percent": 17.671664990428926
+        },
+        {
+          "model": "ridge_weather",
+          "n": 53,
+          "mae": 15.281802124046877,
+          "rmse": 20.544177907357053,
+          "skill_percent": 4.262941776065665
+        },
+        {
+          "model": "rf_weather",
+          "n": 53,
+          "mae": 13.339548127411783,
+          "rmse": 19.62766806847093,
+          "skill_percent": 16.43072686136826
+        },
+        {
+          "model": "boost_weather",
+          "n": 53,
+          "mae": 14.309688594137624,
+          "rmse": 19.779720561996474,
+          "skill_percent": 10.353014717577535
+        },
+        {
+          "model": "ridge_all",
+          "n": 53,
+          "mae": 22.430469725871564,
+          "rmse": 30.237218561281484,
+          "skill_percent": -40.52185525664218
+        },
+        {
+          "model": "rf_all",
+          "n": 53,
+          "mae": 13.919527935798873,
+          "rmse": 20.242522019807534,
+          "skill_percent": 12.797283617335664
+        },
+        {
+          "model": "boost_all",
+          "n": 53,
+          "mae": 14.375690488226125,
+          "rmse": 19.751510017320363,
+          "skill_percent": 9.939527674233496
+        },
+        {
+          "model": "rf_pooled",
+          "n": 53,
+          "mae": 14.469496465402056,
+          "rmse": 20.549224437040277,
+          "skill_percent": 9.351854294762528
+        },
+        {
+          "model": "rf_pooled_geo",
+          "n": 53,
+          "mae": 14.484684265948419,
+          "rmse": 20.494238103927877,
+          "skill_percent": 9.25670613531132
+        },
+        {
+          "model": "rf_pooled_weather_geo",
+          "n": 53,
+          "mae": 15.240983206377237,
+          "rmse": 21.754677472531462,
+          "skill_percent": 4.518663127896739
+        }
+      ],
+      "test": [
+        {
+          "model": "persistence",
+          "n": 42,
+          "mae": 12.666666666666666,
+          "rmse": 15.528775133372791,
+          "skill_percent": 0.0,
+          "skill_95": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "model": "ridge_cases",
+          "n": 42,
+          "mae": 12.062395587101701,
+          "rmse": 14.551904022389218,
+          "skill_percent": 4.7705611544602515,
+          "skill_95": [
+            -24.726446823525453,
+            22.703815218641452
+          ]
+        },
+        {
+          "model": "rf_cases",
+          "n": 42,
+          "mae": 13.241102595070283,
+          "rmse": 15.301307246353657,
+          "skill_percent": -4.535020487396979,
+          "skill_95": [
+            -41.889676287375345,
+            15.362526225611417
+          ]
+        },
+        {
+          "model": "ridge_weather",
+          "n": 42,
+          "mae": 12.917440598684275,
+          "rmse": 15.260123663207859,
+          "skill_percent": -1.9797942001390068,
+          "skill_95": [
+            -39.91500187222641,
+            19.40961601566756
+          ]
+        },
+        {
+          "model": "rf_weather",
+          "n": 42,
+          "mae": 13.277629039914386,
+          "rmse": 15.362248665522037,
+          "skill_percent": -4.823387157218839,
+          "skill_95": [
+            -37.187937968552305,
+            12.74735122903823
+          ]
+        },
+        {
+          "model": "boost_weather",
+          "n": 42,
+          "mae": 13.799877602113103,
+          "rmse": 15.698827023829342,
+          "skill_percent": -8.946402121945551,
+          "skill_95": [
+            -46.17626696933859,
+            11.328105371395662
+          ]
+        },
+        {
+          "model": "ridge_all",
+          "n": 42,
+          "mae": 13.088763311452261,
+          "rmse": 15.63506517830959,
+          "skill_percent": -3.332341932517857,
+          "skill_95": [
+            -46.99520404697881,
+            21.042263745118277
+          ]
+        },
+        {
+          "model": "rf_all",
+          "n": 42,
+          "mae": 12.661748641196713,
+          "rmse": 14.851685629162962,
+          "skill_percent": 0.038826516868051275,
+          "skill_95": [
+            -27.023051145497497,
+            15.874968935956254
+          ]
+        },
+        {
+          "model": "boost_all",
+          "n": 42,
+          "mae": 13.226441849117997,
+          "rmse": 15.137112655393073,
+          "skill_percent": -4.419277756194706,
+          "skill_95": [
+            -36.0307408522314,
+            12.787754012314672
+          ]
+        },
+        {
+          "model": "rf_pooled",
+          "n": 42,
+          "mae": 13.289103154563302,
+          "rmse": 16.02743848704667,
+          "skill_percent": -4.913972272868183,
+          "skill_95": [
+            -36.338973739501355,
+            16.014619191053974
+          ]
+        },
+        {
+          "model": "rf_pooled_geo",
+          "n": 42,
+          "mae": 13.23657117812644,
+          "rmse": 16.004253519331268,
+          "skill_percent": -4.499246143103464,
+          "skill_95": [
+            -36.51714515813926,
+            16.740083579601226
+          ]
+        },
+        {
+          "model": "rf_pooled_weather_geo",
+          "n": 42,
+          "mae": 12.4541297035642,
+          "rmse": 15.411543020719426,
+          "skill_percent": 1.6779233929142046,
+          "skill_95": [
+            -28.52648460270847,
+            21.020001099148807
+          ]
+        }
+      ],
+      "selected_test_range_coverage": 0.8809523809523809,
+      "calibration_n": 53,
+      "historical_residual_radius": 21.851486099368884,
+      "promotion_eligible": false,
+      "forecast": {
+        "origin": "2026-10-25",
+        "target": "2026-11-08",
+        "persistence": 226,
+        "model": "rf_cases",
+        "predicted": 184.78584566002107,
+        "historical_residual_range": [
+          162.93435956065218,
+          206.63733175938995
+        ],
+        "source_sensitivity": {
+          "historical_only": 180.58712068874587,
+          "recent_not_estimated_refit": 184.0960198449232,
+          "recent_estimate_weighted_refit": 184.78584566002107
+        },
+        "recent_training_pairs": 11,
+        "recent_estimated_training_pairs": 8,
+        "weather_complete": true
+      },
+      "unverified_2026_prequential": [
+        {
+          "origin": "2026-09-27",
+          "target": "2026-10-11",
+          "actual_unverified": 267,
+          "predicted": 162.63746422391782,
+          "persistence": 198
+        },
+        {
+          "origin": "2026-10-04",
+          "target": "2026-10-18",
+          "actual_unverified": 226,
+          "predicted": 160.15565041045352,
+          "persistence": 202
+        },
+        {
+          "origin": "2026-10-11",
+          "target": "2026-10-25",
+          "actual_unverified": 226,
+          "predicted": 219.39801812244698,
+          "persistence": 267
+        }
+      ],
+      "nested_yearly_audit": [
+        {
+          "year": 2018,
+          "training_n": 41,
+          "validation_n": 53,
+          "selected": "ridge_weather",
+          "n": 43,
+          "mae": 22.632121278566718,
+          "rmse": 29.80382321214106,
+          "skill_percent": -5.895670835513478,
+          "skill_95": [
+            -43.73303904363491,
+            20.398988548087544
+          ],
+          "persistence_mae": 21.372093023255815
+        },
+        {
+          "year": 2019,
+          "training_n": 94,
+          "validation_n": 43,
+          "selected": "rf_cases",
+          "n": 40,
+          "mae": 22.01235573197557,
+          "rmse": 32.603746543569635,
+          "skill_percent": 20.961020711039247,
+          "skill_95": [
+            8.647311793376803,
+            34.8459953688363
+          ],
+          "persistence_mae": 27.85
+        },
+        {
+          "year": 2020,
+          "skipped": true,
+          "n": 8,
+          "validation_n": 40,
+          "reason": "Fewer than 10 eligible test or preceding validation pairs; no forecast accuracy assigned."
+        },
+        {
+          "year": 2021,
+          "skipped": true,
+          "n": 16,
+          "validation_n": 8,
+          "reason": "Fewer than 10 eligible test or preceding validation pairs; no forecast accuracy assigned."
+        },
+        {
+          "year": 2022,
+          "training_n": 186,
+          "validation_n": 16,
+          "selected": "boost_all",
+          "n": 37,
+          "mae": 17.573930039950834,
+          "rmse": 23.16847218569979,
+          "skill_percent": 3.9534104168122863,
+          "skill_95": [
+            -26.570000398517532,
+            19.636659899208997
+          ],
+          "persistence_mae": 18.2972972972973
+        },
+        {
+          "year": 2023,
+          "training_n": 202,
+          "validation_n": 37,
+          "selected": "rf_cases",
+          "n": 42,
+          "mae": 13.241102595070283,
+          "rmse": 15.301307246353657,
+          "skill_percent": -4.535020487396979,
+          "skill_95": [
+            -41.889676287375345,
+            15.362526225611417
+          ],
+          "persistence_mae": 12.666666666666666
+        }
+      ],
+      "pooled_other_city_pairs_available": 3878,
+      "test_records": [
+        {
+          "origin": "2022-12-25",
+          "target": "2023-01-08",
+          "actual": 45,
+          "predicted": 26.30961686804501,
+          "persistence": 22
+        },
+        {
+          "origin": "2023-01-08",
+          "target": "2023-01-22",
+          "actual": 66,
+          "predicted": 45.981801561915454,
+          "persistence": 45
+        },
+        {
+          "origin": "2023-01-15",
+          "target": "2023-01-29",
+          "actual": 40,
+          "predicted": 58.591611305704895,
+          "persistence": 63
+        },
+        {
+          "origin": "2023-01-22",
+          "target": "2023-02-05",
+          "actual": 60,
+          "predicted": 57.66750084806138,
+          "persistence": 66
+        },
+        {
+          "origin": "2023-01-29",
+          "target": "2023-02-12",
+          "actual": 71,
+          "predicted": 39.24539980382032,
+          "persistence": 40
+        },
+        {
+          "origin": "2023-02-05",
+          "target": "2023-02-19",
+          "actual": 63,
+          "predicted": 52.892457062503,
+          "persistence": 60
+        },
+        {
+          "origin": "2023-02-12",
+          "target": "2023-02-26",
+          "actual": 33,
+          "predicted": 59.76598327573269,
+          "persistence": 71
+        },
+        {
+          "origin": "2023-02-19",
+          "target": "2023-03-05",
+          "actual": 55,
+          "predicted": 51.552219143700626,
+          "persistence": 63
+        },
+        {
+          "origin": "2023-02-26",
+          "target": "2023-03-12",
+          "actual": 47,
+          "predicted": 26.263219756155614,
+          "persistence": 33
+        },
+        {
+          "origin": "2023-03-05",
+          "target": "2023-03-19",
+          "actual": 36,
+          "predicted": 38.56813733108627,
+          "persistence": 55
+        },
+        {
+          "origin": "2023-03-12",
+          "target": "2023-03-26",
+          "actual": 32,
+          "predicted": 31.677560092716035,
+          "persistence": 47
+        },
+        {
+          "origin": "2023-03-19",
+          "target": "2023-04-02",
+          "actual": 45,
+          "predicted": 31.95492866149783,
+          "persistence": 36
+        },
+        {
+          "origin": "2023-03-26",
+          "target": "2023-04-09",
+          "actual": 43,
+          "predicted": 31.365856229818228,
+          "persistence": 32
+        },
+        {
+          "origin": "2023-04-02",
+          "target": "2023-04-16",
+          "actual": 27,
+          "predicted": 42.32035891844216,
+          "persistence": 45
+        },
+        {
+          "origin": "2023-04-09",
+          "target": "2023-04-23",
+          "actual": 29,
+          "predicted": 39.60820194170307,
+          "persistence": 43
+        },
+        {
+          "origin": "2023-04-23",
+          "target": "2023-05-07",
+          "actual": 21,
+          "predicted": 29.0258078714587,
+          "persistence": 29
+        },
+        {
+          "origin": "2023-05-07",
+          "target": "2023-05-21",
+          "actual": 27,
+          "predicted": 22.209781110613132,
+          "persistence": 21
+        },
+        {
+          "origin": "2023-05-14",
+          "target": "2023-05-28",
+          "actual": 47,
+          "predicted": 23.078228912461917,
+          "persistence": 21
+        },
+        {
+          "origin": "2023-05-21",
+          "target": "2023-06-04",
+          "actual": 46,
+          "predicted": 29.835630876808317,
+          "persistence": 27
+        },
+        {
+          "origin": "2023-05-28",
+          "target": "2023-06-11",
+          "actual": 47,
+          "predicted": 50.84608001161509,
+          "persistence": 47
+        },
+        {
+          "origin": "2023-06-04",
+          "target": "2023-06-18",
+          "actual": 43,
+          "predicted": 56.65878999012549,
+          "persistence": 46
+        },
+        {
+          "origin": "2023-06-11",
+          "target": "2023-06-25",
+          "actual": 50,
+          "predicted": 57.753985434142145,
+          "persistence": 47
+        },
+        {
+          "origin": "2023-06-18",
+          "target": "2023-07-02",
+          "actual": 41,
+          "predicted": 53.33134195537599,
+          "persistence": 43
+        },
+        {
+          "origin": "2023-06-25",
+          "target": "2023-07-09",
+          "actual": 38,
+          "predicted": 67.03764322098614,
+          "persistence": 50
+        },
+        {
+          "origin": "2023-07-02",
+          "target": "2023-07-16",
+          "actual": 33,
+          "predicted": 58.11639341521413,
+          "persistence": 41
+        },
+        {
+          "origin": "2023-07-09",
+          "target": "2023-07-23",
+          "actual": 33,
+          "predicted": 53.676938350210676,
+          "persistence": 38
+        },
+        {
+          "origin": "2023-07-16",
+          "target": "2023-07-30",
+          "actual": 33,
+          "predicted": 46.407659544430885,
+          "persistence": 33
+        },
+        {
+          "origin": "2023-07-30",
+          "target": "2023-08-13",
+          "actual": 64,
+          "predicted": 45.62819102443582,
+          "persistence": 33
+        },
+        {
+          "origin": "2023-08-13",
+          "target": "2023-08-27",
+          "actual": 72,
+          "predicted": 79.45220976848248,
+          "persistence": 64
+        },
+        {
+          "origin": "2023-08-20",
+          "target": "2023-09-03",
+          "actual": 61,
+          "predicted": 65.79941363408237,
+          "persistence": 51
+        },
+        {
+          "origin": "2023-08-27",
+          "target": "2023-09-10",
+          "actual": 76,
+          "predicted": 82.09481423695823,
+          "persistence": 72
+        },
+        {
+          "origin": "2023-09-03",
+          "target": "2023-09-17",
+          "actual": 69,
+          "predicted": 75.5793284157503,
+          "persistence": 61
+        },
+        {
+          "origin": "2023-09-10",
+          "target": "2023-09-24",
+          "actual": 74,
+          "predicted": 85.6246798570274,
+          "persistence": 76
+        },
+        {
+          "origin": "2023-09-17",
+          "target": "2023-10-01",
+          "actual": 75,
+          "predicted": 85.35944002849739,
+          "persistence": 69
+        },
+        {
+          "origin": "2023-09-24",
+          "target": "2023-10-08",
+          "actual": 56,
+          "predicted": 71.84858884491392,
+          "persistence": 74
+        },
+        {
+          "origin": "2023-10-01",
+          "target": "2023-10-15",
+          "actual": 83,
+          "predicted": 68.04974492023803,
+          "persistence": 75
+        },
+        {
+          "origin": "2023-10-08",
+          "target": "2023-10-22",
+          "actual": 74,
+          "predicted": 57.01930236531645,
+          "persistence": 56
+        },
+        {
+          "origin": "2023-10-15",
+          "target": "2023-10-29",
+          "actual": 71,
+          "predicted": 74.07912343820553,
+          "persistence": 83
+        },
+        {
+          "origin": "2023-10-22",
+          "target": "2023-11-05",
+          "actual": 83,
+          "predicted": 67.00445482593037,
+          "persistence": 74
+        },
+        {
+          "origin": "2023-10-29",
+          "target": "2023-11-12",
+          "actual": 81,
+          "predicted": 61.06174693764099,
+          "persistence": 71
+        },
+        {
+          "origin": "2023-11-05",
+          "target": "2023-11-19",
+          "actual": 59,
+          "predicted": 72.90888037836615,
+          "persistence": 83
+        },
+        {
+          "origin": "2023-11-12",
+          "target": "2023-11-26",
+          "actual": 62,
+          "predicted": 67.46853882611832,
+          "persistence": 81
+        }
+      ]
+    }
+  ]
+}
