@@ -1,7 +1,7 @@
 {
   "version": 2,
   "historical_only": true,
-  "attempted_at": "2026-10-27T00:39:29.951Z",
+  "attempted_at": "2026-10-29T01:06:51.231Z",
   "weather_as_of": "2026-10-18",
   "rainfall_mm": 12.399999999999997,
   "temperature_c": 28.907142857142862,
@@ -11,10 +11,10 @@
   "status": "available-context-only",
   "message": "Weather is seasonal context only; showing baseline forecast. Dengue observations remain historical.",
   "provenance": {
-    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2026-08-18&end_date=2026-10-19&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
-    "retrieved_at": "2026-10-27T00:39:30.646Z",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2026-08-20&end_date=2026-10-21&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+    "retrieved_at": "2026-10-29T01:06:51.912Z",
     "license": "CC BY 4.0",
     "attribution": "Open-Meteo / Copernicus C3S / ECMWF ERA5",
-    "sha256": "0b7892d701e0388636363cca134fa28d2806544a149772b11373e38fd88d3b44"
+    "sha256": "6a97d26ba0dcb8cab9a0a58a0c7e21d101182c4c4c6f5882f87d2fb93758e42e"
   }
 }
