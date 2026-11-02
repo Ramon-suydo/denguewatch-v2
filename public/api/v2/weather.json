@@ -1,20 +1,20 @@
 {
   "version": 2,
   "historical_only": true,
-  "attempted_at": "2026-11-01T00:16:18.318Z",
-  "weather_as_of": "2026-10-18",
-  "rainfall_mm": 12.399999999999997,
-  "temperature_c": 28.907142857142862,
+  "attempted_at": "2026-11-02T00:56:46.349Z",
+  "weather_as_of": "2026-10-25",
+  "rainfall_mm": 3.5000000000000004,
+  "temperature_c": 29.366071428571427,
   "dengue_as_of": "2023-12-02",
   "model": "naive",
   "source": "ERA5 / Open-Meteo; one Manila point; past completed civil weeks only",
   "status": "available-context-only",
   "message": "Weather is seasonal context only; showing baseline forecast. Dengue observations remain historical.",
   "provenance": {
-    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2026-08-23&end_date=2026-10-24&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
-    "retrieved_at": "2026-11-01T00:16:19.038Z",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2026-08-24&end_date=2026-10-25&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+    "retrieved_at": "2026-11-02T00:56:46.818Z",
     "license": "CC BY 4.0",
     "attribution": "Open-Meteo / Copernicus C3S / ECMWF ERA5",
-    "sha256": "060aec80e166a095779874d6887ad03bab6020ea105b5fbcb81f22468bcd4c7f"
+    "sha256": "dacc861c265d8a71b11b3635364d586ebf714bc1a68ad28b0b010f92a6059531"
   }
 }
