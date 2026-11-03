@@ -1,0 +1,4 @@
+# Extra baselines for ml/manila_extras.py (install on top of ml/requirements.txt)
+statsmodels==0.15.0
+pandas==3.0.5
+patsy==1.0.3

@@ -5,12 +5,12 @@
     "verified": false,
     "date_range": [
       "2026-07-27",
-      "2026-10-25"
+      "2026-11-01"
     ],
-    "last_week_end": "2026-10-25",
-    "row_count": 13,
-    "total_estimate_count": 6,
-    "weekly_estimate_count": 9,
+    "last_week_end": "2026-11-01",
+    "row_count": 14,
+    "total_estimate_count": 7,
+    "weekly_estimate_count": 10,
     "observed_weekly_count": 4,
     "missing_source_count": 13,
     "first_week_prior_total_available": false,
@@ -185,6 +185,18 @@
       "raw_note": "",
       "source_url": null,
       "observed": true
+    },
+    {
+      "week_start": "2026-10-26",
+      "week_end": "2026-11-01",
+      "report_monday": "2026-11-02",
+      "total_since_jan1": 4539,
+      "weekly_new_cases": 265,
+      "total_is_estimate": true,
+      "weekly_is_estimate": true,
+      "note": "Tuesday total used; no Monday post",
+      "source_url": "https://www.facebook.com/photo/?fbid=1476421678004949&set=a.162290442751419",
+      "observed": false
     }
   ],
   "method": {
@@ -536,30 +548,30 @@
     ],
     "direction_weekly_change": -0.07997720269248598,
     "direction": "Steady",
-    "percentile": 99.67948717948718,
-    "exceeds_historical_max": false,
+    "percentile": 100,
+    "exceeds_historical_max": true,
     "recent_peak": 267,
     "context_extrapolation": true,
     "ranges": [
       {
         "horizon": 1,
-        "target_week_start": "2026-10-26",
-        "target_week_end": "2026-11-01",
+        "target_week_start": "2026-11-02",
+        "target_week_end": "2026-11-08",
         "n": 40,
-        "low": 162,
-        "median": 216,
-        "high": 274,
-        "persistence": 226
+        "low": 190,
+        "median": 254,
+        "high": 321,
+        "persistence": 265
       },
       {
         "horizon": 2,
-        "target_week_start": "2026-11-02",
-        "target_week_end": "2026-11-08",
+        "target_week_start": "2026-11-09",
+        "target_week_end": "2026-11-15",
         "n": 42,
-        "low": 150,
-        "median": 203,
-        "high": 305,
-        "persistence": 226
+        "low": 176,
+        "median": 238,
+        "high": 357,
+        "persistence": 265
       }
     ]
   },

@@ -13,6 +13,8 @@ import "./redesign.css";
 import "./ml-map.css";
 import "./overhaul/tokens.css";
 import "./overhaul/overhaul.css";
+import "./ui-fixes.css";
+import { startMotion } from "./motion";
 import { ToastProvider } from "./components/ui/Toast";
 let mounted=false;function mount(){if(mounted)return;mounted=true;const root=document.getElementById('root')!,tree=<StrictMode><ToastProvider><App/></ToastProvider></StrictMode>;if(root.hasAttribute('data-prerendered'))hydrateRoot(root,tree);else createRoot(root).render(tree);}if(document.documentElement.dataset.shellReady==='true')mount();else window.addEventListener('DOMContentLoaded',mount,{once:true});
 
@@ -26,3 +28,4 @@ if (import.meta.env.PROD && "serviceWorker" in navigator) {
     }, 3000);
   }, {once: true});
 }
+startMotion();

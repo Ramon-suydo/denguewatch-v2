@@ -1,0 +1,236 @@
+/* Forecast card, alert levels, results table and gentle motion (ui-fixes). */
+.alert-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .8rem;border-radius:var(--pill);font-weight:700;font-size:.95rem;border:1px solid transparent;white-space:nowrap}
+.alert-badge>span{font-weight:800}
+.alert-low{background:var(--risk-low);color:#26401a;border-color:#a9c18b}
+.alert-medium{background:#fbe3b4;color:#5b3a00;border-color:#d9a54a}
+.alert-high{background:var(--coral);color:var(--on-coral)}
+.alert-none{background:var(--surface-soft);color:var(--muted)}
+:root[data-theme=night] .alert-low{background:#2f4a2a;color:#e3f2d2;border-color:#5f8a52}
+:root[data-theme=night] .alert-medium{background:#5a4416;color:#ffe7b5;border-color:#a77d2a}
+
+.forecast-card h2{margin-block:.25rem 1rem}
+.forecast-hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:1.25rem;align-items:start}
+.forecast-main{padding:1.25rem;border-radius:1rem;background:var(--surface-soft);display:flex;flex-direction:column;gap:.6rem;align-items:flex-start}
+.forecast-side{display:flex;flex-direction:column;gap:1rem}
+.forecast-side>div{border-top:1px solid var(--line);padding:1rem 0 0;display:flex;flex-direction:column;gap:.4rem;align-items:flex-start}
+.forecast-label{margin:0;font-size:var(--caption);color:var(--muted);font-weight:600;text-transform:none}
+.rf-number{margin:0;line-height:1;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.rf-number strong{font-family:Fraunces,Georgia,serif;font-size:clamp(3rem,7vw,4.75rem);color:var(--bay)}
+.rf-number>span{color:var(--muted);font-weight:600}
+.forecast-small{margin:0;font-size:1.05rem}
+.forecast-small strong{font-size:1.5rem}
+.forecast-meaning{margin:0;max-width:46ch}
+.forecast-check{margin-block:1.25rem;padding:1rem 0 0;border-top:1px solid var(--line)}
+.forecast-check h3{margin:0 0 .4rem;font-size:1rem}
+.forecast-check ul{margin:0;padding-inline-start:1.1rem}
+.forecast-chart{margin:1.25rem 0;color:var(--bay)}
+.forecast-chart figcaption{color:var(--muted);font-size:var(--caption)}
+.forecast-note{font-size:var(--caption);color:var(--muted);margin-block:.5rem}
+.forecast-care{margin-top:1rem;font-weight:600}
+@media(max-width:720px){.forecast-hero{grid-template-columns:1fr}}
+
+.model-results{margin-block:2rem;color:var(--ink)}
+.results-block{margin-block:1.25rem}
+.results-table{width:100%;border-collapse:collapse}
+.results-table th,.results-table td{padding:.6rem .75rem;border-bottom:1px solid var(--line);text-align:left}
+.results-table td{font-variant-numeric:tabular-nums}
+.results-table tr.best th,.results-table tr.best td{font-weight:700;background:var(--surface-soft)}
+.results-alert{color:var(--muted)}
+.results-levels ul{list-style:none;padding:0;display:grid;gap:.5rem}
+.results-levels li{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.importance-bars{list-style:none;padding:0;display:grid;gap:.5rem}
+.importance-bars li{display:grid;grid-template-columns:minmax(10rem,16rem) 1fr 3rem;gap:.75rem;align-items:center;animation:rise var(--slow) ease both}
+.importance-track{height:.7rem;border-radius:var(--pill);background:var(--surface-soft);overflow:hidden}
+.importance-fill{display:block;height:100%;border-radius:inherit;background:var(--bay);transform-origin:left;animation:grow-x 700ms ease both}
+.technical-heading{margin-top:3rem}
+.results-more{margin-top:-1rem}
+
+/* Motion: soft entrance and growing bars. Nothing loops; the alert colour carries the urgency. */
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes grow-y{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes grow-x{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.fade-in{animation:rise var(--slow) ease both}
+.forecast-card .forecast-main,.forecast-card .forecast-side>div{animation:rise var(--slow) ease both}
+.forecast-card .forecast-side>div:nth-child(2){animation-delay:120ms}
+.forecast-bar rect{transform-box:fill-box;transform-origin:bottom;animation:grow-y 650ms cubic-bezier(.2,.8,.2,1) both;animation-delay:inherit}
+.forecast-bar{animation:rise 400ms ease both}
+.photo-hero .hero-title-block>*{animation:rise 700ms ease both}
+.photo-hero .hero-title-block>*:nth-child(2){animation-delay:80ms}
+.photo-hero .hero-title-block>*:nth-child(3){animation-delay:160ms}
+.photo-hero .hero-title-block>*:nth-child(4){animation-delay:240ms}
+.ui-button{transition:transform var(--fast) ease,box-shadow var(--fast) ease}
+.ui-button:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){
+ .fade-in,.forecast-card .forecast-main,.forecast-card .forecast-side>div,.forecast-bar,.forecast-bar rect,.alert-high,.importance-bars li,.importance-fill,.photo-hero .hero-title-block>*{animation:none!important}
+ .ui-button:hover{transform:none}
+}
+.forecast-chart svg{color:var(--bay);display:block;width:100%;height:auto;max-height:260px}
+.forecast-chart figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .5rem;margin-top:.5rem}
+.forecast-chart .key{display:inline-block;width:.85rem;height:.85rem;border-radius:3px;background:var(--bay)}
+.forecast-chart .key-estimated{opacity:.38}
+.forecast-chart .key-forecast{background:none;border:2px dashed var(--coral)}
+.forecast-chart .key:not(:first-child){margin-left:.4rem}
+
+/* ---- Round 2: actions, comparison, tools, guide, glossary, print, motion ---- */
+.forecast-support{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:1.25rem;margin-top:1.25rem}
+@media(max-width:720px){.forecast-support{grid-template-columns:1fr}}
+.alert-actions{border-radius:1rem;padding:1.1rem 1.25rem;border:1px solid var(--line);background:var(--surface)}
+.alert-actions.level-high{border-color:var(--coral);background:color-mix(in srgb,var(--coral) 7%,var(--surface))}
+.alert-actions.level-medium{border-color:#d9a54a;background:color-mix(in srgb,#fbe3b4 40%,var(--surface))}
+.alert-actions h3{margin:0 0 .6rem;font-size:1.05rem}
+.alert-actions ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.alert-actions li{display:flex;gap:.6rem;align-items:flex-start;animation:rise 450ms ease both}
+.alert-actions li>span{flex:none;display:grid;place-items:center;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--bay);color:var(--on-bay);font-size:.8rem;font-weight:800;margin-top:.1rem}
+.same-week{border:1px solid var(--line);border-radius:1rem;padding:1.1rem 1.25rem}
+.same-week h3{margin:0 0 .6rem;font-size:1.05rem}
+.same-week ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.same-week li{display:grid;grid-template-columns:6.5rem 1fr 3rem;gap:.6rem;align-items:center;font-size:.95rem}
+.same-week li strong{text-align:right;font-variant-numeric:tabular-nums}
+.same-week li.now{font-weight:700;color:var(--coral)}
+.same-week-track{height:.65rem;border-radius:var(--pill);background:var(--surface-soft);overflow:hidden}
+.same-week-fill{display:block;height:100%;border-radius:inherit;background:var(--risk-raised);transform-origin:left;animation:grow-x 800ms cubic-bezier(.2,.8,.2,1) both}
+.same-week li.now .same-week-fill{background:var(--coral)}
+.card-tools{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
+.card-tools .ui-button{min-height:44px}
+.reading-guide{display:flex;align-items:center;gap:1rem;margin-block:0 1rem;padding:.6rem .6rem .6rem 1rem;border-radius:1rem;background:color-mix(in srgb,var(--bay) 7%,var(--surface));border:1px solid color-mix(in srgb,var(--bay) 22%,var(--line))}
+.reading-guide ol{flex:1;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1.5rem}
+.reading-guide li{display:flex;gap:.5rem;align-items:center;font-size:.95rem}
+.guide-step{flex:none;display:grid;place-items:center;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--bay);color:var(--on-bay);font-weight:800;font-size:.8rem}
+.guide-close{flex:none;min-height:40px;padding:.3rem 1rem;border-radius:var(--pill);border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:600;cursor:pointer}
+@media(max-width:720px){.reading-guide{align-items:flex-start;flex-direction:column}.reading-guide ol{flex-direction:column}}
+.results-glossary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
+.results-glossary>div{border-top:1px solid var(--line);padding:.9rem 0 0}
+.results-glossary dt{font-weight:800;color:var(--bay)}
+.results-glossary dd{margin:.25rem 0 0;font-size:.95rem}
+@media(max-width:720px){.results-glossary{grid-template-columns:1fr}}
+.results-table tbody tr{transition:background var(--fast) ease}
+.results-table tbody tr:hover{background:var(--surface-soft)}
+.results-table tbody tr{animation:rise 450ms ease both}
+.results-table tbody tr:nth-child(2){animation-delay:60ms}.results-table tbody tr:nth-child(3){animation-delay:120ms}.results-table tbody tr:nth-child(4){animation-delay:180ms}
+
+/* Cards are not clickable, so they do not lift on hover. */
+.alert-badge{animation:pop 420ms cubic-bezier(.22,1,.36,1) both}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+.forecast-check{animation:rise var(--slow) ease both}
+.rf-number strong{animation:rise 600ms ease both}
+html{scroll-behavior:smooth}
+.print-only{display:none}
+
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .alert-actions li,.same-week-fill,.reading-guide,.reading-guide li,.results-table tbody tr,.alert-badge,.forecast-check,.rf-number strong{animation:none!important}
+ .forecast-side>div:hover,.district-card:hover,.action-card-grid article:hover,.carousel article:hover,.model-invitation:hover,.results-glossary>div:hover{transform:none}
+}
+
+/* Printable weekly bulletin (opened alone in its own window by printBulletin) */
+.bulletin-window{background:#fff;margin:0;padding:24px}
+.bulletin-window .forecast-card{border:none;margin:0;padding:0;max-width:900px}
+.bulletin-window .print-only{display:flex}
+.bulletin-window .print-header{justify-content:space-between;border-bottom:2px solid currentColor;padding-bottom:8px;margin-bottom:12px}
+.bulletin-window .no-print,.bulletin-window .forecast-card details,.bulletin-window .forecast-care a{display:none!important}
+.bulletin-window *{animation:none!important;transition:none!important}
+@media print{
+ @page{margin:12mm}
+ .no-print{display:none!important}
+ .bulletin-window{padding:0;zoom:.86}
+ .bulletin-window .forecast-main,.bulletin-window .alert-actions,.bulletin-window .same-week,.bulletin-window figure{break-inside:avoid}
+ .alert-badge,.alert-actions,.forecast-main{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* ---- Round 3: range, facts, 2026 check, track record ---- */
+.rf-range{margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;animation:rise 500ms ease 150ms both}
+.rf-honesty{margin:0;font-size:var(--caption);color:var(--muted);max-width:52ch}
+.results-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
+.results-facts article,.results-recent,.track-record{border:1px solid var(--line);border-radius:1rem;padding:1.1rem 1.25rem;animation:rise var(--slow) ease both}
+.results-facts article:nth-child(2){animation-delay:100ms}
+.results-facts h3,.results-recent h3,.track-record h3{margin:0 0 .5rem;font-size:1.1rem}
+.results-recent,.track-record{margin:1rem 0}
+.track-record{background:color-mix(in srgb,var(--bay) 5%,var(--surface))}
+.mini-bars{list-style:none;padding:0;margin:.5rem 0;display:grid;gap:.45rem}
+.mini-bars li{display:grid;grid-template-columns:8rem 1fr 3rem;gap:.6rem;align-items:center}
+.mini-bars li strong{text-align:right;font-variant-numeric:tabular-nums}
+.mini-bars li.lead{font-weight:700}
+.mini-track{height:.6rem;border-radius:var(--pill);background:var(--surface-soft);overflow:hidden}
+.mini-fill{display:block;height:100%;border-radius:inherit;background:var(--risk-raised);transform-origin:left;animation:grow-x 750ms cubic-bezier(.2,.8,.2,1) both}
+.mini-bars li.lead .mini-fill{background:var(--bay)}
+@media(max-width:720px){.results-facts{grid-template-columns:1fr}.mini-bars li{grid-template-columns:6.5rem 1fr 2.5rem}}
+@media (prefers-reduced-motion:reduce){.rf-range,.results-facts article,.results-recent,.track-record,.mini-fill{animation:none!important}}
+.alert-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}
+.chance-high{font-weight:700;font-size:.95rem;padding:.25rem .7rem;border-radius:var(--pill);background:var(--surface);border:1px dashed var(--coral);color:var(--ink);animation:pop 420ms cubic-bezier(.22,1,.36,1) 150ms both}
+@media (prefers-reduced-motion:reduce){.chance-high{animation:none!important}}
+
+/* ===================== Round 4: one authored moment, then calm ===================== */
+/* The water-drop intro is the page's single motion moment (once per visit). After it, motion only
+   helps reading: content eases in as it scrolls into view and chart bars grow once. Nothing loops. */
+
+/* Landing intro: a water drop falls, ripples spread, the name appears, then the curtain lifts. */
+.dw-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;pointer-events:none;
+ background:radial-gradient(circle at 50% 45%,#16645e 0%,#0e3f3c 55%,#0a2b2a 100%);color:#fff;
+ clip-path:inset(0 0 0 0);transition:clip-path 800ms cubic-bezier(.7,0,.2,1),opacity 800ms ease}
+.dw-intro.dw-intro-out{clip-path:inset(0 0 100% 0);opacity:.9}
+.dw-intro-inner{position:relative;display:grid;justify-items:center;gap:.6rem}
+.dw-drop{width:58px;height:72px;fill:#9cd8ca;filter:drop-shadow(0 8px 20px #0006);animation:drop-fall 800ms cubic-bezier(.5,0,.7,.4) both,drop-land 300ms ease-out 800ms both}
+.dw-ring{position:absolute;top:58px;left:50%;width:40px;height:12px;margin-left:-20px;border:2px solid #9cd8ca;border-radius:50%;opacity:0;animation:ring 1000ms ease-out 780ms both}
+.dw-ring-2{animation-delay:950ms}
+.dw-word{margin:.8rem 0 0;font-family:Fraunces,Georgia,serif;font-size:clamp(2rem,6vw,3.4rem);letter-spacing:.01em;animation:word-in 700ms cubic-bezier(.22,1,.36,1) 650ms both}
+.dw-word b{color:#9cd8ca;font-weight:inherit}.dw-word i{font-style:normal;font-size:.55em;vertical-align:super;color:#ffab94}
+.dw-tag{margin:0;font-size:.95rem;opacity:.85;letter-spacing:.06em;text-transform:uppercase;animation:word-in 600ms ease 900ms both}
+@keyframes drop-fall{from{transform:translateY(-55vh) scale(.6);opacity:0}60%{opacity:1}to{transform:translateY(0) scale(1);opacity:1}}
+@keyframes drop-land{0%{transform:scale(1,1)}50%{transform:scale(1.15,.85)}100%{transform:scale(1,1)}}
+@keyframes ring{from{transform:scale(.4);opacity:.9}to{transform:scale(6);opacity:0}}
+@keyframes word-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Scroll progress bar */
+.dw-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;transform-origin:left;transform:scaleX(0);background:var(--bay);pointer-events:none}
+
+/* Hero: words rise in order. They wait for the intro only on the visit where the intro plays. */
+.motion-ready .word-reveal .word{display:inline-block;animation:word-in 600ms cubic-bezier(.22,1,.36,1) both;animation-delay:calc(.05s + var(--w) * 45ms)}
+.motion-ready .photo-hero .hero-mode-chip{animation:word-in 500ms ease both}
+.motion-ready .photo-hero .hero-subtitle,.motion-ready .photo-hero .hero-actions,.motion-ready .photo-hero .hero-forecast{animation:word-in 600ms ease .35s both}
+.dw-intro-playing .word-reveal .word{animation-delay:calc(1.55s + var(--w) * 70ms)}
+.dw-intro-playing .photo-hero .hero-mode-chip{animation-delay:1.45s}
+.dw-intro-playing .photo-hero .hero-subtitle,.dw-intro-playing .photo-hero .hero-actions,.dw-intro-playing .photo-hero .hero-forecast{animation-delay:2.1s}
+
+/* Scroll reveals (only after the script marks the page ready, so content is never hidden without it) */
+.motion-ready .m-reveal:not(.inview){opacity:0;transform:translateY(16px)}
+.motion-ready .m-reveal{transition:opacity 600ms cubic-bezier(.22,1,.36,1),transform 600ms cubic-bezier(.22,1,.36,1);transition-delay:calc(var(--i,0) * 70ms)}
+.motion-ready .forecast-chart:not(.inview) .forecast-bar rect{transform:scaleY(0)}
+.motion-ready .forecast-chart.inview .forecast-bar rect{transform:scaleY(1);transition:transform 800ms cubic-bezier(.22,1,.36,1);transition-delay:inherit}
+.motion-ready .forecast-chart .forecast-bar rect{animation:none}
+
+/* High alert: a steady coral frame instead of moving effects. */
+.forecast-main:has(.alert-high){box-shadow:inset 0 0 0 2px var(--coral)}
+.rf-number strong{display:inline-block;animation:word-in 600ms cubic-bezier(.22,1,.36,1) both}
+
+/* Buttons: a small press on click is the only feedback motion. */
+.ui-button:active,.card-tools button:active,.guide-close:active,[role="group"] button:active{transform:scale(.97)!important;transition:transform 80ms ease}
+
+/* Loading placeholders shimmer (shows that something is loading) */
+[class*="skeleton"],.answer-skeleton,.map-skeleton{position:relative;overflow:hidden}
+[class*="skeleton"]::after,.answer-skeleton::after,.map-skeleton::after{content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(100deg,transparent 20%,color-mix(in srgb,var(--surface) 70%,transparent) 50%,transparent 80%);animation:shimmer 1.3s ease-in-out infinite}
+@keyframes shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+
+/* Section headings: one short coral rule under the big h2 titles only, set below the text. */
+.bay-app .m-reveal h2{position:relative;padding-bottom:.35em}
+.bay-app .m-reveal h2::after{content:"";position:absolute;left:0;bottom:0;width:3rem;height:3px;border-radius:2px;background:var(--coral)}
+
+@media (prefers-reduced-motion:reduce){
+ .dw-intro,.dw-progress{display:none!important}
+ .word-reveal .word,.forecast-bar rect,.rf-number strong,[class*="skeleton"]::after,.answer-skeleton::after,.map-skeleton::after,.hero-forecast{animation:none!important}
+}
+@media print{.dw-intro,.dw-progress{display:none!important}.m-reveal{opacity:1!important;transform:none!important}}
+
+/* Hero forecast summary: next week's number readable over the photo without scrolling. */
+.bay-app .photo-hero .hero-forecast{display:grid;grid-template-columns:minmax(0,1fr);gap:.35rem;max-width:30rem;margin-block:1.25rem .5rem;padding:1rem 1.25rem;border-radius:1rem;background:color-mix(in srgb,#0b2f2d 86%,transparent);color:#fff;text-decoration:none;border:1px solid #ffffff2e;transition:background var(--fast) ease}
+.hero-forecast:hover{background:color-mix(in srgb,#0b2f2d 95%,transparent)}
+.hero-forecast:focus-visible{outline:3px solid #9cd8ca;outline-offset:3px}
+.bay-app .hero-forecast>span{display:block}
+.bay-app .hero-forecast .hero-forecast-meta{display:flex}
+.hero-forecast-label{font-size:.95rem;color:#d6ece6}
+.bay-app .hero-forecast .hero-forecast-value{font-size:1.05rem;font-weight:600;color:#fff}
+.hero-forecast-value strong{font-family:Fraunces,Georgia,serif;font-size:clamp(2.4rem,5vw,3.2rem);line-height:1;margin-right:.35rem;color:#fff}
+.hero-forecast-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;font-size:.95rem;color:#d6ece6}
+.hero-forecast-quick{font-weight:600;color:#ffd9cf}
+.bay-app .photo-hero .hero-actions .ui-button{font-size:1rem;min-height:48px;padding-inline:1.4rem}
+.results-summary h3,.results-levels h3{margin-top:2.25rem}

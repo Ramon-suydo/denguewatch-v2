@@ -66,9 +66,11 @@
     "test:visual": "playwright test --config playwright.visual.config.ts",
     "live:ingest": "tsx scripts/ingest_live_manila.ts",
     "live:check": "tsx scripts/check-live-manila-data.ts",
+    "live:add-week": "tsx scripts/add-manila-week.ts",
     "count:evaluate": "node scripts/expanded-count.mjs evaluate",
     "count:test": "node scripts/expanded-count.mjs test",
     "count:check": "node scripts/check-expanded-count.mjs",
+    "count:extras": "node scripts/expanded-extras.mjs",
     "count:weather": "tsx scripts/fetch-expanded-weather.ts"
   },
   "dependencies": {
