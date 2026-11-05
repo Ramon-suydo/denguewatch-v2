@@ -1,6 +1,7 @@
 // Add one weekly Manila total from the Manila PIO "Daily Reporting W.I.L.D. Diseases" post.
 //   npm run live:add-week -- --total 4480 --report 2026-11-02 --url <link to the Manila PIO post>
 // Optional: --estimated --note "why it is estimated"
+// --report is the date of the post: the Monday post or, if there was none, the first post later that week.
 // Uses the same validation as the admin upload (appendWeek): Monday report date, whole numbers,
 // non-decreasing totals, public Facebook post URL. Afterwards re-run the Random Forest
 // (npm run count:evaluate && npm run count:extras) so next week's forecast and alert refresh.
@@ -10,7 +11,7 @@ import {appendWeek,buildLive,type LiveRow,type HistoricalWeek} from '../src/live
 const args=process.argv.slice(2),get=(name:string)=>{const i=args.indexOf('--'+name);return i>=0?args[i+1]:undefined;};
 const total=Number(get('total')),report=get('report')??'',url=get('url')??'',estimated=args.includes('--estimated'),note=get('note')??'';
 if(!Number.isSafeInteger(total)||total<0)throw Error('Use --total with the "total cases since Jan 1" number, e.g. --total 4480');
-if(!/^\d{4}-\d{2}-\d{2}$/.test(report))throw Error('Use --report with the Monday report date, e.g. --report 2026-11-02');
+if(!/^\d{4}-\d{2}-\d{2}$/.test(report))throw Error('Use --report with the date of the post, e.g. --report 2026-11-02');
 
 const shipped=JSON.parse(await readFile('public/live-manila/weekly.json','utf8')) as {rows:LiveRow[]};
 const processed=JSON.parse(await readFile('data/processed/manila_live_weekly.json','utf8')) as {rows:LiveRow[];input_sha256?:string};

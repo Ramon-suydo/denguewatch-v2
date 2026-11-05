@@ -234,3 +234,5 @@ html{scroll-behavior:smooth}
 .hero-forecast-quick{font-weight:600;color:#ffd9cf}
 .bay-app .photo-hero .hero-actions .ui-button{font-size:1rem;min-height:48px;padding-inline:1.4rem}
 .results-summary h3,.results-levels h3{margin-top:2.25rem}
+.forecast-chart .key-forecast{background:color-mix(in srgb,var(--coral) 12%,transparent)}
+.forecast-chart-note{margin:.35rem 0 0;font-size:var(--caption);color:var(--muted);max-width:75ch}

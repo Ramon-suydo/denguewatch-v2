@@ -69,8 +69,15 @@ export type LiveData=ReturnType<typeof buildLive>;
 export function appendWeek(rows:LiveRow[],input:{total:number;report:string;url:string;estimated:boolean;note:string;evidence?:string}):LiveRow[]{
  const previous=rows.at(-1);if(!previous)throw Error('A prior reviewed series is required.');
  const previousObserved=[...rows].reverse().find(r=>!r.total_is_estimate);if(!previousObserved)throw Error('No observed cumulative anchor.');
+ // The week's reported total is the Manila PIO post on the report Monday or, if there was none, the first post
+ // later that week (up to Sunday). It is accepted as reported whichever day it was posted.
+ const monday=shift(previous.week_end,8);
+ if(!isoDate(input.report))throw Error('Use the date of the Manila post (YYYY-MM-DD).');
+ const offset=(Date.parse(input.report+'T00:00:00Z')-Date.parse(monday+'T00:00:00Z'))/DAY;
+ if(offset<0||offset>6)throw Error(`This week's report Monday is ${monday}. Use a post dated ${monday} to ${shift(monday,6)}.`);
+ const day=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][offset],note=offset===0?input.note:(input.note.trim()||`${day} ${input.report} post used (no Monday post).`);
  // A weekly difference touching an estimated total remains estimated; validation requires a note.
- const next:LiveRow={week_start:shift(previous.week_start,7),week_end:shift(previous.week_end,7),report_monday:input.report,total_since_jan1:input.total,weekly_new_cases:input.total-previous.total_since_jan1,total_is_estimate:input.estimated,weekly_is_estimate:input.estimated||previous.total_is_estimate,note:input.note,source_url:input.url,evidence_file:input.evidence||null,observed:!input.estimated&&!previous.total_is_estimate};
+ const next:LiveRow={week_start:shift(previous.week_start,7),week_end:shift(previous.week_end,7),report_monday:monday,total_since_jan1:input.total,weekly_new_cases:input.total-previous.total_since_jan1,total_is_estimate:input.estimated,weekly_is_estimate:input.estimated||previous.total_is_estimate,note,source_url:input.url,evidence_file:input.evidence||null,observed:!input.estimated&&!previous.total_is_estimate};
  // Never call the whole multiweek difference a one-week observation.
  return validateLiveRows([...rows,next],rows.filter(r=>r.source_url===null).map(r=>r.week_end));
 }

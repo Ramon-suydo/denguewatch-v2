@@ -33,7 +33,7 @@ function alertMeaning(level:AlertLevel,th:Thresholds,t:(en:string,fl:string)=>st
 
 // Next-week forecast shared by the forecast card and the homepage hero, so both always show the same numbers.
 export function useNextWeekForecast(data:LiveData){
- const {expanded,extras}=useModelForecast(),useRf=forecastMatches(expanded,data);
+ const {expanded,extras,log}=useModelForecast(),useRf=forecastMatches(expanded,data);
  const rf=[1,2].map(h=>{const e=extras?.horizons.find(x=>x.horizon===h),f=expanded?.horizons.find(x=>x.horizon===h)?.forecast;
   const same=e?.forecast.target===f?.target;
   return f?{horizon:h,target:f.target,predicted:Math.round(f.predicted),level:same?e!.forecast.alert_level:null,thresholds:same?e!.forecast.thresholds:null,range:same?(e!.calibrated?.adopted?{low:e!.calibrated.low,high:e!.calibrated.high,test_coverage_percent:e!.calibrated.loo_coverage_percent}:e!.forecast_range??null):null,
@@ -41,7 +41,12 @@ export function useNextWeekForecast(data:LiveData){
  const bias=extras?.recent_2026_check?.find(c=>c.horizon===1)?.rf_mean_bias??0;
  const next=useRf?rf[0]:null,later=useRf?rf[1]:null;
  const quick=data.method.ranges.find(r=>r.horizon===1)!;
- return {expanded,extras,next,later,quick,bias,checks:forecastChecks(expanded,data)};
+ // One-week-ahead Random Forest forecast for each past week: back-tested values first, then forecasts saved
+ // before the count was known (the forecast log), which take precedence.
+ const pastForecasts=new Map<string,{value:number;saved:boolean}>();
+ for(const p of expanded?.horizons.find(h=>h.horizon===1)?.unverified_2026_prequential??[])pastForecasts.set(p.target,{value:Math.round(p.predicted),saved:false});
+ for(const e of log??[])pastForecasts.set(e.target_week_end,{value:Math.round(e.random_forest),saved:true});
+ return {expanded,extras,next,later,quick,bias,pastForecasts,checks:forecastChecks(expanded,data)};
 }
 
 // Homepage hero summary: the one number a health worker came for, visible without scrolling.
@@ -57,11 +62,12 @@ export function HeroForecast({data}:{data:LiveData}){
 
 export function LiveManilaCard({data}:{data:LiveData}){
  const {t}=useRedesignLanguage(),latest=data.rows.at(-1)!,m=data.method,narrow=useNarrow();
- const {extras,next,later,quick,bias,checks}=useNextWeekForecast(data);
+ const {extras,next,later,quick,bias,checks,pastForecasts}=useNextWeekForecast(data);
  const error=extras?.horizons.find(h=>h.horizon===1)?.metrics.find(x=>x.label==='Random Forest');
- const allBars=[...data.rows.map(r=>({key:r.week_end,value:r.weekly_new_cases,estimated:r.weekly_is_estimate,forecast:false})),...(next?[{key:next.target,value:next.predicted,estimated:false,forecast:true}]:[])];
- const bars=narrow?allBars.slice(-8):allBars,W=narrow?400:900,lastActual=bars.length-(bars.at(-1)?.forecast?2:1);
- const max=Math.max(1,...bars.map(b=>b.value)),width=W/bars.length;
+ // One group per week: the forecast made on that Monday next to the count reported afterwards.
+ const allWeeks=[...data.rows.map(r=>({key:r.week_end,actual:r.weekly_new_cases as number|null,estimated:r.weekly_is_estimate,forecast:pastForecasts.get(r.week_end)??null})),...(next?[{key:next.target,actual:null,estimated:false,forecast:{value:next.predicted,saved:true}}]:[])];
+ const weeks=narrow?allWeeks.slice(-6):allWeeks,W=narrow?400:900;
+ const max=Math.max(1,...weeks.flatMap(w=>[w.actual??0,w.forecast?.value??0])),width=W/weeks.length,shownForecasts=weeks.some(w=>w.forecast),firstSaved=[...pastForecasts].filter(([,f])=>f.saved).map(([k])=>k).sort()[0];
  const direction=t(m.direction,({Rising:'Tumataas',Steady:'Halos pareho',Falling:'Bumababa',Unavailable:'Hindi matukoy'} as Record<string,string>)[m.direction]);
  return <article className="live-manila-card forecast-card" data-live-manila data-source="/live-manila/weekly.json + /research/manila-expanded.json + /research/manila-extras.json">
   <div className="print-only print-header"><strong>DengueWatch AI · {t('Weekly Dengue Bulletin, City of Manila','Lingguhang Bulletin sa Dengue, Lungsod ng Maynila')}</strong><span>{t('Printed','Na-print')} {manilaToday()}</span></div>
@@ -92,14 +98,18 @@ export function LiveManilaCard({data}:{data:LiveData}){
   {next?.level&&<div className="forecast-support"><AlertActions level={next.level}/>{next.thresholds&&<SameWeekCompare thresholds={next.thresholds} current={next.predicted}/>}</div>}
   <CardTools data={data}/>
   {checks.length>0&&<div className="forecast-check" data-forecast-check><h3>{t('How did our last forecast do?','Gaano katumpak ang huling pagtataya?')}</h3><ul>{checks.map(c=><li key={c.target}>{span(startOf(c.target),c.target)}: {t('forecast','pagtataya')} <strong>{c.predicted}</strong> · {t('reported','naiulat')} <strong>{c.actual}</strong> ({t('difference','pagitan')} {Math.abs(c.actual-c.predicted)})</li>)}</ul></div>}
-  <figure className="forecast-chart"><svg viewBox={`0 0 ${W} 200`} role="img" aria-label={t('Weekly dengue cases in Manila, with next week\'s forecast as a dashed bar. Lighter bars are estimated weeks.','Lingguhang kaso ng dengue sa Maynila; putol-putol ang hula sa susunod na linggo. Mas mapusyaw ang tinatayang linggo.')}>
-   <line x1="0" x2={W} y1="150" y2="150" stroke="var(--line)" strokeWidth="1"/>
-   {bars.map((b,i)=>{const height=b.value/max*120,x=i*width+width*.18,w=width*.64,labelled=b.forecast||i===lastActual;return <g key={b.key} className="forecast-bar" style={{animationDelay:`${i*35}ms`}}>
-    <rect data-live-bar={b.key} data-estimated={String(b.estimated)} x={x} y={150-height} width={w} height={height} rx="3" fill={b.forecast?'none':'currentColor'} fillOpacity={b.estimated?.38:1} stroke={b.forecast?'var(--coral)':'none'} strokeWidth={b.forecast?2:0} strokeDasharray={b.forecast?'5 4':undefined}><title>{day(b.key)}: {b.value} {b.forecast?t('(forecast)','(pagtataya)'):b.estimated?t('(estimated)','(tinataya)'):''}</title></rect>
-    {labelled&&<text x={x+w/2} y={142-height} textAnchor="middle" fontSize="15" fontWeight="700" fill={b.forecast?'var(--coral)':'var(--ink)'}>{b.value}</text>}
-    {(labelled||i%2===(lastActual%2))&&<text x={x+w/2} y="172" textAnchor="middle" fontSize="13" fontWeight={labelled?700:400} fill={b.forecast?'var(--coral)':'var(--muted)'}>{b.forecast?t('Next','Susunod'):day(b.key)}</text>}
-   </g>;})}</svg>
-   <figcaption><span className="key key-reported" aria-hidden="true"/> {t('Reported','Naiulat')} <span className="key key-estimated" aria-hidden="true"/> {t('Estimated','Tinataya')} {next&&<><span className="key key-forecast" aria-hidden="true"/> {t('Forecast','Pagtataya')}</>} · {t(narrow?'Last 8 weeks, by week ending.':'Weekly cases, by week ending.',narrow?'Huling 8 linggo, ayon sa katapusan ng linggo.':'Lingguhang kaso, ayon sa katapusan ng linggo.')}</figcaption></figure>
+  <figure className="forecast-chart"><svg viewBox={`0 0 ${W} 205`} role="img" aria-label={t('Weekly dengue cases in Manila. For each week, the Random Forest forecast (dashed) stands next to the number reported afterwards (solid).','Lingguhang kaso ng dengue sa Maynila. Sa bawat linggo, katabi ng pagtataya ng Random Forest (putol-putol) ang naiulat na bilang (buo).')}>
+   <line x1="0" x2={W} y1="160" y2="160" stroke="var(--line)" strokeWidth="1"/>
+   {weeks.map((wk,i)=>{const gx=i*width,bw=width*(shownForecasts?.36:.6),gap=width*.04,fx=gx+width*.1,ax=shownForecasts?fx+bw+gap:gx+width*.2,h=(v:number)=>v/max*125,isNext=wk.actual===null;
+    return <g key={wk.key} className="forecast-bar" style={{animationDelay:`${i*35}ms`}}>
+     {wk.forecast&&<><rect data-forecast-bar={wk.key} x={isNext?gx+width*.3:fx} y={160-h(wk.forecast.value)} width={bw} height={h(wk.forecast.value)} rx="3" fill="color-mix(in srgb, var(--coral) 12%, transparent)" stroke="var(--coral)" strokeWidth="1.5" strokeDasharray="4 3"><title>{day(wk.key)}: {t('forecast','pagtataya')} {wk.forecast.value}{wk.forecast.saved?'':' '+t('(back-tested)','(back-test)')}</title></rect>
+      <text x={(isNext?gx+width*.3:fx)+bw/2} y={153-h(wk.forecast.value)} textAnchor="middle" fontSize={narrow?12:11} fontWeight="700" fill="var(--coral)">{wk.forecast.value}</text></>}
+     {wk.actual!==null&&<><rect data-live-bar={wk.key} data-estimated={String(wk.estimated)} x={ax} y={160-h(wk.actual)} width={bw} height={h(wk.actual)} rx="3" fill="currentColor" fillOpacity={wk.estimated?.38:1}><title>{day(wk.key)}: {t('reported','naiulat')} {wk.actual}{wk.estimated?' '+t('(estimated)','(tinataya)'):''}</title></rect>
+      <text x={ax+bw/2} y={153-h(wk.actual)} textAnchor="middle" fontSize={narrow?12:11} fontWeight="700" fill="var(--ink)">{wk.actual}</text></>}
+     <text x={gx+width/2} y="180" textAnchor="middle" fontSize="12" fontWeight={isNext?700:400} fill={isNext?'var(--coral)':'var(--muted)'}>{isNext?t('Next week','Susunod'):day(wk.key)}</text>
+    </g>;})}</svg>
+   <figcaption><span className="key key-reported" aria-hidden="true"/> {t('Reported','Naiulat')} <span className="key key-estimated" aria-hidden="true"/> {t('Estimated (no post that week)','Tinataya (walang post)')}{shownForecasts&&<><span className="key key-forecast" aria-hidden="true"/> {t('Random Forest forecast (made each Monday)','Pagtataya ng Random Forest (tuwing Lunes)')}</>}</figcaption>
+   <p className="forecast-chart-note">{t(`Each week shows the forecast made on its Monday next to the cases reported afterwards, by week ending.${shownForecasts&&firstSaved?` Forecasts before ${day(firstSaved)} were back-tested later; from ${day(firstSaved)} on, each forecast is saved before the count is known.`:''}`,`Sa bawat linggo, katabi ng pagtataya tuwing Lunes ang naiulat na kaso, ayon sa katapusan ng linggo.${shownForecasts&&firstSaved?` Ang pagtataya bago ${day(firstSaved)} ay sinubok pagkatapos; mula ${day(firstSaved)}, nai-save ang bawat pagtataya bago malaman ang bilang.`:''}`)}{narrow?' '+t('Showing the last 6 weeks.','Huling 6 na linggo.'):''}</p></figure>
   <p className="forecast-note">{t('2026 figures come from the Manila Health Department\'s daily reports posted by the Manila Public Information Office and may still be revised. Forecasts help with planning; they are not official DOH alerts.','Ang tala ng 2026 ay mula sa pang-araw-araw na ulat ng Manila Health Department na ipinost ng Manila Public Information Office at maaari pang mabago. Gabay sa pagpaplano ang pagtataya; hindi ito opisyal na babala ng DOH.')}</p>
   <details><summary>{t('How the forecast and alert work','Paano gumagana ang pagtataya at antas ng babala')}</summary>
    <p>{t('A Random Forest model learned from Manila\'s weekly dengue cases (2016–2023), the season, and rainfall, temperature and humidity from previous weeks. It uses the latest reported weeks to forecast the next one.','Natuto ang Random Forest mula sa lingguhang kaso ng dengue sa Maynila (2016–2023), panahon, at ulan, temperatura at halumigmig ng mga nakaraang linggo. Ginagamit nito ang pinakabagong mga linggo para hulaan ang susunod.')}</p>

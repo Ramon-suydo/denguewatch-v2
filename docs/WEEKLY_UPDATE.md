@@ -8,9 +8,10 @@
    npm run live:add-week -- --total 4480 --report 2026-11-02 --url https://www.facebook.com/<the post link>
    ```
 
-   - `--report` must be the Monday date. If Monday was not posted, use the next day's total and add
-     `--estimated --note "Tuesday total used; no Monday post"`.
-   - The command refuses totals that go down, dates that are not Mondays, and links that are not Facebook posts.
+   - `--report` is the date of the post. If there was no Monday post, use the first post later that week
+     (Tuesday to Sunday); it counts as reported and the note is added automatically, e.g. `--report 2026-11-03`.
+   - Only if there was no post at all that week, use the Monday date and add `--estimated --note "why"`.
+   - The command refuses totals that go down, posts outside that Monday-to-Sunday week, and links that are not Facebook posts.
 4. Open `localhost:5173`. The chart gains a new bar, and **"How did our last forecast do?"** shows the
    forecast next to the number that was actually reported.
 5. Model owner: refresh the Random Forest forecast and alert for the new week:

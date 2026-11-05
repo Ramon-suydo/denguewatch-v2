@@ -18,7 +18,8 @@ export type Extras={version:string;horizons:ExtrasHorizon[];alert_rule:{note:str
  recent_2026_check?:{horizon:number;weeks:number;rf_mae:number;naive_mae:number;rf_mape:number;rf_mean_bias:number}[];
  feature_importance:{available:boolean;model?:string;features?:{feature:string;importance:number}[]}};
 type Expanded={version:string;latest_week_end:string;recent_input:{week_end:string;cases:number;estimated:boolean}[];
- horizons:{horizon:number;forecast:{origin:string;target:string;predicted:number;model:string}}[]};
+ horizons:{horizon:number;forecast:{origin:string;target:string;predicted:number;model:string};
+  unverified_2026_prequential?:{origin:string;target:string;predicted:number}[]}[]};
 
 export function useModelForecast(){
  const [expanded,setExpanded]=useState<Expanded|null>(null),[extras,setExtras]=useState<Extras|null>(null),[log,setLog]=useState<LogEntry[]|null>(null);
