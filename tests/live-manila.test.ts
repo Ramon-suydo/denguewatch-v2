@@ -8,12 +8,12 @@ const saved=JSON.parse(readFileSync('data/processed/manila_live_weekly.json','ut
 const history=JSON.parse(readFileSync('data/processed/manila_weekly.json','utf8')).scenarios.M as HistoricalWeek[];
 const ends=saved.rows.map(r=>r.week_end),copy=()=>structuredClone(saved.rows);
 test('live validation preserves all flags and differences and rejects invalid calendar, counts, gaps, flags and notes',()=>{
- assert.equal(validateLiveRows(copy(),ends).length,13);
+ assert.equal(validateLiveRows(copy(),ends).length,14);
  const mutations=[(r:any)=>{r.week_start='2026-02-30';},(r:any)=>{r.week_end='2026-10-24';},(r:any)=>{r.report_monday='2026-10-27';},(r:any)=>{delete r.weekly_is_estimate;},(r:any)=>{r.weekly_new_cases++;},(r:any)=>{r.total_since_jan1=0;},(r:any)=>{r.weekly_is_estimate=true;r.note='';},(r:any)=>{r.source_url='https://facebook.com.evil.invalid/posts/1';},(r:any)=>{r.evidence_file='docs/evidence/live-manila/../secret.png';}];
  for(const mutate of mutations){const rows=copy();mutate(rows[12]);assert.throws(()=>validateLiveRows(rows,ends));}
  assert.throws(()=>validateLiveRows(copy().filter((_,i)=>i!==3),ends));assert.throws(()=>validateLiveRows([...copy(),copy()[12]],ends));assert.throws(()=>validateLiveRows(copy()));
  for(let i=1;i<saved.rows.length;i++)assert.equal(saved.rows[i].weekly_new_cases,saved.rows[i].total_since_jan1-saved.rows[i-1].total_since_jan1);
- assert.equal(saved.rows.filter(r=>r.observed).length,4);assert.equal(saved.rows.filter(r=>r.total_is_estimate).length,6);assert.equal(saved.rows.filter(r=>r.weekly_is_estimate).length,9);
+ assert.equal(saved.rows.filter(r=>r.observed).length,10);assert.equal(saved.rows.filter(r=>r.total_is_estimate).length,2);assert.equal(saved.rows.filter(r=>r.weekly_is_estimate).length,4);
 });
 test('linear empirical interval matches a hand-computed fixture and excludes missing/non-calendar outcomes',()=>{
  const rows:HistoricalWeek[]=[100,200,100,300].map((cases,i)=>({cases,week_ending:['2019-01-06','2019-01-13','2019-01-20','2019-01-27'][i],reliable:true,calendar_days_in_coverage:7}));
@@ -29,17 +29,19 @@ test('leave-one-year-out coverage is measured on unseen years rather than fitted
 test('generated estimates, percentile, direction and sensitivity reproduce exactly without modifying historical data',()=>{
  const result=buildLive(saved.rows,history);assert.deepEqual(result.method,saved.method);assert.deepEqual(result.metadata,saved.metadata);
  const complete=history.filter(r=>r.reliable&&r.cases!==null&&r.calendar_days_in_coverage===7),latest=saved.rows.at(-1)!;
- assert.equal(result.method.percentile,100*complete.filter(r=>r.cases!<latest.weekly_new_cases).length/complete.length);assert.equal(result.method.historical_max,257);assert.equal(result.method.exceeds_historical_max,false);assert.equal(result.method.recent_peak,267);assert.equal(result.method.direction,'Steady');assert.equal(result.method.sensitivity.length,6);
- assert.deepEqual(result.method.ranges.map(r=>[r.low,r.high,r.n]),[[162,274,40],[150,305,42]]);
+ assert.equal(result.method.percentile,100*complete.filter(r=>r.cases!<latest.weekly_new_cases).length/complete.length);assert.equal(result.method.historical_max,257);assert.equal(result.method.exceeds_historical_max,true);assert.equal(result.method.recent_peak,267);assert.equal(result.method.direction,'Steady');assert.equal(result.method.sensitivity.length,6);
+ assert.deepEqual(result.method.ranges.map(r=>[r.low,r.high,r.n]),[[190,321,40],[176,357,42]]);
 });
 test('freshness uses exactly 14 days, rejects future and invalid weeks',()=>{assert.equal(freshLive('2026-10-25','2026-11-08'),true);assert.equal(freshLive('2026-10-25','2026-11-09'),false);assert.equal(freshLive('2026-10-25','2026-10-24'),false);assert.equal(freshLive('2026-02-30','2026-03-01'),false);});
 test('an estimated latest week does not silently widen ranges, and zero-base relative direction is unavailable',()=>{
- const rows=copy();rows[12]={...rows[12],weekly_is_estimate:true,observed:false,note:'LOCAL TEST ONLY: estimated latest-week fixture'};assert.deepEqual(buildLive(rows,history).method.ranges,saved.method.ranges);
+ const rows=copy(),last=rows.length-1;rows[last]={...rows[last],weekly_is_estimate:true,observed:false,note:'LOCAL TEST ONLY: estimated latest-week fixture'};assert.deepEqual(buildLive(rows,history).method.ranges,saved.method.ranges);
  const zero=copy().map(r=>({...r,weekly_new_cases:0,observed:true,weekly_is_estimate:false}));assert.equal(buildLive(zero,history).method.direction,'Unavailable');
 });
 test('append computes a single calendar difference, requires source, carries estimated uncertainty and never spreads a multiweek anchor',()=>{
  const prior=copy().slice(0,12),next=appendWeek(prior,{total:4274,report:'2026-10-26',url:'https://www.facebook.com/fixture-only/posts/13',estimated:false,note:''}).at(-1)!;
  assert.equal(next.weekly_new_cases,226);assert.equal(next.observed,true);
+ const laterPost=appendWeek(prior,{total:4274,report:'2026-10-27',url:next.source_url!,estimated:false,note:''}).at(-1)!;
+ assert.equal(laterPost.observed,true);assert.equal(laterPost.report_monday,'2026-10-26');assert.match(laterPost.note,/no Monday post/);
  assert.throws(()=>appendWeek(prior,{total:4274,report:'2026-11-02',url:next.source_url!,estimated:false,note:''}));
  const estimated=copy().slice(0,10);assert.throws(()=>appendWeek(estimated,{total:3822,report:'2026-10-12',url:'',estimated:false,note:''}));
  const changed=appendWeek(estimated,{total:3822,report:'2026-10-12',url:next.source_url!,estimated:true,note:'LOCAL TEST ONLY: interpolation fixture'}).at(-1)!;assert.equal(changed.weekly_new_cases,267);assert.equal(changed.observed,false);

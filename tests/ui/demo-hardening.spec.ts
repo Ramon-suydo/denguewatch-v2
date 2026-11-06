@@ -106,7 +106,7 @@ test("warmed routes and validated datasets remain available with the browser ful
   page.on("pageerror", (e) => errors.push(e.message));
   await goto(page, "/");
   await expect(
-    activeView(page).getByRole("heading", { name: "Manila, week by week" }),
+    activeView(page).getByRole("heading", { name: "Know what dengue may do next week in Manila." }),
   ).toBeVisible();
   for (const route of [
     "/trends",

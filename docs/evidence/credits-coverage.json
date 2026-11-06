@@ -278,12 +278,12 @@
   "assets": [
     {
       "path": "data/geo/boundary-source.json",
-      "sha256": "6c9adbacfe2bf9095f17be2116c261f5012fb67014b2571f41e54f105911c146",
+      "sha256": "87fb0e2c54d811fe9e703cf4a910f34fc9edad8fe75bfce20cbc092ee17cce66",
       "credit": "geoboundaries"
     },
     {
       "path": "data/geo/manila-barangays.json",
-      "sha256": "8371641585842162387b9e40b40eb9fb5144958e71a45954d0514e41bd86f8e2",
+      "sha256": "80815fdf97f104445dd9ef5331d00b506e9f50ff838e46fa59d50a6aa2fe56b0",
       "credit": "geoboundaries"
     },
     {
@@ -298,22 +298,22 @@
     },
     {
       "path": "data/geo/ncr-boundaries.geojson",
-      "sha256": "7f7728a80dc035977e1b00e9264e09e99e7b4984aedcdf3ad90f47c1a2b92ffa",
+      "sha256": "cca0af638abd93730b020ca6563564bb1451e1343dd2710dce5bf7a5281c691c",
       "credit": "geoboundaries"
     },
     {
       "path": "data/geo/ncr-ml-crosswalk.json",
-      "sha256": "8c10a74c9aee9dd60c17c1834a8bcee341e64aeab3ae21443fc729a8e721fc5d",
+      "sha256": "599b966c6e2bc733d7d1f52a781c98c984d6681cf6f306d8109d35c813440f07",
       "credit": "geoboundaries"
     },
     {
       "path": "data/geo/ncr-source.json",
-      "sha256": "0dfd30469971e567b32f167706c4bb8bc4daaaa3b1ff7096f9448bc39305a414",
+      "sha256": "78bcd38b3694fc82b8c1e88cc30031253c19e70df0a085a26160a2aeb8fcbd3a",
       "credit": "geoboundaries"
     },
     {
       "path": "data/geo/psa-2020-tondo.json",
-      "sha256": "96cb6124ad35af2cbbce61d5088b3f19abe0c239aa83ee03b1401714effee095",
+      "sha256": "797b1fd215cd0e7709f7fc7a46c8bcc43db76570e4b48fb09f53c17fc4aafd4a",
       "credit": "population"
     },
     {
@@ -323,7 +323,7 @@
     },
     {
       "path": "public/geo/ncr-cities.geojson",
-      "sha256": "b6fa7486672e6a905cb1c7c229eef8b2f1f552580822f4e90acec32bd1e3b750",
+      "sha256": "6a836b3f1a6a1802335f061abaac7eff06ea402b4a09f201910ecf4979e37e02",
       "credit": "geoboundaries"
     },
     {

@@ -30,7 +30,7 @@
     }
   },
   "source_verified": false,
-  "latest_week_end": "2026-10-25",
+  "latest_week_end": "2026-11-01",
   "source_audit": {
     "raw_files": [
       {
@@ -59,8 +59,13 @@
     "monthly_rows": 1037,
     "ncr_weekly_rows": 4403,
     "historical_complete_weeks": 312,
-    "recent_weeks": 13,
-    "recent_estimated_weeks": 9,
+    "recent_weeks": 14,
+    "recent_estimated_weeks": 4,
+    "recent_source": {
+      "path": "data/processed/manila_live_weekly.json",
+      "rule": "Monday post, or first later post that report week if Monday is absent",
+      "original_csv_role": "Immutable original acquisition archive, superseded by reviewed corrections"
+    },
     "roles": {
       "daily": "primary post-2018 targets and past daily shape",
       "weekly_manila": "exact duplicate reconciliation; never duplicated training targets",
@@ -90,12 +95,12 @@
     },
     {
       "week_end": "2026-08-09",
-      "cases": 81,
-      "estimated": true
+      "cases": 128,
+      "estimated": false
     },
     {
       "week_end": "2026-08-16",
-      "cases": 87,
+      "cases": 40,
       "estimated": true
     },
     {
@@ -105,33 +110,33 @@
     },
     {
       "week_end": "2026-08-30",
-      "cases": 173,
-      "estimated": true
+      "cases": 219,
+      "estimated": false
     },
     {
       "week_end": "2026-09-06",
-      "cases": 225,
+      "cases": 179,
       "estimated": true
     },
     {
       "week_end": "2026-09-13",
-      "cases": 206,
+      "cases": 236,
       "estimated": true
     },
     {
       "week_end": "2026-09-20",
-      "cases": 184,
-      "estimated": true
+      "cases": 154,
+      "estimated": false
     },
     {
       "week_end": "2026-09-27",
-      "cases": 198,
-      "estimated": true
+      "cases": 226,
+      "estimated": false
     },
     {
       "week_end": "2026-10-04",
-      "cases": 202,
-      "estimated": true
+      "cases": 174,
+      "estimated": false
     },
     {
       "week_end": "2026-10-11",
@@ -146,6 +151,11 @@
     {
       "week_end": "2026-10-25",
       "cases": 226,
+      "estimated": false
+    },
+    {
+      "week_end": "2026-11-01",
+      "cases": 265,
       "estimated": false
     }
   ],
@@ -232,12 +242,12 @@
       "sha256": "94f9e9b8eb165311129f894244d8f5e4e9edffda16501fae6e817c3dc573c133"
     },
     {
-      "file": "expanded-manila-weather-2026.json",
-      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2026-01-01&end_date=2026-10-20&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
-      "retrieved_at": "2026-10-28T11:40:45.940Z",
+      "file": "expanded-manila-weather-2026-10-30.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=14.59932236&longitude=120.98493761&start_date=2026-01-01&end_date=2026-10-30&hourly=temperature_2m%2Crelative_humidity_2m%2Cprecipitation&timezone=Asia%2FManila&models=era5",
+      "retrieved_at": "2026-11-06T02:18:52.288Z",
       "license": "CC BY 4.0",
       "attribution": "Open-Meteo / Copernicus C3S / ECMWF ERA5",
-      "sha256": "35e90d43543a6a53c9606accf0505728694427452685d406b2880ca0cdcc2979"
+      "sha256": "dc0e95bd9259f9ac42fd5ec9734f410d97527560a00c47b50d2a326c2a566d08"
     }
   ],
   "feature_groups": {
@@ -536,44 +546,86 @@
       "historical_residual_radius": 13.525938430706688,
       "promotion_eligible": false,
       "forecast": {
-        "origin": "2026-10-25",
-        "target": "2026-11-01",
-        "persistence": 226,
+        "origin": "2026-11-01",
+        "target": "2026-11-08",
+        "persistence": 265,
         "model": "rf_weather",
-        "predicted": 201.34418761186103,
+        "predicted": 230.2672247398396,
         "historical_residual_range": [
-          187.81824918115433,
-          214.87012604256773
+          216.74128630913293,
+          243.79316317054628
         ],
         "source_sensitivity": {
-          "historical_only": 200.0514744020875,
-          "recent_not_estimated_refit": 198.99591085298144,
-          "recent_estimate_weighted_refit": 201.34418761186103
+          "historical_only": 224.33084911213052,
+          "recent_not_estimated_refit": 233.57831875387353,
+          "recent_estimate_weighted_refit": 230.2672247398396
         },
-        "recent_training_pairs": 12,
-        "recent_estimated_training_pairs": 9,
+        "recent_training_pairs": 13,
+        "recent_estimated_training_pairs": 4,
         "weather_complete": true
       },
       "unverified_2026_prequential": [
         {
+          "origin": "2026-08-02",
+          "target": "2026-08-09",
+          "actual_unverified": 128,
+          "predicted": 56.21561159528196,
+          "persistence": 54
+        },
+        {
+          "origin": "2026-08-23",
+          "target": "2026-08-30",
+          "actual_unverified": 219,
+          "predicted": 100.38239695070891,
+          "persistence": 94
+        },
+        {
+          "origin": "2026-09-13",
+          "target": "2026-09-20",
+          "actual_unverified": 154,
+          "predicted": 227.95770099168203,
+          "persistence": 236
+        },
+        {
+          "origin": "2026-09-20",
+          "target": "2026-09-27",
+          "actual_unverified": 226,
+          "predicted": 171.7805352452969,
+          "persistence": 154
+        },
+        {
+          "origin": "2026-09-27",
+          "target": "2026-10-04",
+          "actual_unverified": 174,
+          "predicted": 204.1566701754106,
+          "persistence": 226
+        },
+        {
           "origin": "2026-10-04",
           "target": "2026-10-11",
           "actual_unverified": 267,
-          "predicted": 185.2029187985399,
-          "persistence": 202
+          "predicted": 187.26979182897742,
+          "persistence": 174
         },
         {
           "origin": "2026-10-11",
           "target": "2026-10-18",
           "actual_unverified": 226,
-          "predicted": 229.5777385455497,
+          "predicted": 228.19678295782847,
           "persistence": 267
         },
         {
           "origin": "2026-10-18",
           "target": "2026-10-25",
           "actual_unverified": 226,
-          "predicted": 211.5610682537768,
+          "predicted": 206.40135498573596,
+          "persistence": 226
+        },
+        {
+          "origin": "2026-10-25",
+          "target": "2026-11-01",
+          "actual_unverified": 265,
+          "predicted": 198.2197288391098,
           "persistence": 226
         }
       ],
@@ -1185,45 +1237,80 @@
       "historical_residual_radius": 21.851486099368884,
       "promotion_eligible": false,
       "forecast": {
-        "origin": "2026-10-25",
-        "target": "2026-11-08",
-        "persistence": 226,
+        "origin": "2026-11-01",
+        "target": "2026-11-15",
+        "persistence": 265,
         "model": "rf_cases",
-        "predicted": 184.78584566002107,
+        "predicted": 215.79653740187626,
         "historical_residual_range": [
-          162.93435956065218,
-          206.63733175938995
+          193.94505130250738,
+          237.64802350124515
         ],
         "source_sensitivity": {
-          "historical_only": 180.58712068874587,
-          "recent_not_estimated_refit": 184.0960198449232,
-          "recent_estimate_weighted_refit": 184.78584566002107
+          "historical_only": 209.71831080808042,
+          "recent_not_estimated_refit": 221.8943486592622,
+          "recent_estimate_weighted_refit": 215.79653740187626
         },
-        "recent_training_pairs": 11,
-        "recent_estimated_training_pairs": 8,
+        "recent_training_pairs": 12,
+        "recent_estimated_training_pairs": 4,
         "weather_complete": true
       },
       "unverified_2026_prequential": [
         {
+          "origin": "2026-08-16",
+          "target": "2026-08-30",
+          "actual_unverified": 219,
+          "predicted": 49.58680741841974,
+          "persistence": 40
+        },
+        {
+          "origin": "2026-09-06",
+          "target": "2026-09-20",
+          "actual_unverified": 154,
+          "predicted": 194.68348161013856,
+          "persistence": 179
+        },
+        {
+          "origin": "2026-09-13",
+          "target": "2026-09-27",
+          "actual_unverified": 226,
+          "predicted": 249.08467843550707,
+          "persistence": 236
+        },
+        {
+          "origin": "2026-09-20",
+          "target": "2026-10-04",
+          "actual_unverified": 174,
+          "predicted": 166.97183891145548,
+          "persistence": 154
+        },
+        {
           "origin": "2026-09-27",
           "target": "2026-10-11",
           "actual_unverified": 267,
-          "predicted": 162.63746422391782,
-          "persistence": 198
+          "predicted": 187.79631721828378,
+          "persistence": 226
         },
         {
           "origin": "2026-10-04",
           "target": "2026-10-18",
           "actual_unverified": 226,
-          "predicted": 160.15565041045352,
-          "persistence": 202
+          "predicted": 167.2382202968961,
+          "persistence": 174
         },
         {
           "origin": "2026-10-11",
           "target": "2026-10-25",
           "actual_unverified": 226,
-          "predicted": 219.39801812244698,
+          "predicted": 222.90761707638438,
           "persistence": 267
+        },
+        {
+          "origin": "2026-10-18",
+          "target": "2026-11-01",
+          "actual_unverified": 265,
+          "predicted": 187.4141375796162,
+          "persistence": 226
         }
       ],
       "nested_yearly_audit": [

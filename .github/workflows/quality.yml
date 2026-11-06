@@ -53,6 +53,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npx playwright install ffmpeg
       - run: npm run test:visual
         env:
           PLAYWRIGHT_CHANNEL: msedge

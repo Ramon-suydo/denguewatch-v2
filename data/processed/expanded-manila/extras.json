@@ -90,9 +90,9 @@
         "loo_coverage_percent": 76.2,
         "previous_coverage_percent": 66.7,
         "adopted": true,
-        "low": 150,
-        "high": 286,
-        "errors_used": 45,
+        "low": 170,
+        "high": 344,
+        "errors_used": 51,
         "high_detection_2023": {
           "actual_high_weeks": 3,
           "hard_label": {
@@ -105,11 +105,11 @@
           }
         },
         "chance_adopted": true,
-        "chance_high_percent": 73
+        "chance_high_percent": 69
       },
       "forecast_range": {
-        "low": 188,
-        "high": 215,
+        "low": 217,
+        "high": 244,
         "test_coverage_percent": 66.7
       },
       "alert_test": {
@@ -133,10 +133,10 @@
         }
       },
       "forecast": {
-        "origin": "2026-10-25",
-        "target": "2026-11-01",
+        "origin": "2026-11-01",
+        "target": "2026-11-08",
         "model": "rf_weather",
-        "predicted": 201,
+        "predicted": 230,
         "thresholds": {
           "years": [
             2019,
@@ -144,12 +144,12 @@
             2023
           ],
           "values": [
-            121,
+            146,
             30,
-            83
+            81
           ],
-          "alert": 78.0,
-          "epidemic": 169.4
+          "alert": 85.7,
+          "epidemic": 201.9
         },
         "alert_level": "High"
       },
@@ -695,9 +695,9 @@
           "label": "SARIMA",
           "model": "sarima",
           "n": 42,
-          "mae": 12.23,
-          "rmse": 14.52,
-          "mape": 25.5
+          "mae": 12.24,
+          "rmse": 14.53,
+          "mape": 25.4
         }
       ],
       "sarima": {
@@ -716,9 +716,9 @@
         "fit_through": "2022-12-25"
       },
       "rf_minus_sarima": {
-        "mae_difference": 1.01,
+        "mae_difference": 1.0,
         "ci95": [
-          -1.69,
+          -1.7,
           4.35
         ],
         "first_closer_weeks": 20,
@@ -738,9 +738,9 @@
         "loo_coverage_percent": 76.2,
         "previous_coverage_percent": 88.1,
         "adopted": false,
-        "low": 121,
-        "high": 296,
-        "errors_used": 45,
+        "low": 146,
+        "high": 336,
+        "errors_used": 50,
         "high_detection_2023": {
           "actual_high_weeks": 3,
           "hard_label": {
@@ -753,11 +753,11 @@
           }
         },
         "chance_adopted": false,
-        "chance_high_percent": 38
+        "chance_high_percent": 100
       },
       "forecast_range": {
-        "low": 163,
-        "high": 207,
+        "low": 194,
+        "high": 238,
         "test_coverage_percent": 88.1
       },
       "alert_test": {
@@ -781,10 +781,10 @@
         }
       },
       "forecast": {
-        "origin": "2026-10-25",
-        "target": "2026-11-08",
+        "origin": "2026-11-01",
+        "target": "2026-11-15",
         "model": "rf_cases",
-        "predicted": 185,
+        "predicted": 216,
         "thresholds": {
           "years": [
             2019,
@@ -792,14 +792,14 @@
             2023
           ],
           "values": [
-            146,
-            30,
-            81
+            83,
+            25,
+            59
           ],
-          "alert": 85.7,
-          "epidemic": 201.9
+          "alert": 55.7,
+          "epidemic": 114.0
         },
-        "alert_level": "Medium"
+        "alert_level": "High"
       },
       "test_weeks": [
         {
@@ -844,7 +844,7 @@
           "random_forest": 57.7,
           "naive": 66,
           "seasonal_average": 46.4,
-          "sarima": 61.2,
+          "sarima": 61.1,
           "alert_threshold": 55.0,
           "epidemic_threshold": 110.0,
           "forecast_level": "Medium",
@@ -856,7 +856,7 @@
           "random_forest": 39.2,
           "naive": 40,
           "seasonal_average": 42.6,
-          "sarima": 41.7,
+          "sarima": 41.5,
           "alert_threshold": 45.7,
           "epidemic_threshold": 85.4,
           "forecast_level": "Low",
@@ -880,7 +880,7 @@
           "random_forest": 59.8,
           "naive": 71,
           "seasonal_average": 43.5,
-          "sarima": 64.5,
+          "sarima": 64.4,
           "alert_threshold": 47.3,
           "epidemic_threshold": 75.9,
           "forecast_level": "Medium",
@@ -892,7 +892,7 @@
           "random_forest": 51.6,
           "naive": 63,
           "seasonal_average": 36.8,
-          "sarima": 59.9,
+          "sarima": 59.8,
           "alert_threshold": 40.3,
           "epidemic_threshold": 89.1,
           "forecast_level": "Medium",
@@ -904,7 +904,7 @@
           "random_forest": 26.3,
           "naive": 33,
           "seasonal_average": 32.2,
-          "sarima": 35.7,
+          "sarima": 35.6,
           "alert_threshold": 37.7,
           "epidemic_threshold": 67.7,
           "forecast_level": "Low",
@@ -928,7 +928,7 @@
           "random_forest": 31.7,
           "naive": 47,
           "seasonal_average": 21.8,
-          "sarima": 46.2,
+          "sarima": 46.1,
           "alert_threshold": 22.7,
           "epidemic_threshold": 34.4,
           "forecast_level": "Medium",
@@ -940,7 +940,7 @@
           "random_forest": 32.0,
           "naive": 36,
           "seasonal_average": 22.5,
-          "sarima": 37.1,
+          "sarima": 37.0,
           "alert_threshold": 18.3,
           "epidemic_threshold": 31.6,
           "forecast_level": "High",
@@ -988,7 +988,7 @@
           "random_forest": 29.0,
           "naive": 29,
           "seasonal_average": 19.7,
-          "sarima": 29.7,
+          "sarima": 29.6,
           "alert_threshold": 19.7,
           "epidemic_threshold": 29.5,
           "forecast_level": "Medium",
@@ -1024,7 +1024,7 @@
           "random_forest": 29.8,
           "naive": 27,
           "seasonal_average": 24.0,
-          "sarima": 27.2,
+          "sarima": 27.1,
           "alert_threshold": 30.7,
           "epidemic_threshold": 53.8,
           "forecast_level": "Low",
@@ -1048,7 +1048,7 @@
           "random_forest": 56.7,
           "naive": 46,
           "seasonal_average": 26.2,
-          "sarima": 44.6,
+          "sarima": 44.5,
           "alert_threshold": 30.0,
           "epidemic_threshold": 57.8,
           "forecast_level": "Medium",
@@ -1072,7 +1072,7 @@
           "random_forest": 53.3,
           "naive": 43,
           "seasonal_average": 32.0,
-          "sarima": 42.6,
+          "sarima": 42.5,
           "alert_threshold": 36.7,
           "epidemic_threshold": 55.7,
           "forecast_level": "Medium",
@@ -1096,7 +1096,7 @@
           "random_forest": 58.1,
           "naive": 41,
           "seasonal_average": 51.0,
-          "sarima": 41.2,
+          "sarima": 41.1,
           "alert_threshold": 51.7,
           "epidemic_threshold": 82.3,
           "forecast_level": "Medium",
@@ -1108,7 +1108,7 @@
           "random_forest": 53.7,
           "naive": 38,
           "seasonal_average": 66.0,
-          "sarima": 38.2,
+          "sarima": 38.1,
           "alert_threshold": 72.7,
           "epidemic_threshold": 105.2,
           "forecast_level": "Low",
@@ -1120,7 +1120,7 @@
           "random_forest": 46.4,
           "naive": 33,
           "seasonal_average": 78.0,
-          "sarima": 33.9,
+          "sarima": 33.8,
           "alert_threshold": 81.3,
           "epidemic_threshold": 128.3,
           "forecast_level": "Low",
@@ -1180,7 +1180,7 @@
           "random_forest": 75.6,
           "naive": 61,
           "seasonal_average": 136.0,
-          "sarima": 58.4,
+          "sarima": 58.3,
           "alert_threshold": 155.7,
           "epidemic_threshold": 220.9,
           "forecast_level": "Low",
@@ -1204,7 +1204,7 @@
           "random_forest": 85.4,
           "naive": 69,
           "seasonal_average": 131.8,
-          "sarima": 64.8,
+          "sarima": 64.7,
           "alert_threshold": 133.3,
           "epidemic_threshold": 180.3,
           "forecast_level": "Low",
@@ -1228,7 +1228,7 @@
           "random_forest": 68.0,
           "naive": 75,
           "seasonal_average": 136.0,
-          "sarima": 69.1,
+          "sarima": 69.0,
           "alert_threshold": 152.3,
           "epidemic_threshold": 263.8,
           "forecast_level": "Low",
@@ -1240,7 +1240,7 @@
           "random_forest": 57.0,
           "naive": 56,
           "seasonal_average": 107.4,
-          "sarima": 55.0,
+          "sarima": 54.9,
           "alert_threshold": 116.7,
           "epidemic_threshold": 186.2,
           "forecast_level": "Low",
@@ -1264,7 +1264,7 @@
           "random_forest": 67.0,
           "naive": 74,
           "seasonal_average": 87.0,
-          "sarima": 68.9,
+          "sarima": 68.8,
           "alert_threshold": 93.7,
           "epidemic_threshold": 204.3,
           "forecast_level": "Low",
@@ -1276,7 +1276,7 @@
           "random_forest": 61.1,
           "naive": 71,
           "seasonal_average": 92.0,
-          "sarima": 66.3,
+          "sarima": 66.2,
           "alert_threshold": 103.0,
           "epidemic_threshold": 230.1,
           "forecast_level": "Low",
@@ -1288,7 +1288,7 @@
           "random_forest": 72.9,
           "naive": 83,
           "seasonal_average": 80.0,
-          "sarima": 74.6,
+          "sarima": 74.5,
           "alert_threshold": 81.0,
           "epidemic_threshold": 191.1,
           "forecast_level": "Low",
@@ -1300,7 +1300,7 @@
           "random_forest": 67.5,
           "naive": 81,
           "seasonal_average": 69.2,
-          "sarima": 74.2,
+          "sarima": 74.1,
           "alert_threshold": 74.0,
           "epidemic_threshold": 168.6,
           "forecast_level": "Low",
@@ -1312,24 +1312,156 @@
   "recent_2026_check": [
     {
       "horizon": 1,
-      "weeks": 3,
-      "rf_mae": 33.3,
-      "naive_mae": 35.3,
-      "rf_mape": 12.9,
-      "rf_mean_bias": -30.9
+      "weeks": 9,
+      "rf_mae": 57.4,
+      "naive_mae": 64.2,
+      "rf_mape": 29.4,
+      "rf_mean_bias": -33.8
     },
     {
       "horizon": 2,
-      "weeks": 3,
-      "rf_mae": 58.9,
-      "naive_mae": 44.7,
-      "rf_mape": 23.7,
-      "rf_mean_bias": -58.9
+      "weeks": 8,
+      "rf_mae": 57.4,
+      "naive_mae": 50.9,
+      "rf_mape": 25.5,
+      "rf_mean_bias": -41.4
     }
   ],
-  "forecast_log_entries": 1,
+  "forecast_log_entries": 2,
   "feature_importance": {
-    "available": false,
-    "reason": "ValueError: Raw inventory changed: explicitly review each new/removed source"
+    "available": true,
+    "model": "rf_weather",
+    "horizon": 1,
+    "pairs": 277,
+    "features": [
+      {
+        "feature": "log_growth_1",
+        "importance": 0.1804
+      },
+      {
+        "feature": "target_annual_cos",
+        "importance": 0.1086
+      },
+      {
+        "feature": "log_cases_7",
+        "importance": 0.0961
+      },
+      {
+        "feature": "temperature_c_lag_8",
+        "importance": 0.0651
+      },
+      {
+        "feature": "log_cases_0",
+        "importance": 0.0391
+      },
+      {
+        "feature": "rain_total_4_delayed",
+        "importance": 0.0328
+      },
+      {
+        "feature": "temperature_c_lag_4",
+        "importance": 0.0326
+      },
+      {
+        "feature": "humidity_percent_lag_1",
+        "importance": 0.031
+      },
+      {
+        "feature": "rainfall_mm_lag_1",
+        "importance": 0.0302
+      },
+      {
+        "feature": "rain_total_8_delayed",
+        "importance": 0.03
+      },
+      {
+        "feature": "rain_x_humidity_delayed",
+        "importance": 0.0287
+      },
+      {
+        "feature": "log_cases_2",
+        "importance": 0.0267
+      },
+      {
+        "feature": "humidity_percent_lag_2",
+        "importance": 0.0262
+      },
+      {
+        "feature": "log_mean_8",
+        "importance": 0.0262
+      },
+      {
+        "feature": "log_cases_4",
+        "importance": 0.0241
+      },
+      {
+        "feature": "humidity_percent_lag_8",
+        "importance": 0.0226
+      },
+      {
+        "feature": "rainfall_mm_lag_4",
+        "importance": 0.0196
+      },
+      {
+        "feature": "rainfall_mm_lag_2",
+        "importance": 0.0186
+      },
+      {
+        "feature": "log_cases_3",
+        "importance": 0.0182
+      },
+      {
+        "feature": "target_annual_sin",
+        "importance": 0.0173
+      },
+      {
+        "feature": "temperature_min_lag_1",
+        "importance": 0.0173
+      },
+      {
+        "feature": "humidity_percent_lag_4",
+        "importance": 0.0164
+      },
+      {
+        "feature": "temperature_max_lag_1",
+        "importance": 0.0154
+      },
+      {
+        "feature": "log_mean_4",
+        "importance": 0.0151
+      },
+      {
+        "feature": "temperature_c_lag_2",
+        "importance": 0.0139
+      },
+      {
+        "feature": "rain_days_lag_1",
+        "importance": 0.0132
+      },
+      {
+        "feature": "temperature_c_lag_1",
+        "importance": 0.0114
+      },
+      {
+        "feature": "rainfall_mm_lag_8",
+        "importance": 0.0113
+      },
+      {
+        "feature": "log_cases_1",
+        "importance": 0.0101
+      },
+      {
+        "feature": "available_history_8",
+        "importance": 0.0016
+      },
+      {
+        "feature": "target_rainy_Jun_Nov",
+        "importance": 0.0002
+      },
+      {
+        "feature": "origin_estimated",
+        "importance": 0.0
+      }
+    ]
   }
 }

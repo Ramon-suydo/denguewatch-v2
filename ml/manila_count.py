@@ -12,6 +12,7 @@ import os
 import sys
 import xml.etree.ElementTree as ET
 import zipfile
+from urllib.parse import urlparse, parse_qs
 from collections import defaultdict
 from pathlib import Path
 
@@ -71,6 +72,36 @@ def whole(value):
 def raw_csv(path):
     with Path(path).open(encoding='utf-8-sig', newline='') as f:
         return list(csv.DictReader(f))
+
+
+def recent_source(root=ROOT):
+    """Reviewed weekly corrections supersede the immutable original transcription CSV."""
+    saved = read_json(root/'data/processed/manila_live_weekly.json')
+    public = read_json(root/'public/live-manila/weekly.json')
+    projection = {**saved, 'rows': [{k: v for k, v in r.items() if k != 'evidence_file'} for r in saved['rows']]}
+    if public != projection:
+        raise ValueError('Processed and public Manila weekly data disagree')
+    recent, previous = {}, None
+    for r in saved['rows']:
+        d = r['week_end']
+        if dt.date.fromisoformat(d).weekday() != 6 or r['week_start'] != shift(d, days=-6) or r['report_monday'] != shift(d, days=1):
+            raise ValueError('Invalid reviewed week boundaries')
+        if not isinstance(r['weekly_is_estimate'], bool) or not isinstance(r['total_is_estimate'], bool):
+            raise ValueError('Explicit reviewed estimate flags required')
+        total, cases = whole(r['total_since_jan1']), whole(r['weekly_new_cases'])
+        if d in recent or (previous and (d != shift(previous['week_end'], 1) or total-previous['total_since_jan1'] != cases)):
+            raise ValueError('Reviewed weekly gap, duplicate or cumulative difference mismatch')
+        if r['total_is_estimate'] and not r['weekly_is_estimate'] or previous and previous['total_is_estimate'] and not r['weekly_is_estimate']:
+            raise ValueError('An estimated cumulative anchor makes the weekly difference estimated')
+        if r['weekly_is_estimate'] and not r['note'].strip():
+            raise ValueError('Reviewed estimated values require a note')
+        if r['observed'] != (not r['weekly_is_estimate']):
+            raise ValueError('Reviewed observation flag mismatch')
+        recent[d] = {'cases': cases, 'estimated': r['weekly_is_estimate'], 'source': 'unverified_2026'}
+        previous = r
+    if not recent or saved['metadata']['last_week_end'] != max(recent) or saved['metadata']['row_count'] != len(recent):
+        raise ValueError('Reviewed source metadata disagrees with its rows')
+    return recent
 
 
 def daily_workbook(path):
@@ -174,22 +205,9 @@ def source_data(root=ROOT):
         end = dt.date(year, m, calendar.monthrange(year, m)[1]).isoformat()
         monthly_context.append({'month': month, 'available': shift(end, days=45),
                                 'manila': cities['MANILA CITY'], 'rest': sum(cities.values())-cities['MANILA CITY']})
-    recent = {}
-    previous = None
-    for r in raw_csv(raw/'Manila_Dengue_Weekly_Clean_2026.csv'):
-        d = r['week_end']
-        if dt.date.fromisoformat(d).weekday() != 6 or r['week_start'] != shift(d, days=-6) or r['report_monday'] != shift(d, days=1):
-            raise ValueError('Invalid recent week boundaries')
-        if r['weekly_is_estimate'] not in ('0', '1', 'False', 'True', 'false', 'true'):
-            raise ValueError('Explicit recent estimate flag required')
-        estimated = r['weekly_is_estimate'].lower() in ('1', 'true')
-        total, cases = whole(r['total_since_jan1']), whole(r['weekly_new_cases'])
-        if previous and (d != shift(previous[0], 1) or total-previous[1] != cases):
-            raise ValueError('Recent gap or cumulative difference mismatch')
-        if d in historical or d in recent:
-            raise ValueError('Overlapping independent target sources')
-        recent[d] = {'cases': cases, 'estimated': estimated, 'source': 'unverified_2026'}
-        previous = (d, total)
+    recent = recent_source(root)
+    if set(recent) & set(historical):
+        raise ValueError('Overlapping independent target sources')
     geo = next(r for r in read_json(root/'data/processed/geographic_context.json')['rows'] if r['city'] == 'MANILA CITY')
     # No outcome-derived incidence enters geographic context or predictors.
     geography = {k: geo[k] for k in ('water_share_200m', 'water_share_500m', 'centroid_river_distance_m',
@@ -197,6 +215,9 @@ def source_data(root=ROOT):
     audit = {'raw_files': manifest, 'daily_rows': len(daily), 'derived_weekly_rows': len(weekly),
              'monthly_rows': len(monthly), 'ncr_weekly_rows': len(doh), 'historical_complete_weeks': len(historical),
              'recent_weeks': len(recent), 'recent_estimated_weeks': sum(r['estimated'] for r in recent.values()),
+             'recent_source': {'path': 'data/processed/manila_live_weekly.json',
+                               'rule': 'Monday post, or first later post that report week if Monday is absent',
+                               'original_csv_role': 'Immutable original acquisition archive, superseded by reviewed corrections'},
              'roles': {'daily': 'primary post-2018 targets and past daily shape',
                        'weekly_manila': 'exact duplicate reconciliation; never duplicated training targets',
                        'weekly_doh': 'pre-2018 Manila targets and monthly reconciliation',
@@ -242,9 +263,10 @@ def transfer_data(weather, monthly, root=ROOT):
 def weather_data(root=ROOT):
     """Validate raw provider receipts and aggregate complete civil weeks, retaining gaps."""
     files = [root/f'data/external/era5-manila-{y}.json' for y in range(2015, 2024)]
-    optional = root/'data/external/expanded-manila-weather-2026.json'
-    if optional.exists():
-        files.append(optional)
+    optional = [p for p in (root/'data/external').glob('expanded-manila-weather-2026*.json') if not p.name.endswith('.provenance.json')]
+    if optional:
+        # Use the latest complete request rather than double-count overlapping caches.
+        files.append(max(optional, key=lambda p: parse_qs(urlparse(read_json(str(p)+'.provenance.json')['url']).query)['end_date'][0]))
     grouped, sources, seen = defaultdict(list), [], set()
     for path in files:
         receipt = read_json(str(path)+'.provenance.json')

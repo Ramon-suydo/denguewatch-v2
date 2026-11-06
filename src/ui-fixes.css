@@ -236,3 +236,5 @@ html{scroll-behavior:smooth}
 .results-summary h3,.results-levels h3{margin-top:2.25rem}
 .forecast-chart .key-forecast{background:color-mix(in srgb,var(--coral) 12%,transparent)}
 .forecast-chart-note{margin:.35rem 0 0;font-size:var(--caption);color:var(--muted);max-width:75ch}
+/* Keep the research disclaimer readable over every mobile photo crop. */
+.bay-app .simple-dashboard .hero-title-block>.hero-subtitle:last-child{width:fit-content;padding:.5rem .75rem;border-radius:.5rem;background:#081f2d}

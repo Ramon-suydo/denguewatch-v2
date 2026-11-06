@@ -15,6 +15,10 @@ const rows=validateLiveRows(input.map(r=>{
 }),legacy?original.weeks:[]);
 const historical=JSON.parse(await readFile('data/processed/manila_weekly.json','utf8')) as {scenarios:{M:HistoricalWeek[]}};
 const output={...buildLive(rows,historical.scenarios.M),input_sha256:digest};
+try{
+ const reviewed=JSON.parse(await readFile('data/live-manila/reviewed-2026.json','utf8')) as {data:{rows:LiveRow[]}};
+ if(JSON.stringify(output.rows.slice(0,reviewed.data.rows.length))!==JSON.stringify(reviewed.data.rows))throw Error('The original CSV is superseded by reviewed 2026 corrections. Use live:add-week for new posts; do not overwrite the corrected JSON.');
+}catch(error){if((error as NodeJS.ErrnoException).code!=='ENOENT')throw error;}
 await mkdir('data/processed',{recursive:true});await mkdir('public/live-manila',{recursive:true});
 const serialized=JSON.stringify(output,null,2)+'\n';
 await writeFile('data/processed/manila_live_weekly.json',serialized);

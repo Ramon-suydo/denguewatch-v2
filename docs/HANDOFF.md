@@ -1,3 +1,12 @@
+# Current ui-fixes checkpoint - 2026-11-06
+
+The corrected 14-week Manila snapshot now drives the provisional count model.
+See [the current check report](evidence/ui-fixes-20261106-checks.md) for the
+230-case next-week forecast, source/estimate rules, actual local checks and
+remaining release blockers. The original raw CSV remains an archive. A new
+forward seed migration has only been tested locally, not applied to hosted
+Supabase. Earlier checkpoint claims below describe their original dates.
+
 # Active Live Manila feature
 
 Current work is `feat/live-manila` (latest remote main `a683b3b` plus the completed local UI prerequisite). Start with [LIVE_MANILA.md](LIVE_MANILA.md) and [current check report](evidence/live-manila-checks.md). Source ingestion, frozen quantiles, generated publication JSON, shared dashboard mode, gray non-Manila Live states, AAL2 append/CSV/audit/rollback and the 14-day fallback are implemented locally. The original 121 historical/ML/source/export artifacts are unchanged; 2026 never enters training or evaluation. This feature adds a separate forward migration, not a modification of the scientific pipeline or report gates.

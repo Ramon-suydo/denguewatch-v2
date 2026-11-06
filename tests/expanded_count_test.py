@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'ml'))
-from manila_count import BASE, WEATHER, REGIONAL, GEO, examples, features, fit, radius, shift, source_data
+from manila_count import BASE, WEATHER, REGIONAL, GEO, examples, features, fit, radius, shift, source_data, recent_source, read_json, ROOT
 
 
 class ExpandedCountTests(unittest.TestCase):
@@ -95,12 +95,24 @@ class ExpandedCountTests(unittest.TestCase):
         historical, recent, _, _, audit = source_data()
         self.assertEqual(len(audit['raw_files']), 5)
         self.assertEqual(len(historical), 312)
-        self.assertEqual(len(recent), 13)
+        self.assertEqual(len(recent), 14)
+        self.assertEqual(recent['2026-08-09']['cases'], 128)
+        self.assertEqual(recent['2026-11-01']['cases'], 265)
+        self.assertEqual(audit['recent_estimated_weeks'], 4)
         self.assertEqual(audit['derived_weekly_rows'], 308)
         self.assertEqual(audit['monthly_rows'], 1037)
         self.assertFalse(set(historical) & set(recent))
         self.assertFalse(audit['geography_in_model']['single_city'])
         self.assertTrue(audit['geography_in_model']['pooled_transfer'])
+
+    def test_corrected_reviewed_weeks_are_used_and_mismatched_public_source_rejected(self):
+        self.assertEqual(max(recent_source()), '2026-11-01')
+        saved = read_json(ROOT/'data/processed/manila_live_weekly.json')
+        public = {**saved, 'rows': [{k: v for k, v in r.items() if k != 'evidence_file'} for r in saved['rows']]}
+        public['rows'][-1]['weekly_new_cases'] += 1
+        with patch('manila_count.read_json', side_effect=[saved, public]):
+            with self.assertRaisesRegex(ValueError, 'disagree'):
+                recent_source()
 
 
 if __name__ == '__main__':

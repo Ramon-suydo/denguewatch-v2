@@ -155,8 +155,8 @@ test("public routes retain disclaimers and legal access on phones", async ({
       await expect(activeView(page).getByRole("heading", { level: 1 })).toBeVisible();
       await expect(
         page.locator("footer.photo-footer, footer.site-footer"),
-      ).toContainText(/Estimates, not alerts|Historical/);
-      await expect(page.locator("footer.photo-footer, footer.site-footer")).toContainText("Dec 2, 2023");
+      ).toContainText(/not medical advice/);
+      await expect(page.locator("footer.photo-footer, footer.site-footer")).toContainText(/Manila Health Department|Dec 2, 2023/);
       expect(
         await page.evaluate(
           () => document.documentElement.scrollWidth <= innerWidth,
@@ -266,7 +266,7 @@ test("model numbers exactly match saved evidence across scenarios and horizons",
       await expect(visible).toContainText(String(row.n));
     }
 });
-test("bundled footer dates never become a false live DB coverage claim", async ({
+test("bundled footer sources never become a false live DB coverage claim", async ({
   page,
 }) => {
   await mockPublicApi(page);
@@ -279,10 +279,10 @@ test("bundled footer dates never become a false live DB coverage claim", async (
   );
   await goto(page, "/");
   const footer = page.locator("footer.photo-footer, footer.site-footer");
-  await expect(footer).toContainText("Dec 2, 2023");
-  await expect(footer).toContainText("Dec 27, 2020");
+  await expect(footer).toContainText("Manila Health Department");
+  await expect(footer).toContainText("DOH (2016");
   await expect(footer).not.toContainText("2031");
   await expect(
-    activeView(page).getByText("Bundled source periods.", { exact: false }),
+    footer.locator("[data-source]").getByText("2026 daily reports", { exact: false }),
   ).toBeVisible();
 });

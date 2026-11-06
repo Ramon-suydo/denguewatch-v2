@@ -446,7 +446,7 @@
       "git_text_eol": true
     },
     "public/api/v2/outlook-weather.json": {
-      "sha256": "a2dcb7a9823bfb54a9e741646e47c53334efbdf75c4b087d58f101d32b206c74",
+      "sha256": "a379217806d9bfad355349e61e996f3323ebba2205a0fe2a155f68e4b31ab5df",
       "git_text_eol": true
     },
     "public/api/v2/outlook.json": {
@@ -458,7 +458,7 @@
       "git_text_eol": true
     },
     "public/api/v2/weather.json": {
-      "sha256": "ef5c64de6ef0fa792f93e4fd4e05081ea490c3609a57aa24c8f2587f00dbbb70",
+      "sha256": "ba362b0cb8facdee597c436831af432bd74a38ca9fbe600fb1f3b9d7cd653bf2",
       "git_text_eol": true
     },
     "public/evidence/manila.json": {

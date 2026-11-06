@@ -15,7 +15,7 @@
       "language": "en",
       "text": "Know what dengue may do next week in Manila. ",
       "minimum_required": 3,
-      "worst_measured_ratio": 5.337453833873028,
+      "worst_measured_ratio": 4.2635661069881765,
       "pixels_sampled": 92292,
       "passed": true
     },
@@ -24,7 +24,7 @@
       "language": "en",
       "text": "A weekly forecast and alert level to help health workers and residents prepare early.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 5.772969804972737,
+      "worst_measured_ratio": 6.582869621932625,
       "pixels_sampled": 12540,
       "passed": true
     },
@@ -33,7 +33,7 @@
       "language": "en",
       "text": "A student research project. Not an official DOH alert.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 7.673208488971736,
+      "worst_measured_ratio": 16.87815674611007,
       "pixels_sampled": 8020,
       "passed": true
     },
@@ -51,7 +51,7 @@
       "language": "fil",
       "text": "Alamin ang posibleng lagay ng dengue sa Maynila sa susunod na linggo. ",
       "minimum_required": 3,
-      "worst_measured_ratio": 4.291796056993536,
+      "worst_measured_ratio": 6.998036771100736,
       "pixels_sampled": 136458,
       "passed": true
     },
@@ -60,7 +60,7 @@
       "language": "fil",
       "text": "Lingguhang pagtataya at antas ng babala para makapaghanda nang maaga ang mga health worker at residente.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 8.558429900506855,
+      "worst_measured_ratio": 6.3473947217293585,
       "pixels_sampled": 16660,
       "passed": true
     },
@@ -69,8 +69,8 @@
       "language": "fil",
       "text": "Proyekto ng pananaliksik ng mga mag-aaral. Hindi opisyal na babala ng DOH.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 4.87511232934629,
-      "pixels_sampled": 11620,
+      "worst_measured_ratio": 16.735443534158765,
+      "pixels_sampled": 11420,
       "passed": true
     },
     {
@@ -87,7 +87,7 @@
       "language": "en",
       "text": "Know what dengue may do next week in Manila. ",
       "minimum_required": 3,
-      "worst_measured_ratio": 6.811360726494423,
+      "worst_measured_ratio": 7.230433553585282,
       "pixels_sampled": 93492,
       "passed": true
     },
@@ -96,7 +96,7 @@
       "language": "en",
       "text": "A weekly forecast and alert level to help health workers and residents prepare early.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 9.431753280380242,
+      "worst_measured_ratio": 6.356792774037511,
       "pixels_sampled": 13860,
       "passed": true
     },
@@ -105,8 +105,8 @@
       "language": "en",
       "text": "A student research project. Not an official DOH alert.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 5.961949550008151,
-      "pixels_sampled": 8904,
+      "worst_measured_ratio": 16.87815674611007,
+      "pixels_sampled": 8480,
       "passed": true
     },
     {
@@ -123,8 +123,8 @@
       "language": "fil",
       "text": "Alamin ang posibleng lagay ng dengue sa Maynila sa susunod na linggo. ",
       "minimum_required": 3,
-      "worst_measured_ratio": 6.219868225206913,
-      "pixels_sampled": 138224,
+      "worst_measured_ratio": 7.353791227095968,
+      "pixels_sampled": 138118,
       "passed": true
     },
     {
@@ -132,8 +132,8 @@
       "language": "fil",
       "text": "Lingguhang pagtataya at antas ng babala para makapaghanda nang maaga ang mga health worker at residente.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 9.02890206257192,
-      "pixels_sampled": 18270,
+      "worst_measured_ratio": 6.219868225206913,
+      "pixels_sampled": 18291,
       "passed": true
     },
     {
@@ -141,8 +141,8 @@
       "language": "fil",
       "text": "Proyekto ng pananaliksik ng mga mag-aaral. Hindi opisyal na babala ng DOH.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 6.422922871275362,
-      "pixels_sampled": 12621,
+      "worst_measured_ratio": 16.87815674611007,
+      "pixels_sampled": 12642,
       "passed": true
     },
     {
@@ -159,7 +159,7 @@
       "language": "en",
       "text": "Know what dengue may do next week in Manila. ",
       "minimum_required": 3,
-      "worst_measured_ratio": 5.720173614725529,
+      "worst_measured_ratio": 6.6268104176442435,
       "pixels_sampled": 318160,
       "passed": true
     },
@@ -168,7 +168,7 @@
       "language": "en",
       "text": "A weekly forecast and alert level to help health workers and residents prepare early.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 9.202294797701807,
+      "worst_measured_ratio": 6.581810425656785,
       "pixels_sampled": 16330,
       "passed": true
     },
@@ -177,7 +177,7 @@
       "language": "en",
       "text": "A student research project. Not an official DOH alert.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 10.850243088123596,
+      "worst_measured_ratio": 16.87815674611007,
       "pixels_sampled": 10488,
       "passed": true
     },
@@ -195,8 +195,8 @@
       "language": "fil",
       "text": "Alamin ang posibleng lagay ng dengue sa Maynila sa susunod na linggo. ",
       "minimum_required": 3,
-      "worst_measured_ratio": 5.066624264220484,
-      "pixels_sampled": 471420,
+      "worst_measured_ratio": 5.861088013525247,
+      "pixels_sampled": 471614,
       "passed": true
     },
     {
@@ -204,7 +204,7 @@
       "language": "fil",
       "text": "Lingguhang pagtataya at antas ng babala para makapaghanda nang maaga ang mga health worker at residente.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 9.972992602216038,
+      "worst_measured_ratio": 7.489656971391459,
       "pixels_sampled": 21551,
       "passed": true
     },
@@ -213,7 +213,7 @@
       "language": "fil",
       "text": "Proyekto ng pananaliksik ng mga mag-aaral. Hindi opisyal na babala ng DOH.",
       "minimum_required": 4.5,
-      "worst_measured_ratio": 7.478094738642484,
+      "worst_measured_ratio": 16.87815674611007,
       "pixels_sampled": 14904,
       "passed": true
     }
