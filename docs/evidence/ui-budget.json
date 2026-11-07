@@ -1,0 +1,161 @@
+{
+  "initial_gzip_bytes": 110118,
+  "total_gzip_bytes": 717109,
+  "limits": {
+    "initial": 225280,
+    "total": 870400
+  },
+  "assets": [
+    {
+      "name": "About-B51OKY54.js",
+      "bytes": 80641,
+      "gzip": 10928,
+      "initial": false
+    },
+    {
+      "name": "about-DpSzxrfG.js",
+      "bytes": 126,
+      "gzip": 118,
+      "initial": false
+    },
+    {
+      "name": "Admin-Nv1nKrea.js",
+      "bytes": 73417,
+      "gzip": 20558,
+      "initial": false
+    },
+    {
+      "name": "ClassificationEvidence-DcDgFrRK.js",
+      "bytes": 3301,
+      "gzip": 1484,
+      "initial": false
+    },
+    {
+      "name": "Components-vHbwZuPc.js",
+      "bytes": 3540,
+      "gzip": 1472,
+      "initial": true
+    },
+    {
+      "name": "EvidenceTrends-ZBEei8vy.js",
+      "bytes": 10186,
+      "gzip": 3499,
+      "initial": false
+    },
+    {
+      "name": "ExpandedResearch-UK6eWPKf.js",
+      "bytes": 12078,
+      "gzip": 4654,
+      "initial": false
+    },
+    {
+      "name": "Guidance-DbQQHDNw.js",
+      "bytes": 2426,
+      "gzip": 1227,
+      "initial": false
+    },
+    {
+      "name": "index-DRAo-879.js",
+      "bytes": 317265,
+      "gzip": 100398,
+      "initial": true
+    },
+    {
+      "name": "Language-yQzQ61BC.js",
+      "bytes": 11976,
+      "gzip": 4586,
+      "initial": true
+    },
+    {
+      "name": "live-dIjwxws6.js",
+      "bytes": 1979,
+      "gzip": 1050,
+      "initial": true
+    },
+    {
+      "name": "maplibre-gl-worker-Br3j0JGE.js",
+      "bytes": 518989,
+      "gzip": 148199,
+      "initial": false
+    },
+    {
+      "name": "MapProvider-CVWGNrZr.js",
+      "bytes": 1154123,
+      "gzip": 312375,
+      "initial": false
+    },
+    {
+      "name": "Methods-Bi_xFaQ2.js",
+      "bytes": 82195,
+      "gzip": 25128,
+      "initial": false
+    },
+    {
+      "name": "MlMethods-Cjy0EAQ8.js",
+      "bytes": 11401,
+      "gzip": 4482,
+      "initial": false
+    },
+    {
+      "name": "model-DLw5aWy0.js",
+      "bytes": 3513,
+      "gzip": 1468,
+      "initial": true
+    },
+    {
+      "name": "OurModel-DMSsKV0A.js",
+      "bytes": 13037,
+      "gzip": 4773,
+      "initial": false
+    },
+    {
+      "name": "preload-helper-DjzSQ1t3.js",
+      "bytes": 1383,
+      "gzip": 749,
+      "initial": true
+    },
+    {
+      "name": "PrivacyNotice-DA_lq3JG.js",
+      "bytes": 8236,
+      "gzip": 3658,
+      "initial": false
+    },
+    {
+      "name": "ReportV2-VCpMcmDf.js",
+      "bytes": 16576,
+      "gzip": 6904,
+      "initial": false
+    },
+    {
+      "name": "RiskMap-CW3ui0Ib.js",
+      "bytes": 13285,
+      "gzip": 4771,
+      "initial": false
+    },
+    {
+      "name": "signals-BlW8J8i9.js",
+      "bytes": 2982,
+      "gzip": 1493,
+      "initial": false
+    },
+    {
+      "name": "supabase-dnyNgBoS.js",
+      "bytes": 203746,
+      "gzip": 52038,
+      "initial": false
+    },
+    {
+      "name": "ui-30-vNWth.js",
+      "bytes": 1555,
+      "gzip": 702,
+      "initial": false
+    },
+    {
+      "name": "hero-preload.js",
+      "bytes": 668,
+      "gzip": 395,
+      "initial": true
+    }
+  ],
+  "passed": true
+}

@@ -43,14 +43,14 @@ test("v2 reporting is closed by default, opt-in and bilingual without storing he
   await expect(
     page.getByText("New submissions are closed.", { exact: false }),
   ).toBeVisible();
-  await expect(page.getByRole("checkbox")).not.toBeChecked();
-  await page.getByRole("checkbox").check();
-  await expect(
-    page.getByRole("button", { name: "Continue to report" }),
-  ).toBeDisabled();
+  await expect(page.getByRole('radio').first()).toBeDisabled();
+  for(let i=0;i<3;i++)await page.getByRole('button',{name:/^Continue/}).click();
+  await expect(page.getByRole('checkbox')).not.toBeChecked();
+  await expect(page.getByRole('checkbox')).toBeDisabled();
+  await expect(page.getByRole('button',{name:'Submit community report'})).toBeDisabled();
   await page.getByRole("button", { name: "Filipino", exact: true }).click();
   await expect(
-    page.getByRole("heading", { name: "Unawain at pumayag" }),
+    page.getByRole("heading", { name: "Suriin at pumayag" }),
   ).toBeVisible();
   await expect(page.locator("html")).toHaveAttribute("lang", "fil");
   expect(await page.evaluate(() => JSON.stringify(localStorage))).not.toContain(
@@ -68,10 +68,10 @@ test("v2 open-policy preview collects coarse fields only and strips identifying 
     }),
   );
   await page.goto("/report");
-  await page.getByRole("checkbox").check();
-  await page.getByRole("button", { name: "Continue to report" }).click();
+  await page.getByRole('radio',{name:'Someone in my household'}).check();await page.getByRole('button',{name:/^Continue/}).click();
   await expect(page.getByLabel("Barangay (coarse area only)")).toBeVisible();
   await expect(page.getByLabel("Symptom-onset date (required)")).toBeVisible();
+  await page.getByRole('button',{name:/^Continue/}).click();
   await page
     .getByLabel("Short note (optional, 250 characters)")
     .fill("Reach test@example.test or +63 912 345 6789");

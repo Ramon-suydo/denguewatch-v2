@@ -24,7 +24,7 @@ export function PrivacyDraft() {
       <h3>What happens today</h3>
       <p>
         Public browsing does not require an account. <ReportingStatus /> No analytics or advertising SDKs are installed. The app sets no
-        cookies. Only a language preference is stored in localStorage; reports
+        cookies. Only language and appearance preferences are stored in localStorage; reports
         and withdrawal codes are never stored in browser storage. Fonts and app
         code are served with the app; the dated official-data snapshot is
         fetched from the same site and held in memory. Your browser may cache
@@ -108,7 +108,7 @@ export function PrivacyDraft() {
       </p>
       <p>
         Personal information controller: {CONTROLLER_NAME}. Controller contact:{" "}
-        <a href={"mailto:" + CONTROLLER_CONTACT}>{CONTROLLER_CONTACT}</a>. This
+        <span>{CONTROLLER_CONTACT}</span>. This
         is the owner-supplied research contact; a DPO appointment is not
         confirmed. You can also{" "}
         <a

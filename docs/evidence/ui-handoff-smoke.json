@@ -1,0 +1,22 @@
+[
+  {
+    "flow": "Map to care actions",
+    "url": "http://127.0.0.1:43274/#actions",
+    "target": {
+      "x": 32,
+      "y": 119.84375,
+      "width": 1216,
+      "height": 671.578125
+    }
+  },
+  {
+    "flow": "Understand the data",
+    "url": "http://127.0.0.1:43274/about#methods",
+    "target": {
+      "x": 112,
+      "y": 121.5,
+      "width": 1056,
+      "height": 211.265625
+    }
+  }
+]

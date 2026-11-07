@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "path": "public/geo/philippines.geojson",
+      "sha256": "84a05802fa19c027ac35c0f33127ba76cd81e1ab4c1a56bd1359d31876761f3b"
+    },
+    {
+      "path": "public/geo/ncr-cities.geojson",
+      "sha256": "6a836b3f1a6a1802335f061abaac7eff06ea402b4a09f201910ecf4979e37e02"
+    }
+  ],
+  "display_simplification_pixels": 0.35,
+  "bytes": 15429,
+  "output": "public/img/locator.svg",
+  "note": "Display-only rendering copy. Source boundaries untouched; no download."
+}

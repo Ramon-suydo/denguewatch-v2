@@ -1,0 +1,36 @@
+{
+  "font_display": "swap, from the imported Fontsource subset CSS",
+  "fonts": [
+    {
+      "path": "node_modules/@fontsource/fraunces/files/fraunces-latin-600-normal.woff2",
+      "bytes": 18096,
+      "sha256": "3a1de7711d147bad4422825045f87597fd77cca72e7c96d3b0a81735d00dda82",
+      "contains_enye_lower_and_upper": true
+    },
+    {
+      "path": "node_modules/@fontsource/figtree/files/figtree-latin-400-normal.woff2",
+      "bytes": 11384,
+      "sha256": "8f98dd642986f1fa39c45b89665a57372897c235b36028e0e4a136e43dc5f8ab",
+      "contains_enye_lower_and_upper": true
+    },
+    {
+      "path": "node_modules/@fontsource/figtree/files/figtree-latin-500-normal.woff2",
+      "bytes": 11432,
+      "sha256": "953a6a4294b1205a1b4d4b9e5529478e8c9e1c5a67a9aa24a551414cd85b6f51",
+      "contains_enye_lower_and_upper": true
+    },
+    {
+      "path": "node_modules/@fontsource/figtree/files/figtree-latin-600-normal.woff2",
+      "bytes": 11544,
+      "sha256": "367d713287918784702563518f59239989da815c80d3c7337686b9816635a08b",
+      "contains_enye_lower_and_upper": true
+    },
+    {
+      "path": "node_modules/@fontsource/figtree/files/figtree-latin-700-normal.woff2",
+      "bytes": 11376,
+      "sha256": "7ec4f08d09f91d349917dd6592f6aaae66d8fe1bbd58fa24707961e79236616e",
+      "contains_enye_lower_and_upper": true
+    }
+  ],
+  "passed": true
+}

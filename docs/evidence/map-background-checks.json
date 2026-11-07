@@ -1,0 +1,43 @@
+{
+  "change": "Load the bundled street/coastline basemap first and retain it during slower tile loading.",
+  "checks": {
+    "map-background-lint": {
+      "command": "npm run lint",
+      "started_utc": "2026-10-26T01:26:54.999690+00:00",
+      "duration_seconds": 49.281,
+      "exit_code": 0
+    },
+    "map-background-contrast": {
+      "command": "npm run test:contrast",
+      "started_utc": "2026-10-26T01:27:44.401919+00:00",
+      "duration_seconds": 0.359,
+      "exit_code": 0
+    },
+    "map-background-unit": {
+      "command": "npm test",
+      "started_utc": "2026-10-26T01:27:40.317890+00:00",
+      "duration_seconds": 46.312,
+      "exit_code": 0
+    },
+    "map-background-final-build": {
+      "command": "npm run build",
+      "started_utc": "2026-10-26T01:28:07.169029+00:00",
+      "duration_seconds": 21.11,
+      "exit_code": 0
+    },
+    "map-background-pwa": {
+      "command": "npm run test:pwa -- --workers=1",
+      "started_utc": "2026-10-26T01:28:28.389998+00:00",
+      "duration_seconds": 16.89,
+      "exit_code": 0
+    },
+    "map-background-final-ui": {
+      "command": "npm run test:ui -- tests/ui/ml-map.spec.ts --grep bundled street|failure of both|WebGL-unavailable|reduced motion --workers=1",
+      "started_utc": "2026-10-26T13:57:25.904001+00:00",
+      "duration_seconds": 58.218,
+      "exit_code": 0
+    }
+  },
+  "visual_review": "Full Metro Manila outline, roads and coastline verified in map-street-background.png.",
+  "limitations": "If both basemaps fail or WebGL is unavailable, accessible city polygons remain the final fallback."
+}

@@ -1,0 +1,36 @@
+{
+  "source": "public/img/source/Twilight Skyline with Curving Light Trails.png",
+  "source_sha256": "2d898f71ec15a995162effd2ca18a1086400b4dc20255eafb150e765a24a5b36",
+  "credit": "Background photograph by Sumarie Slabber.",
+  "operation": "Resize original photograph with Lanczos, AVIF quality 45/speed 6. No generated image or content edit. Existing WebP fallbacks retained.",
+  "assets": [
+    {
+      "path": "public/img/manila-640.avif",
+      "width": 640,
+      "height": 360,
+      "bytes": 19948,
+      "sha256": "4c44743128e49672ff8d32f4d3845cc9aaa885e338b0d4b859b6041343e6eafe"
+    },
+    {
+      "path": "public/img/manila-960.avif",
+      "width": 960,
+      "height": 540,
+      "bytes": 41724,
+      "sha256": "f060a3343419aa8fa57e52bd42a15a94759aa262808a33bfebf7c9a379c3c0ab"
+    },
+    {
+      "path": "public/img/manila-1280.avif",
+      "width": 1280,
+      "height": 720,
+      "bytes": 66915,
+      "sha256": "510c52e7671dbe3ef1a527a9a1ca18b84c760ba79022764ee9dec207f1b501d9"
+    },
+    {
+      "path": "public/img/manila-1672.avif",
+      "width": 1672,
+      "height": 941,
+      "bytes": 101626,
+      "sha256": "c09407a5c16466ee96bc6b7e00abc10ffc63ecb5bfb387079208e6568d724d21"
+    }
+  ]
+}

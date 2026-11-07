@@ -2,9 +2,10 @@ import {useRedesignLanguage} from '../redesign/Language';
 import { useEffect, useState } from "react";
 export function ConnectionNotice() {
   const {t}=useRedesignLanguage();
-  const [online, setOnline] = useState(navigator.onLine);
+  const [online, setOnline] = useState(true);
   useEffect(() => {
     const update = () => setOnline(navigator.onLine);
+    update();
     window.addEventListener("online", update);
     window.addEventListener("offline", update);
     return () => {

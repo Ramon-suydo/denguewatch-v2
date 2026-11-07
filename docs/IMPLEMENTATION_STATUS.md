@@ -1,3 +1,79 @@
+# Expanded Manila count research - 2026-10-28
+
+Current branch: `feat/expanded-forecast`, continuing from `feat/live-manila` / group-guide commit `ce949e7`. All five raw files are audited/reconciled in a separate count pipeline. Twelve candidates test history/season, delayed ERA5 weather, lagged complete NCR months, daily shape, and pooled-city water/elevation/density context. A separate recent refit explicitly downweights the nine estimated 2026 targets. The old classifier, historical data/evaluation and provisional ratio reference are preserved.
+
+Open **Our Model -> Review expanded count models**, the Live-card comparison link, or `/expanded-model`. Current experimental refits are about 201 / 185 cases for weeks ending 1 / 8 November, from the source through 25 October. Reliable improvement over persistence is not established: selected one-week test MAE 9.989 vs 10.000, two-week 13.241 vs 12.667, both skill intervals crossing zero. Source matching/freshness hides inapplicable counts; no calibrated 2026 interval is claimed.
+
+Verified locally: 98 existing plus 10 new scientific tests, 64 browser, 18 production, 6 PWA, types/lint/build/data/contrast/budget and deterministic numerical reproduction. Visuals: 16 intended model baselines refreshed; 79 independent comparisons passed in the full run and the remaining About capture passed a targeted rerun against its untouched baseline. [Actual checks and retained diagnostics](evidence/expanded-manila-checks.md), [methods/results](EXPANDED_MANILA_MODEL.md).
+
+No push, main merge, hosted write/migration or collection activation. Existing credential rotation, source evidence/definitions/republication, hosted setup, DPO and human/native-language gates remain. Test locally and self-review before merging; main deploys automatically. User push: `git push -u origin feat/expanded-forecast`.
+
+---
+
+# Live Manila provisional panel - 2026-10-28
+
+Current branch: `feat/live-manila`, from remote main `a683b3b` with the completed UI prerequisite merged locally at `11daef8`. The 2026 source has its own generated JSON and append-only aggregate version table. Frozen historical ratio quantiles generate provisional one-/two-week ranges; this is not the 17-city classifier. Dashboard mode controls share state. Live shows Manila only, neutral other areas, dated values, estimated hatches, source limitations and care guidance. Stale data returns to Replay after 14 days.
+
+Local checks completed so far: 98 unit/integration tests, 60 full browser cases, 18 production cases, 5 PWA cases, all 80 independent visual comparisons and 28 cases each in Chrome/Edge/Firefox/WebKit. Current release measurements, evidence and owner gates are in [live-manila-checks.md](evidence/live-manila-checks.md). All 121 pre-existing historical/model/source/export artifacts remain byte-identical. The new schema is locally tested; no hosted migration, write, push or deployment is claimed.
+
+NEEDS OWNER: all 13 source links/screenshots, first prior total and missing interpolation explanations, counting-definition/scale verification, republication permission, weekly update ownership, adviser wording and native Filipino review. Existing credential/contact/photo/DPO/collection gates remain. Reporting is closed. Main automatically deploys; test locally and self-review before merging. Push only when ready: `git push -u origin feat/live-manila`.
+
+---
+
+Earlier checkpoints below are historical.
+
+# Manila-first landing and model demo - 2026-10-27
+
+Branch: `feat/ui-overhaul`, continuing from `1ed560a`. Implemented: Manila-led hero and weekly history/dated-estimate chart; a separate district-grouped section for the other 16 NCR areas; a dedicated `/our-model` past-week prediction/outcome comparison; four visible navigation destinations; retained original identity, care guidance and gated reporting.
+
+Three consecutive full browser runs passed 54 tests each before an unexpected PC restart interrupted production verification. Build, lint/types, 87 unit/integration tests, contrast and fresh database verification passed. The resumed production suite passed 18 tests, PWA passed 5, and all 80 independent visual comparisons passed. Four browser engines passed 20 cases each. Mobile Lighthouse measured 96 performance / 100 accessibility, LCP 2.415 s and CLS 0. Dependency audit found 0 vulnerabilities; local passive ZAP found 0 high/medium alerts. Full secret audit remains NEEDS OWNER (0 current / 44 known historical / 0 unexpected). The current [check report](evidence/manila-focus-checks.md) and [manifest](evidence/ui-command-manifest.json) record actual commands and limitations. Prior checkpoints below are historical.
+
+No data, model, schema, submission/security, moderation, retention or map fallback behavior changed. Manila's dated count estimate remains historical; the RF demo estimates a high-case event, not a case count. Approved recent data is still needed for a current forecast.
+
+Owner gates remain: known historical credential rotation; approved controller/contact; photo permission; native Filipino review; hosted Auth/MFA/purge/schedules/log verification; DPO approval; real iOS/device, screen-reader and usability review; field INP. Reports remain closed. No hosted write, push or main merge is included.
+
+Test locally and self-review before merging; every main push deploys Vercel. User push command: `git push -u origin feat/ui-overhaul`.
+
+---
+
+# Bay & care UI overhaul checkpoint (2026-10-27)
+
+Active branch: `feat/ui-overhaul`. The owner wants DengueWatch to have its own personality; iACADEMY is not a reference. The branch starts from fetched main `de0d22c` and retains the reviewed ML/map prerequisite `5d9bdb4`. No new model, data, schema, submission-security, moderation or retention changes are included.
+
+The four public pages now use an original drop/wave identity, Fraunces and Figtree, day/night/automatic appearance, readable surfaces, a local boundary preview, source-derived example weeks, a city sheet, a gated reporting stepper and editorial credits. Verified: 86 unit/integration tests, three consecutive 51-test UI runs, a final 7-test presentation/a11y follow-up, 18 production tests, 4 PWA tests and 64 independent visual comparisons. Mobile Lighthouse measured 97 performance / 100 accessibility, LCP 2.446 s and CLS 0. Technical evidence and final gate results: [UI overhaul checks](evidence/ui-overhaul-checks.md). Brand, components and motion: [BRAND](BRAND.md), [DESIGN_SYSTEM](DESIGN_SYSTEM.md), [MOTION](MOTION.md). Decisions and evidence limits: [UX_DECISIONS](UX_DECISIONS.md).
+
+| Numbered step | Reviewable change | Status / commit |
+|---|---|---|
+| 1 | Original brand, source audit and shared tokens | DONE - `cffff93` |
+| 2 | Shell, nav/footer, typography, themes and components | DONE - `b8f7d6a` |
+| 3 | City search, shared-week preview, care and evidence Dashboard | DONE - `9afaade` |
+| 4 | Mixed default, floating map controls, sheet and scrubber | DONE - `6b212e3` |
+| 5 | Coarse reporting stepper, separate gated states and receipt | DONE - `352f420` |
+| 6 | About, methods and attribution | DONE - `865aba3` |
+| 7 | Motion, rendered accessibility, performance, snapshots and review bundle | DONE locally - final source commit recorded in the review archive |
+
+NEEDS OWNER: approved controller/contact (personal Gmail remains unpublished), photo source/licence/permission, team fields, native Filipino review, known historical credential rotation, hosted Auth/MFA/purge/schedules/log retention, DPO approval before any collection, and real bilingual/screen-reader usability. The absent reference screenshot is recorded; it does not authorize borrowing another site's identity. Collection stays closed.
+
+NOT VERIFIED: real iOS Safari/device checks and field INP under 200 ms. Local WebKit is engine compatibility evidence. Lighthouse TBT does not establish INP. Lab screenshots and axe assertions do not replace human review.
+
+No push, main merge, hosted write, migration or collection activation occurs in this task. Exact push command: `git push -u origin feat/ui-overhaul`. Test locally and self-review before merging near the defense; every main push automatically deploys Vercel.
+
+---
+
+# Current NCR ML/map checkpoint (2026-10-26)
+
+Local verification is complete for application source `a0e4240`: 85 unit/integration tests, four ML leakage tests, 600-row parity, three consecutive 44-test UI runs, 18 production and three PWA tests. Full evidence, retained diagnostics and owner-blocked gates: [mlux-checks.md](evidence/mlux-checks.md). The secret audit remains NEEDS OWNER (0 current / 44 known historical / 0 unexpected); hosted and human checks are not certified. Exact push: `git push -u origin feat/ml-map-ux`. Main was not pushed. Test locally, self-review and inspect the preview before merging; main merge deploys Vercel.
+
+Active branch: `feat/ml-map-ux`, based on main `de0d22c`. Current scientific method and results: [ML_METHOD.md](ML_METHOD.md) and [ML_EVALUATION.md](ML_EVALUATION.md). Map and UX: [MAP_DESIGN.md](MAP_DESIGN.md), [UX_DECISIONS.md](UX_DECISIONS.md). Final verification is recorded in [evidence/mlux-checks.md](evidence/mlux-checks.md); previous redesign passes below do not certify this feature.
+
+Implemented: 17-area chronological DT/RF research, calibration and all three baselines, onset and robustness analyses, Python/TypeScript parity, dated Replay/guarded Live, AAL2 reviewed CSV versioning with audit/rollback, a lazy MapLibre map with a real local PMTiles extract and polygon/SVG fallbacks, and a simpler bilingual Dashboard. Persistence wins held-out F1. Missing calendar weeks remain missing. No current outbreak forecast is inferred from old data.
+
+NEEDS OWNER: newer reviewed 17-city counts; original photo source/licence/permission; team/controller/contact details; credential rotation; hosted migration/Auth/MFA/purge/schedule/log-retention verification; DPO approval before collection; actual English/Filipino/screen-reader usability sessions. Local checks do not establish successful hosted operation. Reports remain closed. IEEE citation metadata is resolved; independent full-text protocol verification is still unavailable.
+
+Test locally, self-review and inspect the feature preview before merging this schema/UI work near the defense. Main merge automatically deploys Vercel. No feature push, main merge, hosted migration or report activation is included in this task.
+
+---
+
 # Three-page redesign status (2026-10-25)
 
 Active work is on `feat/redesign`, based on latest main e9a3047. No redesign deployment is authorized by this branch alone. Every main push automatically deploys Vercel; review locally and inspect the preview before merging this schema/UI change near the defense.

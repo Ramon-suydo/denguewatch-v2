@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-26T01:03:47.788197+00:00",
+  "members": 573,
+  "zip_bytes": 4937972,
+  "payload_folder_bytes": 11735514,
+  "combined_folder_and_zip_bytes": 16673486,
+  "largest_member_bytes": 758778,
+  "screenshots": 8,
+  "sha256": "5e6cdafcdd4358922e383fe12f9e63e4b62af4eb7e0f130fba0141d76ec59e42",
+  "all_checksums_valid": true,
+  "zip_matches_payload_folder": true,
+  "split_reconstruction_valid": true,
+  "release_status": "NEEDS OWNER: credential rotation and hosted/human checks"
+}

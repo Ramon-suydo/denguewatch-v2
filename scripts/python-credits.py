@@ -1,9 +1,9 @@
 """Inventory the installed dependency closure of the declared evaluation/build environment."""
-import importlib.metadata as metadata,json,re
+import importlib.metadata as metadata,json,re,sys
 from pathlib import Path
 from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
-roots=[Requirement(line) for line in Path('requirements-environment.txt').read_text().splitlines() if line and not line.startswith('#')]
+roots=[Requirement(line) for line in Path(sys.argv[1] if len(sys.argv)>1 else 'requirements-environment.txt').read_text().splitlines() if line and not line.startswith('#')]
 root_names={canonicalize_name(r.name) for r in roots};queue=list(roots);seen={};edges={}
 while queue:
  requirement=queue.pop(0);name=canonicalize_name(requirement.name)

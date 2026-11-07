@@ -38,11 +38,11 @@ local checks pass. The merge deploys production. Small main commits use
 
 ## Current thesis collaboration
 
-The current three-page redesign is on `feat/redesign`, created from main. Review its local checks and preview before merging to main; merging deploys production. For additional risky work, create a separate feat/<short-name> branch.
+The current NCR ML/map task is on `feat/ml-map-ux`, created from main de0d22c. Review its local checks and preview before merging to main; merging deploys production. For additional risky work, create a separate feat/<short-name> branch.
 
 ```powershell
 git fetch origin
-git switch feat/redesign
+git switch feat/ml-map-ux
 git switch -c feat/your-change
 ```
 

@@ -1,0 +1,205 @@
+{
+  "source": "Manila-first landing and model demo; frozen functional source for final verification. Data, models, schema and security APIs unchanged from 1ed560a.",
+  "results": [
+    {
+      "name": "build",
+      "command": "npm run build",
+      "log": ".artifacts/manila-focus/final-build.log",
+      "exit_code": 0,
+      "duration_seconds": 26.867,
+      "owner_blocked": false
+    },
+    {
+      "name": "budget",
+      "command": "npm run test:ui-budget",
+      "log": ".artifacts/manila-focus/final-budget.log",
+      "exit_code": 0,
+      "duration_seconds": 0.555,
+      "owner_blocked": false
+    },
+    {
+      "name": "typecheck",
+      "command": "npm run typecheck",
+      "log": ".artifacts/manila-focus/final-typecheck.log",
+      "exit_code": 0,
+      "duration_seconds": 2.172,
+      "owner_blocked": false
+    },
+    {
+      "name": "unit",
+      "command": "npm test",
+      "log": ".artifacts/manila-focus/final-unit.log",
+      "exit_code": 0,
+      "duration_seconds": 67.159,
+      "owner_blocked": false
+    },
+    {
+      "name": "contrast",
+      "command": "npm run test:contrast",
+      "log": ".artifacts/manila-focus/final-contrast.log",
+      "exit_code": 0,
+      "duration_seconds": 0.502,
+      "owner_blocked": false
+    },
+    {
+      "name": "database",
+      "command": "npm run db:verify",
+      "log": ".artifacts/manila-focus/final-database.log",
+      "exit_code": 0,
+      "duration_seconds": 36.104,
+      "owner_blocked": false
+    },
+    {
+      "name": "lint",
+      "command": "npm run lint",
+      "log": ".artifacts/manila-focus/final-lint.log",
+      "exit_code": 0,
+      "duration_seconds": 6.592,
+      "owner_blocked": false
+    },
+    {
+      "name": "browser-1",
+      "command": "npm run test:ui",
+      "log": ".artifacts/manila-focus/final-browser-1.log",
+      "exit_code": 0,
+      "duration_seconds": 329.701,
+      "owner_blocked": false
+    },
+    {
+      "name": "browser-2",
+      "command": "npm run test:ui",
+      "log": ".artifacts/manila-focus/final-browser-2.log",
+      "exit_code": 0,
+      "duration_seconds": 357.607,
+      "owner_blocked": false
+    },
+    {
+      "name": "browser-3",
+      "command": "npm run test:ui",
+      "log": ".artifacts/manila-focus/final-browser-3.log",
+      "exit_code": 0,
+      "duration_seconds": 271.231,
+      "owner_blocked": false
+    },
+    {
+      "name": "production",
+      "command": "npm run test:production -- --workers=1",
+      "log": ".artifacts/manila-focus/final-production.log",
+      "exit_code": 0,
+      "duration_seconds": 103.031,
+      "owner_blocked": false
+    },
+    {
+      "name": "pwa",
+      "command": "npm run test:pwa -- --workers=1",
+      "log": ".artifacts/manila-focus/final-pwa.log",
+      "exit_code": 0,
+      "duration_seconds": 24.079,
+      "owner_blocked": false
+    },
+    {
+      "name": "visual-baselines",
+      "command": "npm run test:visual -- --update-snapshots --workers=1",
+      "log": ".artifacts/manila-focus/final-visual-baselines.log",
+      "exit_code": 0,
+      "duration_seconds": 319.265,
+      "owner_blocked": false
+    },
+    {
+      "name": "compat",
+      "command": "node scripts/check-ui-browsers.mjs",
+      "log": ".artifacts/manila-focus/final-compat.log",
+      "exit_code": 0,
+      "duration_seconds": 109.811,
+      "owner_blocked": false
+    },
+    {
+      "name": "audit",
+      "command": "npm audit --audit-level=high",
+      "log": ".artifacts/manila-focus/final-audit.log",
+      "exit_code": 0,
+      "duration_seconds": 12.973,
+      "owner_blocked": false
+    },
+    {
+      "name": "zap",
+      "command": "npm run security:zap -- http://127.0.0.1:43288/",
+      "log": ".artifacts/manila-focus/final-zap.log",
+      "exit_code": 0,
+      "duration_seconds": 54.483,
+      "owner_blocked": false
+    },
+    {
+      "name": "secrets",
+      "command": "npm run security:secrets",
+      "log": ".artifacts/manila-focus/final-secrets.log",
+      "exit_code": 1,
+      "duration_seconds": 70.475,
+      "owner_blocked": true
+    },
+    {
+      "name": "lighthouse",
+      "command": "npm run audit:lighthouse -- http://127.0.0.1:43288/",
+      "log": ".artifacts/manila-focus/final-lighthouse.log",
+      "exit_code": 0,
+      "duration_seconds": 52.013,
+      "owner_blocked": false,
+      "metrics": {
+        "performance": 96,
+        "accessibility": 100,
+        "lcp_ms": 2415.4907,
+        "cls": 0,
+        "tbt_ms": 14.5
+      }
+    },
+    {
+      "name": "visual-refresh",
+      "command": "node node_modules/@playwright/test/cli.js test --config playwright.visual.config.ts --grep \"(map|report|about) (360|768|1280|1920) \" --update-snapshots --workers=1",
+      "log": ".artifacts/manila-focus/final-visual-refresh.log",
+      "exit_code": 0,
+      "duration_seconds": 183.866,
+      "owner_blocked": false,
+      "argv": [
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.visual.config.ts",
+        "--grep",
+        "(map|report|about) (360|768|1280|1920) ",
+        "--update-snapshots",
+        "--workers=1"
+      ]
+    },
+    {
+      "name": "visual-compare",
+      "command": "node node_modules/@playwright/test/cli.js test --config playwright.visual.config.ts --workers=1",
+      "log": ".artifacts/manila-focus/final-visual-compare.log",
+      "exit_code": 0,
+      "duration_seconds": 275.17,
+      "owner_blocked": false,
+      "argv": [
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "playwright.visual.config.ts",
+        "--workers=1"
+      ]
+    }
+  ],
+  "interrupted_attempts": [
+    {
+      "name": "production",
+      "command": "npm run test:production --workers=1",
+      "exit_code": 4294967295,
+      "diagnostic": ".artifacts/manila-focus/diagnostic-worker-restart.json"
+    }
+  ],
+  "superseded_attempts": [
+    {
+      "name": "visual-refresh",
+      "exit_code": 1,
+      "diagnostic": ".artifacts/manila-focus/diagnostic-visual-selection.json",
+      "reason": "Initial npm/shell selection matched no tests; structured Node CLI rerun passed all 48 cases."
+    }
+  ]
+}

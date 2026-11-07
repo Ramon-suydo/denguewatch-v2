@@ -1,0 +1,127 @@
+{
+  "source": "data\\geo\\ncr-boundaries.geojson",
+  "source_sha256": "cca0af638abd93730b020ca6563564bb1451e1343dd2710dce5bf7a5281c691c",
+  "licence": "CC BY 3.0 IGO; source NAMRIA/PSA/OCHA; see existing LICENSE-boundaries.txt",
+  "rows": [
+    {
+      "id": "PH1303901",
+      "boundary_name": "City of Manila",
+      "doh_name": "MANILA CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307401",
+      "boundary_name": "City of Mandaluyong",
+      "doh_name": "MANDALUYONG CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307402",
+      "boundary_name": "City of Marikina",
+      "doh_name": "MARIKINA CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307403",
+      "boundary_name": "City of Pasig",
+      "doh_name": "PASIG CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307404",
+      "boundary_name": "Quezon City",
+      "doh_name": "QUEZON CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307405",
+      "boundary_name": "City of San Juan",
+      "doh_name": "SAN JUAN CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307501",
+      "boundary_name": "Caloocan City",
+      "doh_name": "CALOOCAN CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307502",
+      "boundary_name": "City of Malabon",
+      "doh_name": "MALABON CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307503",
+      "boundary_name": "City of Navotas",
+      "doh_name": "NAVOTAS CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307504",
+      "boundary_name": "City of Valenzuela",
+      "doh_name": "VALENZUELA CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307601",
+      "boundary_name": "City of Las Pi\u00f1as",
+      "doh_name": "LAS PINAS CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307602",
+      "boundary_name": "City of Makati",
+      "doh_name": "MAKATI CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307603",
+      "boundary_name": "City of Muntinlupa",
+      "doh_name": "MUNTINLUPA CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307604",
+      "boundary_name": "City of Para\u00f1aque",
+      "doh_name": "PARANAQUE CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307605",
+      "boundary_name": "Pasay City",
+      "doh_name": "PASAY CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307606",
+      "boundary_name": "Pateros",
+      "doh_name": "PATEROS",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    },
+    {
+      "id": "PH1307607",
+      "boundary_name": "Taguig City",
+      "doh_name": "TAGUIG CITY",
+      "normalization": "Uppercase/diacritics; explicit CITY OF X to X CITY; PATEROS unchanged. No fuzzy match.",
+      "catchment_equivalence": "Needs source-owner confirmation; name agreement alone is not catchment verification."
+    }
+  ],
+  "unmatched": []
+}

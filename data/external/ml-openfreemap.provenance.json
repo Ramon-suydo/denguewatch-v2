@@ -1,0 +1,29 @@
+{
+  "checked_utc": "2026-10-25",
+  "styles": {
+    "positron": {
+      "url": "https://tiles.openfreemap.org/styles/positron",
+      "status_observed": 200,
+      "bytes": 25153,
+      "sha256": "a0f5b8487480a47ba5a5eaf25e165a19789dfa422f9ef9442f04da79c7d216db",
+      "asset_hosts": [
+        "tiles.openfreemap.org"
+      ],
+      "chosen": true,
+      "rationale": "Muted light roads/land backdrop gives risk colors greater contrast than the detailed Liberty style."
+    },
+    "liberty": {
+      "url": "https://tiles.openfreemap.org/styles/liberty",
+      "status_observed": 200,
+      "bytes": 43079,
+      "sha256": "6010998863b4876911ac9a2d62c9a28d97c8877f6d20cd158b74808572257b60",
+      "asset_hosts": [
+        "tiles.openfreemap.org"
+      ],
+      "chosen": false,
+      "rationale": "Verified alternative, not the production default."
+    }
+  },
+  "service": "Public as-is service. No uptime guarantee. Local PMTiles is the self-hosted fallback.",
+  "browser_cookie_scope": "No cookies observed in the isolated fallback test; not an audit of provider infrastructure."
+}

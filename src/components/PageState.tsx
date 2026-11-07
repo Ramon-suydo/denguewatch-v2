@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { Button, Card } from "./ui";
+import { Button } from "./ui/Button";
+import { Card } from "./ui/Card";
 import type { Resource } from "../lib/resources";
 export function Loading({ label = "Loading data…" }: { label?: string }) {
   return (

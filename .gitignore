@@ -35,6 +35,7 @@ data/external/srtm90m-*.json
 data/external/request-*
 data/external/weather-context-*.json
 data/external/weather-refresh.lock
+data/external/expanded-manila-weather-*.json
 
 # Python analysis bytecode
 __pycache__/

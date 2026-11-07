@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-26T00:15:09.414Z",
+  "play_from": "2019-09-01",
+  "play_to": "2019-09-08",
+  "pause_confirmed": true,
+  "pulse_changed": true,
+  "selected_city": "NAVOTAS CITY",
+  "camera": {
+    "zoom": 11.3,
+    "center": {
+      "lng": 120.93641312916498,
+      "lat": 14.673462699500107
+    }
+  },
+  "desktop_pitch": 30
+}

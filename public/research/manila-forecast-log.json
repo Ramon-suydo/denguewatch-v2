@@ -1,0 +1,25 @@
+{
+  "version": "manila-forecast-log-v1",
+  "entries": [
+    {
+      "origin_week_end": "2026-10-25",
+      "target_week_end": "2026-11-01",
+      "recorded_on": "2026-10-29",
+      "random_forest": 201,
+      "sarima": 202,
+      "average": 201,
+      "naive": 226,
+      "actual": 265
+    },
+    {
+      "origin_week_end": "2026-11-01",
+      "target_week_end": "2026-11-08",
+      "recorded_on": "2026-11-06",
+      "random_forest": 230,
+      "sarima": 230,
+      "average": 230,
+      "naive": 265,
+      "actual": null
+    }
+  ]
+}

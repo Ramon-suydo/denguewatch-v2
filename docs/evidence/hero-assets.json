@@ -17,8 +17,8 @@
       "path": "public/img/manila-640.avif",
       "width": 640,
       "height": 360,
-      "bytes": 25659,
-      "sha256": "389f7c0b9d061438995eeb1917298441d79000647bb4240e038578efbe3a990b"
+      "bytes": 19948,
+      "sha256": "4c44743128e49672ff8d32f4d3845cc9aaa885e338b0d4b859b6041343e6eafe"
     },
     {
       "path": "public/img/manila-960.webp",
@@ -31,8 +31,8 @@
       "path": "public/img/manila-960.avif",
       "width": 960,
       "height": 540,
-      "bytes": 53250,
-      "sha256": "a1b3be162df29d16a0ede1cadfce31a379702f95e705c9fc7187be754f1e0536"
+      "bytes": 41724,
+      "sha256": "f060a3343419aa8fa57e52bd42a15a94759aa262808a33bfebf7c9a379c3c0ab"
     },
     {
       "path": "public/img/manila-1280.webp",
@@ -45,8 +45,8 @@
       "path": "public/img/manila-1280.avif",
       "width": 1280,
       "height": 720,
-      "bytes": 85269,
-      "sha256": "152f5a1854255db0df0611bb1e901fb9588d12c5c854522cd9ad7c955e29a0d8"
+      "bytes": 66915,
+      "sha256": "510c52e7671dbe3ef1a527a9a1ca18b84c760ba79022764ee9dec207f1b501d9"
     },
     {
       "path": "public/img/manila-1672.webp",
@@ -59,8 +59,9 @@
       "path": "public/img/manila-1672.avif",
       "width": 1672,
       "height": 941,
-      "bytes": 127780,
-      "sha256": "aac142d68c116ae86ce2cbf021768921d425fca4086a4649e813d0ff027ac79d"
+      "bytes": 101626,
+      "sha256": "c09407a5c16466ee96bc6b7e00abc10ffc63ecb5bfb387079208e6568d724d21"
     }
-  ]
+  ],
+  "avif_encoding": "Pillow AVIF quality 45 / speed 6; original and WebP files unchanged"
 }

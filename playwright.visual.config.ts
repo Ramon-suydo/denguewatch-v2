@@ -1,0 +1,1 @@
+import {defineConfig} from '@playwright/test';import base from './playwright.config';export default defineConfig({...base,testDir:'./tests/visual',outputDir:'.artifacts/ui-visual',snapshotPathTemplate:'{testDir}/baselines/{arg}{ext}',workers:2,fullyParallel:true,expect:{toHaveScreenshot:{maxDiffPixelRatio:.005,animations:'disabled'}}});

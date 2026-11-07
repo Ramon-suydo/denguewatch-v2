@@ -1,0 +1,69 @@
+{
+  "scope": "Desktop 200% zoom-equivalent reflow: 1280x1000 physical pixels represented by 640x500 CSS pixels at DPR 2. This is emulation, not a real iOS/device zoom session.",
+  "results": [
+    {
+      "path": "/",
+      "theme": "day",
+      "content": 640,
+      "viewport": 640,
+      "scale": 2,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "theme": "night",
+      "content": 640,
+      "viewport": 640,
+      "scale": 2,
+      "passed": true
+    },
+    {
+      "path": "/risk-map",
+      "theme": "day",
+      "content": 640,
+      "viewport": 640,
+      "scale": 2,
+      "passed": true
+    },
+    {
+      "path": "/risk-map",
+      "theme": "night",
+      "content": 640,
+      "viewport": 640,
+      "scale": 2,
+      "passed": true
+    },
+    {
+      "path": "/report",
+      "theme": "day",
+      "content": 640,
+      "viewport": 640,
+      "scale": 2,
+      "passed": true
+    },
+    {
+      "path": "/report",
+      "theme": "night",
+      "content": 640,
+      "viewport": 640,
+      "scale": 2,
+      "passed": true
+    },
+    {
+      "path": "/about",
+      "theme": "day",
+      "content": 640,
+      "viewport": 640,
+      "scale": 2,
+      "passed": true
+    },
+    {
+      "path": "/about",
+      "theme": "night",
+      "content": 640,
+      "viewport": 640,
+      "scale": 2,
+      "passed": true
+    }
+  ]
+}
