@@ -1,3 +1,10 @@
+# Current public publication
+
+The public dashboard and current hosting limitations are recorded in
+[PUBLIC_SITE.md](PUBLIC_SITE.md). The 7 November 2026 publication uses Sites;
+Vercel publication has not been verified. Earlier deployment instructions below
+remain applicable to a separately configured Vercel deployment.
+
 # Redesign build requirements
 
 The screenshot contrast gate runs a real browser on every build. `vercel.json` installs Chromium plus native nss/mesa-libgbm dependencies and Pillow; Linux invokes python3. CI installs Chromium with its system dependencies and the pinned Python environment. No contrast test is skipped on Vercel. This install path is configured but **NOT VERIFIED on a hosted Vercel build**; inspect the preview build logs before merging. Use Node 22 and preserve the repo install command in dashboard settings.
