@@ -43,3 +43,5 @@ __pycache__/
 
 # Expanded audit payload stays local; publish its sanitized ZIP only.
 review_bundle/
+.vercel
+.env*

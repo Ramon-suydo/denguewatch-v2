@@ -1,9 +1,10 @@
 # Current public publication
 
-The public dashboard and current hosting limitations are recorded in
-[PUBLIC_SITE.md](PUBLIC_SITE.md). The 7 November 2026 publication uses Sites;
-Vercel publication has not been verified. Earlier deployment instructions below
-remain applicable to a separately configured Vercel deployment.
+The public dashboard is https://denguewatch-manila.vercel.app.
+[PUBLIC_SITE.md](PUBLIC_SITE.md) records the verified 7 November 2026 Vercel
+prebuilt release, checks and subsequent release commands. Browser interactions,
+hosted Supabase setup and Git-triggered automatic releases remain separate
+verification items. The older instructions below describe source-build setup.
 
 # Redesign build requirements
 

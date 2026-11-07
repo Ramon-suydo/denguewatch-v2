@@ -1,4 +1,45 @@
-# Public site - 7 November 2026
+# Current public site - Vercel, 7 November 2026
+
+Public dashboard: https://denguewatch-manila.vercel.app
+
+Vercel project: `game-team6/denguewatch-manila`.
+Deployment: `dpl_FVGjjvJsFfxTWTe9YgDqrKMXaKBh`, READY in production.
+
+Anonymous HTTP checks passed for the homepage, model/map/report routes, all
+three Manila JSON exports, JavaScript, PMTiles byte ranges (HTTP 206), and the
+original distinct dashboard/map CSP and nosniff headers. The public data show
+14 source weeks, origin 2026-11-01, forecast 230 and research alert High.
+Hosted browser interaction was not verified in this environment.
+
+Only the reviewed static build was deployed. Local raw data, ML caches and
+.env files were not uploaded. This frontend publication does not apply hosted
+Supabase migrations or enable community reporting.
+
+## Subsequent Vercel releases
+
+Use Node 22.12+ and the project's existing build prerequisites. After reviewing
+the source changes, run:
+
+```powershell
+npm run build
+npm run deploy:package
+vercel link --yes --scope game-team6 --project denguewatch-manila
+vercel deploy --prebuilt --prod --yes --scope game-team6
+```
+
+The packager converts the existing Vercel headers into Build Output API v3
+routes, serves physical files before SPA fallbacks, and copies only dist into
+.vercel/output/static. It does not train a model. Never hand-edit or commit
+local Vercel credentials or .env files. Git-based automatic deployment has not
+been configured or certified; this release used the authenticated CLI.
+
+The earlier Sites copy below remains public. An attempted owner-only access
+change was rejected by automatic approval review because that audience change
+was not explicitly authorized. Its retirement requires the owner's decision.
+
+---
+
+# Earlier Sites publication - historical record
 
 Public dashboard: https://denguewatch-manila.rhex-diaz.chatgpt.site
 
